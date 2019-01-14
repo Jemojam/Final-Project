@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<JUCERPROJECT id="LuD3xr" name="Final Project" projectType="guiapp" jucerVersion="5.3.2">
+<JUCERPROJECT id="LuD3xr" name="Final Project" projectType="guiapp" jucerVersion="5.4.1">
   <MAINGROUP id="O4Tt23" name="Final Project">
     <GROUP id="{473A1684-2AD1-A338-0F6C-1A388936821C}" name="Source">
       <GROUP id="{8E4D167E-0B2F-DFBC-3831-1A166D5AEEFE}" name="Audio Engine">
