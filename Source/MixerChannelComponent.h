@@ -33,12 +33,14 @@
     Describe your class and how it works here!
                                                                     //[/Comments]
 */
-class GridComponent  : public Component
+class FXOptionsComponent  : public Component,
+                            public Slider::Listener,
+                            public Button::Listener
 {
 public:
     //==============================================================================
-    GridComponent ();
-    ~GridComponent();
+    FXOptionsComponent ();
+    ~FXOptionsComponent();
 
     //==============================================================================
     //[UserMethods]     -- You can add your own custom methods in this section.
@@ -46,7 +48,12 @@ public:
 
     void paint (Graphics& g) override;
     void resized() override;
+    void sliderValueChanged (Slider* sliderThatWasMoved) override;
+    void buttonClicked (Button* buttonThatWasClicked) override;
 
+    // Binary resources:
+    static const char* _071sound_png;
+    static const int _071sound_pngSize;
 
 
 private:
@@ -54,10 +61,13 @@ private:
     //[/UserVariables]
 
     //==============================================================================
+    std::unique_ptr<Slider> slider;
+    std::unique_ptr<Slider> slider2;
+    std::unique_ptr<ImageButton> imageButton;
 
 
     //==============================================================================
-    JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (GridComponent)
+    JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (FXOptionsComponent)
 };
 
 //[EndFile] You can add extra defines here...

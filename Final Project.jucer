@@ -12,10 +12,18 @@
             file="Source/MainComponent.cpp"/>
       <FILE id="d7yB4t" name="MainComponent.h" compile="0" resource="0" file="Source/MainComponent.h"/>
       <GROUP id="{2B651B32-8A5B-98EB-E2FF-4C86ADB73D5A}" name="UI">
+        <FILE id="Iw4cZ4" name="FXInsertComponent.cpp" compile="1" resource="0"
+              file="Source/FXInsertComponent.cpp"/>
+        <FILE id="kRPqeX" name="FXInsertComponent.h" compile="0" resource="0"
+              file="Source/FXInsertComponent.h"/>
         <FILE id="pvgMEs" name="ChannelComponent.cpp" compile="1" resource="0"
               file="Source/ChannelComponent.cpp"/>
         <FILE id="hRzNky" name="ChannelComponent.h" compile="0" resource="0"
               file="Source/ChannelComponent.h"/>
+        <FILE id="N5iB7J" name="MixerChannelComponent.cpp" compile="1" resource="0"
+              file="Source/MixerChannelComponent.cpp"/>
+        <FILE id="aInFiN" name="MixerChannelComponent.h" compile="0" resource="0"
+              file="Source/MixerChannelComponent.h"/>
         <FILE id="sMzj1g" name="GridComponent.cpp" compile="1" resource="0"
               file="Source/GridComponent.cpp"/>
         <FILE id="WBbRqR" name="GridComponent.h" compile="0" resource="0" file="Source/GridComponent.h"/>

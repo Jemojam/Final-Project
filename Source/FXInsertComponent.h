@@ -33,12 +33,13 @@
     Describe your class and how it works here!
                                                                     //[/Comments]
 */
-class GridComponent  : public Component
+class FXInsertComponent  : public Component,
+                           public Button::Listener
 {
 public:
     //==============================================================================
-    GridComponent ();
-    ~GridComponent();
+    FXInsertComponent ();
+    ~FXInsertComponent();
 
     //==============================================================================
     //[UserMethods]     -- You can add your own custom methods in this section.
@@ -46,6 +47,7 @@ public:
 
     void paint (Graphics& g) override;
     void resized() override;
+    void buttonClicked (Button* buttonThatWasClicked) override;
 
 
 
@@ -54,10 +56,11 @@ private:
     //[/UserVariables]
 
     //==============================================================================
+    std::unique_ptr<TextButton> insertFXButton;
 
 
     //==============================================================================
-    JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (GridComponent)
+    JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (FXInsertComponent)
 };
 
 //[EndFile] You can add extra defines here...
