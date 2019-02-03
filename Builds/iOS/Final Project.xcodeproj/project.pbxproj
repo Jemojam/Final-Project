@@ -69,10 +69,6 @@
 			isa = PBXBuildFile;
 			fileRef = 7C2CE6E72521E026F595EE04;
 		};
-		D61761391785C9AA9365798D = {
-			isa = PBXBuildFile;
-			fileRef = DEFF40BE76D2840D7BC735CE;
-		};
 		31AE5FBEDD641F92FFDF3C9B = {
 			isa = PBXBuildFile;
 			fileRef = 59B434AB9F502A9B005EF393;
@@ -132,6 +128,10 @@
 		537EF71706850B97DD51FAF8 = {
 			isa = PBXBuildFile;
 			fileRef = 15F36BAF43E01E40E451E338;
+		};
+		2E909213D9AE7D8A00BC0AB3 = {
+			isa = PBXBuildFile;
+			fileRef = 23DD78AC9D4059859F833F49;
 		};
 		9A6A8BCA67CB8AC9293B5AD1 = {
 			isa = PBXBuildFile;
@@ -247,6 +247,13 @@
 			lastKnownFileType = sourcecode.cpp.objcpp;
 			name = "include_juce_audio_devices.mm";
 			path = "../../JuceLibraryCode/include_juce_audio_devices.mm";
+			sourceTree = "SOURCE_ROOT";
+		};
+		23DD78AC9D4059859F833F49 = {
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.cpp.cpp;
+			name = "include_juce_blocks_basics.cpp";
+			path = "../../JuceLibraryCode/include_juce_blocks_basics.cpp";
 			sourceTree = "SOURCE_ROOT";
 		};
 		246B9D04C3D1CFA4F8D723B1 = {
@@ -501,6 +508,13 @@
 			path = "../../JuceLibraryCode/modules/juce_audio_formats";
 			sourceTree = "SOURCE_ROOT";
 		};
+		90A9D0CB2604DC91C6203870 = {
+			isa = PBXFileReference;
+			lastKnownFileType = file;
+			name = "juce_blocks_basics";
+			path = "../../JuceLibraryCode/modules/juce_blocks_basics";
+			sourceTree = "SOURCE_ROOT";
+		};
 		92C2522DE81B973050464571 = {
 			isa = PBXFileReference;
 			lastKnownFileType = sourcecode.c.h;
@@ -655,13 +669,6 @@
 			path = System/Library/Frameworks/Accelerate.framework;
 			sourceTree = SDKROOT;
 		};
-		DEFF40BE76D2840D7BC735CE = {
-			isa = PBXFileReference;
-			lastKnownFileType = file.storyboard;
-			name = LaunchScreen.storyboard;
-			path = LaunchScreen.storyboard;
-			sourceTree = "SOURCE_ROOT";
-		};
 		E1684C5B63B655A96E5F2FC6 = {
 			isa = PBXFileReference;
 			lastKnownFileType = file;
@@ -778,6 +785,7 @@
 				8F407DD36D2DD897664FC2E9,
 				45F2AD075AB48069837CB77E,
 				7BA6A5D0A76ED24C1F7567A0,
+				90A9D0CB2604DC91C6203870,
 				246B9D04C3D1CFA4F8D723B1,
 				BC710BF58EEDD946445D64FE,
 				2CF18B3789BB3865526831E8,
@@ -800,6 +808,7 @@
 				51BE02C0E428DF4C32109016,
 				E561380D77A7256DEAE6E94A,
 				15F36BAF43E01E40E451E338,
+				23DD78AC9D4059859F833F49,
 				3EAE597149DF4B14790708FB,
 				6EAEA31150DBF19D719C5985,
 				34F4DC22C62BBE30FF3250E6,
@@ -825,7 +834,6 @@
 			children = (
 				ECC04AB14EC2CBD557FAF654,
 				7C2CE6E72521E026F595EE04,
-				DEFF40BE76D2840D7BC735CE,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -1087,7 +1095,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				7B078CD1AAEEFAD42B828534,
-				D61761391785C9AA9365798D,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1110,6 +1117,7 @@
 				083A9DC3E89293D28E0785E6,
 				B5D007209D751CEBCD05C3F9,
 				537EF71706850B97DD51FAF8,
+				2E909213D9AE7D8A00BC0AB3,
 				9A6A8BCA67CB8AC9293B5AD1,
 				3D724366D1887AFA6A6AD372,
 				C87478A6374D31259E17B744,

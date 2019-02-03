@@ -1,4 +1,6 @@
 #include "AudioEngine.h"
+#include <typeinfo>
+
 
 using namespace tracktion_engine;
 
@@ -9,17 +11,18 @@ AudioEngine::AudioEngine()
 	removeAllTracks();
 }
 
-void AudioEngine::removeAllTracks()
-{
-	for (auto track: getTrackList())
-	{
-		edit->deleteTrack(track);
-	}
-}
 
 AudioEngine::~AudioEngine()
 {
 	engine.getTemporaryFileManager().getTempDirectory().deleteRecursively();
+}
+
+void AudioEngine::removeAllTracks()
+{
+	for (auto track : getTrackList())
+	{
+		edit->deleteTrack(track);
+	}
 }
 
 void AudioEngine::addChannel(File file)
@@ -51,7 +54,7 @@ void AudioEngine::removeTrack(te::AudioTrack & track)
 	clips.getUnchecked(trackNum)->removeFromParentTrack();
 }
 
-te::WaveAudioClip::Ptr AudioEngine::loadAudioFileAsClip(const File & file, int trackNumber)
+te::WaveAudioClip::Ptr AudioEngine::loadAudioFileAsClip(const File &file, int trackNumber)
 {
 	auto track = edit->getOrInsertAudioTrackAt(trackNumber);
 
@@ -81,7 +84,7 @@ te::WaveAudioClip::Ptr AudioEngine::loadAudioFileAsClip(const File & file, int t
 void AudioEngine::addNewClipFromFile(const File & editFile, int trackNum)
 {
 	auto clip = loadAudioFileAsClip(editFile, trackNum);
-
+	
 	if (clip != nullptr)
 		adjustClipProperties(*clip);
 }
@@ -119,4 +122,12 @@ void AudioEngine::addChannel()
 	edit->getOrInsertAudioTrackAt(numTracks);
 
 	dirty = true;
+}
+
+void AudioEngine::changeVolumeFromSlider(float sliderValue, int trackId)
+{
+	auto track=edit->getTrackList().at(trackId);
+
+	track->edit.setMasterVolumeSliderPos(sliderValue);
+	
 }

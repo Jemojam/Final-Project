@@ -54,7 +54,7 @@ protected:
 
 public:
     /** Destructor. */
-    virtual ~Button() override;
+    virtual ~Button();
 
     //==============================================================================
     /** Changes the button's text.

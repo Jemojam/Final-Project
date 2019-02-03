@@ -7,15 +7,15 @@
 class ChannelWindow : public Component, public Timer
 {
 public:
-    ChannelWindow(AudioEngine& inEngine);
+	ChannelWindow(AudioEngine& inEngine);
 
-    void paint(Graphics& g) override;
-    void timerCallback() override;
+	void paint(Graphics& g) override;
+	void timerCallback() override;
 
 private:
 
-    AudioEngine& engine;
+	AudioEngine& engine;
 
-    std::vector<std::unique_ptr<ChannelComponent>> channels;
-    void rebuildTrackList();
+	std::vector<std::unique_ptr<ChannelComponent>> channels;
+	void rebuildTrackList();
 };

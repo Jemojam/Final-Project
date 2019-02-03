@@ -65,6 +65,7 @@
         <MODULEPATH id="juce_opengl" path="../../../../JUCE/modules"/>
         <MODULEPATH id="tracktion_engine" path="../tracktion_engine/modules"/>
         <MODULEPATH id="juce_dsp" path="../tracktion_engine/modules/juce/modules"/>
+        <MODULEPATH id="juce_blocks_basics" path="C:/CODE/JUCE/modules"/>
       </MODULEPATHS>
     </XCODE_MAC>
     <XCODE_IPHONE targetFolder="Builds/iOS">
@@ -87,6 +88,7 @@
         <MODULEPATH id="juce_opengl" path="../../../../JUCE/modules"/>
         <MODULEPATH id="tracktion_engine" path="../tracktion_engine/modules"/>
         <MODULEPATH id="juce_dsp" path="../tracktion_engine/modules/juce/modules"/>
+        <MODULEPATH id="juce_blocks_basics" path="C:/CODE/JUCE/modules"/>
       </MODULEPATHS>
     </XCODE_IPHONE>
     <VS2017 targetFolder="Builds/VisualStudio2017">
@@ -109,6 +111,7 @@
         <MODULEPATH id="juce_opengl" path="../../../../JUCE/modules"/>
         <MODULEPATH id="tracktion_engine" path="../tracktion_engine/modules"/>
         <MODULEPATH id="juce_dsp" path="../tracktion_engine/modules/juce/modules"/>
+        <MODULEPATH id="juce_blocks_basics" path="C:/CODE/JUCE/modules"/>
       </MODULEPATHS>
     </VS2017>
     <CLION targetFolder="Builds/CLion" clionXcodeEnabled="1">
@@ -127,6 +130,7 @@
         <MODULEPATH id="juce_audio_basics"/>
         <MODULEPATH id="tracktion_engine" path="../tracktion_engine/modules"/>
         <MODULEPATH id="juce_dsp" path="../tracktion_engine/modules/juce/modules"/>
+        <MODULEPATH id="juce_blocks_basics" path="C:/CODE/JUCE/modules"/>
       </MODULEPATHS>
     </CLION>
   </EXPORTFORMATS>
@@ -136,6 +140,7 @@
     <MODULE id="juce_audio_formats" showAllCode="1" useLocalCopy="1" useGlobalPath="1"/>
     <MODULE id="juce_audio_processors" showAllCode="1" useLocalCopy="1" useGlobalPath="1"/>
     <MODULE id="juce_audio_utils" showAllCode="1" useLocalCopy="1" useGlobalPath="1"/>
+    <MODULE id="juce_blocks_basics" showAllCode="1" useLocalCopy="1" useGlobalPath="1"/>
     <MODULE id="juce_core" showAllCode="1" useLocalCopy="1" useGlobalPath="1"/>
     <MODULE id="juce_data_structures" showAllCode="1" useLocalCopy="1" useGlobalPath="1"/>
     <MODULE id="juce_dsp" showAllCode="1" useLocalCopy="1" useGlobalPath="1"/>

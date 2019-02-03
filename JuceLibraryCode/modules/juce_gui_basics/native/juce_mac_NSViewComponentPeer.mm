@@ -122,8 +122,6 @@ public:
            #if defined (MAC_OS_X_VERSION_10_14)
             if (! [window isOpaque])
                 [window setBackgroundColor: [NSColor clearColor]];
-
-            [view setAppearance: [NSAppearance appearanceNamed: NSAppearanceNameAqua]];
            #endif
 
             [window setHasShadow: ((windowStyleFlags & windowHasDropShadow) != 0)];
@@ -153,7 +151,7 @@ public:
 
            #if defined (MAC_OS_X_VERSION_10_13) && (MAC_OS_X_VERSION_MAX_ALLOWED >= MAC_OS_X_VERSION_10_13)
             if ([window respondsToSelector: @selector (setTabbingMode:)])
-                [window setTabbingMode: NSWindowTabbingModeDisallowed];
+                [window setTabbingMode:NSWindowTabbingModeDisallowed];
            #endif
 
             [notificationCenter  addObserver: view
@@ -195,7 +193,7 @@ public:
         };
     }
 
-    ~NSViewComponentPeer() override
+    ~NSViewComponentPeer()
     {
         [notificationCenter removeObserver: view];
         setOwner (view, nullptr);
@@ -1336,13 +1334,10 @@ public:
 
                 while ((track = [enumerator nextObject]) != nil)
                 {
-                    if (id value = [track valueForKey: nsStringLiteral ("Location")])
-                    {
-                        NSURL* url = [NSURL URLWithString: value];
+                    NSURL* url = [NSURL URLWithString: [track valueForKey: nsStringLiteral ("Location")]];
 
-                        if ([url isFileURL])
-                            files.add (nsStringToJuce ([url path]));
-                    }
+                    if ([url isFileURL])
+                        files.add (nsStringToJuce ([url path]));
                 }
             }
         }
@@ -1704,9 +1699,10 @@ private:
         if (auto* p = getOwner (self))
         {
             if (p->wasAlwaysOnTop)
+            {
                 p->setAlwaysOnTop (true);
-
-            p->redirectMovedOrResized();
+                p->redirectMovedOrResized();
+            }
         }
     }
 

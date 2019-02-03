@@ -1,6 +1,7 @@
 #pragma once
 
 #include "JuceHeader.h"
+#include "../modules/juce_blocks_basics/juce_blocks_basics.h"
 
 using namespace tracktion_engine;
 namespace te = tracktion_engine;
@@ -24,6 +25,8 @@ public :
 
     TrackList& getTrackList() { return edit->getTrackList(); }
 
+	void changeVolumeFromSlider(float sliderValue, int trackId);
+
 private:
 
     te::WaveAudioClip::Ptr loadAudioFileAsClip(const File& file, int trackNumber);
@@ -41,8 +44,12 @@ private:
 
     std::unique_ptr<te::Edit> edit;
     AudioTransportSource transport;
+	std::unique_ptr < te::VolumeAndPanPlugin> volumeAndPanPlugin;
 
     bool dirty = true;
     int trackNum = 0;
     void removeAllTracks();
+
+
+
 };

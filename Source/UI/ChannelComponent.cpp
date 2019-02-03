@@ -1,243 +1,214 @@
-/*
-  ==============================================================================
-
-  This is an automatically generated GUI class created by the Projucer!
-
-  Be careful when adding custom code to these files, as only the code within
-  the "//[xyz]" and "//[/xyz]" sections will be retained when the file is loaded
-  and re-saved.
-
-  Created with Projucer version: 5.4.1
-
-  ------------------------------------------------------------------------------
-
-  The Projucer is part of the JUCE library.
-  Copyright (c) 2017 - ROLI Ltd.
-
-  ==============================================================================
-*/
-
-//[Headers] You can add your own extra header files here...
-//[/Headers]
 
 #include "ChannelComponent.h"
 
-
-//[MiscUserDefs] You can add your own user definitions and misc code here...
-//[/MiscUserDefs]
-
-//==============================================================================
-ChannelComponent::ChannelComponent (AudioEngine& inEngine): engine(inEngine)
+ChannelComponent::ChannelComponent(AudioEngine& inEngine) : engine(inEngine)
 {
-    //[Constructor_pre] You can add your own custom stuff here..
-    //[/Constructor_pre]
 
-    selectButton.reset (new TextButton ("selectButton"));
-    addAndMakeVisible (selectButton.get());
-    selectButton->setButtonText (String());
-    selectButton->addListener (this);
-    selectButton->setColour (TextButton::buttonColourId, Colour (0xff1b605e));
+	selectButton.reset(new TextButton("selectButton"));
+	addAndMakeVisible(selectButton.get());
+	selectButton->setButtonText(String());
+	selectButton->addListener(this);
+	selectButton->setColour(TextButton::buttonColourId, Colour(0xff1b605e));
 
-    selectButton->setBounds (8, 8, 18, 52);
+	selectButton->setBounds(8, 8, 18, 52);
 
-    nameText.reset (new TextEditor ("nameText"));
-    addAndMakeVisible (nameText.get());
-    nameText->setMultiLine (false);
-    nameText->setReturnKeyStartsNewLine (false);
-    nameText->setReadOnly (false);
-    nameText->setScrollbarsShown (true);
-    nameText->setCaretVisible (true);
-    nameText->setPopupMenuEnabled (true);
-    nameText->setText (String());
+	nameText.reset(new TextEditor("nameText"));
+	addAndMakeVisible(nameText.get());
+	nameText->setMultiLine(false);
+	nameText->setReturnKeyStartsNewLine(false);
+	nameText->setReadOnly(false);
+	nameText->setScrollbarsShown(true);
+	nameText->setCaretVisible(true);
+	nameText->setPopupMenuEnabled(true);
+	nameText->setText(String());
 
-    nameText->setBounds (40, 8, 88, 16);
+	nameText->setBounds(40, 8, 88, 16);
 
-    slider.reset (new Slider ("new slider"));
-    addAndMakeVisible (slider.get());
-    slider->setRange (0, 10, 0);
-    slider->setSliderStyle (Slider::LinearHorizontal);
-    slider->setTextBoxStyle (Slider::NoTextBox, false, 80, 20);
-    slider->setColour (Slider::thumbColourId, Colour (0xffbebebe));
-    slider->addListener (this);
+	slider.reset(new Slider("new slider"));
+	addAndMakeVisible(slider.get());
+	slider->setRange(0, 10, 0);
+	slider->setSliderStyle(Slider::LinearHorizontal);
+	slider->setTextBoxStyle(Slider::NoTextBox, false, 80, 20);
+	slider->setColour(Slider::thumbColourId, Colour(0xffbebebe));
+	slider->addListener(this);
 
-    slider->setBounds (120, 40, 79, 24);
+	slider->setBounds(120, 40, 79, 24);
 
-    muteBotton.reset (new ImageButton ("muteBotton"));
-    addAndMakeVisible (muteBotton.get());
-    muteBotton->setButtonText (TRANS("Mute"));
-    muteBotton->addListener (this);
+	muteBotton.reset(new ImageButton("muteBotton"));
+	addAndMakeVisible(muteBotton.get());
+	muteBotton->setButtonText(TRANS("Mute"));
+	muteBotton->addListener(this);
 
-    muteBotton->setImages (false, true, true,
-                           ImageCache::getFromMemory (_033mute_png, _033mute_pngSize), 1.000f, Colours::bisque,
-                           Image(), 1.000f, Colour (0x00000000),
-                           Image(), 1.000f, Colour (0x00000000));
-    muteBotton->setBounds (32, 40, 20, 20);
+	muteBotton->setImages(false, true, true,
+		ImageCache::getFromMemory(_033mute_png, _033mute_pngSize), 1.000f, Colours::bisque,
+		Image(), 1.000f, Colour(0x00000000),
+		Image(), 1.000f, Colour(0x00000000));
+	muteBotton->setBounds(32, 40, 20, 20);
 
-    soloButton.reset (new ImageButton ("soloButton"));
-    addAndMakeVisible (soloButton.get());
-    soloButton->setButtonText (TRANS("Solo"));
-    soloButton->addListener (this);
+	soloButton.reset(new ImageButton("soloButton"));
+	addAndMakeVisible(soloButton.get());
+	soloButton->setButtonText(TRANS("Solo"));
+	soloButton->addListener(this);
 
-    soloButton->setImages (false, true, true,
-                           ImageCache::getFromMemory (_048headphones_png, _048headphones_pngSize), 1.000f, Colours::coral,
-                           Image(), 1.000f, Colour (0x00000000),
-                           Image(), 1.000f, Colour (0x00000000));
-    soloButton->setBounds (64, 40, 20, 20);
+	soloButton->setImages(false, true, true,
+		ImageCache::getFromMemory(_048headphones_png, _048headphones_pngSize), 1.000f, Colours::coral,
+		Image(), 1.000f, Colour(0x00000000),
+		Image(), 1.000f, Colour(0x00000000));
+	soloButton->setBounds(64, 40, 20, 20);
 
-    addFileButton.reset (new ImageButton ("addFileButton"));
-    addAndMakeVisible (addFileButton.get());
-    addFileButton->setButtonText (TRANS("Add File"));
-    addFileButton->addListener (this);
+	addFileButton.reset(new ImageButton("addFileButton"));
+	addAndMakeVisible(addFileButton.get());
+	addFileButton->setButtonText(TRANS("Add File"));
+	addFileButton->addListener(this);
 
-    addFileButton->setImages (false, true, true,
-                              ImageCache::getFromMemory (musicfoldervariant_png, musicfoldervariant_pngSize), 1.000f, Colours::cornflowerblue,
-                              Image(), 1.000f, Colour (0x00000000),
-                              Image(), 1.000f, Colour (0x00000000));
-    addFileButton->setBounds (96, 40, 20, 20);
+	addFileButton->setImages(false, true, true,
+		ImageCache::getFromMemory(musicfoldervariant_png, musicfoldervariant_pngSize), 1.000f, Colours::cornflowerblue,
+		Image(), 1.000f, Colour(0x00000000),
+		Image(), 1.000f, Colour(0x00000000));
+	addFileButton->setBounds(96, 40, 20, 20);
 
-    FXButton.reset (new ImageButton ("FXButton"));
-    addAndMakeVisible (FXButton.get());
-    FXButton->setButtonText (TRANS("FX"));
-    FXButton->addListener (this);
+	FXButton.reset(new ImageButton("FXButton"));
+	addAndMakeVisible(FXButton.get());
+	FXButton->setButtonText(TRANS("FX"));
+	FXButton->addListener(this);
 
-    FXButton->setImages (false, true, true,
-                         ImageCache::getFromMemory (_072settings_png, _072settings_pngSize), 1.000f, Colours::white,
-                         Image(), 1.000f, Colour (0x00000000),
-                         Image(), 1.000f, Colour (0x00000000));
-    FXButton->setBounds (160, 8, 30, 30);
+	FXButton->setImages(false, true, true,
+		ImageCache::getFromMemory(_072settings_png, _072settings_pngSize), 1.000f, Colours::white,
+		Image(), 1.000f, Colour(0x00000000),
+		Image(), 1.000f, Colour(0x00000000));
+	FXButton->setBounds(160, 8, 30, 30);
 
 
-    //[UserPreSize]
-    //[/UserPreSize]
+	//[UserPreSize]
+	//[/UserPreSize]
 
-    setSize (800, 80);
+	setSize(800, 80);
 
 
-    //[Constructor] You can add your own custom stuff here..
-    //[/Constructor]
+	//[Constructor] You can add your own custom stuff here..
+	//[/Constructor]
 }
 
 ChannelComponent::~ChannelComponent()
 {
-    //[Destructor_pre]. You can add your own custom destruction code here..
-    //[/Destructor_pre]
+	//[Destructor_pre]. You can add your own custom destruction code here..
+	//[/Destructor_pre]
 
-    selectButton = nullptr;
-    nameText = nullptr;
-    slider = nullptr;
-    muteBotton = nullptr;
-    soloButton = nullptr;
-    addFileButton = nullptr;
-    FXButton = nullptr;
+	selectButton = nullptr;
+	nameText = nullptr;
+	slider = nullptr;
+	muteBotton = nullptr;
+	soloButton = nullptr;
+	addFileButton = nullptr;
+	FXButton = nullptr;
 
 
-    //[Destructor]. You can add your own custom destruction code here..
-    //[/Destructor]
+	//[Destructor]. You can add your own custom destruction code here..
+	//[/Destructor]
 }
 
 //==============================================================================
-void ChannelComponent::paint (Graphics& g)
+void ChannelComponent::paint(Graphics& g)
 {
-    //[UserPrePaint] Add your own custom painting code here..
-    //[/UserPrePaint]
+	//[UserPrePaint] Add your own custom painting code here..
+	//[/UserPrePaint]
 
-    g.fillAll (Colour (0xff323e44));
+	g.fillAll(Colour(0xff323e44));
 
-    {
-        float x = 0.0f, y = 0.0f, width = 200.0f, height = 70.0f;
-        Colour fillColour1 = Colour (0xff4a4a4a), fillColour2 = Colour (0xff262626);
-        //[UserPaintCustomArguments] Customize the painting arguments here..
-        //[/UserPaintCustomArguments]
-        g.setGradientFill (ColourGradient (fillColour1,
-                                       176.0f - 0.0f + x,
-                                       16.0f - 0.0f + y,
-                                       fillColour2,
-                                       104.0f - 0.0f + x,
-                                       48.0f - 0.0f + y,
-                                       false));
-        g.fillRoundedRectangle (x, y, width, height, 10.000f);
-    }
+	{
+		float x = 0.0f, y = 0.0f, width = 200.0f, height = 70.0f;
+		Colour fillColour1 = Colour(0xff4a4a4a), fillColour2 = Colour(0xff262626);
+		//[UserPaintCustomArguments] Customize the painting arguments here..
+		//[/UserPaintCustomArguments]
+		g.setGradientFill(ColourGradient(fillColour1,
+			176.0f - 0.0f + x,
+			16.0f - 0.0f + y,
+			fillColour2,
+			104.0f - 0.0f + x,
+			48.0f - 0.0f + y,
+			false));
+		g.fillRoundedRectangle(x, y, width, height, 10.000f);
+	}
 
-    {
-        float x = 204.0f, y = 0.0f, width = static_cast<float> (proportionOfWidth (0.8385f)), height = 70.0f;
-        Colour fillColour1 = Colour (0xc60d3334), fillColour2 = Colour (0xff262626);
-        //[UserPaintCustomArguments] Customize the painting arguments here..
-        //[/UserPaintCustomArguments]
-        g.setGradientFill (ColourGradient (fillColour1,
-                                       184.0f - 204.0f + x,
-                                       144.0f - 0.0f + y,
-                                       fillColour2,
-                                       128.0f - 204.0f + x,
-                                       200.0f - 0.0f + y,
-                                       false));
-        g.fillRoundedRectangle (x, y, width, height, 10.000f);
-    }
+	{
+		float x = 204.0f, y = 0.0f, width = static_cast<float> (proportionOfWidth(0.8385f)), height = 70.0f;
+		Colour fillColour1 = Colour(0xc60d3334), fillColour2 = Colour(0xff262626);
+		//[UserPaintCustomArguments] Customize the painting arguments here..
+		//[/UserPaintCustomArguments]
+		g.setGradientFill(ColourGradient(fillColour1,
+			184.0f - 204.0f + x,
+			144.0f - 0.0f + y,
+			fillColour2,
+			128.0f - 204.0f + x,
+			200.0f - 0.0f + y,
+			false));
+		g.fillRoundedRectangle(x, y, width, height, 10.000f);
+	}
 
-    //[UserPaint] Add your own custom painting code here..
-    //[/UserPaint]
+	//[UserPaint] Add your own custom painting code here..
+	//[/UserPaint]
 }
 
 void ChannelComponent::resized()
 {
-    //[UserPreResize] Add your own custom resize code here..
-    //[/UserPreResize]
+	//[UserPreResize] Add your own custom resize code here..
+	//[/UserPreResize]
 
-    //[UserResized] Add your own custom resize handling here..
-    //[/UserResized]
+	//[UserResized] Add your own custom resize handling here..
+	//[/UserResized]
 }
 
-void ChannelComponent::buttonClicked (Button* buttonThatWasClicked)
+void ChannelComponent::buttonClicked(Button* buttonThatWasClicked)
 {
-    //[UserbuttonClicked_Pre]
-    //[/UserbuttonClicked_Pre]
+	//[UserbuttonClicked_Pre]
+	//[/UserbuttonClicked_Pre]
 
-    if (buttonThatWasClicked == selectButton.get())
-    {
-        //[UserButtonCode_selectButton] -- add your button handler code here..
-        //[/UserButtonCode_selectButton]
-    }
-    else if (buttonThatWasClicked == muteBotton.get())
-    {
-        //[UserButtonCode_muteBotton] -- add your button handler code here..
-        //[/UserButtonCode_muteBotton]
-    }
-    else if (buttonThatWasClicked == soloButton.get())
-    {
-        //[UserButtonCode_soloButton] -- add your button handler code here..
-        //[/UserButtonCode_soloButton]
-    }
-    else if (buttonThatWasClicked == addFileButton.get())
-    {
-        auto location = File::getSpecialLocation(File::userDesktopDirectory);
+	if (buttonThatWasClicked == selectButton.get())
+	{
+		//[UserButtonCode_selectButton] -- add your button handler code here..
+		//[/UserButtonCode_selectButton]
+	}
+	else if (buttonThatWasClicked == muteBotton.get())
+	{
+		//[UserButtonCode_muteBotton] -- add your button handler code here..
+		//[/UserButtonCode_muteBotton]
+	}
+	else if (buttonThatWasClicked == soloButton.get())
+	{
+		//[UserButtonCode_soloButton] -- add your button handler code here..
+		//[/UserButtonCode_soloButton]
+	}
+	else if (buttonThatWasClicked == addFileButton.get())
+	{
+		auto location = File::getSpecialLocation(File::userDesktopDirectory);
 
-        FileChooser chooser("Choose a file", location, "*.wav", true, false);
+		FileChooser chooser("Choose a file", location, "*.wav", true, false);
 
-        if (chooser.browseForFileToOpen())
-            engine.addChannel(chooser.getResult());
-    }
-    else if (buttonThatWasClicked == FXButton.get())
-    {
-        //[UserButtonCode_FXButton] -- add your button handler code here..
-        //[/UserButtonCode_FXButton]
-    }
+		if (chooser.browseForFileToOpen())
+			engine.addChannel(chooser.getResult());
+	}
+	else if (buttonThatWasClicked == FXButton.get())
+	{
+		//[UserButtonCode_FXButton] -- add your button handler code here..
+		//[/UserButtonCode_FXButton]
+	}
 
-    //[UserbuttonClicked_Post]
-    //[/UserbuttonClicked_Post]
+	//[UserbuttonClicked_Post]
+	//[/UserbuttonClicked_Post]
 }
 
-void ChannelComponent::sliderValueChanged (Slider* sliderThatWasMoved)
+void ChannelComponent::sliderValueChanged(Slider* sliderThatWasMoved)
 {
-    //[UsersliderValueChanged_Pre]
-    //[/UsersliderValueChanged_Pre]
+	//[UsersliderValueChanged_Pre]
+	//[/UsersliderValueChanged_Pre]
 
-    if (sliderThatWasMoved == slider.get())
-    {
-        //[UserSliderCode_slider] -- add your slider handling code here..
-        //[/UserSliderCode_slider]
-    }
+	if (sliderThatWasMoved == slider.get())
+	{
+		engine.changeVolumeFromSlider((float)sliderThatWasMoved->getValue(), trackId++);
+	}
 
-    //[UsersliderValueChanged_Post]
-    //[/UsersliderValueChanged_Post]
+	//[UsersliderValueChanged_Post]
+	//[/UsersliderValueChanged_Post]
 }
 
 
@@ -250,55 +221,55 @@ void ChannelComponent::sliderValueChanged (Slider* sliderThatWasMoved)
 #if 0
 /*  -- Projucer information section --
 
-    This is where the Projucer stores the metadata that describe this GUI layout, so
-    make changes in here at your peril!
+	This is where the Projucer stores the metadata that describe this GUI layout, so
+	make changes in here at your peril!
 
 BEGIN_JUCER_METADATA
 
 <JUCER_COMPONENT documentType="Component" className="ChannelComponent" componentName=""
-                 parentClasses="public Component" constructorParams="" variableInitialisers=""
-                 snapPixels="8" snapActive="1" snapShown="1" overlayOpacity="0.330"
-                 fixedSize="0" initialWidth="800" initialHeight="80">
+				 parentClasses="public Component" constructorParams="" variableInitialisers=""
+				 snapPixels="8" snapActive="1" snapShown="1" overlayOpacity="0.330"
+				 fixedSize="0" initialWidth="800" initialHeight="80">
   <BACKGROUND backgroundColour="ff323e44">
-    <ROUNDRECT pos="0 0 200 70" cornerSize="10.0" fill="linear: 176 16, 104 48, 0=ff4a4a4a, 1=ff262626"
-               hasStroke="0"/>
-    <ROUNDRECT pos="204 0 83.847% 70" cornerSize="10.0" fill="linear: 184 144, 128 200, 0=c60d3334, 1=ff262626"
-               hasStroke="0"/>
+	<ROUNDRECT pos="0 0 200 70" cornerSize="10.0" fill="linear: 176 16, 104 48, 0=ff4a4a4a, 1=ff262626"
+			   hasStroke="0"/>
+	<ROUNDRECT pos="204 0 83.847% 70" cornerSize="10.0" fill="linear: 184 144, 128 200, 0=c60d3334, 1=ff262626"
+			   hasStroke="0"/>
   </BACKGROUND>
   <TEXTBUTTON name="selectButton" id="54e1073ff6cfdeb2" memberName="selectButton"
-              virtualName="" explicitFocusOrder="0" pos="8 8 18 52" bgColOff="ff1b605e"
-              buttonText="" connectedEdges="0" needsCallback="1" radioGroupId="0"/>
+			  virtualName="" explicitFocusOrder="0" pos="8 8 18 52" bgColOff="ff1b605e"
+			  buttonText="" connectedEdges="0" needsCallback="1" radioGroupId="0"/>
   <TEXTEDITOR name="nameText" id="5fd707c534e5868e" memberName="nameText" virtualName=""
-              explicitFocusOrder="0" pos="40 8 88 16" initialText="" multiline="0"
-              retKeyStartsLine="0" readonly="0" scrollbars="1" caret="1" popupmenu="1"/>
+			  explicitFocusOrder="0" pos="40 8 88 16" initialText="" multiline="0"
+			  retKeyStartsLine="0" readonly="0" scrollbars="1" caret="1" popupmenu="1"/>
   <SLIDER name="new slider" id="85f86e2560a6ba76" memberName="slider" virtualName=""
-          explicitFocusOrder="0" pos="120 40 79 24" thumbcol="ffbebebe"
-          min="0.0" max="10.0" int="0.0" style="LinearHorizontal" textBoxPos="NoTextBox"
-          textBoxEditable="1" textBoxWidth="80" textBoxHeight="20" skewFactor="1.0"
-          needsCallback="1"/>
+		  explicitFocusOrder="0" pos="120 40 79 24" thumbcol="ffbebebe"
+		  min="0.0" max="10.0" int="0.0" style="LinearHorizontal" textBoxPos="NoTextBox"
+		  textBoxEditable="1" textBoxWidth="80" textBoxHeight="20" skewFactor="1.0"
+		  needsCallback="1"/>
   <IMAGEBUTTON name="muteBotton" id="d3e3492a37fd6de5" memberName="muteBotton"
-               virtualName="" explicitFocusOrder="0" pos="32 40 20 20" buttonText="Mute"
-               connectedEdges="0" needsCallback="1" radioGroupId="0" keepProportions="1"
-               resourceNormal="_033mute_png" opacityNormal="1.0" colourNormal="ffffe4c4"
-               resourceOver="" opacityOver="1.0" colourOver="0" resourceDown=""
-               opacityDown="1.0" colourDown="0"/>
+			   virtualName="" explicitFocusOrder="0" pos="32 40 20 20" buttonText="Mute"
+			   connectedEdges="0" needsCallback="1" radioGroupId="0" keepProportions="1"
+			   resourceNormal="_033mute_png" opacityNormal="1.0" colourNormal="ffffe4c4"
+			   resourceOver="" opacityOver="1.0" colourOver="0" resourceDown=""
+			   opacityDown="1.0" colourDown="0"/>
   <IMAGEBUTTON name="soloButton" id="a1c68b93412a9488" memberName="soloButton"
-               virtualName="" explicitFocusOrder="0" pos="64 40 20 20" buttonText="Solo"
-               connectedEdges="0" needsCallback="1" radioGroupId="0" keepProportions="1"
-               resourceNormal="_048headphones_png" opacityNormal="1.0" colourNormal="ffff7f50"
-               resourceOver="" opacityOver="1.0" colourOver="0" resourceDown=""
-               opacityDown="1.0" colourDown="0"/>
+			   virtualName="" explicitFocusOrder="0" pos="64 40 20 20" buttonText="Solo"
+			   connectedEdges="0" needsCallback="1" radioGroupId="0" keepProportions="1"
+			   resourceNormal="_048headphones_png" opacityNormal="1.0" colourNormal="ffff7f50"
+			   resourceOver="" opacityOver="1.0" colourOver="0" resourceDown=""
+			   opacityDown="1.0" colourDown="0"/>
   <IMAGEBUTTON name="addFileButton" id="72f5fd554f63e8e8" memberName="addFileButton"
-               virtualName="" explicitFocusOrder="0" pos="96 40 20 20" buttonText="Add File"
-               connectedEdges="0" needsCallback="1" radioGroupId="0" keepProportions="1"
-               resourceNormal="musicfoldervariant_png" opacityNormal="1.0" colourNormal="ff6495ed"
-               resourceOver="" opacityOver="1.0" colourOver="0" resourceDown=""
-               opacityDown="1.0" colourDown="0"/>
+			   virtualName="" explicitFocusOrder="0" pos="96 40 20 20" buttonText="Add File"
+			   connectedEdges="0" needsCallback="1" radioGroupId="0" keepProportions="1"
+			   resourceNormal="musicfoldervariant_png" opacityNormal="1.0" colourNormal="ff6495ed"
+			   resourceOver="" opacityOver="1.0" colourOver="0" resourceDown=""
+			   opacityDown="1.0" colourDown="0"/>
   <IMAGEBUTTON name="FXButton" id="2e13123bbc5463ee" memberName="FXButton" virtualName=""
-               explicitFocusOrder="0" pos="160 8 30 30" buttonText="FX" connectedEdges="0"
-               needsCallback="1" radioGroupId="0" keepProportions="1" resourceNormal="_072settings_png"
-               opacityNormal="1.0" colourNormal="ffffffff" resourceOver="" opacityOver="1.0"
-               colourOver="0" resourceDown="" opacityDown="1.0" colourDown="0"/>
+			   explicitFocusOrder="0" pos="160 8 30 30" buttonText="FX" connectedEdges="0"
+			   needsCallback="1" radioGroupId="0" keepProportions="1" resourceNormal="_072settings_png"
+			   opacityNormal="1.0" colourNormal="ffffffff" resourceOver="" opacityOver="1.0"
+			   colourOver="0" resourceDown="" opacityDown="1.0" colourDown="0"/>
 </JUCER_COMPONENT>
 
 END_JUCER_METADATA
@@ -585,9 +556,9 @@ static const unsigned char resource_ChannelComponent_musicwoofersquarebox_png[] 
 251,119,4,209,90,46,138,208,196,218,255,132,144,53,46,229,178,8,69,148,54,254,37,136,240,3,46,140,80,196,7,98,181,163,75,92,26,161,135,75,146,218,90,79,148,112,121,132,26,74,100,69,22,135,240,147,64,168,
 157,0,134,200,115,9,82,185,72,66,11,169,120,69,140,213,92,38,161,132,213,138,138,41,158,84,254,21,8,157,247,127,42,84,49,103,8,223,9,134,202,254,111,8,161,236,53,63,13,134,198,249,143,88,100,61,246,3,
 110,19,172,244,40,253,64,173,182,118,227,181,124,39,80,185,191,254,107,27,107,228,150,183,219,198,227,3,42,45,42,182,181,211,81,94,32,38,105,3,143,19,172,132,40,218,144,20,163,187,1,86,223,228,244,140,
-172,139,60,111,176,82,160,236,98,86,70,122,114,95,184,213,218,255,7,56,17,97,200,246,246,123,131,0,0,0,0,73,69,78,68,174,66,96,130,0,0};
+172,139,60,111,176,82,160,236,98,86,70,122,114,95,184,213,218,255,7,56,17,97,200,246,246,123,131,0,0,0,0,73,69,78,68,174,66,96,130,0,0 };
 
-const char* ChannelComponent::musicwoofersquarebox_png = (const char*) resource_ChannelComponent_musicwoofersquarebox_png;
+const char* ChannelComponent::musicwoofersquarebox_png = (const char*)resource_ChannelComponent_musicwoofersquarebox_png;
 const int ChannelComponent::musicwoofersquarebox_pngSize = 16126;
 
 // JUCER_RESOURCE: musicsound_png, 8140, "../images/music-sound.png"
@@ -727,9 +698,9 @@ static const unsigned char resource_ChannelComponent_musicsound_png[] = { 137,80
 118,45,84,114,20,141,170,163,208,33,80,73,210,227,105,138,44,130,74,152,243,107,40,240,123,168,164,233,114,55,125,219,180,63,84,242,12,92,76,159,38,65,37,81,187,155,26,232,199,167,101,80,201,116,216,28,
 250,112,33,84,82,21,141,170,163,151,201,80,9,214,227,31,180,155,223,30,42,209,250,61,65,139,87,187,64,37,221,81,207,178,57,207,117,130,106,1,142,123,137,77,217,120,109,17,84,203,240,157,71,214,242,203,
 30,63,20,170,229,104,117,244,47,170,27,184,77,250,79,7,65,181,52,157,6,255,238,206,127,60,251,212,61,55,95,122,72,10,74,41,165,148,82,74,41,165,148,82,74,41,165,148,82,74,41,165,148,82,74,41,165,148,82,
-74,41,165,148,82,74,41,165,84,30,249,127,27,87,100,207,213,17,159,251,0,0,0,0,73,69,78,68,174,66,96,130,0,0};
+74,41,165,148,82,74,41,165,84,30,249,127,27,87,100,207,213,17,159,251,0,0,0,0,73,69,78,68,174,66,96,130,0,0 };
 
-const char* ChannelComponent::musicsound_png = (const char*) resource_ChannelComponent_musicsound_png;
+const char* ChannelComponent::musicsound_png = (const char*)resource_ChannelComponent_musicsound_png;
 const int ChannelComponent::musicsound_pngSize = 8140;
 
 // JUCER_RESOURCE: mutevolumecontrol_png, 5425, "../images/mute-volume-control.png"
@@ -818,9 +789,9 @@ static const unsigned char resource_ChannelComponent_mutevolumecontrol_png[] = {
 170,79,240,124,255,175,103,244,71,109,251,240,178,223,254,179,185,47,247,168,196,113,232,168,155,183,237,134,87,249,244,38,77,163,65,51,150,229,252,239,57,165,61,171,62,123,244,12,254,233,167,173,180,
 231,61,204,255,93,95,159,211,75,168,219,242,244,116,254,220,215,222,57,235,92,142,191,228,62,126,147,135,149,85,122,218,213,67,163,187,184,115,163,181,117,88,29,118,252,7,199,29,195,235,100,111,21,158,
 8,115,155,246,29,222,161,183,188,54,229,109,55,188,168,3,47,144,245,37,63,84,214,67,163,223,241,67,90,24,53,31,95,202,35,131,161,57,253,147,120,105,80,170,125,255,218,35,255,242,91,114,87,67,94,21,172,
-26,245,25,63,119,69,78,225,238,213,115,223,186,167,99,170,73,103,246,95,145,204,227,73,153,211,181,162,0,0,0,0,73,69,78,68,174,66,96,130,0,0};
+26,245,25,63,119,69,78,225,238,213,115,223,186,167,99,170,73,103,246,95,145,204,227,73,153,211,181,162,0,0,0,0,73,69,78,68,174,66,96,130,0,0 };
 
-const char* ChannelComponent::mutevolumecontrol_png = (const char*) resource_ChannelComponent_mutevolumecontrol_png;
+const char* ChannelComponent::mutevolumecontrol_png = (const char*)resource_ChannelComponent_mutevolumecontrol_png;
 const int ChannelComponent::mutevolumecontrol_pngSize = 5425;
 
 // JUCER_RESOURCE: musicfoldervariant_png, 4791, "../images/music-folder-variant.png"
@@ -900,9 +871,9 @@ static const unsigned char resource_ChannelComponent_musicfoldervariant_png[] = 
 87,73,75,80,65,242,246,230,50,210,174,113,186,183,87,5,47,254,237,124,182,206,13,242,223,142,87,161,105,188,130,221,115,190,21,141,85,232,26,45,230,183,128,179,127,250,23,55,82,214,36,206,202,102,27,157,
 234,252,172,68,101,93,92,143,181,252,26,112,226,15,255,218,30,113,202,144,155,6,173,225,26,2,142,146,187,102,208,77,202,168,216,86,99,211,248,103,1,71,200,73,27,219,42,86,217,193,91,179,85,223,73,75,214,
 164,237,57,150,145,131,8,147,113,108,79,218,154,37,147,250,182,170,233,85,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,39,249,31,215,204,220,157,13,159,228,96,0,0,0,0,73,69,78,68,174,
-66,96,130,0,0};
+66,96,130,0,0 };
 
-const char* ChannelComponent::musicfoldervariant_png = (const char*) resource_ChannelComponent_musicfoldervariant_png;
+const char* ChannelComponent::musicfoldervariant_png = (const char*)resource_ChannelComponent_musicfoldervariant_png;
 const int ChannelComponent::musicfoldervariant_pngSize = 4791;
 
 // JUCER_RESOURCE: soundbarsformedbysmallcircles_png, 13077, "../images/sound-bars-formed-by-small-circles.png"
@@ -1130,9 +1101,9 @@ static const unsigned char resource_ChannelComponent_soundbarsformedbysmallcircl
 127,62,158,201,107,46,236,254,182,111,105,40,224,172,59,122,221,161,116,94,147,242,219,202,151,171,64,133,219,94,92,177,255,10,175,73,63,188,254,237,122,78,40,80,186,239,183,187,47,240,154,204,227,63,
 79,108,17,3,121,5,187,125,189,253,28,175,241,158,222,50,179,93,110,8,115,151,168,213,170,231,211,15,221,89,38,22,74,185,138,86,191,239,201,126,29,234,151,207,5,165,28,5,42,55,235,210,255,209,38,183,196,
 67,173,248,74,141,31,233,255,120,179,42,5,29,80,42,103,249,250,237,251,62,121,127,141,162,46,168,20,91,230,206,182,125,158,122,176,86,9,55,108,182,32,254,15,101,44,227,56,28,254,145,89,0,0,0,0,73,69,78,
-68,174,66,96,130,0,0};
+68,174,66,96,130,0,0 };
 
-const char* ChannelComponent::soundbarsformedbysmallcircles_png = (const char*) resource_ChannelComponent_soundbarsformedbysmallcircles_png;
+const char* ChannelComponent::soundbarsformedbysmallcircles_png = (const char*)resource_ChannelComponent_soundbarsformedbysmallcircles_png;
 const int ChannelComponent::soundbarsformedbysmallcircles_pngSize = 13077;
 
 // JUCER_RESOURCE: headphonesymbol_png, 6739, "../images/headphone-symbol.png"
@@ -1249,9 +1220,9 @@ static const unsigned char resource_ChannelComponent_headphonesymbol_png[] = { 1
 177,177,238,241,107,191,136,31,30,126,13,60,165,127,255,254,125,10,72,74,213,58,218,208,249,226,203,7,85,149,65,195,218,149,47,78,171,197,37,125,47,191,232,152,170,34,136,175,89,52,237,133,77,180,161,
 124,51,73,105,92,94,91,91,59,127,161,224,143,71,82,242,99,165,71,149,30,213,201,224,211,228,93,180,167,99,247,248,38,220,212,185,124,253,14,218,83,56,6,159,154,118,108,139,111,139,175,219,131,82,74,41,
 165,148,82,74,41,165,148,82,74,41,165,148,82,74,41,165,148,82,74,41,165,148,82,74,41,165,148,82,74,41,165,148,82,74,41,165,148,82,74,41,165,148,82,74,41,165,114,211,255,0,26,98,203,60,208,14,67,114,0,
-0,0,0,73,69,78,68,174,66,96,130,0,0};
+0,0,0,73,69,78,68,174,66,96,130,0,0 };
 
-const char* ChannelComponent::headphonesymbol_png = (const char*) resource_ChannelComponent_headphonesymbol_png;
+const char* ChannelComponent::headphonesymbol_png = (const char*)resource_ChannelComponent_headphonesymbol_png;
 const int ChannelComponent::headphonesymbol_pngSize = 6739;
 
 // JUCER_RESOURCE: _033mute_png, 9250, "../Icons/033-mute.png"
@@ -1410,9 +1381,9 @@ static const unsigned char resource_ChannelComponent__033mute_png[] = { 137,80,7
 112,62,205,111,254,159,108,241,251,10,200,204,119,210,205,67,160,190,6,60,57,51,127,102,111,135,53,93,1,72,210,196,68,196,225,52,159,25,240,147,192,65,27,124,171,15,3,103,103,230,159,183,50,152,246,42,
 34,14,6,206,161,57,211,113,211,13,190,213,183,129,215,0,207,207,204,79,237,243,53,13,0,73,154,166,136,184,21,240,2,224,135,89,254,142,239,181,192,219,129,55,0,111,245,73,127,253,138,136,67,129,115,129,
 39,3,199,175,240,159,126,25,120,27,240,130,204,92,234,110,130,1,32,73,19,23,17,55,1,78,3,30,4,220,9,56,106,241,245,77,154,15,244,249,12,240,105,224,189,192,59,50,243,171,37,131,106,55,17,113,34,240,112,
-224,62,192,209,139,175,155,209,92,236,63,191,248,250,75,154,96,251,163,204,252,230,42,223,255,255,3,93,140,32,144,11,50,40,70,0,0,0,0,73,69,78,68,174,66,96,130,0,0};
+224,62,192,209,139,175,155,209,92,236,63,191,248,250,75,154,96,251,163,204,252,230,42,223,255,255,3,93,140,32,144,11,50,40,70,0,0,0,0,73,69,78,68,174,66,96,130,0,0 };
 
-const char* ChannelComponent::_033mute_png = (const char*) resource_ChannelComponent__033mute_png;
+const char* ChannelComponent::_033mute_png = (const char*)resource_ChannelComponent__033mute_png;
 const int ChannelComponent::_033mute_pngSize = 9250;
 
 // JUCER_RESOURCE: _048headphones_png, 9985, "../Icons/048-headphones.png"
@@ -1589,9 +1560,9 @@ static const unsigned char resource_ChannelComponent__048headphones_png[] = { 13
 19,112,245,18,159,203,129,179,50,243,230,194,108,146,180,106,206,255,45,42,157,255,115,47,0,146,36,105,120,60,79,35,73,82,131,44,0,146,36,53,200,2,32,73,82,131,44,0,146,36,53,200,2,32,73,82,131,44,0,146,
 36,53,200,2,32,73,82,131,44,0,146,36,53,200,2,32,73,82,131,44,0,146,36,53,200,2,32,73,82,131,44,0,146,36,53,200,2,32,73,82,131,44,0,146,36,53,200,2,32,73,82,131,44,0,146,36,53,200,2,32,73,82,131,44,0,
 146,36,53,200,2,32,73,82,131,44,0,146,36,53,200,2,32,73,82,131,44,0,146,36,53,200,2,32,73,82,131,44,0,146,36,53,200,2,32,73,82,131,44,0,146,36,53,200,2,32,73,82,131,44,0,146,36,53,200,2,32,73,82,131,44,
-0,146,36,53,200,2,32,73,82,131,254,63,129,203,20,82,251,162,75,124,0,0,0,0,73,69,78,68,174,66,96,130,0,0};
+0,146,36,53,200,2,32,73,82,131,254,63,129,203,20,82,251,162,75,124,0,0,0,0,73,69,78,68,174,66,96,130,0,0 };
 
-const char* ChannelComponent::_048headphones_png = (const char*) resource_ChannelComponent__048headphones_png;
+const char* ChannelComponent::_048headphones_png = (const char*)resource_ChannelComponent__048headphones_png;
 const int ChannelComponent::_048headphones_pngSize = 9985;
 
 // JUCER_RESOURCE: _072settings_png, 8502, "../Icons/072-settings.png"
@@ -1740,9 +1711,9 @@ static const unsigned char resource_ChannelComponent__072settings_png[] = { 137,
 7,192,141,101,230,69,192,7,128,15,68,196,182,192,131,129,219,160,226,215,149,0,0,0,167,73,68,65,84,3,59,1,183,237,255,125,221,255,222,30,136,105,238,153,51,99,189,169,99,10,174,4,46,173,30,161,37,134,
 116,78,134,180,69,55,24,202,35,220,175,194,191,35,55,150,116,199,227,252,254,159,11,110,244,239,243,128,51,50,243,178,89,12,137,204,156,197,159,35,73,146,6,100,98,239,1,144,36,73,243,195,0,144,36,169,
 65,6,128,36,73,13,50,0,36,73,106,144,1,32,73,82,131,12,0,73,146,26,100,0,72,146,212,32,3,64,146,164,6,25,0,146,36,53,200,0,144,36,169,65,6,128,36,73,13,50,0,36,73,106,144,1,32,73,82,131,12,0,73,146,26,
-100,0,72,146,212,32,3,64,146,164,6,253,127,137,114,138,102,221,194,67,129,0,0,0,0,73,69,78,68,174,66,96,130,0,0};
+100,0,72,146,212,32,3,64,146,164,6,253,127,137,114,138,102,221,194,67,129,0,0,0,0,73,69,78,68,174,66,96,130,0,0 };
 
-const char* ChannelComponent::_072settings_png = (const char*) resource_ChannelComponent__072settings_png;
+const char* ChannelComponent::_072settings_png = (const char*)resource_ChannelComponent__072settings_png;
 const int ChannelComponent::_072settings_pngSize = 8502;
 
 // JUCER_RESOURCE: _023record_png, 10681, "../Icons/023-record.png"
@@ -1930,9 +1901,9 @@ static const unsigned char resource_ChannelComponent__023record_png[] = { 137,80
 110,46,154,74,154,48,54,0,210,152,68,196,126,236,216,16,28,6,252,58,176,164,100,174,9,182,9,248,9,47,20,249,31,3,119,102,230,35,69,83,73,61,97,3,32,53,168,190,234,96,37,176,10,88,61,197,251,3,25,238,85,
 8,91,129,7,129,117,192,125,83,188,191,223,179,242,165,230,216,0,72,5,213,203,9,47,103,231,230,96,5,176,239,118,111,147,54,69,216,4,60,186,221,219,122,118,46,242,63,115,108,47,149,99,3,32,77,128,250,137,
 136,251,238,226,109,79,96,15,170,103,34,236,49,203,143,1,158,161,186,191,253,51,179,252,248,41,118,44,238,59,189,249,36,60,169,251,254,63,68,171,119,86,189,50,169,194,0,0,0,0,73,69,78,68,174,66,96,130,
-0,0};
+0,0 };
 
-const char* ChannelComponent::_023record_png = (const char*) resource_ChannelComponent__023record_png;
+const char* ChannelComponent::_023record_png = (const char*)resource_ChannelComponent__023record_png;
 const int ChannelComponent::_023record_pngSize = 10681;
 
 

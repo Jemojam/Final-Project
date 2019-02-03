@@ -770,7 +770,7 @@ private:
         if (CharPointer_UTF8::isValidString (text, length))
             return String::fromUTF8 (text, length);
 
-        WCHAR wideVersion[512] = {};
+        WCHAR wideVersion[64] = {};
         MultiByteToWideChar (CP_ACP, 0, text, length, wideVersion, numElementsInArray (wideVersion));
         return wideVersion;
     }
@@ -1113,11 +1113,9 @@ private:
     String getLastDriverError() const
     {
         jassert (asioObject != nullptr);
-
         char buffer[512] = {};
         asioObject->getErrorMessage (buffer);
-
-        return convertASIOString (buffer, sizeof (buffer));
+        return String (buffer, sizeof (buffer) - 1);
     }
 
     String initDriver()

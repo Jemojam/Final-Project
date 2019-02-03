@@ -154,7 +154,7 @@ struct ZipFile::ZipInputStream  : public InputStream
         }
     }
 
-    ~ZipInputStream() override
+    ~ZipInputStream()
     {
        #if JUCE_DEBUG
         if (inputStream != nullptr && inputStream == file.inputStream)

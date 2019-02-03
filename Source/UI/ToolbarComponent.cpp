@@ -272,7 +272,7 @@ void ToolbarComponent::buttonClicked (Button* buttonThatWasClicked)
     }
     else if (buttonThatWasClicked == addChannelButton.get())
     {
-        engine.addChannel();
+		engine.addChannel();
     }
 
     //[UserbuttonClicked_Post]
@@ -281,8 +281,7 @@ void ToolbarComponent::buttonClicked (Button* buttonThatWasClicked)
 
 
 
-//[MiscUserCode] You can add your own definitions of your custom methods or any other code here...
-//[/MiscUserCode]
+
 
 
 //==============================================================================
