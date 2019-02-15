@@ -4,12 +4,8 @@
   '-.  .-'|  .--' ,-.  | .--'|     /'-.  .-',--.| .-. ||      \   Tracktion Software
     |  |  |  |  \ '-'  \ `--.|  \  \  |  |  |  |' '-' '|  ||  |       Corporation
     `---' `--'   `--`--'`---'`--'`--' `---' `--' `---' `--''--'    www.tracktion.com
-
-    Tracktion Engine uses a GPL/commercial licence - see LICENCE.md for details.
 */
 
-namespace tracktion_engine
-{
 
 void Renderer::turnOffAllPlugins (Edit& edit)
 {
@@ -44,7 +40,7 @@ struct Ditherers
         auto numChannels = buffer.getNumChannels();
 
         for (int i = 0; i < numChannels; ++i)
-            ditherers.getReference (i).process (buffer.getWritePointer (i), numSamples);
+            ditherers.getReference(i).process (buffer.getWritePointer (i), numSamples);
     }
 
     juce::Array<Ditherer> ditherers;
@@ -60,25 +56,6 @@ static bool trackLoopsBackInto (const Array<Track*>& allTracks, AudioTrack& t, c
                     return true;
 
     return false;
-}
-
-static Array<Track*> getTracksIncludedInRender (const Array<Track*>& allTracks, const BigInteger* tracksToCheck)
-{
-    if (tracksToCheck == nullptr)
-        return allTracks;
-
-    Array<Track*> tracks;
-
-    for (int i = 0; i < allTracks.size(); ++i)
-        if ((*tracksToCheck)[i])
-            tracks.add (allTracks[i]);
-
-    return tracks;
-}
-
-static bool isTrackIncludedInRender (const Array<Track*>& allTracks, const BigInteger* tracksToCheck, Track& trackToLookFor)
-{
-    return getTracksIncludedInRender (allTracks, tracksToCheck).contains (&trackToLookFor);
 }
 
 static Plugin::Array findAllPlugins (AudioNode& node)
@@ -149,8 +126,6 @@ struct Renderer::RenderTask::RendererContext
         CRASH_TRACER
         TRACKTION_ASSERT_MESSAGE_THREAD
         jassert (r.engine != nullptr);
-        jassert (r.edit != nullptr);
-        jassert (r.time.getLength() > 0.0);
 
         if (r.edit->getTransport().isPlayContextActive())
         {
@@ -467,12 +442,11 @@ struct Renderer::RenderTask::RendererContext
                 && renderingBuffer.getMagnitude (0, r.blockSizeForAudio) <= thresholdForStopping))
             return true;
 
-        auto prog = (float) ((streamTime - r.time.getStart()) / jmax (1.0, r.time.getLength()));
+        auto prog = (float) ((streamTime - r.time.getStart()) / r.time.getLength());
 
         if (needsToNormaliseAndTrim)
             prog *= 0.9f;
 
-        jassert (! std::isnan (prog));
         progressToUpdate = jlimit (0.0f, 1.0f, prog);
         --precount;
 
@@ -564,7 +538,7 @@ bool Renderer::RenderTask::renderAudio (Renderer::Parameters& r)
 
     if (context == nullptr)
     {
-        callBlocking ([&, this] { context.reset (new RendererContext (*this, r, node.get(), sourceToUpdate)); });
+        callBlocking ([&, this] { context = new RendererContext (*this, r, node, sourceToUpdate); });
 
         if (! context->getStatus().wasOk())
         {
@@ -625,7 +599,7 @@ void Renderer::RenderTask::flushAllPlugins (PlayHead& playhead, const Plugin::Ar
 void Renderer::RenderTask::setAllPluginsRealtime (const Plugin::Array& plugins, bool realtime)
 {
     CRASH_TRACER
-    for (auto af : plugins)
+    for (auto* af : plugins)
         if (auto ep = dynamic_cast<ExternalPlugin*> (af))
             if (ep->isEnabled())
                 if (auto p = ep->getAudioPluginInstance())
@@ -796,11 +770,7 @@ static AudioNode* createRenderingNodeFromEdit (Edit& edit,
         {
             auto track = allTracks.getUnchecked (i);
 
-            if (! track->isProcessing (true))
-                continue;
-
-            // Don't include tracks that will be part of a submix being rendered
-            if (track->isPartOfSubmix() && isTrackIncludedInRender (allTracks, params.allowedTracks, *track->getParentTrack()))
+            if (! track->isProcessing (true) || track->isPartOfSubmix())
                 continue;
 
             if (auto at = dynamic_cast<AudioTrack*> (track))
@@ -911,7 +881,7 @@ bool Renderer::renderToFile (const String& taskDescription,
 {
     CRASH_TRACER
     auto& engine = edit.engine;
-    const Edit::ScopedRenderStatus srs (edit, true);
+    const Edit::ScopedRenderStatus srs (edit);
     Track::Array tracks;
 
     for (auto bit = tracksToDo.findNextSetBit (0); bit != -1; bit = tracksToDo.findNextSetBit (bit + 1))
@@ -996,7 +966,7 @@ juce::File Renderer::renderToFile (const String& taskDescription, const Paramete
     {
         auto& ui = r.edit->engine.getUIBehaviour();
 
-        if (auto node = createRenderingAudioNode (r))
+        if (auto* node = createRenderingAudioNode (r))
         {
             RenderTask task (taskDescription, r, node);
 
@@ -1086,7 +1056,7 @@ Renderer::Statistics Renderer::measureStatistics (const String& taskDescription,
     CRASH_TRACER
     Statistics result;
 
-    const Edit::ScopedRenderStatus srs (edit, true);
+    const Edit::ScopedRenderStatus srs (edit);
 
     TransportControl::stopAllTransports (edit.engine, false, true);
 
@@ -1159,6 +1129,4 @@ bool Renderer::checkTargetFile (Engine& e, const File& file)
     }
 
     return true;
-}
-
 }

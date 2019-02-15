@@ -30,16 +30,10 @@ namespace juce
 extern ComponentPeer* createNonRepaintingEmbeddedWindowsPeer (Component&, void* parent);
 extern bool shouldScaleGLWindow (void* hwnd);
 
-#if JUCE_MODULE_AVAILABLE_juce_audio_plugin_client && (JucePlugin_Build_VST || JucePlugin_Build_VST3)
- bool juce_shouldDoubleScaleNativeGLWindow();
-#else
- bool juce_shouldDoubleScaleNativeGLWindow()  { return false; }
-#endif
-
 //==============================================================================
 class OpenGLContext::NativeContext
    #if JUCE_WIN_PER_MONITOR_DPI_AWARE
-    : private Timer
+    : public ComponentPeer::ScaleFactorListener
    #endif
 {
 public:
@@ -97,6 +91,12 @@ public:
     {
         deleteRenderContext();
         releaseDC();
+
+       #if JUCE_WIN_PER_MONITOR_DPI_AWARE
+        for (int i = 0; i < ComponentPeer::getNumPeers(); ++i)
+            if (auto* peer = ComponentPeer::getPeer (i))
+                peer->removeScaleFactorListener (this);
+       #endif
     }
 
     bool initialiseOnRenderThread (OpenGLContext& c)
@@ -128,8 +128,11 @@ public:
     {
         if (nativeWindow != nullptr)
         {
-            if (! approximatelyEqual (nativeScaleFactor, 1.0))
-                bounds = (bounds.toDouble() * nativeScaleFactor).toNearestInt();
+           #if JUCE_WIN_PER_MONITOR_DPI_AWARE
+            if (safeComponent != nullptr)
+                if (auto* peer = safeComponent->getTopLevelComponent()->getPeer())
+                    bounds = (bounds.toDouble() * peer->getPlatformScaleFactor()).toNearestInt();
+           #endif
 
             SetWindowPos ((HWND) nativeWindow->getNativeHandle(), 0,
                           bounds.getX(), bounds.getY(), bounds.getWidth(), bounds.getHeight(),
@@ -149,12 +152,21 @@ public:
 
     struct Locker { Locker (NativeContext&) {} };
 
+   #if JUCE_WIN_PER_MONITOR_DPI_AWARE
+    void nativeScaleFactorChanged (double /*newScaleFactor*/) override
+    {
+        if (safeComponent != nullptr)
+            if (auto peer = safeComponent->getTopLevelComponent()->getPeer())
+                updateWindowPosition (peer->getAreaCoveredBy (*safeComponent));
+    }
+   #endif
+
     double getWindowScaleFactor (const Rectangle<int>& screenBounds)
     {
         if (nativeWindow != nullptr && shouldScaleGLWindow (nativeWindow->getNativeHandle()))
             return Desktop::getInstance().getDisplays().findDisplayForRect (screenBounds).scale;
 
-        return Desktop::getInstance().getGlobalScaleFactor();
+        return 1.0;
     }
 
 private:
@@ -173,9 +185,6 @@ private:
     HGLRC renderContext;
     HDC dc;
     OpenGLContext* context = {};
-
-    double nativeScaleFactor = 1.0;
-
    #if JUCE_WIN_PER_MONITOR_DPI_AWARE
     Component::SafePointer<Component> safeComponent;
    #endif
@@ -187,28 +196,6 @@ private:
     JUCE_DECLARE_WGL_EXTENSION_FUNCTION (wglSwapIntervalEXT,       BOOL, (int))
     JUCE_DECLARE_WGL_EXTENSION_FUNCTION (wglGetSwapIntervalEXT,    int, ())
     #undef JUCE_DECLARE_WGL_EXTENSION_FUNCTION
-
-   #if JUCE_WIN_PER_MONITOR_DPI_AWARE
-    void timerCallback() override
-    {
-        if (safeComponent != nullptr)
-        {
-            if (auto* peer = safeComponent->getTopLevelComponent()->getPeer())
-            {
-                auto newScale = peer->getPlatformScaleFactor();
-
-                if (juce_shouldDoubleScaleNativeGLWindow())
-                    newScale *= newScale;
-
-                if (! approximatelyEqual (newScale, nativeScaleFactor))
-                {
-                    nativeScaleFactor = newScale;
-                    updateWindowPosition (peer->getAreaCoveredBy (*safeComponent));
-                }
-            }
-        }
-    }
-   #endif
 
     void initialiseGLExtensions()
     {
@@ -227,13 +214,8 @@ private:
         if (auto* peer = topComp->getPeer())
         {
            #if JUCE_WIN_PER_MONITOR_DPI_AWARE
+            peer->addScaleFactorListener (this);
             safeComponent = Component::SafePointer<Component> (&component);
-            nativeScaleFactor = peer->getPlatformScaleFactor();
-
-            if (juce_shouldDoubleScaleNativeGLWindow())
-                nativeScaleFactor *= nativeScaleFactor;
-
-            startTimer (50);
            #endif
 
             updateWindowPosition (peer->getAreaCoveredBy (component));

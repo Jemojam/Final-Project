@@ -4,9 +4,8 @@
   '-.  .-'|  .--' ,-.  | .--'|     /'-.  .-',--.| .-. ||      \   Tracktion Software
     |  |  |  |  \ '-'  \ `--.|  \  \  |  |  |  |' '-' '|  ||  |       Corporation
     `---' `--'   `--`--'`---'`--'`--' `---' `--' `---' `--''--'    www.tracktion.com
-
-    Tracktion Engine uses a GPL/commercial licence - see LICENCE.md for details.
 */
+
 
 namespace tracktion_engine
 {
@@ -33,7 +32,7 @@ public:
 
     MidiList& getSequence() const noexcept;
     MidiList& getSequenceLooped();
-    std::unique_ptr<MidiList> createSequenceLooped (MidiList& sourceSequence);
+    MidiList* createSequenceLooped (MidiList& sourceSequence);
 
     const SelectedMidiEvents* getSelectedEvents() const             { return selectedEvents; }
 
@@ -158,14 +157,14 @@ private:
     juce::CachedValue<int> currentTake;
     juce::CachedValue<float> volumeDb;
     juce::CachedValue<double> loopStartBeats, loopLengthBeats, originalLength;
-    std::unique_ptr<QuantisationType> quantisation;
+    juce::ScopedPointer<QuantisationType> quantisation;
     juce::CachedValue<bool> sendPatch, mute, sendBankChange, mpeMode;
     juce::CachedValue<juce::String> grooveTemplate;
 
     bool shouldWarnAboutMultiChannel = false;
     SelectedMidiEvents* selectedEvents = nullptr;
 
-    mutable std::unique_ptr<MidiList> cachedLoopedSequence;
+    mutable juce::ScopedPointer<MidiList> cachedLoopedSequence;
     MidiCompManager::Ptr midiCompManager;
 
     //==============================================================================

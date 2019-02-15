@@ -78,8 +78,8 @@ void LadderFilter<Type>::reset() noexcept
     for (auto& s : state)
         s.fill (Type (0));
 
-    cutoffTransformSmoother.setCurrentValueToTargetValue();
-    scaledResonanceSmoother.setCurrentValueToTargetValue();
+    cutoffTransformSmoother.setValue (cutoffTransformSmoother.getTargetValue(), true);
+    scaledResonanceSmoother.setValue (scaledResonanceSmoother.getTargetValue(), true);
 }
 
 //==============================================================================

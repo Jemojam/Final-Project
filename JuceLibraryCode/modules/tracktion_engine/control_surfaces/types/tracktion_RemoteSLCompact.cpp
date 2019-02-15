@@ -4,12 +4,8 @@
   '-.  .-'|  .--' ,-.  | .--'|     /'-.  .-',--.| .-. ||      \   Tracktion Software
     |  |  |  |  \ '-'  \ `--.|  \  \  |  |  |  |' '-' '|  ||  |       Corporation
     `---' `--'   `--`--'`---'`--'`--' `---' `--' `---' `--''--'    www.tracktion.com
-
-    Tracktion Engine uses a GPL/commercial licence - see LICENCE.md for details.
 */
 
-namespace tracktion_engine
-{
 
 RemoteSLCompact::RemoteSLCompact (ExternalControllerManager& ecm)  : ControlSurface (ecm)
 {
@@ -72,7 +68,7 @@ bool RemoteSLCompact::eatsAllMessages()                 { return false; }
 bool RemoteSLCompact::canSetEatsAllMessages()           { return false; }
 void RemoteSLCompact::setEatsAllMessages (bool)         {}
 bool RemoteSLCompact::canChangeSelectedPlugin()         { return true; }
-void RemoteSLCompact::currentSelectionChanged (juce::String) {}
+void RemoteSLCompact::currentSelectionChanged()         {}
 bool RemoteSLCompact::showingPluginParams()             { return true; }
 bool RemoteSLCompact::showingMarkers()                  { return false; }
 bool RemoteSLCompact::showingTracks()                   { return false; }
@@ -82,6 +78,4 @@ bool RemoteSLCompact::isPluginSelected (Plugin*)        { return false; }
 bool RemoteSLCompact::wantsMessage (const MidiMessage& m)
 {
     return m.isController();
-}
-
 }

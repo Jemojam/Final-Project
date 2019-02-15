@@ -4,12 +4,8 @@
   '-.  .-'|  .--' ,-.  | .--'|     /'-.  .-',--.| .-. ||      \   Tracktion Software
     |  |  |  |  \ '-'  \ `--.|  \  \  |  |  |  |' '-' '|  ||  |       Corporation
     `---' `--'   `--`--'`---'`--'`--' `---' `--' `---' `--''--'    www.tracktion.com
-
-    Tracktion Engine uses a GPL/commercial licence - see LICENCE.md for details.
 */
 
-namespace tracktion_engine
-{
 
 struct TracktionThumbnail::MinMaxValue
 {
@@ -745,12 +741,6 @@ void TracktionThumbnail::setReader (juce::AudioFormatReader* newReader, juce::in
         setDataSource (new LevelDataSource (*this, newReader, hash));
 }
 
-void TracktionThumbnail::releaseResources()
-{
-    if (source != nullptr)
-        source->releaseResources();
-}
-
 juce::int64 TracktionThumbnail::getHashCode() const
 {
     return source == nullptr ? 0 : source->hashCode;
@@ -894,6 +884,4 @@ void TracktionThumbnail::drawChannels (juce::Graphics& g, juce::Rectangle<int> a
         drawChannel (g, { area.getX(), area.getY() + y1, area.getWidth(), y2 - y1 }, useHighRes,
                      time, i, verticalZoomFactor);
     }
-}
-
 }

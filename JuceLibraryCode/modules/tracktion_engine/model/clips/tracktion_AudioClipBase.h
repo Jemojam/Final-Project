@@ -4,9 +4,8 @@
   '-.  .-'|  .--' ,-.  | .--'|     /'-.  .-',--.| .-. ||      \   Tracktion Software
     |  |  |  |  \ '-'  \ `--.|  \  \  |  |  |  |' '-' '|  ||  |       Corporation
     `---' `--'   `--`--'`---'`--'`--' `---' `--' `---' `--''--'    www.tracktion.com
-
-    Tracktion Engine uses a GPL/commercial licence - see LICENCE.md for details.
 */
+
 
 namespace tracktion_engine
 {
@@ -131,14 +130,14 @@ public:
 
     //==============================================================================
     void setGainDB (float dB);
-    float getGainDB() const noexcept                    { return level->dbGain; }
-    float getGain() const noexcept                      { return dbToGain (level->dbGain); }
+    float getGainDB() const noexcept                    { return dbGain; }
+    float getGain() const noexcept                      { return gain; }
 
     void setPan (float pan);
-    float getPan() const noexcept                       { return level->pan; }
+    float getPan() const noexcept                       { return pan; }
 
-    void setMuted (bool shouldBeMuted) override         { level->mute = shouldBeMuted; }
-    bool isMuted() const override                       { return level->mute; }
+    void setMuted (bool shouldBeMuted) override         { mute = shouldBeMuted; }
+    bool isMuted() const override                       { return mute; }
 
     LiveClipLevel getLiveClipLevel();
 
@@ -309,6 +308,9 @@ public:
     /** Should return true if the clip is referencing the file in any way. */
     virtual bool isUsingFile (const AudioFile&);
 
+    static juce::String getClipProxyPrefix()    { return "clip_"; }
+    static juce::String getFileProxyPrefix()    { return "proxy_"; }
+
     AudioFile getProxyFileToCreate (bool renderTimestretched);
     void setUsesProxy (bool canUseProxy) noexcept;
     bool canUseProxy() const noexcept               { return proxyAllowed && edit.canRenderProxies(); }
@@ -344,7 +346,9 @@ protected:
     friend class WaveCompManager;
 
     //==============================================================================
-    std::shared_ptr<ClipLevel> level { std::make_shared<ClipLevel>() };
+    float gain = 1.0f;
+    juce::CachedValue<float> dbGain, pan;
+    juce::CachedValue<bool> mute;
     juce::CachedValue<juce::String> channels;
 
     juce::CachedValue<double> fadeIn, fadeOut;

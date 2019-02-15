@@ -4,9 +4,8 @@
   '-.  .-'|  .--' ,-.  | .--'|     /'-.  .-',--.| .-. ||      \   Tracktion Software
     |  |  |  |  \ '-'  \ `--.|  \  \  |  |  |  |' '-' '|  ||  |       Corporation
     `---' `--'   `--`--'`---'`--'`--' `---' `--' `---' `--''--'    www.tracktion.com
-
-    Tracktion Engine uses a GPL/commercial licence - see LICENCE.md for details.
 */
+
 
 namespace tracktion_engine
 {
@@ -64,7 +63,6 @@ public:
     inline bool operator!= (const AudioFile& other) const noexcept      { return hash != other.hash; }
 
     bool deleteFile() const;
-    static bool deleteFiles (const juce::Array<juce::File>& files);
 
     //==============================================================================
     bool isNull() const noexcept                { return hash == 0; }

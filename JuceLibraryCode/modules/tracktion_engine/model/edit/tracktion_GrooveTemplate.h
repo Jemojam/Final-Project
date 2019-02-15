@@ -4,9 +4,8 @@
   '-.  .-'|  .--' ,-.  | .--'|     /'-.  .-',--.| .-. ||      \   Tracktion Software
     |  |  |  |  \ '-'  \ `--.|  \  \  |  |  |  |' '-' '|  ||  |       Corporation
     `---' `--'   `--`--'`---'`--'`--' `---' `--' `---' `--''--'    www.tracktion.com
-
-    Tracktion Engine uses a GPL/commercial licence - see LICENCE.md for details.
 */
+
 
 namespace tracktion_engine
 {
@@ -22,7 +21,7 @@ public:
     GrooveTemplate (const GrooveTemplate&);
     ~GrooveTemplate();
 
-    const GrooveTemplate& operator= (const GrooveTemplate&);
+    const GrooveTemplate& operator= (const GrooveTemplate& other);
 
     //==============================================================================
     bool isEmpty() const;

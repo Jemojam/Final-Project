@@ -4,9 +4,8 @@
   '-.  .-'|  .--' ,-.  | .--'|     /'-.  .-',--.| .-. ||      \   Tracktion Software
     |  |  |  |  \ '-'  \ `--.|  \  \  |  |  |  |' '-' '|  ||  |       Corporation
     `---' `--'   `--`--'`---'`--'`--' `---' `--' `---' `--''--'    www.tracktion.com
-
-    Tracktion Engine uses a GPL/commercial licence - see LICENCE.md for details.
 */
+
 
 namespace tracktion_engine
 {
@@ -247,7 +246,7 @@ private:
 
     //==============================================================================
     struct ChannelList;
-    std::unique_ptr<ChannelList> channelList;
+    juce::ScopedPointer<ChannelList> channelList;
     PatternArray patternInstanceList;
 
     const PatternInstance::Ptr getPatternInstance (int index, bool repeatSequence) const;

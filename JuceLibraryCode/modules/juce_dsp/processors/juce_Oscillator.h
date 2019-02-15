@@ -44,7 +44,8 @@ public:
     using NumericType = typename SampleTypeHelpers::ElementType<SampleType>::Type;
 
     /** Creates an uninitialised oscillator. Call initialise before first use. */
-    Oscillator() = default;
+    Oscillator()
+    {}
 
     /** Creates an oscillator with a periodic input function (-pi..pi).
 
@@ -82,13 +83,7 @@ public:
 
     //==============================================================================
     /** Sets the frequency of the oscillator. */
-    void setFrequency (NumericType newFrequency, bool force = false) noexcept
-    {
-        frequency.setTargetValue (newFrequency);
-
-        if (force)
-            frequency.setCurrentValueToTargetValue();
-    }
+    void setFrequency (NumericType newFrequency, bool force = false) noexcept    { frequency.setValue (newFrequency, force); }
 
     /** Returns the current frequency of the oscillator. */
     NumericType getFrequency() const noexcept                    { return frequency.getTargetValue(); }

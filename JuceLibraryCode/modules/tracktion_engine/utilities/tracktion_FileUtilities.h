@@ -4,9 +4,8 @@
   '-.  .-'|  .--' ,-.  | .--'|     /'-.  .-',--.| .-. ||      \   Tracktion Software
     |  |  |  |  \ '-'  \ `--.|  \  \  |  |  |  |' '-' '|  ||  |       Corporation
     `---' `--'   `--`--'`---'`--'`--' `---' `--' `---' `--''--'    www.tracktion.com
-
-    Tracktion Engine uses a GPL/commercial licence - see LICENCE.md for details.
 */
+
 
 namespace tracktion_engine
 {
@@ -51,6 +50,21 @@ struct ScopedDirectoryDeleter
 private:
     juce::File f;
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (ScopedDirectoryDeleter)
+};
+
+//==============================================================================
+struct SortFilesFoldersFirst
+{
+    static int compareElements (const juce::File& first, const juce::File& second)
+    {
+        const bool d1 = first.isDirectory();
+        const bool d2 = second.isDirectory();
+
+        if (d1 == d2)
+            return first.getFileName().compareNatural (second.getFileName());
+
+        return d1 ? -1 : 1;
+    }
 };
 
 //==============================================================================

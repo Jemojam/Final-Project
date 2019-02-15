@@ -4,9 +4,8 @@
   '-.  .-'|  .--' ,-.  | .--'|     /'-.  .-',--.| .-. ||      \   Tracktion Software
     |  |  |  |  \ '-'  \ `--.|  \  \  |  |  |  |' '-' '|  ||  |       Corporation
     `---' `--'   `--`--'`---'`--'`--' `---' `--' `---' `--''--'    www.tracktion.com
-
-    Tracktion Engine uses a GPL/commercial licence - see LICENCE.md for details.
 */
+
 
 namespace tracktion_engine
 {
@@ -149,19 +148,29 @@ public:
                                             bool importAsNoteExpression);
 
     //==============================================================================
-    template <typename Type>
-    static void sortMidiEventsByTime (juce::Array<Type>& notes)
+    template<typename EventType>
+    struct MidiPositionComparator
     {
-        std::sort (notes.begin(), notes.end(),
-                   [] (const Type& a, const Type& b) { return a->getBeatPosition() < b->getBeatPosition(); });
-    }
+        static int compareElements (const EventType* first, const EventType* second) noexcept
+        {
+            auto p1 = first->getBeatPosition();
+            auto p2 = second->getBeatPosition();
 
-    template <typename Type>
-    static void sortMidiEventsByNoteNumber (juce::Array<Type>& notes)
+            return p1 == p2 ? 0 : (p1 > p2 ? 1 : -1);
+        }
+    };
+
+    struct MidiNoteNumberComparator
     {
-        std::sort (notes.begin(), notes.end(),
-                   [] (const Type& a, const Type& b) { return a->getNoteNumber() < b->getNoteNumber(); });
-    }
+        static int compareElements (const MidiNote* first, const MidiNote* second) noexcept
+        {
+            auto p1 = first->getNoteNumber();
+            auto p2 = second->getNoteNumber();
+
+            return p1 == p2 ? 0 : (p1 > p2 ? 1 : -1);
+        }
+    };
+
 
     //==============================================================================
     juce::ValueTree state;
@@ -236,8 +245,11 @@ private:
             if (needsSorting)
             {
                 needsSorting = false;
+
                 sortedEvents = ValueTreeObjectList<EventType>::objects;
-                sortMidiEventsByTime (sortedEvents);
+
+                MidiPositionComparator<EventType> sorter;
+                sortedEvents.sort (sorter);
             }
 
             return sortedEvents;

@@ -4,12 +4,8 @@
   '-.  .-'|  .--' ,-.  | .--'|     /'-.  .-',--.| .-. ||      \   Tracktion Software
     |  |  |  |  \ '-'  \ `--.|  \  \  |  |  |  |' '-' '|  ||  |       Corporation
     `---' `--'   `--`--'`---'`--'`--' `---' `--' `---' `--''--'    www.tracktion.com
-
-    Tracktion Engine uses a GPL/commercial licence - see LICENCE.md for details.
 */
 
-namespace tracktion_engine
-{
 
 namespace NovationRemoteSL
 {
@@ -541,7 +537,7 @@ bool NovationRemoteSl::canChangeSelectedPlugin()
     return ! isLocked;
 }
 
-void NovationRemoteSl::currentSelectionChanged (juce::String)
+void NovationRemoteSl::currentSelectionChanged()
 {
     if (online)
     {
@@ -840,5 +836,3 @@ juce::String NovationRemoteSl::padAndLimit (const String& s, int max)
 
 void NovationRemoteSl::markerChanged (int, const MarkerSetting&) {}
 void NovationRemoteSl::clearMarker (int) {}
-
-}

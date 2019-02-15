@@ -4,9 +4,8 @@
   '-.  .-'|  .--' ,-.  | .--'|     /'-.  .-',--.| .-. ||      \   Tracktion Software
     |  |  |  |  \ '-'  \ `--.|  \  \  |  |  |  |' '-' '|  ||  |       Corporation
     `---' `--'   `--`--'`---'`--'`--' `---' `--' `---' `--''--'    www.tracktion.com
-
-    Tracktion Engine uses a GPL/commercial licence - see LICENCE.md for details.
 */
+
 
 namespace tracktion_engine
 {
@@ -42,7 +41,7 @@ struct PluginWindowConnection
         Slave* slave = nullptr;
 
     private:
-        std::unique_ptr<juce::Component> pluginWindow;
+        juce::ScopedPointer<juce::Component> pluginWindow;
 
         JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (Master)
     };
@@ -134,7 +133,7 @@ struct PluginWindowState  : private juce::Timer
     void pluginClicked (const juce::MouseEvent& e);
 
     Engine& engine;
-    std::unique_ptr<PluginWindowConnection::Master> masterConnection;
+    juce::ScopedPointer<PluginWindowConnection::Master> masterConnection;
     int windowShowerCount = 0;
     bool windowLocked;
     bool wasExplicitlyClosed = false;

@@ -4,9 +4,8 @@
   '-.  .-'|  .--' ,-.  | .--'|     /'-.  .-',--.| .-. ||      \   Tracktion Software
     |  |  |  |  \ '-'  \ `--.|  \  \  |  |  |  |' '-' '|  ||  |       Corporation
     `---' `--'   `--`--'`---'`--'`--' `---' `--' `---' `--''--'    www.tracktion.com
-
-    Tracktion Engine uses a GPL/commercial licence - see LICENCE.md for details.
 */
+
 
 namespace tracktion_engine
 {
@@ -62,7 +61,7 @@ public:
     void clearParameter (int parameterNumber) override;
     void markerChanged (int parameterNumber, const MarkerSetting& newValue) override;
     void clearMarker (int parameterNumber) override;
-    void currentSelectionChanged (juce::String) override;
+    void currentSelectionChanged() override;
     void pluginBypass (bool b) override;
     bool isPluginSelected (Plugin*) override;
 

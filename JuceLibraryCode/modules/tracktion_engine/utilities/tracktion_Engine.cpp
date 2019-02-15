@@ -4,12 +4,7 @@
   '-.  .-'|  .--' ,-.  | .--'|     /'-.  .-',--.| .-. ||      \   Tracktion Software
     |  |  |  |  \ '-'  \ `--.|  \  \  |  |  |  |' '-' '|  ||  |       Corporation
     `---' `--'   `--`--'`---'`--'`--' `---' `--' `---' `--''--'    www.tracktion.com
-
-    Tracktion Engine uses a GPL/commercial licence - see LICENCE.md for details.
 */
-
-namespace tracktion_engine
-{
 
 static Engine* instance = nullptr;
 
@@ -65,6 +60,7 @@ void Engine::initialise()
     deviceManager->initialise();
 
     pluginManager->initialise();
+    pluginManager->setUsesSeparateProcessForScanning (false);
 
     ProjectManager::getInstance()->initialise();
 
@@ -234,6 +230,4 @@ WarpTimeFactory& Engine::getWarpTimeFactory() const
         warpTimeFactory = std::make_unique<WarpTimeFactory>();
 
     return *warpTimeFactory;
-}
-
 }

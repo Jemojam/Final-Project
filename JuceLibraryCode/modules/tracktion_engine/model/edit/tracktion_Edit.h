@@ -4,9 +4,8 @@
   '-.  .-'|  .--' ,-.  | .--'|     /'-.  .-',--.| .-. ||      \   Tracktion Software
     |  |  |  |  \ '-'  \ `--.|  \  \  |  |  |  |' '-' '|  ||  |       Corporation
     `---' `--'   `--`--'`---'`--'`--' `---' `--' `---' `--''--'    www.tracktion.com
-
-    Tracktion Engine uses a GPL/commercial licence - see LICENCE.md for details.
 */
+
 
 namespace tracktion_engine
 {
@@ -132,19 +131,17 @@ public:
 
     AbletonLink& getAbletonLink() const noexcept                        { return *abletonLink; }
 
-    /** Temporarily removes an Edit from the device manager, optionally re-adding it on destruction. */
+    /** Temporarily removes an Edit from the device manager. */
     struct ScopedRenderStatus
     {
-        ScopedRenderStatus (Edit&, bool shouldReallocateOnDestruction);
+        ScopedRenderStatus (Edit&);
         ~ScopedRenderStatus();
 
         Edit& edit;
-        const bool reallocateOnDestruction;
         JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (ScopedRenderStatus)
     };
 
-    /** Returns true if the Edit is currently being rendered. */
-    bool isRendering() const noexcept                           { return performingRenderCount.load() > 0; }
+    bool isRendering() const noexcept                           { return performingRender; }
 
     //==============================================================================
     void initialiseAllPlugins();
@@ -367,6 +364,10 @@ public:
     void dispatchPendingUpdatesSynchronously();
 
     //==============================================================================
+    void purgeOrphanFreezeAndProxyFiles();
+    juce::String getFreezeFilePrefix() const;
+    juce::Array<juce::File> getFrozenTracksFiles() const;
+
     bool areAnyClipsUsingFile (const AudioFile&);
     void cancelAllProxyGeneratorJobs() const;
 
@@ -483,7 +484,7 @@ private:
 
     mutable double totalEditLength = -1.0;
     std::atomic<bool> isLoadInProgress { true };
-    std::atomic<int> performingRenderCount { 0 };
+    bool performingRender = false;
     bool shouldRestartPlayback = false;
     bool blinkBright = false;
     bool lowLatencyMonitoring = false;

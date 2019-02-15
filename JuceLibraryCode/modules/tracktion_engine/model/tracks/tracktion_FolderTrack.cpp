@@ -4,12 +4,8 @@
   '-.  .-'|  .--' ,-.  | .--'|     /'-.  .-',--.| .-. ||      \   Tracktion Software
     |  |  |  |  \ '-'  \ `--.|  \  \  |  |  |  |' '-' '|  ||  |       Corporation
     `---' `--'   `--`--'`---'`--'`--' `---' `--' `---' `--''--'    www.tracktion.com
-
-    Tracktion Engine uses a GPL/commercial licence - see LICENCE.md for details.
 */
 
-namespace tracktion_engine
-{
 
 FolderTrack::FolderTrack (Edit& edit, const ValueTree& v)
     : Track (edit, v, 50, 13, 2000)
@@ -155,8 +151,7 @@ AudioNode* FolderTrack::createAudioNode (const CreateAudioNodeParams& params)
     // Then add any audio tracks
     for (auto at : subTracks)
         if (params.allowedTracks == nullptr || (*params.allowedTracks)[allTracks.indexOf (at)])
-            if (at->isProcessing (true))
-                mixer->addInput (at->createAudioNode (params));
+            mixer->addInput (at->createAudioNode (params));
 
     // And finally the effects
     AudioNode* finalNode = mixer;
@@ -337,7 +332,8 @@ void FolderTrack::generateCollectionClips (SelectionManager& sm)
         for (auto at : getAllAudioSubTracks (true))
             clips.addArray (at->getClips());
 
-        TrackItem::sortByTime (clips);
+        TrackItemStartTimeSorter sorter;
+        clips.sort (sorter);
 
         // remove any that are already in a collection clip
         for (int i = clips.size(); --i >= 0;)
@@ -545,6 +541,4 @@ void FolderTrack::valueTreeChildOrderChanged (ValueTree& p, int oldIndex, int ne
         pluginUpdater.triggerAsyncUpdate();
 
     Track::valueTreeChildOrderChanged (p, oldIndex, newIndex);
-}
-
 }

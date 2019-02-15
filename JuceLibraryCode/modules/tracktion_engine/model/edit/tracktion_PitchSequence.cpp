@@ -4,12 +4,8 @@
   '-.  .-'|  .--' ,-.  | .--'|     /'-.  .-',--.| .-. ||      \   Tracktion Software
     |  |  |  |  \ '-'  \ `--.|  \  \  |  |  |  |' '-' '|  ||  |       Corporation
     `---' `--'   `--`--'`---'`--'`--' `---' `--' `---' `--''--'    www.tracktion.com
-
-    Tracktion Engine uses a GPL/commercial licence - see LICENCE.md for details.
 */
 
-namespace tracktion_engine
-{
 
 struct PitchSequence::PitchList  : public ValueTreeObjectList<PitchSetting>,
                                    private AsyncUpdater
@@ -46,7 +42,7 @@ struct PitchSequence::PitchList  : public ValueTreeObjectList<PitchSetting>,
     void newObjectAdded (PitchSetting*) override    { sendChange(); }
     void objectRemoved (PitchSetting*) override     { sendChange(); }
     void objectOrderChanged() override              { sendChange(); }
-    void valueTreePropertyChanged (ValueTree&, const juce::Identifier&) override  { sendChange(); }
+    void valueTreePropertyChanged (ValueTree&, const Identifier&) override  { sendChange(); }
 
     void sendChange()
     {
@@ -79,16 +75,9 @@ UndoManager* PitchSequence::getUndoManager() const
 
 void PitchSequence::clear()
 {
-    if (auto first = getPitch (0))
-    {
-        auto pitch = first->getPitch();
-        state.removeAllChildren (getUndoManager());
-        insertPitch (0, pitch);
-    }
-    else
-    {
-        jassertfalse;
-    }
+    const int pitch = getPitch (0)->getPitch();
+    state.removeAllChildren (getUndoManager());
+    insertPitch (0, pitch);
 }
 
 void PitchSequence::initialise (Edit& ed, const ValueTree& v)
@@ -114,10 +103,9 @@ void PitchSequence::copyFrom (const PitchSequence& other)
     copyValueTree (state, other.state, nullptr);
 }
 
-const juce::Array<PitchSetting*>& PitchSequence::getPitches() const    { return list->objects; }
-int PitchSequence::getNumPitches() const                               { return list->objects.size(); }
-PitchSetting* PitchSequence::getPitch (int index) const                { return list->objects[index]; }
-PitchSetting& PitchSequence::getPitchAt (double time) const            { return *list->objects[indexOfPitchAt (time)]; }
+int PitchSequence::getNumPitches() const                        { return list->objects.size(); }
+PitchSetting* PitchSequence::getPitch (int index) const         { return list->objects[index]; }
+PitchSetting& PitchSequence::getPitchAt (double time) const     { return *list->objects[indexOfPitchAt (time)]; }
 
 PitchSetting& PitchSequence::getPitchAtBeat (double beat) const
 {
@@ -223,21 +211,19 @@ void PitchSequence::insertSpaceIntoSequence (double time, double amountOfSpaceIn
         movePitchStart (*getPitch (i), beatsToInsert, snapToBeat);
 }
 
+struct PitchSorter
+{
+    static int compareElements (const ValueTree& p1, const ValueTree& p2) noexcept
+    {
+        const double beat1 = p1[IDs::startBeat];
+        const double beat2 = p2[IDs::startBeat];
+
+        return beat1 < beat2 ? -1 : (beat1 > beat2 ? 1 : 0);
+    }
+};
+
 void PitchSequence::sortEvents()
 {
-    struct PitchSorter
-    {
-        static int compareElements (const ValueTree& p1, const ValueTree& p2) noexcept
-        {
-            const double beat1 = p1[IDs::startBeat];
-            const double beat2 = p2[IDs::startBeat];
-
-            return beat1 < beat2 ? -1 : (beat1 > beat2 ? 1 : 0);
-        }
-    };
-
     PitchSorter sorter;
     state.sort (sorter, getUndoManager(), true);
-}
-
 }

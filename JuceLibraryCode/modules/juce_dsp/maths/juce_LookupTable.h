@@ -183,7 +183,8 @@ public:
 
         @see initialise
     */
-    LookupTableTransform() = default;
+    LookupTableTransform()
+    {}
 
     //==============================================================================
     /** Creates and initialises a LookupTableTransform object.

@@ -4,12 +4,8 @@
   '-.  .-'|  .--' ,-.  | .--'|     /'-.  .-',--.| .-. ||      \   Tracktion Software
     |  |  |  |  \ '-'  \ `--.|  \  \  |  |  |  |' '-' '|  ||  |       Corporation
     `---' `--'   `--`--'`---'`--'`--' `---' `--' `---' `--''--'    www.tracktion.com
-
-    Tracktion Engine uses a GPL/commercial licence - see LICENCE.md for details.
 */
 
-namespace tracktion_engine
-{
 
 TrackOutput::TrackOutput (AudioTrack& t)
     : owner (t)
@@ -99,11 +95,11 @@ bool TrackOutput::outputsToDevice (const String& deviceName, bool compareDefault
             {
                 auto defWaveName = defaultWave->getName();
 
-                bool b1 = deviceName.equalsIgnoreCase (DeviceManager::getDefaultAudioOutDeviceName (false))
+                bool b1 = deviceName.equalsIgnoreCase (DeviceManager::getDefaultAudioDeviceName (false))
                            && outputDevice.get().equalsIgnoreCase (defWaveName);
 
                 bool b2 = deviceName.equalsIgnoreCase (defWaveName)
-                           && outputDevice.get().equalsIgnoreCase (DeviceManager::getDefaultAudioOutDeviceName (false));
+                           && outputDevice.get().equalsIgnoreCase (DeviceManager::getDefaultAudioDeviceName (false));
 
                 if (b1 || b2)
                     return true;
@@ -116,10 +112,10 @@ bool TrackOutput::outputsToDevice (const String& deviceName, bool compareDefault
             {
                 auto defMidiName = defaultMIDI->getName();
 
-                if ((deviceName.equalsIgnoreCase (DeviceManager::getDefaultMidiOutDeviceName (false))
+                if ((deviceName.equalsIgnoreCase (DeviceManager::getDefaultMidiDeviceName (false))
                        && outputDevice.get().equalsIgnoreCase (defMidiName))
                      || (deviceName.equalsIgnoreCase (defMidiName)
-                           && outputDevice.get().equalsIgnoreCase (DeviceManager::getDefaultMidiOutDeviceName (false))))
+                           && outputDevice.get().equalsIgnoreCase (DeviceManager::getDefaultMidiDeviceName (false))))
                     return true;
             }
         }
@@ -224,8 +220,8 @@ void TrackOutput::setOutputToTrack (AudioTrack* track)
 
 void TrackOutput::setOutputToDefaultDevice (bool isMidi)
 {
-    outputDevice = isMidi ? DeviceManager::getDefaultMidiOutDeviceName (false)
-                          : DeviceManager::getDefaultAudioOutDeviceName (false);
+    outputDevice = isMidi ? DeviceManager::getDefaultMidiDeviceName (false)
+                          : DeviceManager::getDefaultAudioDeviceName (false);
 }
 
 static bool feedsIntoAnyOf (AudioTrack* t, const Array<AudioTrack*>& tracks)
@@ -250,12 +246,12 @@ void TrackOutput::getPossibleOutputDeviceNames (const Array<AudioTrack*>& tracks
     if (tracks.isEmpty())
         return;
 
-    s.add (DeviceManager::getDefaultAudioOutDeviceName (false));
-    a.add (DeviceManager::getDefaultAudioOutDeviceName (true));
+    s.add (DeviceManager::getDefaultAudioDeviceName (false));
+    a.add (DeviceManager::getDefaultAudioDeviceName (true));
     hasAudio.setBit (0);
 
-    s.add (DeviceManager::getDefaultMidiOutDeviceName (false));
-    a.add (DeviceManager::getDefaultMidiOutDeviceName (true));
+    s.add (DeviceManager::getDefaultMidiDeviceName (false));
+    a.add (DeviceManager::getDefaultMidiDeviceName (true));
     hasMidi.setBit (1);
 
     auto& dm = tracks.getFirst()->edit.engine.getDeviceManager();
@@ -347,13 +343,11 @@ bool TrackOutput::injectLiveMidiMessage (const MidiMessage& message)
     return false;
 }
 
-void TrackOutput::valueTreePropertyChanged (ValueTree& v, const juce::Identifier& ident)
+void TrackOutput::valueTreePropertyChanged (ValueTree& v, const Identifier& ident)
 {
     if (v.hasType (IDs::DEVICE) && ident == IDs::name)
     {
         outputDevice.forceUpdateOfCachedValue();
         updateOutput();
     }
-}
-
 }

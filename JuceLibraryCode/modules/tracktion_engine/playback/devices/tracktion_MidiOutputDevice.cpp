@@ -4,12 +4,8 @@
   '-.  .-'|  .--' ,-.  | .--'|     /'-.  .-',--.| .-. ||      \   Tracktion Software
     |  |  |  |  \ '-'  \ `--.|  \  \  |  |  |  |' '-' '|  ||  |       Corporation
     `---' `--'   `--`--'`---'`--'`--' `---' `--' `---' `--''--'    www.tracktion.com
-
-    Tracktion Engine uses a GPL/commercial licence - see LICENCE.md for details.
 */
 
-namespace tracktion_engine
-{
 
 static bool shouldSendAllControllersOffMessages = true;
 
@@ -183,7 +179,7 @@ public:
         lastBlockEndPPQ = 0;
 
         if (edit != nullptr)
-            position.reset (new TempoSequencePosition (edit->tempoSequence));
+            position = new TempoSequencePosition (edit->tempoSequence);
     }
 
     void addMessages (PlayHead& playhead, TransportControl* tc, MidiMessageArray& buffer,
@@ -253,7 +249,7 @@ private:
     bool wasPlaying = false;
     bool needsToSendPosition = false;
     CriticalSection positionLock;
-    std::unique_ptr<TempoSequencePosition> position;
+    ScopedPointer<TempoSequencePosition> position;
     double lastBlockStart = 0, lastBlockEndPPQ = 0;
 
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (MidiClockGenerator)
@@ -368,10 +364,10 @@ bool MidiOutputDevice::getControllerOffMessagesSent (Engine& e)
     return e.getPropertyStorage().getProperty (SettingID::sendControllerOffMessages, true);
 }
 
-String MidiOutputDevice::getNameForMidiNoteNumber (int note, int midiChannel, bool useSharp) const
+String MidiOutputDevice::getNameForMidiNoteNumber (int note, int midiChannel) const
 {
     return midiChannel == 10 ? TRANS(MidiMessage::getRhythmInstrumentName (note))
-                             : MidiMessage::getMidiNoteName (note, useSharp, true,
+                             : MidiMessage::getMidiNoteName (note, true, true,
                                                              engine.getEngineBehaviour().getMiddleCOctave());
 }
 
@@ -418,7 +414,7 @@ void MidiOutputDevice::loadProps()
 
 void MidiOutputDevice::saveProps()
 {
-    juce::XmlElement n ("SETTINGS");
+    XmlElement n ("SETTINGS");
 
     n.setAttribute ("enabled", enabled);
     n.setAttribute ("preDelay", preDelayMillisecs);
@@ -732,6 +728,4 @@ MidiMessageArray& MidiOutputDeviceInstance::refillBuffer (PlayHead& playhead, Ed
     midiMessages.sortByTimestamp();
 
     return midiMessages;
-}
-
 }

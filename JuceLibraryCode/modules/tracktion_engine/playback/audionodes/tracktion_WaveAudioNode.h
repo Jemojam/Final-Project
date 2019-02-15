@@ -4,28 +4,19 @@
   '-.  .-'|  .--' ,-.  | .--'|     /'-.  .-',--.| .-. ||      \   Tracktion Software
     |  |  |  |  \ '-'  \ `--.|  \  \  |  |  |  |' '-' '|  ||  |       Corporation
     `---' `--'   `--`--'`---'`--'`--' `---' `--' `---' `--''--'    www.tracktion.com
-
-    Tracktion Engine uses a GPL/commercial licence - see LICENCE.md for details.
 */
+
 
 namespace tracktion_engine
 {
 
-struct ClipLevel
-{
-    juce::CachedValue<float> dbGain, pan;
-    juce::CachedValue<bool> mute;
-};
-
 struct LiveClipLevel
 {
-    LiveClipLevel() noexcept = default;
-    LiveClipLevel (std::shared_ptr<ClipLevel> l) noexcept
-        : levels (std::move (l)) {}
+    LiveClipLevel() noexcept {}
 
-    float getGain() const noexcept              { return levels ? dbToGain (levels->dbGain) : 1.0f; }
-    float getPan() const noexcept               { return levels ? levels->pan.get() : 0.0f; }
-    bool isMute() const noexcept                { return levels && levels->mute.get(); }
+    float getGain() const noexcept              { return gain != nullptr ? *gain : 1.0f; }
+    float getPan() const noexcept               { return pan != nullptr ? *pan : 0.0f; }
+    bool isMute() const noexcept                { return mute != nullptr && *mute; }
     float getGainIncludingMute() const noexcept { return isMute() ? 0.0f : getGain(); }
 
     void getLeftAndRightGains (float& left, float& right) const noexcept
@@ -36,8 +27,9 @@ struct LiveClipLevel
         right = g + pv;
     }
 
-private:
-    std::shared_ptr<ClipLevel> levels;
+    float* gain = nullptr;
+    float* pan = nullptr;
+    bool* mute = nullptr;
 };
 
 //==============================================================================

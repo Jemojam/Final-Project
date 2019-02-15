@@ -4,12 +4,8 @@
   '-.  .-'|  .--' ,-.  | .--'|     /'-.  .-',--.| .-. ||      \   Tracktion Software
     |  |  |  |  \ '-'  \ `--.|  \  \  |  |  |  |' '-' '|  ||  |       Corporation
     `---' `--'   `--`--'`---'`--'`--' `---' `--' `---' `--''--'    www.tracktion.com
-
-    Tracktion Engine uses a GPL/commercial licence - see LICENCE.md for details.
 */
 
-namespace tracktion_engine
-{
 
 const char* GrooveTemplate::grooveXmlTag = "GROOVETEMPLATE";
 
@@ -20,8 +16,9 @@ GrooveTemplate::GrooveTemplate()
 {
 }
 
-GrooveTemplate::GrooveTemplate (const juce::XmlElement* node)
-    : GrooveTemplate()
+GrooveTemplate::GrooveTemplate (const XmlElement* node)
+    : numNotes (16),
+      notesPerBeat (2)
 {
     if (node != nullptr && node->hasTagName (grooveXmlTag))
     {
@@ -63,7 +60,7 @@ void GrooveTemplate::setName (const String& n)
 
 XmlElement* GrooveTemplate::createXml() const
 {
-    auto node = new juce::XmlElement (grooveXmlTag);
+    auto node = new XmlElement (grooveXmlTag);
     node->setAttribute ("name", name);
     node->setAttribute ("numberOfNotes", numNotes);
     node->setAttribute ("notesPerBeat", notesPerBeat);
@@ -75,7 +72,7 @@ XmlElement* GrooveTemplate::createXml() const
 
     for (int i = 0; i <= lastNonZeroNote; ++i)
     {
-        auto n = new juce::XmlElement ("SHIFT");
+        auto n = new XmlElement ("SHIFT");
         n->setAttribute ("delta", 0.001 * roundToInt (1000.0 * latenesses[i]));
         node->addChildElement (n);
     }
@@ -163,7 +160,7 @@ void GrooveTemplateManager::reload()
         reload (xml.get());
 }
 
-void GrooveTemplateManager::reload (const juce::XmlElement* grooves)
+void GrooveTemplateManager::reload (const XmlElement* grooves)
 {
     knownGrooves.clearQuick (true);
 
@@ -174,7 +171,7 @@ void GrooveTemplateManager::reload (const juce::XmlElement* grooves)
 
 void GrooveTemplateManager::save()
 {
-    juce::XmlElement n ("GROOVETEMPLATES");
+    XmlElement n ("GROOVETEMPLATES");
 
     for (auto gt : knownGrooves)
         if (gt != nullptr)
@@ -265,6 +262,4 @@ void GrooveTemplateManager::deleteTemplate (int index)
 
     save();
     TransportControl::restartAllTransports (engine, false);
-}
-
 }

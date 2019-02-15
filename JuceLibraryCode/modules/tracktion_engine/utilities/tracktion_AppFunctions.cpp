@@ -4,12 +4,8 @@
   '-.  .-'|  .--' ,-.  | .--'|     /'-.  .-',--.| .-. ||      \   Tracktion Software
     |  |  |  |  \ '-'  \ `--.|  \  \  |  |  |  |' '-' '|  ||  |       Corporation
     `---' `--'   `--`--'`---'`--'`--' `---' `--' `---' `--''--'    www.tracktion.com
-
-    Tracktion Engine uses a GPL/commercial licence - see LICENCE.md for details.
 */
 
-namespace tracktion_engine
-{
 
 namespace AppFunctions
 {
@@ -73,7 +69,7 @@ namespace AppFunctions
 
     void zoomVertical (float amount)
     {
-        getCurrentUIBehaviour().zoomVertical (amount);
+        getCurrentUIBehaviour().zoomHorizontal (amount);
     }
 
     void cut()
@@ -149,13 +145,13 @@ namespace AppFunctions
     void markIn()
     {
         if (auto transport = getActiveTransport())
-            transport->setLoopIn  (getCurrentUIBehaviour().getEditingPosition (transport->edit));
+            markIn (*transport);
     }
 
     void markOut()
     {
         if (auto transport = getActiveTransport())
-            transport->setLoopOut  (getCurrentUIBehaviour().getEditingPosition (transport->edit));
+            markOut (*transport);
     }
 
     void start()
@@ -492,12 +488,8 @@ namespace AppFunctions
     void split()
     {
         if (auto sm = getCurrentlyFocusedSelectionManagerWithValidEdit())
-        {
-            auto selected = sm->getSelectedObjects();
-            selected.mergeArray (splitClips (getCurrentUIBehaviour().getAssociatedClipsToEdit (selected),
-                                             getCurrentUIBehaviour().getEditingPosition (*sm->edit)));
-            sm->select (selected);
-        }
+            splitClips (getCurrentUIBehaviour().getAssociatedClipsToEdit (sm->getSelectedObjects()),
+                        getCurrentUIBehaviour().getEditingPosition (*sm->edit));
     }
 
     void toggleAutomationReadMode()
@@ -570,6 +562,4 @@ namespace AppFunctions
             }
         }
     }
-}
-
 }

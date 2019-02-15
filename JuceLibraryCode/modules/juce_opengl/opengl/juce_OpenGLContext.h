@@ -336,7 +336,7 @@ private:
     {
         using Ptr = ReferenceCountedObjectPtr<AsyncWorker>;
         virtual void operator() (OpenGLContext&) = 0;
-        ~AsyncWorker() override = default;
+        virtual ~AsyncWorker() {}
     };
 
     template <typename FunctionType>

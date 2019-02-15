@@ -4,12 +4,8 @@
   '-.  .-'|  .--' ,-.  | .--'|     /'-.  .-',--.| .-. ||      \   Tracktion Software
     |  |  |  |  \ '-'  \ `--.|  \  \  |  |  |  |' '-' '|  ||  |       Corporation
     `---' `--'   `--`--'`---'`--'`--' `---' `--' `---' `--''--'    www.tracktion.com
-
-    Tracktion Engine uses a GPL/commercial licence - see LICENCE.md for details.
 */
 
-namespace tracktion_engine
-{
 
 static inline juce::int64 hashValueTree (juce::int64 startHash, const ValueTree& v)
 {
@@ -72,7 +68,7 @@ private:
         clipEffects.cachedHash = ClipEffects::hashNeedsRecaching;
     }
 
-    void valueTreePropertyChanged (ValueTree& v, const juce::Identifier& i) override
+    void valueTreePropertyChanged (ValueTree& v, const Identifier& i) override
     {
         if (v == clipState)
         {
@@ -326,7 +322,15 @@ AudioFile ClipEffect::getSourceFile() const
 AudioFile ClipEffect::getDestinationFile() const
 {
     if (destinationFile.isNull())
-        destinationFile = TemporaryFileManager::getFileForCachedFileRender (edit, getHash());
+    {
+        const File tempDir (clipEffects.clip.edit.getTempDirectory (true));
+
+        // TODO: unifying the logic around proxy file naming
+        destinationFile = AudioFile (tempDir.getChildFile (AudioClipBase::getClipProxyPrefix()
+                                                            + "0_" + clipEffects.clip.itemID.toString()
+                                                            + "_" + String::toHexString (getHash())
+                                                            + ".wav"));
+    }
 
     return destinationFile;
 }
@@ -691,7 +695,7 @@ juce::int64 VolumeEffect::getIndividualHash() const
     return plugin != nullptr ? hashPlugin (state, *plugin) : 0;
 }
 
-void VolumeEffect::valueTreePropertyChanged (ValueTree& v, const juce::Identifier& i)
+void VolumeEffect::valueTreePropertyChanged (ValueTree& v, const Identifier& i)
 {
     // This is the automation writing back the AttachedValue so we need to ignore it
     if (plugin == nullptr || (plugin->isAutomationNeeded()
@@ -1087,7 +1091,7 @@ juce::int64 PitchShiftEffect::getIndividualHash() const
     return hashPlugin (state, *plugin);
 }
 
-void PitchShiftEffect::valueTreePropertyChanged (ValueTree& v, const juce::Identifier& i)
+void PitchShiftEffect::valueTreePropertyChanged (ValueTree& v, const Identifier& i)
 {
     // This is the automation writing back the AttachedValue so we need to ignore it
     if (plugin != nullptr
@@ -1327,7 +1331,7 @@ juce::int64 PluginEffect::getIndividualHash() const
     return lastHash;
 }
 
-void PluginEffect::valueTreePropertyChanged (ValueTree& v, const juce::Identifier& i)
+void PluginEffect::valueTreePropertyChanged (ValueTree& v, const Identifier& i)
 {
     // This is the automation writing back the AttachedValue so we need to ignore it
     if (plugin != nullptr
@@ -1756,6 +1760,4 @@ RenderManager::Job::Ptr ClipEffects::createRenderJob (const AudioFile& destFile,
     AudioFile firstFile (jobs.isEmpty() ? inputFile : jobs.getFirst()->source);
 
     return new AggregateJob (clip.edit.engine, destFile, firstFile, std::move (jobs));
-}
-
 }

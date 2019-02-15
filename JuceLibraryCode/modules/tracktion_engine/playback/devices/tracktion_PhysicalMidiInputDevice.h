@@ -4,9 +4,8 @@
   '-.  .-'|  .--' ,-.  | .--'|     /'-.  .-',--.| .-. ||      \   Tracktion Software
     |  |  |  |  \ '-'  \ `--.|  \  \  |  |  |  |' '-' '|  ||  |       Corporation
     `---' `--'   `--`--'`---'`--'`--' `---' `--' `---' `--''--'    www.tracktion.com
-
-    Tracktion Engine uses a GPL/commercial licence - see LICENCE.md for details.
 */
+
 
 namespace tracktion_engine
 {
@@ -49,9 +48,9 @@ protected:
 private:
     friend struct PhysicalMidiInputDeviceInstance;
     int deviceIndex = 0;
-    std::unique_ptr<juce::MidiInput> inputDevice;
+    juce::ScopedPointer<juce::MidiInput> inputDevice;
 
-    std::unique_ptr<MidiControllerParser> controllerParser;
+    juce::ScopedPointer<MidiControllerParser> controllerParser;
     ExternalController* externalController = nullptr;
     bool isReadingMidiTimecode = false, isAcceptingMMC = false, ignoreHours = false;
 

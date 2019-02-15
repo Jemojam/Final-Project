@@ -4,9 +4,8 @@
   '-.  .-'|  .--' ,-.  | .--'|     /'-.  .-',--.| .-. ||      \   Tracktion Software
     |  |  |  |  \ '-'  \ `--.|  \  \  |  |  |  |' '-' '|  ||  |       Corporation
     `---' `--'   `--`--'`---'`--'`--' `---' `--' `---' `--''--'    www.tracktion.com
-
-    Tracktion Engine uses a GPL/commercial licence - see LICENCE.md for details.
 */
+
 
 namespace tracktion_engine
 {
@@ -140,10 +139,10 @@ private:
     AudioFile sourceFile;
     bool endMarkerEnabled = true, endMarkersLimited = false;
 
-    std::unique_ptr<WarpMarkerList> markers;
+    juce::ScopedPointer<WarpMarkerList> markers;
     RenderManager::Job::Ptr transientDetectionJob;
     std::pair<bool, juce::Array<double>> transientTimes { false, {} };
-    std::unique_ptr<Edit::LoadFinishedCallback<WarpTimeManager>> editLoadedCallback;
+    juce::ScopedPointer<Edit::LoadFinishedCallback<WarpTimeManager>> editLoadedCallback;
 
     juce::UndoManager* getUndoManager() const;
     void jobFinished (RenderManager::Job& job, bool completedOk) override;

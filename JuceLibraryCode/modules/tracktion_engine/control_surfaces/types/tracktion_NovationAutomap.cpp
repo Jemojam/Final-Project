@@ -4,9 +4,8 @@
   '-.  .-'|  .--' ,-.  | .--'|     /'-.  .-',--.| .-. ||      \   Tracktion Software
     |  |  |  |  \ '-'  \ `--.|  \  \  |  |  |  |' '-' '|  ||  |       Corporation
     `---' `--'   `--`--'`---'`--'`--' `---' `--' `---' `--''--'    www.tracktion.com
-
-    Tracktion Engine uses a GPL/commercial licence - see LICENCE.md for details.
 */
+
 
 #ifdef JUCE_MSVC
  #pragma warning (push)
@@ -1138,7 +1137,7 @@ bool NovationAutomap::eatsAllMessages()                         { return false; 
 bool NovationAutomap::canSetEatsAllMessages()                   { return false; }
 void NovationAutomap::setEatsAllMessages (bool)                 {}
 bool NovationAutomap::canChangeSelectedPlugin()                 { return true; }
-void NovationAutomap::currentSelectionChanged (juce::String)    {}
+void NovationAutomap::currentSelectionChanged()                 {}
 bool NovationAutomap::showingPluginParams()                     { return true; }
 bool NovationAutomap::showingMarkers()                          { return false; }
 bool NovationAutomap::showingTracks()                           { return true; }

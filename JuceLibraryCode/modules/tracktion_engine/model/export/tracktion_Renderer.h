@@ -4,9 +4,8 @@
   '-.  .-'|  .--' ,-.  | .--'|     /'-.  .-',--.| .-. ||      \   Tracktion Software
     |  |  |  |  \ '-'  \ `--.|  \  \  |  |  |  |' '-' '|  ||  |       Corporation
     `---' `--'   `--`--'`---'`--'`--' `---' `--' `---' `--''--'    www.tracktion.com
-
-    Tracktion Engine uses a GPL/commercial licence - see LICENCE.md for details.
 */
+
 
 namespace tracktion_engine
 {
@@ -79,7 +78,7 @@ public:
                     AudioNode*);
 
         RenderTask (const juce::String& taskDescription,
-                    const Renderer::Parameters&,
+                    const Renderer::Parameters& ,
                     AudioNode*,
                     std::atomic<float>& progressToUpdate,
                     juce::AudioFormatWriter::ThreadedWriter::IncomingDataReceiver*);
@@ -96,8 +95,8 @@ public:
         //==============================================================================
         struct RendererContext;
 
-        std::unique_ptr<AudioNode> node;
-        std::unique_ptr<RendererContext> context;
+        juce::ScopedPointer<AudioNode> node;
+        juce::ScopedPointer<RendererContext> context;
 
         std::atomic<float> progressInternal { 0.0f };
         std::atomic<float>& progress;

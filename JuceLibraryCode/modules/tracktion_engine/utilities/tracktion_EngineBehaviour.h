@@ -4,9 +4,8 @@
   '-.  .-'|  .--' ,-.  | .--'|     /'-.  .-',--.| .-. ||      \   Tracktion Software
     |  |  |  |  \ '-'  \ `--.|  \  \  |  |  |  |' '-' '|  ||  |       Corporation
     `---' `--'   `--`--'`---'`--'`--' `---' `--' `---' `--''--'    www.tracktion.com
-
-    Tracktion Engine uses a GPL/commercial licence - see LICENCE.md for details.
 */
+
 
 namespace tracktion_engine
 {
@@ -85,7 +84,7 @@ public:
         You shouldn't dynamically change this function's return value - just implement a
         function that always returns true or false.
     */
-    virtual bool lengthOfOneBeatDependsOnTimeSignature()                            { return true; }
+    virtual bool lengthOfOneBeatDependsOnTimeSignature()                            { return false; }
 
     struct LevelMeterSettings
     {

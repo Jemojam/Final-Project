@@ -4,26 +4,22 @@
   '-.  .-'|  .--' ,-.  | .--'|     /'-.  .-',--.| .-. ||      \   Tracktion Software
     |  |  |  |  \ '-'  \ `--.|  \  \  |  |  |  |' '-' '|  ||  |       Corporation
     `---' `--'   `--`--'`---'`--'`--' `---' `--' `---' `--''--'    www.tracktion.com
-
-    Tracktion Engine uses a GPL/commercial licence - see LICENCE.md for details.
 */
 
-namespace tracktion_engine
-{
 
 template<typename ObjectType>
 struct TempoAndTimeSigListBase  : public ValueTreeObjectList<ObjectType>,
-                                  public AsyncUpdater
+                                  private AsyncUpdater
 {
     TempoAndTimeSigListBase (TempoSequence& ts, const ValueTree& parent)
         : ValueTreeObjectList<ObjectType> (parent), sequence (ts)
     {
     }
 
-    void newObjectAdded (ObjectType*) override                                    { sendChange(); }
-    void objectRemoved (ObjectType*) override                                     { sendChange(); }
-    void objectOrderChanged() override                                            { sendChange(); }
-    void valueTreePropertyChanged (ValueTree&, const juce::Identifier&) override  { sendChange(); }
+    void newObjectAdded (ObjectType*) override                              { sendChange(); }
+    void objectRemoved (ObjectType*) override                               { sendChange(); }
+    void objectOrderChanged() override                                      { sendChange(); }
+    void valueTreePropertyChanged (ValueTree&, const Identifier&) override  { sendChange(); }
 
     void sendChange()
     {
@@ -485,7 +481,6 @@ int TempoSequence::indexOfTempo (const TempoSetting* const t) const
 
 double TempoSequence::getBpmAt (double time) const
 {
-    jassert (! tempos->isUpdatePending());
     for (int i = internalTempos.size(); --i >= 0;)
     {
         auto& it = internalTempos.getReference (i);
@@ -508,7 +503,6 @@ double TempoSequence::BarsAndBeats::getFractionalBeats() const  { return beats -
 
 TempoSequence::BarsAndBeats TempoSequence::timeToBarsBeats (double t) const
 {
-    jassert (! tempos->isUpdatePending());
     for (int i = internalTempos.size(); --i >= 0;)
     {
         auto& it = internalTempos.getReference (i);
@@ -537,7 +531,6 @@ TempoSequence::BarsAndBeats TempoSequence::timeToBarsBeats (double t) const
 
 double TempoSequence::barsBeatsToTime (BarsAndBeats barsBeats) const
 {
-    jassert (! tempos->isUpdatePending());
     for (int i = internalTempos.size(); --i >= 0;)
     {
         auto& it = internalTempos.getReference(i);
@@ -560,7 +553,6 @@ double TempoSequence::barsBeatsToBeats (BarsAndBeats barsBeats) const
 
 double TempoSequence::timeToBeats (double time) const
 {
-    jassert (! tempos->isUpdatePending());
     return internalTempos.timeToBeats (time);
 }
 
@@ -572,7 +564,6 @@ juce::Range<double> TempoSequence::timeToBeats (EditTimeRange range) const
 
 double TempoSequence::beatsToTime (double beats) const
 {
-    jassert (! tempos->isUpdatePending());
     return internalTempos.beatsToTime (beats);
 }
 
@@ -719,7 +710,6 @@ static double calcCurveBpm (double beat, const TempoSetting& t1, const TempoSett
 
 void TempoSequence::updateTempoData()
 {
-    tempos->cancelPendingUpdate();
     jassert (getNumTempos() > 0 && getNumTimeSigs() > 0);
 
     SortedSet<double> beatsWithObjects;
@@ -1122,33 +1112,35 @@ void EditTimecodeRemapperSnapshot::remapEdit (Edit& ed)
 
     for (auto& cp : clips)
     {
-        if (auto c = dynamic_cast<Clip*> (cp.clip.get()))
+        if (Selectable::isSelectableValid (cp.clip))
         {
+            auto& c = *cp.clip;
+
             auto newStart  = tempoSequence.beatsToTime (cp.startBeat);
             auto newEnd    = tempoSequence.beatsToTime (cp.endBeat);
             auto newOffset = newStart - tempoSequence.beatsToTime (cp.contentStartBeat);
 
-            auto pos = c->getPosition();
+            auto pos = c.getPosition();
 
             if (std::abs (pos.getStart() - newStart)
                  + std::abs (pos.getEnd() - newEnd)
                  + std::abs (pos.getOffset() - newOffset) > 0.001)
             {
-                if (c->getSyncType() == Clip::syncAbsolute)
+                if (c.getSyncType() == Clip::syncAbsolute)
                     continue;
 
-                if (c->type == TrackItem::Type::wave)
+                if (c.type == TrackItem::Type::wave)
                 {
-                    auto ac = dynamic_cast<AudioClipBase*> (cp.clip.get());
+                    auto ac = dynamic_cast<AudioClipBase*> (cp.clip);
 
                     if (ac != nullptr && ac->getAutoTempo())
-                        c->setPosition ({ { newStart, newEnd }, newOffset });
+                        c.setPosition ({ { newStart, newEnd }, newOffset });
                     else
-                        c->setStart (newStart, false, true);
+                        c.setStart (newStart, false, true);
                 }
                 else
                 {
-                    c->setPosition ({ { newStart, newEnd }, newOffset });
+                    c.setPosition ({ { newStart, newEnd }, newOffset });
                 }
             }
         }
@@ -1159,6 +1151,4 @@ void EditTimecodeRemapperSnapshot::remapEdit (Edit& ed)
     for (auto& a : automation)
         for (int i = a.beats.size(); --i >= 0;)
             a.curve.setPointTime (i, tempoSequence.beatsToTime (a.beats.getUnchecked (i)));
-}
-
 }

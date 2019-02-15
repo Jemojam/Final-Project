@@ -4,12 +4,8 @@
   '-.  .-'|  .--' ,-.  | .--'|     /'-.  .-',--.| .-. ||      \   Tracktion Software
     |  |  |  |  \ '-'  \ `--.|  \  \  |  |  |  |' '-' '|  ||  |       Corporation
     `---' `--'   `--`--'`---'`--'`--' `---' `--' `---' `--''--'    www.tracktion.com
-
-    Tracktion Engine uses a GPL/commercial licence - see LICENCE.md for details.
 */
 
-namespace tracktion_engine
-{
 
 TrackItem::TrackItem (Edit& ed, EditItemID id, Type t)
     : EditItem (id, ed), type (t)
@@ -120,5 +116,3 @@ double TrackItem::getOffsetInBeats() const     { return getPosition().getOffset(
 double TrackItem::getEndBeat() const                         { return edit.tempoSequence.timeToBeats (getPosition().getEnd()); }
 double TrackItem::getTimeOfRelativeBeat (double beat) const  { return edit.tempoSequence.beatsToTime (getStartBeat() + beat); }
 double TrackItem::getBeatOfRelativeTime (double t) const     { return edit.tempoSequence.timeToBeats (getPosition().getStart() + t); }
-
-}

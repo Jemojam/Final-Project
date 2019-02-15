@@ -153,14 +153,6 @@
 			isa = PBXBuildFile;
 			fileRef = 666094FA52959C970B6AD4DC;
 		};
-		C405067BF0D5C4D1D21C5F7A = {
-			isa = PBXBuildFile;
-			fileRef = E36D49ED8AF5FE3FE75B959D;
-		};
-		A1207987E6FBA29F6365DCE9 = {
-			isa = PBXBuildFile;
-			fileRef = D5A493B320C91EE9EF297D3F;
-		};
 		13CD154CE6543FAC7F507B9F = {
 			isa = PBXBuildFile;
 			fileRef = 0A70EBCA69367FB304E28040;
@@ -399,13 +391,6 @@
 			path = ../../Source/UI/ToolbarComponent.h;
 			sourceTree = "SOURCE_ROOT";
 		};
-		61E1D9E3D55DAED51DEB28B1 = {
-			isa = PBXFileReference;
-			lastKnownFileType = file;
-			name = "juce_osc";
-			path = "../../JuceLibraryCode/modules/juce_osc";
-			sourceTree = "SOURCE_ROOT";
-		};
 		6234B1725E8E683C88C09F26 = {
 			isa = PBXFileReference;
 			lastKnownFileType = wrapper.framework;
@@ -609,13 +594,6 @@
 			path = System/Library/Frameworks/CoreAudio.framework;
 			sourceTree = SDKROOT;
 		};
-		D5A493B320C91EE9EF297D3F = {
-			isa = PBXFileReference;
-			lastKnownFileType = sourcecode.cpp.cpp;
-			name = "include_tracktion_engine_airwindows.cpp";
-			path = "../../JuceLibraryCode/include_tracktion_engine_airwindows.cpp";
-			sourceTree = "SOURCE_ROOT";
-		};
 		D5D4FC39938DB9BCD78055E0 = {
 			isa = PBXFileReference;
 			lastKnownFileType = wrapper.framework;
@@ -677,13 +655,6 @@
 			lastKnownFileType = sourcecode.c.h;
 			name = GridComponent.h;
 			path = ../../Source/UI/GridComponent.h;
-			sourceTree = "SOURCE_ROOT";
-		};
-		E36D49ED8AF5FE3FE75B959D = {
-			isa = PBXFileReference;
-			lastKnownFileType = sourcecode.cpp.cpp;
-			name = "include_juce_osc.cpp";
-			path = "../../JuceLibraryCode/include_juce_osc.cpp";
 			sourceTree = "SOURCE_ROOT";
 		};
 		E561380D77A7256DEAE6E94A = {
@@ -790,7 +761,6 @@
 				2916A7E86C1DD4ACF6CAB7B6,
 				48EC938D9D49B6AC829831EF,
 				E1684C5B63B655A96E5F2FC6,
-				61E1D9E3D55DAED51DEB28B1,
 				D9B94F4F57EF4994B98641BA,
 			);
 			name = "JUCE Modules";
@@ -814,8 +784,6 @@
 				8B0FE1B94AB00EBF5F98F85E,
 				CC7047A618751A35E2E9E476,
 				666094FA52959C970B6AD4DC,
-				E36D49ED8AF5FE3FE75B959D,
-				D5A493B320C91EE9EF297D3F,
 				0A70EBCA69367FB304E28040,
 				B232EAB552E8C795AD6BE936,
 				B02BAECC24D59DE3A67372FD,
@@ -1112,8 +1080,6 @@
 				97B5EC84144DFC362F95033F,
 				824979A945345AD61A909B28,
 				0C26100FF5FE4455FAD87C65,
-				C405067BF0D5C4D1D21C5F7A,
-				A1207987E6FBA29F6365DCE9,
 				13CD154CE6543FAC7F507B9F,
 				6F981993E0B3FD01ED447C15,
 				877C90737D1B84AE03923353,
@@ -1167,7 +1133,6 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (E16963AA5989D06E6866257C);
-			knownRegions = (en, Base);
 		};
 	};
 	rootObject = 889C2C72479FB23345B53F8E;

@@ -235,10 +235,8 @@ private:
         static String quotedIfContainsSpaces (NSString* file)
         {
             String s (nsStringToJuce (file));
-            s = s.unquoted().replace ("\"", "\\\"");
-
             if (s.containsChar (' '))
-                s = s.quoted();
+                s = s.quoted ('"');
 
             return s;
         }
@@ -456,7 +454,7 @@ void __attribute__ ((visibility("default"))) repostCurrentNSEvent()
     struct EventReposter  : public CallbackMessage
     {
         EventReposter() : e ([[NSApp currentEvent] retain])  {}
-        ~EventReposter() override  { [e release]; }
+        ~EventReposter()  { [e release]; }
 
         void messageCallback() override
         {

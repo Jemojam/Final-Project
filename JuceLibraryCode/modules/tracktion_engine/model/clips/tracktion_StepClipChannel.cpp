@@ -4,14 +4,10 @@
   '-.  .-'|  .--' ,-.  | .--'|     /'-.  .-',--.| .-. ||      \   Tracktion Software
     |  |  |  |  \ '-'  \ `--.|  \  \  |  |  |  |' '-' '|  ||  |       Corporation
     `---' `--'   `--`--'`---'`--'`--' `---' `--' `---' `--''--'    www.tracktion.com
-
-    Tracktion Engine uses a GPL/commercial licence - see LICENCE.md for details.
 */
 
-namespace tracktion_engine
-{
 
-StepClip::Channel::Channel (StepClip& c, const juce::ValueTree& v)
+StepClip::Channel::Channel (StepClip& c, const ValueTree& v)
     : clip (c), state (v)
 {
     auto* um = &clip.edit.getUndoManager();
@@ -52,6 +48,4 @@ String StepClip::Channel::getSelectableDescription()
 {
     jassertfalse;
     return {};
-}
-
 }
