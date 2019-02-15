@@ -4,8 +4,9 @@
   '-.  .-'|  .--' ,-.  | .--'|     /'-.  .-',--.| .-. ||      \   Tracktion Software
     |  |  |  |  \ '-'  \ `--.|  \  \  |  |  |  |' '-' '|  ||  |       Corporation
     `---' `--'   `--`--'`---'`--'`--' `---' `--' `---' `--''--'    www.tracktion.com
-*/
 
+    Tracktion Engine uses a GPL/commercial licence - see LICENCE.md for details.
+*/
 
 #if ! JUCE_PROJUCER_LIVE_BUILD
 
@@ -45,9 +46,6 @@ extern "C"
  #include <cstdarg>
 #endif
 
-namespace tracktion_engine
-{
-
 using namespace juce;
 
 #include "playback/tracktion_DeviceManager.cpp"
@@ -77,6 +75,7 @@ using namespace juce;
 #include "playback/devices/tracktion_VirtualMidiInputDevice.cpp"
 #include "playback/devices/tracktion_MidiOutputDevice.cpp"
 #include "playback/devices/tracktion_OutputDevice.cpp"
+#include "playback/devices/tracktion_WaveDeviceDescription.cpp"
 #include "playback/devices/tracktion_WaveInputDevice.cpp"
 #include "playback/devices/tracktion_WaveOutputDevice.cpp"
 
@@ -99,8 +98,11 @@ static inline void sprintf (char* dest, size_t maxLength, const char* format, ..
 
 #if TRACKTION_ENABLE_CONTROL_SURFACES
  #if TRACKTION_ENABLE_CONTROL_SURFACE_MACKIEC4
-  #include "Mackie/C4Translator.h"
-  #include "Mackie/C4Translator.cpp"
+  namespace tracktion_engine
+  {
+    #include "Mackie/C4Translator.h"
+    #include "Mackie/C4Translator.cpp"
+  }
  #endif
 
  #include "control_surfaces/types/tracktion_AlphaTrack.cpp"
@@ -111,8 +113,6 @@ static inline void sprintf (char* dest, size_t maxLength, const char* format, ..
  #include "control_surfaces/types/tracktion_RemoteSLCompact.cpp"
  #include "control_surfaces/types/tracktion_Tranzport.cpp"
 #endif
-
-}
 
 #if TRACKTION_ENABLE_CONTROL_SURFACES
  #include "control_surfaces/types/tracktion_NovationAutomap.cpp"

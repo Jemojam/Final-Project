@@ -9,7 +9,7 @@ class ChannelComponent : public Component,
 {
 public:
 	//==============================================================================
-	ChannelComponent(AudioEngine& inEngine);
+	ChannelComponent(AudioEngine& inEngine, AudioTrack& inTrack);
 	~ChannelComponent();
 
 	//==============================================================================
@@ -58,7 +58,8 @@ private:
 	std::unique_ptr<ImageButton> FXButton;
 
 	AudioEngine& engine;
-	int trackId = 0;
+    AudioTrack& track;
+
 	//==============================================================================
 	JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR(ChannelComponent)
 };

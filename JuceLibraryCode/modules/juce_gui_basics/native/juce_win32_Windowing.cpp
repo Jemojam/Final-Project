@@ -269,6 +269,12 @@ extern void* getUser32Function (const char*);
  #define DPI_AWARENESS_CONTEXT_PER_MONITOR_AWARE_V2 ((DPI_AWARENESS_CONTEXT) - 4)
 #endif
 
+// Some versions of the Windows 10 SDK define _DPI_AWARENESS_CONTEXTS_ but not
+// DPI_AWARENESS_CONTEXT_PER_MONITOR_AWARE_V2
+#ifndef DPI_AWARENESS_CONTEXT_PER_MONITOR_AWARE_V2
+ #define DPI_AWARENESS_CONTEXT_PER_MONITOR_AWARE_V2 ((DPI_AWARENESS_CONTEXT) - 4)
+#endif
+
 //==============================================================================
 typedef BOOL (WINAPI* RegisterTouchWindowFunc)   (HWND, ULONG);
 typedef BOOL (WINAPI* GetTouchInputInfoFunc)     (HTOUCHINPUT, UINT, TOUCHINPUT*, int);
@@ -1136,7 +1142,7 @@ struct UWPUIViewSettings
                 return;
 
             // move dll into member var
-            comBaseDLL = static_cast<ComBaseModule&&> (dll);
+            comBaseDLL = std::move (dll);
         }
     }
 
@@ -2804,7 +2810,7 @@ private:
             const auto orientation = touchInfo.touchMask & TOUCH_MASK_ORIENTATION ? degreesToRadians (static_cast<float> (touchInfo.orientation))
                                                                                   : MouseInputSource::invalidOrientation;
 
-            if (! handleTouchInput (emulateTouchEventFromPointer (lParam, wParam),
+            if (! handleTouchInput (emulateTouchEventFromPointer (touchInfo.pointerInfo.ptPixelLocationRaw, wParam),
                                     isDown, isUp, pressure, orientation))
                 return false;
         }
@@ -2829,16 +2835,8 @@ private:
         return true;
     }
 
-    TOUCHINPUT emulateTouchEventFromPointer (LPARAM lParam, WPARAM wParam)
+    TOUCHINPUT emulateTouchEventFromPointer (POINT p, WPARAM wParam)
     {
-        Point<int> p (GET_X_LPARAM (lParam),
-                      GET_Y_LPARAM (lParam));
-
-       #if JUCE_WIN_PER_MONITOR_DPI_AWARE
-        if (! isPerMonitorDPIAwareThread())
-            p = Desktop::getInstance().getDisplays().physicalToLogical (p);
-       #endif
-
         TOUCHINPUT touchInput;
 
         touchInput.dwID = GET_POINTERID_WPARAM (wParam);

@@ -4,8 +4,12 @@
   '-.  .-'|  .--' ,-.  | .--'|     /'-.  .-',--.| .-. ||      \   Tracktion Software
     |  |  |  |  \ '-'  \ `--.|  \  \  |  |  |  |' '-' '|  ||  |       Corporation
     `---' `--'   `--`--'`---'`--'`--' `---' `--' `---' `--''--'    www.tracktion.com
+
+    Tracktion Engine uses a GPL/commercial licence - see LICENCE.md for details.
 */
 
+namespace tracktion_engine
+{
 
 namespace AlphaTrack
 {
@@ -649,7 +653,7 @@ void AlphaTrackControlSurface::clearMarker (int)
 {
 }
 
-void AlphaTrackControlSurface::currentSelectionChanged()
+void AlphaTrackControlSurface::currentSelectionChanged (juce::String)
 {
 }
 
@@ -1162,4 +1166,6 @@ void AlphaTrackControlSurface::timerCallback (int timerId)
         param = nullptr;
         updateDisplay();
     }
+}
+
 }

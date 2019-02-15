@@ -9,6 +9,17 @@ AudioEngine::AudioEngine()
 	edit = std::make_unique<Edit>(engine, createEmptyEdit(), Edit::forEditing, nullptr, 0);
 
 	removeAllTracks();
+
+    for (auto track : getTrackList())
+    {
+        auto plugins = track->getAllPlugins();
+
+//        juce::PluginDescription description;
+//
+//        auto newPlugin = edit->getPluginCache().createNewPlugin("volume", description);
+//
+//        plugins.add(newPlugin);
+    }
 }
 
 
@@ -25,10 +36,6 @@ void AudioEngine::removeAllTracks()
 	}
 }
 
-void AudioEngine::addChannel(File file)
-{
-	addNewClipFromFile(file, trackNum++);
-}
 
 void AudioEngine::removeChannel()
 {
@@ -54,36 +61,30 @@ void AudioEngine::removeTrack(te::AudioTrack & track)
 	clips.getUnchecked(trackNum)->removeFromParentTrack();
 }
 
-te::WaveAudioClip::Ptr AudioEngine::loadAudioFileAsClip(const File &file, int trackNumber)
+te::WaveAudioClip::Ptr AudioEngine::loadAudioFileAsClip(const File& file, AudioTrack& track)
 {
-	auto track = edit->getOrInsertAudioTrackAt(trackNumber);
+    // Add a new clip to this track
+    AudioFile audioFile(file);
 
-	if (track != nullptr)
-	{
-		//removeAllClips(*track);
+    if (audioFile.isValid())
+    {
+        auto name = file.getFileNameWithoutExtension();
 
-		// Add a new clip to this track
-		AudioFile audioFile(file);
+        EditTimeRange timeRange(0.0, audioFile.getLength());
+        ClipPosition position = {timeRange, 0.0};
 
-		if (audioFile.isValid())
-		{
-			auto name = file.getFileNameWithoutExtension();
+        auto newClip = track.insertWaveClip(name, file, position, false);
 
-			EditTimeRange timeRange(0.0, audioFile.getLength());
-			ClipPosition position = { timeRange, 0.0 };
+        if (newClip != nullptr)
+            return newClip;
+    }
 
-			auto newClip = track->insertWaveClip(name, file, position, false);
-
-			if (newClip != nullptr)
-				return newClip;
-		}
-		return nullptr;
-	}
+    return nullptr;
 }
 
-void AudioEngine::addNewClipFromFile(const File & editFile, int trackNum)
+void AudioEngine::addNewClipFromFile(const File& editFile, AudioTrack& track)
 {
-	auto clip = loadAudioFileAsClip(editFile, trackNum);
+	auto clip = loadAudioFileAsClip(editFile, track);
 	
 	if (clip != nullptr)
 		adjustClipProperties(*clip);
@@ -124,10 +125,20 @@ void AudioEngine::addChannel()
 	dirty = true;
 }
 
-void AudioEngine::changeVolumeFromSlider(float sliderValue, int trackId)
+void AudioEngine::changeVolume(AudioTrack& track, float newVolume)
 {
-	auto track=edit->getTrackList().at(trackId);
+    auto plugins = track.getAllPlugins();
 
-	track->edit.setMasterVolumeSliderPos(sliderValue);
-	
+    for (int index = 0; index < plugins.size(); ++index)
+    {
+        auto plugin = plugins.getObjectPointer(index);
+
+        auto volume = dynamic_cast<VolumeAndPanPlugin*>(plugin);
+
+        if (volume != nullptr)
+        {
+            auto db = volumeFaderPositionToDB(newVolume);
+            volume->setVolumeDb(db);
+        }
+    }
 }

@@ -4,8 +4,12 @@
   '-.  .-'|  .--' ,-.  | .--'|     /'-.  .-',--.| .-. ||      \   Tracktion Software
     |  |  |  |  \ '-'  \ `--.|  \  \  |  |  |  |' '-' '|  ||  |       Corporation
     `---' `--'   `--`--'`---'`--'`--' `---' `--' `---' `--''--'    www.tracktion.com
+
+    Tracktion Engine uses a GPL/commercial licence - see LICENCE.md for details.
 */
 
+namespace tracktion_engine
+{
 
 struct QuantisationTypeInfo
 {
@@ -207,7 +211,7 @@ String QuantisationType::getDefaultType (bool translated)
                       : quantisationTypes[0].name;
 }
 
-void QuantisationType::valueTreePropertyChanged (ValueTree& vt, const Identifier& i)
+void QuantisationType::valueTreePropertyChanged (ValueTree& vt, const juce::Identifier& i)
 {
     if (vt == state)
     {
@@ -265,4 +269,6 @@ void QuantisationType::applyQuantisationToSequence (juce::MidiMessageSequence& m
             m.setTimeStamp (roundUp (start + m.getTimeStamp(), ed) - start);
         }
     }
+}
+
 }

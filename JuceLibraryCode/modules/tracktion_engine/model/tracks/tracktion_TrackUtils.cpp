@@ -4,8 +4,12 @@
   '-.  .-'|  .--' ,-.  | .--'|     /'-.  .-',--.| .-. ||      \   Tracktion Software
     |  |  |  |  \ '-'  \ `--.|  \  \  |  |  |  |' '-' '|  ||  |       Corporation
     `---' `--'   `--`--'`---'`--'`--' `---' `--' `---' `--''--'    www.tracktion.com
+
+    Tracktion Engine uses a GPL/commercial licence - see LICENCE.md for details.
 */
 
+namespace tracktion_engine
+{
 
 TrackInsertPoint::TrackInsertPoint (Track* parent, Track* preceding)
     : parentTrackID (parent != nullptr ? parent->itemID : EditItemID()),
@@ -578,4 +582,6 @@ void moveAutomation (const Array<TrackAutomationSection>& origSections, double o
             }
         }
     }
+}
+
 }

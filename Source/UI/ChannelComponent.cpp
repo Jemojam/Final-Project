@@ -1,7 +1,7 @@
 
 #include "ChannelComponent.h"
 
-ChannelComponent::ChannelComponent(AudioEngine& inEngine) : engine(inEngine)
+ChannelComponent::ChannelComponent(AudioEngine& inEngine, AudioTrack& inTrack) : engine(inEngine), track(inTrack)
 {
 
 	selectButton.reset(new TextButton("selectButton"));
@@ -185,7 +185,7 @@ void ChannelComponent::buttonClicked(Button* buttonThatWasClicked)
 		FileChooser chooser("Choose a file", location, "*.wav", true, false);
 
 		if (chooser.browseForFileToOpen())
-			engine.addChannel(chooser.getResult());
+			engine.addNewClipFromFile(chooser.getResult(), track);
 	}
 	else if (buttonThatWasClicked == FXButton.get())
 	{
@@ -204,7 +204,9 @@ void ChannelComponent::sliderValueChanged(Slider* sliderThatWasMoved)
 
 	if (sliderThatWasMoved == slider.get())
 	{
-		engine.changeVolumeFromSlider((float)sliderThatWasMoved->getValue(), trackId++);
+        auto volume = (float)sliderThatWasMoved->getValue();
+        engine.changeVolume(track, volume);
+
 	}
 
 	//[UsersliderValueChanged_Post]

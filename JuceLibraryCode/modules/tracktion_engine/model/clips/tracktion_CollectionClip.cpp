@@ -4,8 +4,12 @@
   '-.  .-'|  .--' ,-.  | .--'|     /'-.  .-',--.| .-. ||      \   Tracktion Software
     |  |  |  |  \ '-'  \ `--.|  \  \  |  |  |  |' '-' '|  ||  |       Corporation
     `---' `--'   `--`--'`---'`--'`--' `---' `--' `---' `--''--'    www.tracktion.com
+
+    Tracktion Engine uses a GPL/commercial licence - see LICENCE.md for details.
 */
 
+namespace tracktion_engine
+{
 
 CollectionClip::CollectionClip (Track& t)
    : TrackItem (t.edit, {}, Type::collection),
@@ -92,4 +96,6 @@ void CollectionClip::updateStartAndEnd()
 String CollectionClip::getName()
 {
     return TRANS("Collection Clip");
+}
+
 }

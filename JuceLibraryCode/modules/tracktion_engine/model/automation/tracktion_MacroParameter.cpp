@@ -4,8 +4,12 @@
   '-.  .-'|  .--' ,-.  | .--'|     /'-.  .-',--.| .-. ||      \   Tracktion Software
     |  |  |  |  \ '-'  \ `--.|  \  \  |  |  |  |' '-' '|  ||  |       Corporation
     `---' `--'   `--`--'`---'`--'`--' `---' `--' `---' `--''--'    www.tracktion.com
+
+    Tracktion Engine uses a GPL/commercial licence - see LICENCE.md for details.
 */
 
+namespace tracktion_engine
+{
 
 MacroParameter::Assignment::Assignment (const ValueTree& v, const MacroParameter& mp)
     : AutomatableParameter::ModifierAssignment (mp.edit, v),
@@ -133,7 +137,7 @@ private:
 
     void objectOrderChanged() override              { macroParameterList.sendChangeMessage(); }
 
-    void valueTreePropertyChanged (ValueTree& v, const Identifier& i) override
+    void valueTreePropertyChanged (ValueTree& v, const juce::Identifier& i) override
     {
         if (v.hasType (IDs::MACROPARAMETER) && i == IDs::name)
             macroParameterList.rebuildParameterTree();
@@ -240,4 +244,6 @@ Plugin::Ptr getOwnerPlugin (MacroParameterList* mpl)
 MacroParameterElement::MacroParameterElement (Edit& e, const ValueTree& v)
     : macroParameterList (e, ValueTree (v).getOrCreateChildWithName (IDs::MACROPARAMETERS, &e.getUndoManager()))
 {
+}
+
 }

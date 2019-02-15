@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<JUCERPROJECT id="LuD3xr" name="Final Project" projectType="guiapp" jucerVersion="5.4.1"
+<JUCERPROJECT id="LuD3xr" name="Final Project" projectType="guiapp" jucerVersion="5.4.2"
               headerPath="../../Source">
   <MAINGROUP id="O4Tt23" name="Final Project">
     <GROUP id="{473A1684-2AD1-A338-0F6C-1A388936821C}" name="Source">
@@ -66,6 +66,7 @@
         <MODULEPATH id="tracktion_engine" path="../tracktion_engine/modules"/>
         <MODULEPATH id="juce_dsp" path="../tracktion_engine/modules/juce/modules"/>
         <MODULEPATH id="juce_blocks_basics" path="C:/CODE/JUCE/modules"/>
+        <MODULEPATH id="juce_osc" path="../JUCE/modules"/>
       </MODULEPATHS>
     </XCODE_MAC>
     <XCODE_IPHONE targetFolder="Builds/iOS">
@@ -89,6 +90,7 @@
         <MODULEPATH id="tracktion_engine" path="../tracktion_engine/modules"/>
         <MODULEPATH id="juce_dsp" path="../tracktion_engine/modules/juce/modules"/>
         <MODULEPATH id="juce_blocks_basics" path="C:/CODE/JUCE/modules"/>
+        <MODULEPATH id="juce_osc" path="../JUCE/modules"/>
       </MODULEPATHS>
     </XCODE_IPHONE>
     <VS2017 targetFolder="Builds/VisualStudio2017">
@@ -112,6 +114,7 @@
         <MODULEPATH id="tracktion_engine" path="../tracktion_engine/modules"/>
         <MODULEPATH id="juce_dsp" path="../tracktion_engine/modules/juce/modules"/>
         <MODULEPATH id="juce_blocks_basics" path="C:/CODE/JUCE/modules"/>
+        <MODULEPATH id="juce_osc" path="../JUCE/modules"/>
       </MODULEPATHS>
     </VS2017>
     <CLION targetFolder="Builds/CLion" clionXcodeEnabled="1">
@@ -131,6 +134,7 @@
         <MODULEPATH id="tracktion_engine" path="../tracktion_engine/modules"/>
         <MODULEPATH id="juce_dsp" path="../tracktion_engine/modules/juce/modules"/>
         <MODULEPATH id="juce_blocks_basics" path="C:/CODE/JUCE/modules"/>
+        <MODULEPATH id="juce_osc" path="../JUCE/modules"/>
       </MODULEPATHS>
     </CLION>
   </EXPORTFORMATS>
@@ -149,6 +153,7 @@
     <MODULE id="juce_gui_basics" showAllCode="1" useLocalCopy="1" useGlobalPath="1"/>
     <MODULE id="juce_gui_extra" showAllCode="1" useLocalCopy="1" useGlobalPath="1"/>
     <MODULE id="juce_opengl" showAllCode="1" useLocalCopy="1" useGlobalPath="1"/>
+    <MODULE id="juce_osc" showAllCode="1" useLocalCopy="1" useGlobalPath="1"/>
     <MODULE id="tracktion_engine" showAllCode="1" useLocalCopy="1" useGlobalPath="1"/>
   </MODULES>
   <LIVE_SETTINGS>

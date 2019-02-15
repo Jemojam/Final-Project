@@ -4,10 +4,14 @@
   '-.  .-'|  .--' ,-.  | .--'|     /'-.  .-',--.| .-. ||      \   Tracktion Software
     |  |  |  |  \ '-'  \ `--.|  \  \  |  |  |  |' '-' '|  ||  |       Corporation
     `---' `--'   `--`--'`---'`--'`--' `---' `--' `---' `--''--'    www.tracktion.com
+
+    Tracktion Engine uses a GPL/commercial licence - see LICENCE.md for details.
 */
 
+namespace tracktion_engine
+{
 
-Plugin::Wire::Wire (const ValueTree& v, UndoManager* um)  : state (v)
+Plugin::Wire::Wire (const juce::ValueTree& v, UndoManager* um)  : state (v)
 {
     sourceChannelIndex.referTo (state, IDs::srcChan, um);
     destChannelIndex.referTo (state, IDs::dstChan, um);
@@ -16,7 +20,7 @@ Plugin::Wire::Wire (const ValueTree& v, UndoManager* um)  : state (v)
 struct Plugin::WireList : public ValueTreeObjectList<Plugin::Wire, CriticalSection>,
                           private AsyncUpdater
 {
-    WireList (Plugin& p, const ValueTree& parent)
+    WireList (Plugin& p, const juce::ValueTree& parent)
        : ValueTreeObjectList<Wire, CriticalSection> (parent), plugin (p)
     {
         rebuildObjects();
@@ -27,14 +31,14 @@ struct Plugin::WireList : public ValueTreeObjectList<Plugin::Wire, CriticalSecti
         freeObjects();
     }
 
-    bool isSuitableType (const ValueTree& v) const override { return v.hasType (IDs::SIDECHAINCONNECTION); }
-    Wire* createNewObject (const ValueTree& v) override     { return new Wire (v, plugin.getUndoManager()); }
-    void deleteObject (Wire* w) override                    { delete w; }
+    bool isSuitableType (const juce::ValueTree& v) const override { return v.hasType (IDs::SIDECHAINCONNECTION); }
+    Wire* createNewObject (const juce::ValueTree& v) override     { return new Wire (v, plugin.getUndoManager()); }
+    void deleteObject (Wire* w) override                          { delete w; }
 
     void newObjectAdded (Wire*) override                    { triggerAsyncUpdate(); }
     void objectRemoved (Wire*) override                     { triggerAsyncUpdate(); }
     void objectOrderChanged() override                      {}
-    void valueTreePropertyChanged (ValueTree&, const Identifier&) override  { triggerAsyncUpdate(); }
+    void valueTreePropertyChanged (ValueTree&, const juce::Identifier&) override  { triggerAsyncUpdate(); }
 
     void handleAsyncUpdate() override                       { plugin.changed(); }
 
@@ -205,7 +209,7 @@ public:
 
 protected:
     Plugin::Ptr plugin;
-    ScopedPointer<AudioNode> input;
+    std::unique_ptr<AudioNode> input;
 
     bool hasAudioInput = false, hasMidiInput = false, applyAntiDenormalisationNoise = false, hasInitialised = false;
     double latencySeconds = 0.0;
@@ -352,7 +356,7 @@ Plugin::Plugin (PluginCreationInfo info)
     auto wires = state.getChildWithName (IDs::SIDECHAINCONNECTIONS);
 
     if (wires.isValid())
-        sidechainWireList = new WireList (*this, wires);
+        sidechainWireList.reset (new WireList (*this, wires));
 
     enabled.referTo (state, IDs::enabled, um, true);
 
@@ -649,7 +653,7 @@ bool Plugin::isClipEffectPlugin() const
     return state.getParent().hasType (IDs::EFFECT);
 }
 
-void Plugin::valueTreePropertyChanged (ValueTree&, const Identifier& i)
+void Plugin::valueTreePropertyChanged (ValueTree&, const juce::Identifier& i)
 {
     if (i == IDs::process)
         processingChanged();
@@ -662,15 +666,15 @@ void Plugin::valueTreeChanged()
     changed();
 }
 
-void Plugin::valueTreeChildAdded (ValueTree&, ValueTree& c)
+void Plugin::valueTreeChildAdded (ValueTree&, juce::ValueTree& c)
 {
     if (c.getType() == IDs::SIDECHAINCONNECTIONS)
-        sidechainWireList = new WireList (*this, c);
+        sidechainWireList.reset (new WireList (*this, c));
 
     valueTreeChanged();
 }
 
-void Plugin::valueTreeChildRemoved (ValueTree&, ValueTree& c, int)
+void Plugin::valueTreeChildRemoved (ValueTree&, juce::ValueTree& c, int)
 {
     if (c.getType() == IDs::SIDECHAINCONNECTIONS)
         sidechainWireList = nullptr;
@@ -703,9 +707,8 @@ AudioNode* Plugin::createAudioNode (AudioNode* input, bool applyAntiDenormalisat
 void Plugin::changed()
 {
     Selectable::changed();
-
-    if (Selectable::isSelectableValid (&edit))
-        edit.updateMirroredPlugin (*this);
+    jassert (Selectable::isSelectableValid (&edit));
+    edit.updateMirroredPlugin (*this);
 }
 
 //==============================================================================
@@ -1106,22 +1109,20 @@ RackInstance* Plugin::wrapSelectedPluginsInRack (SelectionManager& selectionMana
     return {};
 }
 
-struct PluginSorter
-{
-    int compareElements (Plugin* first, Plugin* second)
-    {
-        jassert (first != nullptr && second != nullptr);
-
-        PluginList list (first->edit);
-        list.initialise (first->state.getParent());
-        return list.indexOf (first) - list.indexOf (second);
-    }
-};
-
 void Plugin::sortPlugins (Plugin::Array& plugins)
 {
-    PluginSorter sorter;
-    plugins.sort (sorter);
+    if (auto first = plugins.getFirst())
+    {
+        PluginList list (first->edit);
+        list.initialise (first->state.getParent());
+
+        std::sort (plugins.begin(), plugins.end(),
+                   [&list] (Plugin* a, Plugin* b)
+                   {
+                       jassert (a != nullptr && b != nullptr);
+                       return list.indexOf (a) < list.indexOf (b);
+                   });
+    }
 }
 
 void Plugin::getLeftRightChannelNames (StringArray* chans)
@@ -1167,4 +1168,6 @@ void Plugin::flushPluginStateToValueTree()
         state.setProperty (IDs::windowY, windowState->lastWindowBounds.getY(), um);
         state.setProperty (IDs::windowLocked, windowState->windowLocked, um);
     }
+}
+
 }

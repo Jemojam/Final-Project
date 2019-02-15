@@ -4,6 +4,8 @@
   '-.  .-'|  .--' ,-.  | .--'|     /'-.  .-',--.| .-. ||      \   Tracktion Software
     |  |  |  |  \ '-'  \ `--.|  \  \  |  |  |  |' '-' '|  ||  |       Corporation
     `---' `--'   `--`--'`---'`--'`--' `---' `--' `---' `--''--'    www.tracktion.com
+
+    Tracktion Engine uses a GPL/commercial licence - see LICENCE.md for details.
 */
 
 #if ! JUCE_PROJUCER_LIVE_BUILD
@@ -26,9 +28,6 @@ extern "C"
 
 #include <string>
 
-namespace tracktion_engine
-{
-
 #include "audio_files/formats/tracktion_FloatAudioFileFormat.cpp"
 #include "audio_files/formats/tracktion_RexFileFormat.cpp"
 #include "audio_files/formats/tracktion_LAMEManager.cpp"
@@ -43,7 +42,5 @@ namespace tracktion_engine
 #include "midi/tracktion_MidiProgramManager.cpp"
 #include "midi/tracktion_Musicality.cpp"
 #include "midi/tracktion_SelectedMidiEvents.cpp"
-
-}
 
 #endif

@@ -4,8 +4,9 @@
   '-.  .-'|  .--' ,-.  | .--'|     /'-.  .-',--.| .-. ||      \   Tracktion Software
     |  |  |  |  \ '-'  \ `--.|  \  \  |  |  |  |' '-' '|  ||  |       Corporation
     `---' `--'   `--`--'`---'`--'`--' `---' `--' `---' `--''--'    www.tracktion.com
-*/
 
+    Tracktion Engine uses a GPL/commercial licence - see LICENCE.md for details.
+*/
 
 namespace tracktion_engine
 {
@@ -27,6 +28,7 @@ public:
 
     bool needsMidiChannel() const               { return needsChannel; }
     bool needsMidiBackChannel() const           { return needsBackChannel; }
+    bool needsOSCSocket() const                 { return needsOSC; }
 
     juce::String getMidiInputDevice() const;
     void setMidiInputDevice (const juce::String& nameOfMidiInput);
@@ -34,6 +36,13 @@ public:
     juce::String getBackChannelDevice() const;
     void setBackChannelDevice (const juce::String& nameOfMidiOutput);
     bool isUsingMidiOutputDevice (const MidiOutputDevice* d) const noexcept   { return d == outputDevice; }
+    
+    int getOSCInputPort()                       { return oscInputPort; }
+    void setOSCInputPort (int port);
+    int getOSCOutputPort()                      { return oscOutputPort; }
+    void setOSCOutputPort (int port);
+    juce::String getOSCOutputAddress()          { return oscOutputAddr; }
+    void setOSCOutputAddress (const juce::String addr);
 
     bool isEnabled() const;
     void setEnabled (bool);
@@ -92,6 +101,7 @@ public:
     juce::Range<int> getActiveParams() const noexcept;
 
     void midiInOutDevicesChanged();
+    void oscSettingsChanged();
 
     //==============================================================================
     void handleAsyncUpdate() override;
@@ -144,6 +154,8 @@ private:
 
     juce::String inputDeviceName, outputDeviceName;
     std::unique_ptr<ControlSurface> controlSurface;
+    int oscInputPort, oscOutputPort;
+    juce::String oscOutputAddr;
 
     bool enabled;
     int maxTrackNameChars;
@@ -151,8 +163,10 @@ private:
     int startParamNumber = 0;
     bool needsBackChannel = false;
     bool needsChannel = false;
+    bool needsOSC = false;
     bool usesSettings = false;
     bool deletable = false;
+    bool allowBankingOffEnd = false;
     AutomatableParameter::Array currentParams;
     Selectable::WeakRef currentParamSource, lastRegisteredSelectable;
     bool showSelection = false;

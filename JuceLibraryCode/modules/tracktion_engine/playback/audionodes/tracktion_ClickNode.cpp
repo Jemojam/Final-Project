@@ -4,8 +4,12 @@
   '-.  .-'|  .--' ,-.  | .--'|     /'-.  .-',--.| .-. ||      \   Tracktion Software
     |  |  |  |  \ '-'  \ `--.|  \  \  |  |  |  |' '-' '|  ||  |       Corporation
     `---' `--'   `--`--'`---'`--'`--' `---' `--' `---' `--''--'    www.tracktion.com
+
+    Tracktion Engine uses a GPL/commercial licence - see LICENCE.md for details.
 */
 
+namespace tracktion_engine
+{
 
 ClickNode::ClickNode (bool m, Edit& ed, double endTime)
    : edit (ed), midi (m)
@@ -57,7 +61,7 @@ juce::AudioBuffer<float> loadWavDataIntoMemory (const void* data, size_t size, d
    auto in = new MemoryInputStream (data, size, false);
 
     WavAudioFormat wavFormat;
-    ScopedPointer<AudioFormatReader> r (wavFormat.createReaderFor (in, true));
+    std::unique_ptr<AudioFormatReader> r (wavFormat.createReaderFor (in, true));
 
     if (r == nullptr)
         return {};
@@ -68,7 +72,7 @@ juce::AudioBuffer<float> loadWavDataIntoMemory (const void* data, size_t size, d
     juce::AudioBuffer<float> buf ((int) r->numChannels, targetLength);
 
     {
-        AudioFormatReaderSource readerSource (r, false);
+        AudioFormatReaderSource readerSource (r.get(), false);
 
         ResamplingAudioSource resamplerSource (&readerSource, false, (int) r->numChannels);
         resamplerSource.setResamplingRatio (ratio);
@@ -272,4 +276,6 @@ void ClickNode::setClickWaveFile (Engine& e, bool big, const String& filename)
         storage.setProperty (SettingID::clickTrackSampleSmall, filename);
 
     TransportControl::restartAllTransports (e, false);
+}
+
 }

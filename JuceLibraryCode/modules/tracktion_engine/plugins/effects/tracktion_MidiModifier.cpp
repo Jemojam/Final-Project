@@ -4,8 +4,12 @@
   '-.  .-'|  .--' ,-.  | .--'|     /'-.  .-',--.| .-. ||      \   Tracktion Software
     |  |  |  |  \ '-'  \ `--.|  \  \  |  |  |  |' '-' '|  ||  |       Corporation
     `---' `--'   `--`--'`---'`--'`--' `---' `--' `---' `--''--'    www.tracktion.com
+
+    Tracktion Engine uses a GPL/commercial licence - see LICENCE.md for details.
 */
 
+namespace tracktion_engine
+{
 
 MidiModifierPlugin::MidiModifierPlugin (PluginCreationInfo info) : Plugin (info)
 {
@@ -54,8 +58,10 @@ String MidiModifierPlugin::getSelectableDescription()
 }
 
 
-void MidiModifierPlugin::restorePluginStateFromValueTree (const ValueTree& v)
+void MidiModifierPlugin::restorePluginStateFromValueTree (const juce::ValueTree& v)
 {
     CachedValue<float>* cvsFloat[]  = { &semitonesValue, nullptr };
     copyPropertiesToNullTerminatedCachedValues (v, cvsFloat);
+}
+
 }

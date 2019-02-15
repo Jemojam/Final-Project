@@ -4,8 +4,12 @@
   '-.  .-'|  .--' ,-.  | .--'|     /'-.  .-',--.| .-. ||      \   Tracktion Software
     |  |  |  |  \ '-'  \ `--.|  \  \  |  |  |  |' '-' '|  ||  |       Corporation
     `---' `--'   `--`--'`---'`--'`--' `---' `--' `---' `--''--'    www.tracktion.com
+
+    Tracktion Engine uses a GPL/commercial licence - see LICENCE.md for details.
 */
 
+namespace tracktion_engine
+{
 
 static const uint8 cmdInitNativeMode[] = { 0xf0, 0x00, 0x01, 0x40, 0x10, 0x01, 0x00, 0xf7 };
 static const uint8 cmdInquiry[]        = { 0xf0, 0x7e, 0x00, 0x06, 0x01, 0xf7 };
@@ -521,7 +525,7 @@ bool TranzportControlSurface::canChangeSelectedPlugin()
     return false;
 }
 
-void TranzportControlSurface::currentSelectionChanged()
+void TranzportControlSurface::currentSelectionChanged (juce::String)
 {
 }
 
@@ -626,4 +630,6 @@ void TranzportControlSurface::markerChanged (int, const MarkerSetting&)
 
 void TranzportControlSurface::clearMarker (int)
 {
+}
+
 }

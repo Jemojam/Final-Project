@@ -4,17 +4,14 @@
   '-.  .-'|  .--' ,-.  | .--'|     /'-.  .-',--.| .-. ||      \   Tracktion Software
     |  |  |  |  \ '-'  \ `--.|  \  \  |  |  |  |' '-' '|  ||  |       Corporation
     `---' `--'   `--`--'`---'`--'`--' `---' `--' `---' `--''--'    www.tracktion.com
-*/
 
+    Tracktion Engine uses a GPL/commercial licence - see LICENCE.md for details.
+*/
 
 #if ! JUCE_PROJUCER_LIVE_BUILD
 
 #include <future>
-
 #include "tracktion_engine.h"
-
-namespace tracktion_engine
-{
 
 using namespace juce;
 
@@ -60,7 +57,5 @@ using namespace juce;
 #include "project/tracktion_Project.cpp"
 #include "project/tracktion_ProjectManager.cpp"
 #include "project/tracktion_ProjectSearchIndex.cpp"
-
-}
 
 #endif

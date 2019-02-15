@@ -62,6 +62,7 @@
 #define JUCE_MODULE_AVAILABLE_juce_gui_basics            1
 #define JUCE_MODULE_AVAILABLE_juce_gui_extra             1
 #define JUCE_MODULE_AVAILABLE_juce_opengl                1
+#define JUCE_MODULE_AVAILABLE_juce_osc                   1
 #define JUCE_MODULE_AVAILABLE_tracktion_engine           1
 
 #define JUCE_GLOBAL_MODULE_SETTINGS_INCLUDED 1
@@ -345,6 +346,10 @@
 
 #ifndef    TRACKTION_CHECK_FOR_SLOW_RENDERING
  //#define TRACKTION_CHECK_FOR_SLOW_RENDERING 0
+#endif
+
+#ifndef    TRACKTION_AIR_WINDOWS
+ //#define TRACKTION_AIR_WINDOWS 0
 #endif
 
 //==============================================================================

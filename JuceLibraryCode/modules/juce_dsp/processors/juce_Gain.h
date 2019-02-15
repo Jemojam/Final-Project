@@ -38,11 +38,11 @@ template <typename FloatType>
 class Gain
 {
 public:
-    Gain() noexcept {}
+    Gain() noexcept = default;
 
     //==============================================================================
     /** Applies a new gain as a linear value. */
-    void setGainLinear (FloatType newGain) noexcept             { gain.setValue (newGain); }
+    void setGainLinear (FloatType newGain) noexcept             { gain.setTargetValue (newGain); }
 
     /** Applies a new gain as a decibel value. */
     void setGainDecibels (FloatType newGainDecibels) noexcept   { setGainLinear (Decibels::decibelsToGain<FloatType> (newGainDecibels)); }
