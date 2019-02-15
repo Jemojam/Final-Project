@@ -13,9 +13,13 @@ public:
 	void timerCallback() override;
 
 private:
+    void addNewTrackComponent(AudioTrack& audioTrack);
+    void clearChannels();
+    void rebuildTrackList();
 
 	AudioEngine& engine;
-
 	std::vector<std::unique_ptr<ChannelComponent>> channels;
-	void rebuildTrackList();
+
+    int channelY = 0;
+
 };

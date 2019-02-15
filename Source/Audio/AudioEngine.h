@@ -54,4 +54,5 @@ private:
     void removeAllTracks();
 
     TransportControl& getTransport() const;
+    void addVolumeAndPanPlugin(AudioTrack& track) const;
 };

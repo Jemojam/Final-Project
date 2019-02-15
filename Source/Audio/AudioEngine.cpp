@@ -1,28 +1,26 @@
 #include "AudioEngine.h"
 #include <typeinfo>
 
-
 using namespace tracktion_engine;
 
 AudioEngine::AudioEngine()
 {
-	edit = std::make_unique<Edit>(engine, createEmptyEdit(), Edit::forEditing, nullptr, 0);
+    edit = std::make_unique<Edit>(engine, createEmptyEdit(), Edit::forEditing, nullptr, 0);
 
-	removeAllTracks();
+    removeAllTracks();
 }
-
 
 AudioEngine::~AudioEngine()
 {
-	engine.getTemporaryFileManager().getTempDirectory().deleteRecursively();
+    engine.getTemporaryFileManager().getTempDirectory().deleteRecursively();
 }
 
 void AudioEngine::removeAllTracks()
 {
-	for (auto track : getTrackList())
-	{
-		edit->deleteTrack(track);
-	}
+    for (auto track : getTrackList())
+    {
+        edit->deleteTrack(track);
+    }
 }
 
 void AudioEngine::addChannel(File file)
@@ -32,26 +30,26 @@ void AudioEngine::addChannel(File file)
 
 void AudioEngine::removeChannel()
 {
-	if (trackNum > 0)
-	{
-		if (trackNum - 1 == 0)
-		{
-			auto track = edit->getOrInsertAudioTrackAt(--trackNum);
-			removeTrack(*track);
-		}
-		else
-		{
-			auto track = edit->getOrInsertAudioTrackAt(--trackNum);
-			removeTrack(*track);
-		}
-	}
+    if (trackNum > 0)
+    {
+        if (trackNum - 1 == 0)
+        {
+            auto track = edit->getOrInsertAudioTrackAt(--trackNum);
+            removeTrack(*track);
+        }
+        else
+        {
+            auto track = edit->getOrInsertAudioTrackAt(--trackNum);
+            removeTrack(*track);
+        }
+    }
 }
 
-void AudioEngine::removeTrack(te::AudioTrack & track)
+void AudioEngine::removeTrack(te::AudioTrack& track)
 {
-	auto& clips = track.getClips();
+    auto& clips = track.getClips();
 
-	clips.getUnchecked(trackNum)->removeFromParentTrack();
+    clips.getUnchecked(trackNum)->removeFromParentTrack();
 }
 
 te::WaveAudioClip::Ptr AudioEngine::loadAudioFileAsClip(const File &file, int trackNumber)
@@ -91,7 +89,7 @@ void AudioEngine::addNewClipFromFile(const File & editFile, int trackNum)
 
 void AudioEngine::play()
 {
-    getTransport().setLoopRange({ 0.0, edit->getLength() });
+    getTransport().setLoopRange({0.0, edit->getLength()});
     getTransport().looping = true;
     getTransport().play(false);
 
@@ -100,44 +98,48 @@ TransportControl& AudioEngine::getTransport() const { return edit->getTransport(
 
 void AudioEngine::stop()
 {
-    getTransport().stop(true, false, true , true);
+    getTransport().stop(true, false, true, true);
 }
 
 void AudioEngine::pause()
 {
-    getTransport().stop(true, false, true , false);
+    getTransport().stop(true, false, true, false);
 }
 
-void AudioEngine::removeAllClips(te::AudioTrack & track)
+void AudioEngine::removeAllClips(te::AudioTrack& track)
 {
-	auto& clips = track.getClips();
+    auto& clips = track.getClips();
 
-	for (int i = clips.size(); --i >= 0;)
-		clips.getUnchecked(i)->removeFromParentTrack();
+    for (int i = clips.size(); --i >= 0;)
+        clips.getUnchecked(i)->removeFromParentTrack();
 }
 
-void AudioEngine::adjustClipProperties(tracktion_engine::WaveAudioClip & clip) const
+void AudioEngine::adjustClipProperties(tracktion_engine::WaveAudioClip& clip) const
 {
-	// Disable auto tempo and pitch, we'll handle these manually
-	clip.setAutoTempo(false);
-	clip.setAutoPitch(false);
-	clip.setTimeStretchMode(TimeStretcher::defaultMode);
+    // Disable auto tempo and pitch, we'll handle these manually
+    clip.setAutoTempo(false);
+    clip.setAutoPitch(false);
+    clip.setTimeStretchMode(TimeStretcher::defaultMode);
 }
 
 void AudioEngine::addChannel()
 {
-	auto numTracks = edit->getTrackList().size();
+    auto numTracks = edit->getTrackList().size();
+    auto track = edit->getOrInsertAudioTrackAt(numTracks);
 
-	auto track = edit->getOrInsertAudioTrackAt(numTracks);
+    addVolumeAndPanPlugin(*track);
 
-    auto plugins = track->getAllPlugins();
+    dirty = true;
+}
 
-    juce::PluginDescription description;
+void AudioEngine::addVolumeAndPanPlugin(AudioTrack& track) const
+{
+    auto plugins = track.getAllPlugins();
+
+    PluginDescription description;
     auto newPlugin = edit->getPluginCache().createNewPlugin("volume", description);
 
     plugins.add(newPlugin);
-
-	dirty = true;
 }
 
 void AudioEngine::changeVolumeFromSlider(float sliderValue, int trackId)

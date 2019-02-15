@@ -24,27 +24,32 @@ void ChannelWindow::timerCallback()
 
 void ChannelWindow::rebuildTrackList()
 {
-	auto& trackList = engine.getTrackList();
+    clearChannels();
 
-	channels.clear();
-
-	int channelY = 0;
-
-	for (auto& track : trackList)
+    for (auto* track : engine.getTrackList())
 	{
-		channels.emplace_back();
-
-		auto& addedChannel = channels.back();
-
 		auto audioTrack = dynamic_cast<AudioTrack*> (track);
 
 		if (audioTrack != nullptr)
-        {
-            addedChannel = std::make_unique<ChannelComponent>(engine, *audioTrack);
-            addAndMakeVisible(*addedChannel);
-
-            addedChannel->setBounds(0, channelY, getWidth(), channelHeight);
-            channelY += channelHeight;
-        }
+            addNewTrackComponent(*audioTrack);
 	}
+}
+
+void ChannelWindow::clearChannels()
+{
+    channels.clear();
+    channelY = 0;
+}
+
+void ChannelWindow::addNewTrackComponent(AudioTrack& audioTrack)
+{
+    channels.emplace_back();
+
+    auto& addedChannel = channels.back();
+
+    addedChannel = std::make_unique<ChannelComponent>(engine, audioTrack);
+    addAndMakeVisible(*addedChannel);
+
+    addedChannel->setBounds(0, channelY, getWidth(), channelHeight);
+    channelY += channelHeight;
 }
