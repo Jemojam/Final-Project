@@ -2,7 +2,7 @@
 
 
 //==============================================================================
-ToolbarComponent::ToolbarComponent (AudioEngine& inEngine): engine(inEngine)
+ToolbarComponent::ToolbarComponent (AudioEngine& inEngine): engine(inEngine), playButton(inEngine)
 {
     //[Constructor_pre] You can add your own custom stuff here..
     //[/Constructor_pre]
@@ -29,16 +29,9 @@ ToolbarComponent::ToolbarComponent (AudioEngine& inEngine): engine(inEngine)
                            Image(), 1.0f, Colour (0x00000000));
     stopButton->setBounds (352, 40, 16, 16);
 
-    playButton.reset (new ImageButton ("playButton"));
-    addAndMakeVisible (playButton.get());
-    playButton->setButtonText (TRANS("play"));
-    playButton->addListener (this);
+    addAndMakeVisible (playButton);
 
-    playButton->setImages (false, true, true,
-                           ImageCache::getFromMemory (_028play_png, _028play_pngSize), 1.0f, Colour (0xff0f0f0f),
-                           Image(), 0.965f, Colour (0x00000000),
-                           Image(), 1.0f, Colour (0x00000000));
-    playButton->setBounds (320, 40, 16, 16);
+    playButton.setBounds (320, 40, 16, 16);
 
     loopButton.reset (new ImageButton ("loopButton"));
     addAndMakeVisible (loopButton.get());
@@ -120,7 +113,6 @@ ToolbarComponent::~ToolbarComponent()
 
     recordButton = nullptr;
     stopButton = nullptr;
-    playButton = nullptr;
     loopButton = nullptr;
     timeText = nullptr;
     bpmText = nullptr;
@@ -258,12 +250,7 @@ void ToolbarComponent::buttonClicked (Button* buttonThatWasClicked)
     }
     else if (buttonThatWasClicked == stopButton.get())
     {
-        //[UserButtonCode_stopButton] -- add your button handler code here..
-        //[/UserButtonCode_stopButton]
-    }
-    else if (buttonThatWasClicked == playButton.get())
-    {
-        engine.play();
+        engine.stop();
     }
     else if (buttonThatWasClicked == loopButton.get())
     {

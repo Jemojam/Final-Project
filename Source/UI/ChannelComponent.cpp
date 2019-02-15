@@ -26,7 +26,7 @@ ChannelComponent::ChannelComponent(AudioEngine& inEngine) : engine(inEngine)
 
 	slider.reset(new Slider("new slider"));
 	addAndMakeVisible(slider.get());
-	slider->setRange(0, 10, 0);
+	slider->setRange(-30, 6, 0);
 	slider->setSliderStyle(Slider::LinearHorizontal);
 	slider->setTextBoxStyle(Slider::NoTextBox, false, 80, 20);
 	slider->setColour(Slider::thumbColourId, Colour(0xffbebebe));

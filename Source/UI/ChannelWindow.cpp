@@ -36,10 +36,15 @@ void ChannelWindow::rebuildTrackList()
 
 		auto& addedChannel = channels.back();
 
-		addedChannel = std::make_unique<ChannelComponent>(engine);
-		addAndMakeVisible(*addedChannel);
+		auto audioTrack = dynamic_cast<AudioTrack*> (track);
 
-		addedChannel->setBounds(0, channelY, getWidth(), channelHeight);
-		channelY += channelHeight;
+		if (audioTrack != nullptr)
+        {
+            addedChannel = std::make_unique<ChannelComponent>(engine, *audioTrack);
+            addAndMakeVisible(*addedChannel);
+
+            addedChannel->setBounds(0, channelY, getWidth(), channelHeight);
+            channelY += channelHeight;
+        }
 	}
 }

@@ -91,12 +91,21 @@ void AudioEngine::addNewClipFromFile(const File & editFile, int trackNum)
 
 void AudioEngine::play()
 {
-	auto& transport = edit->getTransport();
+    getTransport().setLoopRange({ 0.0, edit->getLength() });
+    getTransport().looping = true;
+    getTransport().play(false);
 
-	transport.setLoopRange({ 0.0, edit->getLength() });
-	transport.looping = true;
-	transport.play(false);
+}
+TransportControl& AudioEngine::getTransport() const { return edit->getTransport(); }
 
+void AudioEngine::stop()
+{
+    getTransport().stop(true, false, true , true);
+}
+
+void AudioEngine::pause()
+{
+    getTransport().stop(true, false, true , false);
 }
 
 void AudioEngine::removeAllClips(te::AudioTrack & track)
@@ -119,7 +128,14 @@ void AudioEngine::addChannel()
 {
 	auto numTracks = edit->getTrackList().size();
 
-	edit->getOrInsertAudioTrackAt(numTracks);
+	auto track = edit->getOrInsertAudioTrackAt(numTracks);
+
+    auto plugins = track->getAllPlugins();
+
+    juce::PluginDescription description;
+    auto newPlugin = edit->getPluginCache().createNewPlugin("volume", description);
+
+    plugins.add(newPlugin);
 
 	dirty = true;
 }
@@ -131,3 +147,9 @@ void AudioEngine::changeVolumeFromSlider(float sliderValue, int trackId)
 	track->edit.setMasterVolumeSliderPos(sliderValue);
 	
 }
+
+bool AudioEngine::isPlaying()
+{
+    return getTransport().isPlaying();
+}
+

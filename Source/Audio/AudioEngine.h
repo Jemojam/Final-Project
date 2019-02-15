@@ -18,6 +18,10 @@ public :
     void removeChannel();
     void removeTrack(te::AudioTrack& track);
     void play();
+    void stop();
+    void pause();
+
+    bool isPlaying();
 
     bool isDirty() { return dirty; }
 
@@ -43,13 +47,11 @@ private:
     std::unique_ptr<AudioFormatReaderSource> playSource;
 
     std::unique_ptr<te::Edit> edit;
-    AudioTransportSource transport;
 	std::unique_ptr < te::VolumeAndPanPlugin> volumeAndPanPlugin;
 
     bool dirty = true;
     int trackNum = 0;
     void removeAllTracks();
 
-
-
+    TransportControl& getTransport() const;
 };

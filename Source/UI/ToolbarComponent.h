@@ -2,6 +2,7 @@
 
 #include "JuceHeader.h"
 #include "Audio/AudioEngine.h"
+#include "PlayButton.h"
 
 class ToolbarComponent  : public Component,
                           public Button::Listener
@@ -51,12 +52,13 @@ private:
     //==============================================================================
     std::unique_ptr<ImageButton> recordButton;
     std::unique_ptr<ImageButton> stopButton;
-    std::unique_ptr<ImageButton> playButton;
     std::unique_ptr<ImageButton> loopButton;
     std::unique_ptr<TextEditor> timeText;
     std::unique_ptr<TextEditor> bpmText;
     std::unique_ptr<TextEditor> barsText;
     std::unique_ptr<ImageButton> addChannelButton;
+
+    PlayButton playButton;
 
     AudioEngine& engine;
     //==============================================================================
