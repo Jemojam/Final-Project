@@ -4,8 +4,12 @@
   '-.  .-'|  .--' ,-.  | .--'|     /'-.  .-',--.| .-. ||      \   Tracktion Software
     |  |  |  |  \ '-'  \ `--.|  \  \  |  |  |  |' '-' '|  ||  |       Corporation
     `---' `--'   `--`--'`---'`--'`--' `---' `--' `---' `--''--'    www.tracktion.com
+
+    Tracktion Engine uses a GPL/commercial licence - see LICENCE.md for details.
 */
 
+namespace tracktion_engine
+{
 
 namespace
 {
@@ -824,7 +828,7 @@ void MackieC4::acceptMidiMessage (const MidiMessage& m)
     }
 }
 
-void MackieC4::currentSelectionChanged()
+void MackieC4::currentSelectionChanged (juce::String)
 {
     if (mode == PluginMode1 || mode == PluginMode2)
     {
@@ -1032,4 +1036,6 @@ void MackieC4::pluginBypass (bool b)
 {
     bypass = b;
     updateMiscLights();
+}
+
 }

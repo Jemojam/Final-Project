@@ -4,8 +4,9 @@
   '-.  .-'|  .--' ,-.  | .--'|     /'-.  .-',--.| .-. ||      \   Tracktion Software
     |  |  |  |  \ '-'  \ `--.|  \  \  |  |  |  |' '-' '|  ||  |       Corporation
     `---' `--'   `--`--'`---'`--'`--' `---' `--' `---' `--''--'    www.tracktion.com
-*/
 
+    Tracktion Engine uses a GPL/commercial licence - see LICENCE.md for details.
+*/
 
 namespace tracktion_engine
 {
@@ -135,6 +136,10 @@ public:
         By default this returns the loop range.
     */
     virtual EditTimeRange getEditingRange (Edit&);
+
+    /** Can return a range of tracks which used be used for edit operations such as coping or deleting.
+    */
+    virtual juce::Array<Track*> getEditingTracks (Edit&)                            { return {}; }
 
     //==============================================================================
     /** If your UI has the concept of edit groups, you should return an expanded list of

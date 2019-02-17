@@ -4,13 +4,17 @@
   '-.  .-'|  .--' ,-.  | .--'|     /'-.  .-',--.| .-. ||      \   Tracktion Software
     |  |  |  |  \ '-'  \ `--.|  \  \  |  |  |  |' '-' '|  ||  |       Corporation
     `---' `--'   `--`--'`---'`--'`--' `---' `--' `---' `--''--'    www.tracktion.com
+
+    Tracktion Engine uses a GPL/commercial licence - see LICENCE.md for details.
 */
 
+namespace tracktion_engine
+{
 
 class MidiControllerParser  : private AsyncUpdater
 {
 public:
-    MidiControllerParser() {}
+    MidiControllerParser() = default;
 
     void processMessage (const MidiMessage& m)
     {
@@ -239,7 +243,7 @@ void MidiInputDevice::setEnabled (bool b)
     }
 }
 
-void MidiInputDevice::loadProps (const XmlElement* n)
+void MidiInputDevice::loadProps (const juce::XmlElement* n)
 {
     endToEndEnabled = true;
     recordingEnabled = true;
@@ -276,7 +280,7 @@ void MidiInputDevice::loadProps (const XmlElement* n)
     }
 }
 
-void MidiInputDevice::saveProps (XmlElement& n)
+void MidiInputDevice::saveProps (juce::XmlElement& n)
 {
     n.setAttribute ("enabled", enabled);
     n.setAttribute ("endToEnd", endToEndEnabled);
@@ -1301,4 +1305,6 @@ void MidiInputDevice::sendMessageToInstances (const MidiMessage& message)
     if (messageUnused && message.isNoteOn())
         if (auto&& warnOfWasted = engine.getDeviceManager().warnOfWastedMidiMessagesFunction)
             warnOfWasted (this);
+}
+
 }

@@ -4,10 +4,14 @@
   '-.  .-'|  .--' ,-.  | .--'|     /'-.  .-',--.| .-. ||      \   Tracktion Software
     |  |  |  |  \ '-'  \ `--.|  \  \  |  |  |  |' '-' '|  ||  |       Corporation
     `---' `--'   `--`--'`---'`--'`--' `---' `--' `---' `--''--'    www.tracktion.com
+
+    Tracktion Engine uses a GPL/commercial licence - see LICENCE.md for details.
 */
 
+namespace tracktion_engine
+{
 
-StepClip::Pattern::Pattern (StepClip& c, const ValueTree& v) noexcept
+StepClip::Pattern::Pattern (StepClip& c, const juce::ValueTree& v) noexcept
     : clip (c), state (v)
 {
 }
@@ -17,19 +21,19 @@ StepClip::Pattern::Pattern (const Pattern& other) noexcept
 {
 }
 
-String StepClip::Pattern::getName() const               { return state [IDs::name]; }
+String StepClip::Pattern::getName() const               { return state[IDs::name]; }
 void StepClip::Pattern::setName (const String& name)    { state.setProperty (IDs::name, name, clip.getUndoManager()); }
 
-int StepClip::Pattern::getNumNotes() const              { return state [IDs::numNotes]; }
+int StepClip::Pattern::getNumNotes() const              { return state[IDs::numNotes]; }
 void StepClip::Pattern::setNumNotes (int n)             { state.setProperty (IDs::numNotes, n, clip.getUndoManager()); }
 
-double StepClip::Pattern::getNoteLength() const         { return state [IDs::noteLength]; }
+double StepClip::Pattern::getNoteLength() const         { return state[IDs::noteLength]; }
 void StepClip::Pattern::setNoteLength (double n)        { state.setProperty (IDs::noteLength, n, clip.getUndoManager()); }
 
 BigInteger StepClip::Pattern::getChannel (int channel) const
 {
     BigInteger b;
-    b.parseString (state.getChild (channel) [IDs::pattern].toString(), 2);
+    b.parseString (state.getChild (channel)[IDs::pattern].toString(), 2);
     return b;
 }
 
@@ -49,7 +53,7 @@ void StepClip::Pattern::setChannel (int channel, const BigInteger& c)
 juce::Array<int> StepClip::Pattern::getVelocities (int channel) const
 {
     juce::Array<int> v;
-    auto sa = StringArray::fromTokens (state.getChild (channel) [IDs::velocities].toString(), false);
+    auto sa = StringArray::fromTokens (state.getChild (channel)[IDs::velocities].toString(), false);
     v.ensureStorageAllocated (sa.size());
 
     for (auto& s : sa)
@@ -90,7 +94,7 @@ static double parseFraction (const String& s)
 juce::Array<double> StepClip::Pattern::getGates (int channel) const
 {
     juce::Array<double> v;
-    auto sa = StringArray::fromTokens (state.getChild (channel) [IDs::gates].toString(), false);
+    auto sa = StringArray::fromTokens (state.getChild (channel)[IDs::gates].toString(), false);
     v.ensureStorageAllocated (sa.size());
 
     for (auto& s : sa)
@@ -129,6 +133,7 @@ bool StepClip::Pattern::getNote (int channel, int index) const noexcept
 void StepClip::Pattern::setNote (int channel, int index, bool value)
 {
     if (getNote (channel, index) != value
+          && isPositiveAndBelow (index, getNumNotes())
           && isPositiveAndBelow (channel, (int) maxNumChannels))
     {
         BigInteger b (getChannel (channel));
@@ -326,4 +331,6 @@ String StepClip::PatternInstance::getSelectableDescription()
     return clip.getName() + "  -  "
          + TRANS("Section 123").replace ("123", String (getSequenceIndex() + 1)) + " ("
          + TRANS("Pattern 123").replace ("123", String (patternIndex + 1)) + ")";
+}
+
 }

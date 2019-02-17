@@ -1,8 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<JUCERPROJECT id="LuD3xr" name="Final Project" projectType="guiapp" jucerVersion="5.4.1"
+<JUCERPROJECT id="LuD3xr" name="Final Project" projectType="guiapp" jucerVersion="5.4.2"
               headerPath="../../Source">
   <MAINGROUP id="O4Tt23" name="Final Project">
+    <GROUP id="{67F5AA5E-5EE1-DB6A-0E72-D95D5B6BFA00}" name="Images">
+      <FILE id="k5bZWj" name="028-play.png" compile="0" resource="1" file="Icons/028-play.png"/>
+      <FILE id="gP7O61" name="031-pause.png" compile="0" resource="1" file="Icons/031-pause.png"/>
+    </GROUP>
     <GROUP id="{473A1684-2AD1-A338-0F6C-1A388936821C}" name="Source">
       <GROUP id="{955C5E93-3148-3E44-AF1A-7E529EFFA770}" name="Audio">
         <FILE id="zJngmD" name="AudioEngine.cpp" compile="1" resource="0" file="Source/Audio/AudioEngine.cpp"/>
@@ -35,6 +39,8 @@
               file="Source/UI/MixerChannelComponent.cpp"/>
         <FILE id="zFqtyM" name="MixerChannelComponent.h" compile="0" resource="0"
               file="Source/UI/MixerChannelComponent.h"/>
+        <FILE id="VugjdV" name="PlayButton.cpp" compile="1" resource="0" file="Source/UI/PlayButton.cpp"/>
+        <FILE id="a6doR8" name="PlayButton.h" compile="0" resource="0" file="Source/UI/PlayButton.h"/>
         <FILE id="Xu2KUN" name="ToolbarComponent.cpp" compile="1" resource="0"
               file="Source/UI/ToolbarComponent.cpp"/>
         <FILE id="hUK7up" name="ToolbarComponent.h" compile="0" resource="0"
@@ -66,6 +72,7 @@
         <MODULEPATH id="tracktion_engine" path="../tracktion_engine/modules"/>
         <MODULEPATH id="juce_dsp" path="../tracktion_engine/modules/juce/modules"/>
         <MODULEPATH id="juce_blocks_basics" path="C:/CODE/JUCE/modules"/>
+        <MODULEPATH id="juce_osc" path="../JUCE/modules"/>
       </MODULEPATHS>
     </XCODE_MAC>
     <XCODE_IPHONE targetFolder="Builds/iOS">
@@ -89,6 +96,7 @@
         <MODULEPATH id="tracktion_engine" path="../tracktion_engine/modules"/>
         <MODULEPATH id="juce_dsp" path="../tracktion_engine/modules/juce/modules"/>
         <MODULEPATH id="juce_blocks_basics" path="C:/CODE/JUCE/modules"/>
+        <MODULEPATH id="juce_osc" path="../JUCE/modules"/>
       </MODULEPATHS>
     </XCODE_IPHONE>
     <VS2017 targetFolder="Builds/VisualStudio2017">
@@ -112,6 +120,7 @@
         <MODULEPATH id="tracktion_engine" path="../tracktion_engine/modules"/>
         <MODULEPATH id="juce_dsp" path="../tracktion_engine/modules/juce/modules"/>
         <MODULEPATH id="juce_blocks_basics" path="C:/CODE/JUCE/modules"/>
+        <MODULEPATH id="juce_osc" path="../JUCE/modules"/>
       </MODULEPATHS>
     </VS2017>
     <CLION targetFolder="Builds/CLion" clionXcodeEnabled="1">
@@ -131,6 +140,7 @@
         <MODULEPATH id="tracktion_engine" path="../tracktion_engine/modules"/>
         <MODULEPATH id="juce_dsp" path="../tracktion_engine/modules/juce/modules"/>
         <MODULEPATH id="juce_blocks_basics" path="C:/CODE/JUCE/modules"/>
+        <MODULEPATH id="juce_osc" path="../JUCE/modules"/>
       </MODULEPATHS>
     </CLION>
   </EXPORTFORMATS>
@@ -149,6 +159,7 @@
     <MODULE id="juce_gui_basics" showAllCode="1" useLocalCopy="1" useGlobalPath="1"/>
     <MODULE id="juce_gui_extra" showAllCode="1" useLocalCopy="1" useGlobalPath="1"/>
     <MODULE id="juce_opengl" showAllCode="1" useLocalCopy="1" useGlobalPath="1"/>
+    <MODULE id="juce_osc" showAllCode="1" useLocalCopy="1" useGlobalPath="1"/>
     <MODULE id="tracktion_engine" showAllCode="1" useLocalCopy="1" useGlobalPath="1"/>
   </MODULES>
   <LIVE_SETTINGS>

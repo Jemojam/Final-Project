@@ -14,7 +14,6 @@ public :
     ~AudioEngine();
 
     void addChannel();
-    void addChannel(File file);
     void removeChannel();
     void removeTrack(te::AudioTrack& track);
     void play();
@@ -29,14 +28,13 @@ public :
 
     TrackList& getTrackList() { return edit->getTrackList(); }
 
-	void changeVolumeFromSlider(float sliderValue, int trackId);
+	void changeVolume(AudioTrack& track, float newVolume);
+
+    void addNewClipFromFile(const File& editFile, AudioTrack& track);
 
 private:
 
-    te::WaveAudioClip::Ptr loadAudioFileAsClip(const File& file, int trackNumber);
-
-    void addNewClipFromFile(const File& editFile, int trackNum);
-
+    te::WaveAudioClip::Ptr loadAudioFileAsClip(const File& file, AudioTrack& track);
     void removeAllClips(te::AudioTrack& track);
 
     void adjustClipProperties(tracktion_engine::WaveAudioClip& clip) const;

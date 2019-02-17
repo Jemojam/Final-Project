@@ -4,8 +4,12 @@
   '-.  .-'|  .--' ,-.  | .--'|     /'-.  .-',--.| .-. ||      \   Tracktion Software
     |  |  |  |  \ '-'  \ `--.|  \  \  |  |  |  |' '-' '|  ||  |       Corporation
     `---' `--'   `--`--'`---'`--'`--' `---' `--' `---' `--''--'    www.tracktion.com
+
+    Tracktion Engine uses a GPL/commercial licence - see LICENCE.md for details.
 */
 
+namespace tracktion_engine
+{
 
 struct LiveMidiInjectingAudioNode  : public SingleInputAudioNode
 {
@@ -380,7 +384,7 @@ AuxSendPlugin* AudioTrack::getAuxSendPlugin (int bus)
 }
 
 //==============================================================================
-String AudioTrack::getNameForMidiNoteNumber (int note, int midiChannel) const
+String AudioTrack::getNameForMidiNoteNumber (int note, int midiChannel, bool preferSharp) const
 {
     jassert (midiChannel > 0);
     String s;
@@ -390,7 +394,7 @@ String AudioTrack::getNameForMidiNoteNumber (int note, int midiChannel) const
             return s;
 
     if (auto dest = output->getDestinationTrack())
-        return dest->getNameForMidiNoteNumber (note, midiChannel);
+        return dest->getNameForMidiNoteNumber (note, midiChannel, preferSharp);
 
     // try the master plugins..
     for (auto af : edit.getMasterPluginList())
@@ -398,10 +402,10 @@ String AudioTrack::getNameForMidiNoteNumber (int note, int midiChannel) const
             return s;
 
     if (auto mo = dynamic_cast<MidiOutputDevice*> (getOutput().getOutputDevice (true)))
-        return mo->getNameForMidiNoteNumber (note, midiChannel);
+        return mo->getNameForMidiNoteNumber (note, midiChannel, preferSharp);
 
     return midiChannel == 10 ? TRANS(MidiMessage::getRhythmInstrumentName (note))
-                             : MidiMessage::getMidiNoteName (note, true, true,
+                             : MidiMessage::getMidiNoteName (note, preferSharp, true,
                                                              edit.engine.getEngineBehaviour().getMiddleCOctave());
 }
 
@@ -736,7 +740,7 @@ void AudioTrack::removeListener (Listener* l)
 }
 
 //==============================================================================
-void AudioTrack::valueTreePropertyChanged (ValueTree& v, const Identifier& i)
+void AudioTrack::valueTreePropertyChanged (ValueTree& v, const juce::Identifier& i)
 {
     if (v == state)
     {
@@ -859,6 +863,7 @@ static AudioNode* createFilterAudioNode (AudioTrack& track, AudioNode* node, con
 AudioNode* AudioTrack::createAudioNode (const CreateAudioNodeParams& params)
 {
     CRASH_TRACER
+    jassert (isProcessing (false));
 
     if (! params.forRendering && frozenIndividually)
         return createFreezeAudioNode (params.addAntiDenormalisationNoise);
@@ -1262,8 +1267,9 @@ void AudioTrack::freezeTrack()
     r.usePlugins = true;
     r.useMasterPlugins = false;
     r.addAntiDenormalisationNoise = EditPlaybackContext::shouldAddAntiDenormalisationNoise (edit.engine);
+    r.category = ProjectItem::Category::frozen;
 
-    const Edit::ScopedRenderStatus srs (edit);
+    const Edit::ScopedRenderStatus srs (edit, true);
     auto renderedItem = Renderer::renderToProjectItem (TRANS("Creating track freeze for \"XDVX\"")
                                                         .replace ("XDVX", getName()) + "...", r);
 
@@ -1324,7 +1330,7 @@ bool AudioTrack::insertFreezePointIfRequired()
         return false;
 
     if (auto p = pluginList.insertPlugin (FreezePointPlugin::create(), getIndexOfDefaultFreezePoint()))
-        const ScopedPointer<FreezePointPlugin::ScopedTrackFreezer> freezer (FreezePointPlugin::createTrackFreezer (p));
+        auto freezer = FreezePointPlugin::createTrackFreezer (p);
 
     edit.dispatchPendingUpdatesSynchronously();
     // need to force the audio device to update before we start the render
@@ -1390,9 +1396,7 @@ void AudioTrack::unFreezeTrack()
 
 File AudioTrack::getFreezeFile() const noexcept
 {
-    // TODO: unify proxy filename handling
-    return edit.getTempDirectory (true)
-             .getChildFile (getTrackFreezePrefix() + "0_" + itemID.toString() + ".freeze");
+    return TemporaryFileManager::getFreezeFileForTrack (*this);
 }
 
 AudioNode* AudioTrack::createFreezeAudioNode (bool addAntiDenormalisationNoise)
@@ -1435,4 +1439,6 @@ juce::Array<Track*> AudioTrack::findSidechainSourceTracks() const
     }
 
     return srcTracks;
+}
+
 }

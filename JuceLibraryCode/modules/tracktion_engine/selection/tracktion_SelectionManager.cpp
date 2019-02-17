@@ -4,8 +4,12 @@
   '-.  .-'|  .--' ,-.  | .--'|     /'-.  .-',--.| .-. ||      \   Tracktion Software
     |  |  |  |  \ '-'  \ `--.|  \  \  |  |  |  |' '-' '|  ||  |       Corporation
     `---' `--'   `--`--'`---'`--'`--' `---' `--' `---' `--''--'    www.tracktion.com
+
+    Tracktion Engine uses a GPL/commercial licence - see LICENCE.md for details.
 */
 
+namespace tracktion_engine
+{
 
 struct SelectableUpdateTimer  : public AsyncUpdater,
                                 private DeletedAtShutdown
@@ -113,6 +117,7 @@ void Selectable::addSelectableListener (SelectableListener* l)
     TRACKTION_ASSERT_MESSAGE_THREAD
     jassert (l != nullptr);
     jassert (! isCallingListeners);
+    jassert (! hasNotifiedListenersOfDeletion);
     selectableListeners.add (l);
 }
 
@@ -170,13 +175,26 @@ void Selectable::notifyListenersOfDeletion()
 
             WeakRef self (this);
 
-            selectableListeners.call ([self] (SelectableListener& l)
-                                      {
-                                          if (auto s = self.get())
-                                              l.selectableObjectAboutToBeDeleted (s);
-                                          else
-                                              jassertfalse;
-                                      });
+            // Use a local copy in case any listeners get deleted during the callbacks
+            juce::ListenerList<SelectableListener> copy;
+
+            for (auto l : selectableListeners.getListeners())
+                copy.add (l);
+
+            copy.call ([self] (SelectableListener& l)
+                       {
+                           if (auto s = self.get())
+                           {
+                               if (! s->selectableListeners.contains (&l))
+                                   return;
+
+                               l.selectableObjectAboutToBeDeleted (s);
+                           }
+                           else
+                           {
+                               jassertfalse;
+                           }
+                       });
         }
 
         selectableAboutToBeDeleted();
@@ -240,13 +258,8 @@ SelectableClass* SelectableClass::findClassFor (const Selectable* s)
 String SelectableClass::getDescriptionOfSelectedGroup (const SelectableList& selectedObjects)
 {
     if (selectedObjects.size() == 1)
-    {
         if (auto s = selectedObjects.getFirst())
-        {
-            jassert (Selectable::isSelectableValid (s));
             return s->getSelectableDescription();
-        }
-    }
 
     StringArray names;
 
@@ -339,14 +352,14 @@ SelectableClass* SelectionManager::getFirstSelectableClass() const
 
 void SelectionManager::clearList()
 {
-    for (auto s : selected)
-        if (Selectable::isSelectableValid (s))
+    for (auto s : selected.getAsWeakRefList())
+        if (s != nullptr)
             s->removeSelectableListener (this);
 
     selected.clear();
 }
 
-SelectionManager::Iterator::Iterator() noexcept  : index (-1) {}
+SelectionManager::Iterator::Iterator() {}
 
 bool SelectionManager::Iterator::next()
 {
@@ -366,7 +379,7 @@ int SelectionManager::getNumObjectsSelected() const
 Selectable* SelectionManager::getSelectedObject (int index) const
 {
     const ScopedLock sl (lock);
-    return selected [index];
+    return selected[index];
 }
 
 const SelectableList& SelectionManager::getSelectedObjects() const
@@ -390,8 +403,8 @@ void SelectionManager::deselectAll()
 
     if (selected.size() > 0)
     {
-        for (auto s : SelectableList (selected))
-            if (Selectable::isSelectableValid (s))
+        for (auto s : selected.getAsWeakRefList())
+            if (s != nullptr)
                 s->selectionStatusChanged (false);
 
         clearList();
@@ -646,6 +659,28 @@ SelectionManager::ScopedSelectionState::~ScopedSelectionState()
 }
 
 //==============================================================================
+bool SelectionManager::ChangedSelectionDetector::isFirstChangeSinceSelection (SelectionManager* sm)
+{
+    if (sm != nullptr)
+    {
+        int newCount = sm->selectionChangeCount;
+
+        if (lastSelectionChangeCount != newCount)
+        {
+            lastSelectionChangeCount = newCount;
+            return true;
+        }
+    }
+
+    return false;
+}
+
+void SelectionManager::ChangedSelectionDetector::reset()
+{
+    lastSelectionChangeCount = 0;
+}
+
+//==============================================================================
 SelectableClass* SelectableList::getSelectableClass (int index) const
 {
     if (index >= items.size())
@@ -666,4 +701,6 @@ SelectableClass* SelectableList::getSelectableClass (int index) const
 std::pair<Selectable*, SelectableClass*> SelectableList::getSelectableAndClass (int index) const
 {
     return std::pair<Selectable*, SelectableClass*> (items[index], getSelectableClass (index));
+}
+
 }

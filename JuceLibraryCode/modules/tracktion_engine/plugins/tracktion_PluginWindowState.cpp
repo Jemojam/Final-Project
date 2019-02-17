@@ -4,8 +4,12 @@
   '-.  .-'|  .--' ,-.  | .--'|     /'-.  .-',--.| .-. ||      \   Tracktion Software
     |  |  |  |  \ '-'  \ `--.|  \  \  |  |  |  |' '-' '|  ||  |       Corporation
     `---' `--'   `--`--'`---'`--'`--' `---' `--' `---' `--''--'    www.tracktion.com
+
+    Tracktion Engine uses a GPL/commercial licence - see LICENCE.md for details.
 */
 
+namespace tracktion_engine
+{
 
 PluginWindowState::PluginWindowState (Engine& e)
    : engine (e),
@@ -27,7 +31,7 @@ void PluginWindowState::showWindow()
             pickDefaultWindowBounds();
 
         WeakReference<Component> oldFocus (Component::getCurrentlyFocusedComponent());
-        masterConnection = engine.getUIBehaviour().createPluginWindowConnection (*this);
+        masterConnection.reset (engine.getUIBehaviour().createPluginWindowConnection (*this));
 
         if (oldFocus != nullptr)
             oldFocus->grabKeyboardFocus();
@@ -193,4 +197,6 @@ bool PluginWindowConnection::Slave::isWindowLocked() const
         return master->isWindowLocked();
 
     return false;
+}
+
 }

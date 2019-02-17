@@ -4,8 +4,12 @@
   '-.  .-'|  .--' ,-.  | .--'|     /'-.  .-',--.| .-. ||      \   Tracktion Software
     |  |  |  |  \ '-'  \ `--.|  \  \  |  |  |  |' '-' '|  ||  |       Corporation
     `---' `--'   `--`--'`---'`--'`--' `---' `--' `---' `--''--'    www.tracktion.com
+
+    Tracktion Engine uses a GPL/commercial licence - see LICENCE.md for details.
 */
 
+namespace tracktion_engine
+{
 
 InputDevice::InputDevice (Engine& e, const String& t, const String& n)
    : engine (e), type (t), name (n)
@@ -260,4 +264,6 @@ void InputDeviceInstance::updateRecordingStatus()
 
     if (! wasRecording && recordEnabled)
         prepareAndPunchRecord();
+}
+
 }

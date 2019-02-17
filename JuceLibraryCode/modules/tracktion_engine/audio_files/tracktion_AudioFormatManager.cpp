@@ -4,8 +4,12 @@
   '-.  .-'|  .--' ,-.  | .--'|     /'-.  .-',--.| .-. ||      \   Tracktion Software
     |  |  |  |  \ '-'  \ `--.|  \  \  |  |  |  |' '-' '|  ||  |       Corporation
     `---' `--'   `--`--'`---'`--'`--' `---' `--' `---' `--''--'    www.tracktion.com
+
+    Tracktion Engine uses a GPL/commercial licence - see LICENCE.md for details.
 */
 
+namespace tracktion_engine
+{
 
 AudioFileFormatManager::AudioFileFormatManager()
 {
@@ -145,4 +149,6 @@ juce::AudioFormat* AudioFileFormatManager::getNamedFormat (const juce::String& f
             return format;
 
     return getDefaultFormat();
+}
+
 }
