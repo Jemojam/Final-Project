@@ -3,6 +3,7 @@
 #include "JuceHeader.h"
 #include "Audio/AudioEngine.h"
 #include "PlayButton.h"
+#include "AudioSettings.h"
 
 class ToolbarComponent  : public Component,
                           public Button::Listener
@@ -57,10 +58,13 @@ private:
     std::unique_ptr<TextEditor> bpmText;
     std::unique_ptr<TextEditor> barsText;
     std::unique_ptr<ImageButton> addChannelButton;
+	std::unique_ptr<ImageButton> audioSettingsButton;
 
     PlayButton playButton;
-
+	AudioSettings audioSettings;
     AudioEngine& engine;
+
+	
     //==============================================================================
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (ToolbarComponent)
 };

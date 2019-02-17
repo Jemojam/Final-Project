@@ -4,9 +4,8 @@
   '-.  .-'|  .--' ,-.  | .--'|     /'-.  .-',--.| .-. ||      \   Tracktion Software
     |  |  |  |  \ '-'  \ `--.|  \  \  |  |  |  |' '-' '|  ||  |       Corporation
     `---' `--'   `--`--'`---'`--'`--' `---' `--' `---' `--''--'    www.tracktion.com
-
-    Tracktion Engine uses a GPL/commercial licence - see LICENCE.md for details.
 */
+
 
 #if JUCE_WINDOWS && TRACKTION_ENABLE_TIMESTRETCH_ELASTIQUE
  #pragma comment (lib, "libelastiqueProV3.lib")
@@ -20,17 +19,14 @@
  #pragma comment (lib, "ippvm_l.lib")
 #endif
 
-namespace tracktion_engine
-{
-
-TimeStretcher::ElastiqueProOptions::ElastiqueProOptions (const juce::String& string)
+TimeStretcher::ElastiqueProOptions::ElastiqueProOptions (const String& string)
 {
     if (string.isEmpty())
         return;
 
     if (string.startsWith ("1/"))
     {
-        juce::StringArray tokens;
+        StringArray tokens;
         tokens.addTokens (string, "/", {});
 
         if (tokens.size() == 5)
@@ -46,14 +42,14 @@ TimeStretcher::ElastiqueProOptions::ElastiqueProOptions (const juce::String& str
     jassertfalse; //unknown string format
 }
 
-juce::String TimeStretcher::ElastiqueProOptions::toString() const
+String TimeStretcher::ElastiqueProOptions::toString() const
 {
     // version / midside / sync / preserve / order
-    return juce::String::formatted ("1/%d/%d/%d/%d",
-                                    midSideStereo        ? 1 : 0,
-                                    syncTimeStrPitchShft ? 1 : 0,
-                                    preserveFormants     ? 1 : 0,
-                                    envelopeOrder);
+    return String::formatted ("1/%d/%d/%d/%d",
+                              midSideStereo        ? 1 : 0,
+                              syncTimeStrPitchShft ? 1 : 0,
+                              preserveFormants     ? 1 : 0,
+                              envelopeOrder);
 }
 
 bool TimeStretcher::ElastiqueProOptions::operator== (const ElastiqueProOptions& other) const
@@ -125,7 +121,7 @@ struct ElastiqueStretcher  : public TimeStretcher::Stretcher
 
     bool setSpeedAndPitch (float speedRatio, float semitonesUp) override
     {
-        float pitch = juce::jlimit (0.25f, 4.0f, Pitch::semitonesToRatio (semitonesUp));
+        float pitch = jlimit (0.25f, 4.0f, Pitch::semitonesToRatio (semitonesUp));
         bool sync  = (elastiqueMode == TimeStretcher::elastiquePro) ? elastiqueProOptions.syncTimeStrPitchShft : false;
         int r = elastique->SetStretchPitchQFactor (speedRatio, pitch, sync);
         jassert (r == 0); juce::ignoreUnused (r);
@@ -331,13 +327,13 @@ private:
 TimeStretcher::TimeStretcher() {}
 TimeStretcher::~TimeStretcher() {}
 
-static juce::String getMelodyne()             { return "Melodyne"; }
-static juce::String getElastiquePro()         { return "Elastique (" + TRANS("Pro") + ")"; }
-static juce::String getElastiqueEfficeint()   { return "Elastique (" + TRANS("Efficient") + ")"; }
-static juce::String getElastiqueMobile()      { return "Elastique (" + TRANS("Mobile") + ")"; }
-static juce::String getElastiqueMono()        { return "Elastique (" + TRANS("Monophonic") + ")"; }
-static juce::String getSoundTouchNormal()     { return "SoundTouch (" + TRANS("Normal") + ")"; }
-static juce::String getSoundTouchBetter()     { return "SoundTouch (" + TRANS("Better") + ")"; }
+static String getMelodyne()             { return "Melodyne"; }
+static String getElastiquePro()         { return "Elastique (" + TRANS("Pro") + ")"; }
+static String getElastiqueEfficeint()   { return "Elastique (" + TRANS("Efficient") + ")"; }
+static String getElastiqueMobile()      { return "Elastique (" + TRANS("Mobile") + ")"; }
+static String getElastiqueMono()        { return "Elastique (" + TRANS("Monophonic") + ")"; }
+static String getSoundTouchNormal()     { return "SoundTouch (" + TRANS("Normal") + ")"; }
+static String getSoundTouchBetter()     { return "SoundTouch (" + TRANS("Better") + ")"; }
 
 TimeStretcher::Mode TimeStretcher::checkModeIsAvailable (Mode m)
 {
@@ -373,9 +369,9 @@ TimeStretcher::Mode TimeStretcher::checkModeIsAvailable (Mode m)
     }
 }
 
-juce::StringArray TimeStretcher::getPossibleModes (Engine& e, bool excludeMelodyne)
+StringArray TimeStretcher::getPossibleModes (Engine& e, bool excludeMelodyne)
 {
-    juce::StringArray s;
+    StringArray s;
 
    #if TRACKTION_ENABLE_TIMESTRETCH_ELASTIQUE
     s.add (getElastiquePro());
@@ -399,7 +395,7 @@ juce::StringArray TimeStretcher::getPossibleModes (Engine& e, bool excludeMelody
     return s;
 }
 
-TimeStretcher::Mode TimeStretcher::getModeFromName (Engine& e, const juce::String& name)
+TimeStretcher::Mode TimeStretcher::getModeFromName (Engine& e, const String& name)
 {
    #if TRACKTION_ENABLE_TIMESTRETCH_ELASTIQUE
     if (name == getElastiquePro())          return elastiquePro;
@@ -421,7 +417,7 @@ TimeStretcher::Mode TimeStretcher::getModeFromName (Engine& e, const juce::Strin
                                                        : disabled;
 }
 
-juce::String TimeStretcher::getNameOfMode (const Mode mode)
+String TimeStretcher::getNameOfMode (const Mode mode)
 {
     switch (mode)
     {
@@ -472,8 +468,8 @@ void TimeStretcher::initialise (double sourceSampleRate, int samplesPerBlock,
         case elastiqueEfficient:
         case elastiqueMobile:
         case elastiqueMonophonic:
-            stretcher.reset (new ElastiqueStretcher (sourceSampleRate, samplesPerBlock, numChannels,
-                                                     mode, options, realtime ? 0.25f : 0.1f));
+            stretcher = new ElastiqueStretcher (sourceSampleRate, samplesPerBlock, numChannels,
+                                                mode, options, realtime ? 0.25f : 0.1f);
             break;
        #endif
 
@@ -481,8 +477,8 @@ void TimeStretcher::initialise (double sourceSampleRate, int samplesPerBlock,
         case soundtouchNormal:
         case soundtouchBetter:
             juce::ignoreUnused (options, realtime);
-            stretcher.reset (new SoundTouchStretcher (sourceSampleRate, samplesPerBlock, numChannels,
-                                                      mode == soundtouchBetter));
+            stretcher = new SoundTouchStretcher (sourceSampleRate, samplesPerBlock, numChannels,
+                                                 mode == soundtouchBetter);
             break;
        #endif
 
@@ -493,7 +489,7 @@ void TimeStretcher::initialise (double sourceSampleRate, int samplesPerBlock,
 
     if (stretcher != nullptr)
         if (! stretcher->isOk())
-            stretcher.reset();
+            stretcher = nullptr;
 }
 
 bool TimeStretcher::canProcessFor (const Mode mode)
@@ -546,8 +542,8 @@ void TimeStretcher::processData (AudioFifo& inFifo, int numSamples, AudioFifo& o
 
     if (stretcher != nullptr)
     {
-        auto inChannels = inBuffer.buffer.getArrayOfReadPointers();
-        auto outChannels = outBuffer.buffer.getArrayOfWritePointers();
+        const float* const* inChannels = inBuffer.buffer.getArrayOfReadPointers();
+        float* const* outChannels = outBuffer.buffer.getArrayOfWritePointers();
 
         stretcher->processData (inChannels, numSamples, outChannels);
     }
@@ -559,6 +555,4 @@ void TimeStretcher::flush (float* const* outChannels)
 {
     if (stretcher != nullptr)
         stretcher->flush (outChannels);
-}
-
 }

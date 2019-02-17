@@ -4,9 +4,8 @@
   '-.  .-'|  .--' ,-.  | .--'|     /'-.  .-',--.| .-. ||      \   Tracktion Software
     |  |  |  |  \ '-'  \ `--.|  \  \  |  |  |  |' '-' '|  ||  |       Corporation
     `---' `--'   `--`--'`---'`--'`--' `---' `--' `---' `--''--'    www.tracktion.com
-
-    Tracktion Engine uses a GPL/commercial licence - see LICENCE.md for details.
 */
+
 
 #if ! JUCE_PROJUCER_LIVE_BUILD
 
@@ -16,6 +15,9 @@
  // If you get a build error here you'll need to add the Elastique SDK to your header search path!
  #include "elastique_pro/incl/elastiqueProV3API.h"
 #endif
+
+namespace tracktion_engine
+{
 
 using namespace juce;
 
@@ -36,26 +38,23 @@ using namespace juce;
 
 #include "timestretch/tracktion_TimeStretch.cpp"
 
-namespace tracktion_engine
-{
-    #include "3rd_party/soundtouch/source/SoundTouch/BPMDetect.cpp"
-    #include "3rd_party/soundtouch/source/SoundTouch/PeakFinder.cpp"
-    #include "3rd_party/soundtouch/source/SoundTouch/FIFOSampleBuffer.cpp"
+#include "3rd_party/soundtouch/source/SoundTouch/BPMDetect.cpp"
+#include "3rd_party/soundtouch/source/SoundTouch/PeakFinder.cpp"
+#include "3rd_party/soundtouch/source/SoundTouch/FIFOSampleBuffer.cpp"
 
-   #if TRACKTION_ENABLE_TIMESTRETCH_SOUNDTOUCH
-    #include "3rd_party/soundtouch/source/SoundTouch/AAFilter.cpp"
-    #include "3rd_party/soundtouch/source/SoundTouch/cpu_detect_x86.cpp"
-    #include "3rd_party/soundtouch/source/SoundTouch/FIRFilter.cpp"
-    #include "3rd_party/soundtouch/source/SoundTouch/InterpolateCubic.cpp"
-    #include "3rd_party/soundtouch/source/SoundTouch/InterpolateLinear.cpp"
-    #include "3rd_party/soundtouch/source/SoundTouch/InterpolateShannon.cpp"
-    #include "3rd_party/soundtouch/source/SoundTouch/mmx_optimized.cpp"
-    #include "3rd_party/soundtouch/source/SoundTouch/RateTransposer.cpp"
-    #include "3rd_party/soundtouch/source/SoundTouch/SoundTouch.cpp"
-    #include "3rd_party/soundtouch/source/SoundTouch/sse_optimized.cpp"
-    #include "3rd_party/soundtouch/source/SoundTouch/TDStretch.cpp"
-   #endif
-}
+#if TRACKTION_ENABLE_TIMESTRETCH_SOUNDTOUCH
+ #include "3rd_party/soundtouch/source/SoundTouch/AAFilter.cpp"
+ #include "3rd_party/soundtouch/source/SoundTouch/cpu_detect_x86.cpp"
+ #include "3rd_party/soundtouch/source/SoundTouch/FIRFilter.cpp"
+ #include "3rd_party/soundtouch/source/SoundTouch/InterpolateCubic.cpp"
+ #include "3rd_party/soundtouch/source/SoundTouch/InterpolateLinear.cpp"
+ #include "3rd_party/soundtouch/source/SoundTouch/InterpolateShannon.cpp"
+ #include "3rd_party/soundtouch/source/SoundTouch/mmx_optimized.cpp"
+ #include "3rd_party/soundtouch/source/SoundTouch/RateTransposer.cpp"
+ #include "3rd_party/soundtouch/source/SoundTouch/SoundTouch.cpp"
+ #include "3rd_party/soundtouch/source/SoundTouch/sse_optimized.cpp"
+ #include "3rd_party/soundtouch/source/SoundTouch/TDStretch.cpp"
+#endif
 
 #ifdef JUCE_MSVC
  #pragma warning (pop)
@@ -64,5 +63,7 @@ namespace tracktion_engine
 #ifdef __clang__
  #pragma clang diagnostic pop
 #endif
+
+}
 
 #endif

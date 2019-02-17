@@ -4,12 +4,8 @@
   '-.  .-'|  .--' ,-.  | .--'|     /'-.  .-',--.| .-. ||      \   Tracktion Software
     |  |  |  |  \ '-'  \ `--.|  \  \  |  |  |  |' '-' '|  ||  |       Corporation
     `---' `--'   `--`--'`---'`--'`--' `---' `--' `---' `--''--'    www.tracktion.com
-
-    Tracktion Engine uses a GPL/commercial licence - see LICENCE.md for details.
 */
 
-namespace tracktion_engine
-{
 
 AuxReturnPlugin::AuxReturnPlugin (PluginCreationInfo info)  : Plugin (info)
 {
@@ -204,10 +200,8 @@ void AuxReturnPlugin::applyToBuffer (const AudioRenderContext& fc)
     }
 }
 
-void AuxReturnPlugin::restorePluginStateFromValueTree (const juce::ValueTree& v)
+void AuxReturnPlugin::restorePluginStateFromValueTree (const ValueTree& v)
 {
     CachedValue<int>* cvsInt[] = { &busNumber, nullptr };
     copyPropertiesToNullTerminatedCachedValues (v, cvsInt);
-}
-
 }

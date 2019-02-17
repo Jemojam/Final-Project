@@ -4,12 +4,8 @@
   '-.  .-'|  .--' ,-.  | .--'|     /'-.  .-',--.| .-. ||      \   Tracktion Software
     |  |  |  |  \ '-'  \ `--.|  \  \  |  |  |  |' '-' '|  ||  |       Corporation
     `---' `--'   `--`--'`---'`--'`--' `---' `--' `---' `--''--'    www.tracktion.com
-
-    Tracktion Engine uses a GPL/commercial licence - see LICENCE.md for details.
 */
 
-namespace tracktion_engine
-{
 
 struct MultiCPU
 {
@@ -454,6 +450,4 @@ void MixerAudioNode::updateNumCPUs (Engine& e)
     CRASH_TRACER
     MultiCPU::MixerThreadPool::getInstance()
         ->setNumThreads (e.getEngineBehaviour().getNumberOfCPUsToUseForAudio() - 1);
-}
-
 }

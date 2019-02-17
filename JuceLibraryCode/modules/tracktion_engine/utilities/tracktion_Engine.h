@@ -4,9 +4,8 @@
   '-.  .-'|  .--' ,-.  | .--'|     /'-.  .-',--.| .-. ||      \   Tracktion Software
     |  |  |  |  \ '-'  \ `--.|  \  \  |  |  |  |' '-' '|  ||  |       Corporation
     `---' `--'   `--`--'`---'`--'`--' `---' `--' `---' `--''--'    www.tracktion.com
-
-    Tracktion Engine uses a GPL/commercial licence - see LICENCE.md for details.
 */
+
 
 namespace tracktion_engine
 {
@@ -14,10 +13,9 @@ namespace tracktion_engine
 /**
     The Engine is the central class for all tracktion sessions.
 
-    Create a Engine before creating any edits. Pass in subclasses of behaviours to
-    customise how the engine behaves or pass nullptr to use the defaults.
-    To get going quickly, just use the constructor that takes an application name,
-    which uses default settings.
+    Create a Engine before creating any edits. Pass in subclasses of behabiours to
+    customise how the engine behaves or pass nullptr to use the defaults. To get going quickly,
+    just pass in an application name
 */
 class Engine
 {

@@ -4,12 +4,8 @@
   '-.  .-'|  .--' ,-.  | .--'|     /'-.  .-',--.| .-. ||      \   Tracktion Software
     |  |  |  |  \ '-'  \ `--.|  \  \  |  |  |  |' '-' '|  ||  |       Corporation
     `---' `--'   `--`--'`---'`--'`--' `---' `--' `---' `--''--'    www.tracktion.com
-
-    Tracktion Engine uses a GPL/commercial licence - see LICENCE.md for details.
 */
 
-namespace tracktion_engine
-{
 
 class ExternalAutomatableParameter   : public AutomatableParameter,
                                        private juce::AudioProcessorParameter::Listener,
@@ -138,10 +134,18 @@ public:
         return parameterIndex;
     }
 
+    struct LengthComp
+    {
+        static int compareElements (const juce::String& first, const juce::String& second) noexcept
+        {
+            return first.length() - second.length();
+        }
+    };
+
     juce::String getParameterShortName (int suggestedLength) const override
     {
         if (auto p = getParam())
-            return p->getName (suggestedLength);
+            p->getName (suggestedLength);
 
         return {};
     }
@@ -316,5 +320,3 @@ private:
 
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (ExternalAutomatableParameter)
 };
-
-}

@@ -4,12 +4,8 @@
   '-.  .-'|  .--' ,-.  | .--'|     /'-.  .-',--.| .-. ||      \   Tracktion Software
     |  |  |  |  \ '-'  \ `--.|  \  \  |  |  |  |' '-' '|  ||  |       Corporation
     `---' `--'   `--`--'`---'`--'`--' `---' `--' `---' `--''--'    www.tracktion.com
-
-    Tracktion Engine uses a GPL/commercial licence - see LICENCE.md for details.
 */
 
-namespace tracktion_engine
-{
 
 PitchSetting::PitchSetting (Edit& ed, const ValueTree& v)
     : TrackItem (ed, {}, Type::pitch), state (v)
@@ -18,7 +14,6 @@ PitchSetting::PitchSetting (Edit& ed, const ValueTree& v)
 
     startBeat.referTo (state, IDs::startBeat, um);
     pitch.referTo (state, IDs::pitch, um, 60);
-    accidentalsSharp.referTo (state, IDs::accidentalsSharp, um, true);
     scale.referTo (state, IDs::scale, um, Scale::major);
 
     state.addListener (this);
@@ -33,7 +28,7 @@ PitchSetting::~PitchSetting()
 
 String PitchSetting::getName()
 {
-    return MidiMessage::getMidiNoteName (pitch, accidentalsSharp, false, edit.engine.getEngineBehaviour().getMiddleCOctave());
+    return MidiMessage::getMidiNoteName (pitch, true, false, edit.engine.getEngineBehaviour().getMiddleCOctave());
 }
 
 String PitchSetting::getSelectableDescription()
@@ -80,6 +75,4 @@ void PitchSetting::removeFromEdit()
 
     if (p.getNumChildren() > 1)
         p.removeChild (state, &edit.getUndoManager());
-}
-
 }

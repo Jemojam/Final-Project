@@ -52,6 +52,17 @@ public:
             expectEquals (vwd.get().toString(), String ("default"));
         }
 
+        beginTest ("empty property");
+        {
+            ValueTree t ("root");
+            t.setProperty ("testKey", {}, nullptr);
+
+            ValueWithDefault vwd (t, "testKey", nullptr, "default");
+
+            expect (vwd.isUsingDefault());
+            expectEquals (vwd.get().toString(), String ("default"));
+        }
+
         beginTest ("non-empty property");
         {
             ValueTree t ("root");
@@ -66,6 +77,7 @@ public:
         beginTest ("set default");
         {
             ValueTree t ("root");
+            t.setProperty ("testkey", {}, nullptr);
 
             ValueWithDefault vwd (t, "testkey", nullptr);
             vwd.setDefault ("default");

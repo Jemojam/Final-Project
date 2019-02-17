@@ -204,8 +204,8 @@ void ChannelComponent::sliderValueChanged(Slider* sliderThatWasMoved)
 
 	if (sliderThatWasMoved == slider.get())
 	{
-        auto volume = (float)sliderThatWasMoved->getValue();
-        engine.changeVolume(track, volume);
+		auto volume = (float)sliderThatWasMoved->getValue();
+		engine.changeVolume(track, volume);
 
 	}
 

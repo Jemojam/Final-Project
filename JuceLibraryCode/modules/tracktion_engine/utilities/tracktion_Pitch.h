@@ -4,9 +4,8 @@
   '-.  .-'|  .--' ,-.  | .--'|     /'-.  .-',--.| .-. ||      \   Tracktion Software
     |  |  |  |  \ '-'  \ `--.|  \  \  |  |  |  |' '-' '|  ||  |       Corporation
     `---' `--'   `--`--'`---'`--'`--' `---' `--' `---' `--''--'    www.tracktion.com
-
-    Tracktion Engine uses a GPL/commercial licence - see LICENCE.md for details.
 */
+
 
 namespace tracktion_engine
 {
@@ -55,22 +54,12 @@ struct Pitch
         return 60;
     }
 
-    static juce::StringArray getPitchStrings (Engine& engine, bool separateSharpFlat)
+    static juce::StringArray getPitchStrings (Engine& engine)
     {
         juce::StringArray pitchChoices;
 
-        if (separateSharpFlat)
-        {
-            for (int i = 0; i < 12; ++i)
-                for (auto s : getPitchAsStrings (engine, i + 60))
-                    if (! s.contains ("/"))
-                        pitchChoices.add (s);
-        }
-        else
-        {
-            for (int i = 0; i < 12; ++i)
-                pitchChoices.add (getPitchAsString (engine, i + 60));
-        }
+        for (int i = 0; i < 12; ++i)
+            pitchChoices.add (getPitchAsString (engine, i + 60));
 
         return pitchChoices;
     }

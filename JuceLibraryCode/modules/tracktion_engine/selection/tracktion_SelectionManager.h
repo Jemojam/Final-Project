@@ -4,9 +4,8 @@
   '-.  .-'|  .--' ,-.  | .--'|     /'-.  .-',--.| .-. ||      \   Tracktion Software
     |  |  |  |  \ '-'  \ `--.|  \  \  |  |  |  |' '-' '|  ||  |       Corporation
     `---' `--'   `--`--'`---'`--'`--' `---' `--' `---' `--''--'    www.tracktion.com
-
-    Tracktion Engine uses a GPL/commercial licence - see LICENCE.md for details.
 */
+
 
 namespace tracktion_engine
 {
@@ -106,8 +105,26 @@ public:
     //==============================================================================
     struct ChangedSelectionDetector
     {
-        bool isFirstChangeSinceSelection (SelectionManager*);
-        void reset();
+        bool isFirstChangeSinceSelection (SelectionManager* sm)
+        {
+            if (sm != nullptr)
+            {
+                int newCount = sm->selectionChangeCount;
+
+                if (lastSelectionChangeCount != newCount)
+                {
+                    lastSelectionChangeCount = newCount;
+                    return true;
+                }
+            }
+
+            return false;
+        }
+
+        void reset()
+        {
+            lastSelectionChangeCount = 0;
+        }
 
         int lastSelectionChangeCount = 0;
     };
@@ -135,12 +152,12 @@ public:
 
     struct Iterator
     {
-        Iterator();
+        Iterator() noexcept;
         bool next();
         SelectionManager* get() const;
         SelectionManager* operator->() const   { return get(); }
 
-        int index = -1;
+        int index;
     };
 
     //==============================================================================

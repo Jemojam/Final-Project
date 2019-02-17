@@ -4,12 +4,8 @@
   '-.  .-'|  .--' ,-.  | .--'|     /'-.  .-',--.| .-. ||      \   Tracktion Software
     |  |  |  |  \ '-'  \ `--.|  \  \  |  |  |  |' '-' '|  ||  |       Corporation
     `---' `--'   `--`--'`---'`--'`--' `---' `--' `---' `--''--'    www.tracktion.com
-
-    Tracktion Engine uses a GPL/commercial licence - see LICENCE.md for details.
 */
 
-namespace tracktion_engine
-{
 
 struct ExternalControllerManager::EditTreeWatcher   : private ValueTree::Listener,
                                                       private Timer
@@ -33,19 +29,19 @@ private:
     Array<ValueTree, CriticalSection> pluginsToUpdate;
     Atomic<int> updateAux;
 
-    void valueTreePropertyChanged (ValueTree& v, const juce::Identifier& i) override
+    void valueTreePropertyChanged (ValueTree& v, const Identifier& i) override
     {
         if (v.hasType (IDs::PLUGIN))
         {
             if (i == IDs::volume || i == IDs::pan)
                 pluginsToUpdate.addIfNotAlreadyThere (v);
-            else if (i == IDs::auxSendSliderPos && v.getProperty (IDs::type) == AuxSendPlugin::xmlTypeName)
+            else if (i == IDs::gain && v.getProperty (IDs::type) == AuxSendPlugin::xmlTypeName)
                 updateAux.set (1);
         }
     }
 
-    void valueTreeChildAdded (ValueTree&, juce::ValueTree&) override        {}
-    void valueTreeChildRemoved (ValueTree&, juce::ValueTree&, int) override {}
+    void valueTreeChildAdded (ValueTree&, ValueTree&) override        {}
+    void valueTreeChildRemoved (ValueTree&, ValueTree&, int) override {}
     void valueTreeChildOrderChanged (ValueTree&, int, int) override   {}
     void valueTreeParentChanged (ValueTree&) override                 {}
 
@@ -145,9 +141,9 @@ void ExternalControllerManager::shutdown()
     currentEdit = nullptr;
 }
 
-ExternalController* ExternalControllerManager::addNewController (ControlSurface* cs)
+void ExternalControllerManager::addNewController (ControlSurface* cs)
 {
-    return devices.add (new ExternalController (engine, cs));
+    devices.add (new ExternalController (engine, cs));
 }
 
 #define FOR_EACH_DEVICE(x) \
@@ -212,33 +208,10 @@ void ExternalControllerManager::detachFromSelectionManager (SelectionManager* sm
         setCurrentEdit (currentEdit, nullptr);
 }
 
-bool ExternalControllerManager::createCustomController (const String& name, Protocol protocol)
+bool ExternalControllerManager::createCustomController (const String& name)
 {
     CRASH_TRACER
-    
-    int outPort = 9000, inPort = 8000;
-    // Find free UDP ports for OSC input and output
-    if (protocol == osc)
-    {
-        for (auto device : devices)
-        {
-            if (device->needsOSCSocket())
-            {
-                outPort = jmax (outPort, device->getOSCOutputPort() + 1);
-                inPort  = jmax (inPort, device->getOSCInputPort() + 1);
-            }
-        }
-    }
-    
-    if (auto ec = addNewController (new CustomControlSurface (*this, name, protocol)))
-    {
-        if (protocol == osc)
-        {
-            ec->setOSCOutputPort (outPort);
-            ec->setOSCInputPort (inPort);
-        }
-    }
-    
+    addNewController (new CustomControlSurface (*this, name));
     sendChangeMessage();
     return true;
 }
@@ -313,7 +286,6 @@ void ExternalControllerManager::changeListenerCallback (ChangeBroadcaster* sourc
                     if (num != -1 && num != device->channelStart)
                         device->changeFaderBank (num - device->channelStart, false);
         }
-        FOR_EACH_DEVICE (updateTrackSelectLights());
     }
 }
 
@@ -898,6 +870,4 @@ void ExternalControllerManager::refreshXTOrder()
         jassertfalse;
     }
    #endif
-}
-
 }

@@ -580,8 +580,9 @@ void XmlElement::setAttribute (const Identifier& attributeName, const int number
 
 void XmlElement::setAttribute (const Identifier& attributeName, const double number)
 {
-    String doubleString (number, 15, true);
-    setAttribute (attributeName, minimiseLengthOfFloatString (doubleString));
+    String doubleString (number, 20);
+    setAttribute (attributeName,
+                  doubleString.substring (0, (int) CharacterFunctions::findLengthWithoutTrailingZeros (doubleString.getCharPointer())));
 }
 
 void XmlElement::removeAttribute (const Identifier& attributeName) noexcept
@@ -696,8 +697,6 @@ void XmlElement::removeChildElement (XmlElement* const childToRemove,
 {
     if (childToRemove != nullptr)
     {
-        jassert (containsChildElement (childToRemove));
-
         firstChildElement.remove (childToRemove);
 
         if (shouldDeleteTheChild)
@@ -937,27 +936,13 @@ public:
     void runTest() override
     {
         {
-            beginTest ("Float formatting");
+            beginTest ("Trailing zeros");
 
             auto element = std::make_unique<XmlElement> ("test");
-            Identifier number ("number");
+            Identifier d ("d");
 
-            std::map<double, String> tests;
-            tests[1] = "1";
-            tests[1.1] = "1.1";
-            tests[1.01] = "1.01";
-            tests[0.76378] = "7.6378e-1";
-            tests[-10] = "-1e1";
-            tests[10.01] = "1.001e1";
-            tests[0.0123] = "1.23e-2";
-            tests[-3.7e-27] = "-3.7e-27";
-            tests[1e+40] = "1e40";
-
-            for (auto& test : tests)
-            {
-                element->setAttribute (number, test.first);
-                expectEquals (element->getStringAttribute (number), test.second);
-            }
+            element->setAttribute (d, 3.0);
+            expectEquals (element->getStringAttribute (d), String ("3.0"));
         }
     }
 };

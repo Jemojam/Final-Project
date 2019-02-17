@@ -4,9 +4,8 @@
   '-.  .-'|  .--' ,-.  | .--'|     /'-.  .-',--.| .-. ||      \   Tracktion Software
     |  |  |  |  \ '-'  \ `--.|  \  \  |  |  |  |' '-' '|  ||  |       Corporation
     `---' `--'   `--`--'`---'`--'`--' `---' `--' `---' `--''--'    www.tracktion.com
-
-    Tracktion Engine uses a GPL/commercial licence - see LICENCE.md for details.
 */
+
 
 namespace tracktion_engine
 {
@@ -151,8 +150,8 @@ private:
     juce::NamedValueSet properties;
     juce::CriticalSection objectLock, propertyLock;
 
-    std::unique_ptr<juce::BufferedInputStream> stream;
-    std::unique_ptr<juce::FileInputStream> fileLockingStream;
+    juce::ScopedPointer<juce::BufferedInputStream> stream;
+    juce::ScopedPointer<juce::FileInputStream> fileLockingStream;
 
     struct ObjectInfo
     {

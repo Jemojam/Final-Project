@@ -4,9 +4,8 @@
   '-.  .-'|  .--' ,-.  | .--'|     /'-.  .-',--.| .-. ||      \   Tracktion Software
     |  |  |  |  \ '-'  \ `--.|  \  \  |  |  |  |' '-' '|  ||  |       Corporation
     `---' `--'   `--`--'`---'`--'`--' `---' `--' `---' `--''--'    www.tracktion.com
-
-    Tracktion Engine uses a GPL/commercial licence - see LICENCE.md for details.
 */
+
 
 namespace tracktion_engine
 {
@@ -107,11 +106,11 @@ protected:
 
     struct ClipList;
     friend struct ClipList;
-    std::unique_ptr<ClipList> clipList;
+    juce::ScopedPointer<ClipList> clipList;
 
     struct CollectionClipList;
     friend struct CollectionClipList;
-    std::unique_ptr<CollectionClipList> collectionClipList;
+    juce::ScopedPointer<CollectionClipList> collectionClipList;
 
     void refreshTrackItems() const;
 

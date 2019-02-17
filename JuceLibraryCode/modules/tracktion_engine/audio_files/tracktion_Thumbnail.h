@@ -4,9 +4,8 @@
   '-.  .-'|  .--' ,-.  | .--'|     /'-.  .-',--.| .-. ||      \   Tracktion Software
     |  |  |  |  \ '-'  \ `--.|  \  \  |  |  |  |' '-' '|  ||  |       Corporation
     `---' `--'   `--`--'`---'`--'`--' `---' `--' `---' `--''--'    www.tracktion.com
-
-    Tracktion Engine uses a GPL/commercial licence - see LICENCE.md for details.
 */
+
 
 namespace tracktion_engine
 {
@@ -33,8 +32,6 @@ public:
     //==============================================================================
     bool setSource (juce::InputSource*) override;
     void setReader (juce::AudioFormatReader*, juce::int64 hash) override;
-
-    void releaseResources();
 
     juce::int64 getHashCode() const override;
 

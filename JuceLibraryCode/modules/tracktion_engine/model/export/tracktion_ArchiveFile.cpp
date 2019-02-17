@@ -4,12 +4,8 @@
   '-.  .-'|  .--' ,-.  | .--'|     /'-.  .-',--.| .-. ||      \   Tracktion Software
     |  |  |  |  \ '-'  \ `--.|  \  \  |  |  |  |' '-' '|  ||  |       Corporation
     `---' `--'   `--`--'`---'`--'`--' `---' `--' `---' `--''--'    www.tracktion.com
-
-    Tracktion Engine uses a GPL/commercial licence - see LICENCE.md for details.
 */
 
-namespace tracktion_engine
-{
 
 static bool isWorthConvertingToOgg (AudioFile& source, int quality)
 {
@@ -379,7 +375,7 @@ bool TracktionArchiveFile::addFile (const File& f, const String& filenameToUse, 
 
             auto filenameRoot = filenameToUse.substring (0, filenameToUse.lastIndexOfChar ('.'));
 
-            std::unique_ptr<IndexEntry> entry (new IndexEntry());
+            ScopedPointer<IndexEntry> entry (new IndexEntry());
             entry->offset = indexOffset;
             entry->length = 0;
             entry->originalName = filenameToUse;
@@ -524,6 +520,4 @@ int TracktionArchiveFile::getOggQuality (CompressionType c)
     if (c == CompressionType::lossyMediumQuality)   return numOptions / 2;
 
     return numOptions / 5;
-}
-
 }

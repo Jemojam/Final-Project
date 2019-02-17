@@ -58,7 +58,7 @@ private:
 	std::unique_ptr<ImageButton> FXButton;
 
 	AudioEngine& engine;
-    AudioTrack& track;
+	AudioTrack& track;
 
 	//==============================================================================
 	JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR(ChannelComponent)

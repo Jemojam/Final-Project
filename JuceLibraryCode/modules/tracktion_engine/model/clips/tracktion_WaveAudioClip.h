@@ -4,9 +4,8 @@
   '-.  .-'|  .--' ,-.  | .--'|     /'-.  .-',--.| .-. ||      \   Tracktion Software
     |  |  |  |  \ '-'  \ `--.|  \  \  |  |  |  |' '-' '|  ||  |       Corporation
     `---' `--'   `--`--'`---'`--'`--' `---' `--' `---' `--''--'    www.tracktion.com
-
-    Tracktion Engine uses a GPL/commercial licence - see LICENCE.md for details.
 */
+
 
 namespace tracktion_engine
 {
@@ -56,6 +55,8 @@ public:
     void deleteAllUnusedTakesConfirmingWithUser (bool deleteSourceFiles);
     Clip::Array unpackTakes (bool toNewTracks) override;
 
+    static juce::String getCompPrefix()         { return "comp_"; }
+    AudioFile getCompFileFor (juce::int64 takeHash) const;
     WaveCompManager& getCompManager();
 
     void reassignReferencedItem (const ReferencedItem&, ProjectItemID newID, double newStartTime) override;

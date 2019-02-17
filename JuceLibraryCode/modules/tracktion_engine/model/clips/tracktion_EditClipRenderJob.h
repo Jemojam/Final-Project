@@ -4,9 +4,8 @@
   '-.  .-'|  .--' ,-.  | .--'|     /'-.  .-',--.| .-. ||      \   Tracktion Software
     |  |  |  |  \ '-'  \ `--.|  \  \  |  |  |  |' '-' '|  ||  |       Corporation
     `---' `--'   `--`--'`---'`--'`--' `---' `--' `---' `--''--'    www.tracktion.com
-
-    Tracktion Engine uses a GPL/commercial licence - see LICENCE.md for details.
 */
+
 
 namespace tracktion_engine
 {
@@ -79,7 +78,7 @@ private:
         const juce::String desc;
         ProjectItem::Category originalCategory;
         juce::TemporaryFile tempFile;
-        std::unique_ptr<Renderer::RenderTask> task;
+        juce::ScopedPointer<Renderer::RenderTask> task;
     };
 
     RenderOptions renderOptions;
@@ -87,7 +86,6 @@ private:
 
     Renderer::Parameters params;
     juce::OptionalScopedPointer<Edit> editDeleter;
-    std::unique_ptr<Edit::ScopedRenderStatus> renderStatus;
     juce::OwnedArray<RenderPass> renderPasses;
     bool silenceOnBackup, reverse;
     Renderer::RenderResult result;

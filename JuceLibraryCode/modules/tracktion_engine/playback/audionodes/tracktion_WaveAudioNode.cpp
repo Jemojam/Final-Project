@@ -4,12 +4,8 @@
   '-.  .-'|  .--' ,-.  | .--'|     /'-.  .-',--.| .-. ||      \   Tracktion Software
     |  |  |  |  \ '-'  \ `--.|  \  \  |  |  |  |' '-' '|  ||  |       Corporation
     `---' `--'   `--`--'`---'`--'`--' `---' `--' `---' `--''--'    www.tracktion.com
-
-    Tracktion Engine uses a GPL/commercial licence - see LICENCE.md for details.
 */
 
-namespace tracktion_engine
-{
 
 WaveAudioNode::WaveAudioNode (const AudioFile& af,
                               EditTimeRange editTime,
@@ -227,6 +223,4 @@ void WaveAudioNode::prepareForNextBlock (const AudioRenderContext& rc)
     // keep a local copy, because releaseAudioNodeResources may remove the reader halfway through..
     if (auto localReader = reader)
         localReader->setReadPosition (editTimeToFileSample (rc.getEditTime().editRange1.getStart()));
-}
-
 }

@@ -69,6 +69,10 @@
 			isa = PBXBuildFile;
 			fileRef = D862948E17D52B3842AC8F91;
 		};
+		73DAC9D72E2231B4BEBA9E19 = {
+			isa = PBXBuildFile;
+			fileRef = 7434FE295314F50AEE4B4490;
+		};
 		DFAEF4D5EC6BA57ACFB5B24F = {
 			isa = PBXBuildFile;
 			fileRef = 35983DDB82DE1D8049853409;
@@ -164,10 +168,6 @@
 		C405067BF0D5C4D1D21C5F7A = {
 			isa = PBXBuildFile;
 			fileRef = E36D49ED8AF5FE3FE75B959D;
-		};
-		A1207987E6FBA29F6365DCE9 = {
-			isa = PBXBuildFile;
-			fileRef = D5A493B320C91EE9EF297D3F;
 		};
 		13CD154CE6543FAC7F507B9F = {
 			isa = PBXBuildFile;
@@ -358,6 +358,13 @@
 			path = "../../JuceLibraryCode/modules/juce_gui_extra";
 			sourceTree = "SOURCE_ROOT";
 		};
+		4B09B7E111E25B8CBF72892F = {
+			isa = PBXFileReference;
+			lastKnownFileType = image.png;
+			name = "072-settings.png";
+			path = "../../Icons/072-settings.png";
+			sourceTree = "SOURCE_ROOT";
+		};
 		5188524FC0B022AC8C87ADC6 = {
 			isa = PBXFileReference;
 			lastKnownFileType = sourcecode.c.h;
@@ -470,6 +477,13 @@
 			path = "../../JuceLibraryCode/include_juce_data_structures.mm";
 			sourceTree = "SOURCE_ROOT";
 		};
+		7434FE295314F50AEE4B4490 = {
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.cpp.cpp;
+			name = AudioSettings.cpp;
+			path = ../../Source/UI/AudioSettings.cpp;
+			sourceTree = "SOURCE_ROOT";
+		};
 		77FA1C5E12B264CF311FD820 = {
 			isa = PBXFileReference;
 			lastKnownFileType = sourcecode.cpp.objcpp;
@@ -575,6 +589,13 @@
 			path = "../../JuceLibraryCode/include_juce_graphics.mm";
 			sourceTree = "SOURCE_ROOT";
 		};
+		AB49A09BB352509153CD98A1 = {
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = AudioSettings.h;
+			path = ../../Source/UI/AudioSettings.h;
+			sourceTree = "SOURCE_ROOT";
+		};
 		B02BAECC24D59DE3A67372FD = {
 			isa = PBXFileReference;
 			lastKnownFileType = sourcecode.cpp.cpp;
@@ -658,13 +679,6 @@
 			name = CoreAudio.framework;
 			path = System/Library/Frameworks/CoreAudio.framework;
 			sourceTree = SDKROOT;
-		};
-		D5A493B320C91EE9EF297D3F = {
-			isa = PBXFileReference;
-			lastKnownFileType = sourcecode.cpp.cpp;
-			name = "include_tracktion_engine_airwindows.cpp";
-			path = "../../JuceLibraryCode/include_tracktion_engine_airwindows.cpp";
-			sourceTree = "SOURCE_ROOT";
 		};
 		D5D4FC39938DB9BCD78055E0 = {
 			isa = PBXFileReference;
@@ -767,6 +781,7 @@
 		B7F8DBF7643D8AEE2089DC3F = {
 			isa = PBXGroup;
 			children = (
+				4B09B7E111E25B8CBF72892F,
 				78DFAE69AEE93C0792BAD5F6,
 				638F1731C8E76A570762ED5C,
 			);
@@ -795,6 +810,8 @@
 		FD2E4135834B97E12D76358B = {
 			isa = PBXGroup;
 			children = (
+				7434FE295314F50AEE4B4490,
+				AB49A09BB352509153CD98A1,
 				35983DDB82DE1D8049853409,
 				526757297C07D19E2CF95214,
 				CAA150675FFD7E231F75EFDD,
@@ -879,7 +896,6 @@
 				CC7047A618751A35E2E9E476,
 				666094FA52959C970B6AD4DC,
 				E36D49ED8AF5FE3FE75B959D,
-				D5A493B320C91EE9EF297D3F,
 				0A70EBCA69367FB304E28040,
 				B232EAB552E8C795AD6BE936,
 				B02BAECC24D59DE3A67372FD,
@@ -1155,6 +1171,7 @@
 				31AE5FBEDD641F92FFDF3C9B,
 				A853D9F9CD41D09F5F5BB926,
 				EF29CE110EE8147D4544E7E5,
+				73DAC9D72E2231B4BEBA9E19,
 				DFAEF4D5EC6BA57ACFB5B24F,
 				5C1711FC727DCB0F248E2D8A,
 				1312CF22421D700A559ECB62,
@@ -1179,7 +1196,6 @@
 				824979A945345AD61A909B28,
 				0C26100FF5FE4455FAD87C65,
 				C405067BF0D5C4D1D21C5F7A,
-				A1207987E6FBA29F6365DCE9,
 				13CD154CE6543FAC7F507B9F,
 				6F981993E0B3FD01ED447C15,
 				877C90737D1B84AE03923353,
@@ -1233,7 +1249,6 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (E16963AA5989D06E6866257C);
-			knownRegions = (en, Base);
 		};
 	};
 	rootObject = 889C2C72479FB23345B53F8E;

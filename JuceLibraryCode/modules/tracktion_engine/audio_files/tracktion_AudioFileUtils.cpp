@@ -4,12 +4,7 @@
   '-.  .-'|  .--' ,-.  | .--'|     /'-.  .-',--.| .-. ||      \   Tracktion Software
     |  |  |  |  \ '-'  \ `--.|  \  \  |  |  |  |' '-' '|  ||  |       Corporation
     `---' `--'   `--`--'`---'`--'`--' `---' `--' `---' `--''--'    www.tracktion.com
-
-    Tracktion Engine uses a GPL/commercial licence - see LICENCE.md for details.
 */
-
-namespace tracktion_engine
-{
 
 juce::AudioFormatReader* AudioFileUtils::createReaderFor (const juce::File& file)
 {
@@ -419,6 +414,4 @@ void AudioFileUtils::applyBWAVStartTime (const juce::File& file, juce::int64 tim
             }
         }
     }
-}
-
 }

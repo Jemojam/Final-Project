@@ -4,12 +4,7 @@
   '-.  .-'|  .--' ,-.  | .--'|     /'-.  .-',--.| .-. ||      \   Tracktion Software
     |  |  |  |  \ '-'  \ `--.|  \  \  |  |  |  |' '-' '|  ||  |       Corporation
     `---' `--'   `--`--'`---'`--'`--' `---' `--' `---' `--''--'    www.tracktion.com
-
-    Tracktion Engine uses a GPL/commercial licence - see LICENCE.md for details.
 */
-
-namespace tracktion_engine
-{
 
 LoopInfo::LoopInfo()  : state (IDs::LOOPINFO)
 {
@@ -24,8 +19,8 @@ LoopInfo::LoopInfo (const File& f)  : state (IDs::LOOPINFO)
     {
         if (auto* fin = f.createInputStream())
         {
-            const std::unique_ptr<AudioFormatReader> afr (af->createReaderFor (fin, true));
-            init (Engine::getInstance(), afr.get(), af);
+            const ScopedPointer<AudioFormatReader> afr (af->createReaderFor (fin, true));
+            init (Engine::getInstance(), afr, af);
         }
     }
 }
@@ -336,7 +331,9 @@ void LoopInfo::init (Engine& engine, const AudioFormatReader* afr, const AudioFo
 
         if (s.isNotEmpty())
         {
-            if (auto n = std::unique_ptr<XmlElement> (XmlDocument::parse (s)))
+            const ScopedPointer<XmlElement> n (XmlDocument::parse (s));
+
+            if (n != nullptr)
                 copyFrom (ValueTree::fromXml (*n));
         }
         else
@@ -360,7 +357,9 @@ void LoopInfo::init (Engine& engine, const AudioFormatReader* afr, const AudioFo
 
         if (s.isNotEmpty())
         {
-            if (auto n = std::unique_ptr<XmlElement> (XmlDocument::parse (s)))
+            const ScopedPointer<XmlElement> n (XmlDocument::parse (s));
+
+            if (n != nullptr)
                 copyFrom (ValueTree::fromXml (*n));
         }
         else
@@ -421,6 +420,4 @@ void LoopInfo::init (Engine& engine, const AudioFormatReader* afr, const AudioFo
     }
 
     initialiseMissingProps();
-}
-
 }

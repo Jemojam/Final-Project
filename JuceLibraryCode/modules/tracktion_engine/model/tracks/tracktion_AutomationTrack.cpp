@@ -4,12 +4,8 @@
   '-.  .-'|  .--' ,-.  | .--'|     /'-.  .-',--.| .-. ||      \   Tracktion Software
     |  |  |  |  \ '-'  \ `--.|  \  \  |  |  |  |' '-' '|  ||  |       Corporation
     `---' `--'   `--`--'`---'`--'`--' `---' `--' `---' `--''--'    www.tracktion.com
-
-    Tracktion Engine uses a GPL/commercial licence - see LICENCE.md for details.
 */
 
-namespace tracktion_engine
-{
 
 AutomationTrack::AutomationTrack (Edit& e, const ValueTree& v)
     : Track (e, v, 50, 13, 2000)
@@ -34,6 +30,4 @@ String AutomationTrack::getName()
         return ap->getFullName();
 
     return {};
-}
-
 }

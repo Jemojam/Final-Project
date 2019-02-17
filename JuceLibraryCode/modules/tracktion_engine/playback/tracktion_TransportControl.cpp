@@ -4,12 +4,8 @@
   '-.  .-'|  .--' ,-.  | .--'|     /'-.  .-',--.| .-. ||      \   Tracktion Software
     |  |  |  |  \ '-'  \ `--.|  \  \  |  |  |  |' '-' '|  ||  |       Corporation
     `---' `--'   `--`--'`---'`--'`--' `---' `--' `---' `--''--'    www.tracktion.com
-
-    Tracktion Engine uses a GPL/commercial licence - see LICENCE.md for details.
 */
 
-namespace tracktion_engine
-{
 
 namespace IDs
 {
@@ -180,7 +176,7 @@ struct TransportControl::TransportState : private ValueTree::Listener
     TransportControl& transport;
 
 private:
-    void valueTreePropertyChanged (ValueTree& v, const juce::Identifier& i) override
+    void valueTreePropertyChanged (ValueTree& v, const Identifier& i) override
     {
         if (v == state)
         {
@@ -260,8 +256,8 @@ private:
         }
     }
 
-    void valueTreeChildAdded (ValueTree&, juce::ValueTree&) override {}
-    void valueTreeChildRemoved (ValueTree&, juce::ValueTree&, int) override {}
+    void valueTreeChildAdded (ValueTree&, ValueTree&) override {}
+    void valueTreeChildRemoved (ValueTree&, ValueTree&, int) override {}
     void valueTreeChildOrderChanged (ValueTree&, int, int) override {}
     void valueTreeParentChanged (ValueTree&) override {}
 };
@@ -332,7 +328,7 @@ struct TransportControl::FileFlushTimer  : private Timer
                 if (! forcePurge)
                     owner.engine.getAudioFileManager().releaseAllFiles();
 
-                TemporaryFileManager::purgeOrphanFreezeAndProxyFiles (owner.edit);
+                owner.edit.purgeOrphanFreezeAndProxyFiles();
                 forcePurge = false;
             }
             else
@@ -694,18 +690,18 @@ Result TransportControl::applyRetrospectiveRecord()
 
     return Result::fail (TRANS("No active audio devices"));
 }
-
+    
 Array<File> TransportControl::getRetrospectiveRecordAsAudioFiles()
 {
     if (static_cast<int> (engine.getPropertyStorage().getProperty (SettingID::retrospectiveRecord, 30)) == 0)
         return {};
-
+    
     if (playbackContext)
     {
         Array<File> files;
         Array<Clip*> clips;
         playbackContext->applyRetrospectiveRecord (&clips);
-
+        
         if (clips.size() > 0)
         {
             for (auto c : clips)
@@ -718,14 +714,14 @@ Array<File> TransportControl::getRetrospectiveRecordAsAudioFiles()
                 else if (auto mc = dynamic_cast<MidiClip*> (c))
                 {
                     auto clipPos = mc->getPosition();
-
+                    
                     Array<Clip*> clipsToRender;
                     clipsToRender.add (mc);
-
+                    
                     File dir = File::getSpecialLocation (File::tempDirectory);
-
+                    
                     auto f = dir.getNonexistentChildFile (File::createLegalFileName (mc->getName()), ".wav");
-
+                    
                     BigInteger tracksToDo;
                     int idx = 0;
                     for (auto t : getAllTracks (edit))
@@ -734,10 +730,10 @@ Array<File> TransportControl::getRetrospectiveRecordAsAudioFiles()
                             tracksToDo.setBit (idx);
                         idx++;
                     }
-
+                    
                     Renderer::renderToFile (TRANS("Render Clip"), f, edit, clipPos.time,
                                             tracksToDo, true, clipsToRender, true);
-
+                    
                     files.add (f);
                 }
                 c->removeFromParentTrack();
@@ -745,7 +741,7 @@ Array<File> TransportControl::getRetrospectiveRecordAsAudioFiles()
             return files;
         }
     }
-
+    
     return {};
 }
 
@@ -1477,6 +1473,4 @@ void freePlaybackContextIfNotRecording (TransportControl& tc)
 {
     if (tc.isPlayContextActive() && ! tc.isRecording())
         tc.freePlaybackContext();
-}
-
 }

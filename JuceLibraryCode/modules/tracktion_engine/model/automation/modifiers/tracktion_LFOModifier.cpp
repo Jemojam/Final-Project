@@ -4,12 +4,8 @@
   '-.  .-'|  .--' ,-.  | .--'|     /'-.  .-',--.| .-. ||      \   Tracktion Software
     |  |  |  |  \ '-'  \ `--.|  \  \  |  |  |  |' '-' '|  ||  |       Corporation
     `---' `--'   `--`--'`---'`--'`--' `---' `--' `---' `--''--'    www.tracktion.com
-
-    Tracktion Engine uses a GPL/commercial licence - see LICENCE.md for details.
 */
 
-namespace tracktion_engine
-{
 
 struct LFOModifier::LFOModifierTimer    : public ModifierTimer
 {
@@ -317,6 +313,4 @@ void LFOModifier::valueTreeChanged()
 {
     if (! changedTimer.isTimerRunning())
         changedTimer.startTimerHz (30);
-}
-
 }

@@ -4,9 +4,8 @@
   '-.  .-'|  .--' ,-.  | .--'|     /'-.  .-',--.| .-. ||      \   Tracktion Software
     |  |  |  |  \ '-'  \ `--.|  \  \  |  |  |  |' '-' '|  ||  |       Corporation
     `---' `--'   `--`--'`---'`--'`--' `---' `--' `---' `--''--'    www.tracktion.com
-
-    Tracktion Engine uses a GPL/commercial licence - see LICENCE.md for details.
 */
+
 
 namespace tracktion_engine
 {
@@ -58,14 +57,8 @@ public:
     ExternalController* getActiveCustomController();
 
     void midiInOutDevicesChanged();
-    
-    enum Protocol
-    {
-        midi,
-        osc
-    };
 
-    bool createCustomController (const juce::String& name, Protocol);
+    bool createCustomController (const juce::String& name);
     void deleteController (ExternalController*);
 
     //==============================================================================
@@ -169,7 +162,7 @@ private:
 
     std::unique_ptr<BlinkTimer> blinkTimer;
 
-    ExternalController* addNewController (ControlSurface*);
+    void addNewController (ControlSurface*);
 
     void blinkNow();
     void timerCallback() override;

@@ -38,8 +38,13 @@ namespace juce
 
     e.g.
     @code
-    struct MyFifo
+    class MyFifo
     {
+    public:
+        MyFifo()  : abstractFifo (1024)
+        {
+        }
+
         void addToFifo (const int* someData, int numItems)
         {
             int start1, size1, start2, size2;
@@ -68,8 +73,9 @@ namespace juce
             abstractFifo.finishedRead (size1 + size2);
         }
 
-        AbstractFifo abstractFifo { 1024 };
-        int myBuffer[1024];
+    private:
+        AbstractFifo abstractFifo;
+        int myBuffer [1024];
     };
     @endcode
 

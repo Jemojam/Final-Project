@@ -348,10 +348,6 @@
  //#define TRACKTION_CHECK_FOR_SLOW_RENDERING 0
 #endif
 
-#ifndef    TRACKTION_AIR_WINDOWS
- //#define TRACKTION_AIR_WINDOWS 0
-#endif
-
 //==============================================================================
 #ifndef    JUCE_STANDALONE_APPLICATION
  #if defined(JucePlugin_Name) && defined(JucePlugin_Build_Standalone)

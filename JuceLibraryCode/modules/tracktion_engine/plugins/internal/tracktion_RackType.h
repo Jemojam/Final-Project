@@ -4,9 +4,8 @@
   '-.  .-'|  .--' ,-.  | .--'|     /'-.  .-',--.| .-. ||      \   Tracktion Software
     |  |  |  |  \ '-'  \ `--.|  \  \  |  |  |  |' '-' '|  ||  |       Corporation
     `---' `--'   `--`--'`---'`--'`--' `---' `--' `---' `--''--'    www.tracktion.com
-
-    Tracktion Engine uses a GPL/commercial licence - see LICENCE.md for details.
 */
+
 
 namespace tracktion_engine
 {
@@ -239,7 +238,7 @@ private:
     juce::ValueTree state;
 
     struct ValueTreeList;
-    std::unique_ptr<ValueTreeList> list;
+    juce::ScopedPointer<ValueTreeList> list;
 
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (RackTypeList)
 };

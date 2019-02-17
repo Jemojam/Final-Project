@@ -4,12 +4,8 @@
   '-.  .-'|  .--' ,-.  | .--'|     /'-.  .-',--.| .-. ||      \   Tracktion Software
     |  |  |  |  \ '-'  \ `--.|  \  \  |  |  |  |' '-' '|  ||  |       Corporation
     `---' `--'   `--`--'`---'`--'`--' `---' `--' `---' `--''--'    www.tracktion.com
-
-    Tracktion Engine uses a GPL/commercial licence - see LICENCE.md for details.
 */
 
-namespace tracktion_engine
-{
 
 HissingAudioNode::HissingAudioNode (AudioNode* in)
     : SingleInputAudioNode (in)
@@ -84,6 +80,4 @@ void HissingAudioNode::renderAdding (const AudioRenderContext& rc)
             }
         }
     }
-}
-
 }

@@ -4,12 +4,8 @@
   '-.  .-'|  .--' ,-.  | .--'|     /'-.  .-',--.| .-. ||      \   Tracktion Software
     |  |  |  |  \ '-'  \ `--.|  \  \  |  |  |  |' '-' '|  ||  |       Corporation
     `---' `--'   `--`--'`---'`--'`--' `---' `--' `---' `--''--'    www.tracktion.com
-
-    Tracktion Engine uses a GPL/commercial licence - see LICENCE.md for details.
 */
 
-namespace tracktion_engine
-{
 
 ChordTrack::ChordTrack (Edit& edit, const ValueTree& v)  : ClipTrack (edit, v, 20, 13, 60)
 {
@@ -34,6 +30,4 @@ String ChordTrack::getTrackWarning() const
     }
 
     return {};
-}
-
 }

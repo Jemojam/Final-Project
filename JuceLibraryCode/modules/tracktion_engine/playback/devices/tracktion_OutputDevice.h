@@ -4,9 +4,8 @@
   '-.  .-'|  .--' ,-.  | .--'|     /'-.  .-',--.| .-. ||      \   Tracktion Software
     |  |  |  |  \ '-'  \ `--.|  \  \  |  |  |  |' '-' '|  ||  |       Corporation
     `---' `--'   `--`--'`---'`--'`--' `---' `--' `---' `--''--'    www.tracktion.com
-
-    Tracktion Engine uses a GPL/commercial licence - see LICENCE.md for details.
 */
+
 
 namespace tracktion_engine
 {
@@ -64,16 +63,15 @@ public:
     OutputDeviceInstance (OutputDevice&, EditPlaybackContext&);
     virtual ~OutputDeviceInstance();
 
-    /** Replaces the current node with a new one, and returns the old one. */
-    AudioNode* replaceAudioNode (std::unique_ptr<AudioNode> newNode);
-    AudioNode* getAudioNode() const;
+    AudioNode* replaceAudioNode (AudioNode*); // (returns the old one)
+    AudioNode* getAudioNode() const noexcept        { return audioNode; }
 
     OutputDevice& owner;
     EditPlaybackContext& context;
     Edit& edit;
 
 protected:
-    std::unique_ptr<AudioNode> audioNode;
+    juce::ScopedPointer<AudioNode> audioNode;
     juce::CriticalSection audioNodeLock;
 
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (OutputDeviceInstance)

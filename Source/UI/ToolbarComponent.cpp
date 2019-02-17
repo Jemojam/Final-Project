@@ -96,8 +96,18 @@ ToolbarComponent::ToolbarComponent (AudioEngine& inEngine): engine(inEngine), pl
     addChannelButton->setBounds (456, 32, 40, 32);
 
 
-    //[UserPreSize]
-    //[/UserPreSize]
+	audioSettingsButton.reset(new ImageButton("audioSettingsButton"));
+	addAndMakeVisible(audioSettingsButton.get());
+	audioSettingsButton->setButtonText(TRANS("new button"));
+	audioSettingsButton->addListener(this);
+
+	audioSettingsButton->setImages(false, true, true,
+		ImageCache::getFromMemory(BinaryData::_072settings_png, BinaryData::_072settings_pngSize), 1.0f, Colours::floralwhite,
+		Image(), 1.0f, Colour(0x00000000),
+		Image(), 1.0f, Colour(0x00000000));
+	audioSettingsButton->setBounds(456+42, 32, 40, 32);
+
+	audioSettings.setBounds(400, 70, 70, 100);
 
     setSize (800, 130);
 
@@ -131,7 +141,7 @@ void ToolbarComponent::paint (Graphics& g)
     //[/UserPrePaint]
 
     g.fillAll (Colour (0xff323e44));
-
+	
     {
         int x = 0, y = 0, width = proportionOfWidth (1.0f), height = 100;
         Colour fillColour = Colour (0xff162f30);
@@ -231,11 +241,8 @@ void ToolbarComponent::paint (Graphics& g)
 
 void ToolbarComponent::resized()
 {
-    //[UserPreResize] Add your own custom resize code here..
-    //[/UserPreResize]
+	
 
-    //[UserResized] Add your own custom resize handling here..
-    //[/UserResized]
 }
 
 void ToolbarComponent::buttonClicked (Button* buttonThatWasClicked)
@@ -261,9 +268,16 @@ void ToolbarComponent::buttonClicked (Button* buttonThatWasClicked)
     {
 		engine.addChannel();
     }
+	else if (buttonThatWasClicked == audioSettingsButton.get())
+	{
+		if (audioSettings.isVisible() == false)
+			audioSettings.setVisible(true);
+		else
+			audioSettings.setVisible(false);
+		
+	}
 
-    //[UserbuttonClicked_Post]
-    //[/UserbuttonClicked_Post]
+
 }
 
 

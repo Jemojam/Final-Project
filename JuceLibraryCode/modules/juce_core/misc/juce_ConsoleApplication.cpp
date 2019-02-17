@@ -23,32 +23,18 @@
 namespace juce
 {
 
-static inline File resolveFilename (const String& name)
-{
-    return File::getCurrentWorkingDirectory().getChildFile (name.unquoted());
-}
-
-static inline void checkFileExists (const File& f)
-{
-    if (! f.exists())
-        ConsoleApplication::fail ("Could not find file: " + f.getFullPathName());
-}
-
-static inline void checkFolderExists (const File& f)
-{
-    if (! f.isDirectory())
-        ConsoleApplication::fail ("Could not find folder: " + f.getFullPathName());
-}
-
 File ArgumentList::Argument::resolveAsFile() const
 {
-    return resolveFilename (text);
+    return File::getCurrentWorkingDirectory().getChildFile (text.unquoted());
 }
 
 File ArgumentList::Argument::resolveAsExistingFile() const
 {
     auto f = resolveAsFile();
-    checkFileExists (f);
+
+    if (! f.exists())
+        ConsoleApplication::fail ("Could not find file: " + f.getFullPathName());
+
     return f;
 }
 
@@ -62,32 +48,17 @@ File ArgumentList::Argument::resolveAsExistingFolder() const
     return f;
 }
 
-static inline bool isShortOptionFormat (StringRef s)  { return s[0] == '-' && s[1] != '-'; }
-static inline bool isLongOptionFormat  (StringRef s)  { return s[0] == '-' && s[1] == '-' && s[2] != '-'; }
-static inline bool isOptionFormat      (StringRef s)  { return s[0] == '-'; }
-
-bool ArgumentList::Argument::isLongOption() const     { return isLongOptionFormat (text); }
-bool ArgumentList::Argument::isShortOption() const    { return isShortOptionFormat (text); }
-bool ArgumentList::Argument::isOption() const         { return isOptionFormat (text); }
+bool ArgumentList::Argument::isLongOption() const     { return text[0] == '-' && text[1] == '-' && text[2] != '-'; }
+bool ArgumentList::Argument::isShortOption() const    { return text[0] == '-' && text[1] != '-'; }
 
 bool ArgumentList::Argument::isLongOption (const String& option) const
 {
-    if (! isLongOptionFormat (option))
-    {
-        jassert (! isShortOptionFormat (option)); // this will always fail to match
-        return isLongOption ("--" + option);
-    }
+    if (option.startsWith ("--"))
+        return text == option;
 
-    return text.upToFirstOccurrenceOf ("=", false, false) == option;
-}
+    jassert (! option.startsWithChar ('-')); // this will always fail to match
 
-String ArgumentList::Argument::getLongOptionValue() const
-{
-    if (isLongOption())
-        if (auto equalsIndex = text.indexOfChar ('='))
-            return text.substring (equalsIndex + 1);
-
-    return {};
+    return text == "--" + option;
 }
 
 bool ArgumentList::Argument::isShortOption (char option) const
@@ -97,23 +68,23 @@ bool ArgumentList::Argument::isShortOption (char option) const
     return isShortOption() && text.containsChar (option);
 }
 
-bool ArgumentList::Argument::operator== (StringRef wildcard) const
+static bool compareOptionStrings (StringRef s1, StringRef s2)
 {
-    for (auto& o : StringArray::fromTokens (wildcard, "|", {}))
-    {
-        if (text == o)
-            return true;
+    if (s1 == s2)
+        return true;
 
-        if (isShortOptionFormat (o) && o.length() == 2 && isShortOption ((char) o[1]))
-            return true;
+    auto toks1 = StringArray::fromTokens (s1, "|", {});
+    auto toks2 = StringArray::fromTokens (s2, "|", {});
 
-        if (isLongOptionFormat (o) && isLongOption (o))
-            return true;
-    }
+    for (auto& part1 : toks1)
+        for (auto& part2 : toks2)
+            if (part1.trim() == part2.trim())
+                return true;
 
     return false;
 }
 
+bool ArgumentList::Argument::operator== (StringRef s) const   { return compareOptionStrings (text, s); }
 bool ArgumentList::Argument::operator!= (StringRef s) const   { return ! operator== (s); }
 
 //==============================================================================
@@ -168,57 +139,46 @@ void ArgumentList::failIfOptionIsMissing (StringRef option) const
         ConsoleApplication::fail ("Expected the option " + option);
 }
 
-String ArgumentList::getValueForOption (StringRef option) const
+ArgumentList::Argument ArgumentList::getArgumentAfterOption (StringRef option) const
 {
-    jassert (isOptionFormat (option)); // the thing you're searching for must be an option
-
-    for (int i = 0; i < arguments.size(); ++i)
-    {
-        auto& arg = arguments.getReference(i);
-
-        if (arg == option)
-        {
-            if (arg.isShortOption())
-            {
-                if (i < arguments.size() - 1 && ! arguments.getReference (i + 1).isOption())
-                    return arguments.getReference (i + 1).text;
-
-                return {};
-            }
-
-            if (arg.isLongOption())
-                return arg.getLongOptionValue();
-        }
-    }
+    for (int i = 0; i < arguments.size() - 1; ++i)
+        if (arguments.getReference(i) == option)
+            return arguments.getReference (i + 1);
 
     return {};
 }
 
-File ArgumentList::getFileForOption (StringRef option) const
+File ArgumentList::getFileAfterOption (StringRef option) const
 {
-    auto text = getValueForOption (option);
+    failIfOptionIsMissing (option);
+    auto arg = getArgumentAfterOption (option);
 
-    if (text.isEmpty())
-    {
-        failIfOptionIsMissing (option);
+    if (arg.text.isEmpty() || arg.text.startsWithChar ('-'))
         ConsoleApplication::fail ("Expected a filename after the " + option + " option");
-    }
 
-    return resolveFilename (text);
+    return arg.resolveAsFile();
 }
 
-File ArgumentList::getExistingFileForOption (StringRef option) const
+File ArgumentList::getExistingFileAfterOption (StringRef option) const
 {
-    auto file = getFileForOption (option);
-    checkFileExists (file);
-    return file;
+    failIfOptionIsMissing (option);
+    auto arg = getArgumentAfterOption (option);
+
+    if (arg.text.isEmpty())
+        ConsoleApplication::fail ("Expected a filename after the " + option + " option");
+
+    return arg.resolveAsExistingFile();
 }
 
-File ArgumentList::getExistingFolderForOption (StringRef option) const
+File ArgumentList::getExistingFolderAfterOption (StringRef option) const
 {
-    auto file = getFileForOption (option);
-    checkFolderExists (file);
-    return file;
+    failIfOptionIsMissing (option);
+    auto arg = getArgumentAfterOption (option);
+
+    if (arg.text.isEmpty())
+        ConsoleApplication::fail ("Expected a folder name after the " + option + " option");
+
+    return arg.resolveAsExistingFolder();
 }
 
 //==============================================================================
@@ -250,18 +210,16 @@ int ConsoleApplication::invokeCatchingFailures (std::function<int()>&& f)
     return returnCode;
 }
 
-int ConsoleApplication::findAndRunCommand (const ArgumentList& args, bool commandFlagMustBeFirst) const
+int ConsoleApplication::findAndRunCommand (const ArgumentList& args) const
 {
     for (auto& c : commands)
-    {
-        auto index = args.indexOfOption (c.commandOption);
-
-        if (commandFlagMustBeFirst ? (index == 0) : (index >= 0))
+        if (args.containsOption (c.commandOption))
             return invokeCatchingFailures ([&] { c.command (args); return 0; });
-    }
 
-    if (commandIfNoOthersRecognised >= 0)
-        return invokeCatchingFailures ([&] { commands[(size_t) commandIfNoOthersRecognised].command (args); return 0; });
+    if (commandIfNoOthersRecognised.isNotEmpty())
+        for (auto& c : commands)
+            if (compareOptionStrings (c.commandOption, commandIfNoOthersRecognised))
+                return invokeCatchingFailures ([&] { c.command (args); return 0; });
 
     fail ("Unrecognised arguments");
     return 0;
@@ -279,11 +237,11 @@ void ConsoleApplication::addCommand (Command c)
 
 void ConsoleApplication::addHelpCommand (String arg, String helpMessage, bool invokeIfNoOtherCommandRecognised)
 {
-    if (invokeIfNoOtherCommandRecognised)
-        commandIfNoOthersRecognised = (int) commands.size();
-
     addCommand ({ arg, arg, "Prints this message",
                   [this, helpMessage] (const ArgumentList& args) { printHelp (helpMessage, args); }});
+
+    if (invokeIfNoOtherCommandRecognised)
+        commandIfNoOthersRecognised = arg;
 }
 
 void ConsoleApplication::addVersionCommand (String arg, String versionText)
@@ -303,29 +261,18 @@ void ConsoleApplication::printHelp (const String& preamble, const ArgumentList& 
                                       .fromLastOccurrenceOf ("\\", false, false);
 
     StringArray namesAndArgs;
-    int descriptionIndent = 0;
+    int maxLength = 0;
 
     for (auto& c : commands)
     {
         auto nameAndArgs = exeName + " " + c.argumentDescription;
         namesAndArgs.add (nameAndArgs);
-        descriptionIndent = std::max (descriptionIndent, nameAndArgs.length());
+        maxLength = std::max (maxLength, nameAndArgs.length());
     }
-
-    descriptionIndent = std::min (descriptionIndent + 1, 40);
 
     for (size_t i = 0; i < commands.size(); ++i)
-    {
-        auto nameAndArgs = namesAndArgs[(int) i];
-        std::cout << ' ';
-
-        if (nameAndArgs.length() > descriptionIndent)
-            std::cout << nameAndArgs << std::endl << String::repeatedString (" ", descriptionIndent + 1);
-        else
-            std::cout << nameAndArgs.paddedRight (' ', descriptionIndent);
-
-        std::cout << commands[i].commandDescription << std::endl;
-    }
+        std::cout << " " << namesAndArgs[(int) i].paddedRight (' ', maxLength + 2)
+                  << commands[i].commandDescription << std::endl;
 
     std::cout << std::endl;
 }
