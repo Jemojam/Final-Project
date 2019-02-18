@@ -32,7 +32,7 @@ public :
 
     void addNewClipFromFile(const File& editFile, AudioTrack& track);
 
-	//void showAudioSettings(te::Engine& engine);
+	void showAudioSettings();
 
 private:
 
@@ -56,6 +56,7 @@ private:
     TransportControl& getTransport() const;
     void addVolumeAndPanPlugin(AudioTrack& track) const;
 	
+	AudioDeviceManager audioDeviceManagerTool;
 
 	JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR(AudioEngine)
 };

@@ -62,7 +62,7 @@ private:
     std::unique_ptr<ImageButton> addChannelButton;
 	std::unique_ptr<ImageButton> audioSettingsButton;
 
-	AudioDeviceManager audioDeviceManagerTool;
+	
     PlayButton playButton;
 
     AudioEngine& engine;

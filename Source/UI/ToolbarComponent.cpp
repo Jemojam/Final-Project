@@ -262,14 +262,7 @@ void ToolbarComponent::buttonClicked (Button* buttonThatWasClicked)
     }
 	else if (buttonThatWasClicked == audioSettingsButton.get())
 	{
-		DialogWindow::LaunchOptions o;
-		o.dialogTitle = TRANS("Audio Settings");
-		o.dialogBackgroundColour = LookAndFeel::getDefaultLookAndFeel().findColour(ResizableWindow::backgroundColourId);
-		o.content.setOwned(new AudioDeviceSelectorComponent(audioDeviceManagerTool, 0, 2, 0, 2, false, false, true, true));
-		o.content->setSize(400, 400);
-		o.launchAsync();
-
-	
+		engine.showAudioSettings();
 	}
 }
 

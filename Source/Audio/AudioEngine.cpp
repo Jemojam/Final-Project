@@ -153,15 +153,14 @@ bool AudioEngine::isPlaying()
     return getTransport().isPlaying();
 }
 
-/*
-void AudioEngine::showAudioSettings(te::Engine& engine)
+
+void AudioEngine::showAudioSettings()
 {
 	DialogWindow::LaunchOptions o;
 	o.dialogTitle = TRANS("Audio Settings");
 	o.dialogBackgroundColour = LookAndFeel::getDefaultLookAndFeel().findColour(ResizableWindow::backgroundColourId);
-	o.content.setOwned(new AudioDeviceSelectorComponent(engine.getDeviceManager().deviceManager, 0, 2, 0, 2, false, false, true, true));
+	o.content.setOwned(new AudioDeviceSelectorComponent(audioDeviceManagerTool, 2, 2, 0, 2, false, false, true, true));
 	o.content->setSize(400, 600);
 	o.launchAsync();
 	
 }
-*/
