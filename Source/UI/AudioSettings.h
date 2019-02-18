@@ -1,34 +1,42 @@
 
 
-#pragma once
 
+#pragma once
 #include "JuceHeader.h"
 #include "Audio/AudioEngine.h"
-#include "C:/CODE/JUCE/examples/Assets/DemoUtilities.h"
-
-class AudioSettings  : public Component,
-                       public ChangeListener
+//==============================================================================
+class AudioSettings   : public AudioAppComponent,
+                        public ChangeListener,
+                        private Timer
 {
 public:
-    AudioSettings();
+    //==============================================================================
+	AudioSettings(AudioEngine& inEngine);
     ~AudioSettings();
+
+    void prepareToPlay (int, double) override;
+    void getNextAudioBlock (const AudioSourceChannelInfo& bufferToFill) override;
+    void releaseResources() override;
 
     void paint (Graphics& g) override;
     void resized() override;
 
-    void dumpDeviceInfo();
-    void logMessage (const String& m);
-
 private:
-  
-
-    std::unique_ptr<AudioDeviceSelectorComponent> audioSetupComp;
-    TextEditor diagnosticsBox;
-	AudioDeviceManager audioDeviceManager;
 
     void changeListenerCallback (ChangeBroadcaster*) override;
-    void lookAndFeelChanged() override;
-    String getListOfActiveBits (const BigInteger& b);
+    static String getListOfActiveBits (const BigInteger& b);
+    void timerCallback() override;
+    void dumpDeviceInfo();
+    void logMessage (const String& m);
+  
+    //==========================================================================
+    Random random;
+    AudioDeviceSelectorComponent audioSetupComp;
+    Label cpuUsageLabel;
+    Label cpuUsageText;
+    TextEditor diagnosticsBox;
+
+	AudioEngine& engine;
 
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (AudioSettings)
 };

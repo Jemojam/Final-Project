@@ -1,18 +1,25 @@
 
 
-#include "AudioSettings.h"
+#pragma once
 
-   AudioSettings::AudioSettings(AudioEngine& inEngine) : engine(inEngine),
-														 audioSetupComp (deviceManager,
-																		  0,     // minimum input channels
-																		  256,   // maximum input channels
-																		  0,     // minimum output channels
-																		  256,   // maximum output channels
-																		  false, // ability to select midi inputs
-																		  false, // ability to select midi output device
-																		  false, // treat channels as stereo pairs
-																		  false) // hide advanced options
+//==============================================================================
+class AudioDeviceManagerTool : public AudioAppComponent,
+                               public ChangeListener,
+                               private Timer
 {
+public:
+    //==============================================================================
+	AudioDeviceManagerTool()
+        : audioSetupComp (deviceManager,
+                          0,     // minimum input channels
+                          256,   // maximum input channels
+                          0,     // minimum output channels
+                          256,   // maximum output channels
+                          false, // ability to select midi inputs
+                          false, // ability to select midi output device
+                          false, // treat channels as stereo pairs
+                          false) // hide advanced options
+    {
         addAndMakeVisible (audioSetupComp);
         addAndMakeVisible (diagnosticsBox);
 
@@ -39,15 +46,15 @@
         startTimer (50);
     }
 
-    AudioSettings::~AudioSettings()
+    ~AudioDeviceManagerTool()
     {
         deviceManager.removeChangeListener (this);
         shutdownAudio();
     }
 
-    void AudioSettings::prepareToPlay (int, double) {}
+    void prepareToPlay (int, double) override {}
 
-    void AudioSettings::getNextAudioBlock (const AudioSourceChannelInfo& bufferToFill) 
+    void getNextAudioBlock (const AudioSourceChannelInfo& bufferToFill) override
     {
         auto* device = deviceManager.getCurrentAudioDevice();
 
@@ -84,15 +91,15 @@
         }
     }
 
-    void AudioSettings::releaseResources() {}
+    void releaseResources() override {}
 
-    void AudioSettings::paint (Graphics& g)
+    void paint (Graphics& g) override
     {
         g.setColour (Colours::grey);
         g.fillRect (getLocalBounds().removeFromRight (proportionOfWidth (0.4f)));
     }
 
-    void AudioSettings::resized() 
+    void resized() override
     {
         auto rect = getLocalBounds();
 
@@ -107,12 +114,13 @@
         diagnosticsBox.setBounds (rect);
     }
 
-    void AudioSettings::changeListenerCallback (ChangeBroadcaster*)
+private:
+    void changeListenerCallback (ChangeBroadcaster*) override
     {
         dumpDeviceInfo();
     }
 
-    String AudioSettings::getListOfActiveBits (const BigInteger& b)
+    static String getListOfActiveBits (const BigInteger& b)
     {
         StringArray bits;
 
@@ -123,13 +131,13 @@
         return bits.joinIntoString (", ");
     }
 
-    void AudioSettings::timerCallback() 
+    void timerCallback() override
     {
         auto cpu = deviceManager.getCpuUsage() * 100;
         cpuUsageText.setText (String (cpu, 6) + " %", dontSendNotification);
     }
 
-    void AudioSettings::dumpDeviceInfo()
+    void dumpDeviceInfo()
     {
         logMessage ("--------------------------------------");
         logMessage ("Current audio device type: " + (deviceManager.getCurrentDeviceTypeObject() != nullptr
@@ -153,8 +161,18 @@
         }
     }
 
-    void AudioSettings::logMessage (const String& m)
+    void logMessage (const String& m)
     {
         diagnosticsBox.moveCaretToEnd();
         diagnosticsBox.insertTextAtCaret (m + newLine);
     }
+
+    //==========================================================================
+    Random random;
+    AudioDeviceSelectorComponent audioSetupComp;
+    Label cpuUsageLabel;
+    Label cpuUsageText;
+    TextEditor diagnosticsBox;
+
+    JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (AudioDeviceManagerTool)
+};

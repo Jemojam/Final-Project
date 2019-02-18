@@ -2,11 +2,8 @@
 
 
 //==============================================================================
-ToolbarComponent::ToolbarComponent (AudioEngine& inEngine): engine(inEngine), playButton(inEngine)
+ToolbarComponent::ToolbarComponent(AudioEngine& inEngine) : engine(inEngine), playButton(inEngine)
 {
-    //[Constructor_pre] You can add your own custom stuff here..
-    //[/Constructor_pre]
-
     recordButton.reset (new ImageButton ("recordButton"));
     addAndMakeVisible (recordButton.get());
     recordButton->setButtonText (TRANS("new button"));
@@ -107,7 +104,7 @@ ToolbarComponent::ToolbarComponent (AudioEngine& inEngine): engine(inEngine), pl
 		Image(), 1.0f, Colour(0x00000000));
 	audioSettingsButton->setBounds(456+42, 32, 40, 32);
 
-	audioSettings.setBounds(400, 70, 70, 100);
+	
 
     setSize (800, 130);
 
@@ -247,13 +244,9 @@ void ToolbarComponent::resized()
 
 void ToolbarComponent::buttonClicked (Button* buttonThatWasClicked)
 {
-    //[UserbuttonClicked_Pre]
-    //[/UserbuttonClicked_Pre]
-
     if (buttonThatWasClicked == recordButton.get())
     {
-        //[UserButtonCode_recordButton] -- add your button handler code here..
-        //[/UserButtonCode_recordButton]
+
     }
     else if (buttonThatWasClicked == stopButton.get())
     {
@@ -261,8 +254,7 @@ void ToolbarComponent::buttonClicked (Button* buttonThatWasClicked)
     }
     else if (buttonThatWasClicked == loopButton.get())
     {
-        //[UserButtonCode_loopButton] -- add your button handler code here..
-        //[/UserButtonCode_loopButton]
+        
     }
     else if (buttonThatWasClicked == addChannelButton.get())
     {
@@ -270,20 +262,16 @@ void ToolbarComponent::buttonClicked (Button* buttonThatWasClicked)
     }
 	else if (buttonThatWasClicked == audioSettingsButton.get())
 	{
-		if (audioSettings.isVisible() == false)
-			audioSettings.setVisible(true);
-		else
-			audioSettings.setVisible(false);
-		
+		DialogWindow::LaunchOptions o;
+		o.dialogTitle = TRANS("Audio Settings");
+		o.dialogBackgroundColour = LookAndFeel::getDefaultLookAndFeel().findColour(ResizableWindow::backgroundColourId);
+		o.content.setOwned(new AudioDeviceSelectorComponent(audioDeviceManagerTool, 0, 2, 0, 2, false, false, true, true));
+		o.content->setSize(400, 400);
+		o.launchAsync();
+
+	
 	}
-
-
 }
-
-
-
-
-
 
 //==============================================================================
 #if 0

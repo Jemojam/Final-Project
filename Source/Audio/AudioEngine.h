@@ -1,7 +1,7 @@
 #pragma once
 
 #include "JuceHeader.h"
-#include "../modules/juce_blocks_basics/juce_blocks_basics.h"
+
 
 using namespace tracktion_engine;
 namespace te = tracktion_engine;
@@ -32,6 +32,8 @@ public :
 
     void addNewClipFromFile(const File& editFile, AudioTrack& track);
 
+	//void showAudioSettings(te::Engine& engine);
+
 private:
 
     te::WaveAudioClip::Ptr loadAudioFileAsClip(const File& file, AudioTrack& track);
@@ -53,4 +55,7 @@ private:
 
     TransportControl& getTransport() const;
     void addVolumeAndPanPlugin(AudioTrack& track) const;
+	
+
+	JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR(AudioEngine)
 };

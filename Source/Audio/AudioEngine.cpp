@@ -1,11 +1,13 @@
 #include "AudioEngine.h"
-#include <typeinfo>
+
 
 using namespace tracktion_engine;
 
 AudioEngine::AudioEngine()
 {
     edit = std::make_unique<Edit>(engine, createEmptyEdit(), Edit::forEditing, nullptr, 0);
+	
+
 
     removeAllTracks();
 }
@@ -151,3 +153,15 @@ bool AudioEngine::isPlaying()
     return getTransport().isPlaying();
 }
 
+/*
+void AudioEngine::showAudioSettings(te::Engine& engine)
+{
+	DialogWindow::LaunchOptions o;
+	o.dialogTitle = TRANS("Audio Settings");
+	o.dialogBackgroundColour = LookAndFeel::getDefaultLookAndFeel().findColour(ResizableWindow::backgroundColourId);
+	o.content.setOwned(new AudioDeviceSelectorComponent(engine.getDeviceManager().deviceManager, 0, 2, 0, 2, false, false, true, true));
+	o.content->setSize(400, 600);
+	o.launchAsync();
+	
+}
+*/

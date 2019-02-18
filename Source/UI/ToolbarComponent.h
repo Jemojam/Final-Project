@@ -3,7 +3,7 @@
 #include "JuceHeader.h"
 #include "Audio/AudioEngine.h"
 #include "PlayButton.h"
-#include "AudioSettings.h"
+
 
 class ToolbarComponent  : public Component,
                           public Button::Listener
@@ -16,6 +16,8 @@ public:
     void paint (Graphics& g) override;
     void resized() override;
     void buttonClicked (Button* buttonThatWasClicked) override;
+
+	
 
     // Binary resources:
     static const char* play_png;
@@ -60,11 +62,11 @@ private:
     std::unique_ptr<ImageButton> addChannelButton;
 	std::unique_ptr<ImageButton> audioSettingsButton;
 
+	AudioDeviceManager audioDeviceManagerTool;
     PlayButton playButton;
-	AudioSettings audioSettings;
+
     AudioEngine& engine;
 
-	
     //==============================================================================
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (ToolbarComponent)
 };

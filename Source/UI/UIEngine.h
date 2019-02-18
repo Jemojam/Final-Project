@@ -4,6 +4,7 @@
 #include "Audio/AudioEngine.h"
 #include "ToolbarComponent.h"
 #include "ChannelWindow.h"
+#include "AudioSettings.h"
 
 class UIEngine : public Component
 {
@@ -18,7 +19,8 @@ private:
 	ToolbarComponent toolbar;
 	ChannelWindow channelWindow;
 
-    AudioEngine& engine;
+    
+	AudioEngine& engine;
 
 	JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR(UIEngine)
 };
