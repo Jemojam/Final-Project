@@ -142,6 +142,7 @@
     <ClCompile Include="..\..\Source\Main\Main.cpp"/>
     <ClCompile Include="..\..\Source\Main\MainComponent.cpp"/>
     <ClCompile Include="..\..\Source\UI\AudioSettings.cpp"/>
+    <ClCompile Include="..\..\Source\UI\AudioThumbnailComponent.cpp"/>
     <ClCompile Include="..\..\Source\UI\ChannelComponent.cpp"/>
     <ClCompile Include="..\..\Source\UI\ChannelWindow.cpp"/>
     <ClCompile Include="..\..\Source\UI\FXInsertComponent.cpp"/>
@@ -2584,6 +2585,7 @@
     <ClInclude Include="..\..\Source\Audio\AudioEngine.h"/>
     <ClInclude Include="..\..\Source\Main\MainComponent.h"/>
     <ClInclude Include="..\..\Source\UI\AudioSettings.h"/>
+    <ClInclude Include="..\..\Source\UI\AudioThumbnailComponent.h"/>
     <ClInclude Include="..\..\Source\UI\ChannelComponent.h"/>
     <ClInclude Include="..\..\Source\UI\ChannelWindow.h"/>
     <ClInclude Include="..\..\Source\UI\FXInsertComponent.h"/>

@@ -26,6 +26,8 @@ add_executable (APP
     "../../Source/Main/MainComponent.h"
     "../../Source/UI/AudioSettings.cpp"
     "../../Source/UI/AudioSettings.h"
+    "../../Source/UI/AudioThumbnailComponent.cpp"
+    "../../Source/UI/AudioThumbnailComponent.h"
     "../../Source/UI/ChannelComponent.cpp"
     "../../Source/UI/ChannelComponent.h"
     "../../Source/UI/ChannelWindow.cpp"
@@ -1924,6 +1926,7 @@ set_source_files_properties ("../../Icons/031-pause.png" PROPERTIES HEADER_FILE_
 set_source_files_properties ("../../Source/Audio/AudioEngine.h" PROPERTIES HEADER_FILE_ONLY TRUE)
 set_source_files_properties ("../../Source/Main/MainComponent.h" PROPERTIES HEADER_FILE_ONLY TRUE)
 set_source_files_properties ("../../Source/UI/AudioSettings.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../Source/UI/AudioThumbnailComponent.h" PROPERTIES HEADER_FILE_ONLY TRUE)
 set_source_files_properties ("../../Source/UI/ChannelComponent.h" PROPERTIES HEADER_FILE_ONLY TRUE)
 set_source_files_properties ("../../Source/UI/ChannelWindow.h" PROPERTIES HEADER_FILE_ONLY TRUE)
 set_source_files_properties ("../../Source/UI/FXInsertComponent.h" PROPERTIES HEADER_FILE_ONLY TRUE)

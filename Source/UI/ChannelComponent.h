@@ -2,10 +2,11 @@
 
 #include "JuceHeader.h"
 #include "Audio/AudioEngine.h"
+#include "AudioThumbnailComponent.h"
 
-class ChannelComponent : public Component,
-	public Button::Listener,
-	public Slider::Listener
+class ChannelComponent : public Component, 
+						 public Button::Listener,
+						 public Slider::Listener
 {
 public:
 	//==============================================================================
@@ -20,6 +21,7 @@ public:
 	void resized() override;
 	void buttonClicked(Button* buttonThatWasClicked) override;
 	void sliderValueChanged(Slider* sliderThatWasMoved) override;
+
 
 	// Binary resources:
 	static const char* musicwoofersquarebox_png;
@@ -56,6 +58,8 @@ private:
 	std::unique_ptr<ImageButton> soloButton;
 	std::unique_ptr<ImageButton> addFileButton;
 	std::unique_ptr<ImageButton> FXButton;
+	
+	std::unique_ptr<AudioThumbnailComponent> audioThumbnailComponent;
 
 	AudioEngine& engine;
 	AudioTrack& track;

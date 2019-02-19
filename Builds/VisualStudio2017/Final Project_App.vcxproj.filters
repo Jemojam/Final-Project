@@ -565,6 +565,9 @@
     <ClCompile Include="..\..\Source\UI\AudioSettings.cpp">
       <Filter>Final Project\Source\UI</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\Source\UI\AudioThumbnailComponent.cpp">
+      <Filter>Final Project\Source\UI</Filter>
+    </ClCompile>
     <ClCompile Include="..\..\Source\UI\ChannelComponent.cpp">
       <Filter>Final Project\Source\UI</Filter>
     </ClCompile>
@@ -3190,6 +3193,9 @@
       <Filter>Final Project\Source\Main</Filter>
     </ClInclude>
     <ClInclude Include="..\..\Source\UI\AudioSettings.h">
+      <Filter>Final Project\Source\UI</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\UI\AudioThumbnailComponent.h">
       <Filter>Final Project\Source\UI</Filter>
     </ClInclude>
     <ClInclude Include="..\..\Source\UI\ChannelComponent.h">

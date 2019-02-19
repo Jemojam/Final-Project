@@ -25,6 +25,10 @@
         <FILE id="JXsVSP" name="AudioSettings.cpp" compile="1" resource="0"
               file="Source/UI/AudioSettings.cpp"/>
         <FILE id="LEslrs" name="AudioSettings.h" compile="0" resource="0" file="Source/UI/AudioSettings.h"/>
+        <FILE id="JtFJI1" name="AudioThumbnailComponent.cpp" compile="1" resource="0"
+              file="Source/UI/AudioThumbnailComponent.cpp"/>
+        <FILE id="Vequ9Q" name="AudioThumbnailComponent.h" compile="0" resource="0"
+              file="Source/UI/AudioThumbnailComponent.h"/>
         <FILE id="u7fW4z" name="ChannelComponent.cpp" compile="1" resource="0"
               file="Source/UI/ChannelComponent.cpp"/>
         <FILE id="hZ6dmS" name="ChannelComponent.h" compile="0" resource="0"

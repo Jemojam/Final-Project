@@ -156,11 +156,15 @@ bool AudioEngine::isPlaying()
 
 void AudioEngine::showAudioSettings()
 {
+	audioSettings();
+}
+
+void AudioEngine::audioSettings()
+{
 	DialogWindow::LaunchOptions o;
 	o.dialogTitle = TRANS("Audio Settings");
 	o.dialogBackgroundColour = LookAndFeel::getDefaultLookAndFeel().findColour(ResizableWindow::backgroundColourId);
 	o.content.setOwned(new AudioDeviceSelectorComponent(audioDeviceManagerTool, 2, 2, 0, 2, false, false, true, true));
 	o.content->setSize(400, 600);
 	o.launchAsync();
-	
 }

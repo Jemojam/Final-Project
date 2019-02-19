@@ -16,47 +16,42 @@ public :
     void addChannel();
     void removeChannel();
     void removeTrack(te::AudioTrack& track);
-    void play();
-    void stop();
-    void pause();
-
-    bool isPlaying();
-
-    bool isDirty() { return dirty; }
-
-    void setDirty(bool inDirty) { dirty = inDirty; }
-
-    TrackList& getTrackList() { return edit->getTrackList(); }
+	TrackList& getTrackList() { return edit->getTrackList(); }
+	void addNewClipFromFile(const File& editFile, AudioTrack& track);
 
 	void changeVolume(AudioTrack& track, float newVolume);
 
-    void addNewClipFromFile(const File& editFile, AudioTrack& track);
+    void play();
+    void stop();
+    void pause();
+    bool isPlaying();
 
 	void showAudioSettings();
+	void audioSettings();
 
+	bool isDirty() { return dirty; }
+	void setDirty(bool inDirty) { dirty = inDirty; }
 private:
-
+	//============================private functions========================================
     te::WaveAudioClip::Ptr loadAudioFileAsClip(const File& file, AudioTrack& track);
     void removeAllClips(te::AudioTrack& track);
-
     void adjustClipProperties(tracktion_engine::WaveAudioClip& clip) const;
+	void removeAllTracks();
+	TransportControl& getTransport() const;
+	void addVolumeAndPanPlugin(AudioTrack& track) const;
 
+	//============================private objects========================================
     te::Engine engine{ProjectInfo::projectName};
-
     AudioFormatManager formatManager;
     std::unique_ptr<AudioFormatReaderSource> playSource;
-
     std::unique_ptr<te::Edit> edit;
-	std::unique_ptr < te::VolumeAndPanPlugin> volumeAndPanPlugin;
+	std::unique_ptr <te::VolumeAndPanPlugin> volumeAndPanPlugin;
+	AudioDeviceManager audioDeviceManagerTool;
+
 
     bool dirty = true;
     int trackNum = 0;
-    void removeAllTracks();
 
-    TransportControl& getTransport() const;
-    void addVolumeAndPanPlugin(AudioTrack& track) const;
-	
-	AudioDeviceManager audioDeviceManagerTool;
 
 	JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR(AudioEngine)
 };

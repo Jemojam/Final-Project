@@ -73,6 +73,10 @@
 			isa = PBXBuildFile;
 			fileRef = 7434FE295314F50AEE4B4490;
 		};
+		710999E353E6C998CC576C49 = {
+			isa = PBXBuildFile;
+			fileRef = 91BF8862DABDD394ED111B86;
+		};
 		DFAEF4D5EC6BA57ACFB5B24F = {
 			isa = PBXBuildFile;
 			fileRef = 35983DDB82DE1D8049853409;
@@ -547,6 +551,13 @@
 			path = "../../JuceLibraryCode/modules/juce_blocks_basics";
 			sourceTree = "SOURCE_ROOT";
 		};
+		91BF8862DABDD394ED111B86 = {
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.cpp.cpp;
+			name = AudioThumbnailComponent.cpp;
+			path = ../../Source/UI/AudioThumbnailComponent.cpp;
+			sourceTree = "SOURCE_ROOT";
+		};
 		92C2522DE81B973050464571 = {
 			isa = PBXFileReference;
 			lastKnownFileType = sourcecode.c.h;
@@ -651,6 +662,13 @@
 			name = IOKit.framework;
 			path = System/Library/Frameworks/IOKit.framework;
 			sourceTree = SDKROOT;
+		};
+		C48B89379360288AF3303B05 = {
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = AudioThumbnailComponent.h;
+			path = ../../Source/UI/AudioThumbnailComponent.h;
+			sourceTree = "SOURCE_ROOT";
 		};
 		CAA150675FFD7E231F75EFDD = {
 			isa = PBXFileReference;
@@ -812,6 +830,8 @@
 			children = (
 				7434FE295314F50AEE4B4490,
 				AB49A09BB352509153CD98A1,
+				91BF8862DABDD394ED111B86,
+				C48B89379360288AF3303B05,
 				35983DDB82DE1D8049853409,
 				526757297C07D19E2CF95214,
 				CAA150675FFD7E231F75EFDD,
@@ -1172,6 +1192,7 @@
 				A853D9F9CD41D09F5F5BB926,
 				EF29CE110EE8147D4544E7E5,
 				73DAC9D72E2231B4BEBA9E19,
+				710999E353E6C998CC576C49,
 				DFAEF4D5EC6BA57ACFB5B24F,
 				5C1711FC727DCB0F248E2D8A,
 				1312CF22421D700A559ECB62,

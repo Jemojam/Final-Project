@@ -145,38 +145,29 @@ void ChannelComponent::paint(Graphics& g)
 		g.fillRoundedRectangle(x, y, width, height, 10.000f);
 	}
 
-	//[UserPaint] Add your own custom painting code here..
-	//[/UserPaint]
+	
 }
 
 void ChannelComponent::resized()
 {
-	//[UserPreResize] Add your own custom resize code here..
-	//[/UserPreResize]
-
-	//[UserResized] Add your own custom resize handling here..
-	//[/UserResized]
+	audioThumbnailComponent->setBounds(getLocalBounds());
 }
 
 void ChannelComponent::buttonClicked(Button* buttonThatWasClicked)
 {
-	//[UserbuttonClicked_Pre]
-	//[/UserbuttonClicked_Pre]
+	
 
 	if (buttonThatWasClicked == selectButton.get())
 	{
-		//[UserButtonCode_selectButton] -- add your button handler code here..
-		//[/UserButtonCode_selectButton]
+		
 	}
 	else if (buttonThatWasClicked == muteBotton.get())
 	{
-		//[UserButtonCode_muteBotton] -- add your button handler code here..
-		//[/UserButtonCode_muteBotton]
+	
 	}
 	else if (buttonThatWasClicked == soloButton.get())
 	{
-		//[UserButtonCode_soloButton] -- add your button handler code here..
-		//[/UserButtonCode_soloButton]
+		
 	}
 	else if (buttonThatWasClicked == addFileButton.get())
 	{
@@ -185,7 +176,11 @@ void ChannelComponent::buttonClicked(Button* buttonThatWasClicked)
 		FileChooser chooser("Choose a file", location, "*.wav", true, false);
 
 		if (chooser.browseForFileToOpen())
+		{
 			engine.addNewClipFromFile(chooser.getResult(), track);
+			audioThumbnailComponent->setSourceThumbnail(chooser.getResult());
+		}
+			
 	}
 	else if (buttonThatWasClicked == FXButton.get())
 	{
@@ -199,8 +194,6 @@ void ChannelComponent::buttonClicked(Button* buttonThatWasClicked)
 
 void ChannelComponent::sliderValueChanged(Slider* sliderThatWasMoved)
 {
-	//[UsersliderValueChanged_Pre]
-	//[/UsersliderValueChanged_Pre]
 
 	if (sliderThatWasMoved == slider.get())
 	{
@@ -209,14 +202,10 @@ void ChannelComponent::sliderValueChanged(Slider* sliderThatWasMoved)
 
 	}
 
-	//[UsersliderValueChanged_Post]
-	//[/UsersliderValueChanged_Post]
 }
 
 
 
-//[MiscUserCode] You can add your own definitions of your custom methods or any other code here...
-//[/MiscUserCode]
 
 
 //==============================================================================
