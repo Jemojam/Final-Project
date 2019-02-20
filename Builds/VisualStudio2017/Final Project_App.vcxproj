@@ -244,6 +244,9 @@
     <ClCompile Include="..\..\JuceLibraryCode\modules\juce_audio_basics\utilities\juce_LagrangeInterpolator.cpp">
       <ExcludedFromBuild>true</ExcludedFromBuild>
     </ClCompile>
+    <ClCompile Include="..\..\JuceLibraryCode\modules\juce_audio_basics\utilities\juce_SmoothedValues.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
     <ClCompile Include="..\..\JuceLibraryCode\modules\juce_audio_basics\juce_audio_basics.cpp">
       <ExcludedFromBuild>true</ExcludedFromBuild>
     </ClCompile>
@@ -656,54 +659,6 @@
       <ExcludedFromBuild>true</ExcludedFromBuild>
     </ClCompile>
     <ClCompile Include="..\..\JuceLibraryCode\modules\juce_audio_utils\juce_audio_utils.cpp">
-      <ExcludedFromBuild>true</ExcludedFromBuild>
-    </ClCompile>
-    <ClCompile Include="..\..\JuceLibraryCode\modules\juce_blocks_basics\blocks\juce_Block.cpp">
-      <ExcludedFromBuild>true</ExcludedFromBuild>
-    </ClCompile>
-    <ClCompile Include="..\..\JuceLibraryCode\modules\juce_blocks_basics\blocks\juce_BlocksVersion.cpp">
-      <ExcludedFromBuild>true</ExcludedFromBuild>
-    </ClCompile>
-    <ClCompile Include="..\..\JuceLibraryCode\modules\juce_blocks_basics\topology\internal\juce_BandwidthStatsLogger.cpp">
-      <ExcludedFromBuild>true</ExcludedFromBuild>
-    </ClCompile>
-    <ClCompile Include="..\..\JuceLibraryCode\modules\juce_blocks_basics\topology\internal\juce_BlockImplementation.cpp">
-      <ExcludedFromBuild>true</ExcludedFromBuild>
-    </ClCompile>
-    <ClCompile Include="..\..\JuceLibraryCode\modules\juce_blocks_basics\topology\internal\juce_ConnectedDeviceGroup.cpp">
-      <ExcludedFromBuild>true</ExcludedFromBuild>
-    </ClCompile>
-    <ClCompile Include="..\..\JuceLibraryCode\modules\juce_blocks_basics\topology\internal\juce_DepreciatedVersionReader.cpp">
-      <ExcludedFromBuild>true</ExcludedFromBuild>
-    </ClCompile>
-    <ClCompile Include="..\..\JuceLibraryCode\modules\juce_blocks_basics\topology\internal\juce_Detector.cpp">
-      <ExcludedFromBuild>true</ExcludedFromBuild>
-    </ClCompile>
-    <ClCompile Include="..\..\JuceLibraryCode\modules\juce_blocks_basics\topology\internal\juce_DetectorHolder.cpp">
-      <ExcludedFromBuild>true</ExcludedFromBuild>
-    </ClCompile>
-    <ClCompile Include="..\..\JuceLibraryCode\modules\juce_blocks_basics\topology\internal\juce_DeviceInfo.cpp">
-      <ExcludedFromBuild>true</ExcludedFromBuild>
-    </ClCompile>
-    <ClCompile Include="..\..\JuceLibraryCode\modules\juce_blocks_basics\topology\internal\juce_MidiDeviceConnection.cpp">
-      <ExcludedFromBuild>true</ExcludedFromBuild>
-    </ClCompile>
-    <ClCompile Include="..\..\JuceLibraryCode\modules\juce_blocks_basics\topology\internal\juce_MIDIDeviceDetector.cpp">
-      <ExcludedFromBuild>true</ExcludedFromBuild>
-    </ClCompile>
-    <ClCompile Include="..\..\JuceLibraryCode\modules\juce_blocks_basics\topology\juce_PhysicalTopologySource.cpp">
-      <ExcludedFromBuild>true</ExcludedFromBuild>
-    </ClCompile>
-    <ClCompile Include="..\..\JuceLibraryCode\modules\juce_blocks_basics\topology\juce_RuleBasedTopologySource.cpp">
-      <ExcludedFromBuild>true</ExcludedFromBuild>
-    </ClCompile>
-    <ClCompile Include="..\..\JuceLibraryCode\modules\juce_blocks_basics\visualisers\juce_BitmapLEDProgram.cpp">
-      <ExcludedFromBuild>true</ExcludedFromBuild>
-    </ClCompile>
-    <ClCompile Include="..\..\JuceLibraryCode\modules\juce_blocks_basics\visualisers\juce_DrumPadLEDProgram.cpp">
-      <ExcludedFromBuild>true</ExcludedFromBuild>
-    </ClCompile>
-    <ClCompile Include="..\..\JuceLibraryCode\modules\juce_blocks_basics\juce_blocks_basics.cpp">
       <ExcludedFromBuild>true</ExcludedFromBuild>
     </ClCompile>
     <ClCompile Include="..\..\JuceLibraryCode\modules\juce_core\containers\juce_AbstractFifo.cpp">
@@ -1942,36 +1897,6 @@
     <ClCompile Include="..\..\JuceLibraryCode\modules\juce_gui_extra\juce_gui_extra.cpp">
       <ExcludedFromBuild>true</ExcludedFromBuild>
     </ClCompile>
-    <ClCompile Include="..\..\JuceLibraryCode\modules\juce_opengl\opengl\juce_OpenGLContext.cpp">
-      <ExcludedFromBuild>true</ExcludedFromBuild>
-    </ClCompile>
-    <ClCompile Include="..\..\JuceLibraryCode\modules\juce_opengl\opengl\juce_OpenGLFrameBuffer.cpp">
-      <ExcludedFromBuild>true</ExcludedFromBuild>
-    </ClCompile>
-    <ClCompile Include="..\..\JuceLibraryCode\modules\juce_opengl\opengl\juce_OpenGLGraphicsContext.cpp">
-      <ExcludedFromBuild>true</ExcludedFromBuild>
-    </ClCompile>
-    <ClCompile Include="..\..\JuceLibraryCode\modules\juce_opengl\opengl\juce_OpenGLHelpers.cpp">
-      <ExcludedFromBuild>true</ExcludedFromBuild>
-    </ClCompile>
-    <ClCompile Include="..\..\JuceLibraryCode\modules\juce_opengl\opengl\juce_OpenGLImage.cpp">
-      <ExcludedFromBuild>true</ExcludedFromBuild>
-    </ClCompile>
-    <ClCompile Include="..\..\JuceLibraryCode\modules\juce_opengl\opengl\juce_OpenGLPixelFormat.cpp">
-      <ExcludedFromBuild>true</ExcludedFromBuild>
-    </ClCompile>
-    <ClCompile Include="..\..\JuceLibraryCode\modules\juce_opengl\opengl\juce_OpenGLShaderProgram.cpp">
-      <ExcludedFromBuild>true</ExcludedFromBuild>
-    </ClCompile>
-    <ClCompile Include="..\..\JuceLibraryCode\modules\juce_opengl\opengl\juce_OpenGLTexture.cpp">
-      <ExcludedFromBuild>true</ExcludedFromBuild>
-    </ClCompile>
-    <ClCompile Include="..\..\JuceLibraryCode\modules\juce_opengl\utils\juce_OpenGLAppComponent.cpp">
-      <ExcludedFromBuild>true</ExcludedFromBuild>
-    </ClCompile>
-    <ClCompile Include="..\..\JuceLibraryCode\modules\juce_opengl\juce_opengl.cpp">
-      <ExcludedFromBuild>true</ExcludedFromBuild>
-    </ClCompile>
     <ClCompile Include="..\..\JuceLibraryCode\modules\juce_osc\osc\juce_OSCAddress.cpp">
       <ExcludedFromBuild>true</ExcludedFromBuild>
     </ClCompile>
@@ -1997,6 +1922,810 @@
       <ExcludedFromBuild>true</ExcludedFromBuild>
     </ClCompile>
     <ClCompile Include="..\..\JuceLibraryCode\modules\juce_osc\juce_osc.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\Acceleration\Acceleration.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\Acceleration\AccelerationProc.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\ADClip7\ADClip7.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\ADClip7\ADClip7Proc.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\ADT\ADT.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\ADT\ADTProc.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\Air\Air.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\Air\AirProc.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\AQuickVoiceClip\AQuickVoiceClip.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\AQuickVoiceClip\AQuickVoiceClipProc.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\AtmosphereBuss\AtmosphereBuss.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\AtmosphereBuss\AtmosphereBussProc.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\AtmosphereChannel\AtmosphereChannel.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\AtmosphereChannel\AtmosphereChannelProc.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\Aura\Aura.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\Aura\AuraProc.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\Average\Average.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\Average\AverageProc.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\BassKit\BassKit.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\BassKit\BassKitProc.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\Bite\Bite.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\Bite\BiteProc.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\BitGlitter\BitGlitter.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\BitGlitter\BitGlitterProc.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\BitShiftGain\BitShiftGain.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\BitShiftGain\BitShiftGainProc.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\BuildATPDF\BuildATPDF.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\BuildATPDF\BuildATPDFProc.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\BussColors4\BussColors4.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\BussColors4\BussColors4Proc.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\ButterComp\ButterComp.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\ButterComp\ButterCompProc.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\ButterComp2\ButterComp2.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\ButterComp2\ButterComp2Proc.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\C5RawBuss\C5RawBuss.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\C5RawBuss\C5RawBussProc.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\C5RawChannel\C5RawChannel.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\C5RawChannel\C5RawChannelProc.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\Capacitor\Capacitor.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\Capacitor\CapacitorProc.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\Channel4\Channel4.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\Channel4\Channel4Proc.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\Channel5\Channel5.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\Channel5\Channel5Proc.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\Channel6\Channel6.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\Channel6\Channel6Proc.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\Chorus\Chorus.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\Chorus\ChorusProc.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\ChorusEnsemble\ChorusEnsemble.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\ChorusEnsemble\ChorusEnsembleProc.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\ClipOnly\ClipOnly.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\ClipOnly\ClipOnlyProc.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\Console4Buss\Console4Buss.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\Console4Buss\Console4BussProc.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\Console4Channel\Console4Channel.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\Console4Channel\Console4ChannelProc.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\Console5Buss\Console5Buss.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\Console5Buss\Console5BussProc.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\Console5Channel\Console5Channel.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\Console5Channel\Console5ChannelProc.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\Console5DarkCh\Console5DarkCh.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\Console5DarkCh\Console5DarkChProc.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\CrunchyGrooveWear\CrunchyGrooveWear.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\CrunchyGrooveWear\CrunchyGrooveWearProc.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\CStrip\CStrip.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\CStrip\CStripProc.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\DCVoltage\DCVoltage.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\DCVoltage\DCVoltageProc.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\DeEss\DeEss.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\DeEss\DeEssProc.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\Density\Density.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\Density\DensityProc.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\DeRez\DeRez.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\DeRez\DeRezProc.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\Desk\Desk.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\Desk\DeskProc.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\Desk4\Desk4.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\Desk4\Desk4Proc.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\Distance\Distance.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\Distance\DistanceProc.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\Distance2\Distance2.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\Distance2\Distance2Proc.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\Ditherbox\Ditherbox.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\Ditherbox\DitherboxProc.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\DitherMeDiskers\DitherMeDiskers.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\DitherMeDiskers\DitherMeDiskersProc.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\DitherMeTimbers\DitherMeTimbers.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\DitherMeTimbers\DitherMeTimbersProc.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\DoublePaul\DoublePaul.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\DoublePaul\DoublePaulProc.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\Drive\Drive.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\Drive\DriveProc.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\DrumSlam\DrumSlam.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\DrumSlam\DrumSlamProc.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\DubCenter\DubCenter.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\DubCenter\DubCenterProc.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\DubSub\DubSub.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\DubSub\DubSubProc.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\DustBunny\DustBunny.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\DustBunny\DustBunnyProc.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\EdIsDim\EdIsDim.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\EdIsDim\EdIsDimProc.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\ElectroHat\ElectroHat.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\ElectroHat\ElectroHatProc.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\Energy\Energy.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\Energy\EnergyProc.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\Ensemble\Ensemble.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\Ensemble\EnsembleProc.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\EQ\EQ.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\EQ\EQProc.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\EveryTrim\EveryTrim.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\EveryTrim\EveryTrimProc.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\FathomFive\FathomFive.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\FathomFive\FathomFiveProc.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\Floor\Floor.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\Floor\FloorProc.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\Fracture\Fracture.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\Fracture\FractureProc.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\FromTape\FromTape.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\FromTape\FromTapeProc.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\Gatelope\Gatelope.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\Gatelope\GatelopeProc.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\Golem\Golem.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\Golem\GolemProc.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\GrooveWear\GrooveWear.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\GrooveWear\GrooveWearProc.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\GuitarConditioner\GuitarConditioner.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\GuitarConditioner\GuitarConditionerProc.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\HardVacuum\HardVacuum.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\HardVacuum\HardVacuumProc.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\Hermepass\Hermepass.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\Hermepass\HermepassProc.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\HermeTrim\HermeTrim.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\HermeTrim\HermeTrimProc.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\HighGlossDither\HighGlossDither.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\HighGlossDither\HighGlossDitherProc.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\HighImpact\HighImpact.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\HighImpact\HighImpactProc.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\Highpass\Highpass.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\Highpass\HighpassProc.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\Hombre\Hombre.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\Hombre\HombreProc.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\IronOxide5\IronOxide5.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\IronOxide5\IronOxide5Proc.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\IronOxideClassic\IronOxideClassic.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\IronOxideClassic\IronOxideClassicProc.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\Logical4\Logical4.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\Logical4\Logical4Proc.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\Loud\Loud.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\Loud\LoudProc.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\Lowpass\Lowpass.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\Lowpass\LowpassProc.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\Melt\Melt.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\Melt\MeltProc.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\MidSide\MidSide.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\MidSide\MidSideProc.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\NaturalizeDither\NaturalizeDither.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\NaturalizeDither\NaturalizeDitherProc.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\NCSeventeen\NCSeventeen.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\NCSeventeen\NCSeventeenProc.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\NodeDither\NodeDither.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\NodeDither\NodeDitherProc.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\Noise\Noise.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\Noise\NoiseProc.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\NonlinearSpace\NonlinearSpace.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\NonlinearSpace\NonlinearSpaceProc.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\NotJustAnotherCD\NotJustAnotherCD.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\NotJustAnotherCD\NotJustAnotherCDProc.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\NotJustAnotherDither\NotJustAnotherDither.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\NotJustAnotherDither\NotJustAnotherDitherProc.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\OneCornerClip\OneCornerClip.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\OneCornerClip\OneCornerClipProc.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\PaulDither\PaulDither.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\PaulDither\PaulDitherProc.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\PDBuss\PDBuss.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\PDBuss\PDBussProc.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\PDChannel\PDChannel.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\PDChannel\PDChannelProc.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\PhaseNudge\PhaseNudge.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\PhaseNudge\PhaseNudgeProc.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\Point\Point.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\Point\PointProc.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\Pop\Pop.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\Pop\PopProc.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\PowerSag\PowerSag.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\PowerSag\PowerSagProc.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\Pressure4\Pressure4.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\Pressure4\Pressure4Proc.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\PurestConsoleBuss\PurestConsoleBuss.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\PurestConsoleBuss\PurestConsoleBussProc.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\PurestConsoleChannel\PurestConsoleChannel.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\PurestConsoleChannel\PurestConsoleChannelProc.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\PurestDrive\PurestDrive.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\PurestDrive\PurestDriveProc.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\PurestEcho\PurestEcho.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\PurestEcho\PurestEchoProc.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\PurestGain\PurestGain.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\PurestGain\PurestGainProc.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\PurestWarm\PurestWarm.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\PurestWarm\PurestWarmProc.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\Pyewacket\Pyewacket.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\Pyewacket\PyewacketProc.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\Righteous4\Righteous4.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\Righteous4\Righteous4Proc.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\SideDull\SideDull.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\SideDull\SideDullProc.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\Sidepass\Sidepass.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\Sidepass\SidepassProc.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\SingleEndedTriode\SingleEndedTriode.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\SingleEndedTriode\SingleEndedTriodeProc.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\Slew\Slew.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\Slew\SlewProc.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\Slew2\Slew2.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\Slew2\Slew2Proc.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\SlewOnly\SlewOnly.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\SlewOnly\SlewOnlyProc.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\SpatializeDither\SpatializeDither.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\SpatializeDither\SpatializeDitherProc.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\Spiral\Spiral.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\Spiral\SpiralProc.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\Spiral2\Spiral2.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\Spiral2\Spiral2Proc.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\StarChild\StarChild.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\StarChild\StarChildProc.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\StereoFX\StereoFX.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\StereoFX\StereoFXProc.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\SubsOnly\SubsOnly.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\SubsOnly\SubsOnlyProc.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\Surge\Surge.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\Surge\SurgeProc.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\SurgeTide\SurgeTide.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\SurgeTide\SurgeTideProc.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\Swell\Swell.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\Swell\SwellProc.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\TapeDither\TapeDither.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\TapeDither\TapeDitherProc.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\TapeDust\TapeDust.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\TapeDust\TapeDustProc.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\Thunder\Thunder.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\Thunder\ThunderProc.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\ToneSlant\ToneSlant.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\ToneSlant\ToneSlantProc.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\ToTape5\ToTape5.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\ToTape5\ToTape5Proc.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\ToVinyl4\ToVinyl4.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\ToVinyl4\ToVinyl4Proc.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\TPDFDither\TPDFDither.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\TPDFDither\TPDFDitherProc.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\TransDesk\TransDesk.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\TransDesk\TransDeskProc.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\Tremolo\Tremolo.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\Tremolo\TremoloProc.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\TubeDesk\TubeDesk.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\TubeDesk\TubeDeskProc.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\uLawDecode\uLawDecode.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\uLawDecode\uLawDecodeProc.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\uLawEncode\uLawEncode.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\uLawEncode\uLawEncodeProc.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\UnBox\UnBox.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\UnBox\UnBoxProc.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\VariMu\VariMu.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\VariMu\VariMuProc.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\VinylDither\VinylDither.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\VinylDither\VinylDitherProc.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\VoiceOfTheStarship\VoiceOfTheStarship.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\VoiceOfTheStarship\VoiceOfTheStarshipProc.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\Wider\Wider.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\Wider\WiderProc.cpp">
       <ExcludedFromBuild>true</ExcludedFromBuild>
     </ClCompile>
     <ClCompile Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\soundtouch\source\SoundTouch\AAFilter.cpp">
@@ -2365,6 +3094,9 @@
     <ClCompile Include="..\..\JuceLibraryCode\modules\tracktion_engine\playback\devices\tracktion_VirtualMidiInputDevice.cpp">
       <ExcludedFromBuild>true</ExcludedFromBuild>
     </ClCompile>
+    <ClCompile Include="..\..\JuceLibraryCode\modules\tracktion_engine\playback\devices\tracktion_WaveDeviceDescription.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
     <ClCompile Include="..\..\JuceLibraryCode\modules\tracktion_engine\playback\devices\tracktion_WaveInputDevice.cpp">
       <ExcludedFromBuild>true</ExcludedFromBuild>
     </ClCompile>
@@ -2390,6 +3122,12 @@
       <ExcludedFromBuild>true</ExcludedFromBuild>
     </ClCompile>
     <ClCompile Include="..\..\JuceLibraryCode\modules\tracktion_engine\playback\tracktion_TransportControl.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\JuceLibraryCode\modules\tracktion_engine\plugins\airwindows\tracktion_AirWindows.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\JuceLibraryCode\modules\tracktion_engine\plugins\airwindows\tracktion_AirWindowsBase.cpp">
       <ExcludedFromBuild>true</ExcludedFromBuild>
     </ClCompile>
     <ClCompile Include="..\..\JuceLibraryCode\modules\tracktion_engine\plugins\ARA\tracktion_MelodyneFileReader.cpp">
@@ -2536,6 +3274,9 @@
     <ClCompile Include="..\..\JuceLibraryCode\modules\tracktion_engine\utilities\tracktion_UIBehaviour.cpp">
       <ExcludedFromBuild>true</ExcludedFromBuild>
     </ClCompile>
+    <ClCompile Include="..\..\JuceLibraryCode\modules\tracktion_engine\tracktion_engine_airwindows.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
     <ClCompile Include="..\..\JuceLibraryCode\modules\tracktion_engine\tracktion_engine_audio_files.cpp">
       <ExcludedFromBuild>true</ExcludedFromBuild>
     </ClCompile>
@@ -2563,7 +3304,6 @@
     <ClCompile Include="..\..\JuceLibraryCode\include_juce_audio_formats.cpp"/>
     <ClCompile Include="..\..\JuceLibraryCode\include_juce_audio_processors.cpp"/>
     <ClCompile Include="..\..\JuceLibraryCode\include_juce_audio_utils.cpp"/>
-    <ClCompile Include="..\..\JuceLibraryCode\include_juce_blocks_basics.cpp"/>
     <ClCompile Include="..\..\JuceLibraryCode\include_juce_core.cpp"/>
     <ClCompile Include="..\..\JuceLibraryCode\include_juce_data_structures.cpp"/>
     <ClCompile Include="..\..\JuceLibraryCode\include_juce_dsp.cpp"/>
@@ -2571,8 +3311,8 @@
     <ClCompile Include="..\..\JuceLibraryCode\include_juce_graphics.cpp"/>
     <ClCompile Include="..\..\JuceLibraryCode\include_juce_gui_basics.cpp"/>
     <ClCompile Include="..\..\JuceLibraryCode\include_juce_gui_extra.cpp"/>
-    <ClCompile Include="..\..\JuceLibraryCode\include_juce_opengl.cpp"/>
     <ClCompile Include="..\..\JuceLibraryCode\include_juce_osc.cpp"/>
+    <ClCompile Include="..\..\JuceLibraryCode\include_tracktion_engine_airwindows.cpp"/>
     <ClCompile Include="..\..\JuceLibraryCode\include_tracktion_engine_audio_files.cpp"/>
     <ClCompile Include="..\..\JuceLibraryCode\include_tracktion_engine_model_1.cpp"/>
     <ClCompile Include="..\..\JuceLibraryCode\include_tracktion_engine_model_2.cpp"/>
@@ -2633,10 +3373,10 @@
     <ClInclude Include="..\..\JuceLibraryCode\modules\juce_audio_basics\utilities\juce_Decibels.h"/>
     <ClInclude Include="..\..\JuceLibraryCode\modules\juce_audio_basics\utilities\juce_IIRFilter.h"/>
     <ClInclude Include="..\..\JuceLibraryCode\modules\juce_audio_basics\utilities\juce_LagrangeInterpolator.h"/>
-    <ClInclude Include="..\..\JuceLibraryCode\modules\juce_audio_basics\utilities\juce_LinearSmoothedValue.h"/>
     <ClInclude Include="..\..\JuceLibraryCode\modules\juce_audio_basics\utilities\juce_Reverb.h"/>
+    <ClInclude Include="..\..\JuceLibraryCode\modules\juce_audio_basics\utilities\juce_SmoothedValues.h"/>
     <ClInclude Include="..\..\JuceLibraryCode\modules\juce_audio_basics\juce_audio_basics.h"/>
-    <ClInclude Include="C:\CODE\JUCE\modules\juce_audio_basics\juce_audio_basics.h"/>
+    <ClInclude Include="..\..\..\JUCE\modules\juce_audio_basics\juce_audio_basics.h"/>
     <ClInclude Include="..\..\JuceLibraryCode\modules\juce_audio_devices\audio_io\juce_AudioDeviceManager.h"/>
     <ClInclude Include="..\..\JuceLibraryCode\modules\juce_audio_devices\audio_io\juce_AudioIODevice.h"/>
     <ClInclude Include="..\..\JuceLibraryCode\modules\juce_audio_devices\audio_io\juce_AudioIODeviceType.h"/>
@@ -2649,7 +3389,7 @@
     <ClInclude Include="..\..\JuceLibraryCode\modules\juce_audio_devices\sources\juce_AudioSourcePlayer.h"/>
     <ClInclude Include="..\..\JuceLibraryCode\modules\juce_audio_devices\sources\juce_AudioTransportSource.h"/>
     <ClInclude Include="..\..\JuceLibraryCode\modules\juce_audio_devices\juce_audio_devices.h"/>
-    <ClInclude Include="C:\CODE\JUCE\modules\juce_audio_devices\juce_audio_devices.h"/>
+    <ClInclude Include="..\..\..\JUCE\modules\juce_audio_devices\juce_audio_devices.h"/>
     <ClInclude Include="..\..\JuceLibraryCode\modules\juce_audio_formats\codecs\flac\libFLAC\include\private\all.h"/>
     <ClInclude Include="..\..\JuceLibraryCode\modules\juce_audio_formats\codecs\flac\libFLAC\include\private\bitmath.h"/>
     <ClInclude Include="..\..\JuceLibraryCode\modules\juce_audio_formats\codecs\flac\libFLAC\include\private\bitreader.h"/>
@@ -2748,7 +3488,7 @@
     <ClInclude Include="..\..\JuceLibraryCode\modules\juce_audio_formats\format\juce_MemoryMappedAudioFormatReader.h"/>
     <ClInclude Include="..\..\JuceLibraryCode\modules\juce_audio_formats\sampler\juce_Sampler.h"/>
     <ClInclude Include="..\..\JuceLibraryCode\modules\juce_audio_formats\juce_audio_formats.h"/>
-    <ClInclude Include="C:\CODE\JUCE\modules\juce_audio_formats\juce_audio_formats.h"/>
+    <ClInclude Include="..\..\..\JUCE\modules\juce_audio_formats\juce_audio_formats.h"/>
     <ClInclude Include="..\..\JuceLibraryCode\modules\juce_audio_processors\format\juce_AudioPluginFormat.h"/>
     <ClInclude Include="..\..\JuceLibraryCode\modules\juce_audio_processors\format\juce_AudioPluginFormatManager.h"/>
     <ClInclude Include="..\..\JuceLibraryCode\modules\juce_audio_processors\format_types\VST3_SDK\base\source\classfactoryhelpers.h"/>
@@ -2842,7 +3582,7 @@
     <ClInclude Include="..\..\JuceLibraryCode\modules\juce_audio_processors\utilities\juce_AudioProcessorValueTreeState.h"/>
     <ClInclude Include="..\..\JuceLibraryCode\modules\juce_audio_processors\utilities\juce_RangedAudioParameter.h"/>
     <ClInclude Include="..\..\JuceLibraryCode\modules\juce_audio_processors\juce_audio_processors.h"/>
-    <ClInclude Include="C:\CODE\JUCE\modules\juce_audio_processors\juce_audio_processors.h"/>
+    <ClInclude Include="..\..\..\JUCE\modules\juce_audio_processors\juce_audio_processors.h"/>
     <ClInclude Include="..\..\JuceLibraryCode\modules\juce_audio_utils\audio_cd\juce_AudioCDBurner.h"/>
     <ClInclude Include="..\..\JuceLibraryCode\modules\juce_audio_utils\audio_cd\juce_AudioCDReader.h"/>
     <ClInclude Include="..\..\JuceLibraryCode\modules\juce_audio_utils\gui\juce_AudioAppComponent.h"/>
@@ -2856,32 +3596,7 @@
     <ClInclude Include="..\..\JuceLibraryCode\modules\juce_audio_utils\players\juce_AudioProcessorPlayer.h"/>
     <ClInclude Include="..\..\JuceLibraryCode\modules\juce_audio_utils\players\juce_SoundPlayer.h"/>
     <ClInclude Include="..\..\JuceLibraryCode\modules\juce_audio_utils\juce_audio_utils.h"/>
-    <ClInclude Include="C:\CODE\JUCE\modules\juce_audio_utils\juce_audio_utils.h"/>
-    <ClInclude Include="..\..\JuceLibraryCode\modules\juce_blocks_basics\blocks\juce_Block.h"/>
-    <ClInclude Include="..\..\JuceLibraryCode\modules\juce_blocks_basics\blocks\juce_BlockConfigManager.h"/>
-    <ClInclude Include="..\..\JuceLibraryCode\modules\juce_blocks_basics\blocks\juce_BlocksVersion.h"/>
-    <ClInclude Include="..\..\JuceLibraryCode\modules\juce_blocks_basics\blocks\juce_ControlButton.h"/>
-    <ClInclude Include="..\..\JuceLibraryCode\modules\juce_blocks_basics\blocks\juce_LEDGrid.h"/>
-    <ClInclude Include="..\..\JuceLibraryCode\modules\juce_blocks_basics\blocks\juce_LEDRow.h"/>
-    <ClInclude Include="..\..\JuceLibraryCode\modules\juce_blocks_basics\blocks\juce_StatusLight.h"/>
-    <ClInclude Include="..\..\JuceLibraryCode\modules\juce_blocks_basics\blocks\juce_TouchList.h"/>
-    <ClInclude Include="..\..\JuceLibraryCode\modules\juce_blocks_basics\blocks\juce_TouchSurface.h"/>
-    <ClInclude Include="..\..\JuceLibraryCode\modules\juce_blocks_basics\littlefoot\juce_LittleFootCompiler.h"/>
-    <ClInclude Include="..\..\JuceLibraryCode\modules\juce_blocks_basics\littlefoot\juce_LittleFootRemoteHeap.h"/>
-    <ClInclude Include="..\..\JuceLibraryCode\modules\juce_blocks_basics\littlefoot\juce_LittleFootRunner.h"/>
-    <ClInclude Include="..\..\JuceLibraryCode\modules\juce_blocks_basics\protocol\juce_BitPackingUtilities.h"/>
-    <ClInclude Include="..\..\JuceLibraryCode\modules\juce_blocks_basics\protocol\juce_BlockModels.h"/>
-    <ClInclude Include="..\..\JuceLibraryCode\modules\juce_blocks_basics\protocol\juce_BlocksProtocolDefinitions.h"/>
-    <ClInclude Include="..\..\JuceLibraryCode\modules\juce_blocks_basics\protocol\juce_HostPacketBuilder.h"/>
-    <ClInclude Include="..\..\JuceLibraryCode\modules\juce_blocks_basics\protocol\juce_HostPacketDecoder.h"/>
-    <ClInclude Include="..\..\JuceLibraryCode\modules\juce_blocks_basics\topology\juce_PhysicalTopologySource.h"/>
-    <ClInclude Include="..\..\JuceLibraryCode\modules\juce_blocks_basics\topology\juce_RuleBasedTopologySource.h"/>
-    <ClInclude Include="..\..\JuceLibraryCode\modules\juce_blocks_basics\topology\juce_Topology.h"/>
-    <ClInclude Include="..\..\JuceLibraryCode\modules\juce_blocks_basics\topology\juce_TopologySource.h"/>
-    <ClInclude Include="..\..\JuceLibraryCode\modules\juce_blocks_basics\visualisers\juce_BitmapLEDProgram.h"/>
-    <ClInclude Include="..\..\JuceLibraryCode\modules\juce_blocks_basics\visualisers\juce_DrumPadLEDProgram.h"/>
-    <ClInclude Include="..\..\JuceLibraryCode\modules\juce_blocks_basics\juce_blocks_basics.h"/>
-    <ClInclude Include="C:\CODE\JUCE\modules\juce_blocks_basics\juce_blocks_basics.h"/>
+    <ClInclude Include="..\..\..\JUCE\modules\juce_audio_utils\juce_audio_utils.h"/>
     <ClInclude Include="..\..\JuceLibraryCode\modules\juce_core\containers\juce_AbstractFifo.h"/>
     <ClInclude Include="..\..\JuceLibraryCode\modules\juce_core\containers\juce_Array.h"/>
     <ClInclude Include="..\..\JuceLibraryCode\modules\juce_core\containers\juce_ArrayAllocationBase.h"/>
@@ -3018,7 +3733,7 @@
     <ClInclude Include="..\..\JuceLibraryCode\modules\juce_core\zip\juce_GZIPDecompressorInputStream.h"/>
     <ClInclude Include="..\..\JuceLibraryCode\modules\juce_core\zip\juce_ZipFile.h"/>
     <ClInclude Include="..\..\JuceLibraryCode\modules\juce_core\juce_core.h"/>
-    <ClInclude Include="C:\CODE\JUCE\modules\juce_core\juce_core.h"/>
+    <ClInclude Include="..\..\..\JUCE\modules\juce_core\juce_core.h"/>
     <ClInclude Include="..\..\JuceLibraryCode\modules\juce_data_structures\app_properties\juce_ApplicationProperties.h"/>
     <ClInclude Include="..\..\JuceLibraryCode\modules\juce_data_structures\app_properties\juce_PropertiesFile.h"/>
     <ClInclude Include="..\..\JuceLibraryCode\modules\juce_data_structures\undomanager\juce_UndoableAction.h"/>
@@ -3029,7 +3744,7 @@
     <ClInclude Include="..\..\JuceLibraryCode\modules\juce_data_structures\values\juce_ValueTreeSynchroniser.h"/>
     <ClInclude Include="..\..\JuceLibraryCode\modules\juce_data_structures\values\juce_ValueWithDefault.h"/>
     <ClInclude Include="..\..\JuceLibraryCode\modules\juce_data_structures\juce_data_structures.h"/>
-    <ClInclude Include="C:\CODE\JUCE\modules\juce_data_structures\juce_data_structures.h"/>
+    <ClInclude Include="..\..\..\JUCE\modules\juce_data_structures\juce_data_structures.h"/>
     <ClInclude Include="..\..\JuceLibraryCode\modules\juce_dsp\containers\juce_AudioBlock.h"/>
     <ClInclude Include="..\..\JuceLibraryCode\modules\juce_dsp\containers\juce_SIMDRegister.h"/>
     <ClInclude Include="..\..\JuceLibraryCode\modules\juce_dsp\containers\juce_SIMDRegister_Impl.h"/>
@@ -3063,7 +3778,7 @@
     <ClInclude Include="..\..\JuceLibraryCode\modules\juce_dsp\processors\juce_StateVariableFilter.h"/>
     <ClInclude Include="..\..\JuceLibraryCode\modules\juce_dsp\processors\juce_WaveShaper.h"/>
     <ClInclude Include="..\..\JuceLibraryCode\modules\juce_dsp\juce_dsp.h"/>
-    <ClInclude Include="C:\CODE\JUCE\modules\juce_dsp\juce_dsp.h"/>
+    <ClInclude Include="..\..\..\JUCE\modules\juce_dsp\juce_dsp.h"/>
     <ClInclude Include="..\..\JuceLibraryCode\modules\juce_events\broadcasters\juce_ActionBroadcaster.h"/>
     <ClInclude Include="..\..\JuceLibraryCode\modules\juce_events\broadcasters\juce_ActionListener.h"/>
     <ClInclude Include="..\..\JuceLibraryCode\modules\juce_events\broadcasters\juce_AsyncUpdater.h"/>
@@ -3089,7 +3804,7 @@
     <ClInclude Include="..\..\JuceLibraryCode\modules\juce_events\timers\juce_MultiTimer.h"/>
     <ClInclude Include="..\..\JuceLibraryCode\modules\juce_events\timers\juce_Timer.h"/>
     <ClInclude Include="..\..\JuceLibraryCode\modules\juce_events\juce_events.h"/>
-    <ClInclude Include="C:\CODE\JUCE\modules\juce_events\juce_events.h"/>
+    <ClInclude Include="..\..\..\JUCE\modules\juce_events\juce_events.h"/>
     <ClInclude Include="..\..\JuceLibraryCode\modules\juce_graphics\colour\juce_Colour.h"/>
     <ClInclude Include="..\..\JuceLibraryCode\modules\juce_graphics\colour\juce_ColourGradient.h"/>
     <ClInclude Include="..\..\JuceLibraryCode\modules\juce_graphics\colour\juce_Colours.h"/>
@@ -3148,7 +3863,7 @@
     <ClInclude Include="..\..\JuceLibraryCode\modules\juce_graphics\placement\juce_Justification.h"/>
     <ClInclude Include="..\..\JuceLibraryCode\modules\juce_graphics\placement\juce_RectanglePlacement.h"/>
     <ClInclude Include="..\..\JuceLibraryCode\modules\juce_graphics\juce_graphics.h"/>
-    <ClInclude Include="C:\CODE\JUCE\modules\juce_graphics\juce_graphics.h"/>
+    <ClInclude Include="..\..\..\JUCE\modules\juce_graphics\juce_graphics.h"/>
     <ClInclude Include="..\..\JuceLibraryCode\modules\juce_gui_basics\application\juce_Application.h"/>
     <ClInclude Include="..\..\JuceLibraryCode\modules\juce_gui_basics\buttons\juce_ArrowButton.h"/>
     <ClInclude Include="..\..\JuceLibraryCode\modules\juce_gui_basics\buttons\juce_Button.h"/>
@@ -3289,7 +4004,7 @@
     <ClInclude Include="..\..\JuceLibraryCode\modules\juce_gui_basics\windows\juce_TooltipWindow.h"/>
     <ClInclude Include="..\..\JuceLibraryCode\modules\juce_gui_basics\windows\juce_TopLevelWindow.h"/>
     <ClInclude Include="..\..\JuceLibraryCode\modules\juce_gui_basics\juce_gui_basics.h"/>
-    <ClInclude Include="C:\CODE\JUCE\modules\juce_gui_basics\juce_gui_basics.h"/>
+    <ClInclude Include="..\..\..\JUCE\modules\juce_gui_basics\juce_gui_basics.h"/>
     <ClInclude Include="..\..\JuceLibraryCode\modules\juce_gui_extra\code_editor\juce_CodeDocument.h"/>
     <ClInclude Include="..\..\JuceLibraryCode\modules\juce_gui_extra\code_editor\juce_CodeEditorComponent.h"/>
     <ClInclude Include="..\..\JuceLibraryCode\modules\juce_gui_extra\code_editor\juce_CodeTokeniser.h"/>
@@ -3318,30 +4033,7 @@
     <ClInclude Include="..\..\JuceLibraryCode\modules\juce_gui_extra\misc\juce_WebBrowserComponent.h"/>
     <ClInclude Include="..\..\JuceLibraryCode\modules\juce_gui_extra\native\juce_mac_CarbonViewWrapperComponent.h"/>
     <ClInclude Include="..\..\JuceLibraryCode\modules\juce_gui_extra\juce_gui_extra.h"/>
-    <ClInclude Include="C:\CODE\JUCE\modules\juce_gui_extra\juce_gui_extra.h"/>
-    <ClInclude Include="..\..\JuceLibraryCode\modules\juce_opengl\geometry\juce_Draggable3DOrientation.h"/>
-    <ClInclude Include="..\..\JuceLibraryCode\modules\juce_opengl\geometry\juce_Matrix3D.h"/>
-    <ClInclude Include="..\..\JuceLibraryCode\modules\juce_opengl\geometry\juce_Quaternion.h"/>
-    <ClInclude Include="..\..\JuceLibraryCode\modules\juce_opengl\geometry\juce_Vector3D.h"/>
-    <ClInclude Include="..\..\JuceLibraryCode\modules\juce_opengl\native\juce_MissingGLDefinitions.h"/>
-    <ClInclude Include="..\..\JuceLibraryCode\modules\juce_opengl\native\juce_OpenGL_android.h"/>
-    <ClInclude Include="..\..\JuceLibraryCode\modules\juce_opengl\native\juce_OpenGL_ios.h"/>
-    <ClInclude Include="..\..\JuceLibraryCode\modules\juce_opengl\native\juce_OpenGL_linux_X11.h"/>
-    <ClInclude Include="..\..\JuceLibraryCode\modules\juce_opengl\native\juce_OpenGL_osx.h"/>
-    <ClInclude Include="..\..\JuceLibraryCode\modules\juce_opengl\native\juce_OpenGL_win32.h"/>
-    <ClInclude Include="..\..\JuceLibraryCode\modules\juce_opengl\native\juce_OpenGLExtensions.h"/>
-    <ClInclude Include="..\..\JuceLibraryCode\modules\juce_opengl\opengl\juce_OpenGLContext.h"/>
-    <ClInclude Include="..\..\JuceLibraryCode\modules\juce_opengl\opengl\juce_OpenGLFrameBuffer.h"/>
-    <ClInclude Include="..\..\JuceLibraryCode\modules\juce_opengl\opengl\juce_OpenGLGraphicsContext.h"/>
-    <ClInclude Include="..\..\JuceLibraryCode\modules\juce_opengl\opengl\juce_OpenGLHelpers.h"/>
-    <ClInclude Include="..\..\JuceLibraryCode\modules\juce_opengl\opengl\juce_OpenGLImage.h"/>
-    <ClInclude Include="..\..\JuceLibraryCode\modules\juce_opengl\opengl\juce_OpenGLPixelFormat.h"/>
-    <ClInclude Include="..\..\JuceLibraryCode\modules\juce_opengl\opengl\juce_OpenGLRenderer.h"/>
-    <ClInclude Include="..\..\JuceLibraryCode\modules\juce_opengl\opengl\juce_OpenGLShaderProgram.h"/>
-    <ClInclude Include="..\..\JuceLibraryCode\modules\juce_opengl\opengl\juce_OpenGLTexture.h"/>
-    <ClInclude Include="..\..\JuceLibraryCode\modules\juce_opengl\utils\juce_OpenGLAppComponent.h"/>
-    <ClInclude Include="..\..\JuceLibraryCode\modules\juce_opengl\juce_opengl.h"/>
-    <ClInclude Include="C:\CODE\JUCE\modules\juce_opengl\juce_opengl.h"/>
+    <ClInclude Include="..\..\..\JUCE\modules\juce_gui_extra\juce_gui_extra.h"/>
     <ClInclude Include="..\..\JuceLibraryCode\modules\juce_osc\osc\juce_OSCAddress.h"/>
     <ClInclude Include="..\..\JuceLibraryCode\modules\juce_osc\osc\juce_OSCArgument.h"/>
     <ClInclude Include="..\..\JuceLibraryCode\modules\juce_osc\osc\juce_OSCBundle.h"/>
@@ -3351,7 +4043,141 @@
     <ClInclude Include="..\..\JuceLibraryCode\modules\juce_osc\osc\juce_OSCTimeTag.h"/>
     <ClInclude Include="..\..\JuceLibraryCode\modules\juce_osc\osc\juce_OSCTypes.h"/>
     <ClInclude Include="..\..\JuceLibraryCode\modules\juce_osc\juce_osc.h"/>
-    <ClInclude Include="C:\CODE\JUCE\modules\juce_osc\juce_osc.h"/>
+    <ClInclude Include="..\..\..\JUCE\modules\juce_osc\juce_osc.h"/>
+    <ClInclude Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\Acceleration\Acceleration.h"/>
+    <ClInclude Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\ADClip7\ADClip7.h"/>
+    <ClInclude Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\ADT\ADT.h"/>
+    <ClInclude Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\Air\Air.h"/>
+    <ClInclude Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\AQuickVoiceClip\AQuickVoiceClip.h"/>
+    <ClInclude Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\AtmosphereBuss\AtmosphereBuss.h"/>
+    <ClInclude Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\AtmosphereChannel\AtmosphereChannel.h"/>
+    <ClInclude Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\Aura\Aura.h"/>
+    <ClInclude Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\Average\Average.h"/>
+    <ClInclude Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\BassKit\BassKit.h"/>
+    <ClInclude Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\Bite\Bite.h"/>
+    <ClInclude Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\BitGlitter\BitGlitter.h"/>
+    <ClInclude Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\BitShiftGain\BitShiftGain.h"/>
+    <ClInclude Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\BuildATPDF\BuildATPDF.h"/>
+    <ClInclude Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\BussColors4\BussColors4.h"/>
+    <ClInclude Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\ButterComp\ButterComp.h"/>
+    <ClInclude Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\ButterComp2\ButterComp2.h"/>
+    <ClInclude Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\C5RawBuss\C5RawBuss.h"/>
+    <ClInclude Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\C5RawChannel\C5RawChannel.h"/>
+    <ClInclude Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\Capacitor\Capacitor.h"/>
+    <ClInclude Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\Channel4\Channel4.h"/>
+    <ClInclude Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\Channel5\Channel5.h"/>
+    <ClInclude Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\Channel6\Channel6.h"/>
+    <ClInclude Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\Chorus\Chorus.h"/>
+    <ClInclude Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\ChorusEnsemble\ChorusEnsemble.h"/>
+    <ClInclude Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\ClipOnly\ClipOnly.h"/>
+    <ClInclude Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\Console4Buss\Console4Buss.h"/>
+    <ClInclude Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\Console4Channel\Console4Channel.h"/>
+    <ClInclude Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\Console5Buss\Console5Buss.h"/>
+    <ClInclude Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\Console5Channel\Console5Channel.h"/>
+    <ClInclude Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\Console5DarkCh\Console5DarkCh.h"/>
+    <ClInclude Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\CrunchyGrooveWear\CrunchyGrooveWear.h"/>
+    <ClInclude Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\CStrip\CStrip.h"/>
+    <ClInclude Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\DCVoltage\DCVoltage.h"/>
+    <ClInclude Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\DeEss\DeEss.h"/>
+    <ClInclude Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\Density\Density.h"/>
+    <ClInclude Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\DeRez\DeRez.h"/>
+    <ClInclude Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\Desk\Desk.h"/>
+    <ClInclude Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\Desk4\Desk4.h"/>
+    <ClInclude Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\Distance\Distance.h"/>
+    <ClInclude Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\Distance2\Distance2.h"/>
+    <ClInclude Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\Ditherbox\Ditherbox.h"/>
+    <ClInclude Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\DitherMeDiskers\DitherMeDiskers.h"/>
+    <ClInclude Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\DitherMeTimbers\DitherMeTimbers.h"/>
+    <ClInclude Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\DoublePaul\DoublePaul.h"/>
+    <ClInclude Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\Drive\Drive.h"/>
+    <ClInclude Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\DrumSlam\DrumSlam.h"/>
+    <ClInclude Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\DubCenter\DubCenter.h"/>
+    <ClInclude Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\DubSub\DubSub.h"/>
+    <ClInclude Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\DustBunny\DustBunny.h"/>
+    <ClInclude Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\EdIsDim\EdIsDim.h"/>
+    <ClInclude Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\ElectroHat\ElectroHat.h"/>
+    <ClInclude Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\Energy\Energy.h"/>
+    <ClInclude Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\Ensemble\Ensemble.h"/>
+    <ClInclude Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\EQ\EQ.h"/>
+    <ClInclude Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\EveryTrim\EveryTrim.h"/>
+    <ClInclude Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\FathomFive\FathomFive.h"/>
+    <ClInclude Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\Floor\Floor.h"/>
+    <ClInclude Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\Fracture\Fracture.h"/>
+    <ClInclude Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\FromTape\FromTape.h"/>
+    <ClInclude Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\Gatelope\Gatelope.h"/>
+    <ClInclude Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\Golem\Golem.h"/>
+    <ClInclude Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\GrooveWear\GrooveWear.h"/>
+    <ClInclude Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\GuitarConditioner\GuitarConditioner.h"/>
+    <ClInclude Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\HardVacuum\HardVacuum.h"/>
+    <ClInclude Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\Hermepass\Hermepass.h"/>
+    <ClInclude Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\HermeTrim\HermeTrim.h"/>
+    <ClInclude Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\HighGlossDither\HighGlossDither.h"/>
+    <ClInclude Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\HighImpact\HighImpact.h"/>
+    <ClInclude Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\Highpass\Highpass.h"/>
+    <ClInclude Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\Hombre\Hombre.h"/>
+    <ClInclude Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\IronOxide5\IronOxide5.h"/>
+    <ClInclude Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\IronOxideClassic\IronOxideClassic.h"/>
+    <ClInclude Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\Logical4\Logical4.h"/>
+    <ClInclude Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\Loud\Loud.h"/>
+    <ClInclude Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\Lowpass\Lowpass.h"/>
+    <ClInclude Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\Melt\Melt.h"/>
+    <ClInclude Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\MidSide\MidSide.h"/>
+    <ClInclude Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\NaturalizeDither\NaturalizeDither.h"/>
+    <ClInclude Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\NCSeventeen\NCSeventeen.h"/>
+    <ClInclude Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\NodeDither\NodeDither.h"/>
+    <ClInclude Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\Noise\Noise.h"/>
+    <ClInclude Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\NonlinearSpace\NonlinearSpace.h"/>
+    <ClInclude Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\NotJustAnotherCD\NotJustAnotherCD.h"/>
+    <ClInclude Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\NotJustAnotherDither\NotJustAnotherDither.h"/>
+    <ClInclude Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\OneCornerClip\OneCornerClip.h"/>
+    <ClInclude Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\PaulDither\PaulDither.h"/>
+    <ClInclude Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\PDBuss\PDBuss.h"/>
+    <ClInclude Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\PDChannel\PDChannel.h"/>
+    <ClInclude Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\PhaseNudge\PhaseNudge.h"/>
+    <ClInclude Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\Point\Point.h"/>
+    <ClInclude Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\Pop\Pop.h"/>
+    <ClInclude Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\PowerSag\PowerSag.h"/>
+    <ClInclude Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\Pressure4\Pressure4.h"/>
+    <ClInclude Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\PurestConsoleBuss\PurestConsoleBuss.h"/>
+    <ClInclude Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\PurestConsoleChannel\PurestConsoleChannel.h"/>
+    <ClInclude Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\PurestDrive\PurestDrive.h"/>
+    <ClInclude Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\PurestEcho\PurestEcho.h"/>
+    <ClInclude Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\PurestGain\PurestGain.h"/>
+    <ClInclude Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\PurestWarm\PurestWarm.h"/>
+    <ClInclude Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\Pyewacket\Pyewacket.h"/>
+    <ClInclude Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\Righteous4\Righteous4.h"/>
+    <ClInclude Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\SideDull\SideDull.h"/>
+    <ClInclude Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\Sidepass\Sidepass.h"/>
+    <ClInclude Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\SingleEndedTriode\SingleEndedTriode.h"/>
+    <ClInclude Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\Slew\Slew.h"/>
+    <ClInclude Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\Slew2\Slew2.h"/>
+    <ClInclude Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\SlewOnly\SlewOnly.h"/>
+    <ClInclude Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\SpatializeDither\SpatializeDither.h"/>
+    <ClInclude Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\Spiral\Spiral.h"/>
+    <ClInclude Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\Spiral2\Spiral2.h"/>
+    <ClInclude Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\StarChild\StarChild.h"/>
+    <ClInclude Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\StereoFX\StereoFX.h"/>
+    <ClInclude Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\SubsOnly\SubsOnly.h"/>
+    <ClInclude Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\Surge\Surge.h"/>
+    <ClInclude Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\SurgeTide\SurgeTide.h"/>
+    <ClInclude Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\Swell\Swell.h"/>
+    <ClInclude Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\TapeDither\TapeDither.h"/>
+    <ClInclude Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\TapeDust\TapeDust.h"/>
+    <ClInclude Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\Thunder\Thunder.h"/>
+    <ClInclude Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\ToneSlant\ToneSlant.h"/>
+    <ClInclude Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\ToTape5\ToTape5.h"/>
+    <ClInclude Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\ToVinyl4\ToVinyl4.h"/>
+    <ClInclude Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\TPDFDither\TPDFDither.h"/>
+    <ClInclude Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\TransDesk\TransDesk.h"/>
+    <ClInclude Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\Tremolo\Tremolo.h"/>
+    <ClInclude Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\TubeDesk\TubeDesk.h"/>
+    <ClInclude Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\uLawDecode\uLawDecode.h"/>
+    <ClInclude Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\uLawEncode\uLawEncode.h"/>
+    <ClInclude Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\UnBox\UnBox.h"/>
+    <ClInclude Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\VariMu\VariMu.h"/>
+    <ClInclude Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\VinylDither\VinylDither.h"/>
+    <ClInclude Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\VoiceOfTheStarship\VoiceOfTheStarship.h"/>
+    <ClInclude Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\airwindows\Wider\Wider.h"/>
     <ClInclude Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\soundtouch\include\BPMDetect.h"/>
     <ClInclude Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\soundtouch\include\FIFOSampleBuffer.h"/>
     <ClInclude Include="..\..\JuceLibraryCode\modules\tracktion_engine\3rd_party\soundtouch\include\FIFOSamplePipe.h"/>
@@ -3502,6 +4328,7 @@
     <ClInclude Include="..\..\JuceLibraryCode\modules\tracktion_engine\playback\devices\tracktion_OutputDevice.h"/>
     <ClInclude Include="..\..\JuceLibraryCode\modules\tracktion_engine\playback\devices\tracktion_PhysicalMidiInputDevice.h"/>
     <ClInclude Include="..\..\JuceLibraryCode\modules\tracktion_engine\playback\devices\tracktion_VirtualMidiInputDevice.h"/>
+    <ClInclude Include="..\..\JuceLibraryCode\modules\tracktion_engine\playback\devices\tracktion_WaveDeviceDescription.h"/>
     <ClInclude Include="..\..\JuceLibraryCode\modules\tracktion_engine\playback\devices\tracktion_WaveInputDevice.h"/>
     <ClInclude Include="..\..\JuceLibraryCode\modules\tracktion_engine\playback\devices\tracktion_WaveOutputDevice.h"/>
     <ClInclude Include="..\..\JuceLibraryCode\modules\tracktion_engine\playback\tracktion_AbletonLink.h"/>
@@ -3514,6 +4341,7 @@
     <ClInclude Include="..\..\JuceLibraryCode\modules\tracktion_engine\playback\tracktion_PlayHead.h"/>
     <ClInclude Include="..\..\JuceLibraryCode\modules\tracktion_engine\playback\tracktion_ScopedSteadyLoad.h"/>
     <ClInclude Include="..\..\JuceLibraryCode\modules\tracktion_engine\playback\tracktion_TransportControl.h"/>
+    <ClInclude Include="..\..\JuceLibraryCode\modules\tracktion_engine\plugins\airwindows\tracktion_AirWindows.h"/>
     <ClInclude Include="..\..\JuceLibraryCode\modules\tracktion_engine\plugins\ARA\tracktion_ARAWrapperFunctions.h"/>
     <ClInclude Include="..\..\JuceLibraryCode\modules\tracktion_engine\plugins\ARA\tracktion_ARAWrapperInterfaces.h"/>
     <ClInclude Include="..\..\JuceLibraryCode\modules\tracktion_engine\plugins\ARA\tracktion_MelodyneFileReader.h"/>
@@ -3587,7 +4415,7 @@
     <ClInclude Include="..\..\JuceLibraryCode\modules\tracktion_engine\utilities\tracktion_UIBehaviour.h"/>
     <ClInclude Include="..\..\JuceLibraryCode\modules\tracktion_engine\utilities\tracktion_ValueTreeUtilities.h"/>
     <ClInclude Include="..\..\JuceLibraryCode\modules\tracktion_engine\tracktion_engine.h"/>
-    <ClInclude Include="C:\CODE\tracktion_engine\modules\tracktion_engine\tracktion_engine.h"/>
+    <ClInclude Include="..\..\..\tracktion_engine\modules\tracktion_engine\tracktion_engine.h"/>
     <ClInclude Include="..\..\JuceLibraryCode\AppConfig.h"/>
     <ClInclude Include="..\..\JuceLibraryCode\BinaryData.h"/>
     <ClInclude Include="..\..\JuceLibraryCode\JuceHeader.h"/>
@@ -3603,9 +4431,6 @@
     <None Include="..\..\JuceLibraryCode\modules\juce_audio_processors\format_types\VST3_SDK\public.sdk\LICENSE.txt"/>
     <None Include="..\..\JuceLibraryCode\modules\juce_audio_processors\format_types\VST3_SDK\LICENSE.txt"/>
     <None Include="..\..\JuceLibraryCode\modules\juce_audio_processors\format_types\VST3_SDK\README.md"/>
-    <None Include="..\..\JuceLibraryCode\modules\juce_blocks_basics\littlefoot\LittleFoot Language README.txt"/>
-    <None Include="..\..\JuceLibraryCode\modules\juce_blocks_basics\protocol\Protocol Format.txt"/>
-    <None Include="..\..\JuceLibraryCode\modules\juce_blocks_basics\README.txt"/>
     <None Include="..\..\JuceLibraryCode\modules\juce_core\native\java\README.txt"/>
     <None Include="..\..\JuceLibraryCode\modules\juce_graphics\image_formats\jpglib\changes to libjpeg for JUCE.txt"/>
     <None Include="..\..\JuceLibraryCode\modules\juce_graphics\image_formats\pnglib\libpng_readme.txt"/>

@@ -4,8 +4,12 @@
   '-.  .-'|  .--' ,-.  | .--'|     /'-.  .-',--.| .-. ||      \   Tracktion Software
     |  |  |  |  \ '-'  \ `--.|  \  \  |  |  |  |' '-' '|  ||  |       Corporation
     `---' `--'   `--`--'`---'`--'`--' `---' `--' `---' `--''--'    www.tracktion.com
+
+    Tracktion Engine uses a GPL/commercial licence - see LICENCE.md for details.
 */
 
+namespace tracktion_engine
+{
 
 TimeSigSetting::TimeSigSetting (TempoSequence& ts, const ValueTree& v)
     : TrackItem (ts.edit, {}, Type::timeSig),
@@ -49,8 +53,8 @@ void TimeSigSetting::setStringTimeSig (const String& s)
 
 void TimeSigSetting::removeFromEdit()
 {
-    if (Selectable::isSelectableValid (&edit))
-        ownerSequence.removeTimeSig (ownerSequence.indexOfTimeSig (this));
+    jassert (Selectable::isSelectableValid (&edit));
+    ownerSequence.removeTimeSig (ownerSequence.indexOfTimeSig (this));
 }
 
 Track* TimeSigSetting::getTrack() const
@@ -71,4 +75,6 @@ ClipPosition TimeSigSetting::getPosition() const
 String TimeSigSetting::getName()
 {
     return getStringTimeSig();
+}
+
 }

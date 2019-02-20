@@ -4,8 +4,12 @@
   '-.  .-'|  .--' ,-.  | .--'|     /'-.  .-',--.| .-. ||      \   Tracktion Software
     |  |  |  |  \ '-'  \ `--.|  \  \  |  |  |  |' '-' '|  ||  |       Corporation
     `---' `--'   `--`--'`---'`--'`--' `---' `--' `---' `--''--'    www.tracktion.com
+
+    Tracktion Engine uses a GPL/commercial licence - see LICENCE.md for details.
 */
 
+namespace tracktion_engine
+{
 
 ProjectItemID::ProjectItemID() noexcept {}
 ProjectItemID::~ProjectItemID() noexcept {}
@@ -87,4 +91,6 @@ ProjectItemID ProjectItemID::fromProperty (const juce::ValueTree& v, const juce:
 ProjectItemID ProjectItemID::withNewProjectID (int newProjectID) const
 {
     return { getItemID(), newProjectID };
+}
+
 }

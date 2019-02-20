@@ -4,8 +4,12 @@
   '-.  .-'|  .--' ,-.  | .--'|     /'-.  .-',--.| .-. ||      \   Tracktion Software
     |  |  |  |  \ '-'  \ `--.|  \  \  |  |  |  |' '-' '|  ||  |       Corporation
     `---' `--'   `--`--'`---'`--'`--' `---' `--' `---' `--''--'    www.tracktion.com
+
+    Tracktion Engine uses a GPL/commercial licence - see LICENCE.md for details.
 */
 
+namespace tracktion_engine
+{
 
 MidiPatchBayPlugin::MidiPatchBayPlugin (PluginCreationInfo info)  : Plugin (info)
 {
@@ -162,4 +166,6 @@ std::pair<int, int> MidiPatchBayPlugin::getFirstMapping()
     }
 
     return std::pair<int, int> (-1, -1);
+}
+
 }

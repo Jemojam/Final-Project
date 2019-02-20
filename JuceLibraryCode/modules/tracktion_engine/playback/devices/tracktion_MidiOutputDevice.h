@@ -4,8 +4,9 @@
   '-.  .-'|  .--' ,-.  | .--'|     /'-.  .-',--.| .-. ||      \   Tracktion Software
     |  |  |  |  \ '-'  \ `--.|  \  \  |  |  |  |' '-' '|  ||  |       Corporation
     `---' `--'   `--`--'`---'`--'`--' `---' `--' `---' `--''--'    www.tracktion.com
-*/
 
+    Tracktion Engine uses a GPL/commercial licence - see LICENCE.md for details.
+*/
 
 namespace tracktion_engine
 {
@@ -30,7 +31,7 @@ public:
     static void setControllerOffMessagesSent (Engine&, bool);
     static bool getControllerOffMessagesSent (Engine&);
 
-    juce::String getNameForMidiNoteNumber (int note, int midiChannel) const;
+    juce::String getNameForMidiNoteNumber (int note, int midiChannel, bool useSharp = true) const;
 
     bool isConnectedToExternalController() const;
 

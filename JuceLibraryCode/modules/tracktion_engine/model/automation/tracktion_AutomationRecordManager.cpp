@@ -4,8 +4,12 @@
   '-.  .-'|  .--' ,-.  | .--'|     /'-.  .-',--.| .-. ||      \   Tracktion Software
     |  |  |  |  \ '-'  \ `--.|  \  \  |  |  |  |' '-' '|  ||  |       Corporation
     `---' `--'   `--`--'`---'`--'`--' `---' `--' `---' `--''--'    www.tracktion.com
+
+    Tracktion Engine uses a GPL/commercial licence - see LICENCE.md for details.
 */
 
+namespace tracktion_engine
+{
 
 AutomationRecordManager::AutomationRecordManager (Edit& ed)
     : engine (ed.engine), edit (ed)
@@ -251,4 +255,6 @@ void AutomationRecordManager::parameterBeingDeleted (AutomatableParameter* param
     for (int i = recordedParams.size(); --i >= 0;)
         if (recordedParams.getUnchecked (i)->parameter == param)
             recordedParams.remove (i);
+}
+
 }

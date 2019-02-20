@@ -47,7 +47,7 @@ void ChannelWindow::addNewTrackComponent(AudioTrack& audioTrack)
 
     auto& addedChannel = channels.back();
 
-    addedChannel = std::make_unique<ChannelComponent>(engine, audioTrack);
+    addedChannel.reset(new ChannelComponent(engine, audioTrack));
     addAndMakeVisible(*addedChannel);
 
     addedChannel->setBounds(0, channelY, getWidth(), channelHeight);

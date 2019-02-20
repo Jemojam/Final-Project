@@ -6,11 +6,11 @@
 #include "JuceHeader.h"
 #include "Audio/AudioEngine.h"
 //==============================================================================
-class AudioThumbnailComponent   : public AudioAppComponent,
+class AudioThumbnailComponent   : public Component,
                                   private ChangeListener
 {
 public:
-	AudioThumbnailComponent(AudioEngine & inEngine, AudioFormatManager& formatManager);
+	AudioThumbnailComponent(AudioEngine & inEngine);
 	~AudioThumbnailComponent();
 
     void paint (Graphics& g) override;

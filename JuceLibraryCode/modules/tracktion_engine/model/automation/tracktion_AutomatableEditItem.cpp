@@ -4,10 +4,14 @@
   '-.  .-'|  .--' ,-.  | .--'|     /'-.  .-',--.| .-. ||      \   Tracktion Software
     |  |  |  |  \ '-'  \ `--.|  \  \  |  |  |  |' '-' '|  ||  |       Corporation
     `---' `--'   `--`--'`---'`--'`--' `---' `--' `---' `--''--'    www.tracktion.com
+
+    Tracktion Engine uses a GPL/commercial licence - see LICENCE.md for details.
 */
 
+namespace tracktion_engine
+{
 
-AutomatableEditItem::AutomatableEditItem (Edit& edit, const ValueTree& v)
+AutomatableEditItem::AutomatableEditItem (Edit& edit, const juce::ValueTree& v)
     : EditItem (EditItemID::readOrCreateNewID (edit, v), edit),
       elementState (v)
 {
@@ -37,7 +41,7 @@ int AutomatableEditItem::getNumAutomatableParameters() const
     return automatableParams.size();
 }
 
-AutomatableParameter::Ptr AutomatableEditItem::getAutomatableParameterByID (const String& paramID) const
+AutomatableParameter::Ptr AutomatableEditItem::getAutomatableParameterByID (const juce::String& paramID) const
 {
     for (auto p : automatableParams)
         if (p->paramID == paramID)
@@ -70,7 +74,7 @@ void AutomatableEditItem::deleteAutomatableParameters()
     automatableParams.clear();
     parameterTree.clear();
 
-    const ScopedLock sl (activeParameterLock);
+    const juce::ScopedLock sl (activeParameterLock);
     activeParameters.clear();
 }
 
@@ -99,6 +103,8 @@ juce::ReferenceCountedArray<AutomatableParameter> AutomatableEditItem::getFlatte
             params.addArray (getFlattenedParameterTree (*node));
     }
 
+    jassert (! params.contains (nullptr));
+
     return params;
 }
 
@@ -112,7 +118,7 @@ void AutomatableEditItem::setAutomatableParamPosition (double time)
 
 bool AutomatableEditItem::isBeingActivelyPlayed() const
 {
-    return Time::getApproximateMillisecondCounter() < (unsigned int) (systemTimeOfLastPlayedBlock + 150);
+    return juce::Time::getApproximateMillisecondCounter() < (unsigned int) (systemTimeOfLastPlayedBlock + 150);
 }
 
 void AutomatableEditItem::updateAutomatableParamPosition (double time)
@@ -124,7 +130,7 @@ void AutomatableEditItem::updateAutomatableParamPosition (double time)
 
 void AutomatableEditItem::updateParameterStreams (double time)
 {
-    const ScopedLock sl (activeParameterLock);
+    const juce::ScopedLock sl (activeParameterLock);
 
     for (auto p : activeParameters)
         p->updateFromAutomationSources (time);
@@ -145,7 +151,7 @@ void AutomatableEditItem::buildParameterTree() const
 
 void AutomatableEditItem::updateLastPlaybackTime()
 {
-    systemTimeOfLastPlayedBlock = Time::getApproximateMillisecondCounter();
+    systemTimeOfLastPlayedBlock = juce::Time::getApproximateMillisecondCounter();
 }
 
 void AutomatableEditItem::addAutomatableParameter (const AutomatableParameter::Ptr& param)
@@ -179,13 +185,13 @@ juce::ReferenceCountedArray<AutomatableParameter> AutomatableEditItem::getFlatte
 void AutomatableEditItem::updateActiveParameters()
 {
     CRASH_TRACER
-    ReferenceCountedArray<AutomatableParameter> nowActiveParams;
+    juce::ReferenceCountedArray<AutomatableParameter> nowActiveParams;
 
     for (auto ap : automatableParams)
         if (ap->isAutomationActive())
             nowActiveParams.add (ap);
 
-    const ScopedLock sl (activeParameterLock);
+    const juce::ScopedLock sl (activeParameterLock);
     activeParameters.swapWith (nowActiveParams);
     automationActive.store (! activeParameters.isEmpty(), std::memory_order_relaxed);
 
@@ -194,7 +200,7 @@ void AutomatableEditItem::updateActiveParameters()
 
 void AutomatableEditItem::saveChangedParametersToState()
 {
-    MemoryOutputStream stream;
+    juce::MemoryOutputStream stream;
 
     for (auto ap : automatableParams)
     {
@@ -218,7 +224,7 @@ void AutomatableEditItem::restoreChangedParametersFromState()
 {
     if (auto mb = elementState[IDs::parameters].getBinaryData())
     {
-        MemoryInputStream stream (*mb, false);
+        juce::MemoryInputStream stream (*mb, false);
 
         while (! stream.isExhausted())
         {
@@ -227,7 +233,9 @@ void AutomatableEditItem::restoreChangedParametersFromState()
             auto value = stream.readFloat();
 
             if (auto ap = getAutomatableParameterByID (paramID))
-                ap->setParameter (value, dontSendNotification);
+                ap->setParameter (value, juce::dontSendNotification);
         }
     }
+}
+
 }

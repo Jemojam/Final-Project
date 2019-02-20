@@ -2,7 +2,7 @@
 
 #include "AudioThumbnailComponent.h"
 
-	AudioThumbnailComponent::AudioThumbnailComponent(AudioEngine & inEngine, AudioFormatManager& formatManager) : engine(inEngine), thumbnailCache(5), thumbnail(512, formatManager, thumbnailCache)
+	AudioThumbnailComponent::AudioThumbnailComponent(AudioEngine & inEngine) : engine(inEngine), thumbnailCache(5), thumbnail(512, formatManager, thumbnailCache)
 	{
 		formatManager.registerBasicFormats();
 		thumbnail.addChangeListener(this);

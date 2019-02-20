@@ -53,7 +53,6 @@
 #define JUCE_MODULE_AVAILABLE_juce_audio_formats         1
 #define JUCE_MODULE_AVAILABLE_juce_audio_processors      1
 #define JUCE_MODULE_AVAILABLE_juce_audio_utils           1
-#define JUCE_MODULE_AVAILABLE_juce_blocks_basics         1
 #define JUCE_MODULE_AVAILABLE_juce_core                  1
 #define JUCE_MODULE_AVAILABLE_juce_data_structures       1
 #define JUCE_MODULE_AVAILABLE_juce_dsp                   1
@@ -61,7 +60,6 @@
 #define JUCE_MODULE_AVAILABLE_juce_graphics              1
 #define JUCE_MODULE_AVAILABLE_juce_gui_basics            1
 #define JUCE_MODULE_AVAILABLE_juce_gui_extra             1
-#define JUCE_MODULE_AVAILABLE_juce_opengl                1
 #define JUCE_MODULE_AVAILABLE_juce_osc                   1
 #define JUCE_MODULE_AVAILABLE_tracktion_engine           1
 
@@ -346,6 +344,10 @@
 
 #ifndef    TRACKTION_CHECK_FOR_SLOW_RENDERING
  //#define TRACKTION_CHECK_FOR_SLOW_RENDERING 0
+#endif
+
+#ifndef    TRACKTION_AIR_WINDOWS
+ //#define TRACKTION_AIR_WINDOWS 0
 #endif
 
 //==============================================================================

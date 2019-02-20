@@ -4,7 +4,12 @@
   '-.  .-'|  .--' ,-.  | .--'|     /'-.  .-',--.| .-. ||      \   Tracktion Software
     |  |  |  |  \ '-'  \ `--.|  \  \  |  |  |  |' '-' '|  ||  |       Corporation
     `---' `--'   `--`--'`---'`--'`--' `---' `--' `---' `--''--'    www.tracktion.com
+
+    Tracktion Engine uses a GPL/commercial licence - see LICENCE.md for details.
 */
+
+namespace tracktion_engine
+{
 
 namespace
 {
@@ -1878,4 +1883,6 @@ void MidiList::exportToPlaybackMidiSequence (juce::MidiMessageSequence& destSequ
         if (beat >= firstNoteTime && beat < lastNoteTime)
             addToSequence (destSequence, clip, *e);
     }
+}
+
 }

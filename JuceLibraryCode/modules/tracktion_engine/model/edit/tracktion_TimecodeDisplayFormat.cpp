@@ -4,8 +4,12 @@
   '-.  .-'|  .--' ,-.  | .--'|     /'-.  .-',--.| .-. ||      \   Tracktion Software
     |  |  |  |  \ '-'  \ `--.|  \  \  |  |  |  |' '-' '|  ||  |       Corporation
     `---' `--'   `--`--'`---'`--'`--' `---' `--' `---' `--''--'    www.tracktion.com
+
+    Tracktion Engine uses a GPL/commercial licence - see LICENCE.md for details.
 */
 
+namespace tracktion_engine
+{
 
 struct TimeAndName
 {
@@ -641,4 +645,6 @@ String TimecodeDisplayIterator::getTimecodeAsString() const
 bool TimecodeDisplayIterator::isOneBarOrGreater() const noexcept
 {
     return currentSnapType.getLevel() >= currentSnapType.getOneBarLevel();
+}
+
 }

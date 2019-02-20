@@ -4,8 +4,12 @@
   '-.  .-'|  .--' ,-.  | .--'|     /'-.  .-',--.| .-. ||      \   Tracktion Software
     |  |  |  |  \ '-'  \ `--.|  \  \  |  |  |  |' '-' '|  ||  |       Corporation
     `---' `--'   `--`--'`---'`--'`--' `---' `--' `---' `--''--'    www.tracktion.com
+
+    Tracktion Engine uses a GPL/commercial licence - see LICENCE.md for details.
 */
 
+namespace tracktion_engine
+{
 
 struct MIDITrackerModifier::ModifierAudioNode    : public SingleInputAudioNode
 {
@@ -298,4 +302,6 @@ void MIDITrackerModifier::valueTreePropertyChanged (juce::ValueTree& v, const ju
     }
 
     ValueTreeAllEventListener::valueTreePropertyChanged (v, i);
+}
+
 }

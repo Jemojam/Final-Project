@@ -4,8 +4,12 @@
   '-.  .-'|  .--' ,-.  | .--'|     /'-.  .-',--.| .-. ||      \   Tracktion Software
     |  |  |  |  \ '-'  \ `--.|  \  \  |  |  |  |' '-' '|  ||  |       Corporation
     `---' `--'   `--`--'`---'`--'`--' `---' `--' `---' `--''--'    www.tracktion.com
+
+    Tracktion Engine uses a GPL/commercial licence - see LICENCE.md for details.
 */
 
+namespace tracktion_engine
+{
 
 static const juce::String flat = "b";
 static auto oslash = juce::String (juce::CharPointer_UTF8 ("\xc3\xb8"));
@@ -321,6 +325,11 @@ juce::String Scale::getName() const
 {
     return getNameForType (type);
 }
+    
+juce::String Scale::getShortName() const
+{
+    return getShortNameForType (type);
+}
 
 juce::String Scale::getNameForType (ScaleType type)
 {
@@ -337,6 +346,25 @@ juce::String Scale::getNameForType (ScaleType type)
         case minor:             return TRANS("Minor");
         case melodicMinor:      return TRANS("Melodic Minor");
         case harmonicMinor:     return TRANS("Harmonic Minor");
+        default: jassertfalse;  return {};
+    }
+}
+    
+juce::String Scale::getShortNameForType (ScaleType type)
+{
+    switch (type)
+    {
+        case ionian:            return TRANS("Ion");
+        case dorian:            return TRANS("Dor");
+        case phrygian:          return TRANS("Phr");
+        case lydian:            return TRANS("Lyd");
+        case mixolydian:        return TRANS("Mix");
+        case aeolian:           return TRANS("Aeo");
+        case locrian:           return TRANS("Loc");
+        case major:             return TRANS("Maj");
+        case minor:             return TRANS("Min");
+        case melodicMinor:      return TRANS("Mel");
+        case harmonicMinor:     return TRANS("Har");
         default: jassertfalse;  return {};
     }
 }
@@ -561,26 +589,22 @@ bool PatternGenerator::ProgressionItem::isRomanNumeral() const
 
 juce::String PatternGenerator::ProgressionItem::getChordSymbol()
 {
-    if (isRomanNumeral())
+    double beat = 0;
+
+    for (auto itm : generator.getChordProgression())
     {
-        double beat = 0;
+        if (itm == this)
+            break;
 
-        for (auto itm : generator.getChordProgression())
-        {
-            if (itm == this)
-                break;
-
-            beat += itm->lengthInBeats;
-        }
-
-        Scale scale = generator.getScaleAtBeat (beat);
-        const int root = getRootNote (generator.getNoteAtBeat (beat), scale);
-        Chord chord = getChord (scale);
-
-        return juce::MidiMessage::getMidiNoteName (root, true, false, 0) + chord.getSymbol();
+        beat += itm->lengthInBeats;
     }
 
-    return chordName;
+    Scale scale = generator.getScaleAtBeat (beat);
+    const int root = getRootNote (generator.getNoteAtBeat (beat), scale);
+    Chord chord = getChord (scale);
+    bool sharp = generator.clip.edit.pitchSequence.getPitchAtBeat (generator.clip.getStartBeat() + beat).accidentalsSharp;
+
+    return juce::MidiMessage::getMidiNoteName (root, sharp, false, 0) + chord.getSymbol();
 }
 
 int PatternGenerator::ProgressionItem::getRootNote (int key, const Scale& scale)
@@ -699,6 +723,11 @@ void PatternGenerator::validateChordLengths()
             break;
         }
     }
+}
+    
+int PatternGenerator::getChordProgressionLength() const
+{
+    return progressionList->size();
 }
 
 const juce::Array<PatternGenerator::ProgressionItem*>& PatternGenerator::getChordProgression() const noexcept
@@ -895,26 +924,17 @@ juce::String PatternGenerator::formatChordName (juce::String simplifiedChordName
 juce::StringArray PatternGenerator::getChordProgressionChordNames (bool simplified) const
 {
     juce::StringArray res;
-
-    auto progression = state.getChildWithName (IDs::PROGRESSION);
-
-    if (progression.isValid())
+    
+    for (auto item : *progressionList)
     {
-        for (int i = 0; i < progression.getNumChildren(); i++)
-        {
-            auto progressionItem = progression.getChild (i);
-
-            if (progressionItem.hasType (IDs::PROGRESSIONITEM))
-            {
-                auto name = progressionItem.getProperty (IDs::name);
-
-                if (simplified)
-                    res.add (name);
-                else
-                    res.add (formatChordName (name));
-            }
-        }
+        if (simplified)
+            res.add (item->chordName);
+        else if (item->isRomanNumeral())
+            res.add (item->getChordName());
+        else
+            res.add (item->getChordSymbol());
     }
+    
     return res;
 }
 
@@ -2041,4 +2061,6 @@ juce::Array<KeyResult> determineKeyOfNotes (const juce::Array<MidiNote*>& notes)
     results.sort();
 
     return results;
+}
+
 }

@@ -4,8 +4,12 @@
   '-.  .-'|  .--' ,-.  | .--'|     /'-.  .-',--.| .-. ||      \   Tracktion Software
     |  |  |  |  \ '-'  \ `--.|  \  \  |  |  |  |' '-' '|  ||  |       Corporation
     `---' `--'   `--`--'`---'`--'`--' `---' `--' `---' `--''--'    www.tracktion.com
+
+    Tracktion Engine uses a GPL/commercial licence - see LICENCE.md for details.
 */
 
+namespace tracktion_engine
+{
 
 static File getApplicationSettingsFile()
 {
@@ -63,13 +67,18 @@ String PropertyStorage::settingToString (SettingID setting)
         case SettingID::customMidiControllers:         return "customMidiControllers";
         case SettingID::deadMansPedal:                 return "deadMansPedal";
         case SettingID::cpu:                           return "cpu";
-        case SettingID::defaultMidiDevice:             return "defaultMidiDevice";
-        case SettingID::defaultWaveDevice:             return "defaultWaveDevice";
+        case SettingID::defaultMidiOutDevice:          return "defaultMidiDevice";
+        case SettingID::defaultWaveOutDevice:          return "defaultWaveDevice";
+        case SettingID::defaultMidiInDevice:           return "defaultMidiInDevice";
+        case SettingID::defaultWaveInDevice:           return "defaultWaveInDevice";
         case SettingID::externControlIn:               return "externControlIn";
         case SettingID::externControlOut:              return "externControlOut";
         case SettingID::externControlShowSelection:    return "externControlShowSelection";
         case SettingID::externControlSelectionColour:  return "externControlSelectionColour";
         case SettingID::externControlEnable:           return "externControlEnable";
+        case SettingID::externOscInputPort:            return "externOscInputPort";
+        case SettingID::externOscOutputPort:           return "externOscOutputPort";
+        case SettingID::externOscOutputAddr:           return "externOscOutputAddr";
         case SettingID::filterControlMappingPresets:   return "FilterControlMappingPresets";
         case SettingID::filterGui:                     return "filterGui";
         case SettingID::findExamples:                  return "findExamples";
@@ -208,7 +217,7 @@ std::unique_ptr<XmlElement> PropertyStorage::getXmlProperty (SettingID setting)
     return std::unique_ptr<XmlElement> (as.getXmlValue (PropertyStorage::settingToString (setting)));
 }
 
-void PropertyStorage::setXmlProperty (SettingID setting, const XmlElement& xml)
+void PropertyStorage::setXmlProperty (SettingID setting, const juce::XmlElement& xml)
 {
     auto& as = *ApplicationSettings::getInstance();
     as.setValue (PropertyStorage::settingToString (setting), &xml);
@@ -239,7 +248,7 @@ std::unique_ptr<XmlElement> PropertyStorage::getXmlPropertyItem (SettingID setti
     return std::unique_ptr<XmlElement> (as.getXmlValue (PropertyStorage::settingToString (setting) + "_" + item));
 }
 
-void PropertyStorage::setXmlPropertyItem (SettingID setting, StringRef item, const XmlElement& xml)
+void PropertyStorage::setXmlPropertyItem (SettingID setting, StringRef item, const juce::XmlElement& xml)
 {
     auto& as = *ApplicationSettings::getInstance();
     as.setValue (PropertyStorage::settingToString (setting) + "_" + item, &xml);
@@ -258,4 +267,6 @@ void PropertyStorage::setDefaultLoadSaveDirectory (juce::StringRef, const juce::
 File PropertyStorage::getDefaultLoadSaveDirectory (ProjectItem::Category)
 {
     return File::getSpecialLocation (File::userDocumentsDirectory);
+}
+
 }

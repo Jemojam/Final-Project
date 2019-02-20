@@ -4,8 +4,12 @@
   '-.  .-'|  .--' ,-.  | .--'|     /'-.  .-',--.| .-. ||      \   Tracktion Software
     |  |  |  |  \ '-'  \ `--.|  \  \  |  |  |  |' '-' '|  ||  |       Corporation
     `---' `--'   `--`--'`---'`--'`--' `---' `--' `---' `--''--'    www.tracktion.com
+
+    Tracktion Engine uses a GPL/commercial licence - see LICENCE.md for details.
 */
 
+namespace tracktion_engine
+{
 
 struct IndexedWord
 {
@@ -88,14 +92,6 @@ static bool isNoiseWord (const String& word)
             || word == "but";
 }
 
-struct IndexSorter
-{
-    static int compareElements (IndexedWord* first, IndexedWord* second)
-    {
-        return first->word.compare (second->word);
-    }
-};
-
 void ProjectSearchIndex::addClip (const ProjectItem::Ptr& item)
 {
     if (item != nullptr)
@@ -112,10 +108,10 @@ void ProjectSearchIndex::addClip (const ProjectItem::Ptr& item)
                 }
                 else
                 {
-                    auto nw = new IndexedWord (word, item->getID().getItemID());
+                    index.add (new IndexedWord (word, item->getID().getItemID()));
 
-                    IndexSorter sorter;
-                    index.addSorted (sorter, nw);
+                    std::sort (index.begin(), index.end(),
+                               [] (IndexedWord* a, IndexedWord* b) { return a->word < b->word; });
                 }
             }
         }
@@ -420,4 +416,6 @@ SearchOperation* createSearchForKeywords (const String& keywords)
         return sc;
 
     return new FalseOperation();
+}
+
 }

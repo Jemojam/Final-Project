@@ -4,7 +4,12 @@
   '-.  .-'|  .--' ,-.  | .--'|     /'-.  .-',--.| .-. ||      \   Tracktion Software
     |  |  |  |  \ '-'  \ `--.|  \  \  |  |  |  |' '-' '|  ||  |       Corporation
     `---' `--'   `--`--'`---'`--'`--' `---' `--' `---' `--''--'    www.tracktion.com
+
+    Tracktion Engine uses a GPL/commercial licence - see LICENCE.md for details.
 */
+
+namespace tracktion_engine
+{
 
 EditTimeRange::EditTimeRange (double s, double e) : start (s), end (e)
 {
@@ -99,4 +104,6 @@ EditTimeRange EditTimeRange::operator+ (double amount) const
 ClipPosition ClipPosition::rescaled (double anchorTime, double factor) const
 {
     return { time.rescaled (anchorTime, factor), offset * factor };
+}
+
 }

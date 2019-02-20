@@ -4,8 +4,9 @@
   '-.  .-'|  .--' ,-.  | .--'|     /'-.  .-',--.| .-. ||      \   Tracktion Software
     |  |  |  |  \ '-'  \ `--.|  \  \  |  |  |  |' '-' '|  ||  |       Corporation
     `---' `--'   `--`--'`---'`--'`--' `---' `--' `---' `--''--'    www.tracktion.com
-*/
 
+    Tracktion Engine uses a GPL/commercial licence - see LICENCE.md for details.
+*/
 
 namespace tracktion_engine
 {
@@ -58,11 +59,13 @@ public:
 
     int getNumWaveOutDevices() const                            { return waveOutputs.size(); }
     WaveOutputDevice* getWaveOutDevice (int index) const        { return waveOutputs[index]; }
-    WaveOutputDevice* getDefaultWaveOutDevice() const           { return getWaveOutDevice (defaultWaveIndex); }
+    WaveOutputDevice* getDefaultWaveOutDevice() const           { return getWaveOutDevice (defaultWaveOutIndex); }
     void setDefaultWaveOutDevice (int index);
 
     int getNumWaveInDevices() const                             { return waveInputs.size(); }
     WaveInputDevice* getWaveInDevice (int index) const          { return waveInputs[index]; }
+    WaveInputDevice* getDefaultWaveInDevice() const             { return getWaveInDevice (defaultWaveInIndex); }
+    void setDefaultWaveInDevice (int index);
 
     void setDeviceOutChannelStereo (int channelNum, bool isStereoPair);
     bool isDeviceOutChannelStereo (int chan) const              { return ! outMonoChans[chan / 2]; }
@@ -88,12 +91,15 @@ public:
 
     int getNumMidiOutDevices() const                            { return midiOutputs.size(); }
     MidiOutputDevice* getMidiOutDevice (int index) const        { return midiOutputs[index]; }
-    MidiOutputDevice* getDefaultMidiOutDevice() const           { return getMidiOutDevice (defaultMidiIndex); }
+    MidiOutputDevice* getDefaultMidiOutDevice() const           { return getMidiOutDevice (defaultMidiOutIndex); }
 
     void setDefaultMidiOutDevice (int index);
 
     int getNumMidiInDevices() const;
     MidiInputDevice* getMidiInDevice (int index) const;
+    MidiInputDevice* getDefaultMidiInDevice() const             { return getMidiInDevice (defaultMidiInIndex); }
+    
+    void setDefaultMidiInDevice (int index);
 
     void broadcastStreamTimeToMidiDevices (double streamTime);
     bool shouldSendMidiTimecode() const noexcept                { return sendMidiTimecode; }
@@ -115,9 +121,12 @@ public:
     //==============================================================================
     void checkDefaultDevicesAreValid();
 
-    static juce::String getDefaultAudioDeviceName (bool translated);
-    static juce::String getDefaultMidiDeviceName (bool translated);
+    static juce::String getDefaultAudioOutDeviceName (bool translated);
+    static juce::String getDefaultMidiOutDeviceName (bool translated);
 
+    static juce::String getDefaultAudioInDeviceName (bool translated);
+    static juce::String getDefaultMidiInDeviceName (bool translated);
+    
     juce::Result createVirtualMidiDevice (const juce::String& name);
     void deleteVirtualMidiDevice (VirtualMidiInputDevice*);
 
@@ -173,9 +182,9 @@ private:
 
     int defaultNumInputChannelsToOpen = 512, defaultNumOutputChannelsToOpen = 512;
     juce::BigInteger outEnabled, inEnabled, activeOutChannels, outMonoChans, inStereoChans;
-    int defaultWaveIndex = 0, defaultMidiIndex = 0;
+    int defaultWaveOutIndex = 0, defaultMidiOutIndex = 0, defaultWaveInIndex = 0, defaultMidiInIndex = 0;
 
-    juce::ScopedPointer<WaveDeviceList> lastWaveDeviceList;
+    std::unique_ptr<WaveDeviceList> lastWaveDeviceList;
 
     juce::CriticalSection contextLock;
     juce::Array<EditPlaybackContext*> activeContexts;

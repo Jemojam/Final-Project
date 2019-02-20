@@ -4,8 +4,12 @@
   '-.  .-'|  .--' ,-.  | .--'|     /'-.  .-',--.| .-. ||      \   Tracktion Software
     |  |  |  |  \ '-'  \ `--.|  \  \  |  |  |  |' '-' '|  ||  |       Corporation
     `---' `--'   `--`--'`---'`--'`--' `---' `--' `---' `--''--'    www.tracktion.com
+
+    Tracktion Engine uses a GPL/commercial licence - see LICENCE.md for details.
 */
 
+namespace tracktion_engine
+{
 
 MidiAudioNode::MidiAudioNode (MidiMessageSequence sequence,
                               Range<int> chans,
@@ -251,4 +255,6 @@ MidiAudioNode* getClipIfPresentInNode (AudioNode* node, Clip& c)
                           });
 
     return existingNode;
+}
+
 }

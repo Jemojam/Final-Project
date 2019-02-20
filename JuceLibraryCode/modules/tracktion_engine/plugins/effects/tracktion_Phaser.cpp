@@ -4,8 +4,12 @@
   '-.  .-'|  .--' ,-.  | .--'|     /'-.  .-',--.| .-. ||      \   Tracktion Software
     |  |  |  |  \ '-'  \ `--.|  \  \  |  |  |  |' '-' '|  ||  |       Corporation
     `---' `--'   `--`--'`---'`--'`--' `---' `--' `---' `--''--'    www.tracktion.com
+
+    Tracktion Engine uses a GPL/commercial licence - see LICENCE.md for details.
 */
 
+namespace tracktion_engine
+{
 
 PhaserPlugin::PhaserPlugin (PluginCreationInfo info)  : Plugin (info)
 {
@@ -111,8 +115,10 @@ String PhaserPlugin::getSelectableDescription()
     return TRANS("Phaser Plugin");
 }
 
-void PhaserPlugin::restorePluginStateFromValueTree (const ValueTree& v)
+void PhaserPlugin::restorePluginStateFromValueTree (const juce::ValueTree& v)
 {
     CachedValue<float>* cvsFloat[]  = { &depth, &rate, &feedbackGain, nullptr };
     copyPropertiesToNullTerminatedCachedValues (v, cvsFloat);
+}
+
 }
