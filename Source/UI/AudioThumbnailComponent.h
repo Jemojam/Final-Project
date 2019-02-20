@@ -15,13 +15,14 @@ public:
 
     void paint (Graphics& g) override;
     void changeListenerCallback (ChangeBroadcaster* source) override;
+
 	void setSourceThumbnail(File& file);
 	
 private:
 
     void thumbnailChanged();
-    void paintLoadedFile (Graphics& g, const Rectangle<int>& thumbnailBounds);
-   
+	void paintIfNoFileLoaded(Graphics& g, const Rectangle<int>& thumbnailBounds);
+	void paintIfFileLoaded(Graphics & g, const Rectangle<int>& thumbnailBounds);
 
 	AudioFormatManager formatManager;
     AudioThumbnailCache thumbnailCache; 

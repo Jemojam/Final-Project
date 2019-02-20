@@ -12,19 +12,21 @@
 	{
 	}
 
-	void AudioThumbnailComponent::paint (Graphics& g)
-    {
-        Rectangle<int> thumbnailBounds (10, 100, getWidth() - 20, getHeight() - 120);
+	void AudioThumbnailComponent::paint(Graphics& g)
+	{
+		Rectangle<int> thumbnailBounds(10, 100, getWidth() - 20, getHeight() - 120);
 
-        if (thumbnail.getNumChannels() != 0)
-                paintLoadedFile (g, thumbnailBounds);
-    }
+		if (thumbnail.getNumChannels() == 0)
+			paintIfNoFileLoaded(g, thumbnailBounds);
+		else
+			paintIfFileLoaded(g, thumbnailBounds);
+	}
 
 
     void AudioThumbnailComponent::changeListenerCallback (ChangeBroadcaster* source)
     {
         if (source == &thumbnail)       
-			thumbnailChanged();
+				thumbnailChanged();
     }
 
     void AudioThumbnailComponent::thumbnailChanged()
@@ -32,15 +34,27 @@
         repaint();
     }
 
-    void AudioThumbnailComponent::paintLoadedFile (Graphics& g, const Rectangle<int>& thumbnailBounds)
-    {
-        g.setColour (Colours::transparentWhite);
-        g.fillRect (thumbnailBounds);
+	void AudioThumbnailComponent::paintIfNoFileLoaded(Graphics& g, const Rectangle<int>& thumbnailBounds)
+	{
+		g.setColour(Colours::darkgrey);
+		g.fillRect(thumbnailBounds);
+		g.setColour(Colours::white);
+		g.drawFittedText("", thumbnailBounds, Justification::centred, 1.0f);
+	}
 
-        g.setColour (Colours::aqua);                                    
+	void AudioThumbnailComponent::paintIfFileLoaded(Graphics& g, const Rectangle<int>& thumbnailBounds)
+	{
+		g.setColour(Colours::white);
+		g.fillRect(thumbnailBounds);
 
-        thumbnail.drawChannels (g, thumbnailBounds, 0.0, thumbnail.getTotalLength(), 1.0f);                                  
-    }
+		g.setColour(Colours::red);                                     // [8]
+
+		thumbnail.drawChannels(g,                                      // [9]
+			thumbnailBounds,
+			0.0,                                    // start time
+			thumbnail.getTotalLength(),             // end time
+			1.0f);                                  // vertical zoom
+	}
 
     void AudioThumbnailComponent::setSourceThumbnail(File& file)
     {

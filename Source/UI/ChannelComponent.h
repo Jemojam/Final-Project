@@ -22,7 +22,6 @@ public:
 	void buttonClicked(Button* buttonThatWasClicked) override;
 	void sliderValueChanged(Slider* sliderThatWasMoved) override;
 
-
 	// Binary resources:
 	static const char* musicwoofersquarebox_png;
 	static const int musicwoofersquarebox_pngSize;
