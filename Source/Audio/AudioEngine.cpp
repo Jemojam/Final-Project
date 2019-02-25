@@ -74,8 +74,13 @@ void AudioEngine::addNewClipFromFile(const File& editFile, AudioTrack& track)
 {
     auto clip = loadAudioFileAsClip(editFile, track);
 
-    if (clip != nullptr)
-        adjustClipProperties(*clip);
+	if (clip != nullptr)
+	{
+		clip = loadAudioFileAsClip(editFile, track);
+		adjustClipProperties(*clip);
+
+	}
+        
 }
 
 void AudioEngine::play()

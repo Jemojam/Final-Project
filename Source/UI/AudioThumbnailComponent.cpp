@@ -10,11 +10,12 @@
 
 	AudioThumbnailComponent::~AudioThumbnailComponent()
 	{
+		thumbnail.removeChangeListener(this);
 	}
 
 	void AudioThumbnailComponent::paint(Graphics& g)
 	{
-		Rectangle<int> thumbnailBounds(10, 100, getWidth() - 20, getHeight() - 120);
+		Rectangle<int> thumbnailBounds(200,70);
 
 		if (thumbnail.getNumChannels() == 0)
 			paintIfNoFileLoaded(g, thumbnailBounds);
@@ -36,30 +37,27 @@
 
 	void AudioThumbnailComponent::paintIfNoFileLoaded(Graphics& g, const Rectangle<int>& thumbnailBounds)
 	{
-		g.setColour(Colours::darkgrey);
-		g.fillRect(thumbnailBounds);
-		g.setColour(Colours::white);
+		g.fillAll(Colours::red);
+		//g.fillRect(thumbnailBounds);
+
 		g.drawFittedText("", thumbnailBounds, Justification::centred, 1.0f);
 	}
 
 	void AudioThumbnailComponent::paintIfFileLoaded(Graphics& g, const Rectangle<int>& thumbnailBounds)
 	{
-		g.setColour(Colours::white);
-		g.fillRect(thumbnailBounds);
+		g.fillAll(Colours::ghostwhite);
+		g.setColour(Colours::blue);
+		//g.fillRect(thumbnailBounds);                            
+		//auto thumbArea = getLocalBounds();
 
-		g.setColour(Colours::red);                                     // [8]
-
-		thumbnail.drawChannels(g,                                      // [9]
-			thumbnailBounds,
-			0.0,                                    // start time
-			thumbnail.getTotalLength(),             // end time
-			1.0f);                                  // vertical zoom
+		thumbnail.drawChannels(g, thumbnailBounds,0.0, thumbnail.getTotalLength(), 1.0f); 
 	}
 
     void AudioThumbnailComponent::setSourceThumbnail(File& file)
     {
 		
 		thumbnail.setSource (new FileInputSource (file));
+	
 
     }
 

@@ -155,7 +155,7 @@ void ChannelComponent::paint(Graphics& g)
 void ChannelComponent::resized()
 {
     if (audioThumbnailComponent != nullptr)
-        audioThumbnailComponent->setBounds(getLocalBounds());
+			audioThumbnailComponent->setBounds(204,0,getLocalBounds().getWidth(), getLocalBounds().getHeight());
 }
 
 void ChannelComponent::buttonClicked(Button* buttonThatWasClicked)
@@ -185,10 +185,10 @@ void ChannelComponent::buttonClicked(Button* buttonThatWasClicked)
 
             engine.addNewClipFromFile(file, track);
 
-            audioThumbnailComponent.reset(new AudioThumbnailComponent(engine));
-            audioThumbnailComponent->setSourceThumbnail(file);
-            addAndMakeVisible(*audioThumbnailComponent);
-            resized();
+			audioThumbnailComponent.reset(new AudioThumbnailComponent(engine));
+			audioThumbnailComponent->setSourceThumbnail(file);
+			addAndMakeVisible(*audioThumbnailComponent);
+			resized();
         }
 
     }
@@ -201,6 +201,7 @@ void ChannelComponent::buttonClicked(Button* buttonThatWasClicked)
     //[UserbuttonClicked_Post]
     //[/UserbuttonClicked_Post]
 }
+
 
 void ChannelComponent::sliderValueChanged(Slider* sliderThatWasMoved)
 {

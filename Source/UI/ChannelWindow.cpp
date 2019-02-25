@@ -49,6 +49,7 @@ void ChannelWindow::addNewTrackComponent(AudioTrack& audioTrack)
 
     addedChannel.reset(new ChannelComponent(engine, audioTrack));
     addAndMakeVisible(*addedChannel);
+	
 
     addedChannel->setBounds(0, channelY, getWidth(), channelHeight);
     channelY += channelHeight;

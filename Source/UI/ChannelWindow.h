@@ -2,6 +2,7 @@
 
 #include "JuceHeader.h"
 #include "ChannelComponent.h"
+#include "AudioThumbnailComponent.h"
 #include "Audio/AudioEngine.h"
 
 class ChannelWindow : public Component, public Timer
@@ -19,6 +20,7 @@ private:
 
 	AudioEngine& engine;
 	std::vector<std::unique_ptr<ChannelComponent>> channels;
+	
 
     int channelY = 0;
 
