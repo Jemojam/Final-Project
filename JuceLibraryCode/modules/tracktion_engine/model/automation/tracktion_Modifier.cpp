@@ -4,12 +4,8 @@
   '-.  .-'|  .--' ,-.  | .--'|     /'-.  .-',--.| .-. ||      \   Tracktion Software
     |  |  |  |  \ '-'  \ `--.|  \  \  |  |  |  |' '-' '|  ||  |       Corporation
     `---' `--'   `--`--'`---'`--'`--' `---' `--' `---' `--''--'    www.tracktion.com
-
-    Tracktion Engine uses a GPL/commercial licence - see LICENCE.md for details.
 */
 
-namespace tracktion_engine
-{
 
 Modifier::Modifier (Edit& e, const juce::ValueTree& v)
     : AutomatableEditItem (e, v),
@@ -100,7 +96,7 @@ ModifierList::~ModifierList()
     freeObjects();
 }
 
-bool ModifierList::isModifier (const juce::Identifier& i)
+bool ModifierList::isModifier (const Identifier& i)
 {
     return i == IDs::LFO || i == IDs::BREAKPOINTOSCILLATOR
         || i == IDs::STEP || i == IDs::ENVELOPEFOLLOWER
@@ -198,6 +194,4 @@ Modifier::Ptr findModifierForID (ModifierList& ml, EditItemID modifierID)
             return mod;
 
     return {};
-}
-
 }

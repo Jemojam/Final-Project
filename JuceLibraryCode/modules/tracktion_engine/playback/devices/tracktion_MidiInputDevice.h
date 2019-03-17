@@ -4,9 +4,8 @@
   '-.  .-'|  .--' ,-.  | .--'|     /'-.  .-',--.| .-. ||      \   Tracktion Software
     |  |  |  |  \ '-'  \ `--.|  \  \  |  |  |  |' '-' '|  ||  |       Corporation
     `---' `--'   `--`--'`---'`--'`--' `---' `--' `---' `--''--'    www.tracktion.com
-
-    Tracktion Engine uses a GPL/commercial licence - see LICENCE.md for details.
 */
+
 
 namespace tracktion_engine
 {
@@ -124,7 +123,7 @@ protected:
 
     juce::CriticalSection instanceLock;
     juce::Array<MidiInputDeviceInstanceBase*> instances;
-    std::unique_ptr<RetrospectiveMidiBuffer> retrospectiveBuffer;
+    juce::ScopedPointer<RetrospectiveMidiBuffer> retrospectiveBuffer;
 
     void handleNoteOn (juce::MidiKeyboardState*, int midiChannel, int midiNoteNumber, float velocity) override;
     void handleNoteOff (juce::MidiKeyboardState*, int midiChannel, int midiNoteNumber, float velocity) override;

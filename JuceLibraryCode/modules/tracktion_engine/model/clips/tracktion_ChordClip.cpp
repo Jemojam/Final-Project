@@ -4,14 +4,10 @@
   '-.  .-'|  .--' ,-.  | .--'|     /'-.  .-',--.| .-. ||      \   Tracktion Software
     |  |  |  |  \ '-'  \ `--.|  \  \  |  |  |  |' '-' '|  ||  |       Corporation
     `---' `--'   `--`--'`---'`--'`--' `---' `--' `---' `--''--'    www.tracktion.com
-
-    Tracktion Engine uses a GPL/commercial licence - see LICENCE.md for details.
 */
 
-namespace tracktion_engine
-{
 
-ChordClip::ChordClip (const juce::ValueTree& v, EditItemID id, ClipTrack& targetTrack)
+ChordClip::ChordClip (const ValueTree& v, EditItemID id, ClipTrack& targetTrack)
     : Clip (v, targetTrack, id, Type::chord)
 {
     if (clipName.get().isEmpty())
@@ -21,8 +17,7 @@ ChordClip::ChordClip (const juce::ValueTree& v, EditItemID id, ClipTrack& target
 
     if (pgen.isValid())
     {
-        patternGenerator.reset (new PatternGenerator (*this, pgen));
-
+        patternGenerator = new PatternGenerator (*this, pgen);
         if (patternGenerator->getChordProgression().isEmpty())
             patternGenerator->setChordProgressionFromChordNames ({ "i" });
     }
@@ -65,11 +60,11 @@ bool ChordClip::canGoOnTrack (Track& t)
     return t.isChordTrack();
 }
 
-void ChordClip::valueTreeChildAdded (ValueTree&, juce::ValueTree& c)
+void ChordClip::valueTreeChildAdded (ValueTree&, ValueTree& c)
 {
     if (c.hasType (IDs::PATTERNGENERATOR))
     {
-        patternGenerator.reset (new PatternGenerator (*this, c));
+        patternGenerator = new PatternGenerator (*this, c);
 
         if (patternGenerator->getChordProgression().isEmpty())
             patternGenerator->setChordProgressionFromChordNames ({ "i" });
@@ -79,7 +74,7 @@ void ChordClip::valueTreeChildAdded (ValueTree&, juce::ValueTree& c)
     triggerAsyncUpdate();
 }
 
-void ChordClip::valueTreeChildRemoved (ValueTree& p, juce::ValueTree& c, int)
+void ChordClip::valueTreeChildRemoved (ValueTree& p, ValueTree& c, int)
 {
     if (p == state && c.hasType (IDs::PATTERNGENERATOR))
     {
@@ -89,7 +84,7 @@ void ChordClip::valueTreeChildRemoved (ValueTree& p, juce::ValueTree& c, int)
     triggerAsyncUpdate();
 }
 
-void ChordClip::valueTreePropertyChanged (ValueTree& v, const juce::Identifier& i)
+void ChordClip::valueTreePropertyChanged (ValueTree& v, const Identifier& i)
 {
     changed();
     triggerAsyncUpdate();
@@ -111,7 +106,7 @@ PatternGenerator* ChordClip::getPatternGenerator()
         state.addChild (ValueTree (IDs::PATTERNGENERATOR), -1, &edit.getUndoManager());
 
     jassert (patternGenerator != nullptr);
-    return patternGenerator.get();
+    return patternGenerator;
 }
 
 void ChordClip::pitchTempoTrackChanged()
@@ -136,6 +131,4 @@ void ChordClip::handleAsyncUpdate()
             if (auto* mc = dynamic_cast<MidiClip*> (t->getTrackItem (i)))
                 mc->pitchTempoTrackChanged();
     }
-}
-
 }

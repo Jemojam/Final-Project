@@ -4,12 +4,8 @@
   '-.  .-'|  .--' ,-.  | .--'|     /'-.  .-',--.| .-. ||      \   Tracktion Software
     |  |  |  |  \ '-'  \ `--.|  \  \  |  |  |  |' '-' '|  ||  |       Corporation
     `---' `--'   `--`--'`---'`--'`--' `---' `--' `---' `--''--'    www.tracktion.com
-
-    Tracktion Engine uses a GPL/commercial licence - see LICENCE.md for details.
 */
 
-namespace tracktion_engine
-{
 
 double RenderOptions::findEndAllowance (Edit& edit, Array<EditItemID>* tracks, Array<Clip*>* clips)
 {
@@ -250,7 +246,7 @@ void RenderOptions::relinkCachedValues (UndoManager* um)
     updateHash();
 }
 
-void RenderOptions::valueTreePropertyChanged (ValueTree& v, const juce::Identifier& i)
+void RenderOptions::valueTreePropertyChanged (ValueTree& v, const Identifier& i)
 {
     if (v == state && i == IDs::renderTracks)
     {
@@ -668,9 +664,9 @@ void RenderOptions::updateLastUsedRenderPath (RenderOptions& renderOptions, cons
     storage.setProperty (SettingID::lastEditRender, itemID);
 }
 
-std::unique_ptr<RenderOptions> RenderOptions::forGeneralExporter (Edit& edit)
+RenderOptions* RenderOptions::forGeneralExporter (Edit& edit)
 {
-    std::unique_ptr<RenderOptions> ro (new RenderOptions (edit.engine));
+    auto ro = new RenderOptions (edit.engine);
     ro->setToDefault();
 
     updateLastUsedRenderPath (*ro, edit.getProjectItemID().toString());
@@ -685,13 +681,13 @@ std::unique_ptr<RenderOptions> RenderOptions::forGeneralExporter (Edit& edit)
     return ro;
 }
 
-std::unique_ptr<RenderOptions> RenderOptions::forTrackRender (Array<Track*>& tracks, AddRenderOptions addOption)
+RenderOptions* RenderOptions::forTrackRender (Array<Track*>& tracks, AddRenderOptions addOption)
 {
     if (auto first = tracks.getFirst())
     {
         auto& edit = first->edit;
 
-        std::unique_ptr<RenderOptions> ro (new RenderOptions (edit.engine));
+        auto ro = new RenderOptions (edit.engine);
         ro->setToDefault();
         ro->type = RenderType::track;
         updateLastUsedRenderPath (*ro, edit.getProjectItemID().toString());
@@ -709,13 +705,13 @@ std::unique_ptr<RenderOptions> RenderOptions::forTrackRender (Array<Track*>& tra
     return {};
 }
 
-std::unique_ptr<RenderOptions> RenderOptions::forClipRender (Array<Clip*>& clips, bool midiNotes)
+RenderOptions* RenderOptions::forClipRender (Array<Clip*>& clips, bool midiNotes)
 {
     if (auto first = clips.getFirst())
     {
         auto& edit = first->edit;
 
-        std::unique_ptr<RenderOptions> ro (new RenderOptions (edit.engine));
+        auto ro = new RenderOptions (edit.engine);
         ro->setToDefault();
         updateLastUsedRenderPath (*ro, edit.getProjectItemID().toString());
 
@@ -749,9 +745,9 @@ std::unique_ptr<RenderOptions> RenderOptions::forClipRender (Array<Clip*>& clips
     return {};
 }
 
-std::unique_ptr<RenderOptions> RenderOptions::forEditClip (Clip& clip)
+RenderOptions* RenderOptions::forEditClip (Clip& clip)
 {
-    std::unique_ptr<RenderOptions> ro (new RenderOptions (clip.edit.engine, clip.state, &clip.edit.getUndoManager()));
+    auto ro = new RenderOptions (clip.edit.engine, clip.state, &clip.edit.getUndoManager());
     ro->type = RenderType::editClip;
     ro->updateHash();
 
@@ -857,7 +853,7 @@ int64 RenderOptions::getTracksHash() const
     int64 tracksHash = 0;
 
     for (auto& t : tracks)
-        tracksHash ^= t.getRawID(); // TODO: this will probably be buggy if the IDs are all low sequential integers!
+        tracksHash ^= t.getRawID();
 
     return tracksHash;
 }
@@ -1196,6 +1192,4 @@ String RenderOptions::getCurrentFileExtension()
         return af->getFileExtensions()[0];
 
     return {};
-}
-
 }

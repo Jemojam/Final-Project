@@ -4,12 +4,8 @@
   '-.  .-'|  .--' ,-.  | .--'|     /'-.  .-',--.| .-. ||      \   Tracktion Software
     |  |  |  |  \ '-'  \ `--.|  \  \  |  |  |  |' '-' '|  ||  |       Corporation
     `---' `--'   `--`--'`---'`--'`--' `---' `--' `---' `--''--'    www.tracktion.com
-
-    Tracktion Engine uses a GPL/commercial licence - see LICENCE.md for details.
 */
 
-namespace tracktion_engine
-{
 
 struct CrashStackTracer::CrashTraceThreads
 {
@@ -215,6 +211,4 @@ File DeadMansPedalMessage::getDeadMansPedalFile (PropertyStorage& propertyStorag
     auto folder = propertyStorage.getAppPrefsFolder();
     jassert (folder.exists() && folder.hasWriteAccess());
     return folder.getChildFile ("deadMansPedal");
-}
-
 }

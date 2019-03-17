@@ -27,14 +27,10 @@
 //[/MiscUserDefs]
 
 //==============================================================================
-GridComponent::GridComponent ()
+GridComponent::GridComponent () 
 {
-    //[Constructor_pre] You can add your own custom stuff here..
-    //[/Constructor_pre]
-
-
-    //[UserPreSize]
-    //[/UserPreSize]
+	gridview.setScrollBarsShown(true, true, true, true);
+	addAndMakeVisible(gridview);
 
     setSize (600, 400);
 
@@ -60,7 +56,8 @@ void GridComponent::paint (Graphics& g)
     //[UserPrePaint] Add your own custom painting code here..
     //[/UserPrePaint]
 
-    g.fillAll (Colour (0xff323e44));
+    g.fillAll (Colours::white);
+	gridview.setBounds(0, 0, 600, 600);
 
     //[UserPaint] Add your own custom painting code here..
     //[/UserPaint]

@@ -5,6 +5,7 @@
 #include "ToolbarComponent.h"
 #include "ChannelWindow.h"
 #include "AudioSettings.h"
+#include "GridComponent.h"
 
 class UIEngine : public Component
 {
@@ -18,7 +19,7 @@ public:
 private:
 	ToolbarComponent toolbar;
 	ChannelWindow channelWindow;
-
+	GridComponent gridWindow;
     
 	AudioEngine& engine;
 

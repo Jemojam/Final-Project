@@ -4,12 +4,8 @@
   '-.  .-'|  .--' ,-.  | .--'|     /'-.  .-',--.| .-. ||      \   Tracktion Software
     |  |  |  |  \ '-'  \ `--.|  \  \  |  |  |  |' '-' '|  ||  |       Corporation
     `---' `--'   `--`--'`---'`--'`--' `---' `--' `---' `--''--'    www.tracktion.com
-
-    Tracktion Engine uses a GPL/commercial licence - see LICENCE.md for details.
 */
 
-namespace tracktion_engine
-{
 
 // this must be high enough for low freq sounds not to click
 static constexpr int minimumSamplesToPlayWhenStopping = 8;
@@ -300,67 +296,69 @@ void SamplerPlugin::applyToBuffer (const AudioRenderContext& fc)
                 playingNotes.clear();
                 highlightedNotes.clear();
             }
-
-            for (auto& m : *fc.bufferForMidiMessages)
+            else
             {
-                if (m.isNoteOn())
+                for (auto& m : *fc.bufferForMidiMessages)
                 {
-                    const int note = m.getNoteNumber();
-                    const int noteTimeSample = roundToInt (m.getTimeStamp() * sampleRate);
-
-                    for (auto playingNote : playingNotes)
+                    if (m.isNoteOn())
                     {
-                        if (playingNote->note == note && ! playingNote->openEnded)
+                        const int note = m.getNoteNumber();
+                        const int noteTimeSample = roundToInt (m.getTimeStamp() * sampleRate);
+
+                        for (auto playingNote : playingNotes)
                         {
-                            playingNote->samplesLeftToPlay = jmin (playingNote->samplesLeftToPlay,
-                                                                   jmax (minimumSamplesToPlayWhenStopping, noteTimeSample));
-                            highlightedNotes.clearBit (note);
+                            if (playingNote->note == note && ! playingNote->openEnded)
+                            {
+                                playingNote->samplesLeftToPlay = jmin (playingNote->samplesLeftToPlay,
+                                                                       jmax (minimumSamplesToPlayWhenStopping, noteTimeSample));
+                                highlightedNotes.clearBit (note);
+                            }
+                        }
+
+                        for (auto ss : soundList)
+                        {
+                            if (ss->minNote <= note
+                                && ss->maxNote >= note
+                                && ss->audioData.getNumSamples() > 0
+                                && playingNotes.size() < maximumSimultaneousNotes)
+                            {
+                                highlightedNotes.setBit (note);
+
+                                playingNotes.add (new SampledNote (note,
+                                                                   ss->keyNote,
+                                                                   m.getVelocity() / 127.0f,
+                                                                   ss->audioFile,
+                                                                   sampleRate,
+                                                                   noteTimeSample,
+                                                                   ss->audioData,
+                                                                   ss->fileLengthSamples,
+                                                                   ss->gainDb,
+                                                                   ss->pan,
+                                                                   ss->openEnded));
+                            }
                         }
                     }
-
-                    for (auto ss : soundList)
+                    else if (m.isNoteOff())
                     {
-                        if (ss->minNote <= note
-                            && ss->maxNote >= note
-                            && ss->audioData.getNumSamples() > 0
-                            && playingNotes.size() < maximumSimultaneousNotes)
-                        {
-                            highlightedNotes.setBit (note);
+                        const int note = m.getNoteNumber();
+                        const int noteTimeSample = roundToInt (m.getTimeStamp() * sampleRate);
 
-                            playingNotes.add (new SampledNote (note,
-                                                               ss->keyNote,
-                                                               m.getVelocity() / 127.0f,
-                                                               ss->audioFile,
-                                                               sampleRate,
-                                                               noteTimeSample,
-                                                               ss->audioData,
-                                                               ss->fileLengthSamples,
-                                                               ss->gainDb,
-                                                               ss->pan,
-                                                               ss->openEnded));
+                        for (auto playingNote : playingNotes)
+                        {
+                            if (playingNote->note == note && ! playingNote->openEnded)
+                            {
+                                playingNote->samplesLeftToPlay = jmin (playingNote->samplesLeftToPlay,
+                                                                       jmax (minimumSamplesToPlayWhenStopping, noteTimeSample));
+
+                                highlightedNotes.clearBit (note);
+                            }
                         }
                     }
-                }
-                else if (m.isNoteOff())
-                {
-                    const int note = m.getNoteNumber();
-                    const int noteTimeSample = roundToInt (m.getTimeStamp() * sampleRate);
-
-                    for (auto playingNote : playingNotes)
+                    else if (m.isAllNotesOff() || m.isAllSoundOff())
                     {
-                        if (playingNote->note == note && ! playingNote->openEnded)
-                        {
-                            playingNote->samplesLeftToPlay = jmin (playingNote->samplesLeftToPlay,
-                                                                   jmax (minimumSamplesToPlayWhenStopping, noteTimeSample));
-
-                            highlightedNotes.clearBit (note);
-                        }
+                        playingNotes.clear();
+                        highlightedNotes.clear();
                     }
-                }
-                else if (m.isAllNotesOff() || m.isAllSoundOff())
-                {
-                    playingNotes.clear();
-                    highlightedNotes.clear();
                 }
             }
         }
@@ -592,7 +590,7 @@ void SamplerPlugin::sourceMediaChanged()
         s->refreshFile();
 }
 
-void SamplerPlugin::restorePluginStateFromValueTree (const juce::ValueTree& v)
+void SamplerPlugin::restorePluginStateFromValueTree (const ValueTree& v)
 {
     copyValueTree (state, v, getUndoManager());
 }
@@ -705,6 +703,4 @@ void SamplerPlugin::SamplerSound::refreshFile()
 {
     audioFile = {};
     setExcerpt (startTime, length);
-}
-
 }

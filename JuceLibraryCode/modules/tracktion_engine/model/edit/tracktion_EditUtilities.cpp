@@ -4,12 +4,8 @@
   '-.  .-'|  .--' ,-.  | .--'|     /'-.  .-',--.| .-. ||      \   Tracktion Software
     |  |  |  |  \ '-'  \ `--.|  \  \  |  |  |  |' '-' '|  ||  |       Corporation
     `---' `--'   `--`--'`---'`--'`--' `---' `--' `---' `--''--'    www.tracktion.com
-
-    Tracktion Engine uses a GPL/commercial licence - see LICENCE.md for details.
 */
 
-namespace tracktion_engine
-{
 
 juce::File getEditFileFromProjectManager (Edit& edit)
 {
@@ -30,26 +26,26 @@ bool referencesProjectItem (Edit& edit, ProjectItemID itemID)
 }
 
 //==============================================================================
-juce::Array<Track*> getAllTracks (const Edit& edit)
+Array<Track*> getAllTracks (const Edit& edit)
 {
-    juce::Array<Track*> tracks;
+    Array<Track*> tracks;
     edit.visitAllTracks ([&] (Track& t) { tracks.add (&t); return true; }, true);
     return tracks;
 }
 
-juce::Array<Track*> getTopLevelTracks (const Edit& edit)
+Array<Track*> getTopLevelTracks (const Edit& edit)
 {
-    juce::Array<Track*> tracks;
+    Array<Track*> tracks;
     edit.visitAllTracks ([&] (Track& t) { tracks.add (&t); return true; }, false);
     return tracks;
 }
 
-juce::Array<AudioTrack*> getAudioTracks (const Edit& edit)
+Array<AudioTrack*> getAudioTracks (const Edit& edit)
 {
     return getTracksOfType<AudioTrack> (edit, true);
 }
 
-juce::Array<ClipTrack*> getClipTracks (const Edit& edit)
+Array<ClipTrack*> getClipTracks (const Edit& edit)
 {
     return getTracksOfType<ClipTrack> (edit, true);
 }
@@ -66,7 +62,7 @@ Track* findTrackForID (const Edit& edit, EditItemID id)
     return findTrackForPredicate (edit, [id] (Track& t) { return t.itemID == id; });
 }
 
-Track* findTrackForState (const Edit& edit, const juce::ValueTree& v)
+Track* findTrackForState (const Edit& edit, const ValueTree& v)
 {
     return findTrackForPredicate (edit, [&] (Track& t) { return t.state == v; });
 }
@@ -280,11 +276,11 @@ void deleteRegionOfTracks (Edit& edit, EditTimeRange rangeToDelete, bool onlySel
     {
         if (rangeToDelete.getLength() > 0.0001)
         {
-            std::unique_ptr<SelectionManager::ScopedSelectionState> selectionState;
+            ScopedPointer<SelectionManager::ScopedSelectionState> selectionState;
 
             if (selectionManager != nullptr)
             {
-                selectionState.reset (new SelectionManager::ScopedSelectionState (*selectionManager));
+                selectionState = new SelectionManager::ScopedSelectionState (*selectionManager);
                 selectionManager->deselectAll();
             }
 
@@ -413,7 +409,8 @@ void moveSelectedClips (const SelectableList& selectedObjectsIn, Edit& edit, Mov
 
             if (! clipsInTrack.isEmpty())
             {
-                TrackItem::sortByTime (clipsInTrack);
+                TrackItemStartTimeSorter sorter;
+                clipsInTrack.sort (sorter);
 
                 if (mode == MoveClipAction::moveToEndOfLast)
                 {
@@ -466,7 +463,7 @@ Clip* findClipForID (const Edit& edit, EditItemID clipID)
     return result;
 }
 
-Clip* findClipForState (const Edit& edit, const juce::ValueTree& v)
+Clip* findClipForState (const Edit& edit, const ValueTree& v)
 {
     Clip* result = nullptr;
 
@@ -552,7 +549,8 @@ void mergeMidiClips (juce::Array<MidiClip*> clips)
         if (c->getClipTrack() == nullptr || c->getClipTrack()->isFrozen (Track::anyFreeze))
             return;
 
-    TrackItem::sortByTime (clips);
+    TrackItemStartTimeSorter sorter;
+    clips.sort (sorter);
 
     if (auto first = clips.getFirst())
     {
@@ -570,9 +568,9 @@ void mergeMidiClips (juce::Array<MidiClip*> clips)
 
                 for (auto c : clips)
                 {
-                    startBeat = juce::jmin (startBeat, c->getStartBeat());
-                    startTime = juce::jmin (startTime, c->getPosition().getStart());
-                    endTime   = juce::jmax (endTime,   c->getPosition().getEnd());
+                    startBeat = jmin (startBeat, c->getStartBeat());
+                    startTime = jmin (startTime, c->getPosition().getStart());
+                    endTime   = jmax (endTime,   c->getPosition().getEnd());
                 }
 
                 MidiList destinationList;
@@ -646,10 +644,10 @@ bool areAnyPluginsMissing (const Edit& edit)
 }
 
 //==============================================================================
-juce::Array<AutomatableEditItem*> getAllAutomatableEditItems (const Edit& edit)
+Array<AutomatableEditItem*> getAllAutomatableEditItems (const Edit& edit)
 {
     CRASH_TRACER
-    juce::Array<AutomatableEditItem*> destArray;
+    Array<AutomatableEditItem*> destArray;
 
     destArray.add (&edit.getGlobalMacros().macroParameterList);
 
@@ -723,7 +721,7 @@ juce::Array<AutomatableParameter::ModifierSource*> getAllModifierSources (const 
     return sources;
 }
 
-juce::ReferenceCountedArray<Modifier> getAllModifiers (const Edit& edit)
+ReferenceCountedArray<Modifier> getAllModifiers (const Edit& edit)
 {
     juce::ReferenceCountedArray<Modifier> modifiers;
 
@@ -760,7 +758,7 @@ Track* getTrackContainingModifier (const Edit& edit, const Modifier::Ptr& m)
 juce::Array<MacroParameterList*> getAllMacroParameterLists (const Edit& edit)
 {
     CRASH_TRACER
-    juce::Array<MacroParameterList*> destArray;
+    Array<MacroParameterList*> destArray;
 
     for (auto ae : getAllAutomatableEditItems (edit))
         if (auto m = dynamic_cast<MacroParameterList*> (ae))
@@ -769,9 +767,9 @@ juce::Array<MacroParameterList*> getAllMacroParameterLists (const Edit& edit)
     return destArray;
 }
 
-juce::Array<MacroParameterElement*> getAllMacroParameterElements (const Edit& edit)
+Array<MacroParameterElement*> getAllMacroParameterElements (const Edit& edit)
 {
-    juce::Array<MacroParameterElement*> elements;
+    Array<MacroParameterElement*> elements;
 
     elements.add (&edit.getGlobalMacros());
     elements.addArray (edit.getRackList().getTypes());
@@ -779,6 +777,4 @@ juce::Array<MacroParameterElement*> getAllMacroParameterElements (const Edit& ed
     elements.addArray (getAllPlugins (edit, false));
 
     return elements;
-}
-
 }

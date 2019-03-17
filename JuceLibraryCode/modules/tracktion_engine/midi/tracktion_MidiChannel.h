@@ -4,12 +4,8 @@
   '-.  .-'|  .--' ,-.  | .--'|     /'-.  .-',--.| .-. ||      \   Tracktion Software
     |  |  |  |  \ '-'  \ `--.|  \  \  |  |  |  |' '-' '|  ||  |       Corporation
     `---' `--'   `--`--'`---'`--'`--' `---' `--' `---' `--''--'    www.tracktion.com
-
-    Tracktion Engine uses a GPL/commercial licence - see LICENCE.md for details.
 */
 
-namespace tracktion_engine
-{
 
 /**
     Represents a MIDI channel 1-16, and also contains extra ID bits to encode
@@ -55,5 +51,3 @@ struct MidiChannel
 private:
     juce::uint8 channel = 0;
 };
-
-} // namespace tracktion_engine

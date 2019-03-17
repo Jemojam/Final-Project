@@ -40,10 +40,10 @@ ChannelComponent::ChannelComponent(AudioEngine& inEngine, AudioTrack& inTrack) :
     muteBotton->addListener(this);
 
     muteBotton->setImages(false, true, true,
-                          ImageCache::getFromMemory(_033mute_png, _033mute_pngSize), 1.000f, Colours::bisque,
+                          ImageCache::getFromMemory(_033mute_png, _033mute_pngSize), 1.000f, Colours::white,
                           Image(), 1.000f, Colour(0x00000000),
                           Image(), 1.000f, Colour(0x00000000));
-    muteBotton->setBounds(32, 40, 20, 20);
+    muteBotton->setBounds(32, 40, 15, 15);
 
     soloButton.reset(new ImageButton("soloButton"));
     addAndMakeVisible(soloButton.get());
@@ -51,10 +51,10 @@ ChannelComponent::ChannelComponent(AudioEngine& inEngine, AudioTrack& inTrack) :
     soloButton->addListener(this);
 
     soloButton->setImages(false, true, true,
-                          ImageCache::getFromMemory(_048headphones_png, _048headphones_pngSize), 1.000f, Colours::coral,
+                          ImageCache::getFromMemory(_048headphones_png, _048headphones_pngSize), 1.000f, Colours::white,
                           Image(), 1.000f, Colour(0x00000000),
                           Image(), 1.000f, Colour(0x00000000));
-    soloButton->setBounds(64, 40, 20, 20);
+    soloButton->setBounds(64, 40, 15, 15);
 
     addFileButton.reset(new ImageButton("addFileButton"));
     addAndMakeVisible(addFileButton.get());
@@ -66,14 +66,14 @@ ChannelComponent::ChannelComponent(AudioEngine& inEngine, AudioTrack& inTrack) :
                              true,
                              ImageCache::getFromMemory(musicfoldervariant_png, musicfoldervariant_pngSize),
                              1.000f,
-                             Colours::cornflowerblue,
+                             Colours::white,
                              Image(),
                              1.000f,
-                             Colour(0x00000000),
+							 Colours::white,
                              Image(),
                              1.000f,
-                             Colour(0x00000000));
-    addFileButton->setBounds(96, 40, 20, 20);
+                             Colours::lightgreen);
+    addFileButton->setBounds(96, 40, 15, 15);
 
     FXButton.reset(new ImageButton("FXButton"));
     addAndMakeVisible(FXButton.get());
@@ -84,7 +84,7 @@ ChannelComponent::ChannelComponent(AudioEngine& inEngine, AudioTrack& inTrack) :
                         ImageCache::getFromMemory(_072settings_png, _072settings_pngSize), 1.000f, Colours::white,
                         Image(), 1.000f, Colour(0x00000000),
                         Image(), 1.000f, Colour(0x00000000));
-    FXButton->setBounds(160, 8, 30, 30);
+    FXButton->setBounds(160, 8, 15, 15);
 
 
     //[UserPreSize]
@@ -125,7 +125,7 @@ void ChannelComponent::paint(Graphics& g)
         Colour fillColour1 = Colour(0xff4a4a4a), fillColour2 = Colour(0xff262626);
         //[UserPaintCustomArguments] Customize the painting arguments here..
         //[/UserPaintCustomArguments]
-        g.setGradientFill(ColourGradient(fillColour1,
+        g.setGradientFill(ColourGradient(Colours::black,
                                          176.0f - 0.0f + x,
                                          16.0f - 0.0f + y,
                                          fillColour2,
@@ -135,20 +135,7 @@ void ChannelComponent::paint(Graphics& g)
         g.fillRoundedRectangle(x, y, width, height, 10.000f);
     }
 
-    {
-        float x = 204.0f, y = 0.0f, width = static_cast<float> (proportionOfWidth(0.8385f)), height = 70.0f;
-        Colour fillColour1 = Colour(0xc60d3334), fillColour2 = Colour(0xff262626);
-        //[UserPaintCustomArguments] Customize the painting arguments here..
-        //[/UserPaintCustomArguments]
-        g.setGradientFill(ColourGradient(fillColour1,
-                                         184.0f - 204.0f + x,
-                                         144.0f - 0.0f + y,
-                                         fillColour2,
-                                         128.0f - 204.0f + x,
-                                         200.0f - 0.0f + y,
-                                         false));
-        g.fillRoundedRectangle(x, y, width, height, 10.000f);
-    }
+
 
 }
 

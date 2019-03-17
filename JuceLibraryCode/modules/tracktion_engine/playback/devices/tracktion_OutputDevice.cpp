@@ -4,12 +4,8 @@
   '-.  .-'|  .--' ,-.  | .--'|     /'-.  .-',--.| .-. ||      \   Tracktion Software
     |  |  |  |  \ '-'  \ `--.|  \  \  |  |  |  |' '-' '|  ||  |       Corporation
     `---' `--'   `--`--'`---'`--'`--' `---' `--' `---' `--''--'    www.tracktion.com
-
-    Tracktion Engine uses a GPL/commercial licence - see LICENCE.md for details.
 */
 
-namespace tracktion_engine
-{
 
 OutputDevice::OutputDevice (Engine& e, const String& t, const String& n)
    : engine (e), type (t), name (n)
@@ -31,11 +27,11 @@ void OutputDevice::initialiseDefaultAlias()
 {
     defaultAlias = getName();
 
-    if (defaultAlias == DeviceManager::getDefaultAudioOutDeviceName (false))
-        defaultAlias = DeviceManager::getDefaultAudioOutDeviceName (true);
+    if (defaultAlias == DeviceManager::getDefaultAudioDeviceName (false))
+        defaultAlias = DeviceManager::getDefaultAudioDeviceName (true);
 
-    if (defaultAlias == DeviceManager::getDefaultMidiOutDeviceName (false))
-        defaultAlias = DeviceManager::getDefaultMidiOutDeviceName (true);
+    if (defaultAlias == DeviceManager::getDefaultMidiDeviceName (false))
+        defaultAlias = DeviceManager::getDefaultMidiDeviceName (true);
 
     defaultAlias = findDefaultAliasNameNotClashingWithInputDevices (engine, isMidi(), getName(), defaultAlias);
 }
@@ -104,18 +100,11 @@ OutputDeviceInstance::~OutputDeviceInstance()
 {
 }
 
-AudioNode* OutputDeviceInstance::getAudioNode() const
-{
-    return audioNode.get();
-}
-
-AudioNode* OutputDeviceInstance::replaceAudioNode (std::unique_ptr<AudioNode> newNode)
+AudioNode* OutputDeviceInstance::replaceAudioNode (AudioNode* node)
 {
     const ScopedLock sl (audioNodeLock);
 
     auto oldOne = audioNode.release();
-    audioNode = std::move (newNode);
+    audioNode = node;
     return oldOne;
-}
-
 }

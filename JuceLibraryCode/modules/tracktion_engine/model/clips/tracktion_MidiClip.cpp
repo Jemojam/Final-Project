@@ -4,20 +4,16 @@
   '-.  .-'|  .--' ,-.  | .--'|     /'-.  .-',--.| .-. ||      \   Tracktion Software
     |  |  |  |  \ '-'  \ `--.|  \  \  |  |  |  |' '-' '|  ||  |       Corporation
     `---' `--'   `--`--'`---'`--'`--' `---' `--' `---' `--''--'    www.tracktion.com
-
-    Tracktion Engine uses a GPL/commercial licence - see LICENCE.md for details.
 */
 
-namespace tracktion_engine
-{
 
-static std::unique_ptr<MidiList> createLoopRangeDefinesAllRepetitionsSequence (MidiClip& clip, MidiList& sourceSequence)
+static MidiList* createLoopRangeDefinesAllRepetitionsSequence (MidiClip& clip, MidiList& sourceSequence)
 {
-    const auto loopStartBeats = clip.getLoopStartBeats();
-    const auto loopLengthBeats = clip.getLoopLengthBeats();
+    const double loopStartBeats = clip.getLoopStartBeats();
+    const double loopLengthBeats = clip.getLoopLengthBeats();
 
-    const auto extraLoops = roundToInt (std::ceil (clip.getOffsetInBeats() / loopLengthBeats));
-    const auto loopTimes  = roundToInt (std::ceil (clip.getLengthInBeats() / loopLengthBeats)) + extraLoops;
+    const int extraLoops = roundToInt (std::ceil (clip.getOffsetInBeats() / loopLengthBeats));
+    const int loopTimes  = roundToInt (std::ceil (clip.getLengthInBeats() / loopLengthBeats)) + extraLoops;
 
     const auto& notes = sourceSequence.getNotes();
     const auto& sysex = sourceSequence.getSysexEvents();
@@ -68,25 +64,24 @@ static std::unique_ptr<MidiList> createLoopRangeDefinesAllRepetitionsSequence (M
         }
     }
 
-    std::unique_ptr<MidiList> destSequence (new MidiList (v, nullptr));
+    auto destSequence = new MidiList (v, nullptr);
     destSequence->setMidiChannel (sourceSequence.getMidiChannel());
 
     return destSequence;
 }
 
-static std::unique_ptr<MidiList> createLoopRangeDefinesSubsequentRepetitionsSequence (MidiClip& clip, MidiList& sourceSequence)
+static MidiList* createLoopRangeDefinesSubsequentRepetitionsSequence (MidiClip& clip, MidiList& sourceSequence)
 {
-    // TODO: what's the point of this function?
     return createLoopRangeDefinesAllRepetitionsSequence (clip, sourceSequence);
 }
 
 //==============================================================================
-MidiClip::MidiClip (const juce::ValueTree& v, EditItemID id, ClipTrack& targetTrack)
+MidiClip::MidiClip (const ValueTree& v, EditItemID id, ClipTrack& targetTrack)
     : Clip (v, targetTrack, id, Type::midi)
 {
     auto um = getUndoManager();
 
-    quantisation.reset (new QuantisationType (state.getOrCreateChildWithName (IDs::QUANTISATION, um), um));
+    quantisation = new QuantisationType (state.getOrCreateChildWithName (IDs::QUANTISATION, um), um);
 
     if (state.hasProperty (IDs::quantisation))
         quantisation->setType (state.getProperty (IDs::quantisation));
@@ -114,7 +109,7 @@ MidiClip::MidiClip (const juce::ValueTree& v, EditItemID id, ClipTrack& targetTr
     auto pgen = state.getChildWithName (IDs::PATTERNGENERATOR);
 
     if (pgen.isValid())
-        patternGenerator.reset (new PatternGenerator (*this, pgen));
+        patternGenerator = new PatternGenerator (*this, pgen);
 }
 
 MidiClip::~MidiClip()
@@ -167,9 +162,9 @@ void MidiClip::initialise()
 
         if (g == nullptr && grooveTree.getNumChildren() > 0)
         {
-            auto grooveXml = std::unique_ptr<XmlElement> (grooveTree.getChild (0).createXml());
+            ScopedPointer<XmlElement> grooveXml (grooveTree.getChild (0).createXml());
 
-            GrooveTemplate gt (grooveXml.get());
+            GrooveTemplate gt (grooveXml);
 
             if (! gt.isEmpty())
                 edit.engine.getGrooveTemplateManager().updateTemplate (-1, gt);
@@ -271,7 +266,7 @@ MidiList& MidiClip::getSequenceLooped()
     return *cachedLoopedSequence;
 }
 
-std::unique_ptr<MidiList> MidiClip::createSequenceLooped (MidiList& sourceSequence)
+MidiList* MidiClip::createSequenceLooped (MidiList& sourceSequence)
 {
     switch (loopedSequenceType)
     {
@@ -281,7 +276,7 @@ std::unique_ptr<MidiList> MidiClip::createSequenceLooped (MidiList& sourceSequen
         case LoopedSequenceType::loopRangeDefinesAllRepetitions:
         default:
             return createLoopRangeDefinesAllRepetitionsSequence (*this, sourceSequence);
-    }
+    };
 }
 
 MidiClip::ScopedEventsList::ScopedEventsList (MidiClip& c, SelectedMidiEvents* e)
@@ -366,7 +361,7 @@ void MidiClip::legatoNote (MidiNote& note, const juce::Array<MidiNote*>& notesTo
 }
 
 //==============================================================================
-MidiList* MidiClip::getMidiListForState (const juce::ValueTree& v)
+MidiList* MidiClip::getMidiListForState (const ValueTree& v)
 {
     for (int i = channelSequence.size(); --i >= 0;)
         if (auto ml = channelSequence.getUnchecked (i))
@@ -739,7 +734,7 @@ void MidiClip::setSendingBankChanges (bool sendBank)
         sendBankChange = ! sendBankChange;
 }
 
-void MidiClip::valueTreePropertyChanged (ValueTree& tree, const juce::Identifier& id)
+void MidiClip::valueTreePropertyChanged (ValueTree& tree, const Identifier& id)
 {
     if (tree == state)
     {
@@ -792,7 +787,7 @@ void MidiClip::valueTreePropertyChanged (ValueTree& tree, const juce::Identifier
     }
 }
 
-void MidiClip::valueTreeChildAdded (ValueTree& p, juce::ValueTree& c)
+void MidiClip::valueTreeChildAdded (ValueTree& p, ValueTree& c)
 {
     if (p.hasType (IDs::SEQUENCE))
         clearCachedLoopSequence();
@@ -800,10 +795,10 @@ void MidiClip::valueTreeChildAdded (ValueTree& p, juce::ValueTree& c)
         channelSequence.add (new MidiList (c, getUndoManager()));
 
     if (c.hasType (IDs::PATTERNGENERATOR))
-        patternGenerator.reset (new PatternGenerator (*this, c));
+        patternGenerator = new PatternGenerator (*this, c);
 }
 
-void MidiClip::valueTreeChildRemoved (ValueTree& p, juce::ValueTree& c, int)
+void MidiClip::valueTreeChildRemoved (ValueTree& p, ValueTree& c, int)
 {
     if (p.hasType (IDs::SEQUENCE))
     {
@@ -840,7 +835,7 @@ PatternGenerator* MidiClip::getPatternGenerator()
         state.addChild (ValueTree (IDs::PATTERNGENERATOR), -1, &edit.getUndoManager());
 
     jassert (patternGenerator != nullptr);
-    return patternGenerator.get();
+    return patternGenerator;
 }
 
 void MidiClip::pitchTempoTrackChanged()
@@ -850,6 +845,4 @@ void MidiClip::pitchTempoTrackChanged()
 
     // for the midi editor to redraw
     state.sendPropertyChangeMessage (IDs::mute);
-}
-
 }

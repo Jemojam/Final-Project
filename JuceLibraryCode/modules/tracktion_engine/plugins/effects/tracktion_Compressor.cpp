@@ -4,12 +4,8 @@
   '-.  .-'|  .--' ,-.  | .--'|     /'-.  .-',--.| .-. ||      \   Tracktion Software
     |  |  |  |  \ '-'  \ `--.|  \  \  |  |  |  |' '-' '|  ||  |       Corporation
     `---' `--'   `--`--'`---'`--'`--' `---' `--' `---' `--''--'    www.tracktion.com
-
-    Tracktion Engine uses a GPL/commercial licence - see LICENCE.md for details.
 */
 
-namespace tracktion_engine
-{
 
 CompressorPlugin::CompressorPlugin (PluginCreationInfo info)  : Plugin (info)
 {
@@ -207,7 +203,7 @@ void CompressorPlugin::setRatio (float r)
     ratio->setParameter (jlimit (0.05f, 1.0f, r), sendNotification);
 }
 
-void CompressorPlugin::restorePluginStateFromValueTree (const juce::ValueTree& v)
+void CompressorPlugin::restorePluginStateFromValueTree (const ValueTree& v)
 {
     CachedValue<float>* cvsFloat[]  = { &thresholdValue, &ratioValue, &attackValue, &releaseValue, &outputValue, &sidechainValue, nullptr };
     CachedValue<bool>* cvsBool[]    = { &useSidechainTrigger, nullptr };
@@ -215,12 +211,10 @@ void CompressorPlugin::restorePluginStateFromValueTree (const juce::ValueTree& v
     copyPropertiesToNullTerminatedCachedValues (v, cvsBool);
 }
 
-void CompressorPlugin::valueTreePropertyChanged (ValueTree& v, const juce::Identifier& id)
+void CompressorPlugin::valueTreePropertyChanged (ValueTree& v, const Identifier& id)
 {
     if (v == state && id == IDs::sidechainTrigger)
         propertiesChanged();
 
     Plugin::valueTreePropertyChanged (v, id);
-}
-
 }

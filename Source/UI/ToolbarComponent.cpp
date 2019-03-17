@@ -36,7 +36,7 @@ ToolbarComponent::ToolbarComponent(AudioEngine& inEngine) : engine(inEngine), pl
     loopButton->addListener (this);
 
     loopButton->setImages (false, true, true,
-                           ImageCache::getFromMemory (loop_png, loop_pngSize), 1.0f, Colours::coral,
+                           ImageCache::getFromMemory (loop_png, loop_pngSize), 1.0f, Colours::orangered,
                            Image(), 1.0f, Colour (0x00000000),
                            Image(), 1.0f, Colour (0x00000000));
     loopButton->setBounds (414, 34, 25, 27);
@@ -87,10 +87,10 @@ ToolbarComponent::ToolbarComponent(AudioEngine& inEngine) : engine(inEngine), pl
     addChannelButton->addListener (this);
 
     addChannelButton->setImages (false, true, true,
-                                 ImageCache::getFromMemory (_075audiofile_png, _075audiofile_pngSize), 1.0f, Colours::cornflowerblue,
+                                 ImageCache::getFromMemory (_075audiofile_png, _075audiofile_pngSize), 1.0f, Colours::black,
                                  Image(), 1.0f, Colour (0x00000000),
                                  Image(), 1.0f, Colour (0x00000000));
-    addChannelButton->setBounds (456, 32, 40, 32);
+    addChannelButton->setBounds (456, 35, 25, 25);
 
 
 	audioSettingsButton.reset(new ImageButton("audioSettingsButton"));
@@ -99,10 +99,10 @@ ToolbarComponent::ToolbarComponent(AudioEngine& inEngine) : engine(inEngine), pl
 	audioSettingsButton->addListener(this);
 
 	audioSettingsButton->setImages(false, true, true,
-		ImageCache::getFromMemory(BinaryData::_072settings_png, BinaryData::_072settings_pngSize), 1.0f, Colours::floralwhite,
+		ImageCache::getFromMemory(BinaryData::_072settings_png, BinaryData::_072settings_pngSize), 1.0f, Colours::black,
 		Image(), 1.0f, Colour(0x00000000),
 		Image(), 1.0f, Colour(0x00000000));
-	audioSettingsButton->setBounds(456+42, 32, 40, 32);
+	audioSettingsButton->setBounds(456+42, 35, 25, 25);
 
 	
 

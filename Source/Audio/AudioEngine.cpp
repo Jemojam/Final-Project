@@ -57,14 +57,15 @@ te::WaveAudioClip::Ptr AudioEngine::loadAudioFileAsClip(const File& file, AudioT
     if (audioFile.isValid())
     {
         auto name = file.getFileNameWithoutExtension();
+		
+		EditTimeRange timeRange(0, audioFile.getLength());
+		ClipPosition position = { timeRange, 0 };
 
-        EditTimeRange timeRange(0.0, audioFile.getLength());
-        ClipPosition position = {timeRange, 0.0};
+		auto newClip = track.insertWaveClip(name, file, position, false);
 
-        auto newClip = track.insertWaveClip(name, file, position, false);
-
-        if (newClip != nullptr)
-            return newClip;
+		if (newClip != nullptr)
+			return newClip;
+	
     }
 
     return nullptr;

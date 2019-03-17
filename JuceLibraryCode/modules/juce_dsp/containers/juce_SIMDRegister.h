@@ -109,7 +109,7 @@ struct SIMDRegister
     vSIMDType value;
 
     /** Default constructor. */
-    inline SIMDRegister() noexcept = default;
+    inline SIMDRegister() noexcept {}
 
     /** Constructs an object from the native SIMD type. */
     inline SIMDRegister (vSIMDType a) noexcept : value (a) {}
@@ -118,7 +118,7 @@ struct SIMDRegister
     inline SIMDRegister (Type s) noexcept  { *this = s; }
 
     /** Destrutor. */
-    inline ~SIMDRegister() noexcept = default;
+    inline ~SIMDRegister() noexcept {}
 
     //==============================================================================
     /** Returns the number of elements in this vector. */

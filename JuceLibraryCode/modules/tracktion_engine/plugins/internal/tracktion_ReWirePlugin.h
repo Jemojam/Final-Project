@@ -4,9 +4,8 @@
   '-.  .-'|  .--' ,-.  | .--'|     /'-.  .-',--.| .-. ||      \   Tracktion Software
     |  |  |  |  \ '-'  \ `--.|  \  \  |  |  |  |' '-' '|  ||  |       Corporation
     `---' `--'   `--`--'`---'`--'`--' `---' `--' `---' `--''--'    www.tracktion.com
-
-    Tracktion Engine uses a GPL/commercial licence - see LICENCE.md for details.
 */
+
 
 #if TRACKTION_ENABLE_REWIRE
 
@@ -122,7 +121,7 @@ public:
     void setMidiChannel (int channel);
 
 private:
-    std::unique_ptr<TempoSequencePosition> currentTempoPosition;
+    juce::ScopedPointer<TempoSequencePosition> currentTempoPosition;
     int channelIndexL = 0, channelIndexR = 0;
     bool uiIsRunning = false;
 

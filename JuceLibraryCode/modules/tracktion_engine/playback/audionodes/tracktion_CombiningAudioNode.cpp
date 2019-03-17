@@ -4,12 +4,8 @@
   '-.  .-'|  .--' ,-.  | .--'|     /'-.  .-',--.| .-. ||      \   Tracktion Software
     |  |  |  |  \ '-'  \ `--.|  \  \  |  |  |  |' '-' '|  ||  |       Corporation
     `---' `--'   `--`--'`---'`--'`--' `---' `--' `---' `--''--'    www.tracktion.com
-
-    Tracktion Engine uses a GPL/commercial licence - see LICENCE.md for details.
 */
 
-namespace tracktion_engine
-{
 
 // how much extra time to give a track before it gets cut off - to allow for plugins
 // that ring on.
@@ -29,7 +25,7 @@ struct CombiningAudioNode::TimedAudioNode
     }
 
     EditTimeRange time;
-    const std::unique_ptr<AudioNode> node;
+    const ScopedPointer<AudioNode> node;
     int lastBufferSize = 0;
 
     void render (const AudioRenderContext& rc, EditTimeRange editTime) const
@@ -78,7 +74,7 @@ void CombiningAudioNode::addInput (EditTimeRange time, AudioNode* inputNode)
 
     if (time.isEmpty())
     {
-        std::unique_ptr<AudioNode> an (inputNode);
+        ScopedPointer<AudioNode> an (inputNode);
         return;
     }
 
@@ -236,6 +232,4 @@ void CombiningAudioNode::prefetchGroup (const AudioRenderContext& rc, const doub
     if (auto g = groups[timeToGroupIndex (time)])
         for (auto tan : *g)
             tan->node->prepareForNextBlock (rc);
-}
-
 }

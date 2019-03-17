@@ -4,9 +4,8 @@
   '-.  .-'|  .--' ,-.  | .--'|     /'-.  .-',--.| .-. ||      \   Tracktion Software
     |  |  |  |  \ '-'  \ `--.|  \  \  |  |  |  |' '-' '|  ||  |       Corporation
     `---' `--'   `--`--'`---'`--'`--' `---' `--' `---' `--''--'    www.tracktion.com
-
-    Tracktion Engine uses a GPL/commercial licence - see LICENCE.md for details.
 */
+
 
 namespace tracktion_engine
 {
@@ -14,8 +13,7 @@ namespace tracktion_engine
 /** */
 class CustomControlSurface  : public ControlSurface,
                               public juce::ChangeBroadcaster,
-                              private juce::AsyncUpdater,
-                              private juce::OSCReceiver::Listener<juce::OSCReceiver::MessageLoopCallback>
+                              private juce::AsyncUpdater
 {
 public:
     //==============================================================================
@@ -43,7 +41,6 @@ public:
         jogId                       = 20,
         jumpToMarkInId              = 21,
         jumpToMarkOutId             = 22,
-        timecodeId                  = 25,
 
         toggleBeatsSecondsModeId    = 50,
         toggleLoopId                = 51,
@@ -53,29 +50,19 @@ public:
         toggleSlaveId               = 55,
         toggleEtoEId                = 56,
         toggleScrollId              = 57,
-        toggleAllArmId              = 58,
 
         masterVolumeId              = 8,
-        masterVolumeTextId          = 26,
         masterPanId                 = 9,
         quickParamId                = 24,
         paramTrackId                = 1600,
-        paramNameTrackId            = 2500,
-        paramTextTrackId            = 2600,
-        clearAllSoloId              = 27,
 
-        nameTrackId                 = 2100,
-        numberTrackId               = 2700,
         volTrackId                  = 1800,
-        volTextTrackId              = 2200,
         panTrackId                  = 1700,
-        panTextTrackId              = 2400,
         muteTrackId                 = 1100,
         soloTrackId                 = 1200,
         armTrackId                  = 1300,
         selectTrackId               = 1400,
         auxTrackId                  = 1500,
-        auxTextTrackId              = 2300,
 
         zoomInId                    = 100,
         zoomOutId                   = 101,
@@ -92,7 +79,6 @@ public:
         selectDownId                = 112,
         selectClipInTrackId         = 1900,
         selectPluginInTrackId       = 2000,
-        selectedPluginNameId        = 113,
 
         faderBankLeftId             = 208,
         faderBankLeft1Id            = 200,
@@ -104,21 +90,7 @@ public:
         faderBankRight4Id           = 204,
         faderBankRight8Id           = 205,
         faderBankRight16Id          = 207,
-        
-        paramBankLeftId             = 220,
-        paramBankLeft1Id            = 221,
-        paramBankLeft4Id            = 222,
-        paramBankLeft8Id            = 223,
-        paramBankLeft16Id           = 224,
-        paramBankLeft24Id           = 225,
-        paramBankRightId            = 226,
-        paramBankRight1Id           = 227,
-        paramBankRight4Id           = 228,
-        paramBankRight8Id           = 229,
-        paramBankRight16Id          = 230,
-        paramBankRight24Id          = 231,
 
-        emptyTextId                 = 9998,
         none                        = 9999
     };
 
@@ -129,14 +101,13 @@ public:
         MappingSet& operator= (const MappingSet&) = default;
 
         ActionID id = none;
-        juce::String addr;
         int controllerID = -1, note = -1, channel = -1;
         juce::Colour colour { juce::Colours::transparentWhite };
         juce::String surfaceName;
     };
 
     //==============================================================================
-    CustomControlSurface (ExternalControllerManager&, const juce::String& name, ExternalControllerManager::Protocol);
+    CustomControlSurface (ExternalControllerManager&, const juce::String& name);
     CustomControlSurface (ExternalControllerManager&, const juce::XmlElement&);
     ~CustomControlSurface();
 
@@ -149,8 +120,6 @@ public:
     //==============================================================================
     void initialiseDevice (bool connect) override;
     void shutDownDevice() override;
-    
-    void updateOSCSettings (int oscInputPort, int oscOutputPort, juce::String oscOutputAddr) override;
 
     /** Saves the settings of all open custom surfaces. */
     static void saveAllSettings();
@@ -185,7 +154,7 @@ public:
     void parameterChanged (int parameterNumber, const ParameterSetting& newValue) override;
     void clearParameter (int parameterNumber) override;
     bool canChangeSelectedPlugin() override;
-    void currentSelectionChanged (juce::String) override;
+    void currentSelectionChanged() override;
     void deleteController() override;
     void markerChanged (int parameterNumber, const MarkerSetting& newValue) override;
     void clearMarker (int parameterNumber) override;
@@ -202,7 +171,6 @@ public:
     struct Mapping
     {
         int id = 0;
-        juce::String addr;
         int note = -1;
         int channel = 0;
         int function = 0;
@@ -211,7 +179,6 @@ public:
     int getNumMappings() const;
     void listenToRow (int);
     int getRowBeingListenedTo() const;
-    bool allowsManualEditing() const { return needsOSCSocket; }
     void showMappingsListForRow (int);
     void setLearntParam(bool keepListening);
     void removeMapping (int index);
@@ -241,7 +208,6 @@ public:
     void jog (float val, int param);
     void jumpToMarkIn (float val, int param);
     void jumpToMarkOut (float val, int param);
-    void clearAllSolo (float val, int param);
 
     // options
     void toggleBeatsSecondsMode (float val, int param);
@@ -252,7 +218,6 @@ public:
     void toggleSlave (float val, int param);
     void toggleEtoE (float val, int param);
     void toggleScroll (float val, int param);
-    void toggleAllArm (float val, int param);
 
     // plugins
     void masterVolume (float val, int param);
@@ -298,31 +263,11 @@ public:
     void faderBankRight8  (float val, int param);
     void faderBankRight16 (float val, int param);
 
-    void paramBankLeft    (float val, int param);
-    void paramBankLeft1   (float val, int param);
-    void paramBankLeft4   (float val, int param);
-    void paramBankLeft8   (float val, int param);
-    void paramBankLeft16  (float val, int param);
-    void paramBankLeft24  (float val, int param);
-    void paramBankRight   (float val, int param);
-    void paramBankRight1  (float val, int param);
-    void paramBankRight4  (float val, int param);
-    void paramBankRight8  (float val, int param);
-    void paramBankRight16 (float val, int param);
-    void paramBankRight24 (float val, int param);
-
-    
-    void null (float, int) {} // null action for outgoing only actions
-
     void loadFunctions();
 
     juce::XmlElement* createXml();
     void importSettings (const juce::File&);
-    void importSettings (const juce::String&);
     void exportSettings (const juce::File&);
-    
-    int getPacketsIn()  { return packetsIn; }
-    int getPacketsOut() { return packetsOut; }
 
 private:
     //==============================================================================
@@ -337,12 +282,10 @@ private:
     };
 
     //==============================================================================
-    ExternalControllerManager::Protocol protocol;
     juce::OwnedArray<Mapping> mappings;
     std::map<int, juce::SortedSet<int>*> commandGroups;
     int nextCmdGroupIndex = 50000;
 
-    juce::String lastControllerAddr;
     int lastControllerNote = -1;
     int lastControllerID = 0;
     float lastControllerValue = 0;
@@ -353,17 +296,6 @@ private:
     juce::PopupMenu contextMenu;
     bool pluginMoveMode = true;
     bool eatsAllMidi = false;
-    bool online = false;
-    int oscInputPort = 0, oscOutputPort = 0;
-    int packetsIn = 0, packetsOut = 0;
-    juce::String oscOutputAddr, oscActiveAddr;
-    std::map<juce::String, bool> oscControlTouched;
-    std::map<juce::String, int> oscControlTapsWhileTouched;
-    std::map<juce::String, float> oscLastValue;
-    std::map<juce::String, double> oscLastUsedTime;
-    
-    std::unique_ptr<juce::OSCSender> oscSender;
-    std::unique_ptr<juce::OSCReceiver> oscReceiver;
 
     //==============================================================================
     struct RPNParser
@@ -405,21 +337,11 @@ private:
     juce::SharedResourcePointer<CustomControlSurfaceManager> manager;
 
     //==============================================================================
-    void oscMessageReceived (const juce::OSCMessage&) override;
-    void oscBundleReceived (const juce::OSCBundle&) override;
-    
-    bool isTextAction (ActionID);
-    
-    //==============================================================================
-    void addFunction (juce::PopupMenu&, juce::SortedSet<int>& commandSet, const juce::String& group, const juce::String& name, ActionID id, ActionFunction);
-    void addTrackFunction (juce::PopupMenu&, const juce::String& group, const juce::String& name, ActionID id, ActionFunction);
-    void addPluginFunction (juce::PopupMenu&, const juce::String& group, const juce::String& name, ActionID id, ActionFunction);
+    void addFunction (juce::PopupMenu&, juce::SortedSet<int>& commandSet, const juce::String& group, const juce::String& name, int id, ActionFunction);
+    void addTrackFunction (juce::PopupMenu&, const juce::String& group, const juce::String& name, int id, ActionFunction);
+    void addPluginFunction (juce::PopupMenu&, const juce::String& group, const juce::String& name, int id, ActionFunction);
     void createContextMenu (juce::PopupMenu&);
     void addAllCommandItem (juce::PopupMenu&);
-    
-    void sendCommandToControllerForActionID (int actionID, bool);
-    void sendCommandToControllerForActionID (int actionID, float value);
-    void sendCommandToControllerForActionID (int actionID, juce::String);
 
     juce::String controllerIDToString (int id, int channelid) const;
     juce::String noteIDToString (int note, int channelid) const;
@@ -430,13 +352,10 @@ private:
     void clearCommandGroups();
 
     bool isPendingEventAssignable();
-    void updateOrCreateMappingForID (int id, juce::String addr, int channel, int noteNum, int controllerID);
+    void updateOrCreateMappingForID (int id, int channel, int noteNum, int controllerID);
     void addMappingSetsForID (ActionID, juce::Array<MappingSet>& mappingSet);
 
     void handleAsyncUpdate() override;
-    void recreateOSCSockets();
-    
-    bool shouldActOnValue (float v);
 
     //==============================================================================
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (CustomControlSurface)

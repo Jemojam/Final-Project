@@ -4,12 +4,8 @@
   '-.  .-'|  .--' ,-.  | .--'|     /'-.  .-',--.| .-. ||      \   Tracktion Software
     |  |  |  |  \ '-'  \ `--.|  \  \  |  |  |  |' '-' '|  ||  |       Corporation
     `---' `--'   `--`--'`---'`--'`--' `---' `--' `---' `--''--'    www.tracktion.com
-
-    Tracktion Engine uses a GPL/commercial licence - see LICENCE.md for details.
 */
 
-namespace tracktion_engine
-{
 
 PlayHeadAudioNode::PlayHeadAudioNode (AudioNode* input)
    : SingleInputAudioNode (input)
@@ -75,6 +71,4 @@ void PlayHeadAudioNode::renderAdding (const AudioRenderContext& rc)
             input->renderAdding (rc);
         }
     }
-}
-
 }

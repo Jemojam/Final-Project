@@ -4,12 +4,8 @@
   '-.  .-'|  .--' ,-.  | .--'|     /'-.  .-',--.| .-. ||      \   Tracktion Software
     |  |  |  |  \ '-'  \ `--.|  \  \  |  |  |  |' '-' '|  ||  |       Corporation
     `---' `--'   `--`--'`---'`--'`--' `---' `--' `---' `--''--'    www.tracktion.com
-
-    Tracktion Engine uses a GPL/commercial licence - see LICENCE.md for details.
 */
 
-namespace tracktion_engine
-{
 
 std::function<AudioNode*(AudioNode*)> EditPlaybackContext::insertOptionalLastStageNode = [] (AudioNode* input)    { return input; };
 
@@ -36,16 +32,8 @@ EditPlaybackContext::EditPlaybackContext (TransportControl& tc)
 {
     rebuildDeviceList();
 
-    if (edit.isRendering())
-    {
-        jassertfalse;
-        TRACKTION_LOG_ERROR("EditPlaybackContext created whilst rendering");
-    }
-
     if (edit.shouldPlay())
-    {
         edit.engine.getDeviceManager().addContext (this);
-    }
 }
 
 EditPlaybackContext::~EditPlaybackContext()
@@ -251,7 +239,7 @@ static AudioNode* createPlaybackAudioNode (Edit& edit, OutputDeviceInstance& dev
                     CRASH_TRACER
                     addedFrozenTracksYet = true;
 
-                    for (auto& freezeFile : TemporaryFileManager::getFrozenTrackFiles (edit))
+                    for (auto& freezeFile : edit.getFrozenTracksFiles())
                     {
                         const String fn (freezeFile.getFileName());
                         const String outId (fn.fromLastOccurrenceOf ("_", false, false)
@@ -410,15 +398,15 @@ void EditPlaybackContext::createAudioNodes (double startTime, bool addAntiDenorm
         ScopedLock sl (edit.engine.getDeviceManager().deviceManager.getAudioCallbackLock());
 
         for (auto mo : midiOutputs)
-            removedNodes.add (mo->replaceAudioNode (std::unique_ptr<AudioNode> (allNodes.getUnchecked (i++))));
+            removedNodes.add (mo->replaceAudioNode (allNodes.getUnchecked (i++)));
 
         for (auto wo : waveOutputs)
-            removedNodes.add (wo->replaceAudioNode (std::unique_ptr<AudioNode> (allNodes.getUnchecked (i++))));
+            removedNodes.add (wo->replaceAudioNode (allNodes.getUnchecked (i++)));
 
         if (hasTempoChanged && lastTempoSections.size() > 0)
         {
-            auto lastBeats = lastTempoSections.timeToBeats (playhead.getPosition());
-            auto lastPositionRemapped = tempoSections.beatsToTime (lastBeats);
+            const double lastBeats = lastTempoSections.timeToBeats (playhead.getPosition());
+            const double lastPositionRemapped = tempoSections.beatsToTime (lastBeats);
 
             playhead.overridePosition (lastPositionRemapped);
         }
@@ -450,7 +438,7 @@ void EditPlaybackContext::startPlaying (double start)
     prepareOutputDevices (start);
 
     if (priorityBooster == nullptr)
-        priorityBooster.reset (new ProcessPriorityBooster());
+        priorityBooster = new ProcessPriorityBooster();
 
     for (auto mo : midiOutputs)
         mo->start();
@@ -597,7 +585,7 @@ Result EditPlaybackContext::applyRetrospectiveRecord (Array<Clip*>* clips)
         {
             if (clips != nullptr)
                 clips->add (clip);
-
+                
             clipCreated = true;
         }
     }
@@ -768,5 +756,3 @@ EditPlaybackContext::RealtimePriorityDisabler::RealtimePriorityDisabler()    {}
 EditPlaybackContext::RealtimePriorityDisabler::~RealtimePriorityDisabler()   {}
 
 #endif
-
-}

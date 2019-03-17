@@ -4,9 +4,8 @@
   '-.  .-'|  .--' ,-.  | .--'|     /'-.  .-',--.| .-. ||      \   Tracktion Software
     |  |  |  |  \ '-'  \ `--.|  \  \  |  |  |  |' '-' '|  ||  |       Corporation
     `---' `--'   `--`--'`---'`--'`--' `---' `--' `---' `--''--'    www.tracktion.com
-
-    Tracktion Engine uses a GPL/commercial licence - see LICENCE.md for details.
 */
+
 
 namespace tracktion_engine
 {
@@ -55,7 +54,7 @@ public:
 
 private:
     struct WireList;
-    std::unique_ptr<WireList> list;
+    juce::ScopedPointer<WireList> list;
     bool recursionCheck = false;
 
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (PatchBayPlugin)

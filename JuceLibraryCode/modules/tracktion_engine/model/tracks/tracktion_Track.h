@@ -4,9 +4,8 @@
   '-.  .-'|  .--' ,-.  | .--'|     /'-.  .-',--.| .-. ||      \   Tracktion Software
     |  |  |  |  \ '-'  \ `--.|  \  \  |  |  |  |' '-' '|  ||  |       Corporation
     `---' `--'   `--`--'`---'`--'`--' `---' `--' `---' `--''--'    www.tracktion.com
-
-    Tracktion Engine uses a GPL/commercial licence - see LICENCE.md for details.
 */
+
 
 namespace tracktion_engine
 {
@@ -81,7 +80,7 @@ public:
     juce::Array<Track*> getAllSubTracks (bool recursive) const;
     juce::Array<AudioTrack*> getAllAudioSubTracks (bool recursive) const;
 
-    TrackList* getSubTrackList() const                          { return trackList.get(); }
+    TrackList* getSubTrackList() const                          { return trackList; }
     bool hasSubTracks() const                                   { return trackList != nullptr; }
     virtual Clip* findClipForID (EditItemID) const;
 
@@ -132,7 +131,7 @@ public:
     //==============================================================================
     juce::Array<AutomatableParameter*> getAllAutomatableParams() const;
 
-    AutomatableParameter* getCurrentlyShownAutoParam() const noexcept;
+    AutomatableParameter* getCurrentlyShownAutoParam() const noexcept   { return currentAutoParam; }
     void setCurrentlyShownAutoParam (const AutomatableParameter::Ptr&);
     void hideAutomatableParametersForSource (EditItemID pluginOrParameterID);
     AutomatableParameter* chooseDefaultAutomationCurve() const;
@@ -188,8 +187,8 @@ protected:
     virtual bool isTrackAudible (bool areAnyTracksSolo) const;
 
 private:
-    juce::WeakReference<Selectable> currentAutoParam;
-    std::unique_ptr<TrackList> trackList;
+    AutomatableParameter* currentAutoParam = nullptr;
+    juce::ScopedPointer<TrackList> trackList;
     std::unique_ptr<ModifierList> modifierList;
 
     juce::CachedValue<juce::String> trackName;

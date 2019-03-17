@@ -4,12 +4,8 @@
   '-.  .-'|  .--' ,-.  | .--'|     /'-.  .-',--.| .-. ||      \   Tracktion Software
     |  |  |  |  \ '-'  \ `--.|  \  \  |  |  |  |' '-' '|  ||  |       Corporation
     `---' `--'   `--`--'`---'`--'`--' `---' `--' `---' `--''--'    www.tracktion.com
-
-    Tracktion Engine uses a GPL/commercial licence - see LICENCE.md for details.
 */
 
-namespace tracktion_engine
-{
 
 TrackCompManager::CompSection::CompSection (const ValueTree& v) : state (v)
 {
@@ -23,12 +19,12 @@ TrackCompManager::CompSection::~CompSection()
 
 TrackCompManager::CompSection* TrackCompManager::CompSection::createAndIncRefCount (const ValueTree& v)
 {
-    auto cs = new CompSection (v);
+    ScopedPointer<CompSection> cs (new CompSection (v));
     cs->incReferenceCount();
-    return cs;
+    return cs.release();
 }
 
-void TrackCompManager::CompSection::updateFrom (ValueTree& v, const juce::Identifier& i)
+void TrackCompManager::CompSection::updateFrom (ValueTree& v, const Identifier& i)
 {
     if (v == state)
     {
@@ -47,9 +43,9 @@ void TrackCompManager::CompSection::updateEnd()        { end = static_cast<doubl
 //==============================================================================
 TrackCompManager::TrackComp* TrackCompManager::TrackComp::createAndIncRefCount (Edit& edit, const ValueTree& v)
 {
-    auto tc = new TrackComp (edit, v);
+    ScopedPointer<TrackComp> tc (new TrackComp (edit, v));
     tc->incReferenceCount();
-    return tc;
+    return tc.release();
 }
 
 TrackCompManager::TrackComp::TrackComp (Edit& e, const ValueTree& v)
@@ -461,7 +457,7 @@ void TrackCompManager::TrackComp::newObjectAdded (CompSection*)                 
 void TrackCompManager::TrackComp::objectRemoved (CompSection*)                  {}
 void TrackCompManager::TrackComp::objectOrderChanged()                          {}
 
-void TrackCompManager::TrackComp::valueTreePropertyChanged (ValueTree& v, const juce::Identifier& i)
+void TrackCompManager::TrackComp::valueTreePropertyChanged (ValueTree& v, const Identifier& i)
 {
     if (v.hasType (IDs::COMPSECTION))
         if (CompSection* cs = getCompSectionFor (v))
@@ -555,7 +551,7 @@ void TrackCompManager::initialise (const ValueTree& v)
 {
     jassert (v.hasType (IDs::TRACKCOMPS));
     state = v;
-    trackCompList.reset (new TrackCompList (edit, v));
+    trackCompList = new TrackCompList (edit, v);
 }
 
 int TrackCompManager::getNumGroups() const
@@ -566,14 +562,14 @@ int TrackCompManager::getNumGroups() const
 StringArray TrackCompManager::getCompNames() const
 {
     StringArray names;
-    auto numComps = state.getNumChildren();
+    const int numComps = state.getNumChildren();
 
     for (int i = 0; i < numComps; ++i)
     {
         auto v = state.getChild (i);
         jassert (v.hasType (IDs::TRACKCOMP));
 
-        auto name = v.getProperty (IDs::name).toString();
+        String name (v.getProperty (IDs::name).toString());
 
         if (name.isEmpty())
             name = String (TRANS("Comp Group")) + " " + String (i);
@@ -589,7 +585,7 @@ String TrackCompManager::getCompName (int index)
     if (index == -1)
         return "<" + TRANS("None") + ">";
 
-    auto name = getCompNames()[index];
+    const String name (getCompNames()[index]);
 
     if (name.isNotEmpty())
         return name;
@@ -662,6 +658,4 @@ AudioNode* TrackCompManager::createTrackCompAudioNode (AudioNode* input, const A
     }
 
     return input;
-}
-
 }

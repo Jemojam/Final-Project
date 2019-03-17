@@ -4,9 +4,8 @@
   '-.  .-'|  .--' ,-.  | .--'|     /'-.  .-',--.| .-. ||      \   Tracktion Software
     |  |  |  |  \ '-'  \ `--.|  \  \  |  |  |  |' '-' '|  ||  |       Corporation
     `---' `--'   `--`--'`---'`--'`--' `---' `--' `---' `--''--'    www.tracktion.com
-
-    Tracktion Engine uses a GPL/commercial licence - see LICENCE.md for details.
 */
+
 
 namespace tracktion_engine
 {
@@ -65,6 +64,10 @@ juce::ValueTree updateLegacyEdit (const juce::ValueTree&);
 
 /** Converts old edit formats to the latest structure */
 void updateLegacyEdit (juce::XmlElement& editXML);
+
+
+/** */
+void purgeOrphanEditTempFolders (ProjectManager&);
 
 
 } // namespace tracktion_engine

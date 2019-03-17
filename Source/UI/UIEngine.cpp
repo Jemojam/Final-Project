@@ -9,7 +9,7 @@ UIEngine::UIEngine(AudioEngine& inEngine) :
 {
     addAndMakeVisible(toolbar);
     addAndMakeVisible(channelWindow);
-
+	addAndMakeVisible(gridWindow);
 
 }
 
@@ -25,5 +25,5 @@ void UIEngine::resized()
 {
     toolbar.setBounds(0, 0, getWidth(), toolBarHeight);
     channelWindow.setBounds(getLocalBounds().withTrimmedTop(toolBarHeight));
-	
+	gridWindow.setBounds(200, 140, 400, 400);
 }

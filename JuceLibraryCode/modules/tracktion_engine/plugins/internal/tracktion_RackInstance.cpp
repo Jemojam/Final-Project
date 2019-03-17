@@ -4,12 +4,8 @@
   '-.  .-'|  .--' ,-.  | .--'|     /'-.  .-',--.| .-. ||      \   Tracktion Software
     |  |  |  |  \ '-'  \ `--.|  \  \  |  |  |  |' '-' '|  ||  |       Corporation
     `---' `--'   `--`--'`---'`--'`--' `---' `--' `---' `--''--'    www.tracktion.com
-
-    Tracktion Engine uses a GPL/commercial licence - see LICENCE.md for details.
 */
 
-namespace tracktion_engine
-{
 
 struct RackInputAutomatableParameter   : public AutomatableParameter
 {
@@ -411,6 +407,4 @@ juce::String RackInstance::getOutputName (Channel c)
         return getNoPinName();
 
     return String (ouput) + ". " + type->getOutputNames()[ouput];
-}
-
 }

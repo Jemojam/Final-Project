@@ -4,12 +4,8 @@
   '-.  .-'|  .--' ,-.  | .--'|     /'-.  .-',--.| .-. ||      \   Tracktion Software
     |  |  |  |  \ '-'  \ `--.|  \  \  |  |  |  |' '-' '|  ||  |       Corporation
     `---' `--'   `--`--'`---'`--'`--' `---' `--' `---' `--''--'    www.tracktion.com
-
-    Tracktion Engine uses a GPL/commercial licence - see LICENCE.md for details.
 */
 
-namespace tracktion_engine
-{
 
 struct VolAutomatableParameter : public AutomatableParameter
 {
@@ -293,7 +289,7 @@ void VolumeAndPanPlugin::muteOrUnmute()
     }
 }
 
-void VolumeAndPanPlugin::restorePluginStateFromValueTree (const juce::ValueTree& v)
+void VolumeAndPanPlugin::restorePluginStateFromValueTree (const ValueTree& v)
 {
     CachedValue<float>* cvsFloat[]  = { &volume, &pan, nullptr };
     CachedValue<int>* cvsInt[]      = { &panLaw, nullptr };
@@ -302,6 +298,4 @@ void VolumeAndPanPlugin::restorePluginStateFromValueTree (const juce::ValueTree&
     copyPropertiesToNullTerminatedCachedValues (v, cvsFloat);
     copyPropertiesToNullTerminatedCachedValues (v, cvsInt);
     copyPropertiesToNullTerminatedCachedValues (v, cvsBool);
-}
-
 }

@@ -4,9 +4,8 @@
   '-.  .-'|  .--' ,-.  | .--'|     /'-.  .-',--.| .-. ||      \   Tracktion Software
     |  |  |  |  \ '-'  \ `--.|  \  \  |  |  |  |' '-' '|  ||  |       Corporation
     `---' `--'   `--`--'`---'`--'`--' `---' `--' `---' `--''--'    www.tracktion.com
-
-    Tracktion Engine uses a GPL/commercial licence - see LICENCE.md for details.
 */
+
 
 namespace tracktion_engine
 {
@@ -51,7 +50,7 @@ public:
     /** looks for a name for a midi note by trying all the plugins, and returning a
         default on failure. midiChannel is 1-16
     */
-    juce::String getNameForMidiNoteNumber (int note, int midiChannel, bool preferSharp = true) const;
+    juce::String getNameForMidiNoteNumber (int note, int midiChannel) const;
 
     /** prog number is 0 based. */
     juce::String getNameForProgramNumber (int programNumber, int bank) const;
@@ -78,6 +77,7 @@ public:
     void setFrozen (bool, FreezeType) override;
     void insertFreezePointAfterPlugin (const Plugin::Ptr&);
     void removeFreezePoint();
+    static juce::String getTrackFreezePrefix() noexcept             { return "trackFreeze_"; }
     void freezeTrackAsync() const;
 
     //==============================================================================

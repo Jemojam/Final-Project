@@ -4,12 +4,8 @@
   '-.  .-'|  .--' ,-.  | .--'|     /'-.  .-',--.| .-. ||      \   Tracktion Software
     |  |  |  |  \ '-'  \ `--.|  \  \  |  |  |  |' '-' '|  ||  |       Corporation
     `---' `--'   `--`--'`---'`--'`--' `---' `--' `---' `--''--'    www.tracktion.com
-
-    Tracktion Engine uses a GPL/commercial licence - see LICENCE.md for details.
 */
 
-namespace tracktion_engine
-{
 
 ParameterSetting::ParameterSetting() noexcept
 {
@@ -427,5 +423,3 @@ void ControlSurface::userToggledVideoWindow()          { performIfNotSafeRecordi
 
 void ControlSurface::redrawSelectedPlugin()            { owner->repaintParamSource(); }
 void ControlSurface::redrawSelectedTracks()            { owner->redrawTracks(); }
-
-}

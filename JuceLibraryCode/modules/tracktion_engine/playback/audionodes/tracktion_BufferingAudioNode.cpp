@@ -4,12 +4,8 @@
   '-.  .-'|  .--' ,-.  | .--'|     /'-.  .-',--.| .-. ||      \   Tracktion Software
     |  |  |  |  \ '-'  \ `--.|  \  \  |  |  |  |' '-' '|  ||  |       Corporation
     `---' `--'   `--`--'`---'`--'`--' `---' `--' `---' `--''--'    www.tracktion.com
-
-    Tracktion Engine uses a GPL/commercial licence - see LICENCE.md for details.
 */
 
-namespace tracktion_engine
-{
 
 BufferingAudioNode::BufferingAudioNode (AudioNode* input, int bufferSize_)
     : SingleInputAudioNode (input), bufferSize (bufferSize_), numSamplesLeft (0),
@@ -115,6 +111,4 @@ AudioRenderContext BufferingAudioNode::getTempContext (const AudioRenderContext&
     rc2.streamTime = rc2.streamTime.withLength (rc2.bufferNumSamples / sampleRate);
 
     return rc2;
-}
-
 }
