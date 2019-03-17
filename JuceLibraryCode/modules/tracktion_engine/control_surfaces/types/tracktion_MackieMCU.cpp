@@ -4,8 +4,12 @@
   '-.  .-'|  .--' ,-.  | .--'|     /'-.  .-',--.| .-. ||      \   Tracktion Software
     |  |  |  |  \ '-'  \ `--.|  \  \  |  |  |  |' '-' '|  ||  |       Corporation
     `---' `--'   `--`--'`---'`--'`--' `---' `--' `---' `--''--'    www.tracktion.com
+
+    Tracktion Engine uses a GPL/commercial licence - see LICENCE.md for details.
 */
 
+namespace tracktion_engine
+{
 
 MackieMCU::MackieMCU (ExternalControllerManager& ecm)  : ControlSurface (ecm)
 {
@@ -1461,4 +1465,6 @@ void MackieMCU::undoStatusChanged (bool undo, bool redo)
 {
     lightUpButton (deviceIdx, 0x4e, undo);
     lightUpButton (deviceIdx, 0x4f, redo);
+}
+
 }

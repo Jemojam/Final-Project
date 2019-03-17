@@ -4,8 +4,12 @@
   '-.  .-'|  .--' ,-.  | .--'|     /'-.  .-',--.| .-. ||      \   Tracktion Software
     |  |  |  |  \ '-'  \ `--.|  \  \  |  |  |  |' '-' '|  ||  |       Corporation
     `---' `--'   `--`--'`---'`--'`--' `---' `--' `---' `--''--'    www.tracktion.com
+
+    Tracktion Engine uses a GPL/commercial licence - see LICENCE.md for details.
 */
 
+namespace tracktion_engine
+{
 
 /** AudioNode that reads from a file node and timestretches its output.
 
@@ -419,16 +423,16 @@ private:
 };
 
 //==============================================================================
-AudioClipBase::AudioClipBase (const ValueTree& v, EditItemID id, Type t, ClipTrack& targetTrack)
+AudioClipBase::AudioClipBase (const juce::ValueTree& v, EditItemID id, Type t, ClipTrack& targetTrack)
     : Clip (v, targetTrack, id, t),
       loopInfo (state.getOrCreateChildWithName (IDs::LOOPINFO, getUndoManager()), getUndoManager()),
       pluginList (targetTrack.edit)
 {
     auto um = getUndoManager();
 
-    dbGain.referTo (state, IDs::gain, um);
-    pan.referTo (state, IDs::pan, um);
-    mute.referTo (state, IDs::mute, um);
+    level->dbGain.referTo (state, IDs::gain, um);
+    level->pan.referTo (state, IDs::pan, um);
+    level->mute.referTo (state, IDs::mute, um);
     channels.referTo (state, IDs::channels, um, AudioChannelSet::stereo().getSpeakerArrangementAsString());
 
     if (channels.get().isEmpty())
@@ -470,8 +474,7 @@ AudioClipBase::AudioClipBase (const ValueTree& v, EditItemID id, Type t, ClipTra
     isReversed.referTo (state, IDs::isReversed, um);
     autoDetectBeats.referTo (state, IDs::autoDetectBeats, um);
 
-    gain = dbToGain (dbGain);
-    pan = jlimit (-1.0f, 1.0f, pan.get());
+    level->pan = jlimit (-1.0f, 1.0f, level->pan.get());
     checkFadeLengthsForOverrun();
 
     clipEffectsVisible.referTo (state, IDs::effectsVisible, nullptr);
@@ -522,9 +525,9 @@ void AudioClipBase::cloneFrom (Clip* c)
 
         const bool wasLooping = loopLengthBeats.get() > 0 || loopLength.get() > 0;
 
-        dbGain              .setValue (other->dbGain, nullptr);
-        pan                 .setValue (other->pan, nullptr);
-        mute                .setValue (other->mute, nullptr);
+        level->dbGain       .setValue (other->level->dbGain, nullptr);
+        level->pan          .setValue (other->level->pan, nullptr);
+        level->mute         .setValue (other->level->mute, nullptr);
         channels            .setValue (other->channels, nullptr);
         fadeIn              .setValue (other->fadeIn, nullptr);
         fadeOut             .setValue (other->fadeOut, nullptr);
@@ -629,21 +632,13 @@ double AudioClipBase::getMaximumLength()
 //==============================================================================
 void AudioClipBase::setGainDB (float g)
 {
-    g = jlimit (-100.0f, 24.0f, g);
-
-    if (dbGain != g)
-        dbGain = g;
+    level->dbGain = jlimit (-100.0f, 24.0f, g);
 }
 
 void AudioClipBase::setPan (float p)
 {
-    if (std::abs (p) < 0.01)
-        p = 0.0f;
-    else
-        p = jlimit (-1.0f, 1.0f, p);
-
-    if (pan != p)
-        pan = p;
+    level->pan = std::abs (p) < 0.01 ? 0.0f
+                                     : jlimit (-1.0f, 1.0f, p);
 }
 
 //==============================================================================
@@ -1497,7 +1492,7 @@ void AudioClipBase::enableEffects (bool enable, bool warn)
     }
 }
 
-void AudioClipBase::addEffect (const ValueTree& effectsTree)
+void AudioClipBase::addEffect (const juce::ValueTree& effectsTree)
 {
     auto v = state.getChildWithName (IDs::EFFECTS);
     jassert (v.isValid());
@@ -1861,7 +1856,7 @@ AudioNode* AudioClipBase::createFadeInOutNode (AudioNode* node)
     return node;
 }
 
-AudioNode* AudioClipBase::createNode (EditTimeRange editTime, LiveClipLevel level, bool includeMelodyne)
+AudioNode* AudioClipBase::createNode (EditTimeRange editTime, LiveClipLevel lcl, bool includeMelodyne)
 {
     const AudioFile playFile (getPlaybackFile());
 
@@ -1873,7 +1868,7 @@ AudioNode* AudioClipBase::createNode (EditTimeRange editTime, LiveClipLevel leve
         jassert (melodyneProxy != nullptr);
 
         if (includeMelodyne)
-            return melodyneProxy->createAudioNode (level);
+            return melodyneProxy->createAudioNode (lcl);
 
         return {}; // the ARA node creation will be handled by the track to allow live-play...
     }
@@ -1911,21 +1906,17 @@ AudioNode* AudioClipBase::createNode (EditTimeRange editTime, LiveClipLevel leve
     if ((getFadeInBehaviour() == speedRamp && fadeIn > 0.0)
          || (getFadeOutBehaviour() == speedRamp && fadeOut > 0.0))
         return new SubSampleWaveAudioNode (edit.engine, playFile, editTime, nodeOffset,
-                                           loopRange, level, speed,
+                                           loopRange, lcl, speed,
                                            activeChannels);
 
     return new WaveAudioNode (playFile, editTime, nodeOffset,
-                              loopRange, level, speed,
+                              loopRange, lcl, speed,
                               activeChannels);
 }
 
 LiveClipLevel AudioClipBase::getLiveClipLevel()
 {
-    LiveClipLevel l;
-    l.gain = &gain;
-    l.pan = &*pan;
-    l.mute = &*mute;
-    return l;
+    return { level };
 }
 
 //==============================================================================
@@ -2170,16 +2161,10 @@ AudioClipBase::ProxyRenderingInfo::~ProxyRenderingInfo() {}
 
 AudioFile AudioClipBase::getProxyFileToCreate (bool renderTimestretched)
 {
-    auto tempDir = edit.getTempDirectory (true);
-
-    // TODO: move logic for creating and parsing these filenames into one place - see
-    // also getEditItemIDFromFilename()
-
     if (renderTimestretched)
-        return AudioFile (tempDir.getChildFile (getClipProxyPrefix() + "0_" + itemID.toString()
-                                                 + "_" + String::toHexString (getProxyHash()) + ".wav"));
+        return TemporaryFileManager::getFileForCachedClipRender (*this, getProxyHash());
 
-    return AudioFile (tempDir.getChildFile (getFileProxyPrefix() + String (getHash()) + ".wav"));
+    return TemporaryFileManager::getFileForCachedFileRender (edit, getHash());
 }
 
 //==============================================================================
@@ -2577,7 +2562,7 @@ void AudioClipBase::timerCallback()
     }
 }
 
-void AudioClipBase::valueTreePropertyChanged (ValueTree& tree, const Identifier& id)
+void AudioClipBase::valueTreePropertyChanged (ValueTree& tree, const juce::Identifier& id)
 {
     if (tree == state)
     {
@@ -2595,8 +2580,6 @@ void AudioClipBase::valueTreePropertyChanged (ValueTree& tree, const Identifier&
         }
         else if (id == IDs::gain)
         {
-            dbGain.forceUpdateOfCachedValue();
-            gain = dbToGain (dbGain);
             changed();
         }
         else if (id == IDs::pan || id == IDs::mute
@@ -2646,7 +2629,7 @@ void AudioClipBase::valueTreePropertyChanged (ValueTree& tree, const Identifier&
     }
 }
 
-void AudioClipBase::valueTreeChildAdded (ValueTree& parent, ValueTree& child)
+void AudioClipBase::valueTreeChildAdded (ValueTree& parent, juce::ValueTree& child)
 {
     if (parent == state)
     {
@@ -2665,7 +2648,7 @@ void AudioClipBase::valueTreeChildAdded (ValueTree& parent, ValueTree& child)
     }
 }
 
-void AudioClipBase::valueTreeChildRemoved (ValueTree& parent, ValueTree& child, int oldIndex)
+void AudioClipBase::valueTreeChildRemoved (ValueTree& parent, juce::ValueTree& child, int oldIndex)
 {
     if (parent == state)
     {
@@ -2698,8 +2681,7 @@ void AudioClipBase::valueTreeParentChanged (ValueTree& child)
 
 void AudioClipBase::updateReversedState()
 {
-    if (auto sourceItem = sourceFileReference.getSourceProjectItem())
-        setCurrentSourceFile (sourceItem->getSourceFile());
+    setCurrentSourceFile (getOriginalFile());
 
     if (isReversed)
         updateSourceFile();
@@ -2761,4 +2743,6 @@ void AudioClipBase::updateClipEffectsState()
     }
 
     markAsDirty();
+}
+
 }

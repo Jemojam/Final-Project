@@ -4,8 +4,12 @@
   '-.  .-'|  .--' ,-.  | .--'|     /'-.  .-',--.| .-. ||      \   Tracktion Software
     |  |  |  |  \ '-'  \ `--.|  \  \  |  |  |  |' '-' '|  ||  |       Corporation
     `---' `--'   `--`--'`---'`--'`--' `---' `--' `---' `--''--'    www.tracktion.com
+
+    Tracktion Engine uses a GPL/commercial licence - see LICENCE.md for details.
 */
 
+namespace tracktion_engine
+{
 
 static String controllerIDToString (int id, int channelid)
 {
@@ -531,15 +535,15 @@ void ParameterControlMappings::showMappingsListForRow (int row)
 
     if (r >= 50000 && r < 51000)
     {
-        savePreset (50000 - r);
+        savePreset (r - 50000);
     }
     else if (r >= 60000 && r < 61000)
     {
-        loadPreset (60000 - r);
+        loadPreset (r - 60000);
     }
     else if (r >= 70000 && r < 71000)
     {
-        deletePreset (70000 - r);
+        deletePreset (r - 70000);
     }
     else if (r != 0)
     {
@@ -698,7 +702,7 @@ void ParameterControlMappings::savePreset (int index)
    #endif
 
    #if JUCE_MODAL_LOOPS_PERMITTED
-    auto xml = new XmlElement ("filter");
+    auto xml = new juce::XmlElement ("filter");
     xml->setAttribute ("name", name);
     xml->setAttribute ("filter", plugin->getName());
 
@@ -706,22 +710,25 @@ void ParameterControlMappings::savePreset (int index)
     {
         if (auto p = parameters[i])
         {
-            auto mapping = new XmlElement ("mapping");
-            mapping->setAttribute ("controller", controllerIDs[i]);
-            mapping->setAttribute ("channel", channelIDs[i]);
-            mapping->setAttribute ("parameter", p->paramID);
-            xml->addChildElement(mapping);
+            if (p->getPlugin() == plugin)
+            {
+                auto mapping = new juce::XmlElement ("mapping");
+                mapping->setAttribute ("controller", controllerIDs[i]);
+                mapping->setAttribute ("channel", channelIDs[i]);
+                mapping->setAttribute ("parameter", p->paramID);
+                xml->addChildElement (mapping);
+            }
         }
     }
 
-    XmlElement xmlNew ("FILTERMAPPINGPRESETS");
+    juce::XmlElement xmlNew ("FILTERMAPPINGPRESETS");
     xmlNew.addChildElement (xml);
 
     if (auto xmlOld = edit.engine.getPropertyStorage().getXmlProperty (SettingID::filterControlMappingPresets))
     {
         forEachXmlChildElement (*xmlOld, n)
             if (n->getStringAttribute ("name") != name)
-                xmlNew.addChildElement (new XmlElement (*n));
+                xmlNew.addChildElement (new juce::XmlElement (*n));
     }
 
     edit.engine.getPropertyStorage().setXmlProperty (SettingID::filterControlMappingPresets, xmlNew);
@@ -819,8 +826,10 @@ void ParameterControlMappings::deletePreset (int index)
 {
     if (auto xml = edit.engine.getPropertyStorage().getXmlProperty (SettingID::filterControlMappingPresets))
     {
-        XmlElement xmlCopy (*xml);
-        xmlCopy.removeChildElement (xml->getChildElement (index), true);
+        juce::XmlElement xmlCopy (*xml);
+        xmlCopy.removeChildElement (xmlCopy.getChildElement (index), true);
         edit.engine.getPropertyStorage().setXmlProperty (SettingID::filterControlMappingPresets, xmlCopy);
     }
+}
+
 }

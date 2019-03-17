@@ -4,8 +4,9 @@
   '-.  .-'|  .--' ,-.  | .--'|     /'-.  .-',--.| .-. ||      \   Tracktion Software
     |  |  |  |  \ '-'  \ `--.|  \  \  |  |  |  |' '-' '|  ||  |       Corporation
     `---' `--'   `--`--'`---'`--'`--' `---' `--' `---' `--''--'    www.tracktion.com
-*/
 
+    Tracktion Engine uses a GPL/commercial licence - see LICENCE.md for details.
+*/
 
 namespace tracktion_engine
 {
@@ -105,13 +106,16 @@ public:
     Scale (ScaleType type = major);
 
     ScaleType getType() const { return type; }
+    
     juce::String getName() const;
+    juce::String getShortName() const;
 
     static juce::StringArray getIntervalNames();
 
     static juce::Array<ScaleType> getAllScaleTypes();
     static juce::StringArray getScaleStrings();
     static juce::String getNameForType (ScaleType type);
+    static juce::String getShortNameForType (ScaleType type);
     static ScaleType getTypeFromName (juce::String name);
 
     juce::Array<int> getSteps (int octaves = 1) const;
@@ -201,6 +205,7 @@ public:
     juce::StringArray getPossibleTriadNames() const;
     juce::StringArray getPossibleSeventhNames() const;
 
+    int getChordProgressionLength() const;
     const juce::Array<ProgressionItem*>& getChordProgression() const noexcept;
     void setChordProgression (juce::ValueTree v);
 

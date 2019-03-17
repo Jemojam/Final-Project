@@ -4,8 +4,12 @@
   '-.  .-'|  .--' ,-.  | .--'|     /'-.  .-',--.| .-. ||      \   Tracktion Software
     |  |  |  |  \ '-'  \ `--.|  \  \  |  |  |  |' '-' '|  ||  |       Corporation
     `---' `--'   `--`--'`---'`--'`--' `---' `--' `---' `--''--'    www.tracktion.com
+
+    Tracktion Engine uses a GPL/commercial licence - see LICENCE.md for details.
 */
 
+namespace tracktion_engine
+{
 
 File getNonExistentSiblingWithIncrementedNumberSuffix (const File& file, bool addHashSymbol)
 {
@@ -75,4 +79,6 @@ var FileDragList::create (const File& file, PreferredLayout peferredLayout)
     Array<File> files;
     files.add (file);
     return create (files, peferredLayout);
+}
+
 }

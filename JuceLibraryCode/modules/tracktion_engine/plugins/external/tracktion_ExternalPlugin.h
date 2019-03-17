@@ -4,8 +4,9 @@
   '-.  .-'|  .--' ,-.  | .--'|     /'-.  .-',--.| .-. ||      \   Tracktion Software
     |  |  |  |  \ '-'  \ `--.|  \  \  |  |  |  |' '-' '|  ||  |       Corporation
     `---' `--'   `--`--'`---'`--'`--' `---' `--' `---' `--''--'    www.tracktion.com
-*/
 
+    Tracktion Engine uses a GPL/commercial licence - see LICENCE.md for details.
+*/
 
 namespace tracktion_engine
 {
@@ -32,6 +33,7 @@ public:
     static const char* xmlTypeName;
 
     void flushPluginStateToValueTree() override;
+    void flushBusesLayoutToValueTree();
     void restorePluginStateFromValueTree (const juce::ValueTree&) override;
     void getPluginStateFromTree (juce::MemoryBlock&);
 
@@ -128,12 +130,12 @@ private:
     ActiveNoteList activeNotes;
 
     class PluginPlayHead;
-    juce::ScopedPointer<PluginPlayHead> playhead;
+    std::unique_ptr<PluginPlayHead> playhead;
 
     bool fullyInitialised = false, supportsMPE = false, isFlushingLayoutToState = false;
 
     struct MPEChannelRemapper;
-    juce::ScopedPointer<MPEChannelRemapper> mpeRemapper;
+    std::unique_ptr<MPEChannelRemapper> mpeRemapper;
 
     void prepareIncomingMidiMessages (MidiMessageArray& incoming, int numSamples, bool isPlaying);
 
@@ -161,6 +163,29 @@ private:
 
     //==============================================================================
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (ExternalPlugin)
+};
+
+//==============================================================================
+/** specialised AutomatableParameter for wet/dry.
+    Having a subclass just lets it label itself more nicely.
+ */
+struct PluginWetDryAutomatableParam  : public AutomatableParameter
+{
+    PluginWetDryAutomatableParam (const juce::String& xmlTag, const juce::String& name, Plugin& owner)
+        : AutomatableParameter (xmlTag, name, owner, { 0.0f, 1.0f })
+    {
+    }
+
+    ~PluginWetDryAutomatableParam()
+    {
+        notifyListenersOfDeletion();
+    }
+
+    juce::String valueToString (float value) override     { return juce::Decibels::toString (juce::Decibels::gainToDecibels (value), 1); }
+    float stringToValue (const juce::String& s) override  { return dbStringToDb (s); }
+
+    PluginWetDryAutomatableParam() = delete;
+    JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (PluginWetDryAutomatableParam)
 };
 
 } // namespace tracktion_engine

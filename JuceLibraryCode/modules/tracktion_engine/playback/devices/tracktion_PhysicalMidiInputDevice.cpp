@@ -4,8 +4,12 @@
   '-.  .-'|  .--' ,-.  | .--'|     /'-.  .-',--.| .-. ||      \   Tracktion Software
     |  |  |  |  \ '-'  \ `--.|  \  \  |  |  |  |' '-' '|  ||  |       Corporation
     `---' `--'   `--`--'`---'`--'`--' `---' `--' `---' `--''--'    www.tracktion.com
+
+    Tracktion Engine uses a GPL/commercial licence - see LICENCE.md for details.
 */
 
+namespace tracktion_engine
+{
 
 struct MidiTimecodeReader  : private MessageListener,
                              private Timer
@@ -247,7 +251,7 @@ struct PhysicalMidiInputDeviceInstance  : public MidiInputDeviceInstanceBase
     PhysicalMidiInputDeviceInstance (PhysicalMidiInputDevice& d, EditPlaybackContext& c)
         : MidiInputDeviceInstanceBase (d, c)
     {
-        timecodeReader = new MidiTimecodeReader (*this);
+        timecodeReader.reset (new MidiTimecodeReader (*this));
     }
 
     void handleMMCMessage (const MidiMessage& message) override
@@ -288,7 +292,7 @@ struct PhysicalMidiInputDeviceInstance  : public MidiInputDeviceInstanceBase
 
     PhysicalMidiInputDevice& getPhysicalMidiInput() const   { return static_cast<PhysicalMidiInputDevice&> (owner); }
 
-    ScopedPointer<MidiTimecodeReader> timecodeReader;
+    std::unique_ptr<MidiTimecodeReader> timecodeReader;
 
 private:
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (PhysicalMidiInputDeviceInstance)
@@ -299,7 +303,7 @@ PhysicalMidiInputDevice::PhysicalMidiInputDevice (Engine& e, const String& name,
    : MidiInputDevice (e, TRANS("MIDI Input"), name),
      deviceIndex (deviceIndexToUse)
 {
-    controllerParser = new MidiControllerParser();
+    controllerParser.reset (new MidiControllerParser());
     loadProps();
 }
 
@@ -311,7 +315,7 @@ PhysicalMidiInputDevice::~PhysicalMidiInputDevice()
 InputDeviceInstance* PhysicalMidiInputDevice::createInstance (EditPlaybackContext& c)
 {
     if (! isTrackDevice() && retrospectiveBuffer == nullptr)
-        retrospectiveBuffer = new RetrospectiveMidiBuffer (c.edit.engine);
+        retrospectiveBuffer.reset (new RetrospectiveMidiBuffer (c.edit.engine));
 
     return new PhysicalMidiInputDeviceInstance (*this, c);
 }
@@ -324,7 +328,7 @@ String PhysicalMidiInputDevice::openDevice()
     if (inputDevice == nullptr)
     {
         CRASH_TRACER
-        inputDevice = MidiInput::openDevice (deviceIndex, this);
+        inputDevice.reset (MidiInput::openDevice (deviceIndex, this));
 
         if (inputDevice != nullptr)
         {
@@ -448,7 +452,7 @@ void PhysicalMidiInputDevice::saveProps()
     if (isTrackDevice())
         return;
 
-    XmlElement n ("SETTINGS");
+    juce::XmlElement n ("SETTINGS");
     n.setAttribute ("controllerMessages", isTakingControllerMessages);
 
     MidiInputDevice::saveProps (n);
@@ -554,4 +558,6 @@ private:
 AudioNode* MidiInputDevice::createMidiEventSnifferNode (AudioNode* input)
 {
     return new MidiEventSnifferNode (input, *this);
+}
+
 }

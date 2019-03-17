@@ -4,8 +4,12 @@
   '-.  .-'|  .--' ,-.  | .--'|     /'-.  .-',--.| .-. ||      \   Tracktion Software
     |  |  |  |  \ '-'  \ `--.|  \  \  |  |  |  |' '-' '|  ||  |       Corporation
     `---' `--'   `--`--'`---'`--'`--' `---' `--' `---' `--''--'    www.tracktion.com
+
+    Tracktion Engine uses a GPL/commercial licence - see LICENCE.md for details.
 */
 
+namespace tracktion_engine
+{
 
 struct ExternalPlugin::ProcessorChangedManager  : public juce::AudioProcessorListener
 {
@@ -168,39 +172,15 @@ struct ExtraVSTCallbacks  : public juce::VSTPluginFormat::ExtraFunctions
 };
 #endif // JUCE_PLUGINHOST_VST
 
-
-//==============================================================================
-/** specialised AutomatableParameter for wet/dry.
-    Having a subclass just lets it label itself more nicely.
-*/
-struct PluginWetDryAutomatableParam  : public AutomatableParameter
-{
-    PluginWetDryAutomatableParam (const String& xmlTag, const String& name, ExternalPlugin& owner)
-        : AutomatableParameter (xmlTag, name, owner, { 0.0f, 1.0f })
-    {
-    }
-
-    ~PluginWetDryAutomatableParam()
-    {
-        notifyListenersOfDeletion();
-    }
-
-    String valueToString (float value) override     { return Decibels::toString (Decibels::gainToDecibels (value), 1); }
-    float stringToValue (const String& s) override  { return dbStringToDb (s); }
-
-    PluginWetDryAutomatableParam() = delete;
-    JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (PluginWetDryAutomatableParam)
-};
-
 //==============================================================================
 class ExternalPlugin::PluginPlayHead  : public juce::AudioPlayHead
 {
 public:
     PluginPlayHead (ExternalPlugin& p, PlayHead& ph)  : plugin (p), playhead (ph)
     {
-        currentPos = new TempoSequencePosition (plugin.edit.tempoSequence);
-        loopStart  = new TempoSequencePosition (plugin.edit.tempoSequence);
-        loopEnd    = new TempoSequencePosition (plugin.edit.tempoSequence);
+        currentPos = std::make_unique<TempoSequencePosition> (plugin.edit.tempoSequence);
+        loopStart  = std::make_unique<TempoSequencePosition> (plugin.edit.tempoSequence);
+        loopEnd    = std::make_unique<TempoSequencePosition> (plugin.edit.tempoSequence);
     }
 
     /** @warning Because some idiotic plugins call getCurrentPosition on the message thread, we can't keep a
@@ -209,8 +189,6 @@ public:
     */
     void setCurrentContext (const AudioRenderContext* rc)
     {
-        const ScopedLock sl (infoLock);
-
         if (rc != nullptr)
         {
             time        = rc->getEditTime().editRange1.getStart();
@@ -231,16 +209,10 @@ public:
         if (currentPos == nullptr)
             return false;
 
-        double localTime = 0.0;
-
-        {
-            const ScopedLock sl (infoLock);
-            result.isPlaying = isPlaying;
-            localTime = time;
-        }
-
         auto& transport = plugin.edit.getTransport();
+        double localTime = time;
 
+        result.isPlaying        = isPlaying;
         result.isRecording      = transport.isRecording();
         result.editOriginTime   = transport.getTimeWhenStarted();
         result.isLooping        = playhead.isLooping();
@@ -272,10 +244,9 @@ public:
 private:
     ExternalPlugin& plugin;
     PlayHead& playhead;
-    ScopedPointer<TempoSequencePosition> currentPos, loopStart, loopEnd;
-    CriticalSection infoLock;
-    double time = 0;
-    bool isPlaying = false;
+    std::unique_ptr<TempoSequencePosition> currentPos, loopStart, loopEnd;
+    std::atomic<double> time { 0 };
+    std::atomic<bool> isPlaying { false };
 
     AudioPlayHead::FrameRateType getFrameRate() const
     {
@@ -297,10 +268,13 @@ private:
 //==============================================================================
 namespace
 {
-    void readBusLayout (AudioProcessor::BusesLayout& busesLayout, const ValueTree& state, AudioProcessor& plugin, bool isInput)
+    void readBusLayout (AudioProcessor::BusesLayout& busesLayout,
+                        const juce::ValueTree& state,
+                        AudioProcessor& plugin, bool isInput)
     {
         jassert (state.hasType (IDs::LAYOUT));
-        Array<AudioChannelSet>& targetBuses = (isInput ? busesLayout.inputBuses : busesLayout.outputBuses);
+        auto& targetBuses = (isInput ? busesLayout.inputBuses
+                                     : busesLayout.outputBuses);
         int maxNumBuses = 0;
 
         auto buses = state.getChildWithName (isInput ? IDs::INPUTS : IDs::OUTPUTS);
@@ -452,20 +426,6 @@ namespace
                 setDefaultChannelConfig (*ap, true);
                 setDefaultChannelConfig (*ap, false);
             }
-        }
-    }
-
-    void flushBusesLayoutToValueTree (ExternalPlugin& plugin, UndoManager* um)
-    {
-        // Save buses layout
-        if (auto* ap = plugin.getAudioPluginInstance())
-        {
-            auto mb = createBusesLayoutProperty (ap->getBusesLayout());
-
-            if (mb.getSize() > 0)
-                plugin.state.setProperty (IDs::layout, mb, um);
-            else
-                plugin.state.removeProperty (IDs::layout, um);
         }
     }
 }
@@ -706,6 +666,9 @@ void ExternalPlugin::processingChanged()
         {
             fullyInitialised = false;
             initialiseFully();
+
+            if (auto t = getOwnerTrack())
+                t->refreshCurrentAutoParam();
         }
     }
     else
@@ -752,7 +715,7 @@ void ExternalPlugin::doFullInitialisation()
                 juce::VSTPluginFormat::setExtraFunctions (pluginInstance.get(), new ExtraVSTCallbacks (edit));
                #endif
 
-                pluginInstance->setPlayHead (playhead);
+                pluginInstance->setPlayHead (playhead.get());
                 supportsMPE = pluginInstance->supportsMPE();
             }
             else
@@ -823,11 +786,29 @@ void ExternalPlugin::flushPluginStateToValueTree()
         else
             state.removeProperty (IDs::state, um);
 
-        flushBusesLayoutToValueTree (*this, um);
+        flushBusesLayoutToValueTree();
     }
 }
 
-void ExternalPlugin::restorePluginStateFromValueTree (const ValueTree& v)
+void ExternalPlugin::flushBusesLayoutToValueTree()
+{
+    const ScopedValueSetter<bool> svs (isFlushingLayoutToState, true);
+
+    // Save buses layout
+    if (auto ap = getAudioPluginInstance())
+    {
+        auto* um = getUndoManager();
+
+        auto mb = createBusesLayoutProperty (ap->getBusesLayout());
+
+        if (mb.getSize() > 0)
+            state.setProperty (IDs::layout, mb, um);
+        else
+            state.removeProperty (IDs::layout, um);
+    }
+}
+
+void ExternalPlugin::restorePluginStateFromValueTree (const juce::ValueTree& v)
 {
     String s;
 
@@ -992,7 +973,7 @@ void ExternalPlugin::initialise (const PlaybackInitialisationInfo& info)
     const ScopedLock sl (lock);
 
     if (mpeRemapper == nullptr)
-        mpeRemapper = new MPEChannelRemapper();
+        mpeRemapper = std::make_unique<MPEChannelRemapper>();
 
     mpeRemapper->reset();
 
@@ -1010,12 +991,12 @@ void ExternalPlugin::initialise (const PlaybackInitialisationInfo& info)
         }
 
         pluginInstance->setPlayHead (nullptr);
-        playhead = new PluginPlayHead (*this, info.playhead);
-        pluginInstance->setPlayHead (playhead);
+        playhead = std::make_unique<PluginPlayHead> (*this, info.playhead);
+        pluginInstance->setPlayHead (playhead.get());
     }
     else
     {
-        playhead = nullptr;
+        playhead.reset();
         latencySamples = 0;
         latencySeconds = 0.0;
     }
@@ -1459,7 +1440,7 @@ bool ExternalPlugin::setBusesLayout (juce::AudioProcessor::BusesLayout layout)
         std::unique_ptr<Edit::ScopedRenderStatus> srs;
 
         if (! baseClassNeedsInitialising())
-            srs = std::make_unique<Edit::ScopedRenderStatus> (edit);
+            srs = std::make_unique<Edit::ScopedRenderStatus> (edit, true);
 
         jassert (baseClassNeedsInitialising());
 
@@ -1470,8 +1451,7 @@ bool ExternalPlugin::setBusesLayout (juce::AudioProcessor::BusesLayout layout)
                 if (auto r = getOwnerRackType())
                     r->checkConnections();
 
-                const ScopedValueSetter<bool> svs (isFlushingLayoutToState, true);
-                flushBusesLayoutToValueTree (*this, getUndoManager());
+                flushBusesLayoutToValueTree();
             }
 
             return true;
@@ -1490,7 +1470,7 @@ bool ExternalPlugin::setBusLayout (AudioChannelSet set, bool isInput, int busInd
             std::unique_ptr<Edit::ScopedRenderStatus> srs;
 
             if (! baseClassNeedsInitialising())
-                srs = std::make_unique<Edit::ScopedRenderStatus> (edit);
+                srs = std::make_unique<Edit::ScopedRenderStatus> (edit, true);
 
             jassert (baseClassNeedsInitialising());
 
@@ -1501,8 +1481,7 @@ bool ExternalPlugin::setBusLayout (AudioChannelSet set, bool isInput, int busInd
                     if (auto r = getOwnerRackType())
                         r->checkConnections();
 
-                    const ScopedValueSetter<bool> svs (isFlushingLayoutToState, true);
-                    flushBusesLayoutToValueTree (*this, getUndoManager());
+                    flushBusesLayoutToValueTree();
                 }
 
                 return true;
@@ -1525,7 +1504,10 @@ String ExternalPlugin::createPluginInstance (const PluginDescription& descriptio
                             .createPluginInstance (description, dm.getSampleRate(), dm.getBlockSize(), error));
 
     if (pluginInstance != nullptr)
+    {
+        pluginInstance->enableAllBuses();
         processorChangedManager = std::make_unique<ProcessorChangedManager> (*this);
+    }
 
     return error;
 }
@@ -1556,8 +1538,11 @@ void ExternalPlugin::buildParameterTree() const
         {
             if (auto param = dynamic_cast<const VSTXML::Param*> (vstXML->paramTree[i]))
             {
-                paramTree.rootNode->addSubNode (new AutomatableParameterTree::TreeNode (autoParamForParamNumbers [param->paramID]));
-                paramsInTree.add (param->paramID);
+                if (auto externalParameter = autoParamForParamNumbers[param->paramID])
+                {
+                    paramTree.rootNode->addSubNode (new AutomatableParameterTree::TreeNode (externalParameter));
+                    paramsInTree.add (param->paramID);
+                }
             }
 
             if (auto group = dynamic_cast<const VSTXML::Group*> (vstXML->paramTree[i]))
@@ -1570,11 +1555,9 @@ void ExternalPlugin::buildParameterTree() const
     }
 
     for (int i = 0; i < getNumAutomatableParameters(); ++i)
-    {
-        if (auto vstParam = dynamic_cast<ExternalAutomatableParameter*> (getAutomatableParameter(i).get()))
+        if (auto vstParam = dynamic_cast<ExternalAutomatableParameter*> (getAutomatableParameter (i).get()))
             if (! paramsInTree.contains (vstParam->getParameterIndex()))
                 paramTree.rootNode->addSubNode (new AutomatableParameterTree::TreeNode (autoParamForParamNumbers [vstParam->getParameterIndex()]));
-    }
 }
 
 void ExternalPlugin::buildParameterTree (const VSTXML::Group* group,
@@ -1585,8 +1568,11 @@ void ExternalPlugin::buildParameterTree (const VSTXML::Group* group,
     {
         if (auto param = dynamic_cast<const VSTXML::Param*> (group->paramTree[i]))
         {
-            treeNode->addSubNode (new AutomatableParameterTree::TreeNode (autoParamForParamNumbers [param->paramID]));
-            paramsInTree.add (param->paramID);
+            if (auto externalParameter = autoParamForParamNumbers[param->paramID])
+            {
+                treeNode->addSubNode (new AutomatableParameterTree::TreeNode (externalParameter));
+                paramsInTree.add (param->paramID);
+            }
         }
 
         if (auto subGroup = dynamic_cast<const VSTXML::Group*> (group->paramTree[i]))
@@ -1610,14 +1596,14 @@ AudioPluginInstance* ExternalPlugin::getAudioPluginInstance() const
     return pluginInstance.get();
 }
 
-void ExternalPlugin::valueTreePropertyChanged (ValueTree& v, const Identifier& id)
+void ExternalPlugin::valueTreePropertyChanged (ValueTree& v, const juce::Identifier& id)
 {
     if (v == state && id == IDs::layout)
     {
         if (isFlushingLayoutToState)
             return;
 
-        if (auto* ap = getAudioPluginInstance())
+        if (auto ap = getAudioPluginInstance())
         {
             auto stateLayout = readBusesLayout (v.getProperty(IDs::layout), *ap);
 
@@ -1629,4 +1615,6 @@ void ExternalPlugin::valueTreePropertyChanged (ValueTree& v, const Identifier& i
     {
         Plugin::valueTreePropertyChanged (v, id);
     }
+}
+
 }

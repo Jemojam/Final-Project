@@ -4,8 +4,12 @@
   '-.  .-'|  .--' ,-.  | .--'|     /'-.  .-',--.| .-. ||      \   Tracktion Software
     |  |  |  |  \ '-'  \ `--.|  \  \  |  |  |  |' '-' '|  ||  |       Corporation
     `---' `--'   `--`--'`---'`--'`--' `---' `--' `---' `--''--'    www.tracktion.com
+
+    Tracktion Engine uses a GPL/commercial licence - see LICENCE.md for details.
 */
 
+namespace tracktion_engine
+{
 
 WaveOutputDevice::WaveOutputDevice (Engine& e, const String& name, const std::vector<ChannelIndex>& channels)
     : OutputDevice (e, TRANS("Wave Audio Output"), name),
@@ -64,7 +68,7 @@ void WaveOutputDevice::loadProps()
 
 void WaveOutputDevice::saveProps()
 {
-    XmlElement n ("SETTINGS");
+    juce::XmlElement n ("SETTINGS");
 
     n.setAttribute ("dithering", ditheringEnabled);
     n.setAttribute ("reversed", leftRightReversed);
@@ -249,4 +253,6 @@ int WaveOutputDevice::getRightChannel() const
 bool WaveOutputDevice::isStereoPair() const
 {
     return deviceChannels.size() == 2;
+}
+
 }

@@ -4,8 +4,12 @@
   '-.  .-'|  .--' ,-.  | .--'|     /'-.  .-',--.| .-. ||      \   Tracktion Software
     |  |  |  |  \ '-'  \ `--.|  \  \  |  |  |  |' '-' '|  ||  |       Corporation
     `---' `--'   `--`--'`---'`--'`--' `---' `--' `---' `--''--'    www.tracktion.com
+
+    Tracktion Engine uses a GPL/commercial licence - see LICENCE.md for details.
 */
 
+namespace tracktion_engine
+{
 
 static constexpr float scalewet = 3;
 static constexpr float scaledry = 2;
@@ -147,7 +151,7 @@ void ReverbPlugin::applyToBuffer (const AudioRenderContext& fc)
     }
 }
 
-void ReverbPlugin::restorePluginStateFromValueTree (const ValueTree& v)
+void ReverbPlugin::restorePluginStateFromValueTree (const juce::ValueTree& v)
 {
     CachedValue<float>* cvsFloat[]  = { &roomSizeValue, &dampValue, &wetValue, &dryValue, &widthValue, &modeValue, nullptr };
     copyPropertiesToNullTerminatedCachedValues (v, cvsFloat);
@@ -170,3 +174,5 @@ float ReverbPlugin::getWidth()                  { return widthParam->getCurrentV
 
 void ReverbPlugin::setMode (float value)        { modeParam->setParameter (jlimit (0.0f, 1.0f, value), sendNotification); }
 float ReverbPlugin::getMode()                   { return modeParam->getCurrentValue(); }
+
+}

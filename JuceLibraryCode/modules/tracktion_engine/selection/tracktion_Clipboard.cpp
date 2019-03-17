@@ -4,8 +4,12 @@
   '-.  .-'|  .--' ,-.  | .--'|     /'-.  .-',--.| .-. ||      \   Tracktion Software
     |  |  |  |  \ '-'  \ `--.|  \  \  |  |  |  |' '-' '|  ||  |       Corporation
     `---' `--'   `--`--'`---'`--'`--' `---' `--' `---' `--''--'    www.tracktion.com
+
+    Tracktion Engine uses a GPL/commercial licence - see LICENCE.md for details.
 */
 
+namespace tracktion_engine
+{
 
 Clipboard::Clipboard() {}
 Clipboard::~Clipboard() { clearSingletonInstance(); }
@@ -308,6 +312,7 @@ bool Clipboard::ProjectItems::pasteIntoEdit (const EditPastingOptions& options) 
     }
 
     int targetTrackIndex = insertPointTrack->getIndexInEditTrackList();
+    SelectableList itemsAdded;
 
     for (auto& item : itemIDs)
     {
@@ -329,14 +334,20 @@ bool Clipboard::ProjectItems::pasteIntoEdit (const EditPastingOptions& options) 
                     {
                         if (auto newClip = targetTrack->insertWaveClip (sourceItem->getName(), sourceItem->getID(),
                                                                         { { startTime, startTime + sourceItem->getLength() }, 0.0 }, false))
+                        {
                             newClipEndTime = newClip->getPosition().getEnd();
+                            itemsAdded.add (newClip.get());
+                        }
 
                     }
                     else if (sourceItem->isEdit())
                     {
                         if (auto newClip = targetTrack->insertEditClip ({ startTime, startTime + sourceItem->getLength() },
                                                                         sourceItem->getID()))
+                        {
                             newClipEndTime = newClip->getPosition().getEnd();
+                            itemsAdded.add (newClip.get());
+                        }
                     }
 
                     anythingPasted = true;
@@ -349,6 +360,10 @@ bool Clipboard::ProjectItems::pasteIntoEdit (const EditPastingOptions& options) 
             }
         }
     }
+
+    if (itemsAdded.isNotEmpty())
+        if (auto sm = options.selectionManager)
+            sm->select (itemsAdded);
 
     return anythingPasted;
 }
@@ -530,7 +545,7 @@ static void fixClipTimes (ValueTree& state, const Clipboard::Clips::ClipInfo& cl
     }
 
     double srcBpm = state[IDs::bpm];   // if clip is coming from preset, it'll have this
-                                              // property, so resize it to match tempo
+                                       // property, so resize it to match tempo
     if (srcBpm > 0)
     {
         auto& destTempo = tempoSequence.getTempoAt (start);
@@ -583,6 +598,14 @@ bool Clipboard::Clips::pasteIntoEdit (const EditPastingOptions& options) const
             else
             {
                 jassertfalse;
+            }
+        }
+        else if (newClipState.hasType (IDs::CHORDCLIP))
+        {
+            if (auto chordTrack = options.edit.getChordTrack())
+            {
+                if (auto newClip = chordTrack->insertClipWithState (newClipState))
+                    itemsAdded.add (newClip);
             }
         }
         else
@@ -1304,4 +1327,6 @@ bool Clipboard::Modifiers::pasteIntoEdit (const EditPastingOptions& options) con
     }
 
     return false;
+}
+
 }

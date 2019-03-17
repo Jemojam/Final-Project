@@ -4,8 +4,12 @@
   '-.  .-'|  .--' ,-.  | .--'|     /'-.  .-',--.| .-. ||      \   Tracktion Software
     |  |  |  |  \ '-'  \ `--.|  \  \  |  |  |  |' '-' '|  ||  |       Corporation
     `---' `--'   `--`--'`---'`--'`--' `---' `--' `---' `--''--'    www.tracktion.com
+
+    Tracktion Engine uses a GPL/commercial licence - see LICENCE.md for details.
 */
 
+namespace tracktion_engine
+{
 
 LevelMeterPlugin::LevelMeterPlugin (PluginCreationInfo info)  : Plugin (info)
 {
@@ -78,8 +82,10 @@ void LevelMeterPlugin::timerCallback()
     }
 }
 
-void LevelMeterPlugin::restorePluginStateFromValueTree (const ValueTree& v)
+void LevelMeterPlugin::restorePluginStateFromValueTree (const juce::ValueTree& v)
 {
     CachedValue<bool>* cvsBool[] = { &showMidiActivity, nullptr };
     copyPropertiesToNullTerminatedCachedValues (v, cvsBool);
+}
+
 }
