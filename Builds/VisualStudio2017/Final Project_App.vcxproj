@@ -139,6 +139,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="..\..\Source\Audio\AudioEngine.cpp"/>
+    <ClCompile Include="..\..\Source\Audio\AudioRecorder.cpp"/>
     <ClCompile Include="..\..\Source\Main\Main.cpp"/>
     <ClCompile Include="..\..\Source\Main\MainComponent.cpp"/>
     <ClCompile Include="..\..\Source\UI\AudioSettings.cpp"/>
@@ -3326,6 +3327,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\Source\Audio\AudioEngine.h"/>
+    <ClInclude Include="..\..\Source\Audio\AudioRecorder.h"/>
     <ClInclude Include="..\..\Source\Main\MainComponent.h"/>
     <ClInclude Include="..\..\Source\UI\AudioSettings.h"/>
     <ClInclude Include="..\..\Source\UI\AudioThumbnailComponent.h"/>

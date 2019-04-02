@@ -1,7 +1,7 @@
 #pragma once
 
 #include "JuceHeader.h"
-
+#include "AudioRecorder.h"
 
 using namespace tracktion_engine;
 namespace te = tracktion_engine;
@@ -20,11 +20,22 @@ public :
 	void addNewClipFromFile(const File& editFile, AudioTrack& track);
 
 	void changeVolume(AudioTrack& track, float newVolume);
+	void muteChannel(AudioTrack& track);
+	void soloChannel(AudioTrack& track);
+	
+	
+	void selectedChannel(AudioTrack& track, bool selected);
 
     void play();
     void stop();
     void pause();
     bool isPlaying();
+
+	//void recording();
+
+	//void startRecording();
+
+	//void stopRecording();
 
 	void showAudioSettings();
 	void audioSettings();
@@ -40,18 +51,23 @@ private:
 	TransportControl& getTransport() const;
 	void addVolumeAndPanPlugin(AudioTrack& track) const;
 
+
 	//============================private objects========================================
     te::Engine engine{ProjectInfo::projectName};
     AudioFormatManager formatManager;
     std::unique_ptr<AudioFormatReaderSource> playSource;
     std::unique_ptr<te::Edit> edit;
+	
 	std::unique_ptr <te::VolumeAndPanPlugin> volumeAndPanPlugin;
 	AudioDeviceManager audioDeviceManagerTool;
 
+	//std::unique_ptr <AudioRecorder> audioRecorder;
 
+	bool channelSelected = false;
     bool dirty = true;
     int trackNum = 0;
 
-
+	File lastRecording;
+	
 	JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR(AudioEngine)
 };

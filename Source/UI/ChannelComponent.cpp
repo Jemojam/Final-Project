@@ -9,6 +9,7 @@ ChannelComponent::ChannelComponent(AudioEngine& inEngine, AudioTrack& inTrack) :
     selectButton->setButtonText(String());
     selectButton->addListener(this);
     selectButton->setColour(TextButton::buttonColourId, Colour(0xff1b605e));
+	
 
     selectButton->setBounds(8, 8, 18, 52);
 
@@ -135,8 +136,6 @@ void ChannelComponent::paint(Graphics& g)
         g.fillRoundedRectangle(x, y, width, height, 10.000f);
     }
 
-
-
 }
 
 void ChannelComponent::resized()
@@ -151,14 +150,19 @@ void ChannelComponent::buttonClicked(Button* buttonThatWasClicked)
     if (buttonThatWasClicked == selectButton.get())
     {
 
+		selected = !((selected) ? true : false);
+	
+		buttonThatWasClicked->setToggleState(selected, false);
+		engine.selectedChannel(track, selected);
+		
     }
     else if (buttonThatWasClicked == muteBotton.get())
     {
-
+		engine.muteChannel(track);
     }
     else if (buttonThatWasClicked == soloButton.get())
     {
-
+		engine.soloChannel(track);
     }
     else if (buttonThatWasClicked == addFileButton.get())
     {

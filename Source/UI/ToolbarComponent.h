@@ -5,6 +5,7 @@
 #include "PlayButton.h"
 
 
+
 class ToolbarComponent  : public Component,
                           public Button::Listener
 {
@@ -16,8 +17,6 @@ public:
     void paint (Graphics& g) override;
     void resized() override;
     void buttonClicked (Button* buttonThatWasClicked) override;
-
-	
 
     // Binary resources:
     static const char* play_png;

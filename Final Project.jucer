@@ -13,6 +13,9 @@
       <GROUP id="{955C5E93-3148-3E44-AF1A-7E529EFFA770}" name="Audio">
         <FILE id="zJngmD" name="AudioEngine.cpp" compile="1" resource="0" file="Source/Audio/AudioEngine.cpp"/>
         <FILE id="qsx8Ea" name="AudioEngine.h" compile="0" resource="0" file="Source/Audio/AudioEngine.h"/>
+        <FILE id="lZtIth" name="AudioRecorder.cpp" compile="1" resource="0"
+              file="Source/Audio/AudioRecorder.cpp"/>
+        <FILE id="mqZ6He" name="AudioRecorder.h" compile="0" resource="0" file="Source/Audio/AudioRecorder.h"/>
       </GROUP>
       <GROUP id="{7CD379ED-C2C3-7A36-4325-889CF56EA997}" name="Logic"/>
       <GROUP id="{5BA90910-995E-70FB-0903-ECA7ACA47A5F}" name="Main">

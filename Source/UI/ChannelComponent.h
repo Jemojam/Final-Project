@@ -4,6 +4,7 @@
 #include "Audio/AudioEngine.h"
 #include "AudioThumbnailComponent.h"
 
+
 class ChannelComponent : public Component, 
 						 public Button::Listener,
 						 public Slider::Listener
@@ -21,6 +22,7 @@ public:
 	void resized() override;
 	void buttonClicked(Button* buttonThatWasClicked) override;
 	void sliderValueChanged(Slider* sliderThatWasMoved) override;
+	bool isSelected() { return selected; };
 
 	// Binary resources:
 	static const char* musicwoofersquarebox_png;
@@ -62,6 +64,8 @@ private:
 
 	AudioEngine& engine;
 	AudioTrack& track;
+
+	bool selected = false;
 
 	//==============================================================================
 	JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR(ChannelComponent)

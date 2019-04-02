@@ -1,13 +1,9 @@
 #include "AudioEngine.h"
 
 
-using namespace tracktion_engine;
-
 AudioEngine::AudioEngine()
 {
     edit = std::make_unique<Edit>(engine, createEmptyEdit(), Edit::forEditing, nullptr, 0);
-	
-
 
     removeAllTracks();
 }
@@ -79,9 +75,14 @@ void AudioEngine::addNewClipFromFile(const File& editFile, AudioTrack& track)
 	{
 		clip = loadAudioFileAsClip(editFile, track);
 		adjustClipProperties(*clip);
-
 	}
         
+}
+
+void AudioEngine::selectedChannel(AudioTrack & track, bool selected)
+{
+	track.selectionStatusChanged((selected) ? true : false);
+
 }
 
 void AudioEngine::play()
@@ -102,6 +103,30 @@ void AudioEngine::pause()
 {
     getTransport().stop(true, false, true, false);
 }
+
+/*
+void AudioEngine::recording()
+{
+	audioRecorder->startRecording(lastRecording);
+}
+
+
+void AudioEngine::startRecording()
+{
+	auto parentDir = File::getSpecialLocation(File::userDocumentsDirectory);
+	lastRecording = parentDir.getNonexistentChildFile("clip", ".wav");
+	audioRecorder->startRecording(lastRecording);
+}
+
+void AudioEngine::stopRecording()
+{
+	audioRecorder->stop();
+
+	lastRecording = File();
+}
+
+*/
+
 
 void AudioEngine::removeAllClips(te::AudioTrack& track)
 {
@@ -153,6 +178,34 @@ void AudioEngine::changeVolume(AudioTrack& track, float newVolume)
             volume->setVolumeDb(newVolume);
     }
 }
+
+void AudioEngine::muteChannel(AudioTrack & track)
+{
+	if (track.isMuted(false))
+	{
+		track.setMute(false);
+	}
+	else
+	{
+		track.setMute(true);
+	}
+}
+
+void AudioEngine::soloChannel(AudioTrack & track)
+{
+	if (track.isSolo(true))
+	{
+		track.setSolo(false);
+	}
+	else
+	{
+		track.setSolo(true);
+	}
+}
+
+
+
+
 
 bool AudioEngine::isPlaying()
 {

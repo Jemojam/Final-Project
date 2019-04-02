@@ -21,7 +21,7 @@ void GridComponent::paint (Graphics& g)
 {
 
 
-    g.fillAll (Colours::white);
+    g.fillAll (Colours::transparentBlack);
 	gridview.setBounds(0, 0, 600, 600);
 
 
