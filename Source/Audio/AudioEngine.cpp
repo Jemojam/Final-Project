@@ -79,9 +79,7 @@ void AudioEngine::addNewClipFromFile(const File& editFile, AudioTrack& track)
 
 void AudioEngine::selectedChannel(AudioTrack & track, bool selected)
 {
-	
-	armTrack(track, selected, track.getAudioTrackNumber()-1);
-
+	armTrack(track, selected, track.getAudioTrackNumber());
 }
 
 void AudioEngine::armTrack(te::AudioTrack& t, bool arm, int position = 0)
@@ -90,6 +88,7 @@ void AudioEngine::armTrack(te::AudioTrack& t, bool arm, int position = 0)
 	for (auto instance : edit.getAllInputDevices())
 		if (instance->getTargetTrack() == &t && instance->getTargetIndex() == position)
 			instance->setRecordingEnabled(arm);
+
 }
 
 bool AudioEngine::isTrackArmed(te::AudioTrack & t, int position = 0)
@@ -109,7 +108,10 @@ void AudioEngine::play()
     getTransport().play(false);
 
 }
-TransportControl& AudioEngine::getTransport() const { return edit->getTransport(); }
+TransportControl& AudioEngine::getTransport() const 
+{ 
+	return edit->getTransport(); 
+}
 
 void AudioEngine::stop()
 {
@@ -125,15 +127,21 @@ void AudioEngine::pause()
 void AudioEngine::recording()
 {
 	bool wasRecording = edit->getTransport().isRecording();
-	auto& transport = edit->getTransport();
-
-	
-	transport.record(false, false);
-	
+	toggleRecord();
 	if (wasRecording)
 		te::EditFileOperations(*edit).save(true, true, false);
-
 }
+
+void AudioEngine::toggleRecord()
+{
+	auto& transport = edit->getTransport();
+
+	if (transport.isRecording())
+		transport.stop(true, false);
+	else
+		transport.record(false);
+}
+
 
 void armTrack(te::AudioTrack& t, bool arm, int position = 0)
 {

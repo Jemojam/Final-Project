@@ -36,12 +36,17 @@ public :
 
 	void recording();
 
+	
+
+
 	//void startRecording();
 
 	//void stopRecording();
 
 	void showAudioSettings();
 	void audioSettings();
+
+	TransportControl& AudioEngine::getTransport() const;
 
 	bool isDirty() { return dirty; }
 	void setDirty(bool inDirty) { dirty = inDirty; }
@@ -51,12 +56,12 @@ private:
     void removeAllClips(te::AudioTrack& track);
     void adjustClipProperties(tracktion_engine::WaveAudioClip& clip) const;
 	void removeAllTracks();
-	TransportControl& getTransport() const;
 	void addVolumeAndPanPlugin(AudioTrack& track) const;
 	te::AudioTrack* getOrInsertAudioTrackAt(te::Edit& edit, int index);
 	void armTrack(te::AudioTrack& t, bool arm, int position);
 	bool isTrackArmed(te::AudioTrack& t, int position);
 
+	void toggleRecord();
 	//============================private objects========================================
     te::Engine engine{ProjectInfo::projectName};
     AudioFormatManager formatManager;

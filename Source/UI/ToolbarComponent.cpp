@@ -245,8 +245,9 @@ void ToolbarComponent::resized()
 void ToolbarComponent::buttonClicked (Button* buttonThatWasClicked)
 {
     if (buttonThatWasClicked == recordButton.get())
-    {
+    {	
 		engine.recording();
+		
     }
     else if (buttonThatWasClicked == stopButton.get())
     {
