@@ -928,9 +928,6 @@
     <ClCompile Include="..\..\Source\Audio\AudioEngine.cpp">
       <Filter>Final Project\Source\Audio</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\Source\Audio\AudioRecorder.cpp">
-      <Filter>Final Project\Source\Audio</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\Source\Main\Main.cpp">
       <Filter>Final Project\Source\Main</Filter>
     </ClCompile>
@@ -4078,6 +4075,9 @@
     <ClCompile Include="..\..\JuceLibraryCode\modules\tracktion_engine\plugins\effects\tracktion_Equaliser.cpp">
       <Filter>JUCE Modules\tracktion_engine\plugins\effects</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\JuceLibraryCode\modules\tracktion_engine\plugins\effects\tracktion_FourOscPlugin.cpp">
+      <Filter>JUCE Modules\tracktion_engine\plugins\effects</Filter>
+    </ClCompile>
     <ClCompile Include="..\..\JuceLibraryCode\modules\tracktion_engine\plugins\effects\tracktion_LowPass.cpp">
       <Filter>JUCE Modules\tracktion_engine\plugins\effects</Filter>
     </ClCompile>
@@ -4195,7 +4195,13 @@
     <ClCompile Include="..\..\JuceLibraryCode\modules\tracktion_engine\utilities\tracktion_Engine.cpp">
       <Filter>JUCE Modules\tracktion_engine\utilities</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\JuceLibraryCode\modules\tracktion_engine\utilities\tracktion_Envelope.cpp">
+      <Filter>JUCE Modules\tracktion_engine\utilities</Filter>
+    </ClCompile>
     <ClCompile Include="..\..\JuceLibraryCode\modules\tracktion_engine\utilities\tracktion_FileUtilities.cpp">
+      <Filter>JUCE Modules\tracktion_engine\utilities</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\JuceLibraryCode\modules\tracktion_engine\utilities\tracktion_Oscillators.cpp">
       <Filter>JUCE Modules\tracktion_engine\utilities</Filter>
     </ClCompile>
     <ClCompile Include="..\..\JuceLibraryCode\modules\tracktion_engine\utilities\tracktion_PropertyStorage.cpp">
@@ -4300,9 +4306,6 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\Source\Audio\AudioEngine.h">
-      <Filter>Final Project\Source\Audio</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\Source\Audio\AudioRecorder.h">
       <Filter>Final Project\Source\Audio</Filter>
     </ClInclude>
     <ClInclude Include="..\..\Source\Main\MainComponent.h">
@@ -7389,6 +7392,9 @@
     <ClInclude Include="..\..\JuceLibraryCode\modules\tracktion_engine\plugins\effects\tracktion_Equaliser.h">
       <Filter>JUCE Modules\tracktion_engine\plugins\effects</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\JuceLibraryCode\modules\tracktion_engine\plugins\effects\tracktion_FourOscPlugin.h">
+      <Filter>JUCE Modules\tracktion_engine\plugins\effects</Filter>
+    </ClInclude>
     <ClInclude Include="..\..\JuceLibraryCode\modules\tracktion_engine\plugins\effects\tracktion_LowPass.h">
       <Filter>JUCE Modules\tracktion_engine\plugins\effects</Filter>
     </ClInclude>
@@ -7417,6 +7423,9 @@
       <Filter>JUCE Modules\tracktion_engine\plugins\external</Filter>
     </ClInclude>
     <ClInclude Include="..\..\JuceLibraryCode\modules\tracktion_engine\plugins\external\tracktion_ExternalPlugin.h">
+      <Filter>JUCE Modules\tracktion_engine\plugins\external</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\JuceLibraryCode\modules\tracktion_engine\plugins\external\tracktion_ExternalPluginBlacklist.h">
       <Filter>JUCE Modules\tracktion_engine\plugins\external</Filter>
     </ClInclude>
     <ClInclude Include="..\..\JuceLibraryCode\modules\tracktion_engine\plugins\external\tracktion_VSTXML.h">
@@ -7545,6 +7554,9 @@
     <ClInclude Include="..\..\JuceLibraryCode\modules\tracktion_engine\utilities\tracktion_EngineBehaviour.h">
       <Filter>JUCE Modules\tracktion_engine\utilities</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\JuceLibraryCode\modules\tracktion_engine\utilities\tracktion_Envelope.h">
+      <Filter>JUCE Modules\tracktion_engine\utilities</Filter>
+    </ClInclude>
     <ClInclude Include="..\..\JuceLibraryCode\modules\tracktion_engine\utilities\tracktion_FileUtilities.h">
       <Filter>JUCE Modules\tracktion_engine\utilities</Filter>
     </ClInclude>
@@ -7555,6 +7567,9 @@
       <Filter>JUCE Modules\tracktion_engine\utilities</Filter>
     </ClInclude>
     <ClInclude Include="..\..\JuceLibraryCode\modules\tracktion_engine\utilities\tracktion_MouseHoverDetector.h">
+      <Filter>JUCE Modules\tracktion_engine\utilities</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\JuceLibraryCode\modules\tracktion_engine\utilities\tracktion_Oscillators.h">
       <Filter>JUCE Modules\tracktion_engine\utilities</Filter>
     </ClInclude>
     <ClInclude Include="..\..\JuceLibraryCode\modules\tracktion_engine\utilities\tracktion_Pitch.h">

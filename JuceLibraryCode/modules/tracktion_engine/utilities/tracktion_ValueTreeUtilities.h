@@ -67,7 +67,8 @@ public:
         jassert (objects.isEmpty()); // must call freeObjects() in the subclass destructor!
     }
 
-    int size() const                        { return objects.size();    }
+    inline int size() const                 { return objects.size();    }
+    inline bool isEmpty() const noexcept    { return size() == 0;       }
     ObjectType* operator[] (int idx) const  { return objects[idx];      }
     ObjectType* at (int idx)                { return objects[idx];      }
     ObjectType** begin() const              { return objects.begin();   }
@@ -534,6 +535,8 @@ static void copyPropertiesToNullTerminatedCachedValues (const juce::ValueTree& v
 
             if (v.hasProperty (prop))
                 *cv = ValueType (v.getProperty (prop));
+            else
+                cv->resetToDefault();
         }
         else
         {

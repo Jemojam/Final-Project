@@ -613,7 +613,7 @@ juce::String Edit::getName()
 void Edit::setProjectItemID (ProjectItemID newID)
 {
     editProjectItemID = newID;
-    state.setProperty (IDs::projectID, editProjectItemID, nullptr);
+    state.setProperty (IDs::projectID, editProjectItemID.toString(), nullptr);
 }
 
 Edit::ScopedRenderStatus::ScopedRenderStatus (Edit& ed, bool shouldReallocateOnDestruction)
@@ -733,6 +733,7 @@ void Edit::initialiseTimecode (juce::ValueTree& transportState)
 
     recordingPunchInOut.referTo (transportState, IDs::recordPunchInOut, nullptr);
     playInStopEnabled.referTo (transportState, IDs::endToEnd, nullptr, true);
+    processMutedTracks.referTo (transportState, IDs::processMutedTracks, nullptr, false);
 
     timecodeOffset.referTo (transportState, IDs::midiTimecodeOffset, nullptr);
     midiTimecodeSourceDeviceEnabled.referTo (transportState, IDs::midiTimecodeEnabled, nullptr);
@@ -954,7 +955,7 @@ void Edit::flushState()
 
     state.setProperty (IDs::appVersion, engine.getPropertyStorage().getApplicationVersion(), nullptr);
     state.setProperty (IDs::modifiedBy, engine.getPropertyStorage().getUserName(), nullptr);
-    state.setProperty (IDs::projectID, editProjectItemID, nullptr);
+    state.setProperty (IDs::projectID, editProjectItemID.toString(), nullptr);
 
     for (auto p : getAllPlugins (*this, true))
         p->flushPluginStateToValueTree();
@@ -1076,13 +1077,17 @@ EditItemID Edit::createNewItemID (const std::vector<EditItemID>& idsToAvoid) con
     auto existingIDs = EditItemID::findAllIDs (state);
 
     existingIDs.insert (existingIDs.end(), idsToAvoid.begin(), idsToAvoid.end());
+    existingIDs.insert (existingIDs.end(), usedIDs.begin(), usedIDs.end());
 
     trackCache.visitItems ([&] (auto i)  { existingIDs.push_back (i->itemID); });
     clipCache.visitItems ([&] (auto i)   { existingIDs.push_back (i->itemID); });
 
     std::sort (existingIDs.begin(), existingIDs.end());
+    auto newID = EditItemID::findFirstIDNotIn (existingIDs);
+    jassert (usedIDs.find (newID) == usedIDs.end());
+    usedIDs.insert (newID);
 
-    return EditItemID::findFirstIDNotIn (existingIDs);
+    return newID;
 }
 
 EditItemID Edit::createNewItemID() const
@@ -1582,23 +1587,6 @@ juce::Array<Clip*> Edit::findClipsInLinkGroup (EditItemID linkGroupID) const
         return treeWatcher->getClipsInLinkGroup (linkGroupID);
 
     return {};
-}
-
-AudioTrack::Ptr Edit::getOrInsertAudioTrackAt (int trackIndex)
-{
-    int i = 0;
-
-    // find the next audio track on or after the given index..
-    for (auto t : getAllTracks (*this))
-    {
-        if (i >= trackIndex)
-            if (auto at = dynamic_cast<AudioTrack*> (t))
-                return at;
-
-        ++i;
-    }
-
-    return insertNewAudioTrack (TrackInsertPoint (nullptr, getAllTracks (*this).getLast()), nullptr);
 }
 
 Track::Ptr Edit::insertTrack (TrackInsertPoint insertPoint, juce::ValueTree v, SelectionManager* sm)

@@ -25,17 +25,15 @@ void AudioEngine::removeChannel()
 {
     if (trackNum > 0)
     {
-        if (trackNum - 1 == 0)
-        {
-            auto track = edit->getOrInsertAudioTrackAt(--trackNum);
-            removeTrack(*track);
-        }
-        else
-        {
-            auto track = edit->getOrInsertAudioTrackAt(--trackNum);
-            removeTrack(*track);
-        }
+        auto track = getOrInsertAudioTrackAt(*edit,--trackNum);
+        removeTrack(*track);
     }
+}
+
+te::AudioTrack* AudioEngine::getOrInsertAudioTrackAt(te::Edit& edit, int index)
+{
+	edit.ensureNumberOfAudioTracks(index + 1);
+	return te::getAudioTracks(edit)[index];
 }
 
 void AudioEngine::removeTrack(te::AudioTrack& track)
@@ -147,7 +145,7 @@ void AudioEngine::adjustClipProperties(tracktion_engine::WaveAudioClip& clip) co
 void AudioEngine::addChannel()
 {
     auto numTracks = edit->getTrackList().size();
-    auto track = edit->getOrInsertAudioTrackAt(numTracks);
+    auto track = getOrInsertAudioTrackAt(*edit, numTracks-1);
 
     addVolumeAndPanPlugin(*track);
 
@@ -202,9 +200,6 @@ void AudioEngine::soloChannel(AudioTrack & track)
 		track.setSolo(true);
 	}
 }
-
-
-
 
 
 bool AudioEngine::isPlaying()

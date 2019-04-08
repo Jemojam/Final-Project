@@ -1,7 +1,7 @@
 #pragma once
 
 #include "JuceHeader.h"
-#include "AudioRecorder.h"
+
 
 using namespace tracktion_engine;
 namespace te = tracktion_engine;
@@ -15,6 +15,7 @@ public :
 
     void addChannel();
     void removeChannel();
+
     void removeTrack(te::AudioTrack& track);
 	TrackList& getTrackList() { return edit->getTrackList(); }
 	void addNewClipFromFile(const File& editFile, AudioTrack& track);
@@ -50,6 +51,7 @@ private:
 	void removeAllTracks();
 	TransportControl& getTransport() const;
 	void addVolumeAndPanPlugin(AudioTrack& track) const;
+	te::AudioTrack* getOrInsertAudioTrackAt(te::Edit& edit, int index);
 
 
 	//============================private objects========================================

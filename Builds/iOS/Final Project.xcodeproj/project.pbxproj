@@ -73,10 +73,6 @@
 			isa = PBXBuildFile;
 			fileRef = 59B434AB9F502A9B005EF393;
 		};
-		CFA6ED762678BB3D038DB092 = {
-			isa = PBXBuildFile;
-			fileRef = 7EE25D4A16E803DB1ECB8DE0;
-		};
 		A853D9F9CD41D09F5F5BB926 = {
 			isa = PBXBuildFile;
 			fileRef = 32BA4545DE2CA47BB3FCF0D7;
@@ -521,13 +517,6 @@
 			path = "Final Project/Images.xcassets";
 			sourceTree = "SOURCE_ROOT";
 		};
-		7EE25D4A16E803DB1ECB8DE0 = {
-			isa = PBXFileReference;
-			lastKnownFileType = sourcecode.cpp.cpp;
-			name = AudioRecorder.cpp;
-			path = ../../Source/Audio/AudioRecorder.cpp;
-			sourceTree = "SOURCE_ROOT";
-		};
 		8004A4C50FE38EEC6467ADB0 = {
 			isa = PBXFileReference;
 			lastKnownFileType = sourcecode.cpp.objcpp;
@@ -808,13 +797,6 @@
 			path = "Info-App.plist";
 			sourceTree = "SOURCE_ROOT";
 		};
-		F78DD051CBB6449C9C3E7236 = {
-			isa = PBXFileReference;
-			lastKnownFileType = sourcecode.c.h;
-			name = AudioRecorder.h;
-			path = ../../Source/Audio/AudioRecorder.h;
-			sourceTree = "SOURCE_ROOT";
-		};
 		FCFEE3038C4CFC6207A4A7FE = {
 			isa = PBXFileReference;
 			lastKnownFileType = sourcecode.c.h;
@@ -837,8 +819,6 @@
 			children = (
 				59B434AB9F502A9B005EF393,
 				57975CAAD2F21F1D1A54B547,
-				7EE25D4A16E803DB1ECB8DE0,
-				F78DD051CBB6449C9C3E7236,
 			);
 			name = Audio;
 			sourceTree = "<group>";
@@ -1228,7 +1208,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				31AE5FBEDD641F92FFDF3C9B,
-				CFA6ED762678BB3D038DB092,
 				A853D9F9CD41D09F5F5BB926,
 				EF29CE110EE8147D4544E7E5,
 				73DAC9D72E2231B4BEBA9E19,
@@ -1304,7 +1283,7 @@
 		889C2C72479FB23345B53F8E = {
 			isa = PBXProject;
 			buildConfigurationList = 96B9D5DF3420E1C0D1FF9F2F;
-			attributes = { LastUpgradeCheck = 0930; ORGANIZATIONNAME = ""; TargetAttributes = { E16963AA5989D06E6866257C = { SystemCapabilities = {com.apple.ApplicationGroups.iOS = { enabled = 0; }; com.apple.InAppPurchase = { enabled = 0; }; com.apple.InterAppAudio = { enabled = 0; }; com.apple.Push = { enabled = 0; }; com.apple.Sandbox = { enabled = 0; }; com.apple.HardenedRuntime = { enabled = 0; }; }; }; }; };
+			attributes = { LastUpgradeCheck = 1010; ORGANIZATIONNAME = ""; TargetAttributes = { E16963AA5989D06E6866257C = { SystemCapabilities = {com.apple.ApplicationGroups.iOS = { enabled = 0; }; com.apple.InAppPurchase = { enabled = 0; }; com.apple.InterAppAudio = { enabled = 0; }; com.apple.Push = { enabled = 0; }; com.apple.Sandbox = { enabled = 0; }; com.apple.HardenedRuntime = { enabled = 0; }; }; }; }; };
 			compatibilityVersion = "Xcode 3.2";
 			hasScannedForEncodings = 0;
 			mainGroup = 242D8C1BCEEFC25F132ED910;

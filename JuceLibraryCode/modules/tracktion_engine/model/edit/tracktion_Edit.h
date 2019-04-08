@@ -191,7 +191,6 @@ public:
     Track::Ptr insertNewTrack (TrackInsertPoint, const juce::Identifier& xmlType, SelectionManager* selectionMnagerToSelectWith);
     Track::Ptr insertTrack (TrackInsertPoint, juce::ValueTree, SelectionManager* selectionMnagerToSelectWith);
     Track::Ptr insertTrack (juce::ValueTree, juce::ValueTree parent, juce::ValueTree preceeding, SelectionManager* selectionMnagerToSelectWith);
-    juce::ReferenceCountedObjectPtr<AudioTrack> getOrInsertAudioTrackAt (int trackIndex);
 
     void moveTrack (Track::Ptr, TrackInsertPoint);
     void deleteTrack (Track*);
@@ -432,7 +431,7 @@ public:
     juce::CachedValue<AudioFadeCurve::Type> masterFadeInType, masterFadeOutType;
     juce::CachedValue<bool> midiTimecodeSourceDeviceEnabled, midiTimecodeIgnoringHours, videoMuted,
                             clickTrackEnabled, clickTrackEmphasiseBars, clickTrackRecordingOnly,
-                            recordingPunchInOut, playInStopEnabled;
+                            recordingPunchInOut, playInStopEnabled, processMutedTracks;
     juce::CachedValue<float> clickTrackGain;
     juce::CachedValue<ProjectItemID> videoSource;
 
@@ -498,6 +497,7 @@ private:
     bool isPreviewEdit = false;
     std::atomic<double> clickMark1Time { 0.0 }, clickMark2Time { 0.0 };
     std::atomic<bool> isFullyConstructed { false };
+    mutable std::unordered_set<EditItemID> usedIDs;
 
     const EditRole editRole;
 

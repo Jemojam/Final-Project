@@ -509,7 +509,7 @@ void ExternalPlugin::buildParameterList()
         {
             auto* parameter = parameters.getUnchecked (i);
 
-            if (parameter->isAutomatable())
+            if (parameter->isAutomatable() && ! isParameterBlacklisted (*this, *pluginInstance, *parameter))
             {
                 String nm (parameter->getName (1024));
 
@@ -1587,7 +1587,6 @@ void ExternalPlugin::buildParameterTree (const VSTXML::Group* group,
 void ExternalPlugin::deleteFromParent()
 {
     CRASH_TRACER_PLUGIN (getDebugName());
-    hideWindowForShutdown();
     Plugin::deleteFromParent();
 }
 

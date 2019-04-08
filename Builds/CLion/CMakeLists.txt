@@ -21,8 +21,6 @@ add_executable (APP
     "../../Icons/031-pause.png"
     "../../Source/Audio/AudioEngine.cpp"
     "../../Source/Audio/AudioEngine.h"
-    "../../Source/Audio/AudioRecorder.cpp"
-    "../../Source/Audio/AudioRecorder.h"
     "../../Source/Main/Main.cpp"
     "../../Source/Main/MainComponent.cpp"
     "../../Source/Main/MainComponent.h"
@@ -2110,6 +2108,8 @@ add_executable (APP
     "../../JuceLibraryCode/modules/tracktion_engine/plugins/effects/tracktion_Delay.h"
     "../../JuceLibraryCode/modules/tracktion_engine/plugins/effects/tracktion_Equaliser.cpp"
     "../../JuceLibraryCode/modules/tracktion_engine/plugins/effects/tracktion_Equaliser.h"
+    "../../JuceLibraryCode/modules/tracktion_engine/plugins/effects/tracktion_FourOscPlugin.cpp"
+    "../../JuceLibraryCode/modules/tracktion_engine/plugins/effects/tracktion_FourOscPlugin.h"
     "../../JuceLibraryCode/modules/tracktion_engine/plugins/effects/tracktion_LowPass.cpp"
     "../../JuceLibraryCode/modules/tracktion_engine/plugins/effects/tracktion_LowPass.h"
     "../../JuceLibraryCode/modules/tracktion_engine/plugins/effects/tracktion_MidiModifier.cpp"
@@ -2129,6 +2129,7 @@ add_executable (APP
     "../../JuceLibraryCode/modules/tracktion_engine/plugins/external/tracktion_ExternalAutomatableParameter.h"
     "../../JuceLibraryCode/modules/tracktion_engine/plugins/external/tracktion_ExternalPlugin.cpp"
     "../../JuceLibraryCode/modules/tracktion_engine/plugins/external/tracktion_ExternalPlugin.h"
+    "../../JuceLibraryCode/modules/tracktion_engine/plugins/external/tracktion_ExternalPluginBlacklist.h"
     "../../JuceLibraryCode/modules/tracktion_engine/plugins/external/tracktion_VSTXML.h"
     "../../JuceLibraryCode/modules/tracktion_engine/plugins/internal/tracktion_AuxReturn.cpp"
     "../../JuceLibraryCode/modules/tracktion_engine/plugins/internal/tracktion_AuxReturn.h"
@@ -2201,11 +2202,15 @@ add_executable (APP
     "../../JuceLibraryCode/modules/tracktion_engine/utilities/tracktion_Engine.cpp"
     "../../JuceLibraryCode/modules/tracktion_engine/utilities/tracktion_Engine.h"
     "../../JuceLibraryCode/modules/tracktion_engine/utilities/tracktion_EngineBehaviour.h"
+    "../../JuceLibraryCode/modules/tracktion_engine/utilities/tracktion_Envelope.cpp"
+    "../../JuceLibraryCode/modules/tracktion_engine/utilities/tracktion_Envelope.h"
     "../../JuceLibraryCode/modules/tracktion_engine/utilities/tracktion_FileUtilities.cpp"
     "../../JuceLibraryCode/modules/tracktion_engine/utilities/tracktion_FileUtilities.h"
     "../../JuceLibraryCode/modules/tracktion_engine/utilities/tracktion_Identifiers.h"
     "../../JuceLibraryCode/modules/tracktion_engine/utilities/tracktion_MiscUtilities.h"
     "../../JuceLibraryCode/modules/tracktion_engine/utilities/tracktion_MouseHoverDetector.h"
+    "../../JuceLibraryCode/modules/tracktion_engine/utilities/tracktion_Oscillators.cpp"
+    "../../JuceLibraryCode/modules/tracktion_engine/utilities/tracktion_Oscillators.h"
     "../../JuceLibraryCode/modules/tracktion_engine/utilities/tracktion_Pitch.h"
     "../../JuceLibraryCode/modules/tracktion_engine/utilities/tracktion_PluginComponent.h"
     "../../JuceLibraryCode/modules/tracktion_engine/utilities/tracktion_PropertyStorage.cpp"
@@ -2258,7 +2263,6 @@ set_source_files_properties ("../../Icons/072-settings.png" PROPERTIES HEADER_FI
 set_source_files_properties ("../../Icons/028-play.png" PROPERTIES HEADER_FILE_ONLY TRUE)
 set_source_files_properties ("../../Icons/031-pause.png" PROPERTIES HEADER_FILE_ONLY TRUE)
 set_source_files_properties ("../../Source/Audio/AudioEngine.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("../../Source/Audio/AudioRecorder.h" PROPERTIES HEADER_FILE_ONLY TRUE)
 set_source_files_properties ("../../Source/Main/MainComponent.h" PROPERTIES HEADER_FILE_ONLY TRUE)
 set_source_files_properties ("../../Source/UI/AudioSettings.h" PROPERTIES HEADER_FILE_ONLY TRUE)
 set_source_files_properties ("../../Source/UI/AudioThumbnailComponent.h" PROPERTIES HEADER_FILE_ONLY TRUE)
@@ -4334,6 +4338,8 @@ set_source_files_properties ("../../JuceLibraryCode/modules/tracktion_engine/plu
 set_source_files_properties ("../../JuceLibraryCode/modules/tracktion_engine/plugins/effects/tracktion_Delay.h" PROPERTIES HEADER_FILE_ONLY TRUE)
 set_source_files_properties ("../../JuceLibraryCode/modules/tracktion_engine/plugins/effects/tracktion_Equaliser.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
 set_source_files_properties ("../../JuceLibraryCode/modules/tracktion_engine/plugins/effects/tracktion_Equaliser.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../JuceLibraryCode/modules/tracktion_engine/plugins/effects/tracktion_FourOscPlugin.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../JuceLibraryCode/modules/tracktion_engine/plugins/effects/tracktion_FourOscPlugin.h" PROPERTIES HEADER_FILE_ONLY TRUE)
 set_source_files_properties ("../../JuceLibraryCode/modules/tracktion_engine/plugins/effects/tracktion_LowPass.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
 set_source_files_properties ("../../JuceLibraryCode/modules/tracktion_engine/plugins/effects/tracktion_LowPass.h" PROPERTIES HEADER_FILE_ONLY TRUE)
 set_source_files_properties ("../../JuceLibraryCode/modules/tracktion_engine/plugins/effects/tracktion_MidiModifier.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
@@ -4353,6 +4359,7 @@ set_source_files_properties ("../../JuceLibraryCode/modules/tracktion_engine/plu
 set_source_files_properties ("../../JuceLibraryCode/modules/tracktion_engine/plugins/external/tracktion_ExternalAutomatableParameter.h" PROPERTIES HEADER_FILE_ONLY TRUE)
 set_source_files_properties ("../../JuceLibraryCode/modules/tracktion_engine/plugins/external/tracktion_ExternalPlugin.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
 set_source_files_properties ("../../JuceLibraryCode/modules/tracktion_engine/plugins/external/tracktion_ExternalPlugin.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../JuceLibraryCode/modules/tracktion_engine/plugins/external/tracktion_ExternalPluginBlacklist.h" PROPERTIES HEADER_FILE_ONLY TRUE)
 set_source_files_properties ("../../JuceLibraryCode/modules/tracktion_engine/plugins/external/tracktion_VSTXML.h" PROPERTIES HEADER_FILE_ONLY TRUE)
 set_source_files_properties ("../../JuceLibraryCode/modules/tracktion_engine/plugins/internal/tracktion_AuxReturn.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
 set_source_files_properties ("../../JuceLibraryCode/modules/tracktion_engine/plugins/internal/tracktion_AuxReturn.h" PROPERTIES HEADER_FILE_ONLY TRUE)
@@ -4425,11 +4432,15 @@ set_source_files_properties ("../../JuceLibraryCode/modules/tracktion_engine/uti
 set_source_files_properties ("../../JuceLibraryCode/modules/tracktion_engine/utilities/tracktion_Engine.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
 set_source_files_properties ("../../JuceLibraryCode/modules/tracktion_engine/utilities/tracktion_Engine.h" PROPERTIES HEADER_FILE_ONLY TRUE)
 set_source_files_properties ("../../JuceLibraryCode/modules/tracktion_engine/utilities/tracktion_EngineBehaviour.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../JuceLibraryCode/modules/tracktion_engine/utilities/tracktion_Envelope.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../JuceLibraryCode/modules/tracktion_engine/utilities/tracktion_Envelope.h" PROPERTIES HEADER_FILE_ONLY TRUE)
 set_source_files_properties ("../../JuceLibraryCode/modules/tracktion_engine/utilities/tracktion_FileUtilities.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
 set_source_files_properties ("../../JuceLibraryCode/modules/tracktion_engine/utilities/tracktion_FileUtilities.h" PROPERTIES HEADER_FILE_ONLY TRUE)
 set_source_files_properties ("../../JuceLibraryCode/modules/tracktion_engine/utilities/tracktion_Identifiers.h" PROPERTIES HEADER_FILE_ONLY TRUE)
 set_source_files_properties ("../../JuceLibraryCode/modules/tracktion_engine/utilities/tracktion_MiscUtilities.h" PROPERTIES HEADER_FILE_ONLY TRUE)
 set_source_files_properties ("../../JuceLibraryCode/modules/tracktion_engine/utilities/tracktion_MouseHoverDetector.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../JuceLibraryCode/modules/tracktion_engine/utilities/tracktion_Oscillators.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../JuceLibraryCode/modules/tracktion_engine/utilities/tracktion_Oscillators.h" PROPERTIES HEADER_FILE_ONLY TRUE)
 set_source_files_properties ("../../JuceLibraryCode/modules/tracktion_engine/utilities/tracktion_Pitch.h" PROPERTIES HEADER_FILE_ONLY TRUE)
 set_source_files_properties ("../../JuceLibraryCode/modules/tracktion_engine/utilities/tracktion_PluginComponent.h" PROPERTIES HEADER_FILE_ONLY TRUE)
 set_source_files_properties ("../../JuceLibraryCode/modules/tracktion_engine/utilities/tracktion_PropertyStorage.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
@@ -4501,13 +4512,13 @@ set_target_properties (APP PROPERTIES
     XCODE_ATTRIBUTE_COPY_PHASE_STRIP NO
     XCODE_ATTRIBUTE_GCC_DYNAMIC_NO_PIC NO
     XCODE_ATTRIBUTE_GCC_VERSION com.apple.compilers.llvm.clang.1_0
-    XCODE_ATTRIBUTE_INFOPLIST_FILE "H:\Juce-spacework\Main Project\Final-Project\Builds\CLion\Debug-Info-App.plist"
+    XCODE_ATTRIBUTE_INFOPLIST_FILE "${CMAKE_CURRENT_SOURCE_DIR}/Debug-Info-App.plist"
     XCODE_ATTRIBUTE_INFOPLIST_PREPROCESS NO
     XCODE_ATTRIBUTE_INSTALL_PATH "$(HOME)/Applications"
     XCODE_ATTRIBUTE_PRODUCT_BUNDLE_IDENTIFIER com.yourcompany.FinalProject
     XCODE_ATTRIBUTE_PRODUCT_NAME "Final Project"
     XCODE_ATTRIBUTE_USE_HEADERMAP NO
-    MACOSX_BUNDLE_INFO_PLIST "H:\Juce-spacework\Main Project\Final-Project\Builds\CLion\Debug-Info-App.plist"
+    MACOSX_BUNDLE_INFO_PLIST "${CMAKE_CURRENT_SOURCE_DIR}/Debug-Info-App.plist"
     XCODE_ATTRIBUTE_PRODUCT_NAME "Final Project"
     MACOSX_BUNDLE TRUE
 )
@@ -4578,13 +4589,13 @@ set_target_properties (APP PROPERTIES
     XCODE_ATTRIBUTE_GCC_GENERATE_DEBUGGING_SYMBOLS NO
     XCODE_ATTRIBUTE_GCC_SYMBOLS_PRIVATE_EXTERN YES
     XCODE_ATTRIBUTE_GCC_VERSION com.apple.compilers.llvm.clang.1_0
-    XCODE_ATTRIBUTE_INFOPLIST_FILE "H:\Juce-spacework\Main Project\Final-Project\Builds\CLion\Release-Info-App.plist"
+    XCODE_ATTRIBUTE_INFOPLIST_FILE "${CMAKE_CURRENT_SOURCE_DIR}/Release-Info-App.plist"
     XCODE_ATTRIBUTE_INFOPLIST_PREPROCESS NO
     XCODE_ATTRIBUTE_INSTALL_PATH "$(HOME)/Applications"
     XCODE_ATTRIBUTE_PRODUCT_BUNDLE_IDENTIFIER com.yourcompany.FinalProject
     XCODE_ATTRIBUTE_PRODUCT_NAME "Final Project"
     XCODE_ATTRIBUTE_USE_HEADERMAP NO
-    MACOSX_BUNDLE_INFO_PLIST "H:\Juce-spacework\Main Project\Final-Project\Builds\CLion\Release-Info-App.plist"
+    MACOSX_BUNDLE_INFO_PLIST "${CMAKE_CURRENT_SOURCE_DIR}/Release-Info-App.plist"
     XCODE_ATTRIBUTE_PRODUCT_NAME "Final Project"
     MACOSX_BUNDLE TRUE
 )

@@ -652,6 +652,14 @@ bool AutomatableParameter::isAutomationActive() const
 {
     return curveSource->isActive() || getAutomationSourceList().isActive();
 }
+        
+float AutomatableParameter::getDefaultValue() const
+{
+    if (attachedValue != nullptr)
+        return attachedValue->value.getDefault();
+        
+    return 0.0f;
+}
 
 void AutomatableParameter::updateStream()
 {
@@ -712,6 +720,9 @@ void AutomatableParameter::valueTreePropertyChanged (juce::ValueTree& v, const j
     {
         attachedValue->value.forceUpdateOfCachedValue();
         currentValue = attachedValue->value.get();
+        
+        SCOPED_REALTIME_CHECK
+        listeners.call (&Listener::currentValueChanged, *this, currentValue);
     }
 }
 
@@ -925,6 +936,11 @@ void AutomatableParameter::setParameter (float value, juce::NotificationType nt)
         jassert (nt != juce::sendNotificationAsync); // Async notifications not yet supported
         listeners.call (&Listener::parameterChanged, *this, currentValue);
     }
+}
+        
+void AutomatableParameter::setNormalisedParameter (float value, juce::NotificationType nt)
+{
+    setParameter (valueRange.convertFrom0to1 (jlimit (0.0f, 1.0f, value)), nt);
 }
 
 AutomatableParameter::AutomationSourceList& AutomatableParameter::getAutomationSourceList() const
