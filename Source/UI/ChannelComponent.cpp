@@ -149,7 +149,6 @@ void ChannelComponent::buttonClicked(Button* buttonThatWasClicked)
 
     if (buttonThatWasClicked == selectButton.get())
     {
-
 		selected = !((selected) ? true : false);
 	
 		buttonThatWasClicked->setToggleState(selected, false);

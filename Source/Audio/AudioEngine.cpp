@@ -79,8 +79,27 @@ void AudioEngine::addNewClipFromFile(const File& editFile, AudioTrack& track)
 
 void AudioEngine::selectedChannel(AudioTrack & track, bool selected)
 {
-	track.selectionStatusChanged((selected) ? true : false);
+	
+	armTrack(track, selected, track.getAudioTrackNumber()-1);
 
+}
+
+void AudioEngine::armTrack(te::AudioTrack& t, bool arm, int position = 0)
+{
+	auto& edit = t.edit;
+	for (auto instance : edit.getAllInputDevices())
+		if (instance->getTargetTrack() == &t && instance->getTargetIndex() == position)
+			instance->setRecordingEnabled(arm);
+}
+
+bool AudioEngine::isTrackArmed(te::AudioTrack & t, int position = 0)
+{
+	auto& edit = t.edit;
+	for (auto instance : edit.getAllInputDevices())
+		if (instance->getTargetTrack() == &t && instance->getTargetIndex() == position)
+			return instance->isRecordingEnabled();
+
+	return false;
 }
 
 void AudioEngine::play()
@@ -102,28 +121,39 @@ void AudioEngine::pause()
     getTransport().stop(true, false, true, false);
 }
 
-/*
+
 void AudioEngine::recording()
 {
-	audioRecorder->startRecording(lastRecording);
+	bool wasRecording = edit->getTransport().isRecording();
+	auto& transport = edit->getTransport();
+
+	
+	transport.record(false, false);
+	
+	if (wasRecording)
+		te::EditFileOperations(*edit).save(true, true, false);
+
 }
 
-
-void AudioEngine::startRecording()
+void armTrack(te::AudioTrack& t, bool arm, int position = 0)
 {
-	auto parentDir = File::getSpecialLocation(File::userDocumentsDirectory);
-	lastRecording = parentDir.getNonexistentChildFile("clip", ".wav");
-	audioRecorder->startRecording(lastRecording);
+	
+	auto& edit = t.edit;
+	for (auto instance : edit.getAllInputDevices())
+		if (instance->getTargetTrack() == &t && instance->getTargetIndex() == position)
+			instance->setRecordingEnabled(arm);
 }
 
-void AudioEngine::stopRecording()
+bool isTrackArmed(te::AudioTrack & t, int position = 0)
 {
-	audioRecorder->stop();
+	auto& edit = t.edit;
+	for (auto instance : edit.getAllInputDevices())
+		if (instance->getTargetTrack() == &t && instance->getTargetIndex() == position)
+			return instance->isRecordingEnabled();
 
-	lastRecording = File();
+	return false;
 }
 
-*/
 
 
 void AudioEngine::removeAllClips(te::AudioTrack& track)

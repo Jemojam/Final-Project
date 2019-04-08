@@ -27,12 +27,14 @@ public :
 	
 	void selectedChannel(AudioTrack& track, bool selected);
 
+
+
     void play();
     void stop();
     void pause();
     bool isPlaying();
 
-	//void recording();
+	void recording();
 
 	//void startRecording();
 
@@ -52,7 +54,8 @@ private:
 	TransportControl& getTransport() const;
 	void addVolumeAndPanPlugin(AudioTrack& track) const;
 	te::AudioTrack* getOrInsertAudioTrackAt(te::Edit& edit, int index);
-
+	void armTrack(te::AudioTrack& t, bool arm, int position);
+	bool isTrackArmed(te::AudioTrack& t, int position);
 
 	//============================private objects========================================
     te::Engine engine{ProjectInfo::projectName};
