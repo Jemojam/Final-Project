@@ -1,99 +1,96 @@
 
 #include "ChannelComponent.h"
 
+
 ChannelComponent::ChannelComponent(AudioEngine& inEngine, AudioTrack& inTrack) : engine(inEngine), track(inTrack)
 {
 
-    selectButton.reset(new TextButton("selectButton"));
-    addAndMakeVisible(selectButton.get());
-    selectButton->setButtonText(String());
-    selectButton->addListener(this);
-    selectButton->setColour(TextButton::buttonColourId, Colour(0xff1b605e));
-	
+	selectButton.reset(new TextButton("selectButton"));
+	addAndMakeVisible(selectButton.get());
+	selectButton->setButtonText(String());
+	selectButton->addListener(this);
+	selectButton->setColour(TextButton::buttonColourId, Colour(0xff1b605e));
 
-    selectButton->setBounds(8, 8, 18, 52);
+	selectButton->setBounds(8, 8, 18, 52);
 
-    nameText.reset(new TextEditor("nameText"));
-    addAndMakeVisible(nameText.get());
-    nameText->setMultiLine(false);
-    nameText->setReturnKeyStartsNewLine(false);
-    nameText->setReadOnly(false);
-    nameText->setScrollbarsShown(true);
-    nameText->setCaretVisible(true);
-    nameText->setPopupMenuEnabled(true);
-    nameText->setText(String());
+	nameText.reset(new TextEditor("nameText"));
+	addAndMakeVisible(nameText.get());
+	nameText->setMultiLine(false);
+	nameText->setReturnKeyStartsNewLine(false);
+	nameText->setReadOnly(false);
+	nameText->setScrollbarsShown(true);
+	nameText->setCaretVisible(true);
+	nameText->setPopupMenuEnabled(true);
+	nameText->setText(String());
 
-    nameText->setBounds(40, 8, 88, 16);
+	nameText->setBounds(40, 8, 88, 16);
 
-    slider.reset(new Slider("new slider"));
-    addAndMakeVisible(slider.get());
-    slider->setRange(-30, 6, 0);
-    slider->setSliderStyle(Slider::LinearHorizontal);
-    slider->setTextBoxStyle(Slider::NoTextBox, false, 80, 20);
-    slider->setColour(Slider::thumbColourId, Colour(0xffbebebe));
-    slider->addListener(this);
+	slider.reset(new Slider("new slider"));
+	addAndMakeVisible(slider.get());
+	slider->setRange(-30, 6, 0);
+	slider->setSliderStyle(Slider::LinearHorizontal);
+	slider->setTextBoxStyle(Slider::NoTextBox, false, 80, 20);
+	slider->setColour(Slider::thumbColourId, Colour(0xffbebebe));
+	slider->addListener(this);
 
-    slider->setBounds(120, 40, 79, 24);
+	slider->setBounds(120, 40, 79, 24);
 
-    muteBotton.reset(new ImageButton("muteBotton"));
-    addAndMakeVisible(muteBotton.get());
-    muteBotton->setButtonText(TRANS("Mute"));
-    muteBotton->addListener(this);
+	muteButton.reset(new ImageButton("muteBotton"));
+	addAndMakeVisible(muteButton.get());
+	muteButton->setButtonText(TRANS("Mute"));
+	muteButton->addListener(this);
 
-    muteBotton->setImages(false, true, true,
-                          ImageCache::getFromMemory(_033mute_png, _033mute_pngSize), 1.000f, Colours::white,
-                          Image(), 1.000f, Colour(0x00000000),
-                          Image(), 1.000f, Colour(0x00000000));
-    muteBotton->setBounds(32, 40, 15, 15);
+	muteButton->setImages(false, true, true,
+		ImageCache::getFromMemory(_033mute_png, _033mute_pngSize), 1.000f, Colours::white,
+		Image(), 1.000f, Colour(0x00000000),
+		Image(), 1.000f, Colour(0x00000000));
+	muteButton->setBounds(32, 40, 15, 15);
 
-    soloButton.reset(new ImageButton("soloButton"));
-    addAndMakeVisible(soloButton.get());
-    soloButton->setButtonText(TRANS("Solo"));
-    soloButton->addListener(this);
+	soloButton.reset(new ImageButton("soloButton"));
+	addAndMakeVisible(soloButton.get());
+	soloButton->setButtonText(TRANS("Solo"));
+	soloButton->addListener(this);
 
-    soloButton->setImages(false, true, true,
-                          ImageCache::getFromMemory(_048headphones_png, _048headphones_pngSize), 1.000f, Colours::white,
-                          Image(), 1.000f, Colour(0x00000000),
-                          Image(), 1.000f, Colour(0x00000000));
-    soloButton->setBounds(64, 40, 15, 15);
+	soloButton->setImages(false, true, true,
+		ImageCache::getFromMemory(_048headphones_png, _048headphones_pngSize), 1.000f, Colours::white,
+		Image(), 1.000f, Colour(0x00000000),
+		Image(), 1.000f, Colour(0x00000000));
+	soloButton->setBounds(64, 40, 15, 15);
 
-    addFileButton.reset(new ImageButton("addFileButton"));
-    addAndMakeVisible(addFileButton.get());
-    addFileButton->setButtonText(TRANS("Add File"));
-    addFileButton->addListener(this);
+	addFileButton.reset(new ImageButton("addFileButton"));
+	addAndMakeVisible(addFileButton.get());
+	addFileButton->setButtonText(TRANS("Add File"));
+	addFileButton->addListener(this);
 
-    addFileButton->setImages(false,
-                             true,
-                             true,
-                             ImageCache::getFromMemory(musicfoldervariant_png, musicfoldervariant_pngSize),
-                             1.000f,
-                             Colours::white,
-                             Image(),
-                             1.000f,
-							 Colours::white,
-                             Image(),
-                             1.000f,
-                             Colours::lightgreen);
-    addFileButton->setBounds(96, 40, 15, 15);
+	addFileButton->setImages(false,
+		true,
+		true,
+		ImageCache::getFromMemory(musicfoldervariant_png, musicfoldervariant_pngSize),
+		1.000f,
+		Colours::white,
+		Image(),
+		1.000f,
+		Colours::white,
+		Image(),
+		1.000f,
+		Colours::lightgreen);
+	addFileButton->setBounds(96, 40, 15, 15);
 
-    FXButton.reset(new ImageButton("FXButton"));
-    addAndMakeVisible(FXButton.get());
-    FXButton->setButtonText(TRANS("FX"));
-    FXButton->addListener(this);
+	FXButton.reset(new ImageButton("FXButton"));
+	addAndMakeVisible(FXButton.get());
+	FXButton->setButtonText(TRANS("FX"));
+	FXButton->addListener(this);
 
-    FXButton->setImages(false, true, true,
-                        ImageCache::getFromMemory(_072settings_png, _072settings_pngSize), 1.000f, Colours::white,
-                        Image(), 1.000f, Colour(0x00000000),
-                        Image(), 1.000f, Colour(0x00000000));
-    FXButton->setBounds(160, 8, 15, 15);
+	FXButton->setImages(false, true, true,
+		ImageCache::getFromMemory(_072settings_png, _072settings_pngSize), 1.000f, Colours::white,
+		Image(), 1.000f, Colour(0x00000000),
+		Image(), 1.000f, Colour(0x00000000));
+	FXButton->setBounds(160, 8, 15, 15);
 
 
-    //[UserPreSize]
-    //[/UserPreSize]
-
-    //[Constructor] You can add your own custom stuff here..
-    //[/Constructor]
 }
+
+
 
 ChannelComponent::~ChannelComponent()
 {
@@ -103,7 +100,7 @@ ChannelComponent::~ChannelComponent()
     selectButton = nullptr;
     nameText = nullptr;
     slider = nullptr;
-    muteBotton = nullptr;
+    muteButton = nullptr;
     soloButton = nullptr;
     addFileButton = nullptr;
     FXButton = nullptr;
@@ -144,18 +141,27 @@ void ChannelComponent::resized()
 			audioThumbnailComponent->setBounds(204,0,getLocalBounds().getWidth(), getLocalBounds().getHeight());
 }
 
+
+
 void ChannelComponent::buttonClicked(Button* buttonThatWasClicked)
 {
-
+	auto at = dynamic_cast<te::AudioTrack*> (&track);
     if (buttonThatWasClicked == selectButton.get())
     {
-		selected = !((selected) ? true : false);
-	
-		buttonThatWasClicked->setToggleState(selected, false);
-		engine.selectedChannel(track, selected);
+		engine.armTrack(*at, !engine.isTrackArmed(*at));
+		selectButton->setToggleState(engine.isTrackArmed(*at), dontSendNotification);
+		
+		if (selectButton->getState()==true)
+		{
+			selectButton->setColour(selectButton->buttonColourId, Colours::orange);
+		}
+		else if (selectButton->getState() == false)
+		{
+			selectButton->setColour(selectButton->buttonColourId, Colours::forestgreen);
+		}
 		
     }
-    else if (buttonThatWasClicked == muteBotton.get())
+    else if (buttonThatWasClicked == muteButton.get())
     {
 		engine.muteChannel(track);
     }
@@ -182,14 +188,50 @@ void ChannelComponent::buttonClicked(Button* buttonThatWasClicked)
         }
 
     }
-    else if (buttonThatWasClicked == FXButton.get())
-    {
-        //[UserButtonCode_FXButton] -- add your button handler code here..
-        //[/UserButtonCode_FXButton]
-    }
+	else if (buttonThatWasClicked == FXButton.get())
+	{
+		auto at = dynamic_cast<te::AudioTrack*> (&track);
+		PopupMenu m;
+		
+		if (engine.trackHasInput(*at))
+		{
+			bool ticked = engine.isInputMonitoringEnabled(*at);
+			m.addItem(1000, "Input Monitoring", true, ticked);
+			m.addSeparator();
+		}
 
-    //[UserbuttonClicked_Post]
-    //[/UserbuttonClicked_Post]
+		int id = 1;
+		for (auto instance : at->edit.getAllInputDevices())
+		{
+			if (instance->getInputDevice().getDeviceType() == te::InputDevice::waveDevice)
+			{
+				bool ticked = instance->getTargetTrack() == at;
+				m.addItem(id++, instance->getInputDevice().getName(), true, ticked);
+			}
+		}
+
+		int res = m.show();
+
+		if (res == 1000)
+		{
+			engine.enableInputMonitoring(*at, !engine.isInputMonitoringEnabled(*at));
+		}
+		else if (res > 0)
+		{
+			id = 1;
+			for (auto instance : at->edit.getAllInputDevices())
+			{
+				if (instance->getInputDevice().getDeviceType() == te::InputDevice::waveDevice)
+				{
+					if (id == res)
+						instance->setTargetTrack(at, 0);
+					id++;
+				}
+			}
+		}
+	}
+
+   
 }
 
 

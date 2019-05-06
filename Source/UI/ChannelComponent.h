@@ -7,19 +7,18 @@
 
 class ChannelComponent : public Component, 
 						 public Button::Listener,
-						 public Slider::Listener
+						 public Slider::Listener 
+
 {
 public:
-	//==============================================================================
+	
 	ChannelComponent(AudioEngine& inEngine, AudioTrack& inTrack);
 	~ChannelComponent();
 
-	//==============================================================================
-	//[UserMethods]     -- You can add your own custom methods in this section.
-	//[/UserMethods]
-
 	void paint(Graphics& g) override;
 	void resized() override;
+	//void valueTreePropertyChanged(juce::ValueTree& v, const juce::Identifier& i) override;
+	
 	void buttonClicked(Button* buttonThatWasClicked) override;
 	void sliderValueChanged(Slider* sliderThatWasMoved) override;
 	bool isSelected() { return selected; };
@@ -48,29 +47,21 @@ public:
 
 
 private:
-	//[UserVariables]   -- You can add your own custom variables in this section.
-	//[/UserVariables]
 
-	//==============================================================================
 	std::unique_ptr<TextButton> selectButton;
 	std::unique_ptr<TextEditor> nameText;
 	std::unique_ptr<Slider> slider;
-	std::unique_ptr<ImageButton> muteBotton;
+	std::unique_ptr<ImageButton> muteButton;
 	std::unique_ptr<ImageButton> soloButton;
 	std::unique_ptr<ImageButton> addFileButton;
 	std::unique_ptr<ImageButton> FXButton;
 	
 	std::unique_ptr<AudioThumbnailComponent> audioThumbnailComponent;
-
+	ValueTree inputsState;
 	AudioEngine& engine;
 	AudioTrack& track;
 
 	bool selected = false;
 
-	//==============================================================================
 	JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR(ChannelComponent)
 };
-
-//[EndFile] You can add extra defines here...
-//[/EndFile]
-

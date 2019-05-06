@@ -4,7 +4,9 @@
 AudioEngine::AudioEngine()
 {
     edit = std::make_unique<Edit>(engine, createEmptyEdit(), Edit::forEditing, nullptr, 0);
+	createTracksAndAssignInputs();
 
+	te::EditFileOperations(*edit).save(true, true, false);
     removeAllTracks();
 }
 
@@ -77,12 +79,9 @@ void AudioEngine::addNewClipFromFile(const File& editFile, AudioTrack& track)
         
 }
 
-void AudioEngine::selectedChannel(AudioTrack & track, bool selected)
-{
-	armTrack(track, selected, track.getAudioTrackNumber());
-}
 
-void AudioEngine::armTrack(te::AudioTrack& t, bool arm, int position = 0)
+
+void AudioEngine::armTrack(te::AudioTrack& t, bool arm, int position)
 {
 	auto& edit = t.edit;
 	for (auto instance : edit.getAllInputDevices())
@@ -91,7 +90,7 @@ void AudioEngine::armTrack(te::AudioTrack& t, bool arm, int position = 0)
 
 }
 
-bool AudioEngine::isTrackArmed(te::AudioTrack & t, int position = 0)
+bool AudioEngine::isTrackArmed(te::AudioTrack & t, int position)
 {
 	auto& edit = t.edit;
 	for (auto instance : edit.getAllInputDevices())
@@ -100,6 +99,39 @@ bool AudioEngine::isTrackArmed(te::AudioTrack & t, int position = 0)
 
 	return false;
 }
+
+
+bool AudioEngine::isInputMonitoringEnabled(te::AudioTrack& t, int position)
+{
+	auto& edit = t.edit;
+	for (auto instance : edit.getAllInputDevices())
+		if (instance->getTargetTrack() == &t && instance->getTargetIndex() == position)
+			return instance->getInputDevice().isEndToEndEnabled();
+
+	return false;
+}
+
+void AudioEngine::enableInputMonitoring(te::AudioTrack & t, bool im, int position)
+{
+	if (isInputMonitoringEnabled(t, position) != im)
+	{
+		auto& edit = t.edit;
+		for (auto instance : edit.getAllInputDevices())
+			if (instance->getTargetTrack() == &t && instance->getTargetIndex() == position)
+				instance->getInputDevice().flipEndToEnd();
+	}
+}
+
+bool AudioEngine::trackHasInput(te::AudioTrack & t, int position)
+{
+	auto& edit = t.edit;
+	for (auto instance : edit.getAllInputDevices())
+		if (instance->getTargetTrack() == &t && instance->getTargetIndex() == position)
+			return true;
+
+	return false;
+}
+
 
 void AudioEngine::play()
 {
@@ -143,26 +175,6 @@ void AudioEngine::toggleRecord()
 }
 
 
-void armTrack(te::AudioTrack& t, bool arm, int position = 0)
-{
-	
-	auto& edit = t.edit;
-	for (auto instance : edit.getAllInputDevices())
-		if (instance->getTargetTrack() == &t && instance->getTargetIndex() == position)
-			instance->setRecordingEnabled(arm);
-}
-
-bool isTrackArmed(te::AudioTrack & t, int position = 0)
-{
-	auto& edit = t.edit;
-	for (auto instance : edit.getAllInputDevices())
-		if (instance->getTargetTrack() == &t && instance->getTargetIndex() == position)
-			return instance->isRecordingEnabled();
-
-	return false;
-}
-
-
 
 void AudioEngine::removeAllClips(te::AudioTrack& track)
 {
@@ -182,6 +194,7 @@ void AudioEngine::adjustClipProperties(tracktion_engine::WaveAudioClip& clip) co
 
 void AudioEngine::addChannel()
 {
+
     auto numTracks = edit->getTrackList().size();
     auto track = getOrInsertAudioTrackAt(*edit, numTracks-1);
 
@@ -245,6 +258,51 @@ bool AudioEngine::isPlaying()
     return getTransport().isPlaying();
 }
 
+
+void  AudioEngine::createTracksAndAssignInputs()
+{
+	auto& dm = engine.getDeviceManager();
+
+	for (int i = 0; i < dm.getNumWaveInDevices(); i++)
+		if (auto wip = dm.getWaveInDevice(i))
+			wip->setStereoPair(false);
+
+	for (int i = 0; i < dm.getNumWaveInDevices(); i++)
+	{
+		if (auto wip = dm.getWaveInDevice(i))
+		{
+			wip->setEndToEnd(true);
+			wip->setEnabled(true);
+		}
+	}
+
+	edit->restartPlayback();
+
+	int trackNum = 0;
+	for (auto instance : edit->getAllInputDevices())
+	{
+		if (instance->getInputDevice().getDeviceType() == te::InputDevice::waveDevice)
+		{
+			if (auto t = getOrInsertAudioTrackAt(*edit, trackNum))
+			{
+				instance->setTargetTrack(t, 0);
+				instance->setRecordingEnabled(true);
+
+				trackNum++;
+			}
+		}
+	}
+
+	edit->restartPlayback();
+}
+
+void  AudioEngine::changeListenerCallback(ChangeBroadcaster* source)
+{
+	if (source == selectionManager.get())
+	{
+		auto sel = selectionManager->getSelectedObject(0);
+	}
+}
 
 void AudioEngine::showAudioSettings()
 {

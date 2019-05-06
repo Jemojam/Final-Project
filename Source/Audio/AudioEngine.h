@@ -23,11 +23,6 @@ public :
 	void changeVolume(AudioTrack& track, float newVolume);
 	void muteChannel(AudioTrack& track);
 	void soloChannel(AudioTrack& track);
-	
-	
-	void selectedChannel(AudioTrack& track, bool selected);
-
-
 
     void play();
     void stop();
@@ -36,15 +31,20 @@ public :
 
 	void recording();
 
-	
+	void createTracksAndAssignInputs();
 
-
-	//void startRecording();
-
-	//void stopRecording();
+	void changeListenerCallback(ChangeBroadcaster* source);
 
 	void showAudioSettings();
 	void audioSettings();
+
+
+	void enableInputMonitoring(te::AudioTrack& t, bool im, int position = 0);
+	bool trackHasInput(te::AudioTrack& t, int position = 0);
+	bool isInputMonitoringEnabled(te::AudioTrack& t, int position = 0);
+
+	void armTrack(te::AudioTrack& t, bool arm, int position = 0);
+	bool isTrackArmed(te::AudioTrack& t, int position = 0);
 
 	TransportControl& AudioEngine::getTransport() const;
 
@@ -58,8 +58,8 @@ private:
 	void removeAllTracks();
 	void addVolumeAndPanPlugin(AudioTrack& track) const;
 	te::AudioTrack* getOrInsertAudioTrackAt(te::Edit& edit, int index);
-	void armTrack(te::AudioTrack& t, bool arm, int position);
-	bool isTrackArmed(te::AudioTrack& t, int position);
+
+	
 
 	void toggleRecord();
 	//============================private objects========================================
@@ -67,6 +67,7 @@ private:
     AudioFormatManager formatManager;
     std::unique_ptr<AudioFormatReaderSource> playSource;
     std::unique_ptr<te::Edit> edit;
+	std::unique_ptr<te::SelectionManager> selectionManager;
 	
 	std::unique_ptr <te::VolumeAndPanPlugin> volumeAndPanPlugin;
 	AudioDeviceManager audioDeviceManagerTool;
