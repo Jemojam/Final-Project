@@ -38,6 +38,8 @@ public :
 	void showAudioSettings();
 	void audioSettings();
 
+	void inputMonitoring(AudioTrack* at);
+
 
 	void enableInputMonitoring(te::AudioTrack& t, bool im, int position = 0);
 	bool trackHasInput(te::AudioTrack& t, int position = 0);
@@ -76,7 +78,7 @@ private:
 
 	bool channelSelected = false;
     bool dirty = true;
-    int trackNum = 0;
+    int trackN = 0;
 
 	File lastRecording;
 	

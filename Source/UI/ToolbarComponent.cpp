@@ -109,8 +109,7 @@ ToolbarComponent::ToolbarComponent(AudioEngine& inEngine) : engine(inEngine), pl
     setSize (800, 130);
 
 
-    //[Constructor] You can add your own custom stuff here..
-    //[/Constructor]
+    
 }
 
 ToolbarComponent::~ToolbarComponent()
@@ -264,6 +263,7 @@ void ToolbarComponent::buttonClicked (Button* buttonThatWasClicked)
 	else if (buttonThatWasClicked == audioSettingsButton.get())
 	{
 		engine.showAudioSettings();
+		engine.createTracksAndAssignInputs();
 	}
 }
 

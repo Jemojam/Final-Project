@@ -7,7 +7,8 @@
 
 class ChannelComponent : public Component, 
 						 public Button::Listener,
-						 public Slider::Listener 
+						 public Slider::Listener, 
+						 private te::ValueTreeAllEventListener
 
 {
 public:
@@ -17,7 +18,7 @@ public:
 
 	void paint(Graphics& g) override;
 	void resized() override;
-	//void valueTreePropertyChanged(juce::ValueTree& v, const juce::Identifier& i) override;
+	
 	
 	void buttonClicked(Button* buttonThatWasClicked) override;
 	void sliderValueChanged(Slider* sliderThatWasMoved) override;
@@ -47,6 +48,8 @@ public:
 
 
 private:
+	void valueTreeChanged() override {};
+	//void valueTreePropertyChanged(juce::ValueTree& v, const juce::Identifier& i) override;
 
 	std::unique_ptr<TextButton> selectButton;
 	std::unique_ptr<TextEditor> nameText;
@@ -55,8 +58,9 @@ private:
 	std::unique_ptr<ImageButton> soloButton;
 	std::unique_ptr<ImageButton> addFileButton;
 	std::unique_ptr<ImageButton> FXButton;
-	
+
 	std::unique_ptr<AudioThumbnailComponent> audioThumbnailComponent;
+
 	ValueTree inputsState;
 	AudioEngine& engine;
 	AudioTrack& track;

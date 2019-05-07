@@ -87,7 +87,7 @@ ChannelComponent::ChannelComponent(AudioEngine& inEngine, AudioTrack& inTrack) :
 		Image(), 1.000f, Colour(0x00000000));
 	FXButton->setBounds(160, 8, 15, 15);
 
-
+	
 }
 
 
@@ -140,100 +140,80 @@ void ChannelComponent::resized()
     if (audioThumbnailComponent != nullptr)
 			audioThumbnailComponent->setBounds(204,0,getLocalBounds().getWidth(), getLocalBounds().getHeight());
 }
-
-
+/*
+void ChannelComponent::valueTreePropertyChanged(juce::ValueTree& v, const juce::Identifier& i)
+{
+	if (te::TrackList::isTrack(v))
+	{
+		if (i == te::IDs::mute)
+			muteButton->setToggleState((bool)v[i], dontSendNotification);
+		else if (i == te::IDs::solo)
+			soloButton->setToggleState((bool)v[i], dontSendNotification);
+	}
+	else if (v.hasType(te::IDs::INPUTDEVICES) || v.hasType(te::IDs::INPUTDEVICE))
+	{
+		if (auto at = dynamic_cast<te::AudioTrack*> (&track))
+		{
+			selectButton->setEnabled(engine.trackHasInput(*at));
+			selectButton->setToggleState(engine.isTrackArmed(*at), dontSendNotification);
+		}
+	}
+}
+*/
 
 void ChannelComponent::buttonClicked(Button* buttonThatWasClicked)
 {
-	auto at = dynamic_cast<te::AudioTrack*> (&track);
-    if (buttonThatWasClicked == selectButton.get())
-    {
-		engine.armTrack(*at, !engine.isTrackArmed(*at));
-		selectButton->setToggleState(engine.isTrackArmed(*at), dontSendNotification);
-		
-		if (selectButton->getState()==true)
-		{
-			selectButton->setColour(selectButton->buttonColourId, Colours::orange);
-		}
-		else if (selectButton->getState() == false)
-		{
-			selectButton->setColour(selectButton->buttonColourId, Colours::forestgreen);
-		}
-		
-    }
-    else if (buttonThatWasClicked == muteButton.get())
-    {
-		engine.muteChannel(track);
-    }
-    else if (buttonThatWasClicked == soloButton.get())
-    {
-		engine.soloChannel(track);
-    }
-    else if (buttonThatWasClicked == addFileButton.get())
-    {
-        auto location = File::getSpecialLocation(File::userDesktopDirectory);
-
-        FileChooser chooser("Choose a file", location, "*.wav", true, false);
-
-        if (chooser.browseForFileToOpen())
-        {
-            auto file = chooser.getResult();
-
-            engine.addNewClipFromFile(file, track);
-
-			audioThumbnailComponent.reset(new AudioThumbnailComponent(engine));
-			audioThumbnailComponent->setSourceThumbnail(file);
-			addAndMakeVisible(*audioThumbnailComponent);
-			resized();
-        }
-
-    }
-	else if (buttonThatWasClicked == FXButton.get())
+	if (auto at = dynamic_cast<te::AudioTrack*> (&track))
 	{
-		auto at = dynamic_cast<te::AudioTrack*> (&track);
-		PopupMenu m;
-		
-		if (engine.trackHasInput(*at))
+		if (buttonThatWasClicked == selectButton.get())
 		{
-			bool ticked = engine.isInputMonitoringEnabled(*at);
-			m.addItem(1000, "Input Monitoring", true, ticked);
-			m.addSeparator();
-		}
+			engine.armTrack(*at, !engine.isTrackArmed(*at));
+			selectButton->setToggleState(engine.isTrackArmed(*at), dontSendNotification);
 
-		int id = 1;
-		for (auto instance : at->edit.getAllInputDevices())
-		{
-			if (instance->getInputDevice().getDeviceType() == te::InputDevice::waveDevice)
+			if (selectButton->getToggleState() == true)
 			{
-				bool ticked = instance->getTargetTrack() == at;
-				m.addItem(id++, instance->getInputDevice().getName(), true, ticked);
+				selectButton->setColour(selectButton->buttonColourId, Colours::orange);
+				AlertWindow::showMessageBox(AlertWindow::AlertIconType::InfoIcon, "!", "!");
 			}
-		}
-
-		int res = m.show();
-
-		if (res == 1000)
-		{
-			engine.enableInputMonitoring(*at, !engine.isInputMonitoringEnabled(*at));
-		}
-		else if (res > 0)
-		{
-			id = 1;
-			for (auto instance : at->edit.getAllInputDevices())
+			else
 			{
-				if (instance->getInputDevice().getDeviceType() == te::InputDevice::waveDevice)
-				{
-					if (id == res)
-						instance->setTargetTrack(at, 0);
-					id++;
-				}
+				selectButton->setColour(selectButton->buttonColourId, Colour(0xff1b605e));
 			}
+
+		}
+		else if (buttonThatWasClicked == muteButton.get())
+		{
+			engine.muteChannel(*at);
+		}
+		else if (buttonThatWasClicked == soloButton.get())
+		{
+			engine.soloChannel(*at);
+		}
+		else if (buttonThatWasClicked == addFileButton.get())
+		{
+			auto location = File::getSpecialLocation(File::userDesktopDirectory);
+
+			FileChooser chooser("Choose a file", location, "*.wav", true, false);
+
+			if (chooser.browseForFileToOpen())
+			{
+				auto file = chooser.getResult();
+
+				engine.addNewClipFromFile(file, *at);
+
+				audioThumbnailComponent.reset(new AudioThumbnailComponent(engine));
+				audioThumbnailComponent->setSourceThumbnail(file);
+				addAndMakeVisible(*audioThumbnailComponent);
+				resized();
+			}
+
+		}
+		else if (buttonThatWasClicked == FXButton.get())
+		{
+			engine.inputMonitoring(at);
 		}
 	}
-
-   
 }
-
 
 void ChannelComponent::sliderValueChanged(Slider* sliderThatWasMoved)
 {

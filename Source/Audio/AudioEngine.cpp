@@ -25,9 +25,9 @@ void AudioEngine::removeAllTracks()
 
 void AudioEngine::removeChannel()
 {
-    if (trackNum > 0)
+    if (trackN > 0)
     {
-        auto track = getOrInsertAudioTrackAt(*edit,--trackNum);
+        auto track = getOrInsertAudioTrackAt(*edit,--trackN);
         removeTrack(*track);
     }
 }
@@ -42,7 +42,7 @@ void AudioEngine::removeTrack(te::AudioTrack& track)
 {
     auto& clips = track.getClips();
 
-    clips.getUnchecked(trackNum)->removeFromParentTrack();
+    clips.getUnchecked(trackN)->removeFromParentTrack();
 }
 
 te::WaveAudioClip::Ptr AudioEngine::loadAudioFileAsClip(const File& file, AudioTrack& track)
@@ -84,7 +84,7 @@ void AudioEngine::addNewClipFromFile(const File& editFile, AudioTrack& track)
 void AudioEngine::armTrack(te::AudioTrack& t, bool arm, int position)
 {
 	auto& edit = t.edit;
-	for (auto instance : edit.getAllInputDevices())
+	for (auto instance : edit.getAllInputDevices()) 
 		if (instance->getTargetTrack() == &t && instance->getTargetIndex() == position)
 			instance->setRecordingEnabled(arm);
 
@@ -131,7 +131,6 @@ bool AudioEngine::trackHasInput(te::AudioTrack & t, int position)
 
 	return false;
 }
-
 
 void AudioEngine::play()
 {
@@ -317,4 +316,47 @@ void AudioEngine::audioSettings()
 	o.content.setOwned(new AudioDeviceSelectorComponent(audioDeviceManagerTool, 2, 2, 0, 2, false, false, true, true));
 	o.content->setSize(400, 600);
 	o.launchAsync();
+}
+
+void AudioEngine::inputMonitoring(AudioTrack* at)
+{
+	PopupMenu m;
+	
+	if (trackHasInput(*at))
+	{
+		bool ticked = isInputMonitoringEnabled(*at);
+		m.addItem(1000, "Input Monitoring", true, ticked);
+		m.addSeparator();
+	}
+
+	int id = 1;
+	for (auto instance : at->edit.getAllInputDevices())
+	{
+		if (instance->getInputDevice().getDeviceType() == te::InputDevice::waveDevice)
+		{
+			bool ticked = instance->getTargetTrack() == at;
+			m.addItem(id++, instance->getInputDevice().getName(), true, ticked);
+		}
+	}
+
+	int res = m.show();
+
+	if (res == 1000)
+	{
+		enableInputMonitoring(*at, !isInputMonitoringEnabled(*at));
+	}
+	else if (res > 0)
+	{
+		id = 1;
+		for (auto instance : at->edit.getAllInputDevices())
+		{
+			if (instance->getInputDevice().getDeviceType() == te::InputDevice::waveDevice)
+			{
+				if (id == res)
+					instance->setTargetTrack(at, 0);
+				id++;
+			}
+		}
+	}
+
 }
