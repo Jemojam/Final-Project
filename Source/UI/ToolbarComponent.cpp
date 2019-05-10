@@ -2,7 +2,9 @@
 
 
 //==============================================================================
-ToolbarComponent::ToolbarComponent(AudioEngine& inEngine) : engine(inEngine), playButton(inEngine)
+ToolbarComponent::ToolbarComponent(AudioEngine& inEngine) :
+        playButton(inEngine),
+        engine(inEngine)
 {
     recordButton.reset(new ImageButton("recordButton"));
     addAndMakeVisible(recordButton.get());

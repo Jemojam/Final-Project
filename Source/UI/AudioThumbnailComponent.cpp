@@ -3,8 +3,8 @@
 #include "AudioThumbnailComponent.h"
 
 AudioThumbnailComponent::AudioThumbnailComponent(tracktion_engine::Clip& inClip) :
-        clip(inClip),
-        thumbnailCache(5), thumbnail(512, formatManager, thumbnailCache)
+        thumbnailCache(5), thumbnail(512, formatManager, thumbnailCache),
+        clip(inClip)
 {
     formatManager.registerBasicFormats();
     thumbnail.addChangeListener(this);

@@ -6,9 +6,9 @@ constexpr int yOfGrid = 100;
 constexpr int xOfGrid = 200;
 
 UIEngine::UIEngine(AudioEngine& inEngine) :
-    engine(inEngine),
     toolbar(inEngine),
-    channelWindow(inEngine)
+    channelWindow(inEngine),
+    engine(inEngine)
 {
     addAndMakeVisible(toolbar);
     addAndMakeVisible(channelWindow);

@@ -105,7 +105,7 @@ void ChannelComponent::paint(Graphics& g)
 
     {
         float x = 0.0f, y = 0.0f, width = 200.0f, height = 70.0f;
-        Colour fillColour1 = Colour(0xff4a4a4a), fillColour2 = Colour(0xff262626);
+        Colour fillColour2 = Colour(0xff262626);
 
         g.setGradientFill(ColourGradient(Colours::black,
                                          176.0f - 0.0f + x,

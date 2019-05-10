@@ -297,12 +297,9 @@ void AudioEngine::createTracksAndAssignInputs()
     edit->restartPlayback();
 }
 
-void AudioEngine::changeListenerCallback(ChangeBroadcaster* source)
+void AudioEngine::changeListenerCallback(ChangeBroadcaster* /*source*/)
 {
-    if (source == selectionManager.get())
-    {
-        auto sel = selectionManager->getSelectedObject(0);
-    }
+
 }
 
 void AudioEngine::showAudioSettings()
