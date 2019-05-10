@@ -4,9 +4,11 @@
 AudioEngine::AudioEngine()
 {
     edit = std::make_unique<Edit>(engine, createEmptyEdit(), Edit::forEditing, nullptr, 0);
-	createTracksAndAssignInputs();
+    createTracksAndAssignInputs();
 
-	te::EditFileOperations(*edit).save(true, true, false);
+    edit->playInStopEnabled = true;
+
+    te::EditFileOperations(*edit).save(true, true, false);
     removeAllTracks();
 }
 
@@ -27,15 +29,15 @@ void AudioEngine::removeChannel()
 {
     if (trackN > 0)
     {
-        auto track = getOrInsertAudioTrackAt(*edit,--trackN);
+        auto track = getOrInsertAudioTrackAt(*edit, --trackN);
         removeTrack(*track);
     }
 }
 
 te::AudioTrack* AudioEngine::getOrInsertAudioTrackAt(te::Edit& edit, int index)
 {
-	edit.ensureNumberOfAudioTracks(index + 1);
-	return te::getAudioTracks(edit)[index];
+    edit.ensureNumberOfAudioTracks(index + 1);
+    return te::getAudioTracks(edit)[index];
 }
 
 void AudioEngine::removeTrack(te::AudioTrack& track)
@@ -53,15 +55,15 @@ te::WaveAudioClip::Ptr AudioEngine::loadAudioFileAsClip(const File& file, AudioT
     if (audioFile.isValid())
     {
         auto name = file.getFileNameWithoutExtension();
-		
-		EditTimeRange timeRange(0, audioFile.getLength());
-		ClipPosition position = { timeRange, 0 };
 
-		auto newClip = track.insertWaveClip(name, file, position, false);
+        EditTimeRange timeRange(0, audioFile.getLength());
+        ClipPosition position = { timeRange, 0 };
 
-		if (newClip != nullptr)
-			return newClip;
-	
+        auto newClip = track.insertWaveClip(name, file, position, false);
+
+        if (newClip != nullptr)
+            return newClip;
+
     }
 
     return nullptr;
@@ -71,77 +73,76 @@ void AudioEngine::addNewClipFromFile(const File& editFile, AudioTrack& track)
 {
     auto clip = loadAudioFileAsClip(editFile, track);
 
-	if (clip != nullptr)
-	{
-		clip = loadAudioFileAsClip(editFile, track);
-		adjustClipProperties(*clip);
-	}
-        
-}
+    if (clip != nullptr)
+    {
+        clip = loadAudioFileAsClip(editFile, track);
+        adjustClipProperties(*clip);
+    }
 
+}
 
 
 void AudioEngine::armTrack(te::AudioTrack& t, bool arm, int position)
 {
-	auto& edit = t.edit;
-	for (auto instance : edit.getAllInputDevices()) 
-		if (instance->getTargetTrack() == &t && instance->getTargetIndex() == position)
-			instance->setRecordingEnabled(arm);
+    auto& edit = t.edit;
+    for (auto instance : edit.getAllInputDevices())
+        if (instance->getTargetTrack() == &t && instance->getTargetIndex() == position)
+            instance->setRecordingEnabled(arm);
 
 }
 
-bool AudioEngine::isTrackArmed(te::AudioTrack & t, int position)
+bool AudioEngine::isTrackArmed(te::AudioTrack& t, int position)
 {
-	auto& edit = t.edit;
-	for (auto instance : edit.getAllInputDevices())
-		if (instance->getTargetTrack() == &t && instance->getTargetIndex() == position)
-			return instance->isRecordingEnabled();
+    auto& edit = t.edit;
+    for (auto instance : edit.getAllInputDevices())
+        if (instance->getTargetTrack() == &t && instance->getTargetIndex() == position)
+            return instance->isRecordingEnabled();
 
-	return false;
+    return false;
 }
 
 
 bool AudioEngine::isInputMonitoringEnabled(te::AudioTrack& t, int position)
 {
-	auto& edit = t.edit;
-	for (auto instance : edit.getAllInputDevices())
-		if (instance->getTargetTrack() == &t && instance->getTargetIndex() == position)
-			return instance->getInputDevice().isEndToEndEnabled();
+    auto& edit = t.edit;
+    for (auto instance : edit.getAllInputDevices())
+        if (instance->getTargetTrack() == &t && instance->getTargetIndex() == position)
+            return instance->getInputDevice().isEndToEndEnabled();
 
-	return false;
+    return false;
 }
 
-void AudioEngine::enableInputMonitoring(te::AudioTrack & t, bool im, int position)
+void AudioEngine::enableInputMonitoring(te::AudioTrack& t, bool im, int position)
 {
-	if (isInputMonitoringEnabled(t, position) != im)
-	{
-		auto& edit = t.edit;
-		for (auto instance : edit.getAllInputDevices())
-			if (instance->getTargetTrack() == &t && instance->getTargetIndex() == position)
-				instance->getInputDevice().flipEndToEnd();
-	}
+    if (isInputMonitoringEnabled(t, position) != im)
+    {
+        auto& edit = t.edit;
+        for (auto instance : edit.getAllInputDevices())
+            if (instance->getTargetTrack() == &t && instance->getTargetIndex() == position)
+                instance->getInputDevice().flipEndToEnd();
+    }
 }
 
-bool AudioEngine::trackHasInput(te::AudioTrack & t, int position)
+bool AudioEngine::trackHasInput(te::AudioTrack& t, int position)
 {
-	auto& edit = t.edit;
-	for (auto instance : edit.getAllInputDevices())
-		if (instance->getTargetTrack() == &t && instance->getTargetIndex() == position)
-			return true;
+    auto& edit = t.edit;
+    for (auto instance : edit.getAllInputDevices())
+        if (instance->getTargetTrack() == &t && instance->getTargetIndex() == position)
+            return true;
 
-	return false;
+    return false;
 }
 
 void AudioEngine::play()
 {
-    getTransport().setLoopRange({0.0, edit->getLength()});
+    getTransport().setLoopRange({ 0.0, edit->getLength() });
     getTransport().looping = true;
     getTransport().play(false);
 
 }
-TransportControl& AudioEngine::getTransport() const 
-{ 
-	return edit->getTransport(); 
+TransportControl& AudioEngine::getTransport() const
+{
+    return edit->getTransport();
 }
 
 void AudioEngine::stop()
@@ -157,22 +158,22 @@ void AudioEngine::pause()
 
 void AudioEngine::recording()
 {
-	bool wasRecording = edit->getTransport().isRecording();
-	toggleRecord();
-	if (wasRecording)
-		te::EditFileOperations(*edit).save(true, true, false);
+    bool wasRecording = edit->getTransport().isRecording();
+    toggleRecord();
+
+    if (wasRecording)
+        te::EditFileOperations(*edit).save(true, true, false);
 }
 
 void AudioEngine::toggleRecord()
 {
-	auto& transport = edit->getTransport();
+    auto& transport = edit->getTransport();
 
-	if (transport.isRecording())
-		transport.stop(true, false);
-	else
-		transport.record(false);
+    if (transport.isRecording())
+        transport.stop(true, false);
+    else
+        transport.record(false);
 }
-
 
 
 void AudioEngine::removeAllClips(te::AudioTrack& track)
@@ -195,9 +196,10 @@ void AudioEngine::addChannel()
 {
 
     auto numTracks = edit->getTrackList().size();
-    auto track = getOrInsertAudioTrackAt(*edit, numTracks-1);
+    auto track = getOrInsertAudioTrackAt(*edit, numTracks - 1);
 
     addVolumeAndPanPlugin(*track);
+
 
     dirty = true;
 }
@@ -227,28 +229,28 @@ void AudioEngine::changeVolume(AudioTrack& track, float newVolume)
     }
 }
 
-void AudioEngine::muteChannel(AudioTrack & track)
+void AudioEngine::muteChannel(AudioTrack& track)
 {
-	if (track.isMuted(false))
-	{
-		track.setMute(false);
-	}
-	else
-	{
-		track.setMute(true);
-	}
+    if (track.isMuted(false))
+    {
+        track.setMute(false);
+    }
+    else
+    {
+        track.setMute(true);
+    }
 }
 
-void AudioEngine::soloChannel(AudioTrack & track)
+void AudioEngine::soloChannel(AudioTrack& track)
 {
-	if (track.isSolo(true))
-	{
-		track.setSolo(false);
-	}
-	else
-	{
-		track.setSolo(true);
-	}
+    if (track.isSolo(true))
+    {
+        track.setSolo(false);
+    }
+    else
+    {
+        track.setSolo(true);
+    }
 }
 
 
@@ -258,105 +260,107 @@ bool AudioEngine::isPlaying()
 }
 
 
-void  AudioEngine::createTracksAndAssignInputs()
+void AudioEngine::createTracksAndAssignInputs()
 {
-	auto& dm = engine.getDeviceManager();
+    auto& dm = engine.getDeviceManager();
 
-	for (int i = 0; i < dm.getNumWaveInDevices(); i++)
-		if (auto wip = dm.getWaveInDevice(i))
-			wip->setStereoPair(false);
+    for (int i = 0; i < dm.getNumWaveInDevices(); i++)
+        if (auto wip = dm.getWaveInDevice(i))
+            wip->setStereoPair(false);
 
-	for (int i = 0; i < dm.getNumWaveInDevices(); i++)
-	{
-		if (auto wip = dm.getWaveInDevice(i))
-		{
-			wip->setEndToEnd(true);
-			wip->setEnabled(true);
-		}
-	}
+    for (int i = 0; i < dm.getNumWaveInDevices(); i++)
+    {
+        if (auto wip = dm.getWaveInDevice(i))
+        {
+            wip->setEndToEnd(true);
+            wip->setEnabled(true);
+        }
+    }
 
-	edit->restartPlayback();
+    edit->restartPlayback();
 
-	int trackNum = 0;
-	for (auto instance : edit->getAllInputDevices())
-	{
-		if (instance->getInputDevice().getDeviceType() == te::InputDevice::waveDevice)
-		{
-			if (auto t = getOrInsertAudioTrackAt(*edit, trackNum))
-			{
-				instance->setTargetTrack(t, 0);
-				instance->setRecordingEnabled(true);
+    int trackNum = 0;
+    for (auto instance : edit->getAllInputDevices())
+    {
+        if (instance->getInputDevice().getDeviceType() == te::InputDevice::waveDevice)
+        {
+            if (auto t = getOrInsertAudioTrackAt(*edit, trackNum))
+            {
+                instance->setTargetTrack(t, 0);
+                instance->setRecordingEnabled(true);
 
-				trackNum++;
-			}
-		}
-	}
+                trackNum++;
+            }
+        }
+    }
 
-	edit->restartPlayback();
+    edit->restartPlayback();
 }
 
-void  AudioEngine::changeListenerCallback(ChangeBroadcaster* source)
+void AudioEngine::changeListenerCallback(ChangeBroadcaster* source)
 {
-	if (source == selectionManager.get())
-	{
-		auto sel = selectionManager->getSelectedObject(0);
-	}
+    if (source == selectionManager.get())
+    {
+        auto sel = selectionManager->getSelectedObject(0);
+    }
 }
 
 void AudioEngine::showAudioSettings()
 {
-	audioSettings();
+    audioSettings();
 }
 
 void AudioEngine::audioSettings()
 {
-	DialogWindow::LaunchOptions o;
-	o.dialogTitle = TRANS("Audio Settings");
-	o.dialogBackgroundColour = LookAndFeel::getDefaultLookAndFeel().findColour(ResizableWindow::backgroundColourId);
-	o.content.setOwned(new AudioDeviceSelectorComponent(audioDeviceManagerTool, 2, 2, 0, 2, false, false, true, true));
-	o.content->setSize(400, 600);
-	o.launchAsync();
+    DialogWindow::LaunchOptions o;
+    o.dialogTitle = TRANS("Audio Settings");
+    o.dialogBackgroundColour = LookAndFeel::getDefaultLookAndFeel().findColour(ResizableWindow::backgroundColourId);
+    o.content.setOwned(
+            new AudioDeviceSelectorComponent(engine.getDeviceManager().deviceManager, 2, 2, 0, 2, false, false, true,
+                                             true));
+    o.content->setSize(400, 600);
+    o.launchAsync();
 }
 
 void AudioEngine::inputMonitoring(AudioTrack* at)
 {
-	PopupMenu m;
-	
-	if (trackHasInput(*at))
-	{
-		bool ticked = isInputMonitoringEnabled(*at);
-		m.addItem(1000, "Input Monitoring", true, ticked);
-		m.addSeparator();
-	}
+    PopupMenu m;
 
-	int id = 1;
-	for (auto instance : at->edit.getAllInputDevices())
-	{
-		if (instance->getInputDevice().getDeviceType() == te::InputDevice::waveDevice)
-		{
-			bool ticked = instance->getTargetTrack() == at;
-			m.addItem(id++, instance->getInputDevice().getName(), true, ticked);
-		}
-	}
+    if (trackHasInput(*at))
+    {
+        bool ticked = isInputMonitoringEnabled(*at);
+        m.addItem(1000, "Input Monitoring", true, ticked);
+        m.addSeparator();
+    }
 
-	int res = m.show();
+    int id = 1;
+    for (auto instance : at->edit.getAllInputDevices())
+    {
+        if (instance->getInputDevice().getDeviceType() == te::InputDevice::waveDevice)
+        {
+            bool ticked = instance->getTargetTrack() == at;
+            m.addItem(id++, instance->getInputDevice().getName(), true, ticked);
+        }
+    }
 
-	if (res == 1000)
-	{
-		enableInputMonitoring(*at, !isInputMonitoringEnabled(*at));
-	}
-	else if (res > 0)
-	{
-		id = 1;
-		for (auto instance : at->edit.getAllInputDevices())
-		{
-			if (instance->getInputDevice().getDeviceType() == te::InputDevice::waveDevice)
-			{
-				if (id == res)
-					instance->setTargetTrack(at, 0);
-				id++;
-			}
-		}
-	}
+    int res = m.show();
+
+    if (res == 1000)
+    {
+        enableInputMonitoring(*at, !isInputMonitoringEnabled(*at));
+    }
+    else if (res > 0)
+    {
+        id = 1;
+        for (auto instance : at->edit.getAllInputDevices())
+        {
+            if (instance->getInputDevice().getDeviceType() == te::InputDevice::waveDevice)
+            {
+                if (id == res)
+                    instance->setTargetTrack(at, 0);
+                id++;
+            }
+        }
+    }
 
 }

@@ -72,7 +72,6 @@ private:
 	std::unique_ptr<te::SelectionManager> selectionManager;
 	
 	std::unique_ptr <te::VolumeAndPanPlugin> volumeAndPanPlugin;
-	AudioDeviceManager audioDeviceManagerTool;
 
 	//std::unique_ptr <AudioRecorder> audioRecorder;
 

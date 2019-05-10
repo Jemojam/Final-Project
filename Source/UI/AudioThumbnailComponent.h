@@ -1,34 +1,33 @@
-
-
-
 #pragma once
 
 #include "JuceHeader.h"
 #include "Audio/AudioEngine.h"
+
 //==============================================================================
-class AudioThumbnailComponent   : public Component,
-                                  private ChangeListener
+class AudioThumbnailComponent : public Component,
+                                private ChangeListener
 {
 public:
-	AudioThumbnailComponent(AudioEngine & inEngine);
-	~AudioThumbnailComponent();
+    explicit AudioThumbnailComponent(tracktion_engine::Clip& inClip);
+    ~AudioThumbnailComponent();
 
-    void paint (Graphics& g) override;
-    void changeListenerCallback (ChangeBroadcaster* source) override;
+    void paint(Graphics& g) override;
+    void changeListenerCallback(ChangeBroadcaster* source) override;
 
-	void setSourceThumbnail(File& file);
-	
+    Clip& getClip() { return clip; }
 private:
 
+    void initSource();
     void thumbnailChanged();
-	void paintIfNoFileLoaded(Graphics& g, const Rectangle<int>& thumbnailBounds);
-	void paintIfFileLoaded(Graphics & g, const Rectangle<int>& thumbnailBounds);
+    void paintIfNoFileLoaded(Graphics& g, const Rectangle<int>& thumbnailBounds);
+    void paintIfFileLoaded(Graphics& g, const Rectangle<int>& thumbnailBounds);
 
-	AudioFormatManager formatManager;
-    AudioThumbnailCache thumbnailCache; 
-    AudioThumbnail thumbnail; 
+    AudioFormatManager formatManager;
+    AudioThumbnailCache thumbnailCache;
+    AudioThumbnail thumbnail;
 
-	AudioEngine& engine;
+    tracktion_engine::Clip& clip;
+
 
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (AudioThumbnailComponent)
 };

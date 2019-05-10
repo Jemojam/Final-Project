@@ -18,35 +18,6 @@ public:
     void resized() override;
     void buttonClicked (Button* buttonThatWasClicked) override;
 
-    // Binary resources:
-    static const char* play_png;
-    static const int play_pngSize;
-    static const char* stop_png;
-    static const int stop_pngSize;
-    static const char* record_png;
-    static const int record_pngSize;
-    static const char* loop_png;
-    static const int loop_pngSize;
-    static const char* rec_png;
-    static const int rec_pngSize;
-    static const char* playbuttonarrowhead_png;
-    static const int playbuttonarrowhead_pngSize;
-    static const char* musicpausebuttonpairoflines_png;
-    static const int musicpausebuttonpairoflines_pngSize;
-    static const char* circleinblackofadrumtopview_png;
-    static const int circleinblackofadrumtopview_pngSize;
-    static const char* starshapedbrush_png;
-    static const int starshapedbrush_pngSize;
-    static const char* _028play_png;
-    static const int _028play_pngSize;
-    static const char* _013stop_png;
-    static const int _013stop_pngSize;
-    static const char* _023record_png;
-    static const int _023record_pngSize;
-    static const char* _075audiofile_png;
-    static const int _075audiofile_pngSize;
-
-
 private:
     //[UserVariables]   -- You can add your own custom variables in this section.
     //[/UserVariables]

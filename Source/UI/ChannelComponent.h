@@ -4,46 +4,47 @@
 #include "Audio/AudioEngine.h"
 #include "AudioThumbnailComponent.h"
 
-
-class ChannelComponent : public Component, 
-						 public Button::Listener,
-						 public Slider::Listener, 
-						 private te::ValueTreeAllEventListener
-
+class ChannelComponent : public Component,
+                         public Button::Listener,
+                         public Slider::Listener,
+                         private te::ValueTreeAllEventListener,
+                         public Timer
 {
 public:
-	
-	ChannelComponent(AudioEngine& inEngine, AudioTrack& inTrack);
-	~ChannelComponent();
 
-	void paint(Graphics& g) override;
-	void resized() override;
-	
-	
-	void buttonClicked(Button* buttonThatWasClicked) override;
-	void sliderValueChanged(Slider* sliderThatWasMoved) override;
-	bool isSelected() { return selected; };
+    ChannelComponent(AudioEngine& inEngine, AudioTrack& inTrack);
 
+    void paint(Graphics& g) override;
+    void resized() override;
+
+
+    void buttonClicked(Button* buttonThatWasClicked) override;
+    void sliderValueChanged(Slider* sliderThatWasMoved) override;
+    bool isSelected() { return selected; };
+    void timerCallback() override;
 
 private:
-	void valueTreeChanged() override {};
-	//void valueTreePropertyChanged(juce::ValueTree& v, const juce::Identifier& i) override;
+    void clickSelectButton() const;
+    void clickAddFileButton();
+    void valueTreeChanged() override {};
+    Colour getArmedTrackColor() const;
 
-	std::unique_ptr<TextButton> selectButton;
-	std::unique_ptr<TextEditor> nameText;
-	std::unique_ptr<Slider> slider;
-	std::unique_ptr<ImageButton> muteButton;
-	std::unique_ptr<ImageButton> soloButton;
-	std::unique_ptr<ImageButton> addFileButton;
-	std::unique_ptr<ImageButton> FXButton;
+    std::unique_ptr<TextButton> selectButton;
+    std::unique_ptr<TextEditor> nameText;
+    std::unique_ptr<Slider> volumeSlider;
+    std::unique_ptr<ImageButton> muteButton;
+    std::unique_ptr<ImageButton> soloButton;
+    std::unique_ptr<ImageButton> addFileButton;
+    std::unique_ptr<ImageButton> FXButton;
 
-	std::unique_ptr<AudioThumbnailComponent> audioThumbnailComponent;
+    std::vector <std::unique_ptr<AudioThumbnailComponent>> audioThumbnailComponents;
 
-	ValueTree inputsState;
-	AudioEngine& engine;
-	AudioTrack& track;
+    ValueTree inputsState;
+    AudioEngine& engine;
+    AudioTrack& track;
 
-	bool selected = false;
+    std::unique_ptr<std::atomic<bool>> shouldUpdate;
 
-	JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR(ChannelComponent)
+    bool selected = false;
+    void rebuildClips();
 };
