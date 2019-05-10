@@ -2,6 +2,9 @@
 
 <Project ToolsVersion="16.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
+    <Filter Include="Final Project\Icons">
+      <UniqueIdentifier>{FB7A5592-0050-C010-48F7-EB864879AF78}</UniqueIdentifier>
+    </Filter>
     <Filter Include="Final Project\Images">
       <UniqueIdentifier>{A440703C-2112-32A5-6050-6559326826A0}</UniqueIdentifier>
     </Filter>
@@ -7625,6 +7628,237 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
+    <None Include="..\..\Icons\001-xylophone.png">
+      <Filter>Final Project\Icons</Filter>
+    </None>
+    <None Include="..\..\Icons\002-volume-4.png">
+      <Filter>Final Project\Icons</Filter>
+    </None>
+    <None Include="..\..\Icons\003-volume-3.png">
+      <Filter>Final Project\Icons</Filter>
+    </None>
+    <None Include="..\..\Icons\004-volume-2.png">
+      <Filter>Final Project\Icons</Filter>
+    </None>
+    <None Include="..\..\Icons\005-violin.png">
+      <Filter>Final Project\Icons</Filter>
+    </None>
+    <None Include="..\..\Icons\006-microphone-4.png">
+      <Filter>Final Project\Icons</Filter>
+    </None>
+    <None Include="..\..\Icons\007-turntable.png">
+      <Filter>Final Project\Icons</Filter>
+    </None>
+    <None Include="..\..\Icons\008-tuning-fork.png">
+      <Filter>Final Project\Icons</Filter>
+    </None>
+    <None Include="..\..\Icons\009-trumpet.png">
+      <Filter>Final Project\Icons</Filter>
+    </None>
+    <None Include="..\..\Icons\010-triangle.png">
+      <Filter>Final Project\Icons</Filter>
+    </None>
+    <None Include="..\..\Icons\011-treble-clef.png">
+      <Filter>Final Project\Icons</Filter>
+    </None>
+    <None Include="..\..\Icons\012-tambourine.png">
+      <Filter>Final Project\Icons</Filter>
+    </None>
+    <None Include="..\..\Icons\013-stop.png">
+      <Filter>Final Project\Icons</Filter>
+    </None>
+    <None Include="..\..\Icons\014-speaker.png">
+      <Filter>Final Project\Icons</Filter>
+    </None>
+    <None Include="..\..\Icons\015-wave.png">
+      <Filter>Final Project\Icons</Filter>
+    </None>
+    <None Include="..\..\Icons\016-shaker.png">
+      <Filter>Final Project\Icons</Filter>
+    </None>
+    <None Include="..\..\Icons\017-musical-note-4.png">
+      <Filter>Final Project\Icons</Filter>
+    </None>
+    <None Include="..\..\Icons\018-saxophone.png">
+      <Filter>Final Project\Icons</Filter>
+    </None>
+    <None Include="..\..\Icons\019-earphones-7.png">
+      <Filter>Final Project\Icons</Filter>
+    </None>
+    <None Include="..\..\Icons\020-rewind.png">
+      <Filter>Final Project\Icons</Filter>
+    </None>
+    <None Include="..\..\Icons\021-microphone-3.png">
+      <Filter>Final Project\Icons</Filter>
+    </None>
+    <None Include="..\..\Icons\022-microphone-2.png">
+      <Filter>Final Project\Icons</Filter>
+    </None>
+    <None Include="..\..\Icons\023-record.png">
+      <Filter>Final Project\Icons</Filter>
+    </None>
+    <None Include="..\..\Icons\024-radio.png">
+      <Filter>Final Project\Icons</Filter>
+    </None>
+    <None Include="..\..\Icons\025-musical-note-3.png">
+      <Filter>Final Project\Icons</Filter>
+    </None>
+    <None Include="..\..\Icons\026-musical-note-2.png">
+      <Filter>Final Project\Icons</Filter>
+    </None>
+    <None Include="..\..\Icons\027-previous.png">
+      <Filter>Final Project\Icons</Filter>
+    </None>
+    <None Include="..\..\Icons\029-piano.png">
+      <Filter>Final Project\Icons</Filter>
+    </None>
+    <None Include="..\..\Icons\030-phonograph.png">
+      <Filter>Final Project\Icons</Filter>
+    </None>
+    <None Include="..\..\Icons\032-next.png">
+      <Filter>Final Project\Icons</Filter>
+    </None>
+    <None Include="..\..\Icons\033-mute.png">
+      <Filter>Final Project\Icons</Filter>
+    </None>
+    <None Include="..\..\Icons\034-playlist.png">
+      <Filter>Final Project\Icons</Filter>
+    </None>
+    <None Include="..\..\Icons\035-smartphone.png">
+      <Filter>Final Project\Icons</Filter>
+    </None>
+    <None Include="..\..\Icons\036-music-stand.png">
+      <Filter>Final Project\Icons</Filter>
+    </None>
+    <None Include="..\..\Icons\037-equalizer-1.png">
+      <Filter>Final Project\Icons</Filter>
+    </None>
+    <None Include="..\..\Icons\038-album-1.png">
+      <Filter>Final Project\Icons</Filter>
+    </None>
+    <None Include="..\..\Icons\039-compact-disc-2.png">
+      <Filter>Final Project\Icons</Filter>
+    </None>
+    <None Include="..\..\Icons\040-album.png">
+      <Filter>Final Project\Icons</Filter>
+    </None>
+    <None Include="..\..\Icons\041-microphone-1.png">
+      <Filter>Final Project\Icons</Filter>
+    </None>
+    <None Include="..\..\Icons\042-microphone.png">
+      <Filter>Final Project\Icons</Filter>
+    </None>
+    <None Include="..\..\Icons\043-megaphone.png">
+      <Filter>Final Project\Icons</Filter>
+    </None>
+    <None Include="..\..\Icons\044-maracas.png">
+      <Filter>Final Project\Icons</Filter>
+    </None>
+    <None Include="..\..\Icons\045-earphones-6.png">
+      <Filter>Final Project\Icons</Filter>
+    </None>
+    <None Include="..\..\Icons\046-ipod.png">
+      <Filter>Final Project\Icons</Filter>
+    </None>
+    <None Include="..\..\Icons\047-volume-1.png">
+      <Filter>Final Project\Icons</Filter>
+    </None>
+    <None Include="..\..\Icons\048-headphones.png">
+      <Filter>Final Project\Icons</Filter>
+    </None>
+    <None Include="..\..\Icons\049-guitar.png">
+      <Filter>Final Project\Icons</Filter>
+    </None>
+    <None Include="..\..\Icons\050-amplifier.png">
+      <Filter>Final Project\Icons</Filter>
+    </None>
+    <None Include="..\..\Icons\051-fast-forward.png">
+      <Filter>Final Project\Icons</Filter>
+    </None>
+    <None Include="..\..\Icons\052-equalizer.png">
+      <Filter>Final Project\Icons</Filter>
+    </None>
+    <None Include="..\..\Icons\053-electric-guitar.png">
+      <Filter>Final Project\Icons</Filter>
+    </None>
+    <None Include="..\..\Icons\054-eject.png">
+      <Filter>Final Project\Icons</Filter>
+    </None>
+    <None Include="..\..\Icons\055-musical-note-1.png">
+      <Filter>Final Project\Icons</Filter>
+    </None>
+    <None Include="..\..\Icons\056-earphones-5.png">
+      <Filter>Final Project\Icons</Filter>
+    </None>
+    <None Include="..\..\Icons\057-drumsticks.png">
+      <Filter>Final Project\Icons</Filter>
+    </None>
+    <None Include="..\..\Icons\058-drum.png">
+      <Filter>Final Project\Icons</Filter>
+    </None>
+    <None Include="..\..\Icons\059-djembe.png">
+      <Filter>Final Project\Icons</Filter>
+    </None>
+    <None Include="..\..\Icons\060-volume.png">
+      <Filter>Final Project\Icons</Filter>
+    </None>
+    <None Include="..\..\Icons\061-cymbal.png">
+      <Filter>Final Project\Icons</Filter>
+    </None>
+    <None Include="..\..\Icons\062-compact-disc-1.png">
+      <Filter>Final Project\Icons</Filter>
+    </None>
+    <None Include="..\..\Icons\063-cloud-computing.png">
+      <Filter>Final Project\Icons</Filter>
+    </None>
+    <None Include="..\..\Icons\064-cd-player.png">
+      <Filter>Final Project\Icons</Filter>
+    </None>
+    <None Include="..\..\Icons\065-compact-disc.png">
+      <Filter>Final Project\Icons</Filter>
+    </None>
+    <None Include="..\..\Icons\066-cassette.png">
+      <Filter>Final Project\Icons</Filter>
+    </None>
+    <None Include="..\..\Icons\067-boombox.png">
+      <Filter>Final Project\Icons</Filter>
+    </None>
+    <None Include="..\..\Icons\068-earphones-4.png">
+      <Filter>Final Project\Icons</Filter>
+    </None>
+    <None Include="..\..\Icons\069-musical-note.png">
+      <Filter>Final Project\Icons</Filter>
+    </None>
+    <None Include="..\..\Icons\070-banjo.png">
+      <Filter>Final Project\Icons</Filter>
+    </None>
+    <None Include="..\..\Icons\071-sound.png">
+      <Filter>Final Project\Icons</Filter>
+    </None>
+    <None Include="..\..\Icons\073-jack-connector-1.png">
+      <Filter>Final Project\Icons</Filter>
+    </None>
+    <None Include="..\..\Icons\074-folder.png">
+      <Filter>Final Project\Icons</Filter>
+    </None>
+    <None Include="..\..\Icons\075-audio-file.png">
+      <Filter>Final Project\Icons</Filter>
+    </None>
+    <None Include="..\..\Icons\076-jack-connector.png">
+      <Filter>Final Project\Icons</Filter>
+    </None>
+    <None Include="..\..\Icons\077-earphones-3.png">
+      <Filter>Final Project\Icons</Filter>
+    </None>
+    <None Include="..\..\Icons\078-earphones-2.png">
+      <Filter>Final Project\Icons</Filter>
+    </None>
+    <None Include="..\..\Icons\079-earphones-1.png">
+      <Filter>Final Project\Icons</Filter>
+    </None>
+    <None Include="..\..\Icons\080-earphones.png">
+      <Filter>Final Project\Icons</Filter>
+    </None>
     <None Include="..\..\Icons\072-settings.png">
       <Filter>Final Project\Images</Filter>
     </None>

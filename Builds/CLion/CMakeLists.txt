@@ -16,6 +16,83 @@ if (APPLE)
 project ("Final Project" C CXX)
 
 add_executable (APP
+    "../../Icons/001-xylophone.png"
+    "../../Icons/002-volume-4.png"
+    "../../Icons/003-volume-3.png"
+    "../../Icons/004-volume-2.png"
+    "../../Icons/005-violin.png"
+    "../../Icons/006-microphone-4.png"
+    "../../Icons/007-turntable.png"
+    "../../Icons/008-tuning-fork.png"
+    "../../Icons/009-trumpet.png"
+    "../../Icons/010-triangle.png"
+    "../../Icons/011-treble-clef.png"
+    "../../Icons/012-tambourine.png"
+    "../../Icons/013-stop.png"
+    "../../Icons/014-speaker.png"
+    "../../Icons/015-wave.png"
+    "../../Icons/016-shaker.png"
+    "../../Icons/017-musical-note-4.png"
+    "../../Icons/018-saxophone.png"
+    "../../Icons/019-earphones-7.png"
+    "../../Icons/020-rewind.png"
+    "../../Icons/021-microphone-3.png"
+    "../../Icons/022-microphone-2.png"
+    "../../Icons/023-record.png"
+    "../../Icons/024-radio.png"
+    "../../Icons/025-musical-note-3.png"
+    "../../Icons/026-musical-note-2.png"
+    "../../Icons/027-previous.png"
+    "../../Icons/029-piano.png"
+    "../../Icons/030-phonograph.png"
+    "../../Icons/032-next.png"
+    "../../Icons/033-mute.png"
+    "../../Icons/034-playlist.png"
+    "../../Icons/035-smartphone.png"
+    "../../Icons/036-music-stand.png"
+    "../../Icons/037-equalizer-1.png"
+    "../../Icons/038-album-1.png"
+    "../../Icons/039-compact-disc-2.png"
+    "../../Icons/040-album.png"
+    "../../Icons/041-microphone-1.png"
+    "../../Icons/042-microphone.png"
+    "../../Icons/043-megaphone.png"
+    "../../Icons/044-maracas.png"
+    "../../Icons/045-earphones-6.png"
+    "../../Icons/046-ipod.png"
+    "../../Icons/047-volume-1.png"
+    "../../Icons/048-headphones.png"
+    "../../Icons/049-guitar.png"
+    "../../Icons/050-amplifier.png"
+    "../../Icons/051-fast-forward.png"
+    "../../Icons/052-equalizer.png"
+    "../../Icons/053-electric-guitar.png"
+    "../../Icons/054-eject.png"
+    "../../Icons/055-musical-note-1.png"
+    "../../Icons/056-earphones-5.png"
+    "../../Icons/057-drumsticks.png"
+    "../../Icons/058-drum.png"
+    "../../Icons/059-djembe.png"
+    "../../Icons/060-volume.png"
+    "../../Icons/061-cymbal.png"
+    "../../Icons/062-compact-disc-1.png"
+    "../../Icons/063-cloud-computing.png"
+    "../../Icons/064-cd-player.png"
+    "../../Icons/065-compact-disc.png"
+    "../../Icons/066-cassette.png"
+    "../../Icons/067-boombox.png"
+    "../../Icons/068-earphones-4.png"
+    "../../Icons/069-musical-note.png"
+    "../../Icons/070-banjo.png"
+    "../../Icons/071-sound.png"
+    "../../Icons/073-jack-connector-1.png"
+    "../../Icons/074-folder.png"
+    "../../Icons/075-audio-file.png"
+    "../../Icons/076-jack-connector.png"
+    "../../Icons/077-earphones-3.png"
+    "../../Icons/078-earphones-2.png"
+    "../../Icons/079-earphones-1.png"
+    "../../Icons/080-earphones.png"
     "../../Icons/072-settings.png"
     "../../Icons/028-play.png"
     "../../Icons/031-pause.png"
@@ -2263,6 +2340,83 @@ add_executable (APP
     "../../JuceLibraryCode/JuceHeader.h"
 )
 
+set_source_files_properties ("../../Icons/001-xylophone.png" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../Icons/002-volume-4.png" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../Icons/003-volume-3.png" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../Icons/004-volume-2.png" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../Icons/005-violin.png" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../Icons/006-microphone-4.png" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../Icons/007-turntable.png" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../Icons/008-tuning-fork.png" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../Icons/009-trumpet.png" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../Icons/010-triangle.png" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../Icons/011-treble-clef.png" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../Icons/012-tambourine.png" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../Icons/013-stop.png" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../Icons/014-speaker.png" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../Icons/015-wave.png" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../Icons/016-shaker.png" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../Icons/017-musical-note-4.png" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../Icons/018-saxophone.png" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../Icons/019-earphones-7.png" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../Icons/020-rewind.png" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../Icons/021-microphone-3.png" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../Icons/022-microphone-2.png" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../Icons/023-record.png" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../Icons/024-radio.png" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../Icons/025-musical-note-3.png" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../Icons/026-musical-note-2.png" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../Icons/027-previous.png" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../Icons/029-piano.png" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../Icons/030-phonograph.png" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../Icons/032-next.png" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../Icons/033-mute.png" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../Icons/034-playlist.png" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../Icons/035-smartphone.png" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../Icons/036-music-stand.png" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../Icons/037-equalizer-1.png" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../Icons/038-album-1.png" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../Icons/039-compact-disc-2.png" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../Icons/040-album.png" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../Icons/041-microphone-1.png" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../Icons/042-microphone.png" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../Icons/043-megaphone.png" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../Icons/044-maracas.png" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../Icons/045-earphones-6.png" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../Icons/046-ipod.png" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../Icons/047-volume-1.png" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../Icons/048-headphones.png" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../Icons/049-guitar.png" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../Icons/050-amplifier.png" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../Icons/051-fast-forward.png" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../Icons/052-equalizer.png" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../Icons/053-electric-guitar.png" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../Icons/054-eject.png" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../Icons/055-musical-note-1.png" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../Icons/056-earphones-5.png" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../Icons/057-drumsticks.png" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../Icons/058-drum.png" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../Icons/059-djembe.png" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../Icons/060-volume.png" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../Icons/061-cymbal.png" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../Icons/062-compact-disc-1.png" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../Icons/063-cloud-computing.png" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../Icons/064-cd-player.png" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../Icons/065-compact-disc.png" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../Icons/066-cassette.png" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../Icons/067-boombox.png" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../Icons/068-earphones-4.png" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../Icons/069-musical-note.png" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../Icons/070-banjo.png" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../Icons/071-sound.png" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../Icons/073-jack-connector-1.png" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../Icons/074-folder.png" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../Icons/075-audio-file.png" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../Icons/076-jack-connector.png" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../Icons/077-earphones-3.png" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../Icons/078-earphones-2.png" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../Icons/079-earphones-1.png" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../Icons/080-earphones.png" PROPERTIES HEADER_FILE_ONLY TRUE)
 set_source_files_properties ("../../Icons/072-settings.png" PROPERTIES HEADER_FILE_ONLY TRUE)
 set_source_files_properties ("../../Icons/028-play.png" PROPERTIES HEADER_FILE_ONLY TRUE)
 set_source_files_properties ("../../Icons/031-pause.png" PROPERTIES HEADER_FILE_ONLY TRUE)
