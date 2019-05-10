@@ -280,7 +280,7 @@
         <CONFIGURATION isDebug="0" name="Release"/>
       </CONFIGURATIONS>
       <MODULEPATHS>
-        <MODULEPATH id="tracktion_engine"/>
+        <MODULEPATH id="tracktion_engine" path="../tracktion_engine/modules"/>
         <MODULEPATH id="juce_osc"/>
         <MODULEPATH id="juce_gui_extra"/>
         <MODULEPATH id="juce_gui_basics"/>

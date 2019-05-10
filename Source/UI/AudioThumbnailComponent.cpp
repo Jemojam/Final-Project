@@ -43,7 +43,7 @@ void AudioThumbnailComponent::paintIfNoFileLoaded(Graphics& g, const Rectangle<i
     g.fillAll(Colours::red);
     //g.fillRect(thumbnailBounds);
 
-    g.drawFittedText("", thumbnailBounds, Justification::centred, 1.0f);
+    g.drawFittedText("", thumbnailBounds, Justification::centred, 1);
 }
 
 void AudioThumbnailComponent::paintIfFileLoaded(Graphics& g, const Rectangle<int>& thumbnailBounds)

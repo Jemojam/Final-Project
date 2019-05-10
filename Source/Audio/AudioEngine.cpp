@@ -34,10 +34,10 @@ void AudioEngine::removeChannel()
     }
 }
 
-te::AudioTrack* AudioEngine::getOrInsertAudioTrackAt(te::Edit& edit, int index)
+te::AudioTrack* AudioEngine::getOrInsertAudioTrackAt(te::Edit& inEdit, int index)
 {
-    edit.ensureNumberOfAudioTracks(index + 1);
-    return te::getAudioTracks(edit)[index];
+	inEdit.ensureNumberOfAudioTracks(index + 1);
+    return te::getAudioTracks(inEdit)[index];
 }
 
 void AudioEngine::removeTrack(te::AudioTrack& track)
@@ -84,8 +84,9 @@ void AudioEngine::addNewClipFromFile(const File& editFile, AudioTrack& track)
 
 void AudioEngine::armTrack(te::AudioTrack& t, bool arm, int position)
 {
-    auto& edit = t.edit;
-    for (auto instance : edit.getAllInputDevices())
+    auto& currentEdit = t.edit;
+
+    for (auto instance : currentEdit.getAllInputDevices())
         if (instance->getTargetTrack() == &t && instance->getTargetIndex() == position)
             instance->setRecordingEnabled(arm);
 
@@ -93,8 +94,9 @@ void AudioEngine::armTrack(te::AudioTrack& t, bool arm, int position)
 
 bool AudioEngine::isTrackArmed(te::AudioTrack& t, int position)
 {
-    auto& edit = t.edit;
-    for (auto instance : edit.getAllInputDevices())
+    auto& currentEdit = t.edit;
+
+    for (auto instance : currentEdit.getAllInputDevices())
         if (instance->getTargetTrack() == &t && instance->getTargetIndex() == position)
             return instance->isRecordingEnabled();
 
@@ -104,8 +106,9 @@ bool AudioEngine::isTrackArmed(te::AudioTrack& t, int position)
 
 bool AudioEngine::isInputMonitoringEnabled(te::AudioTrack& t, int position)
 {
-    auto& edit = t.edit;
-    for (auto instance : edit.getAllInputDevices())
+    auto& currentEdit = t.edit;
+
+    for (auto instance : currentEdit.getAllInputDevices())
         if (instance->getTargetTrack() == &t && instance->getTargetIndex() == position)
             return instance->getInputDevice().isEndToEndEnabled();
 
@@ -116,8 +119,9 @@ void AudioEngine::enableInputMonitoring(te::AudioTrack& t, bool im, int position
 {
     if (isInputMonitoringEnabled(t, position) != im)
     {
-        auto& edit = t.edit;
-        for (auto instance : edit.getAllInputDevices())
+        auto& currentEdit = t.edit;
+
+        for (auto instance : currentEdit.getAllInputDevices())
             if (instance->getTargetTrack() == &t && instance->getTargetIndex() == position)
                 instance->getInputDevice().flipEndToEnd();
     }
@@ -125,8 +129,9 @@ void AudioEngine::enableInputMonitoring(te::AudioTrack& t, bool im, int position
 
 bool AudioEngine::trackHasInput(te::AudioTrack& t, int position)
 {
-    auto& edit = t.edit;
-    for (auto instance : edit.getAllInputDevices())
+    auto& currentEdit = t.edit;
+
+    for (auto instance : currentEdit.getAllInputDevices())
         if (instance->getTargetTrack() == &t && instance->getTargetIndex() == position)
             return true;
 

@@ -7,7 +7,7 @@
   the "//[xyz]" and "//[/xyz]" sections will be retained when the file is loaded
   and re-saved.
 
-  Created with Projucer version: 5.4.1
+  Created with Projucer version: 5.4.3
 
   ------------------------------------------------------------------------------
 
@@ -85,7 +85,7 @@ void FXInsertComponent::paint (Graphics& g)
                                        504.0f - 392.0f + x,
                                        312.0f - 308.0f + y,
                                        true));
-        g.fillRoundedRectangle (x, y, width, height, 2.0f);
+        g.fillRoundedRectangle (x, y, width, height, 2.000f);
     }
 
     //[UserPaint] Add your own custom painting code here..
@@ -133,7 +133,7 @@ BEGIN_JUCER_METADATA
 
 <JUCER_COMPONENT documentType="Component" className="FXInsertComponent" componentName=""
                  parentClasses="public Component" constructorParams="" variableInitialisers=""
-                 snapPixels="8" snapActive="1" snapShown="1" overlayOpacity="0.33"
+                 snapPixels="8" snapActive="1" snapShown="1" overlayOpacity="0.330"
                  fixedSize="0" initialWidth="600" initialHeight="400">
   <BACKGROUND backgroundColour="ff323e44">
     <ROUNDRECT pos="392 308 120 192" cornerSize="2.0" fill=" radial: 448 496, 504 312, 0=ff7878ff, 1=ff808080"
@@ -152,3 +152,4 @@ END_JUCER_METADATA
 
 //[EndFile] You can add extra defines here...
 //[/EndFile]
+

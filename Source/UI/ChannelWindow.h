@@ -10,7 +10,6 @@ class ChannelWindow : public Component, public Timer
 public:
 	ChannelWindow(AudioEngine& inEngine);
 
-	void paint(Graphics& g) override;
 	void timerCallback() override;
 
 private:

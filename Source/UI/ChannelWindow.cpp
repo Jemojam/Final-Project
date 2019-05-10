@@ -7,11 +7,6 @@ ChannelWindow::ChannelWindow(AudioEngine& inEngine) : engine(inEngine)
 	startTimerHz(60);
 }
 
-void ChannelWindow::paint(Graphics& g)
-{
-
-}
-
 void ChannelWindow::timerCallback()
 {
 	if (engine.isDirty())

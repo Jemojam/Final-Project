@@ -36,7 +36,7 @@ void PlayButton::buttonClicked(Button* button)
         engine.pause();
 }
 
-void PlayButton::paint(Graphics& g)
+void PlayButton::paint(Graphics& /*g*/)
 {
     pauseButton.setVisible(engine.isPlaying());
     playButton.setVisible(!engine.isPlaying());

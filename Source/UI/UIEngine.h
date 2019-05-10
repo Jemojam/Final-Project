@@ -11,9 +11,7 @@ class UIEngine : public Component
 {
 public:
 	UIEngine(AudioEngine& inEngine);
-	~UIEngine();
-
-	void paint(Graphics& g) override;
+	
 	void resized() override;
 
 private:

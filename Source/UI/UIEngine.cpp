@@ -16,14 +16,6 @@ UIEngine::UIEngine(AudioEngine& inEngine) :
 
 }
 
-UIEngine::~UIEngine()
-{
-}
-
-void UIEngine::paint(Graphics& g)
-{
-}
-
 void UIEngine::resized()
 {
     toolbar.setBounds(0, 0, getWidth(), toolBarHeight);
