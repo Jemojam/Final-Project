@@ -160,8 +160,6 @@ void ChannelComponent::clickAddFileButton()
         auto file = chooser.getResult();
 
         engine.addNewClipFromFile(file, track);
-
-        shouldUpdate->store(true);
     }
 }
 
@@ -219,7 +217,6 @@ void ChannelComponent::rebuildClips()
 
     resized();
 }
-
 
 
 

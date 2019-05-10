@@ -24,6 +24,10 @@ public:
     void timerCallback() override;
 
 private:
+    void markForUpdate() { shouldUpdate->store(true); }
+
+    void valueTreeChildAdded(juce::ValueTree&, juce::ValueTree&) override { markForUpdate(); }
+    void valueTreeChildRemoved(juce::ValueTree&, juce::ValueTree&, int) override { markForUpdate(); }
     void clickSelectButton() const;
     void clickAddFileButton();
     void valueTreeChanged() override {};
@@ -37,7 +41,7 @@ private:
     std::unique_ptr<ImageButton> addFileButton;
     std::unique_ptr<ImageButton> FXButton;
 
-    std::vector <std::unique_ptr<AudioThumbnailComponent>> audioThumbnailComponents;
+    std::vector<std::unique_ptr<AudioThumbnailComponent>> audioThumbnailComponents;
 
     ValueTree inputsState;
     AudioEngine& engine;
