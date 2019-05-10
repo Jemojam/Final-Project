@@ -14,7 +14,9 @@ public:
     void paint(Graphics& g) override;
     void changeListenerCallback(ChangeBroadcaster* source) override;
 
-    Clip& getClip() { return clip; }
+    Clip& getClip() const { return clip; }
+
+	void mouseDown(const MouseEvent& event) override;
 private:
 
     void initSource();
@@ -25,6 +27,8 @@ private:
     AudioFormatManager formatManager;
     AudioThumbnailCache thumbnailCache;
     AudioThumbnail thumbnail;
+
+	bool selected = false;
 
     tracktion_engine::Clip& clip;
 

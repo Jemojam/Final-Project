@@ -12,7 +12,7 @@ UIEngine::UIEngine(AudioEngine& inEngine) :
 {
     addAndMakeVisible(toolbar);
     addAndMakeVisible(channelWindow);
-	addAndMakeVisible(gridWindow);
+	//addAndMakeVisible(gridWindow);
 
 }
 

@@ -24,6 +24,12 @@ void AudioThumbnailComponent::paint(Graphics& g)
         paintIfNoFileLoaded(g, thumbnailBounds);
     else
         paintIfFileLoaded(g, thumbnailBounds);
+
+	if (selected)
+	{
+		g.setColour(Colours::red);
+		g.drawRect(getLocalBounds(), 1);
+	}
 }
 
 
@@ -41,8 +47,6 @@ void AudioThumbnailComponent::thumbnailChanged()
 void AudioThumbnailComponent::paintIfNoFileLoaded(Graphics& g, const Rectangle<int>& thumbnailBounds)
 {
     g.fillAll(Colours::red);
-    //g.fillRect(thumbnailBounds);
-
     g.drawFittedText("", thumbnailBounds, Justification::centred, 1);
 }
 
@@ -50,10 +54,15 @@ void AudioThumbnailComponent::paintIfFileLoaded(Graphics& g, const Rectangle<int
 {
     g.fillAll(Colours::ghostwhite);
     g.setColour(Colours::blue);
-    //g.fillRect(thumbnailBounds);
-    //auto thumbArea = getLocalBounds();
 
     thumbnail.drawChannels(g, thumbnailBounds, 0.0, thumbnail.getTotalLength(), 1.0f);
+}
+
+void AudioThumbnailComponent::mouseDown(const MouseEvent& /*event*/)
+{
+	selected = !selected;
+
+	repaint();
 }
 
 void AudioThumbnailComponent::initSource()

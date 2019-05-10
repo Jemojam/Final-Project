@@ -140,8 +140,6 @@ bool AudioEngine::trackHasInput(te::AudioTrack& t, int position)
 
 void AudioEngine::play()
 {
-    getTransport().setLoopRange({ 0.0, edit->getLength() });
-    getTransport().looping = true;
     getTransport().play(false);
 
 }
@@ -152,7 +150,7 @@ TransportControl& AudioEngine::getTransport() const
 
 void AudioEngine::stop()
 {
-    getTransport().stop(true, false, true, true);
+    getTransport().stop(false, false, true, true);
 }
 
 void AudioEngine::pause()
@@ -175,7 +173,7 @@ void AudioEngine::toggleRecord()
     auto& transport = edit->getTransport();
 
     if (transport.isRecording())
-        transport.stop(true, false);
+        transport.stop(false, false);
     else
         transport.record(false);
 }

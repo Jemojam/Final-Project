@@ -124,9 +124,16 @@ void ChannelComponent::resized()
 {
     auto bounds = getLocalBounds();
 
+	int startX = 204;
+
     for (auto& thumbnail: audioThumbnailComponents)
     {
-        thumbnail->setBounds(204, 0, bounds.getWidth(), bounds.getHeight());
+		auto position = thumbnail->getClip().getPosition();
+
+		auto start = position.getStart() / 10 * (double)getWidth();
+		auto length = position.getLength() / 10 * (double)getWidth();
+    	
+        thumbnail->setBounds(startX + (int)start, 0, int(length), bounds.getHeight());
     }
 }
 
