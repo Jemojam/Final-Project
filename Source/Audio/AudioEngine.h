@@ -48,7 +48,7 @@ public :
 	void armTrack(te::AudioTrack& t, bool arm, int position = 0);
 	bool isTrackArmed(te::AudioTrack& t, int position = 0);
 
-	TransportControl& AudioEngine::getTransport() const;
+	TransportControl& getTransport() const;
 
 	bool isDirty() { return dirty; }
 	void setDirty(bool inDirty) { dirty = inDirty; }

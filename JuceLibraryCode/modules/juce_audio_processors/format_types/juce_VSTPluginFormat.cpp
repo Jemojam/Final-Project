@@ -2340,12 +2340,12 @@ private:
                 if (currentPlayHead->getCurrentPosition (position))
                 {
 
-                    vstHostTime.samplePos           = (double) position.timeInSamples;
-                    vstHostTime.tempo                 = position.bpm;
+                    vstHostTime.samplePos          = (double) position.timeInSamples;
+                    vstHostTime.tempo              = position.bpm;
                     vstHostTime.timeSigNumerator   = position.timeSigNumerator;
                     vstHostTime.timeSigDenominator = position.timeSigDenominator;
-                    vstHostTime.ppqPos          = position.ppqPosition;
-                    vstHostTime.barStartPos          = position.ppqPositionOfLastBarStart;
+                    vstHostTime.ppqPos             = position.ppqPosition;
+                    vstHostTime.barStartPos        = position.ppqPositionOfLastBarStart;
                     vstHostTime.flags |= Vst2::kVstTempoValid
                                            | Vst2::kVstTimeSigValid
                                            | Vst2::kVstPpqPosValid
@@ -2460,7 +2460,7 @@ private:
             outOfPlaceBuffer.clear();
 
             vstEffect->process (vstEffect, buffer.getArrayOfWritePointers(),
-                                             outOfPlaceBuffer.getArrayOfWritePointers(), sampleFrames);
+                                           outOfPlaceBuffer.getArrayOfWritePointers(), sampleFrames);
 
             for (int i = vstEffect->numOutputs; --i >= 0;)
                 buffer.copyFrom (i, 0, outOfPlaceBuffer.getReadPointer (i), sampleFrames);
@@ -2776,7 +2776,10 @@ public:
 
         activeVSTWindows.add (this);
 
-        setSize (1, 1);
+        Vst2::ERect* rect = nullptr;
+        dispatch (Vst2::effEditGetRect, 0, 0, &rect, 0);
+        setSize (rect->right - rect->left, rect->bottom - rect->top);
+
         setOpaque (true);
         setVisible (true);
     }

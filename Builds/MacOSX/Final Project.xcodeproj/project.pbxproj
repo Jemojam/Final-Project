@@ -29,6 +29,10 @@
 			isa = PBXBuildFile;
 			fileRef = D46C966CD1E7367544EC2864;
 		};
+		426B1547F363BEBFE2C537C6 = {
+			isa = PBXBuildFile;
+			fileRef = 8951B2E8BA2387C5D5990FEF;
+		};
 		736A806297A09429EACAE753 = {
 			isa = PBXBuildFile;
 			fileRef = D608ADD6FC04F7C0541D670C;
@@ -494,6 +498,13 @@
 			path = "../../JuceLibraryCode/include_juce_audio_basics.mm";
 			sourceTree = "SOURCE_ROOT";
 		};
+		8951B2E8BA2387C5D5990FEF = {
+			isa = PBXFileReference;
+			lastKnownFileType = wrapper.framework;
+			name = CoreAudioKit.framework;
+			path = System/Library/Frameworks/CoreAudioKit.framework;
+			sourceTree = SDKROOT;
+		};
 		8B0FE1B94AB00EBF5F98F85E = {
 			isa = PBXFileReference;
 			lastKnownFileType = sourcecode.cpp.objcpp;
@@ -906,6 +917,7 @@
 				D5D4FC39938DB9BCD78055E0,
 				62ED26C1D9AD0D0194E070E3,
 				D46C966CD1E7367544EC2864,
+				8951B2E8BA2387C5D5990FEF,
 				D608ADD6FC04F7C0541D670C,
 				283D64544837C93FD6C43DEF,
 				C2FCB5B3648D85D40D4559F9,
@@ -1195,6 +1207,7 @@
 				0AB26BD484F717624C29AEC2,
 				B6ABBF10B62426B45DEB116D,
 				D41BE4EEFCCB91E109812CDF,
+				426B1547F363BEBFE2C537C6,
 				736A806297A09429EACAE753,
 				1445E2B69273C63A82D1A1AA,
 				B52AAEDA566169ED6821E143,
