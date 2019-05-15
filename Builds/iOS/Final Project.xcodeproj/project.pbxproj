@@ -846,6 +846,13 @@
 			path = "../../Icons/074-folder.png";
 			sourceTree = "SOURCE_ROOT";
 		};
+		9543F2D5FFF816E6E405ADAF = {
+			isa = PBXFileReference;
+			lastKnownFileType = image.png;
+			name = "081-loop.png";
+			path = "../../Icons/081-loop.png";
+			sourceTree = "SOURCE_ROOT";
+		};
 		96686514775C56ABF5E9BC0F = {
 			isa = PBXFileReference;
 			lastKnownFileType = sourcecode.cpp.cpp;
@@ -1423,6 +1430,7 @@
 				0DB0C69F395E2C6E7A0E19EC,
 				7EC415271025851F622F42AC,
 				49471744AA7CA005420CE90A,
+				9543F2D5FFF816E6E405ADAF,
 			);
 			name = Icons;
 			sourceTree = "<group>";

@@ -63,7 +63,7 @@
     <ClCompile>
       <Optimization>Disabled</Optimization>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
-      <AdditionalIncludeDirectories>..\..\JuceLibraryCode;C:\Code\JUCE\modules;..\..\..\tracktion_engine\modules;../../SDKs/JUCE/modules;../../SDKs/tracktion_engine;../../Source;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\..\JuceLibraryCode;C:\CODE\JUCE\modules;..\..\..\tracktion_engine\modules;../../SDKs/JUCE/modules;../../SDKs/tracktion_engine;../../Source;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;WIN32;_WINDOWS;DEBUG;_DEBUG;JUCER_VS2019_78A5026=1;JUCE_APP_VERSION=1.0.0;JUCE_APP_VERSION_HEX=0x10000;JucePlugin_Build_VST=0;JucePlugin_Build_VST3=0;JucePlugin_Build_AU=0;JucePlugin_Build_AUv3=0;JucePlugin_Build_RTAS=0;JucePlugin_Build_AAX=0;JucePlugin_Build_Standalone=0;JucePlugin_Build_Unity=0;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
       <RuntimeTypeInfo>true</RuntimeTypeInfo>
@@ -104,7 +104,7 @@
     </Midl>
     <ClCompile>
       <Optimization>Full</Optimization>
-      <AdditionalIncludeDirectories>..\..\JuceLibraryCode;C:\Code\JUCE\modules;..\..\..\tracktion_engine\modules;../../SDKs/JUCE/modules;../../SDKs/tracktion_engine;../../Source;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\..\JuceLibraryCode;C:\CODE\JUCE\modules;..\..\..\tracktion_engine\modules;../../SDKs/JUCE/modules;../../SDKs/tracktion_engine;../../Source;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;WIN32;_WINDOWS;NDEBUG;JUCER_VS2019_78A5026=1;JUCE_APP_VERSION=1.0.0;JUCE_APP_VERSION_HEX=0x10000;JucePlugin_Build_VST=0;JucePlugin_Build_VST3=0;JucePlugin_Build_AU=0;JucePlugin_Build_AUv3=0;JucePlugin_Build_RTAS=0;JucePlugin_Build_AAX=0;JucePlugin_Build_Standalone=0;JucePlugin_Build_Unity=0;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
       <RuntimeTypeInfo>true</RuntimeTypeInfo>
@@ -259,10 +259,10 @@
     <ClCompile Include="..\..\..\JUCE\modules\juce_audio_devices\audio_io\juce_AudioIODeviceType.cpp">
       <ExcludedFromBuild>true</ExcludedFromBuild>
     </ClCompile>
-    <ClCompile Include="..\..\..\JUCE\modules\juce_audio_devices\midi_io\juce_MidiDevices.cpp">
+    <ClCompile Include="..\..\..\JUCE\modules\juce_audio_devices\midi_io\juce_MidiMessageCollector.cpp">
       <ExcludedFromBuild>true</ExcludedFromBuild>
     </ClCompile>
-    <ClCompile Include="..\..\..\JUCE\modules\juce_audio_devices\midi_io\juce_MidiMessageCollector.cpp">
+    <ClCompile Include="..\..\..\JUCE\modules\juce_audio_devices\midi_io\juce_MidiOutput.cpp">
       <ExcludedFromBuild>true</ExcludedFromBuild>
     </ClCompile>
     <ClCompile Include="..\..\..\JUCE\modules\juce_audio_devices\native\juce_android_Audio.cpp">
@@ -604,25 +604,10 @@
     <ClCompile Include="..\..\..\JUCE\modules\juce_audio_processors\scanning\juce_PluginListComponent.cpp">
       <ExcludedFromBuild>true</ExcludedFromBuild>
     </ClCompile>
-    <ClCompile Include="..\..\..\JUCE\modules\juce_audio_processors\utilities\juce_AudioParameterBool.cpp">
-      <ExcludedFromBuild>true</ExcludedFromBuild>
-    </ClCompile>
-    <ClCompile Include="..\..\..\JUCE\modules\juce_audio_processors\utilities\juce_AudioParameterChoice.cpp">
-      <ExcludedFromBuild>true</ExcludedFromBuild>
-    </ClCompile>
-    <ClCompile Include="..\..\..\JUCE\modules\juce_audio_processors\utilities\juce_AudioParameterFloat.cpp">
-      <ExcludedFromBuild>true</ExcludedFromBuild>
-    </ClCompile>
-    <ClCompile Include="..\..\..\JUCE\modules\juce_audio_processors\utilities\juce_AudioParameterInt.cpp">
-      <ExcludedFromBuild>true</ExcludedFromBuild>
-    </ClCompile>
-    <ClCompile Include="..\..\..\JUCE\modules\juce_audio_processors\utilities\juce_AudioProcessorParameterWithID.cpp">
+    <ClCompile Include="..\..\..\JUCE\modules\juce_audio_processors\utilities\juce_AudioProcessorParameters.cpp">
       <ExcludedFromBuild>true</ExcludedFromBuild>
     </ClCompile>
     <ClCompile Include="..\..\..\JUCE\modules\juce_audio_processors\utilities\juce_AudioProcessorValueTreeState.cpp">
-      <ExcludedFromBuild>true</ExcludedFromBuild>
-    </ClCompile>
-    <ClCompile Include="..\..\..\JUCE\modules\juce_audio_processors\utilities\juce_RangedAudioParameter.cpp">
       <ExcludedFromBuild>true</ExcludedFromBuild>
     </ClCompile>
     <ClCompile Include="..\..\..\JUCE\modules\juce_audio_processors\juce_audio_processors.cpp">
@@ -1577,6 +1562,9 @@
       <ExcludedFromBuild>true</ExcludedFromBuild>
     </ClCompile>
     <ClCompile Include="..\..\..\JUCE\modules\juce_gui_basics\layout\juce_GridItem.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\JUCE\modules\juce_gui_basics\layout\juce_GridUnitTests.cpp">
       <ExcludedFromBuild>true</ExcludedFromBuild>
     </ClCompile>
     <ClCompile Include="..\..\..\JUCE\modules\juce_gui_basics\layout\juce_GroupComponent.cpp">
@@ -3404,8 +3392,9 @@
     <ClInclude Include="..\..\..\JUCE\modules\juce_audio_devices\audio_io\juce_AudioIODevice.h"/>
     <ClInclude Include="..\..\..\JUCE\modules\juce_audio_devices\audio_io\juce_AudioIODeviceType.h"/>
     <ClInclude Include="..\..\..\JUCE\modules\juce_audio_devices\audio_io\juce_SystemAudioVolume.h"/>
-    <ClInclude Include="..\..\..\JUCE\modules\juce_audio_devices\midi_io\juce_MidiDevices.h"/>
+    <ClInclude Include="..\..\..\JUCE\modules\juce_audio_devices\midi_io\juce_MidiInput.h"/>
     <ClInclude Include="..\..\..\JUCE\modules\juce_audio_devices\midi_io\juce_MidiMessageCollector.h"/>
+    <ClInclude Include="..\..\..\JUCE\modules\juce_audio_devices\midi_io\juce_MidiOutput.h"/>
     <ClInclude Include="..\..\..\JUCE\modules\juce_audio_devices\native\juce_ios_Audio.h"/>
     <ClInclude Include="..\..\..\JUCE\modules\juce_audio_devices\native\juce_MidiDataConcatenator.h"/>
     <ClInclude Include="..\..\..\JUCE\modules\juce_audio_devices\sources\juce_AudioSourcePlayer.h"/>
@@ -3734,7 +3723,6 @@
     <ClInclude Include="..\..\..\JUCE\modules\juce_core\time\juce_RelativeTime.h"/>
     <ClInclude Include="..\..\..\JUCE\modules\juce_core\time\juce_Time.h"/>
     <ClInclude Include="..\..\..\JUCE\modules\juce_core\unit_tests\juce_UnitTest.h"/>
-    <ClInclude Include="..\..\..\JUCE\modules\juce_core\unit_tests\juce_UnitTestCategories.h"/>
     <ClInclude Include="..\..\..\JUCE\modules\juce_core\xml\juce_XmlDocument.h"/>
     <ClInclude Include="..\..\..\JUCE\modules\juce_core\xml\juce_XmlElement.h"/>
     <ClInclude Include="..\..\..\JUCE\modules\juce_core\zip\zlib\crc32.h"/>
@@ -4513,6 +4501,7 @@
     <None Include="..\..\Icons\078-earphones-2.png"/>
     <None Include="..\..\Icons\079-earphones-1.png"/>
     <None Include="..\..\Icons\080-earphones.png"/>
+    <None Include="..\..\Icons\081-loop.png"/>
     <None Include="..\..\Icons\072-settings.png"/>
     <None Include="..\..\Icons\028-play.png"/>
     <None Include="..\..\Icons\031-pause.png"/>

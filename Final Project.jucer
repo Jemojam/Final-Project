@@ -132,6 +132,7 @@
             file="Icons/079-earphones-1.png"/>
       <FILE id="MVFWrM" name="080-earphones.png" compile="0" resource="1"
             file="Icons/080-earphones.png"/>
+      <FILE id="VkefkW" name="081-loop.png" compile="0" resource="1" file="Icons/081-loop.png"/>
     </GROUP>
     <GROUP id="{67F5AA5E-5EE1-DB6A-0E72-D95D5B6BFA00}" name="Images">
       <FILE id="tic4Xd" name="072-settings.png" compile="0" resource="1"

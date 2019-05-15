@@ -25,7 +25,7 @@ ToolbarComponent::ToolbarComponent(AudioEngine& inEngine) :
 
     stopButton->setImages(false, true, true,
                           ImageCache::getFromMemory(BinaryData::_013stop_png, BinaryData::_013stop_pngSize), 1.0f,
-                          Colours::black,
+                          Colours::darkturquoise,
                           Image(), 1.0f, Colour(0x00000000),
                           Image(), 1.0f, Colour(0x00000000));
     stopButton->setBounds(352, 40, 16, 16);
@@ -40,11 +40,11 @@ ToolbarComponent::ToolbarComponent(AudioEngine& inEngine) :
     loopButton->addListener(this);
 
     loopButton->setImages(false, true, true,
-                          ImageCache::getFromMemory(BinaryData::_023record_png, BinaryData::_023record_pngSize), 1.0f,
+                          ImageCache::getFromMemory(BinaryData::_081loop_png, BinaryData::_081loop_pngSize), 1.0f,
                           Colours::orangered,
                           Image(), 1.0f, Colour(0x00000000),
                           Image(), 1.0f, Colour(0x00000000));
-    loopButton->setBounds(414, 34, 25, 27);
+    loopButton->setBounds(414, 35, 16, 27);
 
     timeText.reset(new TextEditor("timeText"));
     addAndMakeVisible(timeText.get());
@@ -93,7 +93,7 @@ ToolbarComponent::ToolbarComponent(AudioEngine& inEngine) :
 
     addChannelButton->setImages(false, true, true,
                                 ImageCache::getFromMemory(BinaryData::_075audiofile_png,
-                                                          BinaryData::_075audiofile_pngSize), 1.0f, Colours::black,
+                                                          BinaryData::_075audiofile_pngSize), 1.0f, Colours::lightblue,
                                 Image(), 1.0f, Colour(0x00000000),
                                 Image(), 1.0f, Colour(0x00000000));
     addChannelButton->setBounds(456, 35, 25, 25);
@@ -106,7 +106,7 @@ ToolbarComponent::ToolbarComponent(AudioEngine& inEngine) :
 
     audioSettingsButton->setImages(false, true, true,
                                    ImageCache::getFromMemory(BinaryData::_072settings_png,
-                                                             BinaryData::_072settings_pngSize), 1.0f, Colours::black,
+                                                             BinaryData::_072settings_pngSize), 1.0f, Colours::white,
                                    Image(), 1.0f, Colour(0x00000000),
                                    Image(), 1.0f, Colour(0x00000000));
     audioSettingsButton->setBounds(456 + 42, 35, 25, 25);

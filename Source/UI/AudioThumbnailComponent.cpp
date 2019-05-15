@@ -28,9 +28,10 @@ void AudioThumbnailComponent::paint(Graphics& g)
 	if (selected)
 	{
 		g.setColour(Colours::red);
-		g.drawRect(getLocalBounds(), 1);
+		g.drawRect(thumbnailBounds, 1);
 	}
 }
+
 
 
 void AudioThumbnailComponent::changeListenerCallback(ChangeBroadcaster* source)
@@ -52,10 +53,14 @@ void AudioThumbnailComponent::paintIfNoFileLoaded(Graphics& g, const Rectangle<i
 
 void AudioThumbnailComponent::paintIfFileLoaded(Graphics& g, const Rectangle<int>& thumbnailBounds)
 {
-    g.fillAll(Colours::ghostwhite);
-    g.setColour(Colours::blue);
+    //g.fillAll(Colours::darkslategrey);
+	g.setColour(Colours::darkslategrey);
+	g.fillRect(thumbnailBounds);
+	
+    g.setColour(Colours::darkorange);
 
     thumbnail.drawChannels(g, thumbnailBounds, 0.0, thumbnail.getTotalLength(), 1.0f);
+	
 }
 
 void AudioThumbnailComponent::mouseDown(const MouseEvent& /*event*/)

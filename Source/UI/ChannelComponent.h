@@ -46,9 +46,11 @@ private:
     ValueTree inputsState;
     AudioEngine& engine;
     AudioTrack& track;
+	//std::vector <std::unique_ptr <AudioTrack>> tracks;
 
     std::unique_ptr<std::atomic<bool>> shouldUpdate;
 
     bool selected = false;
     void rebuildClips();
+	//void rebuildRecordedClips();
 };

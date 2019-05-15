@@ -29,10 +29,6 @@
 			isa = PBXBuildFile;
 			fileRef = D46C966CD1E7367544EC2864;
 		};
-		426B1547F363BEBFE2C537C6 = {
-			isa = PBXBuildFile;
-			fileRef = 8951B2E8BA2387C5D5990FEF;
-		};
 		736A806297A09429EACAE753 = {
 			isa = PBXBuildFile;
 			fileRef = D608ADD6FC04F7C0541D670C;
@@ -743,13 +739,6 @@
 			path = "../../JuceLibraryCode/include_juce_audio_basics.mm";
 			sourceTree = "SOURCE_ROOT";
 		};
-		8951B2E8BA2387C5D5990FEF = {
-			isa = PBXFileReference;
-			lastKnownFileType = wrapper.framework;
-			name = CoreAudioKit.framework;
-			path = System/Library/Frameworks/CoreAudioKit.framework;
-			sourceTree = SDKROOT;
-		};
 		895CC0BCF246E85E3B158787 = {
 			isa = PBXFileReference;
 			lastKnownFileType = image.png;
@@ -811,6 +800,13 @@
 			lastKnownFileType = image.png;
 			name = "074-folder.png";
 			path = "../../Icons/074-folder.png";
+			sourceTree = "SOURCE_ROOT";
+		};
+		9543F2D5FFF816E6E405ADAF = {
+			isa = PBXFileReference;
+			lastKnownFileType = image.png;
+			name = "081-loop.png";
+			path = "../../Icons/081-loop.png";
 			sourceTree = "SOURCE_ROOT";
 		};
 		96686514775C56ABF5E9BC0F = {
@@ -1390,6 +1386,7 @@
 				0DB0C69F395E2C6E7A0E19EC,
 				7EC415271025851F622F42AC,
 				49471744AA7CA005420CE90A,
+				9543F2D5FFF816E6E405ADAF,
 			);
 			name = Icons;
 			sourceTree = "<group>";
@@ -1541,7 +1538,6 @@
 				D5D4FC39938DB9BCD78055E0,
 				62ED26C1D9AD0D0194E070E3,
 				D46C966CD1E7367544EC2864,
-				8951B2E8BA2387C5D5990FEF,
 				D608ADD6FC04F7C0541D670C,
 				283D64544837C93FD6C43DEF,
 				C2FCB5B3648D85D40D4559F9,
@@ -1839,7 +1835,6 @@
 				0AB26BD484F717624C29AEC2,
 				B6ABBF10B62426B45DEB116D,
 				D41BE4EEFCCB91E109812CDF,
-				426B1547F363BEBFE2C537C6,
 				736A806297A09429EACAE753,
 				1445E2B69273C63A82D1A1AA,
 				B52AAEDA566169ED6821E143,

@@ -29,6 +29,8 @@ public :
     void pause();
     bool isPlaying();
 
+	bool isRecording();
+
 	void recording();
 
 	void createTracksAndAssignInputs();

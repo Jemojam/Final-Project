@@ -27,6 +27,7 @@ private:
     AudioFormatManager formatManager;
     AudioThumbnailCache thumbnailCache;
     AudioThumbnail thumbnail;
+	
 
 	bool selected = false;
 

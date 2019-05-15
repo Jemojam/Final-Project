@@ -216,14 +216,31 @@ void ChannelComponent::rebuildClips()
     {
         audioThumbnailComponents.emplace_back();
 
-        auto& newThumnail = audioThumbnailComponents.back();
-        newThumnail.reset(new AudioThumbnailComponent(*clip));
+        auto& newThumbnail = audioThumbnailComponents.back();
+		newThumbnail.reset(new AudioThumbnailComponent(*clip));
 
-        addAndMakeVisible(*newThumnail);
+        addAndMakeVisible(*newThumbnail);
     }
 
     resized();
 }
 
+/*
+void ChannelComponent::rebuildRecordedClips()
+{
+	if (engine.isRecording())
+	{
+		audioThumbnailComponents.emplace_back();
 
+		auto& newThumbnail = audioThumbnailComponents.back();
+		newThumbnail.reset(new AudioThumbnailComponent(*clip));
+
+		do
+		{
+			rebuildClips();
+		} while (engine.isRecording());
+	}
+
+}
+*/
 

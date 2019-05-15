@@ -3,6 +3,7 @@
 
 AudioEngine::AudioEngine()
 {
+	
     edit = std::make_unique<Edit>(engine, createEmptyEdit(), Edit::forEditing, nullptr, 0);
     createTracksAndAssignInputs();
 
@@ -197,7 +198,7 @@ void AudioEngine::adjustClipProperties(tracktion_engine::WaveAudioClip& clip) co
 
 void AudioEngine::addChannel()
 {
-
+	
     auto numTracks = edit->getTrackList().size();
     auto track = getOrInsertAudioTrackAt(*edit, numTracks - 1);
 
@@ -262,6 +263,10 @@ bool AudioEngine::isPlaying()
     return getTransport().isPlaying();
 }
 
+bool AudioEngine::isRecording()
+{
+	return getTransport().isRecording();
+}
 
 void AudioEngine::createTracksAndAssignInputs()
 {

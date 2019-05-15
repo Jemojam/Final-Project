@@ -239,6 +239,9 @@ namespace BinaryData
     extern const char*   _080earphones_png;
     const int            _080earphones_pngSize = 8091;
 
+    extern const char*   _081loop_png;
+    const int            _081loop_pngSize = 9275;
+
     extern const char*   _072settings_png;
     const int            _072settings_pngSize = 8502;
 
@@ -249,7 +252,7 @@ namespace BinaryData
     const int            _031pause_pngSize = 4088;
 
     // Number of elements in the namedResourceList and originalFileNames arrays.
-    const int namedResourceListSize = 80;
+    const int namedResourceListSize = 81;
 
     // Points to the start of a list of resource names.
     extern const char* namedResourceList[];
