@@ -949,6 +949,9 @@
     <ClCompile Include="..\..\Source\UI\ChannelWindow.cpp">
       <Filter>Final Project\Source\UI</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\Source\UI\ClipComponent.cpp">
+      <Filter>Final Project\Source\UI</Filter>
+    </ClCompile>
     <ClCompile Include="..\..\Source\UI\FXInsertComponent.cpp">
       <Filter>Final Project\Source\UI</Filter>
     </ClCompile>
@@ -961,7 +964,13 @@
     <ClCompile Include="..\..\Source\UI\PlayButton.cpp">
       <Filter>Final Project\Source\UI</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\Source\UI\PlayheadComponent.cpp">
+      <Filter>Final Project\Source\UI</Filter>
+    </ClCompile>
     <ClCompile Include="..\..\Source\UI\ToolbarComponent.cpp">
+      <Filter>Final Project\Source\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\UI\TrackComponent.cpp">
       <Filter>Final Project\Source\UI</Filter>
     </ClCompile>
     <ClCompile Include="..\..\Source\UI\UIEngine.cpp">
@@ -4326,6 +4335,9 @@
     <ClInclude Include="..\..\Source\UI\ChannelWindow.h">
       <Filter>Final Project\Source\UI</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\Source\UI\ClipComponent.h">
+      <Filter>Final Project\Source\UI</Filter>
+    </ClInclude>
     <ClInclude Include="..\..\Source\UI\FXInsertComponent.h">
       <Filter>Final Project\Source\UI</Filter>
     </ClInclude>
@@ -4341,7 +4353,13 @@
     <ClInclude Include="..\..\Source\UI\PlayButton.h">
       <Filter>Final Project\Source\UI</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\Source\UI\PlayheadComponent.h">
+      <Filter>Final Project\Source\UI</Filter>
+    </ClInclude>
     <ClInclude Include="..\..\Source\UI\ToolbarComponent.h">
+      <Filter>Final Project\Source\UI</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\UI\TrackComponent.h">
       <Filter>Final Project\Source\UI</Filter>
     </ClInclude>
     <ClInclude Include="..\..\Source\UI\UIEngine.h">

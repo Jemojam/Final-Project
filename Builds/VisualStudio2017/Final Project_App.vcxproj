@@ -145,11 +145,14 @@
     <ClCompile Include="..\..\Source\UI\AudioThumbnailComponent.cpp"/>
     <ClCompile Include="..\..\Source\UI\ChannelComponent.cpp"/>
     <ClCompile Include="..\..\Source\UI\ChannelWindow.cpp"/>
+    <ClCompile Include="..\..\Source\UI\ClipComponent.cpp"/>
     <ClCompile Include="..\..\Source\UI\FXInsertComponent.cpp"/>
     <ClCompile Include="..\..\Source\UI\GridComponent.cpp"/>
     <ClCompile Include="..\..\Source\UI\MixerChannelComponent.cpp"/>
     <ClCompile Include="..\..\Source\UI\PlayButton.cpp"/>
+    <ClCompile Include="..\..\Source\UI\PlayheadComponent.cpp"/>
     <ClCompile Include="..\..\Source\UI\ToolbarComponent.cpp"/>
+    <ClCompile Include="..\..\Source\UI\TrackComponent.cpp"/>
     <ClCompile Include="..\..\Source\UI\UIEngine.cpp"/>
     <ClCompile Include="..\..\..\JUCE\modules\juce_audio_basics\buffers\juce_AudioChannelSet.cpp">
       <ExcludedFromBuild>true</ExcludedFromBuild>
@@ -3340,12 +3343,15 @@
     <ClInclude Include="..\..\Source\UI\AudioThumbnailComponent.h"/>
     <ClInclude Include="..\..\Source\UI\ChannelComponent.h"/>
     <ClInclude Include="..\..\Source\UI\ChannelWindow.h"/>
+    <ClInclude Include="..\..\Source\UI\ClipComponent.h"/>
     <ClInclude Include="..\..\Source\UI\FXInsertComponent.h"/>
     <ClInclude Include="..\..\Source\UI\GridComponent.h"/>
     <ClInclude Include="..\..\Source\UI\ImageBinary.h"/>
     <ClInclude Include="..\..\Source\UI\MixerChannelComponent.h"/>
     <ClInclude Include="..\..\Source\UI\PlayButton.h"/>
+    <ClInclude Include="..\..\Source\UI\PlayheadComponent.h"/>
     <ClInclude Include="..\..\Source\UI\ToolbarComponent.h"/>
+    <ClInclude Include="..\..\Source\UI\TrackComponent.h"/>
     <ClInclude Include="..\..\Source\UI\UIEngine.h"/>
     <ClInclude Include="..\..\..\JUCE\modules\juce_audio_basics\audio_play_head\juce_AudioPlayHead.h"/>
     <ClInclude Include="..\..\..\JUCE\modules\juce_audio_basics\buffers\juce_AudioChannelSet.h"/>

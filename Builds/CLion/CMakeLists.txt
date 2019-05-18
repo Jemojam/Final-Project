@@ -110,6 +110,8 @@ add_executable (APP
     "../../Source/UI/ChannelComponent.h"
     "../../Source/UI/ChannelWindow.cpp"
     "../../Source/UI/ChannelWindow.h"
+    "../../Source/UI/ClipComponent.cpp"
+    "../../Source/UI/ClipComponent.h"
     "../../Source/UI/FXInsertComponent.cpp"
     "../../Source/UI/FXInsertComponent.h"
     "../../Source/UI/GridComponent.cpp"
@@ -119,8 +121,12 @@ add_executable (APP
     "../../Source/UI/MixerChannelComponent.h"
     "../../Source/UI/PlayButton.cpp"
     "../../Source/UI/PlayButton.h"
+    "../../Source/UI/PlayheadComponent.cpp"
+    "../../Source/UI/PlayheadComponent.h"
     "../../Source/UI/ToolbarComponent.cpp"
     "../../Source/UI/ToolbarComponent.h"
+    "../../Source/UI/TrackComponent.cpp"
+    "../../Source/UI/TrackComponent.h"
     "../../Source/UI/UIEngine.cpp"
     "../../Source/UI/UIEngine.h"
     "../../../JUCE/modules/juce_audio_basics/audio_play_head/juce_AudioPlayHead.h"
@@ -2410,12 +2416,15 @@ set_source_files_properties ("../../Source/UI/AudioSettings.h" PROPERTIES HEADER
 set_source_files_properties ("../../Source/UI/AudioThumbnailComponent.h" PROPERTIES HEADER_FILE_ONLY TRUE)
 set_source_files_properties ("../../Source/UI/ChannelComponent.h" PROPERTIES HEADER_FILE_ONLY TRUE)
 set_source_files_properties ("../../Source/UI/ChannelWindow.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../Source/UI/ClipComponent.h" PROPERTIES HEADER_FILE_ONLY TRUE)
 set_source_files_properties ("../../Source/UI/FXInsertComponent.h" PROPERTIES HEADER_FILE_ONLY TRUE)
 set_source_files_properties ("../../Source/UI/GridComponent.h" PROPERTIES HEADER_FILE_ONLY TRUE)
 set_source_files_properties ("../../Source/UI/ImageBinary.h" PROPERTIES HEADER_FILE_ONLY TRUE)
 set_source_files_properties ("../../Source/UI/MixerChannelComponent.h" PROPERTIES HEADER_FILE_ONLY TRUE)
 set_source_files_properties ("../../Source/UI/PlayButton.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../Source/UI/PlayheadComponent.h" PROPERTIES HEADER_FILE_ONLY TRUE)
 set_source_files_properties ("../../Source/UI/ToolbarComponent.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../Source/UI/TrackComponent.h" PROPERTIES HEADER_FILE_ONLY TRUE)
 set_source_files_properties ("../../Source/UI/UIEngine.h" PROPERTIES HEADER_FILE_ONLY TRUE)
 set_source_files_properties ("../../../JUCE/modules/juce_audio_basics/audio_play_head/juce_AudioPlayHead.h" PROPERTIES HEADER_FILE_ONLY TRUE)
 set_source_files_properties ("../../../JUCE/modules/juce_audio_basics/buffers/juce_AudioChannelSet.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)

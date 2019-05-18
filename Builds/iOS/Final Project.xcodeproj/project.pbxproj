@@ -97,6 +97,10 @@
 			isa = PBXBuildFile;
 			fileRef = CAA150675FFD7E231F75EFDD;
 		};
+		24CFAA7C82CC2F0A0E964DDD = {
+			isa = PBXBuildFile;
+			fileRef = 030B5F4BE92CC4B125325DA5;
+		};
 		1312CF22421D700A559ECB62 = {
 			isa = PBXBuildFile;
 			fileRef = D9AEDD103334DB4CFE97C74C;
@@ -113,9 +117,17 @@
 			isa = PBXBuildFile;
 			fileRef = B1BAF74F6BC2838F439C88F3;
 		};
+		F59AA51561F91ACE90F9D573 = {
+			isa = PBXBuildFile;
+			fileRef = 69F5B2467B3050FE9ECBF389;
+		};
 		CA7AB2AE85A82F06E5A0E150 = {
 			isa = PBXBuildFile;
 			fileRef = EADE48800EDE917F92B294C1;
+		};
+		434CBCB9F0F58E5A9E22735B = {
+			isa = PBXBuildFile;
+			fileRef = 767E35314367B4D0CAB0DD32;
 		};
 		B4B2B171C54FFD35104D26CB = {
 			isa = PBXBuildFile;
@@ -242,6 +254,13 @@
 			lastKnownFileType = image.png;
 			name = "032-next.png";
 			path = "../../Icons/032-next.png";
+			sourceTree = "SOURCE_ROOT";
+		};
+		030B5F4BE92CC4B125325DA5 = {
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.cpp.cpp;
+			name = ClipComponent.cpp;
+			path = ../../Source/UI/ClipComponent.cpp;
 			sourceTree = "SOURCE_ROOT";
 		};
 		0683BFD510E4C75CF1D8C94F = {
@@ -664,6 +683,13 @@
 			path = "../../Icons/031-pause.png";
 			sourceTree = "SOURCE_ROOT";
 		};
+		69F5B2467B3050FE9ECBF389 = {
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.cpp.cpp;
+			name = PlayheadComponent.cpp;
+			path = ../../Source/UI/PlayheadComponent.cpp;
+			sourceTree = "SOURCE_ROOT";
+		};
 		6A71ED84E64E1E84EDD3F591 = {
 			isa = PBXFileReference;
 			lastKnownFileType = image.png;
@@ -711,6 +737,20 @@
 			lastKnownFileType = sourcecode.cpp.cpp;
 			name = AudioSettings.cpp;
 			path = ../../Source/UI/AudioSettings.cpp;
+			sourceTree = "SOURCE_ROOT";
+		};
+		767E35314367B4D0CAB0DD32 = {
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.cpp.cpp;
+			name = TrackComponent.cpp;
+			path = ../../Source/UI/TrackComponent.cpp;
+			sourceTree = "SOURCE_ROOT";
+		};
+		77364A0C237DC41872756615 = {
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = TrackComponent.h;
+			path = ../../Source/UI/TrackComponent.h;
 			sourceTree = "SOURCE_ROOT";
 		};
 		77FA1C5E12B264CF311FD820 = {
@@ -823,6 +863,13 @@
 			lastKnownFileType = image.png;
 			name = "001-xylophone.png";
 			path = "../../Icons/001-xylophone.png";
+			sourceTree = "SOURCE_ROOT";
+		};
+		919568C7ABD99C16BB0DD0F7 = {
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = ClipComponent.h;
+			path = ../../Source/UI/ClipComponent.h;
 			sourceTree = "SOURCE_ROOT";
 		};
 		91BF8862DABDD394ED111B86 = {
@@ -1196,6 +1243,13 @@
 			path = LaunchScreen.storyboard;
 			sourceTree = "SOURCE_ROOT";
 		};
+		E2AF561F01305CE1EAA02BAF = {
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = PlayheadComponent.h;
+			path = ../../Source/UI/PlayheadComponent.h;
+			sourceTree = "SOURCE_ROOT";
+		};
 		E2DF60364CB5E21181C98432 = {
 			isa = PBXFileReference;
 			lastKnownFileType = sourcecode.c.h;
@@ -1475,6 +1529,8 @@
 				526757297C07D19E2CF95214,
 				CAA150675FFD7E231F75EFDD,
 				5188524FC0B022AC8C87ADC6,
+				030B5F4BE92CC4B125325DA5,
+				919568C7ABD99C16BB0DD0F7,
 				D9AEDD103334DB4CFE97C74C,
 				B6512EFF8FD06A8F40F11276,
 				32811931F61AD90C19575E00,
@@ -1484,8 +1540,12 @@
 				FCFEE3038C4CFC6207A4A7FE,
 				B1BAF74F6BC2838F439C88F3,
 				7BDCDCB0D0035F221EBAD778,
+				69F5B2467B3050FE9ECBF389,
+				E2AF561F01305CE1EAA02BAF,
 				EADE48800EDE917F92B294C1,
 				6011AB3CE573029863477115,
+				767E35314367B4D0CAB0DD32,
+				77364A0C237DC41872756615,
 				354ACE04D1F7BDDA7EF9CE63,
 				92C2522DE81B973050464571,
 			);
@@ -1854,11 +1914,14 @@
 				710999E353E6C998CC576C49,
 				DFAEF4D5EC6BA57ACFB5B24F,
 				5C1711FC727DCB0F248E2D8A,
+				24CFAA7C82CC2F0A0E964DDD,
 				1312CF22421D700A559ECB62,
 				F73FDFC463D26C1A00D820FC,
 				B6104FABD8A3D62572BCF4B8,
 				11CCD4A773A715669216B586,
+				F59AA51561F91ACE90F9D573,
 				CA7AB2AE85A82F06E5A0E150,
+				434CBCB9F0F58E5A9E22735B,
 				B4B2B171C54FFD35104D26CB,
 				EB3DC21A6127C4AFDD0C13A7,
 				6B4128E55EA71F6A0F639C00,

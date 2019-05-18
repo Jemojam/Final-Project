@@ -167,6 +167,9 @@
         <FILE id="CicnlY" name="ChannelWindow.cpp" compile="1" resource="0"
               file="Source/UI/ChannelWindow.cpp"/>
         <FILE id="iVdWig" name="ChannelWindow.h" compile="0" resource="0" file="Source/UI/ChannelWindow.h"/>
+        <FILE id="qCoZ0j" name="ClipComponent.cpp" compile="1" resource="0"
+              file="Source/UI/ClipComponent.cpp"/>
+        <FILE id="VS5rmw" name="ClipComponent.h" compile="0" resource="0" file="Source/UI/ClipComponent.h"/>
         <FILE id="mINnSw" name="FXInsertComponent.cpp" compile="1" resource="0"
               file="Source/UI/FXInsertComponent.cpp"/>
         <FILE id="Pscvj9" name="FXInsertComponent.h" compile="0" resource="0"
@@ -181,10 +184,18 @@
               file="Source/UI/MixerChannelComponent.h"/>
         <FILE id="VugjdV" name="PlayButton.cpp" compile="1" resource="0" file="Source/UI/PlayButton.cpp"/>
         <FILE id="a6doR8" name="PlayButton.h" compile="0" resource="0" file="Source/UI/PlayButton.h"/>
+        <FILE id="T4g6D7" name="PlayheadComponent.cpp" compile="1" resource="0"
+              file="Source/UI/PlayheadComponent.cpp"/>
+        <FILE id="wAWOLl" name="PlayheadComponent.h" compile="0" resource="0"
+              file="Source/UI/PlayheadComponent.h"/>
         <FILE id="Xu2KUN" name="ToolbarComponent.cpp" compile="1" resource="0"
               file="Source/UI/ToolbarComponent.cpp"/>
         <FILE id="hUK7up" name="ToolbarComponent.h" compile="0" resource="0"
               file="Source/UI/ToolbarComponent.h"/>
+        <FILE id="yAHsKE" name="TrackComponent.cpp" compile="1" resource="0"
+              file="Source/UI/TrackComponent.cpp"/>
+        <FILE id="kwdtUC" name="TrackComponent.h" compile="0" resource="0"
+              file="Source/UI/TrackComponent.h"/>
         <FILE id="lvPjVM" name="UIEngine.cpp" compile="1" resource="0" file="Source/UI/UIEngine.cpp"/>
         <FILE id="zJ69YG" name="UIEngine.h" compile="0" resource="0" file="Source/UI/UIEngine.h"/>
       </GROUP>
