@@ -11,6 +11,11 @@ AudioEngine::AudioEngine()
 
     te::EditFileOperations(*edit).save(true, true, false);
     removeAllTracks();
+
+	for (int i = 0; i < 8; i++)
+	{
+		addChannel();
+	}
 }
 
 AudioEngine::~AudioEngine()
@@ -52,14 +57,16 @@ te::WaveAudioClip::Ptr AudioEngine::loadAudioFileAsClip(const File& file, AudioT
 {
     // Add a new clip to this track
     AudioFile audioFile(file);
+	
 
     if (audioFile.isValid())
     {
+		
         auto name = file.getFileNameWithoutExtension();
 
-        EditTimeRange timeRange(0, audioFile.getLength());
+        EditTimeRange timeRange(track.getLength(), audioFile.getLength());
         ClipPosition position = { timeRange, 0 };
-
+		
         auto newClip = track.insertWaveClip(name, file, position, false);
 
         if (newClip != nullptr)
@@ -76,7 +83,6 @@ void AudioEngine::addNewClipFromFile(const File& editFile, AudioTrack& track)
 
     if (clip != nullptr)
     {
-        clip = loadAudioFileAsClip(editFile, track);
         adjustClipProperties(*clip);
     }
 
@@ -368,4 +374,12 @@ void AudioEngine::inputMonitoring(AudioTrack* at)
         }
     }
 
+}
+
+void AudioEngine::deleteSelectedClips()
+{
+	auto allSelectedObjects=selectionManager->getSelectedObjects();
+
+	allSelectedObjects.clear();
+	
 }

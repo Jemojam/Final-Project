@@ -246,22 +246,26 @@ void ToolbarComponent::resized()
 
 void ToolbarComponent::buttonClicked(Button* buttonThatWasClicked)
 {
-    if (buttonThatWasClicked == recordButton.get())
-        engine.recording();
+	if (buttonThatWasClicked == recordButton.get())
+		engine.recording();
 
-    else if (buttonThatWasClicked == stopButton.get())
-        engine.stop();
+	else if (buttonThatWasClicked == stopButton.get())
+		engine.stop();
 
-    else if (buttonThatWasClicked == loopButton.get())
-    {
+	else if (buttonThatWasClicked == loopButton.get())
+	{
 
-    }
-    else if (buttonThatWasClicked == addChannelButton.get())
-        engine.addChannel();
-
+	}
     else if (buttonThatWasClicked == audioSettingsButton.get())
     {
         engine.showAudioSettings();
         engine.createTracksAndAssignInputs();
     }
+
+	/*
+		else if (buttonThatWasClicked == addChannelButton.get())
+	{
+		engine.addChannel();
+	}
+	*/
 }

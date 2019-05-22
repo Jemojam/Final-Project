@@ -18,7 +18,7 @@ AudioThumbnailComponent::~AudioThumbnailComponent()
 
 void AudioThumbnailComponent::paint(Graphics& g)
 {
-    Rectangle<int> thumbnailBounds(200, 70);
+    Rectangle<int> thumbnailBounds(200*clip.getMaximumLength(), 70);
 
     if (thumbnail.getNumChannels() == 0)
         paintIfNoFileLoaded(g, thumbnailBounds);
@@ -63,10 +63,14 @@ void AudioThumbnailComponent::paintIfFileLoaded(Graphics& g, const Rectangle<int
 	
 }
 
+
+
 void AudioThumbnailComponent::mouseDown(const MouseEvent& /*event*/)
 {
 	selected = !selected;
 
+	
+	
 	repaint();
 }
 

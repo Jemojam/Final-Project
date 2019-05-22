@@ -22,3 +22,4 @@ void UIEngine::resized()
     channelWindow.setBounds(getLocalBounds().withTrimmedTop(toolBarHeight));
 	gridWindow.setBounds(xOfGrid, yOfGrid, proportionOfWidth(1.0f), proportionOfHeight(1.0f));
 }
+

@@ -25,13 +25,14 @@ public:
 
 private:
     void markForUpdate() { shouldUpdate->store(true); }
-
+	void deleteSelectedClip();
     void valueTreeChildAdded(juce::ValueTree&, juce::ValueTree&) override { markForUpdate(); }
     void valueTreeChildRemoved(juce::ValueTree&, juce::ValueTree&, int) override { markForUpdate(); }
     void clickSelectButton() const;
     void clickAddFileButton();
     void valueTreeChanged() override {};
-    Colour getArmedTrackColor() const;
+	
+	Colour getArmedTrackColor() const;
 
     std::unique_ptr<TextButton> selectButton;
     std::unique_ptr<TextEditor> nameText;

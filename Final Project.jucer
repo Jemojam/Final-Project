@@ -167,9 +167,6 @@
         <FILE id="CicnlY" name="ChannelWindow.cpp" compile="1" resource="0"
               file="Source/UI/ChannelWindow.cpp"/>
         <FILE id="iVdWig" name="ChannelWindow.h" compile="0" resource="0" file="Source/UI/ChannelWindow.h"/>
-        <FILE id="qCoZ0j" name="ClipComponent.cpp" compile="1" resource="0"
-              file="Source/UI/ClipComponent.cpp"/>
-        <FILE id="VS5rmw" name="ClipComponent.h" compile="0" resource="0" file="Source/UI/ClipComponent.h"/>
         <FILE id="mINnSw" name="FXInsertComponent.cpp" compile="1" resource="0"
               file="Source/UI/FXInsertComponent.cpp"/>
         <FILE id="Pscvj9" name="FXInsertComponent.h" compile="0" resource="0"
@@ -184,18 +181,10 @@
               file="Source/UI/MixerChannelComponent.h"/>
         <FILE id="VugjdV" name="PlayButton.cpp" compile="1" resource="0" file="Source/UI/PlayButton.cpp"/>
         <FILE id="a6doR8" name="PlayButton.h" compile="0" resource="0" file="Source/UI/PlayButton.h"/>
-        <FILE id="T4g6D7" name="PlayheadComponent.cpp" compile="1" resource="0"
-              file="Source/UI/PlayheadComponent.cpp"/>
-        <FILE id="wAWOLl" name="PlayheadComponent.h" compile="0" resource="0"
-              file="Source/UI/PlayheadComponent.h"/>
         <FILE id="Xu2KUN" name="ToolbarComponent.cpp" compile="1" resource="0"
               file="Source/UI/ToolbarComponent.cpp"/>
         <FILE id="hUK7up" name="ToolbarComponent.h" compile="0" resource="0"
               file="Source/UI/ToolbarComponent.h"/>
-        <FILE id="yAHsKE" name="TrackComponent.cpp" compile="1" resource="0"
-              file="Source/UI/TrackComponent.cpp"/>
-        <FILE id="kwdtUC" name="TrackComponent.h" compile="0" resource="0"
-              file="Source/UI/TrackComponent.h"/>
         <FILE id="lvPjVM" name="UIEngine.cpp" compile="1" resource="0" file="Source/UI/UIEngine.cpp"/>
         <FILE id="zJ69YG" name="UIEngine.h" compile="0" resource="0" file="Source/UI/UIEngine.h"/>
       </GROUP>
@@ -219,9 +208,9 @@
         <MODULEPATH id="juce_graphics" path="../JUCE/modules"/>
         <MODULEPATH id="juce_gui_extra" path="../JUCE/modules"/>
         <MODULEPATH id="juce_audio_utils" path="../JUCE/modules"/>
-        <MODULEPATH id="tracktion_engine" path="../tracktion_engine/modules"/>
         <MODULEPATH id="juce_dsp" path="../tracktion_engine/modules/juce/modules"/>
         <MODULEPATH id="juce_osc" path="../tracktion_engine/modules/juce/modules"/>
+        <MODULEPATH id="tracktion_engine" path="../../../../tracktion_engine/modules"/>
       </MODULEPATHS>
     </XCODE_MAC>
     <XCODE_IPHONE targetFolder="Builds/iOS">
@@ -241,9 +230,9 @@
         <MODULEPATH id="juce_graphics" path="../JUCE/modules"/>
         <MODULEPATH id="juce_gui_extra" path="../JUCE/modules"/>
         <MODULEPATH id="juce_audio_utils" path="../JUCE/modules"/>
-        <MODULEPATH id="tracktion_engine" path="../tracktion_engine/modules"/>
         <MODULEPATH id="juce_dsp" path="../tracktion_engine/modules/juce/modules"/>
         <MODULEPATH id="juce_osc" path="../tracktion_engine/modules/juce/modules"/>
+        <MODULEPATH id="tracktion_engine" path="../../../../tracktion_engine/modules"/>
       </MODULEPATHS>
     </XCODE_IPHONE>
     <VS2017 targetFolder="Builds/VisualStudio2017">
@@ -263,9 +252,9 @@
         <MODULEPATH id="juce_graphics" path="../JUCE/modules"/>
         <MODULEPATH id="juce_gui_extra" path="../JUCE/modules"/>
         <MODULEPATH id="juce_audio_utils" path="../JUCE/modules"/>
-        <MODULEPATH id="tracktion_engine" path="../tracktion_engine/modules"/>
         <MODULEPATH id="juce_dsp" path="../tracktion_engine/modules/juce/modules"/>
         <MODULEPATH id="juce_osc" path="../tracktion_engine/modules/juce/modules"/>
+        <MODULEPATH id="tracktion_engine" path="../../../../tracktion_engine/modules"/>
       </MODULEPATHS>
     </VS2017>
     <CLION targetFolder="Builds/CLion" clionXcodeEnabled="1">
@@ -281,9 +270,9 @@
         <MODULEPATH id="juce_graphics" path="../JUCE/modules"/>
         <MODULEPATH id="juce_gui_extra" path="../JUCE/modules"/>
         <MODULEPATH id="juce_audio_utils" path="../JUCE/modules"/>
-        <MODULEPATH id="tracktion_engine" path="../tracktion_engine/modules"/>
         <MODULEPATH id="juce_dsp" path="../tracktion_engine/modules/juce/modules"/>
         <MODULEPATH id="juce_osc" path="../tracktion_engine/modules/juce/modules"/>
+        <MODULEPATH id="tracktion_engine" path="../../../../tracktion_engine/modules"/>
       </MODULEPATHS>
     </CLION>
     <VS2019 targetFolder="Builds/VisualStudio2019">
@@ -292,7 +281,6 @@
         <CONFIGURATION isDebug="0" name="Release"/>
       </CONFIGURATIONS>
       <MODULEPATHS>
-        <MODULEPATH id="tracktion_engine" path="../tracktion_engine/modules"/>
         <MODULEPATH id="juce_osc"/>
         <MODULEPATH id="juce_gui_extra"/>
         <MODULEPATH id="juce_gui_basics"/>
@@ -306,23 +294,24 @@
         <MODULEPATH id="juce_audio_formats"/>
         <MODULEPATH id="juce_audio_devices"/>
         <MODULEPATH id="juce_audio_basics"/>
+        <MODULEPATH id="tracktion_engine" path="../../../../tracktion_engine/modules"/>
       </MODULEPATHS>
     </VS2019>
   </EXPORTFORMATS>
   <MODULES>
-    <MODULE id="juce_audio_basics" showAllCode="1" useLocalCopy="0" useGlobalPath="0"/>
-    <MODULE id="juce_audio_devices" showAllCode="1" useLocalCopy="0" useGlobalPath="0"/>
-    <MODULE id="juce_audio_formats" showAllCode="1" useLocalCopy="0" useGlobalPath="0"/>
-    <MODULE id="juce_audio_processors" showAllCode="1" useLocalCopy="0" useGlobalPath="0"/>
-    <MODULE id="juce_audio_utils" showAllCode="1" useLocalCopy="0" useGlobalPath="0"/>
-    <MODULE id="juce_core" showAllCode="1" useLocalCopy="0" useGlobalPath="0"/>
-    <MODULE id="juce_data_structures" showAllCode="1" useLocalCopy="0" useGlobalPath="0"/>
-    <MODULE id="juce_dsp" showAllCode="1" useLocalCopy="0" useGlobalPath="0"/>
-    <MODULE id="juce_events" showAllCode="1" useLocalCopy="0" useGlobalPath="0"/>
-    <MODULE id="juce_graphics" showAllCode="1" useLocalCopy="0" useGlobalPath="0"/>
-    <MODULE id="juce_gui_basics" showAllCode="1" useLocalCopy="0" useGlobalPath="0"/>
-    <MODULE id="juce_gui_extra" showAllCode="1" useLocalCopy="0" useGlobalPath="0"/>
-    <MODULE id="juce_osc" showAllCode="1" useLocalCopy="0" useGlobalPath="0"/>
+    <MODULE id="juce_audio_basics" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_audio_devices" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_audio_formats" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_audio_processors" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_audio_utils" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_core" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_data_structures" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_dsp" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_events" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_graphics" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_gui_basics" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_gui_extra" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_osc" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
     <MODULE id="tracktion_engine" showAllCode="1" useLocalCopy="0" useGlobalPath="0"/>
   </MODULES>
   <LIVE_SETTINGS>

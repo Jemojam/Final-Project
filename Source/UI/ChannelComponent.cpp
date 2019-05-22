@@ -180,6 +180,12 @@ void ChannelComponent::clickSelectButton() const
     selectButton->setColour(selectButton->buttonColourId, getArmedTrackColor());
 }
 
+void ChannelComponent::deleteSelectedClip()
+{
+	engine.deleteSelectedClips();
+}
+
+
 Colour ChannelComponent::getArmedTrackColor() const
 {
     auto color = notArmedColor;
@@ -189,6 +195,8 @@ Colour ChannelComponent::getArmedTrackColor() const
 
     return color;
 }
+
+
 
 void ChannelComponent::sliderValueChanged(Slider* sliderThatWasMoved)
 {

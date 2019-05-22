@@ -240,7 +240,7 @@ namespace BinaryData
     const int            _080earphones_pngSize = 8091;
 
     extern const char*   _081loop_png;
-    const int            _081loop_pngSize = 9275;
+    const int            _081loop_pngSize = 122043;
 
     extern const char*   _072settings_png;
     const int            _072settings_pngSize = 8502;

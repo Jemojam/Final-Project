@@ -17,12 +17,15 @@ public:
     Clip& getClip() const { return clip; }
 
 	void mouseDown(const MouseEvent& event) override;
+	bool isSelected() { return selected; };
 private:
 
     void initSource();
     void thumbnailChanged();
     void paintIfNoFileLoaded(Graphics& g, const Rectangle<int>& thumbnailBounds);
     void paintIfFileLoaded(Graphics& g, const Rectangle<int>& thumbnailBounds);
+
+	
 
     AudioFormatManager formatManager;
     AudioThumbnailCache thumbnailCache;

@@ -42,6 +42,7 @@ public :
 
 	void inputMonitoring(AudioTrack* at);
 
+	void deleteSelectedClips();
 
 	void enableInputMonitoring(te::AudioTrack& t, bool im, int position = 0);
 	bool trackHasInput(te::AudioTrack& t, int position = 0);
