@@ -21,6 +21,7 @@ public :
 	void addNewClipFromFile(const File& editFile, AudioTrack& track);
 
 	void changeVolume(AudioTrack& track, float newVolume);
+	void changePan(AudioTrack& track, float newPan);
 	void muteChannel(AudioTrack& track);
 	void soloChannel(AudioTrack& track);
 

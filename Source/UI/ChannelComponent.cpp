@@ -18,7 +18,7 @@ ChannelComponent::ChannelComponent(AudioEngine& inEngine, AudioTrack& inTrack)
     selectButton->addListener(this);
     selectButton->setColour(TextButton::buttonColourId, Colour(0xff1b605e));
 
-    selectButton->setBounds(8, 8, 18, 52);
+    selectButton->setBounds(8, 8, 20, 20);
 
     nameText.reset(new TextEditor("nameText"));
     addAndMakeVisible(nameText.get());
@@ -30,17 +30,29 @@ ChannelComponent::ChannelComponent(AudioEngine& inEngine, AudioTrack& inTrack)
     nameText->setPopupMenuEnabled(true);
     nameText->setText(String());
 
-    nameText->setBounds(40, 8, 88, 16);
+    nameText->setBounds(35, 10, 65, 15);
 
-    volumeSlider.reset(new Slider("new slider"));
+
+    volumeSlider.reset(new Slider("volume slider"));
     addAndMakeVisible(volumeSlider.get());
     volumeSlider->setRange(-30, 6, 0);
-    volumeSlider->setSliderStyle(Slider::LinearHorizontal);
-    volumeSlider->setTextBoxStyle(Slider::NoTextBox, false, 80, 20);
-    volumeSlider->setColour(Slider::thumbColourId, Colour(0xffbebebe));
+    volumeSlider->setSliderStyle(Slider::SliderStyle::LinearHorizontal);
+    volumeSlider->setTextBoxStyle(Slider::NoTextBox, false, 0, 0);
+    volumeSlider->setColour(Slider::thumbColourId, Colours::cadetblue);
     volumeSlider->addListener(this);
 
-    volumeSlider->setBounds(120, 40, 79, 24);
+    volumeSlider->setBounds(105, 40, 80, 25);
+
+	panSlider.reset(new Slider("pan slider"));
+	addAndMakeVisible(panSlider.get());
+	panSlider->setRange(-100, 100, 0);
+	volumeSlider->setSliderStyle(Slider::LinearHorizontal);
+
+	panSlider->setTextBoxStyle(Slider::NoTextBox, true, 0, 0);
+	panSlider->setColour(Slider::thumbColourId, Colours::cadetblue);
+	panSlider->addListener(this);
+
+	panSlider->setBounds(105, 10, 80, 25);
 
     muteButton.reset(new ImageButton("muteBotton"));
     addAndMakeVisible(muteButton.get());
@@ -52,7 +64,7 @@ ChannelComponent::ChannelComponent(AudioEngine& inEngine, AudioTrack& inTrack)
                           Colours::white,
                           Image(), 1.000f, Colour(0x00000000),
                           Image(), 1.000f, Colour(0x00000000));
-    muteButton->setBounds(32, 40, 15, 15);
+    muteButton->setBounds(10, 40, 15, 15);
 
     soloButton.reset(new ImageButton("soloButton"));
     addAndMakeVisible(soloButton.get());
@@ -64,7 +76,7 @@ ChannelComponent::ChannelComponent(AudioEngine& inEngine, AudioTrack& inTrack)
                           1.000f, Colours::white,
                           Image(), 1.000f, Colour(0x00000000),
                           Image(), 1.000f, Colour(0x00000000));
-    soloButton->setBounds(64, 40, 15, 15);
+    soloButton->setBounds(45, 40, 15, 15);
 
     addFileButton.reset(new ImageButton("addFileButton"));
     addAndMakeVisible(addFileButton.get());
@@ -83,8 +95,9 @@ ChannelComponent::ChannelComponent(AudioEngine& inEngine, AudioTrack& inTrack)
                              Image(),
                              1.000f,
                              Colours::lightgreen);
-    addFileButton->setBounds(96, 40, 15, 15);
+    addFileButton->setBounds(80, 40, 15, 15);
 
+	/*
     FXButton.reset(new ImageButton("FXButton"));
     addAndMakeVisible(FXButton.get());
     FXButton->setButtonText(TRANS("FX"));
@@ -96,7 +109,7 @@ ChannelComponent::ChannelComponent(AudioEngine& inEngine, AudioTrack& inTrack)
                         Image(), 1.000f, Colour(0x00000000),
                         Image(), 1.000f, Colour(0x00000000));
     FXButton->setBounds(160, 8, 15, 15);
-
+	*/
 }
 
 void ChannelComponent::paint(Graphics& g)
@@ -151,9 +164,6 @@ void ChannelComponent::buttonClicked(Button* buttonThatWasClicked)
     else if (buttonThatWasClicked == addFileButton.get())
         clickAddFileButton();
 
-    else if (buttonThatWasClicked == FXButton.get())
-        engine.inputMonitoring(&track);
-
 }
 
 void ChannelComponent::clickAddFileButton()
@@ -205,6 +215,11 @@ void ChannelComponent::sliderValueChanged(Slider* sliderThatWasMoved)
         auto volume = (float) sliderThatWasMoved->getValue();
         engine.changeVolume(track, volume);
     }
+	if (sliderThatWasMoved == panSlider.get())
+	{
+		auto pan = (float)sliderThatWasMoved->getValue();
+		engine.changePan(track, pan);
+	}
 }
 
 void ChannelComponent::timerCallback()
@@ -233,22 +248,4 @@ void ChannelComponent::rebuildClips()
     resized();
 }
 
-/*
-void ChannelComponent::rebuildRecordedClips()
-{
-	if (engine.isRecording())
-	{
-		audioThumbnailComponents.emplace_back();
-
-		auto& newThumbnail = audioThumbnailComponents.back();
-		newThumbnail.reset(new AudioThumbnailComponent(*clip));
-
-		do
-		{
-			rebuildClips();
-		} while (engine.isRecording());
-	}
-
-}
-*/
 

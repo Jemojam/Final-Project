@@ -239,6 +239,21 @@ void AudioEngine::changeVolume(AudioTrack& track, float newVolume)
     }
 }
 
+void AudioEngine::changePan(AudioTrack& track, float newPan)
+{
+	auto plugins = track.getAllPlugins();
+
+	for (int index = 0; index < plugins.size(); ++index)
+	{
+		auto plugin = plugins.getObjectPointer(index);
+
+		auto pan = dynamic_cast<VolumeAndPanPlugin*>(plugin);
+
+		if (pan != nullptr)
+			pan->setPan(newPan);
+	}
+}
+
 void AudioEngine::muteChannel(AudioTrack& track)
 {
     if (track.isMuted(false))

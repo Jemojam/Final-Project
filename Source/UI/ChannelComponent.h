@@ -37,10 +37,12 @@ private:
     std::unique_ptr<TextButton> selectButton;
     std::unique_ptr<TextEditor> nameText;
     std::unique_ptr<Slider> volumeSlider;
+	std::unique_ptr<Slider> panSlider;
     std::unique_ptr<ImageButton> muteButton;
     std::unique_ptr<ImageButton> soloButton;
     std::unique_ptr<ImageButton> addFileButton;
-    std::unique_ptr<ImageButton> FXButton;
+    //std::unique_ptr<ImageButton> FXButton;
+	std::unique_ptr<Label> volLabel, panLabel;
 
     std::vector<std::unique_ptr<AudioThumbnailComponent>> audioThumbnailComponents;
 

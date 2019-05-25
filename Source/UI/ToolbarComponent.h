@@ -31,6 +31,7 @@ private:
     std::unique_ptr<TextEditor> barsText;
     std::unique_ptr<ImageButton> addChannelButton;
 	std::unique_ptr<ImageButton> audioSettingsButton;
+	
 
 	
     PlayButton playButton;
