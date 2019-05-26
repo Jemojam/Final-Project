@@ -2,6 +2,7 @@
 
 #include "JuceHeader.h"
 #include "Audio/AudioEngine.h"
+#include "Audio/Metronome.h"
 #include "PlayButton.h"
 
 
@@ -18,6 +19,8 @@ public:
     void resized() override;
     void buttonClicked (Button* buttonThatWasClicked) override;
 
+	void getCurrentTimeText();
+
 private:
     //[UserVariables]   -- You can add your own custom variables in this section.
     //[/UserVariables]
@@ -29,14 +32,16 @@ private:
     std::unique_ptr<TextEditor> timeText;
     std::unique_ptr<TextEditor> bpmText;
     std::unique_ptr<TextEditor> barsText;
-    std::unique_ptr<ImageButton> addChannelButton;
+    std::unique_ptr<ImageButton> metronomeButton;
 	std::unique_ptr<ImageButton> audioSettingsButton;
+	std::unique_ptr<ImageButton> exportFileButton;
 	
 
 	
     PlayButton playButton;
 
     AudioEngine& engine;
+
 
     //==============================================================================
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (ToolbarComponent)

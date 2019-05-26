@@ -13,9 +13,10 @@ ToolbarComponent::ToolbarComponent(AudioEngine& inEngine) :
 
     recordButton->setImages(false, true, true,
                             ImageCache::getFromMemory(BinaryData::_023record_png, BinaryData::_023record_pngSize), 1.0f,
-                            Colours::crimson,
-                            Image(), 1.0f, Colour(0x00000000),
-                            Image(), 1.0f, Colour(0x00000000));
+							Colours::black,
+							Image(), 1.0f, Colours::grey,
+							Image(), 1.0f, Colours::crimson);
+
     recordButton->setBounds(384, 39, 16, 19);
 
     stopButton.reset(new ImageButton("stopButton"));
@@ -23,11 +24,12 @@ ToolbarComponent::ToolbarComponent(AudioEngine& inEngine) :
     stopButton->setButtonText(TRANS("new button"));
     stopButton->addListener(this);
 
-    stopButton->setImages(false, true, true,
-                          ImageCache::getFromMemory(BinaryData::_013stop_png, BinaryData::_013stop_pngSize), 1.0f,
-                          Colours::darkturquoise,
-                          Image(), 1.0f, Colour(0x00000000),
-                          Image(), 1.0f, Colour(0x00000000));
+	stopButton->setImages(false, true, true,
+		ImageCache::getFromMemory(BinaryData::_013stop_png, BinaryData::_013stop_pngSize), 1.0f,
+		Colours::black,
+		Image(), 1.0f, Colours::grey,
+		Image(), 1.0f, Colours::white);
+
     stopButton->setBounds(352, 40, 16, 16);
 
     addAndMakeVisible(playButton);
@@ -41,9 +43,10 @@ ToolbarComponent::ToolbarComponent(AudioEngine& inEngine) :
 
     loopButton->setImages(false, true, true,
                           ImageCache::getFromMemory(BinaryData::_081loop_png, BinaryData::_081loop_pngSize), 1.0f,
-                          Colours::orangered,
-                          Image(), 1.0f, Colour(0x00000000),
-                          Image(), 1.0f, Colour(0x00000000));
+						Colours::black,
+						Image(), 1.0f, Colours::grey,
+						Image(), 1.0f, Colours::white);
+
     loopButton->setBounds(414, 35, 16, 27);
 
     timeText.reset(new TextEditor("timeText"));
@@ -86,17 +89,17 @@ ToolbarComponent::ToolbarComponent(AudioEngine& inEngine) :
 
     barsText->setBounds(59, 92, 80, 16);
 
-    addChannelButton.reset(new ImageButton("addChannelButton"));
-    addAndMakeVisible(addChannelButton.get());
-    addChannelButton->setButtonText(TRANS("new button"));
-    addChannelButton->addListener(this);
+    metronomeButton.reset(new ImageButton("metronomeButton"));
+    addAndMakeVisible(metronomeButton.get());
+	metronomeButton->setButtonText(TRANS("new button"));
+	metronomeButton->addListener(this);
 
-    addChannelButton->setImages(false, true, true,
-                                ImageCache::getFromMemory(BinaryData::_075audiofile_png,
-                                                          BinaryData::_075audiofile_pngSize), 1.0f, Colours::lightblue,
+	metronomeButton->setImages(false, true, true,
+                                ImageCache::getFromMemory(BinaryData::_010triangle_png,
+                                                          BinaryData::_010triangle_pngSize), 1.0f, Colours::gold,
                                 Image(), 1.0f, Colour(0x00000000),
                                 Image(), 1.0f, Colour(0x00000000));
-    addChannelButton->setBounds(456, 35, 25, 25);
+	metronomeButton->setBounds(456, 35, 25, 25);
 
 
     audioSettingsButton.reset(new ImageButton("audioSettingsButton"));
@@ -106,13 +109,25 @@ ToolbarComponent::ToolbarComponent(AudioEngine& inEngine) :
 
     audioSettingsButton->setImages(false, true, true,
                                    ImageCache::getFromMemory(BinaryData::_072settings_png,
-                                                             BinaryData::_072settings_pngSize), 1.0f, Colours::white,
+                                                             BinaryData::_072settings_pngSize), 1.0f, Colours::aliceblue,
                                    Image(), 1.0f, Colour(0x00000000),
                                    Image(), 1.0f, Colour(0x00000000));
     audioSettingsButton->setBounds(456 + 42, 35, 25, 25);
 
+	exportFileButton.reset(new ImageButton("exportFileButton"));
+	addAndMakeVisible(exportFileButton.get());
+	exportFileButton->setButtonText(TRANS("new button"));
+	exportFileButton->addListener(this);
 
-    setSize(800, 130);
+	exportFileButton->setImages(false, true, true,
+		ImageCache::getFromMemory(BinaryData::_015wave_png,
+			BinaryData::_015wave_pngSize), 1.0f, Colours::firebrick,
+		Image(), 1.0f, Colour(0x00000000),
+		Image(), 1.0f, Colour(0x00000000));
+	exportFileButton->setBounds(456 + 42+42, 35, 25, 25);
+
+
+    setSize(1000, 500);
 
 }
 
@@ -127,7 +142,8 @@ ToolbarComponent::~ToolbarComponent()
     timeText = nullptr;
     bpmText = nullptr;
     barsText = nullptr;
-    addChannelButton = nullptr;
+    metronomeButton = nullptr;
+	exportFileButton = nullptr;
 
 
     //[Destructor]. You can add your own custom destruction code here..
@@ -250,8 +266,10 @@ void ToolbarComponent::buttonClicked(Button* buttonThatWasClicked)
 		engine.recording();
 
 	else if (buttonThatWasClicked == stopButton.get())
+	{
+		engine.pause();
 		engine.stop();
-
+	}
 	else if (buttonThatWasClicked == loopButton.get())
 	{
 
@@ -261,6 +279,14 @@ void ToolbarComponent::buttonClicked(Button* buttonThatWasClicked)
         engine.showAudioSettings();
         engine.createTracksAndAssignInputs();
     }
+	else if (buttonThatWasClicked == exportFileButton.get())
+	{
+		
+	}
+	else if (buttonThatWasClicked == metronomeButton.get())
+	{
+		engine.activeMetro();
+	}
 
 	/*
 		else if (buttonThatWasClicked == addChannelButton.get())
@@ -269,3 +295,11 @@ void ToolbarComponent::buttonClicked(Button* buttonThatWasClicked)
 	}
 	*/
 }
+
+void ToolbarComponent::getCurrentTimeText()
+{
+	while(engine.isPlaying() || engine.isRecording())
+		timeText->setText((String)engine.getTransport().getCurrentPosition(), false);
+}
+
+

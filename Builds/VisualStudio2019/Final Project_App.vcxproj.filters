@@ -931,6 +931,9 @@
     <ClCompile Include="..\..\Source\Audio\AudioEngine.cpp">
       <Filter>Final Project\Source\Audio</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\Source\Audio\Metronome.cpp">
+      <Filter>Final Project\Source\Audio</Filter>
+    </ClCompile>
     <ClCompile Include="..\..\Source\Main\Main.cpp">
       <Filter>Final Project\Source\Main</Filter>
     </ClCompile>
@@ -959,9 +962,6 @@
       <Filter>Final Project\Source\UI</Filter>
     </ClCompile>
     <ClCompile Include="..\..\Source\UI\PlayButton.cpp">
-      <Filter>Final Project\Source\UI</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\Source\UI\PlayheadComponent.cpp">
       <Filter>Final Project\Source\UI</Filter>
     </ClCompile>
     <ClCompile Include="..\..\Source\UI\ToolbarComponent.cpp">
@@ -4314,6 +4314,9 @@
     <ClInclude Include="..\..\Source\Audio\AudioEngine.h">
       <Filter>Final Project\Source\Audio</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\Source\Audio\Metronome.h">
+      <Filter>Final Project\Source\Audio</Filter>
+    </ClInclude>
     <ClInclude Include="..\..\Source\Main\MainComponent.h">
       <Filter>Final Project\Source\Main</Filter>
     </ClInclude>
@@ -4342,9 +4345,6 @@
       <Filter>Final Project\Source\UI</Filter>
     </ClInclude>
     <ClInclude Include="..\..\Source\UI\PlayButton.h">
-      <Filter>Final Project\Source\UI</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\Source\UI\PlayheadComponent.h">
       <Filter>Final Project\Source\UI</Filter>
     </ClInclude>
     <ClInclude Include="..\..\Source\UI\ToolbarComponent.h">

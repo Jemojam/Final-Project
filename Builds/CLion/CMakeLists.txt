@@ -99,6 +99,8 @@ add_executable (APP
     "../../Icons/031-pause.png"
     "../../Source/Audio/AudioEngine.cpp"
     "../../Source/Audio/AudioEngine.h"
+    "../../Source/Audio/Metronome.cpp"
+    "../../Source/Audio/Metronome.h"
     "../../Source/Main/Main.cpp"
     "../../Source/Main/MainComponent.cpp"
     "../../Source/Main/MainComponent.h"
@@ -119,8 +121,6 @@ add_executable (APP
     "../../Source/UI/MixerChannelComponent.h"
     "../../Source/UI/PlayButton.cpp"
     "../../Source/UI/PlayButton.h"
-    "../../Source/UI/PlayheadComponent.cpp"
-    "../../Source/UI/PlayheadComponent.h"
     "../../Source/UI/ToolbarComponent.cpp"
     "../../Source/UI/ToolbarComponent.h"
     "../../Source/UI/UIEngine.cpp"
@@ -2407,6 +2407,7 @@ set_source_files_properties ("../../Icons/072-settings.png" PROPERTIES HEADER_FI
 set_source_files_properties ("../../Icons/028-play.png" PROPERTIES HEADER_FILE_ONLY TRUE)
 set_source_files_properties ("../../Icons/031-pause.png" PROPERTIES HEADER_FILE_ONLY TRUE)
 set_source_files_properties ("../../Source/Audio/AudioEngine.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../Source/Audio/Metronome.h" PROPERTIES HEADER_FILE_ONLY TRUE)
 set_source_files_properties ("../../Source/Main/MainComponent.h" PROPERTIES HEADER_FILE_ONLY TRUE)
 set_source_files_properties ("../../Source/UI/AudioSettings.h" PROPERTIES HEADER_FILE_ONLY TRUE)
 set_source_files_properties ("../../Source/UI/AudioThumbnailComponent.h" PROPERTIES HEADER_FILE_ONLY TRUE)
@@ -2417,7 +2418,6 @@ set_source_files_properties ("../../Source/UI/GridComponent.h" PROPERTIES HEADER
 set_source_files_properties ("../../Source/UI/ImageBinary.h" PROPERTIES HEADER_FILE_ONLY TRUE)
 set_source_files_properties ("../../Source/UI/MixerChannelComponent.h" PROPERTIES HEADER_FILE_ONLY TRUE)
 set_source_files_properties ("../../Source/UI/PlayButton.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("../../Source/UI/PlayheadComponent.h" PROPERTIES HEADER_FILE_ONLY TRUE)
 set_source_files_properties ("../../Source/UI/ToolbarComponent.h" PROPERTIES HEADER_FILE_ONLY TRUE)
 set_source_files_properties ("../../Source/UI/UIEngine.h" PROPERTIES HEADER_FILE_ONLY TRUE)
 set_source_files_properties ("~/JUCE/modules/juce_audio_basics/audio_play_head/juce_AudioPlayHead.h" PROPERTIES HEADER_FILE_ONLY TRUE)

@@ -2,6 +2,7 @@
 #include "ChannelComponent.h"
 
 const Colour notArmedColor = Colour(0xff1b605e);
+const Colour notToggledColor = Colours::white;
 
 ChannelComponent::ChannelComponent(AudioEngine& inEngine, AudioTrack& inTrack)
         : engine(inEngine),
@@ -152,14 +153,20 @@ void ChannelComponent::resized()
 
 void ChannelComponent::buttonClicked(Button* buttonThatWasClicked)
 {
-    if (buttonThatWasClicked == selectButton.get())
-        clickSelectButton();
+	if (buttonThatWasClicked == selectButton.get())
+	{
+		clickSelectButton();
+	}
+	else if (buttonThatWasClicked == muteButton.get())
+	{
+		engine.muteChannel(track);
+	
+	}
 
-    else if (buttonThatWasClicked == muteButton.get())
-        engine.muteChannel(track);
-
-    else if (buttonThatWasClicked == soloButton.get())
-        engine.soloChannel(track);
+	else if (buttonThatWasClicked == soloButton.get())
+	{
+		engine.soloChannel(track);
+	}
 
     else if (buttonThatWasClicked == addFileButton.get())
         clickAddFileButton();
@@ -190,10 +197,7 @@ void ChannelComponent::clickSelectButton() const
     selectButton->setColour(selectButton->buttonColourId, getArmedTrackColor());
 }
 
-void ChannelComponent::deleteSelectedClip()
-{
-	engine.deleteSelectedClips();
-}
+
 
 
 Colour ChannelComponent::getArmedTrackColor() const

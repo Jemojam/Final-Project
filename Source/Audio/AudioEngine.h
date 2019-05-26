@@ -1,7 +1,7 @@
 #pragma once
 
 #include "JuceHeader.h"
-
+#include "../Audio/Metronome.h"
 
 using namespace tracktion_engine;
 namespace te = tracktion_engine;
@@ -26,16 +26,16 @@ public :
 	void soloChannel(AudioTrack& track);
 
     void play();
+	//void loop();
     void stop();
     void pause();
-    bool isPlaying();
-
-	bool isRecording();
-
 	void recording();
+	bool isRecording();
+	bool isPlaying();
+	void exportFile();
+	
 
 	void createTracksAndAssignInputs();
-
 	void changeListenerCallback(ChangeBroadcaster* source);
 
 	void showAudioSettings();
@@ -44,6 +44,10 @@ public :
 	void inputMonitoring(AudioTrack* at);
 
 	void deleteSelectedClips();
+
+	void prepareToPlay(int samplesPerBlockExpected, double sampleRate);
+	void getNextAudioBlock(const AudioSourceChannelInfo& bufferToFill);
+	void activeMetro();
 
 	void enableInputMonitoring(te::AudioTrack& t, bool im, int position = 0);
 	bool trackHasInput(te::AudioTrack& t, int position = 0);
@@ -74,6 +78,8 @@ private:
     std::unique_ptr<AudioFormatReaderSource> playSource;
     std::unique_ptr<te::Edit> edit;
 	std::unique_ptr<te::SelectionManager> selectionManager;
+
+	std::unique_ptr<Metronome> metronome;
 	
 	std::unique_ptr <te::VolumeAndPanPlugin> volumeAndPanPlugin;
 

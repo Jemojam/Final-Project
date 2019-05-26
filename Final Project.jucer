@@ -144,6 +144,8 @@
       <GROUP id="{955C5E93-3148-3E44-AF1A-7E529EFFA770}" name="Audio">
         <FILE id="zJngmD" name="AudioEngine.cpp" compile="1" resource="0" file="Source/Audio/AudioEngine.cpp"/>
         <FILE id="qsx8Ea" name="AudioEngine.h" compile="0" resource="0" file="Source/Audio/AudioEngine.h"/>
+        <FILE id="xxTA8u" name="Metronome.cpp" compile="1" resource="0" file="Source/Audio/Metronome.cpp"/>
+        <FILE id="DJm2MA" name="Metronome.h" compile="0" resource="0" file="Source/Audio/Metronome.h"/>
       </GROUP>
       <GROUP id="{7CD379ED-C2C3-7A36-4325-889CF56EA997}" name="Logic"/>
       <GROUP id="{5BA90910-995E-70FB-0903-ECA7ACA47A5F}" name="Main">
@@ -181,10 +183,6 @@
               file="Source/UI/MixerChannelComponent.h"/>
         <FILE id="VugjdV" name="PlayButton.cpp" compile="1" resource="0" file="Source/UI/PlayButton.cpp"/>
         <FILE id="a6doR8" name="PlayButton.h" compile="0" resource="0" file="Source/UI/PlayButton.h"/>
-        <FILE id="mm4O1N" name="PlayheadComponent.cpp" compile="1" resource="0"
-              file="Source/UI/PlayheadComponent.cpp"/>
-        <FILE id="VpzJcH" name="PlayheadComponent.h" compile="0" resource="0"
-              file="Source/UI/PlayheadComponent.h"/>
         <FILE id="Xu2KUN" name="ToolbarComponent.cpp" compile="1" resource="0"
               file="Source/UI/ToolbarComponent.cpp"/>
         <FILE id="hUK7up" name="ToolbarComponent.h" compile="0" resource="0"

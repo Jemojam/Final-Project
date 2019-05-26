@@ -57,6 +57,10 @@
 			isa = PBXBuildFile;
 			fileRef = 59B434AB9F502A9B005EF393;
 		};
+		7266A4AE9B0CAAB3C017F3D8 = {
+			isa = PBXBuildFile;
+			fileRef = 27F056CDBCB8A5B4EE61EB38;
+		};
 		A853D9F9CD41D09F5F5BB926 = {
 			isa = PBXBuildFile;
 			fileRef = 32BA4545DE2CA47BB3FCF0D7;
@@ -96,10 +100,6 @@
 		11CCD4A773A715669216B586 = {
 			isa = PBXBuildFile;
 			fileRef = B1BAF74F6BC2838F439C88F3;
-		};
-		F59AA51561F91ACE90F9D573 = {
-			isa = PBXBuildFile;
-			fileRef = 69F5B2467B3050FE9ECBF389;
 		};
 		CA7AB2AE85A82F06E5A0E150 = {
 			isa = PBXBuildFile;
@@ -386,6 +386,13 @@
 			path = "../../Icons/014-speaker.png";
 			sourceTree = "SOURCE_ROOT";
 		};
+		27F056CDBCB8A5B4EE61EB38 = {
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.cpp.cpp;
+			name = Metronome.cpp;
+			path = ../../Source/Audio/Metronome.cpp;
+			sourceTree = "SOURCE_ROOT";
+		};
 		283D64544837C93FD6C43DEF = {
 			isa = PBXFileReference;
 			lastKnownFileType = wrapper.framework;
@@ -651,13 +658,6 @@
 			name = "juce_gui_extra";
 			path = "~/JUCE/modules/juce_gui_extra";
 			sourceTree = "<absolute>";
-		};
-		69F5B2467B3050FE9ECBF389 = {
-			isa = PBXFileReference;
-			lastKnownFileType = sourcecode.cpp.cpp;
-			name = PlayheadComponent.cpp;
-			path = ../../Source/UI/PlayheadComponent.cpp;
-			sourceTree = "SOURCE_ROOT";
 		};
 		6A71ED84E64E1E84EDD3F591 = {
 			isa = PBXFileReference;
@@ -1058,6 +1058,13 @@
 			path = "../../Icons/003-volume-3.png";
 			sourceTree = "SOURCE_ROOT";
 		};
+		CBF80FF4A32F76FAD0F8B2D3 = {
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = Metronome.h;
+			path = ../../Source/Audio/Metronome.h;
+			sourceTree = "SOURCE_ROOT";
+		};
 		CC7047A618751A35E2E9E476 = {
 			isa = PBXFileReference;
 			lastKnownFileType = sourcecode.cpp.objcpp;
@@ -1162,13 +1169,6 @@
 			name = Accelerate.framework;
 			path = System/Library/Frameworks/Accelerate.framework;
 			sourceTree = SDKROOT;
-		};
-		E2AF561F01305CE1EAA02BAF = {
-			isa = PBXFileReference;
-			lastKnownFileType = sourcecode.c.h;
-			name = PlayheadComponent.h;
-			path = ../../Source/UI/PlayheadComponent.h;
-			sourceTree = "SOURCE_ROOT";
 		};
 		E2DF60364CB5E21181C98432 = {
 			isa = PBXFileReference;
@@ -1424,6 +1424,8 @@
 			children = (
 				59B434AB9F502A9B005EF393,
 				57975CAAD2F21F1D1A54B547,
+				27F056CDBCB8A5B4EE61EB38,
+				CBF80FF4A32F76FAD0F8B2D3,
 			);
 			name = Audio;
 			sourceTree = "<group>";
@@ -1458,8 +1460,6 @@
 				FCFEE3038C4CFC6207A4A7FE,
 				B1BAF74F6BC2838F439C88F3,
 				7BDCDCB0D0035F221EBAD778,
-				69F5B2467B3050FE9ECBF389,
-				E2AF561F01305CE1EAA02BAF,
 				EADE48800EDE917F92B294C1,
 				6011AB3CE573029863477115,
 				354ACE04D1F7BDDA7EF9CE63,
@@ -1807,6 +1807,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				31AE5FBEDD641F92FFDF3C9B,
+				7266A4AE9B0CAAB3C017F3D8,
 				A853D9F9CD41D09F5F5BB926,
 				EF29CE110EE8147D4544E7E5,
 				73DAC9D72E2231B4BEBA9E19,
@@ -1817,7 +1818,6 @@
 				F73FDFC463D26C1A00D820FC,
 				B6104FABD8A3D62572BCF4B8,
 				11CCD4A773A715669216B586,
-				F59AA51561F91ACE90F9D573,
 				CA7AB2AE85A82F06E5A0E150,
 				B4B2B171C54FFD35104D26CB,
 				EB3DC21A6127C4AFDD0C13A7,

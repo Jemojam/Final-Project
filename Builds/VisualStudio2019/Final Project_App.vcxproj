@@ -139,6 +139,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="..\..\Source\Audio\AudioEngine.cpp"/>
+    <ClCompile Include="..\..\Source\Audio\Metronome.cpp"/>
     <ClCompile Include="..\..\Source\Main\Main.cpp"/>
     <ClCompile Include="..\..\Source\Main\MainComponent.cpp"/>
     <ClCompile Include="..\..\Source\UI\AudioSettings.cpp"/>
@@ -149,7 +150,6 @@
     <ClCompile Include="..\..\Source\UI\GridComponent.cpp"/>
     <ClCompile Include="..\..\Source\UI\MixerChannelComponent.cpp"/>
     <ClCompile Include="..\..\Source\UI\PlayButton.cpp"/>
-    <ClCompile Include="..\..\Source\UI\PlayheadComponent.cpp"/>
     <ClCompile Include="..\..\Source\UI\ToolbarComponent.cpp"/>
     <ClCompile Include="..\..\Source\UI\UIEngine.cpp"/>
     <ClCompile Include="C:\CODE\JUCE\modules\juce_audio_basics\buffers\juce_AudioChannelSet.cpp">
@@ -3336,6 +3336,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\Source\Audio\AudioEngine.h"/>
+    <ClInclude Include="..\..\Source\Audio\Metronome.h"/>
     <ClInclude Include="..\..\Source\Main\MainComponent.h"/>
     <ClInclude Include="..\..\Source\UI\AudioSettings.h"/>
     <ClInclude Include="..\..\Source\UI\AudioThumbnailComponent.h"/>
@@ -3346,7 +3347,6 @@
     <ClInclude Include="..\..\Source\UI\ImageBinary.h"/>
     <ClInclude Include="..\..\Source\UI\MixerChannelComponent.h"/>
     <ClInclude Include="..\..\Source\UI\PlayButton.h"/>
-    <ClInclude Include="..\..\Source\UI\PlayheadComponent.h"/>
     <ClInclude Include="..\..\Source\UI\ToolbarComponent.h"/>
     <ClInclude Include="..\..\Source\UI\UIEngine.h"/>
     <ClInclude Include="C:\CODE\JUCE\modules\juce_audio_basics\audio_play_head\juce_AudioPlayHead.h"/>

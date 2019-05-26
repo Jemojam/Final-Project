@@ -1,6 +1,7 @@
 #include "AudioEngine.h"
 
 
+
 AudioEngine::AudioEngine()
 {
 	
@@ -150,6 +151,9 @@ void AudioEngine::play()
     getTransport().play(false);
 
 }
+
+
+
 TransportControl& AudioEngine::getTransport() const
 {
     return edit->getTransport();
@@ -284,6 +288,14 @@ bool AudioEngine::isPlaying()
     return getTransport().isPlaying();
 }
 
+void AudioEngine::exportFile()
+{
+	//te::ExportJob exJob(edit, );
+	
+}
+
+
+
 bool AudioEngine::isRecording()
 {
 	return getTransport().isRecording();
@@ -397,4 +409,24 @@ void AudioEngine::deleteSelectedClips()
 
 	allSelectedObjects.clear();
 	
+}
+
+void AudioEngine::prepareToPlay(int samplesPerBlockExpected, double sampleRate)
+{
+	metronome->prepareToPlay(samplesPerBlockExpected, sampleRate);
+}
+
+void AudioEngine::getNextAudioBlock(const AudioSourceChannelInfo& bufferToFill)
+{
+	bufferToFill.clearActiveBufferRegion();
+
+	if (metronome->getIsActive())
+	{
+		metronome->getNextAudioBlock(bufferToFill);
+	}
+}
+
+void AudioEngine::activeMetro()
+{
+	metronome->changeIsActive();
 }
