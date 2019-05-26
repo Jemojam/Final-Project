@@ -931,9 +931,6 @@
     <ClCompile Include="..\..\Source\Audio\AudioEngine.cpp">
       <Filter>Final Project\Source\Audio</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\Source\Audio\Metronome.cpp">
-      <Filter>Final Project\Source\Audio</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\Source\Main\Main.cpp">
       <Filter>Final Project\Source\Main</Filter>
     </ClCompile>
@@ -4312,9 +4309,6 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\Source\Audio\AudioEngine.h">
-      <Filter>Final Project\Source\Audio</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\Source\Audio\Metronome.h">
       <Filter>Final Project\Source\Audio</Filter>
     </ClInclude>
     <ClInclude Include="..\..\Source\Main\MainComponent.h">

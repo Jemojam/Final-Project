@@ -411,22 +411,15 @@ void AudioEngine::deleteSelectedClips()
 	
 }
 
-void AudioEngine::prepareToPlay(int samplesPerBlockExpected, double sampleRate)
-{
-	metronome->prepareToPlay(samplesPerBlockExpected, sampleRate);
-}
 
-void AudioEngine::getNextAudioBlock(const AudioSourceChannelInfo& bufferToFill)
-{
-	bufferToFill.clearActiveBufferRegion();
-
-	if (metronome->getIsActive())
-	{
-		metronome->getNextAudioBlock(bufferToFill);
-	}
-}
 
 void AudioEngine::activeMetro()
 {
-	metronome->changeIsActive();
+	String clickFileUrl[2]{"H:\\Juce-spacework\\Final-Project\\Metro\\Metronom Claves.wav","H:\\Juce-spacework\\Final-Project\\Metro\\Metronom Taktell Junior.wav" };
+	
+	click->setClickWaveFile(engine, false, clickFileUrl[0]);
+
+	click->getAudioNodeProperties(*clickAudioNodeProperties);
+	
+	
 }

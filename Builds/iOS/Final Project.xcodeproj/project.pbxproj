@@ -73,10 +73,6 @@
 			isa = PBXBuildFile;
 			fileRef = 59B434AB9F502A9B005EF393;
 		};
-		7266A4AE9B0CAAB3C017F3D8 = {
-			isa = PBXBuildFile;
-			fileRef = 27F056CDBCB8A5B4EE61EB38;
-		};
 		A853D9F9CD41D09F5F5BB926 = {
 			isa = PBXBuildFile;
 			fileRef = 32BA4545DE2CA47BB3FCF0D7;
@@ -421,13 +417,6 @@
 			lastKnownFileType = image.png;
 			name = "014-speaker.png";
 			path = "../../Icons/014-speaker.png";
-			sourceTree = "SOURCE_ROOT";
-		};
-		27F056CDBCB8A5B4EE61EB38 = {
-			isa = PBXFileReference;
-			lastKnownFileType = sourcecode.cpp.cpp;
-			name = Metronome.cpp;
-			path = ../../Source/Audio/Metronome.cpp;
 			sourceTree = "SOURCE_ROOT";
 		};
 		2C3B2FECB05022FB39950D7E = {
@@ -1102,13 +1091,6 @@
 			path = "../../Icons/003-volume-3.png";
 			sourceTree = "SOURCE_ROOT";
 		};
-		CBF80FF4A32F76FAD0F8B2D3 = {
-			isa = PBXFileReference;
-			lastKnownFileType = sourcecode.c.h;
-			name = Metronome.h;
-			path = ../../Source/Audio/Metronome.h;
-			sourceTree = "SOURCE_ROOT";
-		};
 		CC7047A618751A35E2E9E476 = {
 			isa = PBXFileReference;
 			lastKnownFileType = sourcecode.cpp.objcpp;
@@ -1468,8 +1450,6 @@
 			children = (
 				59B434AB9F502A9B005EF393,
 				57975CAAD2F21F1D1A54B547,
-				27F056CDBCB8A5B4EE61EB38,
-				CBF80FF4A32F76FAD0F8B2D3,
 			);
 			name = Audio;
 			sourceTree = "<group>";
@@ -1866,7 +1846,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				31AE5FBEDD641F92FFDF3C9B,
-				7266A4AE9B0CAAB3C017F3D8,
 				A853D9F9CD41D09F5F5BB926,
 				EF29CE110EE8147D4544E7E5,
 				73DAC9D72E2231B4BEBA9E19,

@@ -99,8 +99,6 @@ add_executable (APP
     "../../Icons/031-pause.png"
     "../../Source/Audio/AudioEngine.cpp"
     "../../Source/Audio/AudioEngine.h"
-    "../../Source/Audio/Metronome.cpp"
-    "../../Source/Audio/Metronome.h"
     "../../Source/Main/Main.cpp"
     "../../Source/Main/MainComponent.cpp"
     "../../Source/Main/MainComponent.h"
@@ -2407,7 +2405,6 @@ set_source_files_properties ("../../Icons/072-settings.png" PROPERTIES HEADER_FI
 set_source_files_properties ("../../Icons/028-play.png" PROPERTIES HEADER_FILE_ONLY TRUE)
 set_source_files_properties ("../../Icons/031-pause.png" PROPERTIES HEADER_FILE_ONLY TRUE)
 set_source_files_properties ("../../Source/Audio/AudioEngine.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("../../Source/Audio/Metronome.h" PROPERTIES HEADER_FILE_ONLY TRUE)
 set_source_files_properties ("../../Source/Main/MainComponent.h" PROPERTIES HEADER_FILE_ONLY TRUE)
 set_source_files_properties ("../../Source/UI/AudioSettings.h" PROPERTIES HEADER_FILE_ONLY TRUE)
 set_source_files_properties ("../../Source/UI/AudioThumbnailComponent.h" PROPERTIES HEADER_FILE_ONLY TRUE)

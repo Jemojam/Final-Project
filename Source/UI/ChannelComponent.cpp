@@ -37,23 +37,23 @@ ChannelComponent::ChannelComponent(AudioEngine& inEngine, AudioTrack& inTrack)
     volumeSlider.reset(new Slider("volume slider"));
     addAndMakeVisible(volumeSlider.get());
     volumeSlider->setRange(-30, 6, 0);
-    volumeSlider->setSliderStyle(Slider::SliderStyle::LinearHorizontal);
+    volumeSlider->setSliderStyle(Slider::SliderStyle::LinearVertical);
     volumeSlider->setTextBoxStyle(Slider::NoTextBox, false, 0, 0);
     volumeSlider->setColour(Slider::thumbColourId, Colours::cadetblue);
     volumeSlider->addListener(this);
 
-    volumeSlider->setBounds(105, 40, 80, 25);
+    volumeSlider->setBounds(175, 0, 25, 75);
 
 	panSlider.reset(new Slider("pan slider"));
 	addAndMakeVisible(panSlider.get());
 	panSlider->setRange(-100, 100, 0);
-	volumeSlider->setSliderStyle(Slider::LinearHorizontal);
+	panSlider->setSliderStyle(Slider::SliderStyle::LinearHorizontal);
 
 	panSlider->setTextBoxStyle(Slider::NoTextBox, true, 0, 0);
 	panSlider->setColour(Slider::thumbColourId, Colours::cadetblue);
 	panSlider->addListener(this);
 
-	panSlider->setBounds(105, 10, 80, 25);
+	panSlider->setBounds(110, 0, 75, 25);
 
     muteButton.reset(new ImageButton("muteBotton"));
     addAndMakeVisible(muteButton.get());
@@ -97,6 +97,25 @@ ChannelComponent::ChannelComponent(AudioEngine& inEngine, AudioTrack& inTrack)
                              1.000f,
                              Colours::lightgreen);
     addFileButton->setBounds(80, 40, 15, 15);
+
+	selectInputButton.reset(new ImageButton("selectInputButton"));
+	addAndMakeVisible(selectInputButton.get());
+	selectInputButton->setButtonText(TRANS("Select Input"));
+	selectInputButton->addListener(this);
+
+	selectInputButton->setImages(false,
+		true,
+		true,
+		ImageCache::getFromMemory(BinaryData::_073jackconnector1_png, BinaryData::_073jackconnector1_pngSize),
+		1.000f,
+		Colours::white,
+		Image(),
+		1.000f,
+		Colours::white,
+		Image(),
+		1.000f,
+		Colours::lightgreen);
+	selectInputButton->setBounds(80+35, 40, 15, 15);
 
 	/*
     FXButton.reset(new ImageButton("FXButton"));
@@ -160,7 +179,7 @@ void ChannelComponent::buttonClicked(Button* buttonThatWasClicked)
 	else if (buttonThatWasClicked == muteButton.get())
 	{
 		engine.muteChannel(track);
-	
+
 	}
 
 	else if (buttonThatWasClicked == soloButton.get())
@@ -168,8 +187,10 @@ void ChannelComponent::buttonClicked(Button* buttonThatWasClicked)
 		engine.soloChannel(track);
 	}
 
-    else if (buttonThatWasClicked == addFileButton.get())
-        clickAddFileButton();
+	else if (buttonThatWasClicked == addFileButton.get())
+		clickAddFileButton();
+	else if (buttonThatWasClicked == selectInputButton.get())
+		engine.inputMonitoring(&track);
 
 }
 

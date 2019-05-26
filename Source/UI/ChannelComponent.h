@@ -25,7 +25,7 @@ public:
 
 private:
     void markForUpdate() { shouldUpdate->store(true); }
-	void deleteSelectedClip();
+
     void valueTreeChildAdded(juce::ValueTree&, juce::ValueTree&) override { markForUpdate(); }
     void valueTreeChildRemoved(juce::ValueTree&, juce::ValueTree&, int) override { markForUpdate(); }
     void clickSelectButton() const;
@@ -37,7 +37,7 @@ private:
     std::unique_ptr<TextButton> selectButton;
     std::unique_ptr<TextEditor> nameText;
     std::unique_ptr<Slider> volumeSlider, panSlider;
-    std::unique_ptr<ImageButton> muteButton, soloButton, addFileButton;
+    std::unique_ptr<ImageButton> muteButton, soloButton, addFileButton, selectInputButton;
 	std::unique_ptr<Label> volLabel, panLabel;
 
     std::vector<std::unique_ptr<AudioThumbnailComponent>> audioThumbnailComponents;

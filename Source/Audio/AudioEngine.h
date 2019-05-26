@@ -45,8 +45,7 @@ public :
 
 	void deleteSelectedClips();
 
-	void prepareToPlay(int samplesPerBlockExpected, double sampleRate);
-	void getNextAudioBlock(const AudioSourceChannelInfo& bufferToFill);
+	
 	void activeMetro();
 
 	void enableInputMonitoring(te::AudioTrack& t, bool im, int position = 0);
@@ -78,6 +77,9 @@ private:
     std::unique_ptr<AudioFormatReaderSource> playSource;
     std::unique_ptr<te::Edit> edit;
 	std::unique_ptr<te::SelectionManager> selectionManager;
+
+	std::unique_ptr<te::ClickNode> click;
+	std::unique_ptr<te::AudioNodeProperties> clickAudioNodeProperties;
 
 	std::unique_ptr<Metronome> metronome;
 	
