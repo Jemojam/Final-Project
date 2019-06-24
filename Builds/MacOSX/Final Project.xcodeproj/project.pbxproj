@@ -407,13 +407,6 @@
 			path = "../../Icons/071-sound.png";
 			sourceTree = "SOURCE_ROOT";
 		};
-		2D4DF707332AE881A6236FC4 = {
-			isa = PBXFileReference;
-			lastKnownFileType = file;
-			name = "tracktion_engine";
-			path = "../../../../../../tracktion_engine/modules/tracktion_engine";
-			sourceTree = "SOURCE_ROOT";
-		};
 		32811931F61AD90C19575E00 = {
 			isa = PBXFileReference;
 			lastKnownFileType = sourcecode.cpp.cpp;
@@ -1135,6 +1128,13 @@
 			path = System/Library/Frameworks/CoreMIDI.framework;
 			sourceTree = SDKROOT;
 		};
+		D639A7849ADB9CF5C39411C4 = {
+			isa = PBXFileReference;
+			lastKnownFileType = file;
+			name = "tracktion_engine";
+			path = "~/modules/tracktion_engine";
+			sourceTree = "<absolute>";
+		};
 		D862948E17D52B3842AC8F91 = {
 			isa = PBXFileReference;
 			lastKnownFileType = sourcecode.cpp.cpp;
@@ -1504,7 +1504,7 @@
 				06F88151BDFB3CEEFAA05A35,
 				6757E807534B5A2A81810934,
 				BFAD77A96D4B7A20FAC094C8,
-				2D4DF707332AE881A6236FC4,
+				D639A7849ADB9CF5C39411C4,
 			);
 			name = "JUCE Modules";
 			sourceTree = "<group>";
@@ -1618,7 +1618,7 @@
 				HEADER_SEARCH_PATHS = (
 					"../../JuceLibraryCode",
 					"$(HOME)/JUCE/modules",
-					"../../../../../../tracktion_engine/modules",
+					"$(HOME)/modules",
 					"../../SDKs/JUCE/modules",
 					"../../SDKs/tracktion_engine",
 					"../../Source",
@@ -1665,7 +1665,7 @@
 				HEADER_SEARCH_PATHS = (
 					"../../JuceLibraryCode",
 					"$(HOME)/JUCE/modules",
-					"../../../../../../tracktion_engine/modules",
+					"$(HOME)/modules",
 					"../../SDKs/JUCE/modules",
 					"../../SDKs/tracktion_engine",
 					"../../Source",
