@@ -1,21 +1,19 @@
 #include "AudioEngine.h"
 
 
-
 AudioEngine::AudioEngine()
 {
 	
     edit = std::make_unique<Edit>(engine, createEmptyEdit(), Edit::forEditing, nullptr, 0);
     createTracksAndAssignInputs();
-
     edit->playInStopEnabled = true;
-
+	
     te::EditFileOperations(*edit).save(true, true, false);
     removeAllTracks();
 
-	for (int i = 0; i < 8; i++)
+	for (int i = 0; i < 5; i++)
 	{
-		addChannel();
+		addChannel(); 
 	}
 }
 
@@ -59,7 +57,8 @@ te::WaveAudioClip::Ptr AudioEngine::loadAudioFileAsClip(const File& file, AudioT
     // Add a new clip to this track
     AudioFile audioFile(file);
 	
-
+	
+	
     if (audioFile.isValid())
     {
 		
@@ -410,8 +409,13 @@ void AudioEngine::deleteSelectedClips()
 	allSelectedObjects.clear();
 	
 }
-
-
+/*
+void AudioEngine::exportFile()
+{
+	
+	//createNewEdit(File::getSpecialLocation(File::tempDirectory).getNonexistentChildFile("Test", ".tracktionedit", false));
+	
+}*/
 
 void AudioEngine::activeMetro()
 {

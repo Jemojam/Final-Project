@@ -6,6 +6,7 @@
 #include "ChannelWindow.h"
 #include "AudioSettings.h"
 #include "GridComponent.h"
+#include "PlayHeadComponent.h"
 
 class UIEngine : public Component
 {
@@ -18,7 +19,8 @@ private:
 	ToolbarComponent toolbar;
 	ChannelWindow channelWindow;
 	GridComponent gridWindow;
-    
+	Viewport viewport;
+	PlayHeadComponent playhead;
 	AudioEngine& engine;
 
 	JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR(UIEngine)

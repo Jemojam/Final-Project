@@ -1,11 +1,11 @@
 
 #include "GridComponent.h"
 
-GridComponent::GridComponent () 
+GridComponent::GridComponent ()
 {
 	gridview.setScrollBarsShown(true, true, true, true);
 	addAndMakeVisible(gridview);
-
+	//gridview.setViewedComponent(&channelWindow);
     setSize (600, 400);
 
 

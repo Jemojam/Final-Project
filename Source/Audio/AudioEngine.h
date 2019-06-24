@@ -1,7 +1,7 @@
 #pragma once
 
 #include "JuceHeader.h"
-#include "../Audio/Metronome.h"
+
 
 using namespace tracktion_engine;
 namespace te = tracktion_engine;
@@ -51,7 +51,7 @@ public :
 	void enableInputMonitoring(te::AudioTrack& t, bool im, int position = 0);
 	bool trackHasInput(te::AudioTrack& t, int position = 0);
 	bool isInputMonitoringEnabled(te::AudioTrack& t, int position = 0);
-
+	//void exportFile();
 	void armTrack(te::AudioTrack& t, bool arm, int position = 0);
 	bool isTrackArmed(te::AudioTrack& t, int position = 0);
 
@@ -81,7 +81,7 @@ private:
 	std::unique_ptr<te::ClickNode> click;
 	std::unique_ptr<te::AudioNodeProperties> clickAudioNodeProperties;
 
-	std::unique_ptr<Metronome> metronome;
+
 	
 	std::unique_ptr <te::VolumeAndPanPlugin> volumeAndPanPlugin;
 

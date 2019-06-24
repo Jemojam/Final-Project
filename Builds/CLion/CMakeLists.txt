@@ -121,6 +121,8 @@ add_executable (APP
     "../../Source/UI/PlayButton.h"
     "../../Source/UI/ToolbarComponent.cpp"
     "../../Source/UI/ToolbarComponent.h"
+    "../../Source/UI/PlayHeadComponent.cpp"
+    "../../Source/UI/PlayHeadComponent.h"
     "../../Source/UI/UIEngine.cpp"
     "../../Source/UI/UIEngine.h"
     "~/JUCE/modules/juce_audio_basics/audio_play_head/juce_AudioPlayHead.h"
@@ -197,7 +199,7 @@ add_executable (APP
     "~/JUCE/modules/juce_audio_basics/utilities/juce_SmoothedValue.h"
     "~/JUCE/modules/juce_audio_basics/juce_audio_basics.cpp"
     "~/JUCE/modules/juce_audio_basics/juce_audio_basics.mm"
-    "C:/CODE/JUCE/modules/juce_audio_basics/juce_audio_basics.h"
+    "../../../../../../JUCE/modules/juce_audio_basics/juce_audio_basics.h"
     "~/JUCE/modules/juce_audio_devices/audio_io/juce_AudioDeviceManager.cpp"
     "~/JUCE/modules/juce_audio_devices/audio_io/juce_AudioDeviceManager.h"
     "~/JUCE/modules/juce_audio_devices/audio_io/juce_AudioIODevice.cpp"
@@ -233,7 +235,7 @@ add_executable (APP
     "~/JUCE/modules/juce_audio_devices/sources/juce_AudioTransportSource.h"
     "~/JUCE/modules/juce_audio_devices/juce_audio_devices.cpp"
     "~/JUCE/modules/juce_audio_devices/juce_audio_devices.mm"
-    "C:/CODE/JUCE/modules/juce_audio_devices/juce_audio_devices.h"
+    "../../../../../../JUCE/modules/juce_audio_devices/juce_audio_devices.h"
     "~/JUCE/modules/juce_audio_formats/codecs/flac/libFLAC/include/private/all.h"
     "~/JUCE/modules/juce_audio_formats/codecs/flac/libFLAC/include/private/bitmath.h"
     "~/JUCE/modules/juce_audio_formats/codecs/flac/libFLAC/include/private/bitreader.h"
@@ -390,7 +392,7 @@ add_executable (APP
     "~/JUCE/modules/juce_audio_formats/sampler/juce_Sampler.h"
     "~/JUCE/modules/juce_audio_formats/juce_audio_formats.cpp"
     "~/JUCE/modules/juce_audio_formats/juce_audio_formats.mm"
-    "C:/CODE/JUCE/modules/juce_audio_formats/juce_audio_formats.h"
+    "../../../../../../JUCE/modules/juce_audio_formats/juce_audio_formats.h"
     "~/JUCE/modules/juce_audio_processors/format/juce_AudioPluginFormat.cpp"
     "~/JUCE/modules/juce_audio_processors/format/juce_AudioPluginFormat.h"
     "~/JUCE/modules/juce_audio_processors/format/juce_AudioPluginFormatManager.cpp"
@@ -532,7 +534,7 @@ add_executable (APP
     "~/JUCE/modules/juce_audio_processors/utilities/juce_RangedAudioParameter.h"
     "~/JUCE/modules/juce_audio_processors/juce_audio_processors.cpp"
     "~/JUCE/modules/juce_audio_processors/juce_audio_processors.mm"
-    "C:/CODE/JUCE/modules/juce_audio_processors/juce_audio_processors.h"
+    "../../../../../../JUCE/modules/juce_audio_processors/juce_audio_processors.h"
     "~/JUCE/modules/juce_audio_utils/audio_cd/juce_AudioCDBurner.h"
     "~/JUCE/modules/juce_audio_utils/audio_cd/juce_AudioCDReader.cpp"
     "~/JUCE/modules/juce_audio_utils/audio_cd/juce_AudioCDReader.h"
@@ -566,7 +568,7 @@ add_executable (APP
     "~/JUCE/modules/juce_audio_utils/players/juce_SoundPlayer.h"
     "~/JUCE/modules/juce_audio_utils/juce_audio_utils.cpp"
     "~/JUCE/modules/juce_audio_utils/juce_audio_utils.mm"
-    "C:/CODE/JUCE/modules/juce_audio_utils/juce_audio_utils.h"
+    "../../../../../../JUCE/modules/juce_audio_utils/juce_audio_utils.h"
     "~/JUCE/modules/juce_core/containers/juce_AbstractFifo.cpp"
     "~/JUCE/modules/juce_core/containers/juce_AbstractFifo.h"
     "~/JUCE/modules/juce_core/containers/juce_Array.h"
@@ -810,7 +812,7 @@ add_executable (APP
     "~/JUCE/modules/juce_core/zip/juce_ZipFile.h"
     "~/JUCE/modules/juce_core/juce_core.cpp"
     "~/JUCE/modules/juce_core/juce_core.mm"
-    "C:/CODE/JUCE/modules/juce_core/juce_core.h"
+    "../../../../../../JUCE/modules/juce_core/juce_core.h"
     "~/JUCE/modules/juce_data_structures/app_properties/juce_ApplicationProperties.cpp"
     "~/JUCE/modules/juce_data_structures/app_properties/juce_ApplicationProperties.h"
     "~/JUCE/modules/juce_data_structures/app_properties/juce_PropertiesFile.cpp"
@@ -830,7 +832,7 @@ add_executable (APP
     "~/JUCE/modules/juce_data_structures/values/juce_ValueWithDefault.h"
     "~/JUCE/modules/juce_data_structures/juce_data_structures.cpp"
     "~/JUCE/modules/juce_data_structures/juce_data_structures.mm"
-    "C:/CODE/JUCE/modules/juce_data_structures/juce_data_structures.h"
+    "../../../../../../JUCE/modules/juce_data_structures/juce_data_structures.h"
     "~/JUCE/modules/juce_dsp/containers/juce_AudioBlock.h"
     "~/JUCE/modules/juce_dsp/containers/juce_SIMDRegister.h"
     "~/JUCE/modules/juce_dsp/containers/juce_SIMDRegister_Impl.h"
@@ -885,7 +887,7 @@ add_executable (APP
     "~/JUCE/modules/juce_dsp/processors/juce_WaveShaper.h"
     "~/JUCE/modules/juce_dsp/juce_dsp.cpp"
     "~/JUCE/modules/juce_dsp/juce_dsp.mm"
-    "C:/CODE/JUCE/modules/juce_dsp/juce_dsp.h"
+    "../../../../../../JUCE/modules/juce_dsp/juce_dsp.h"
     "~/JUCE/modules/juce_events/broadcasters/juce_ActionBroadcaster.cpp"
     "~/JUCE/modules/juce_events/broadcasters/juce_ActionBroadcaster.h"
     "~/JUCE/modules/juce_events/broadcasters/juce_ActionListener.h"
@@ -931,7 +933,7 @@ add_executable (APP
     "~/JUCE/modules/juce_events/timers/juce_Timer.h"
     "~/JUCE/modules/juce_events/juce_events.cpp"
     "~/JUCE/modules/juce_events/juce_events.mm"
-    "C:/CODE/JUCE/modules/juce_events/juce_events.h"
+    "../../../../../../JUCE/modules/juce_events/juce_events.h"
     "~/JUCE/modules/juce_graphics/colour/juce_Colour.cpp"
     "~/JUCE/modules/juce_graphics/colour/juce_Colour.h"
     "~/JUCE/modules/juce_graphics/colour/juce_ColourGradient.cpp"
@@ -1096,7 +1098,7 @@ add_executable (APP
     "~/JUCE/modules/juce_graphics/placement/juce_RectanglePlacement.h"
     "~/JUCE/modules/juce_graphics/juce_graphics.cpp"
     "~/JUCE/modules/juce_graphics/juce_graphics.mm"
-    "C:/CODE/JUCE/modules/juce_graphics/juce_graphics.h"
+    "../../../../../../JUCE/modules/juce_graphics/juce_graphics.h"
     "~/JUCE/modules/juce_gui_basics/application/juce_Application.cpp"
     "~/JUCE/modules/juce_gui_basics/application/juce_Application.h"
     "~/JUCE/modules/juce_gui_basics/buttons/juce_ArrowButton.cpp"
@@ -1379,7 +1381,7 @@ add_executable (APP
     "~/JUCE/modules/juce_gui_basics/windows/juce_TopLevelWindow.h"
     "~/JUCE/modules/juce_gui_basics/juce_gui_basics.cpp"
     "~/JUCE/modules/juce_gui_basics/juce_gui_basics.mm"
-    "C:/CODE/JUCE/modules/juce_gui_basics/juce_gui_basics.h"
+    "../../../../../../JUCE/modules/juce_gui_basics/juce_gui_basics.h"
     "~/JUCE/modules/juce_gui_extra/code_editor/juce_CodeDocument.cpp"
     "~/JUCE/modules/juce_gui_extra/code_editor/juce_CodeDocument.h"
     "~/JUCE/modules/juce_gui_extra/code_editor/juce_CodeEditorComponent.cpp"
@@ -1441,7 +1443,7 @@ add_executable (APP
     "~/JUCE/modules/juce_gui_extra/native/juce_win32_WebBrowserComponent.cpp"
     "~/JUCE/modules/juce_gui_extra/juce_gui_extra.cpp"
     "~/JUCE/modules/juce_gui_extra/juce_gui_extra.mm"
-    "C:/CODE/JUCE/modules/juce_gui_extra/juce_gui_extra.h"
+    "../../../../../../JUCE/modules/juce_gui_extra/juce_gui_extra.h"
     "~/JUCE/modules/juce_osc/osc/juce_OSCAddress.cpp"
     "~/JUCE/modules/juce_osc/osc/juce_OSCAddress.h"
     "~/JUCE/modules/juce_osc/osc/juce_OSCArgument.cpp"
@@ -1459,843 +1461,843 @@ add_executable (APP
     "~/JUCE/modules/juce_osc/osc/juce_OSCTypes.cpp"
     "~/JUCE/modules/juce_osc/osc/juce_OSCTypes.h"
     "~/JUCE/modules/juce_osc/juce_osc.cpp"
-    "C:/CODE/JUCE/modules/juce_osc/juce_osc.h"
-    "~/modules/tracktion_engine/3rd_party/airwindows/Acceleration/Acceleration.cpp"
-    "~/modules/tracktion_engine/3rd_party/airwindows/Acceleration/Acceleration.h"
-    "~/modules/tracktion_engine/3rd_party/airwindows/Acceleration/AccelerationProc.cpp"
-    "~/modules/tracktion_engine/3rd_party/airwindows/ADClip7/ADClip7.cpp"
-    "~/modules/tracktion_engine/3rd_party/airwindows/ADClip7/ADClip7.h"
-    "~/modules/tracktion_engine/3rd_party/airwindows/ADClip7/ADClip7Proc.cpp"
-    "~/modules/tracktion_engine/3rd_party/airwindows/ADT/ADT.cpp"
-    "~/modules/tracktion_engine/3rd_party/airwindows/ADT/ADT.h"
-    "~/modules/tracktion_engine/3rd_party/airwindows/ADT/ADTProc.cpp"
-    "~/modules/tracktion_engine/3rd_party/airwindows/Air/Air.cpp"
-    "~/modules/tracktion_engine/3rd_party/airwindows/Air/Air.h"
-    "~/modules/tracktion_engine/3rd_party/airwindows/Air/AirProc.cpp"
-    "~/modules/tracktion_engine/3rd_party/airwindows/AQuickVoiceClip/AQuickVoiceClip.cpp"
-    "~/modules/tracktion_engine/3rd_party/airwindows/AQuickVoiceClip/AQuickVoiceClip.h"
-    "~/modules/tracktion_engine/3rd_party/airwindows/AQuickVoiceClip/AQuickVoiceClipProc.cpp"
-    "~/modules/tracktion_engine/3rd_party/airwindows/AtmosphereBuss/AtmosphereBuss.cpp"
-    "~/modules/tracktion_engine/3rd_party/airwindows/AtmosphereBuss/AtmosphereBuss.h"
-    "~/modules/tracktion_engine/3rd_party/airwindows/AtmosphereBuss/AtmosphereBussProc.cpp"
-    "~/modules/tracktion_engine/3rd_party/airwindows/AtmosphereChannel/AtmosphereChannel.cpp"
-    "~/modules/tracktion_engine/3rd_party/airwindows/AtmosphereChannel/AtmosphereChannel.h"
-    "~/modules/tracktion_engine/3rd_party/airwindows/AtmosphereChannel/AtmosphereChannelProc.cpp"
-    "~/modules/tracktion_engine/3rd_party/airwindows/Aura/Aura.cpp"
-    "~/modules/tracktion_engine/3rd_party/airwindows/Aura/Aura.h"
-    "~/modules/tracktion_engine/3rd_party/airwindows/Aura/AuraProc.cpp"
-    "~/modules/tracktion_engine/3rd_party/airwindows/Average/Average.cpp"
-    "~/modules/tracktion_engine/3rd_party/airwindows/Average/Average.h"
-    "~/modules/tracktion_engine/3rd_party/airwindows/Average/AverageProc.cpp"
-    "~/modules/tracktion_engine/3rd_party/airwindows/BassKit/BassKit.cpp"
-    "~/modules/tracktion_engine/3rd_party/airwindows/BassKit/BassKit.h"
-    "~/modules/tracktion_engine/3rd_party/airwindows/BassKit/BassKitProc.cpp"
-    "~/modules/tracktion_engine/3rd_party/airwindows/Bite/Bite.cpp"
-    "~/modules/tracktion_engine/3rd_party/airwindows/Bite/Bite.h"
-    "~/modules/tracktion_engine/3rd_party/airwindows/Bite/BiteProc.cpp"
-    "~/modules/tracktion_engine/3rd_party/airwindows/BitGlitter/BitGlitter.cpp"
-    "~/modules/tracktion_engine/3rd_party/airwindows/BitGlitter/BitGlitter.h"
-    "~/modules/tracktion_engine/3rd_party/airwindows/BitGlitter/BitGlitterProc.cpp"
-    "~/modules/tracktion_engine/3rd_party/airwindows/BitShiftGain/BitShiftGain.cpp"
-    "~/modules/tracktion_engine/3rd_party/airwindows/BitShiftGain/BitShiftGain.h"
-    "~/modules/tracktion_engine/3rd_party/airwindows/BitShiftGain/BitShiftGainProc.cpp"
-    "~/modules/tracktion_engine/3rd_party/airwindows/BuildATPDF/BuildATPDF.cpp"
-    "~/modules/tracktion_engine/3rd_party/airwindows/BuildATPDF/BuildATPDF.h"
-    "~/modules/tracktion_engine/3rd_party/airwindows/BuildATPDF/BuildATPDFProc.cpp"
-    "~/modules/tracktion_engine/3rd_party/airwindows/BussColors4/BussColors4.cpp"
-    "~/modules/tracktion_engine/3rd_party/airwindows/BussColors4/BussColors4.h"
-    "~/modules/tracktion_engine/3rd_party/airwindows/BussColors4/BussColors4Proc.cpp"
-    "~/modules/tracktion_engine/3rd_party/airwindows/ButterComp/ButterComp.cpp"
-    "~/modules/tracktion_engine/3rd_party/airwindows/ButterComp/ButterComp.h"
-    "~/modules/tracktion_engine/3rd_party/airwindows/ButterComp/ButterCompProc.cpp"
-    "~/modules/tracktion_engine/3rd_party/airwindows/ButterComp2/ButterComp2.cpp"
-    "~/modules/tracktion_engine/3rd_party/airwindows/ButterComp2/ButterComp2.h"
-    "~/modules/tracktion_engine/3rd_party/airwindows/ButterComp2/ButterComp2Proc.cpp"
-    "~/modules/tracktion_engine/3rd_party/airwindows/C5RawBuss/C5RawBuss.cpp"
-    "~/modules/tracktion_engine/3rd_party/airwindows/C5RawBuss/C5RawBuss.h"
-    "~/modules/tracktion_engine/3rd_party/airwindows/C5RawBuss/C5RawBussProc.cpp"
-    "~/modules/tracktion_engine/3rd_party/airwindows/C5RawChannel/C5RawChannel.cpp"
-    "~/modules/tracktion_engine/3rd_party/airwindows/C5RawChannel/C5RawChannel.h"
-    "~/modules/tracktion_engine/3rd_party/airwindows/C5RawChannel/C5RawChannelProc.cpp"
-    "~/modules/tracktion_engine/3rd_party/airwindows/Capacitor/Capacitor.cpp"
-    "~/modules/tracktion_engine/3rd_party/airwindows/Capacitor/Capacitor.h"
-    "~/modules/tracktion_engine/3rd_party/airwindows/Capacitor/CapacitorProc.cpp"
-    "~/modules/tracktion_engine/3rd_party/airwindows/Channel4/Channel4.cpp"
-    "~/modules/tracktion_engine/3rd_party/airwindows/Channel4/Channel4.h"
-    "~/modules/tracktion_engine/3rd_party/airwindows/Channel4/Channel4Proc.cpp"
-    "~/modules/tracktion_engine/3rd_party/airwindows/Channel5/Channel5.cpp"
-    "~/modules/tracktion_engine/3rd_party/airwindows/Channel5/Channel5.h"
-    "~/modules/tracktion_engine/3rd_party/airwindows/Channel5/Channel5Proc.cpp"
-    "~/modules/tracktion_engine/3rd_party/airwindows/Channel6/Channel6.cpp"
-    "~/modules/tracktion_engine/3rd_party/airwindows/Channel6/Channel6.h"
-    "~/modules/tracktion_engine/3rd_party/airwindows/Channel6/Channel6Proc.cpp"
-    "~/modules/tracktion_engine/3rd_party/airwindows/Chorus/Chorus.cpp"
-    "~/modules/tracktion_engine/3rd_party/airwindows/Chorus/Chorus.h"
-    "~/modules/tracktion_engine/3rd_party/airwindows/Chorus/ChorusProc.cpp"
-    "~/modules/tracktion_engine/3rd_party/airwindows/ChorusEnsemble/ChorusEnsemble.cpp"
-    "~/modules/tracktion_engine/3rd_party/airwindows/ChorusEnsemble/ChorusEnsemble.h"
-    "~/modules/tracktion_engine/3rd_party/airwindows/ChorusEnsemble/ChorusEnsembleProc.cpp"
-    "~/modules/tracktion_engine/3rd_party/airwindows/ClipOnly/ClipOnly.cpp"
-    "~/modules/tracktion_engine/3rd_party/airwindows/ClipOnly/ClipOnly.h"
-    "~/modules/tracktion_engine/3rd_party/airwindows/ClipOnly/ClipOnlyProc.cpp"
-    "~/modules/tracktion_engine/3rd_party/airwindows/Console4Buss/Console4Buss.cpp"
-    "~/modules/tracktion_engine/3rd_party/airwindows/Console4Buss/Console4Buss.h"
-    "~/modules/tracktion_engine/3rd_party/airwindows/Console4Buss/Console4BussProc.cpp"
-    "~/modules/tracktion_engine/3rd_party/airwindows/Console4Channel/Console4Channel.cpp"
-    "~/modules/tracktion_engine/3rd_party/airwindows/Console4Channel/Console4Channel.h"
-    "~/modules/tracktion_engine/3rd_party/airwindows/Console4Channel/Console4ChannelProc.cpp"
-    "~/modules/tracktion_engine/3rd_party/airwindows/Console5Buss/Console5Buss.cpp"
-    "~/modules/tracktion_engine/3rd_party/airwindows/Console5Buss/Console5Buss.h"
-    "~/modules/tracktion_engine/3rd_party/airwindows/Console5Buss/Console5BussProc.cpp"
-    "~/modules/tracktion_engine/3rd_party/airwindows/Console5Channel/Console5Channel.cpp"
-    "~/modules/tracktion_engine/3rd_party/airwindows/Console5Channel/Console5Channel.h"
-    "~/modules/tracktion_engine/3rd_party/airwindows/Console5Channel/Console5ChannelProc.cpp"
-    "~/modules/tracktion_engine/3rd_party/airwindows/Console5DarkCh/Console5DarkCh.cpp"
-    "~/modules/tracktion_engine/3rd_party/airwindows/Console5DarkCh/Console5DarkCh.h"
-    "~/modules/tracktion_engine/3rd_party/airwindows/Console5DarkCh/Console5DarkChProc.cpp"
-    "~/modules/tracktion_engine/3rd_party/airwindows/CrunchyGrooveWear/CrunchyGrooveWear.cpp"
-    "~/modules/tracktion_engine/3rd_party/airwindows/CrunchyGrooveWear/CrunchyGrooveWear.h"
-    "~/modules/tracktion_engine/3rd_party/airwindows/CrunchyGrooveWear/CrunchyGrooveWearProc.cpp"
-    "~/modules/tracktion_engine/3rd_party/airwindows/CStrip/CStrip.cpp"
-    "~/modules/tracktion_engine/3rd_party/airwindows/CStrip/CStrip.h"
-    "~/modules/tracktion_engine/3rd_party/airwindows/CStrip/CStripProc.cpp"
-    "~/modules/tracktion_engine/3rd_party/airwindows/DCVoltage/DCVoltage.cpp"
-    "~/modules/tracktion_engine/3rd_party/airwindows/DCVoltage/DCVoltage.h"
-    "~/modules/tracktion_engine/3rd_party/airwindows/DCVoltage/DCVoltageProc.cpp"
-    "~/modules/tracktion_engine/3rd_party/airwindows/DeEss/DeEss.cpp"
-    "~/modules/tracktion_engine/3rd_party/airwindows/DeEss/DeEss.h"
-    "~/modules/tracktion_engine/3rd_party/airwindows/DeEss/DeEssProc.cpp"
-    "~/modules/tracktion_engine/3rd_party/airwindows/Density/Density.cpp"
-    "~/modules/tracktion_engine/3rd_party/airwindows/Density/Density.h"
-    "~/modules/tracktion_engine/3rd_party/airwindows/Density/DensityProc.cpp"
-    "~/modules/tracktion_engine/3rd_party/airwindows/DeRez/DeRez.cpp"
-    "~/modules/tracktion_engine/3rd_party/airwindows/DeRez/DeRez.h"
-    "~/modules/tracktion_engine/3rd_party/airwindows/DeRez/DeRezProc.cpp"
-    "~/modules/tracktion_engine/3rd_party/airwindows/Desk/Desk.cpp"
-    "~/modules/tracktion_engine/3rd_party/airwindows/Desk/Desk.h"
-    "~/modules/tracktion_engine/3rd_party/airwindows/Desk/DeskProc.cpp"
-    "~/modules/tracktion_engine/3rd_party/airwindows/Desk4/Desk4.cpp"
-    "~/modules/tracktion_engine/3rd_party/airwindows/Desk4/Desk4.h"
-    "~/modules/tracktion_engine/3rd_party/airwindows/Desk4/Desk4Proc.cpp"
-    "~/modules/tracktion_engine/3rd_party/airwindows/Distance/Distance.cpp"
-    "~/modules/tracktion_engine/3rd_party/airwindows/Distance/Distance.h"
-    "~/modules/tracktion_engine/3rd_party/airwindows/Distance/DistanceProc.cpp"
-    "~/modules/tracktion_engine/3rd_party/airwindows/Distance2/Distance2.cpp"
-    "~/modules/tracktion_engine/3rd_party/airwindows/Distance2/Distance2.h"
-    "~/modules/tracktion_engine/3rd_party/airwindows/Distance2/Distance2Proc.cpp"
-    "~/modules/tracktion_engine/3rd_party/airwindows/Ditherbox/Ditherbox.cpp"
-    "~/modules/tracktion_engine/3rd_party/airwindows/Ditherbox/Ditherbox.h"
-    "~/modules/tracktion_engine/3rd_party/airwindows/Ditherbox/DitherboxProc.cpp"
-    "~/modules/tracktion_engine/3rd_party/airwindows/DitherMeDiskers/DitherMeDiskers.cpp"
-    "~/modules/tracktion_engine/3rd_party/airwindows/DitherMeDiskers/DitherMeDiskers.h"
-    "~/modules/tracktion_engine/3rd_party/airwindows/DitherMeDiskers/DitherMeDiskersProc.cpp"
-    "~/modules/tracktion_engine/3rd_party/airwindows/DitherMeTimbers/DitherMeTimbers.cpp"
-    "~/modules/tracktion_engine/3rd_party/airwindows/DitherMeTimbers/DitherMeTimbers.h"
-    "~/modules/tracktion_engine/3rd_party/airwindows/DitherMeTimbers/DitherMeTimbersProc.cpp"
-    "~/modules/tracktion_engine/3rd_party/airwindows/DoublePaul/DoublePaul.cpp"
-    "~/modules/tracktion_engine/3rd_party/airwindows/DoublePaul/DoublePaul.h"
-    "~/modules/tracktion_engine/3rd_party/airwindows/DoublePaul/DoublePaulProc.cpp"
-    "~/modules/tracktion_engine/3rd_party/airwindows/Drive/Drive.cpp"
-    "~/modules/tracktion_engine/3rd_party/airwindows/Drive/Drive.h"
-    "~/modules/tracktion_engine/3rd_party/airwindows/Drive/DriveProc.cpp"
-    "~/modules/tracktion_engine/3rd_party/airwindows/DrumSlam/DrumSlam.cpp"
-    "~/modules/tracktion_engine/3rd_party/airwindows/DrumSlam/DrumSlam.h"
-    "~/modules/tracktion_engine/3rd_party/airwindows/DrumSlam/DrumSlamProc.cpp"
-    "~/modules/tracktion_engine/3rd_party/airwindows/DubCenter/DubCenter.cpp"
-    "~/modules/tracktion_engine/3rd_party/airwindows/DubCenter/DubCenter.h"
-    "~/modules/tracktion_engine/3rd_party/airwindows/DubCenter/DubCenterProc.cpp"
-    "~/modules/tracktion_engine/3rd_party/airwindows/DubSub/DubSub.cpp"
-    "~/modules/tracktion_engine/3rd_party/airwindows/DubSub/DubSub.h"
-    "~/modules/tracktion_engine/3rd_party/airwindows/DubSub/DubSubProc.cpp"
-    "~/modules/tracktion_engine/3rd_party/airwindows/DustBunny/DustBunny.cpp"
-    "~/modules/tracktion_engine/3rd_party/airwindows/DustBunny/DustBunny.h"
-    "~/modules/tracktion_engine/3rd_party/airwindows/DustBunny/DustBunnyProc.cpp"
-    "~/modules/tracktion_engine/3rd_party/airwindows/EdIsDim/EdIsDim.cpp"
-    "~/modules/tracktion_engine/3rd_party/airwindows/EdIsDim/EdIsDim.h"
-    "~/modules/tracktion_engine/3rd_party/airwindows/EdIsDim/EdIsDimProc.cpp"
-    "~/modules/tracktion_engine/3rd_party/airwindows/ElectroHat/ElectroHat.cpp"
-    "~/modules/tracktion_engine/3rd_party/airwindows/ElectroHat/ElectroHat.h"
-    "~/modules/tracktion_engine/3rd_party/airwindows/ElectroHat/ElectroHatProc.cpp"
-    "~/modules/tracktion_engine/3rd_party/airwindows/Energy/Energy.cpp"
-    "~/modules/tracktion_engine/3rd_party/airwindows/Energy/Energy.h"
-    "~/modules/tracktion_engine/3rd_party/airwindows/Energy/EnergyProc.cpp"
-    "~/modules/tracktion_engine/3rd_party/airwindows/Ensemble/Ensemble.cpp"
-    "~/modules/tracktion_engine/3rd_party/airwindows/Ensemble/Ensemble.h"
-    "~/modules/tracktion_engine/3rd_party/airwindows/Ensemble/EnsembleProc.cpp"
-    "~/modules/tracktion_engine/3rd_party/airwindows/EQ/EQ.cpp"
-    "~/modules/tracktion_engine/3rd_party/airwindows/EQ/EQ.h"
-    "~/modules/tracktion_engine/3rd_party/airwindows/EQ/EQProc.cpp"
-    "~/modules/tracktion_engine/3rd_party/airwindows/EveryTrim/EveryTrim.cpp"
-    "~/modules/tracktion_engine/3rd_party/airwindows/EveryTrim/EveryTrim.h"
-    "~/modules/tracktion_engine/3rd_party/airwindows/EveryTrim/EveryTrimProc.cpp"
-    "~/modules/tracktion_engine/3rd_party/airwindows/FathomFive/FathomFive.cpp"
-    "~/modules/tracktion_engine/3rd_party/airwindows/FathomFive/FathomFive.h"
-    "~/modules/tracktion_engine/3rd_party/airwindows/FathomFive/FathomFiveProc.cpp"
-    "~/modules/tracktion_engine/3rd_party/airwindows/Floor/Floor.cpp"
-    "~/modules/tracktion_engine/3rd_party/airwindows/Floor/Floor.h"
-    "~/modules/tracktion_engine/3rd_party/airwindows/Floor/FloorProc.cpp"
-    "~/modules/tracktion_engine/3rd_party/airwindows/Fracture/Fracture.cpp"
-    "~/modules/tracktion_engine/3rd_party/airwindows/Fracture/Fracture.h"
-    "~/modules/tracktion_engine/3rd_party/airwindows/Fracture/FractureProc.cpp"
-    "~/modules/tracktion_engine/3rd_party/airwindows/FromTape/FromTape.cpp"
-    "~/modules/tracktion_engine/3rd_party/airwindows/FromTape/FromTape.h"
-    "~/modules/tracktion_engine/3rd_party/airwindows/FromTape/FromTapeProc.cpp"
-    "~/modules/tracktion_engine/3rd_party/airwindows/Gatelope/Gatelope.cpp"
-    "~/modules/tracktion_engine/3rd_party/airwindows/Gatelope/Gatelope.h"
-    "~/modules/tracktion_engine/3rd_party/airwindows/Gatelope/GatelopeProc.cpp"
-    "~/modules/tracktion_engine/3rd_party/airwindows/Golem/Golem.cpp"
-    "~/modules/tracktion_engine/3rd_party/airwindows/Golem/Golem.h"
-    "~/modules/tracktion_engine/3rd_party/airwindows/Golem/GolemProc.cpp"
-    "~/modules/tracktion_engine/3rd_party/airwindows/GrooveWear/GrooveWear.cpp"
-    "~/modules/tracktion_engine/3rd_party/airwindows/GrooveWear/GrooveWear.h"
-    "~/modules/tracktion_engine/3rd_party/airwindows/GrooveWear/GrooveWearProc.cpp"
-    "~/modules/tracktion_engine/3rd_party/airwindows/GuitarConditioner/GuitarConditioner.cpp"
-    "~/modules/tracktion_engine/3rd_party/airwindows/GuitarConditioner/GuitarConditioner.h"
-    "~/modules/tracktion_engine/3rd_party/airwindows/GuitarConditioner/GuitarConditionerProc.cpp"
-    "~/modules/tracktion_engine/3rd_party/airwindows/HardVacuum/HardVacuum.cpp"
-    "~/modules/tracktion_engine/3rd_party/airwindows/HardVacuum/HardVacuum.h"
-    "~/modules/tracktion_engine/3rd_party/airwindows/HardVacuum/HardVacuumProc.cpp"
-    "~/modules/tracktion_engine/3rd_party/airwindows/Hermepass/Hermepass.cpp"
-    "~/modules/tracktion_engine/3rd_party/airwindows/Hermepass/Hermepass.h"
-    "~/modules/tracktion_engine/3rd_party/airwindows/Hermepass/HermepassProc.cpp"
-    "~/modules/tracktion_engine/3rd_party/airwindows/HermeTrim/HermeTrim.cpp"
-    "~/modules/tracktion_engine/3rd_party/airwindows/HermeTrim/HermeTrim.h"
-    "~/modules/tracktion_engine/3rd_party/airwindows/HermeTrim/HermeTrimProc.cpp"
-    "~/modules/tracktion_engine/3rd_party/airwindows/HighGlossDither/HighGlossDither.cpp"
-    "~/modules/tracktion_engine/3rd_party/airwindows/HighGlossDither/HighGlossDither.h"
-    "~/modules/tracktion_engine/3rd_party/airwindows/HighGlossDither/HighGlossDitherProc.cpp"
-    "~/modules/tracktion_engine/3rd_party/airwindows/HighImpact/HighImpact.cpp"
-    "~/modules/tracktion_engine/3rd_party/airwindows/HighImpact/HighImpact.h"
-    "~/modules/tracktion_engine/3rd_party/airwindows/HighImpact/HighImpactProc.cpp"
-    "~/modules/tracktion_engine/3rd_party/airwindows/Highpass/Highpass.cpp"
-    "~/modules/tracktion_engine/3rd_party/airwindows/Highpass/Highpass.h"
-    "~/modules/tracktion_engine/3rd_party/airwindows/Highpass/HighpassProc.cpp"
-    "~/modules/tracktion_engine/3rd_party/airwindows/Hombre/Hombre.cpp"
-    "~/modules/tracktion_engine/3rd_party/airwindows/Hombre/Hombre.h"
-    "~/modules/tracktion_engine/3rd_party/airwindows/Hombre/HombreProc.cpp"
-    "~/modules/tracktion_engine/3rd_party/airwindows/IronOxide5/IronOxide5.cpp"
-    "~/modules/tracktion_engine/3rd_party/airwindows/IronOxide5/IronOxide5.h"
-    "~/modules/tracktion_engine/3rd_party/airwindows/IronOxide5/IronOxide5Proc.cpp"
-    "~/modules/tracktion_engine/3rd_party/airwindows/IronOxideClassic/IronOxideClassic.cpp"
-    "~/modules/tracktion_engine/3rd_party/airwindows/IronOxideClassic/IronOxideClassic.h"
-    "~/modules/tracktion_engine/3rd_party/airwindows/IronOxideClassic/IronOxideClassicProc.cpp"
-    "~/modules/tracktion_engine/3rd_party/airwindows/Logical4/Logical4.cpp"
-    "~/modules/tracktion_engine/3rd_party/airwindows/Logical4/Logical4.h"
-    "~/modules/tracktion_engine/3rd_party/airwindows/Logical4/Logical4Proc.cpp"
-    "~/modules/tracktion_engine/3rd_party/airwindows/Loud/Loud.cpp"
-    "~/modules/tracktion_engine/3rd_party/airwindows/Loud/Loud.h"
-    "~/modules/tracktion_engine/3rd_party/airwindows/Loud/LoudProc.cpp"
-    "~/modules/tracktion_engine/3rd_party/airwindows/Lowpass/Lowpass.cpp"
-    "~/modules/tracktion_engine/3rd_party/airwindows/Lowpass/Lowpass.h"
-    "~/modules/tracktion_engine/3rd_party/airwindows/Lowpass/LowpassProc.cpp"
-    "~/modules/tracktion_engine/3rd_party/airwindows/Melt/Melt.cpp"
-    "~/modules/tracktion_engine/3rd_party/airwindows/Melt/Melt.h"
-    "~/modules/tracktion_engine/3rd_party/airwindows/Melt/MeltProc.cpp"
-    "~/modules/tracktion_engine/3rd_party/airwindows/MidSide/MidSide.cpp"
-    "~/modules/tracktion_engine/3rd_party/airwindows/MidSide/MidSide.h"
-    "~/modules/tracktion_engine/3rd_party/airwindows/MidSide/MidSideProc.cpp"
-    "~/modules/tracktion_engine/3rd_party/airwindows/NaturalizeDither/NaturalizeDither.cpp"
-    "~/modules/tracktion_engine/3rd_party/airwindows/NaturalizeDither/NaturalizeDither.h"
-    "~/modules/tracktion_engine/3rd_party/airwindows/NaturalizeDither/NaturalizeDitherProc.cpp"
-    "~/modules/tracktion_engine/3rd_party/airwindows/NCSeventeen/NCSeventeen.cpp"
-    "~/modules/tracktion_engine/3rd_party/airwindows/NCSeventeen/NCSeventeen.h"
-    "~/modules/tracktion_engine/3rd_party/airwindows/NCSeventeen/NCSeventeenProc.cpp"
-    "~/modules/tracktion_engine/3rd_party/airwindows/NodeDither/NodeDither.cpp"
-    "~/modules/tracktion_engine/3rd_party/airwindows/NodeDither/NodeDither.h"
-    "~/modules/tracktion_engine/3rd_party/airwindows/NodeDither/NodeDitherProc.cpp"
-    "~/modules/tracktion_engine/3rd_party/airwindows/Noise/Noise.cpp"
-    "~/modules/tracktion_engine/3rd_party/airwindows/Noise/Noise.h"
-    "~/modules/tracktion_engine/3rd_party/airwindows/Noise/NoiseProc.cpp"
-    "~/modules/tracktion_engine/3rd_party/airwindows/NonlinearSpace/NonlinearSpace.cpp"
-    "~/modules/tracktion_engine/3rd_party/airwindows/NonlinearSpace/NonlinearSpace.h"
-    "~/modules/tracktion_engine/3rd_party/airwindows/NonlinearSpace/NonlinearSpaceProc.cpp"
-    "~/modules/tracktion_engine/3rd_party/airwindows/NotJustAnotherCD/NotJustAnotherCD.cpp"
-    "~/modules/tracktion_engine/3rd_party/airwindows/NotJustAnotherCD/NotJustAnotherCD.h"
-    "~/modules/tracktion_engine/3rd_party/airwindows/NotJustAnotherCD/NotJustAnotherCDProc.cpp"
-    "~/modules/tracktion_engine/3rd_party/airwindows/NotJustAnotherDither/NotJustAnotherDither.cpp"
-    "~/modules/tracktion_engine/3rd_party/airwindows/NotJustAnotherDither/NotJustAnotherDither.h"
-    "~/modules/tracktion_engine/3rd_party/airwindows/NotJustAnotherDither/NotJustAnotherDitherProc.cpp"
-    "~/modules/tracktion_engine/3rd_party/airwindows/OneCornerClip/OneCornerClip.cpp"
-    "~/modules/tracktion_engine/3rd_party/airwindows/OneCornerClip/OneCornerClip.h"
-    "~/modules/tracktion_engine/3rd_party/airwindows/OneCornerClip/OneCornerClipProc.cpp"
-    "~/modules/tracktion_engine/3rd_party/airwindows/PaulDither/PaulDither.cpp"
-    "~/modules/tracktion_engine/3rd_party/airwindows/PaulDither/PaulDither.h"
-    "~/modules/tracktion_engine/3rd_party/airwindows/PaulDither/PaulDitherProc.cpp"
-    "~/modules/tracktion_engine/3rd_party/airwindows/PDBuss/PDBuss.cpp"
-    "~/modules/tracktion_engine/3rd_party/airwindows/PDBuss/PDBuss.h"
-    "~/modules/tracktion_engine/3rd_party/airwindows/PDBuss/PDBussProc.cpp"
-    "~/modules/tracktion_engine/3rd_party/airwindows/PDChannel/PDChannel.cpp"
-    "~/modules/tracktion_engine/3rd_party/airwindows/PDChannel/PDChannel.h"
-    "~/modules/tracktion_engine/3rd_party/airwindows/PDChannel/PDChannelProc.cpp"
-    "~/modules/tracktion_engine/3rd_party/airwindows/PhaseNudge/PhaseNudge.cpp"
-    "~/modules/tracktion_engine/3rd_party/airwindows/PhaseNudge/PhaseNudge.h"
-    "~/modules/tracktion_engine/3rd_party/airwindows/PhaseNudge/PhaseNudgeProc.cpp"
-    "~/modules/tracktion_engine/3rd_party/airwindows/Point/Point.cpp"
-    "~/modules/tracktion_engine/3rd_party/airwindows/Point/Point.h"
-    "~/modules/tracktion_engine/3rd_party/airwindows/Point/PointProc.cpp"
-    "~/modules/tracktion_engine/3rd_party/airwindows/Pop/Pop.cpp"
-    "~/modules/tracktion_engine/3rd_party/airwindows/Pop/Pop.h"
-    "~/modules/tracktion_engine/3rd_party/airwindows/Pop/PopProc.cpp"
-    "~/modules/tracktion_engine/3rd_party/airwindows/PowerSag/PowerSag.cpp"
-    "~/modules/tracktion_engine/3rd_party/airwindows/PowerSag/PowerSag.h"
-    "~/modules/tracktion_engine/3rd_party/airwindows/PowerSag/PowerSagProc.cpp"
-    "~/modules/tracktion_engine/3rd_party/airwindows/Pressure4/Pressure4.cpp"
-    "~/modules/tracktion_engine/3rd_party/airwindows/Pressure4/Pressure4.h"
-    "~/modules/tracktion_engine/3rd_party/airwindows/Pressure4/Pressure4Proc.cpp"
-    "~/modules/tracktion_engine/3rd_party/airwindows/PurestConsoleBuss/PurestConsoleBuss.cpp"
-    "~/modules/tracktion_engine/3rd_party/airwindows/PurestConsoleBuss/PurestConsoleBuss.h"
-    "~/modules/tracktion_engine/3rd_party/airwindows/PurestConsoleBuss/PurestConsoleBussProc.cpp"
-    "~/modules/tracktion_engine/3rd_party/airwindows/PurestConsoleChannel/PurestConsoleChannel.cpp"
-    "~/modules/tracktion_engine/3rd_party/airwindows/PurestConsoleChannel/PurestConsoleChannel.h"
-    "~/modules/tracktion_engine/3rd_party/airwindows/PurestConsoleChannel/PurestConsoleChannelProc.cpp"
-    "~/modules/tracktion_engine/3rd_party/airwindows/PurestDrive/PurestDrive.cpp"
-    "~/modules/tracktion_engine/3rd_party/airwindows/PurestDrive/PurestDrive.h"
-    "~/modules/tracktion_engine/3rd_party/airwindows/PurestDrive/PurestDriveProc.cpp"
-    "~/modules/tracktion_engine/3rd_party/airwindows/PurestEcho/PurestEcho.cpp"
-    "~/modules/tracktion_engine/3rd_party/airwindows/PurestEcho/PurestEcho.h"
-    "~/modules/tracktion_engine/3rd_party/airwindows/PurestEcho/PurestEchoProc.cpp"
-    "~/modules/tracktion_engine/3rd_party/airwindows/PurestGain/PurestGain.cpp"
-    "~/modules/tracktion_engine/3rd_party/airwindows/PurestGain/PurestGain.h"
-    "~/modules/tracktion_engine/3rd_party/airwindows/PurestGain/PurestGainProc.cpp"
-    "~/modules/tracktion_engine/3rd_party/airwindows/PurestWarm/PurestWarm.cpp"
-    "~/modules/tracktion_engine/3rd_party/airwindows/PurestWarm/PurestWarm.h"
-    "~/modules/tracktion_engine/3rd_party/airwindows/PurestWarm/PurestWarmProc.cpp"
-    "~/modules/tracktion_engine/3rd_party/airwindows/Pyewacket/Pyewacket.cpp"
-    "~/modules/tracktion_engine/3rd_party/airwindows/Pyewacket/Pyewacket.h"
-    "~/modules/tracktion_engine/3rd_party/airwindows/Pyewacket/PyewacketProc.cpp"
-    "~/modules/tracktion_engine/3rd_party/airwindows/Righteous4/Righteous4.cpp"
-    "~/modules/tracktion_engine/3rd_party/airwindows/Righteous4/Righteous4.h"
-    "~/modules/tracktion_engine/3rd_party/airwindows/Righteous4/Righteous4Proc.cpp"
-    "~/modules/tracktion_engine/3rd_party/airwindows/SideDull/SideDull.cpp"
-    "~/modules/tracktion_engine/3rd_party/airwindows/SideDull/SideDull.h"
-    "~/modules/tracktion_engine/3rd_party/airwindows/SideDull/SideDullProc.cpp"
-    "~/modules/tracktion_engine/3rd_party/airwindows/Sidepass/Sidepass.cpp"
-    "~/modules/tracktion_engine/3rd_party/airwindows/Sidepass/Sidepass.h"
-    "~/modules/tracktion_engine/3rd_party/airwindows/Sidepass/SidepassProc.cpp"
-    "~/modules/tracktion_engine/3rd_party/airwindows/SingleEndedTriode/SingleEndedTriode.cpp"
-    "~/modules/tracktion_engine/3rd_party/airwindows/SingleEndedTriode/SingleEndedTriode.h"
-    "~/modules/tracktion_engine/3rd_party/airwindows/SingleEndedTriode/SingleEndedTriodeProc.cpp"
-    "~/modules/tracktion_engine/3rd_party/airwindows/Slew/Slew.cpp"
-    "~/modules/tracktion_engine/3rd_party/airwindows/Slew/Slew.h"
-    "~/modules/tracktion_engine/3rd_party/airwindows/Slew/SlewProc.cpp"
-    "~/modules/tracktion_engine/3rd_party/airwindows/Slew2/Slew2.cpp"
-    "~/modules/tracktion_engine/3rd_party/airwindows/Slew2/Slew2.h"
-    "~/modules/tracktion_engine/3rd_party/airwindows/Slew2/Slew2Proc.cpp"
-    "~/modules/tracktion_engine/3rd_party/airwindows/SlewOnly/SlewOnly.cpp"
-    "~/modules/tracktion_engine/3rd_party/airwindows/SlewOnly/SlewOnly.h"
-    "~/modules/tracktion_engine/3rd_party/airwindows/SlewOnly/SlewOnlyProc.cpp"
-    "~/modules/tracktion_engine/3rd_party/airwindows/SpatializeDither/SpatializeDither.cpp"
-    "~/modules/tracktion_engine/3rd_party/airwindows/SpatializeDither/SpatializeDither.h"
-    "~/modules/tracktion_engine/3rd_party/airwindows/SpatializeDither/SpatializeDitherProc.cpp"
-    "~/modules/tracktion_engine/3rd_party/airwindows/Spiral/Spiral.cpp"
-    "~/modules/tracktion_engine/3rd_party/airwindows/Spiral/Spiral.h"
-    "~/modules/tracktion_engine/3rd_party/airwindows/Spiral/SpiralProc.cpp"
-    "~/modules/tracktion_engine/3rd_party/airwindows/Spiral2/Spiral2.cpp"
-    "~/modules/tracktion_engine/3rd_party/airwindows/Spiral2/Spiral2.h"
-    "~/modules/tracktion_engine/3rd_party/airwindows/Spiral2/Spiral2Proc.cpp"
-    "~/modules/tracktion_engine/3rd_party/airwindows/StarChild/StarChild.cpp"
-    "~/modules/tracktion_engine/3rd_party/airwindows/StarChild/StarChild.h"
-    "~/modules/tracktion_engine/3rd_party/airwindows/StarChild/StarChildProc.cpp"
-    "~/modules/tracktion_engine/3rd_party/airwindows/StereoFX/StereoFX.cpp"
-    "~/modules/tracktion_engine/3rd_party/airwindows/StereoFX/StereoFX.h"
-    "~/modules/tracktion_engine/3rd_party/airwindows/StereoFX/StereoFXProc.cpp"
-    "~/modules/tracktion_engine/3rd_party/airwindows/SubsOnly/SubsOnly.cpp"
-    "~/modules/tracktion_engine/3rd_party/airwindows/SubsOnly/SubsOnly.h"
-    "~/modules/tracktion_engine/3rd_party/airwindows/SubsOnly/SubsOnlyProc.cpp"
-    "~/modules/tracktion_engine/3rd_party/airwindows/Surge/Surge.cpp"
-    "~/modules/tracktion_engine/3rd_party/airwindows/Surge/Surge.h"
-    "~/modules/tracktion_engine/3rd_party/airwindows/Surge/SurgeProc.cpp"
-    "~/modules/tracktion_engine/3rd_party/airwindows/SurgeTide/SurgeTide.cpp"
-    "~/modules/tracktion_engine/3rd_party/airwindows/SurgeTide/SurgeTide.h"
-    "~/modules/tracktion_engine/3rd_party/airwindows/SurgeTide/SurgeTideProc.cpp"
-    "~/modules/tracktion_engine/3rd_party/airwindows/Swell/Swell.cpp"
-    "~/modules/tracktion_engine/3rd_party/airwindows/Swell/Swell.h"
-    "~/modules/tracktion_engine/3rd_party/airwindows/Swell/SwellProc.cpp"
-    "~/modules/tracktion_engine/3rd_party/airwindows/TapeDither/TapeDither.cpp"
-    "~/modules/tracktion_engine/3rd_party/airwindows/TapeDither/TapeDither.h"
-    "~/modules/tracktion_engine/3rd_party/airwindows/TapeDither/TapeDitherProc.cpp"
-    "~/modules/tracktion_engine/3rd_party/airwindows/TapeDust/TapeDust.cpp"
-    "~/modules/tracktion_engine/3rd_party/airwindows/TapeDust/TapeDust.h"
-    "~/modules/tracktion_engine/3rd_party/airwindows/TapeDust/TapeDustProc.cpp"
-    "~/modules/tracktion_engine/3rd_party/airwindows/Thunder/Thunder.cpp"
-    "~/modules/tracktion_engine/3rd_party/airwindows/Thunder/Thunder.h"
-    "~/modules/tracktion_engine/3rd_party/airwindows/Thunder/ThunderProc.cpp"
-    "~/modules/tracktion_engine/3rd_party/airwindows/ToneSlant/ToneSlant.cpp"
-    "~/modules/tracktion_engine/3rd_party/airwindows/ToneSlant/ToneSlant.h"
-    "~/modules/tracktion_engine/3rd_party/airwindows/ToneSlant/ToneSlantProc.cpp"
-    "~/modules/tracktion_engine/3rd_party/airwindows/ToTape5/ToTape5.cpp"
-    "~/modules/tracktion_engine/3rd_party/airwindows/ToTape5/ToTape5.h"
-    "~/modules/tracktion_engine/3rd_party/airwindows/ToTape5/ToTape5Proc.cpp"
-    "~/modules/tracktion_engine/3rd_party/airwindows/ToVinyl4/ToVinyl4.cpp"
-    "~/modules/tracktion_engine/3rd_party/airwindows/ToVinyl4/ToVinyl4.h"
-    "~/modules/tracktion_engine/3rd_party/airwindows/ToVinyl4/ToVinyl4Proc.cpp"
-    "~/modules/tracktion_engine/3rd_party/airwindows/TPDFDither/TPDFDither.cpp"
-    "~/modules/tracktion_engine/3rd_party/airwindows/TPDFDither/TPDFDither.h"
-    "~/modules/tracktion_engine/3rd_party/airwindows/TPDFDither/TPDFDitherProc.cpp"
-    "~/modules/tracktion_engine/3rd_party/airwindows/TransDesk/TransDesk.cpp"
-    "~/modules/tracktion_engine/3rd_party/airwindows/TransDesk/TransDesk.h"
-    "~/modules/tracktion_engine/3rd_party/airwindows/TransDesk/TransDeskProc.cpp"
-    "~/modules/tracktion_engine/3rd_party/airwindows/Tremolo/Tremolo.cpp"
-    "~/modules/tracktion_engine/3rd_party/airwindows/Tremolo/Tremolo.h"
-    "~/modules/tracktion_engine/3rd_party/airwindows/Tremolo/TremoloProc.cpp"
-    "~/modules/tracktion_engine/3rd_party/airwindows/TubeDesk/TubeDesk.cpp"
-    "~/modules/tracktion_engine/3rd_party/airwindows/TubeDesk/TubeDesk.h"
-    "~/modules/tracktion_engine/3rd_party/airwindows/TubeDesk/TubeDeskProc.cpp"
-    "~/modules/tracktion_engine/3rd_party/airwindows/uLawDecode/uLawDecode.cpp"
-    "~/modules/tracktion_engine/3rd_party/airwindows/uLawDecode/uLawDecode.h"
-    "~/modules/tracktion_engine/3rd_party/airwindows/uLawDecode/uLawDecodeProc.cpp"
-    "~/modules/tracktion_engine/3rd_party/airwindows/uLawEncode/uLawEncode.cpp"
-    "~/modules/tracktion_engine/3rd_party/airwindows/uLawEncode/uLawEncode.h"
-    "~/modules/tracktion_engine/3rd_party/airwindows/uLawEncode/uLawEncodeProc.cpp"
-    "~/modules/tracktion_engine/3rd_party/airwindows/UnBox/UnBox.cpp"
-    "~/modules/tracktion_engine/3rd_party/airwindows/UnBox/UnBox.h"
-    "~/modules/tracktion_engine/3rd_party/airwindows/UnBox/UnBoxProc.cpp"
-    "~/modules/tracktion_engine/3rd_party/airwindows/VariMu/VariMu.cpp"
-    "~/modules/tracktion_engine/3rd_party/airwindows/VariMu/VariMu.h"
-    "~/modules/tracktion_engine/3rd_party/airwindows/VariMu/VariMuProc.cpp"
-    "~/modules/tracktion_engine/3rd_party/airwindows/VinylDither/VinylDither.cpp"
-    "~/modules/tracktion_engine/3rd_party/airwindows/VinylDither/VinylDither.h"
-    "~/modules/tracktion_engine/3rd_party/airwindows/VinylDither/VinylDitherProc.cpp"
-    "~/modules/tracktion_engine/3rd_party/airwindows/VoiceOfTheStarship/VoiceOfTheStarship.cpp"
-    "~/modules/tracktion_engine/3rd_party/airwindows/VoiceOfTheStarship/VoiceOfTheStarship.h"
-    "~/modules/tracktion_engine/3rd_party/airwindows/VoiceOfTheStarship/VoiceOfTheStarshipProc.cpp"
-    "~/modules/tracktion_engine/3rd_party/airwindows/Wider/Wider.cpp"
-    "~/modules/tracktion_engine/3rd_party/airwindows/Wider/Wider.h"
-    "~/modules/tracktion_engine/3rd_party/airwindows/Wider/WiderProc.cpp"
-    "~/modules/tracktion_engine/3rd_party/soundtouch/include/BPMDetect.h"
-    "~/modules/tracktion_engine/3rd_party/soundtouch/include/FIFOSampleBuffer.h"
-    "~/modules/tracktion_engine/3rd_party/soundtouch/include/FIFOSamplePipe.h"
-    "~/modules/tracktion_engine/3rd_party/soundtouch/include/SoundTouch.h"
-    "~/modules/tracktion_engine/3rd_party/soundtouch/include/soundtouch_config.h"
-    "~/modules/tracktion_engine/3rd_party/soundtouch/include/STTypes.h"
-    "~/modules/tracktion_engine/3rd_party/soundtouch/source/SoundTouch/AAFilter.cpp"
-    "~/modules/tracktion_engine/3rd_party/soundtouch/source/SoundTouch/AAFilter.h"
-    "~/modules/tracktion_engine/3rd_party/soundtouch/source/SoundTouch/BPMDetect.cpp"
-    "~/modules/tracktion_engine/3rd_party/soundtouch/source/SoundTouch/BPMDetect.h"
-    "~/modules/tracktion_engine/3rd_party/soundtouch/source/SoundTouch/cpu_detect.h"
-    "~/modules/tracktion_engine/3rd_party/soundtouch/source/SoundTouch/cpu_detect_x86.cpp"
-    "~/modules/tracktion_engine/3rd_party/soundtouch/source/SoundTouch/FIFOSampleBuffer.cpp"
-    "~/modules/tracktion_engine/3rd_party/soundtouch/source/SoundTouch/FIFOSampleBuffer.h"
-    "~/modules/tracktion_engine/3rd_party/soundtouch/source/SoundTouch/FIFOSamplePipe.h"
-    "~/modules/tracktion_engine/3rd_party/soundtouch/source/SoundTouch/FIRFilter.cpp"
-    "~/modules/tracktion_engine/3rd_party/soundtouch/source/SoundTouch/FIRFilter.h"
-    "~/modules/tracktion_engine/3rd_party/soundtouch/source/SoundTouch/InterpolateCubic.cpp"
-    "~/modules/tracktion_engine/3rd_party/soundtouch/source/SoundTouch/InterpolateCubic.h"
-    "~/modules/tracktion_engine/3rd_party/soundtouch/source/SoundTouch/InterpolateLinear.cpp"
-    "~/modules/tracktion_engine/3rd_party/soundtouch/source/SoundTouch/InterpolateLinear.h"
-    "~/modules/tracktion_engine/3rd_party/soundtouch/source/SoundTouch/InterpolateShannon.cpp"
-    "~/modules/tracktion_engine/3rd_party/soundtouch/source/SoundTouch/InterpolateShannon.h"
-    "~/modules/tracktion_engine/3rd_party/soundtouch/source/SoundTouch/mmx_optimized.cpp"
-    "~/modules/tracktion_engine/3rd_party/soundtouch/source/SoundTouch/PeakFinder.cpp"
-    "~/modules/tracktion_engine/3rd_party/soundtouch/source/SoundTouch/PeakFinder.h"
-    "~/modules/tracktion_engine/3rd_party/soundtouch/source/SoundTouch/RateTransposer.cpp"
-    "~/modules/tracktion_engine/3rd_party/soundtouch/source/SoundTouch/RateTransposer.h"
-    "~/modules/tracktion_engine/3rd_party/soundtouch/source/SoundTouch/SoundTouch.cpp"
-    "~/modules/tracktion_engine/3rd_party/soundtouch/source/SoundTouch/SoundTouch.h"
-    "~/modules/tracktion_engine/3rd_party/soundtouch/source/SoundTouch/sse_optimized.cpp"
-    "~/modules/tracktion_engine/3rd_party/soundtouch/source/SoundTouch/STTypes.h"
-    "~/modules/tracktion_engine/3rd_party/soundtouch/source/SoundTouch/TDStretch.cpp"
-    "~/modules/tracktion_engine/3rd_party/soundtouch/source/SoundTouch/TDStretch.h"
-    "~/modules/tracktion_engine/audio_files/formats/tracktion_FloatAudioFileFormat.cpp"
-    "~/modules/tracktion_engine/audio_files/formats/tracktion_FloatAudioFileFormat.h"
-    "~/modules/tracktion_engine/audio_files/formats/tracktion_LAMEManager.cpp"
-    "~/modules/tracktion_engine/audio_files/formats/tracktion_LAMEManager.h"
-    "~/modules/tracktion_engine/audio_files/formats/tracktion_RexFileFormat.cpp"
-    "~/modules/tracktion_engine/audio_files/formats/tracktion_RexFileFormat.h"
-    "~/modules/tracktion_engine/audio_files/tracktion_AudioFifo.h"
-    "~/modules/tracktion_engine/audio_files/tracktion_AudioFile.cpp"
-    "~/modules/tracktion_engine/audio_files/tracktion_AudioFile.h"
-    "~/modules/tracktion_engine/audio_files/tracktion_AudioFileCache.cpp"
-    "~/modules/tracktion_engine/audio_files/tracktion_AudioFileCache.h"
-    "~/modules/tracktion_engine/audio_files/tracktion_AudioFileManager.h"
-    "~/modules/tracktion_engine/audio_files/tracktion_AudioFileUtils.cpp"
-    "~/modules/tracktion_engine/audio_files/tracktion_AudioFileUtils.h"
-    "~/modules/tracktion_engine/audio_files/tracktion_AudioFileWriter.h"
-    "~/modules/tracktion_engine/audio_files/tracktion_AudioFormatManager.cpp"
-    "~/modules/tracktion_engine/audio_files/tracktion_AudioFormatManager.h"
-    "~/modules/tracktion_engine/audio_files/tracktion_AudioProxyGenerator.h"
-    "~/modules/tracktion_engine/audio_files/tracktion_LoopInfo.cpp"
-    "~/modules/tracktion_engine/audio_files/tracktion_LoopInfo.h"
-    "~/modules/tracktion_engine/audio_files/tracktion_RecordingThumbnailManager.h"
-    "~/modules/tracktion_engine/audio_files/tracktion_SmartThumbnail.h"
-    "~/modules/tracktion_engine/audio_files/tracktion_Thumbnail.cpp"
-    "~/modules/tracktion_engine/audio_files/tracktion_Thumbnail.h"
-    "~/modules/tracktion_engine/control_surfaces/types/tracktion_AlphaTrack.cpp"
-    "~/modules/tracktion_engine/control_surfaces/types/tracktion_AlphaTrack.h"
-    "~/modules/tracktion_engine/control_surfaces/types/tracktion_MackieC4.cpp"
-    "~/modules/tracktion_engine/control_surfaces/types/tracktion_MackieC4.h"
-    "~/modules/tracktion_engine/control_surfaces/types/tracktion_MackieMCU.cpp"
-    "~/modules/tracktion_engine/control_surfaces/types/tracktion_MackieMCU.h"
-    "~/modules/tracktion_engine/control_surfaces/types/tracktion_MackieXT.cpp"
-    "~/modules/tracktion_engine/control_surfaces/types/tracktion_MackieXT.h"
-    "~/modules/tracktion_engine/control_surfaces/types/tracktion_NovationAutomap.cpp"
-    "~/modules/tracktion_engine/control_surfaces/types/tracktion_NovationAutomap.h"
-    "~/modules/tracktion_engine/control_surfaces/types/tracktion_NovationRemoteSl.cpp"
-    "~/modules/tracktion_engine/control_surfaces/types/tracktion_NovationRemoteSl.h"
-    "~/modules/tracktion_engine/control_surfaces/types/tracktion_RemoteSLCompact.cpp"
-    "~/modules/tracktion_engine/control_surfaces/types/tracktion_RemoteSLCompact.h"
-    "~/modules/tracktion_engine/control_surfaces/types/tracktion_Tranzport.cpp"
-    "~/modules/tracktion_engine/control_surfaces/types/tracktion_Tranzport.h"
-    "~/modules/tracktion_engine/control_surfaces/tracktion_ControlSurface.cpp"
-    "~/modules/tracktion_engine/control_surfaces/tracktion_ControlSurface.h"
-    "~/modules/tracktion_engine/control_surfaces/tracktion_CustomControlSurface.cpp"
-    "~/modules/tracktion_engine/control_surfaces/tracktion_CustomControlSurface.h"
-    "~/modules/tracktion_engine/control_surfaces/tracktion_ExternalController.cpp"
-    "~/modules/tracktion_engine/control_surfaces/tracktion_ExternalController.h"
-    "~/modules/tracktion_engine/control_surfaces/tracktion_ExternalControllerManager.cpp"
-    "~/modules/tracktion_engine/control_surfaces/tracktion_ExternalControllerManager.h"
-    "~/modules/tracktion_engine/midi/tracktion_ActiveNoteList.h"
-    "~/modules/tracktion_engine/midi/tracktion_MidiChannel.h"
-    "~/modules/tracktion_engine/midi/tracktion_MidiControllerEvent.h"
-    "~/modules/tracktion_engine/midi/tracktion_MidiExpression.h"
-    "~/modules/tracktion_engine/midi/tracktion_MidiList.cpp"
-    "~/modules/tracktion_engine/midi/tracktion_MidiList.h"
-    "~/modules/tracktion_engine/midi/tracktion_MidiMessageArray.h"
-    "~/modules/tracktion_engine/midi/tracktion_MidiNote.h"
-    "~/modules/tracktion_engine/midi/tracktion_MidiProgramManager.cpp"
-    "~/modules/tracktion_engine/midi/tracktion_MidiProgramManager.h"
-    "~/modules/tracktion_engine/midi/tracktion_MidiSysexEvent.h"
-    "~/modules/tracktion_engine/midi/tracktion_Musicality.cpp"
-    "~/modules/tracktion_engine/midi/tracktion_Musicality.h"
-    "~/modules/tracktion_engine/midi/tracktion_SelectedMidiEvents.cpp"
-    "~/modules/tracktion_engine/midi/tracktion_SelectedMidiEvents.h"
-    "~/modules/tracktion_engine/model/automation/modifiers/tracktion_BreakpointOscillatorModifier.cpp"
-    "~/modules/tracktion_engine/model/automation/modifiers/tracktion_BreakpointOscillatorModifier.h"
-    "~/modules/tracktion_engine/model/automation/modifiers/tracktion_EnvelopeFollowerModifier.cpp"
-    "~/modules/tracktion_engine/model/automation/modifiers/tracktion_EnvelopeFollowerModifier.h"
-    "~/modules/tracktion_engine/model/automation/modifiers/tracktion_LFOModifier.cpp"
-    "~/modules/tracktion_engine/model/automation/modifiers/tracktion_LFOModifier.h"
-    "~/modules/tracktion_engine/model/automation/modifiers/tracktion_MIDITrackerModifier.cpp"
-    "~/modules/tracktion_engine/model/automation/modifiers/tracktion_MIDITrackerModifier.h"
-    "~/modules/tracktion_engine/model/automation/modifiers/tracktion_ModifierCommon.cpp"
-    "~/modules/tracktion_engine/model/automation/modifiers/tracktion_ModifierCommon.h"
-    "~/modules/tracktion_engine/model/automation/modifiers/tracktion_ModifierInternal.h"
-    "~/modules/tracktion_engine/model/automation/modifiers/tracktion_RandomModifier.cpp"
-    "~/modules/tracktion_engine/model/automation/modifiers/tracktion_RandomModifier.h"
-    "~/modules/tracktion_engine/model/automation/modifiers/tracktion_StepModifier.cpp"
-    "~/modules/tracktion_engine/model/automation/modifiers/tracktion_StepModifier.h"
-    "~/modules/tracktion_engine/model/automation/tracktion_AutomatableEditItem.cpp"
-    "~/modules/tracktion_engine/model/automation/tracktion_AutomatableEditItem.h"
-    "~/modules/tracktion_engine/model/automation/tracktion_AutomatableParameter.cpp"
-    "~/modules/tracktion_engine/model/automation/tracktion_AutomatableParameter.h"
-    "~/modules/tracktion_engine/model/automation/tracktion_AutomatableParameterTree.h"
-    "~/modules/tracktion_engine/model/automation/tracktion_AutomationCurve.cpp"
-    "~/modules/tracktion_engine/model/automation/tracktion_AutomationCurve.h"
-    "~/modules/tracktion_engine/model/automation/tracktion_AutomationRecordManager.cpp"
-    "~/modules/tracktion_engine/model/automation/tracktion_AutomationRecordManager.h"
-    "~/modules/tracktion_engine/model/automation/tracktion_MacroParameter.cpp"
-    "~/modules/tracktion_engine/model/automation/tracktion_MacroParameter.h"
-    "~/modules/tracktion_engine/model/automation/tracktion_MidiLearn.cpp"
-    "~/modules/tracktion_engine/model/automation/tracktion_MidiLearn.h"
-    "~/modules/tracktion_engine/model/automation/tracktion_Modifier.cpp"
-    "~/modules/tracktion_engine/model/automation/tracktion_Modifier.h"
-    "~/modules/tracktion_engine/model/automation/tracktion_ParameterChangeHandler.cpp"
-    "~/modules/tracktion_engine/model/automation/tracktion_ParameterChangeHandler.h"
-    "~/modules/tracktion_engine/model/automation/tracktion_ParameterControlMappings.cpp"
-    "~/modules/tracktion_engine/model/automation/tracktion_ParameterControlMappings.h"
-    "~/modules/tracktion_engine/model/clips/tracktion_AudioClipBase.cpp"
-    "~/modules/tracktion_engine/model/clips/tracktion_AudioClipBase.h"
-    "~/modules/tracktion_engine/model/clips/tracktion_AudioSegmentList.cpp"
-    "~/modules/tracktion_engine/model/clips/tracktion_AudioSegmentList.h"
-    "~/modules/tracktion_engine/model/clips/tracktion_ChordClip.cpp"
-    "~/modules/tracktion_engine/model/clips/tracktion_ChordClip.h"
-    "~/modules/tracktion_engine/model/clips/tracktion_Clip.cpp"
-    "~/modules/tracktion_engine/model/clips/tracktion_Clip.h"
-    "~/modules/tracktion_engine/model/clips/tracktion_ClipEffects.cpp"
-    "~/modules/tracktion_engine/model/clips/tracktion_ClipEffects.h"
-    "~/modules/tracktion_engine/model/clips/tracktion_CollectionClip.cpp"
-    "~/modules/tracktion_engine/model/clips/tracktion_CollectionClip.h"
-    "~/modules/tracktion_engine/model/clips/tracktion_CompManager.cpp"
-    "~/modules/tracktion_engine/model/clips/tracktion_CompManager.h"
-    "~/modules/tracktion_engine/model/clips/tracktion_EditClip.cpp"
-    "~/modules/tracktion_engine/model/clips/tracktion_EditClip.h"
-    "~/modules/tracktion_engine/model/clips/tracktion_EditClipRenderJob.cpp"
-    "~/modules/tracktion_engine/model/clips/tracktion_EditClipRenderJob.h"
-    "~/modules/tracktion_engine/model/clips/tracktion_MarkerClip.cpp"
-    "~/modules/tracktion_engine/model/clips/tracktion_MarkerClip.h"
-    "~/modules/tracktion_engine/model/clips/tracktion_MidiClip.cpp"
-    "~/modules/tracktion_engine/model/clips/tracktion_MidiClip.h"
-    "~/modules/tracktion_engine/model/clips/tracktion_ReverseRenderJob.h"
-    "~/modules/tracktion_engine/model/clips/tracktion_StepClip.cpp"
-    "~/modules/tracktion_engine/model/clips/tracktion_StepClip.h"
-    "~/modules/tracktion_engine/model/clips/tracktion_StepClipChannel.cpp"
-    "~/modules/tracktion_engine/model/clips/tracktion_StepClipPattern.cpp"
-    "~/modules/tracktion_engine/model/clips/tracktion_WarpTimeManager.cpp"
-    "~/modules/tracktion_engine/model/clips/tracktion_WarpTimeManager.h"
-    "~/modules/tracktion_engine/model/clips/tracktion_WarpTimeRenderJob.h"
-    "~/modules/tracktion_engine/model/clips/tracktion_WaveAudioClip.cpp"
-    "~/modules/tracktion_engine/model/clips/tracktion_WaveAudioClip.h"
-    "~/modules/tracktion_engine/model/edit/tracktion_Edit.cpp"
-    "~/modules/tracktion_engine/model/edit/tracktion_Edit.h"
-    "~/modules/tracktion_engine/model/edit/tracktion_EditFileOperations.cpp"
-    "~/modules/tracktion_engine/model/edit/tracktion_EditFileOperations.h"
-    "~/modules/tracktion_engine/model/edit/tracktion_EditInsertPoint.cpp"
-    "~/modules/tracktion_engine/model/edit/tracktion_EditInsertPoint.h"
-    "~/modules/tracktion_engine/model/edit/tracktion_EditItem.cpp"
-    "~/modules/tracktion_engine/model/edit/tracktion_EditItem.h"
-    "~/modules/tracktion_engine/model/edit/tracktion_EditSnapshot.cpp"
-    "~/modules/tracktion_engine/model/edit/tracktion_EditSnapshot.h"
-    "~/modules/tracktion_engine/model/edit/tracktion_EditUtilities.cpp"
-    "~/modules/tracktion_engine/model/edit/tracktion_EditUtilities.h"
-    "~/modules/tracktion_engine/model/edit/tracktion_GrooveTemplate.cpp"
-    "~/modules/tracktion_engine/model/edit/tracktion_GrooveTemplate.h"
-    "~/modules/tracktion_engine/model/edit/tracktion_MarkerManager.cpp"
-    "~/modules/tracktion_engine/model/edit/tracktion_MarkerManager.h"
-    "~/modules/tracktion_engine/model/edit/tracktion_OldEditConversion.h"
-    "~/modules/tracktion_engine/model/edit/tracktion_PitchSequence.cpp"
-    "~/modules/tracktion_engine/model/edit/tracktion_PitchSequence.h"
-    "~/modules/tracktion_engine/model/edit/tracktion_PitchSetting.cpp"
-    "~/modules/tracktion_engine/model/edit/tracktion_PitchSetting.h"
-    "~/modules/tracktion_engine/model/edit/tracktion_QuantisationType.cpp"
-    "~/modules/tracktion_engine/model/edit/tracktion_QuantisationType.h"
-    "~/modules/tracktion_engine/model/edit/tracktion_SourceFileReference.cpp"
-    "~/modules/tracktion_engine/model/edit/tracktion_SourceFileReference.h"
-    "~/modules/tracktion_engine/model/edit/tracktion_TempoSequence.cpp"
-    "~/modules/tracktion_engine/model/edit/tracktion_TempoSequence.h"
-    "~/modules/tracktion_engine/model/edit/tracktion_TempoSetting.cpp"
-    "~/modules/tracktion_engine/model/edit/tracktion_TempoSetting.h"
-    "~/modules/tracktion_engine/model/edit/tracktion_TimecodeDisplayFormat.cpp"
-    "~/modules/tracktion_engine/model/edit/tracktion_TimecodeDisplayFormat.h"
-    "~/modules/tracktion_engine/model/edit/tracktion_TimeSigSetting.cpp"
-    "~/modules/tracktion_engine/model/edit/tracktion_TimeSigSetting.h"
-    "~/modules/tracktion_engine/model/export/tracktion_ArchiveFile.cpp"
-    "~/modules/tracktion_engine/model/export/tracktion_ArchiveFile.h"
-    "~/modules/tracktion_engine/model/export/tracktion_Exportable.cpp"
-    "~/modules/tracktion_engine/model/export/tracktion_Exportable.h"
-    "~/modules/tracktion_engine/model/export/tracktion_ExportJob.cpp"
-    "~/modules/tracktion_engine/model/export/tracktion_ExportJob.h"
-    "~/modules/tracktion_engine/model/export/tracktion_ReferencedMaterialList.h"
-    "~/modules/tracktion_engine/model/export/tracktion_Renderer.cpp"
-    "~/modules/tracktion_engine/model/export/tracktion_Renderer.h"
-    "~/modules/tracktion_engine/model/export/tracktion_RenderManager.cpp"
-    "~/modules/tracktion_engine/model/export/tracktion_RenderManager.h"
-    "~/modules/tracktion_engine/model/export/tracktion_RenderOptions.cpp"
-    "~/modules/tracktion_engine/model/export/tracktion_RenderOptions.h"
-    "~/modules/tracktion_engine/model/tracks/tracktion_AudioTrack.cpp"
-    "~/modules/tracktion_engine/model/tracks/tracktion_AudioTrack.h"
-    "~/modules/tracktion_engine/model/tracks/tracktion_AutomationTrack.cpp"
-    "~/modules/tracktion_engine/model/tracks/tracktion_AutomationTrack.h"
-    "~/modules/tracktion_engine/model/tracks/tracktion_ChordTrack.cpp"
-    "~/modules/tracktion_engine/model/tracks/tracktion_ChordTrack.h"
-    "~/modules/tracktion_engine/model/tracks/tracktion_ClipTrack.cpp"
-    "~/modules/tracktion_engine/model/tracks/tracktion_ClipTrack.h"
-    "~/modules/tracktion_engine/model/tracks/tracktion_EditTimeRange.cpp"
-    "~/modules/tracktion_engine/model/tracks/tracktion_EditTimeRange.h"
-    "~/modules/tracktion_engine/model/tracks/tracktion_FolderTrack.cpp"
-    "~/modules/tracktion_engine/model/tracks/tracktion_FolderTrack.h"
-    "~/modules/tracktion_engine/model/tracks/tracktion_MarkerTrack.cpp"
-    "~/modules/tracktion_engine/model/tracks/tracktion_MarkerTrack.h"
-    "~/modules/tracktion_engine/model/tracks/tracktion_TempoTrack.cpp"
-    "~/modules/tracktion_engine/model/tracks/tracktion_TempoTrack.h"
-    "~/modules/tracktion_engine/model/tracks/tracktion_Track.cpp"
-    "~/modules/tracktion_engine/model/tracks/tracktion_Track.h"
-    "~/modules/tracktion_engine/model/tracks/tracktion_TrackCompManager.cpp"
-    "~/modules/tracktion_engine/model/tracks/tracktion_TrackCompManager.h"
-    "~/modules/tracktion_engine/model/tracks/tracktion_TrackItem.cpp"
-    "~/modules/tracktion_engine/model/tracks/tracktion_TrackItem.h"
-    "~/modules/tracktion_engine/model/tracks/tracktion_TrackOutput.cpp"
-    "~/modules/tracktion_engine/model/tracks/tracktion_TrackOutput.h"
-    "~/modules/tracktion_engine/model/tracks/tracktion_TrackUtils.cpp"
-    "~/modules/tracktion_engine/model/tracks/tracktion_TrackUtils.h"
-    "~/modules/tracktion_engine/playback/audionodes/tracktion_AudioNode.cpp"
-    "~/modules/tracktion_engine/playback/audionodes/tracktion_AudioNode.h"
-    "~/modules/tracktion_engine/playback/audionodes/tracktion_BufferingAudioNode.cpp"
-    "~/modules/tracktion_engine/playback/audionodes/tracktion_BufferingAudioNode.h"
-    "~/modules/tracktion_engine/playback/audionodes/tracktion_ClickMutingNode.h"
-    "~/modules/tracktion_engine/playback/audionodes/tracktion_ClickNode.cpp"
-    "~/modules/tracktion_engine/playback/audionodes/tracktion_ClickNode.h"
-    "~/modules/tracktion_engine/playback/audionodes/tracktion_CombiningAudioNode.cpp"
-    "~/modules/tracktion_engine/playback/audionodes/tracktion_CombiningAudioNode.h"
-    "~/modules/tracktion_engine/playback/audionodes/tracktion_FadeInOutAudioNode.cpp"
-    "~/modules/tracktion_engine/playback/audionodes/tracktion_FadeInOutAudioNode.h"
-    "~/modules/tracktion_engine/playback/audionodes/tracktion_HissingAudioNode.cpp"
-    "~/modules/tracktion_engine/playback/audionodes/tracktion_HissingAudioNode.h"
-    "~/modules/tracktion_engine/playback/audionodes/tracktion_MidiAudioNode.cpp"
-    "~/modules/tracktion_engine/playback/audionodes/tracktion_MidiAudioNode.h"
-    "~/modules/tracktion_engine/playback/audionodes/tracktion_MixerAudioNode.cpp"
-    "~/modules/tracktion_engine/playback/audionodes/tracktion_MixerAudioNode.h"
-    "~/modules/tracktion_engine/playback/audionodes/tracktion_PlayHeadAudioNode.cpp"
-    "~/modules/tracktion_engine/playback/audionodes/tracktion_PlayHeadAudioNode.h"
-    "~/modules/tracktion_engine/playback/audionodes/tracktion_SidechainAudioNode.h"
-    "~/modules/tracktion_engine/playback/audionodes/tracktion_SpeedRampAudioNode.h"
-    "~/modules/tracktion_engine/playback/audionodes/tracktion_TimedMutingAudioNode.h"
-    "~/modules/tracktion_engine/playback/audionodes/tracktion_TrackMutingAudioNode.h"
-    "~/modules/tracktion_engine/playback/audionodes/tracktion_WaveAudioNode.cpp"
-    "~/modules/tracktion_engine/playback/audionodes/tracktion_WaveAudioNode.h"
-    "~/modules/tracktion_engine/playback/devices/tracktion_InputDevice.cpp"
-    "~/modules/tracktion_engine/playback/devices/tracktion_InputDevice.h"
-    "~/modules/tracktion_engine/playback/devices/tracktion_MidiInputDevice.cpp"
-    "~/modules/tracktion_engine/playback/devices/tracktion_MidiInputDevice.h"
-    "~/modules/tracktion_engine/playback/devices/tracktion_MidiOutputDevice.cpp"
-    "~/modules/tracktion_engine/playback/devices/tracktion_MidiOutputDevice.h"
-    "~/modules/tracktion_engine/playback/devices/tracktion_OutputDevice.cpp"
-    "~/modules/tracktion_engine/playback/devices/tracktion_OutputDevice.h"
-    "~/modules/tracktion_engine/playback/devices/tracktion_PhysicalMidiInputDevice.cpp"
-    "~/modules/tracktion_engine/playback/devices/tracktion_PhysicalMidiInputDevice.h"
-    "~/modules/tracktion_engine/playback/devices/tracktion_VirtualMidiInputDevice.cpp"
-    "~/modules/tracktion_engine/playback/devices/tracktion_VirtualMidiInputDevice.h"
-    "~/modules/tracktion_engine/playback/devices/tracktion_WaveDeviceDescription.cpp"
-    "~/modules/tracktion_engine/playback/devices/tracktion_WaveDeviceDescription.h"
-    "~/modules/tracktion_engine/playback/devices/tracktion_WaveInputDevice.cpp"
-    "~/modules/tracktion_engine/playback/devices/tracktion_WaveInputDevice.h"
-    "~/modules/tracktion_engine/playback/devices/tracktion_WaveOutputDevice.cpp"
-    "~/modules/tracktion_engine/playback/devices/tracktion_WaveOutputDevice.h"
-    "~/modules/tracktion_engine/playback/tracktion_AbletonLink.cpp"
-    "~/modules/tracktion_engine/playback/tracktion_AbletonLink.h"
-    "~/modules/tracktion_engine/playback/tracktion_DeviceManager.cpp"
-    "~/modules/tracktion_engine/playback/tracktion_DeviceManager.h"
-    "~/modules/tracktion_engine/playback/tracktion_EditInputDevices.cpp"
-    "~/modules/tracktion_engine/playback/tracktion_EditInputDevices.h"
-    "~/modules/tracktion_engine/playback/tracktion_EditPlaybackContext.cpp"
-    "~/modules/tracktion_engine/playback/tracktion_EditPlaybackContext.h"
-    "~/modules/tracktion_engine/playback/tracktion_LevelMeasurer.cpp"
-    "~/modules/tracktion_engine/playback/tracktion_LevelMeasurer.h"
-    "~/modules/tracktion_engine/playback/tracktion_MidiNoteDispatcher.cpp"
-    "~/modules/tracktion_engine/playback/tracktion_MidiNoteDispatcher.h"
-    "~/modules/tracktion_engine/playback/tracktion_MPEStartTrimmer.h"
-    "~/modules/tracktion_engine/playback/tracktion_PlayHead.h"
-    "~/modules/tracktion_engine/playback/tracktion_ScopedSteadyLoad.h"
-    "~/modules/tracktion_engine/playback/tracktion_TransportControl.cpp"
-    "~/modules/tracktion_engine/playback/tracktion_TransportControl.h"
-    "~/modules/tracktion_engine/plugins/airwindows/tracktion_AirWindows.cpp"
-    "~/modules/tracktion_engine/plugins/airwindows/tracktion_AirWindows.h"
-    "~/modules/tracktion_engine/plugins/airwindows/tracktion_AirWindowsBase.cpp"
-    "~/modules/tracktion_engine/plugins/ARA/tracktion_ARAWrapperFunctions.h"
-    "~/modules/tracktion_engine/plugins/ARA/tracktion_ARAWrapperInterfaces.h"
-    "~/modules/tracktion_engine/plugins/ARA/tracktion_MelodyneFileReader.cpp"
-    "~/modules/tracktion_engine/plugins/ARA/tracktion_MelodyneFileReader.h"
-    "~/modules/tracktion_engine/plugins/ARA/tracktion_MelodyneInstanceFactory.h"
-    "~/modules/tracktion_engine/plugins/effects/tracktion_Chorus.cpp"
-    "~/modules/tracktion_engine/plugins/effects/tracktion_Chorus.h"
-    "~/modules/tracktion_engine/plugins/effects/tracktion_Compressor.cpp"
-    "~/modules/tracktion_engine/plugins/effects/tracktion_Compressor.h"
-    "~/modules/tracktion_engine/plugins/effects/tracktion_Delay.cpp"
-    "~/modules/tracktion_engine/plugins/effects/tracktion_Delay.h"
-    "~/modules/tracktion_engine/plugins/effects/tracktion_Equaliser.cpp"
-    "~/modules/tracktion_engine/plugins/effects/tracktion_Equaliser.h"
-    "~/modules/tracktion_engine/plugins/effects/tracktion_FourOscPlugin.cpp"
-    "~/modules/tracktion_engine/plugins/effects/tracktion_FourOscPlugin.h"
-    "~/modules/tracktion_engine/plugins/effects/tracktion_LowPass.cpp"
-    "~/modules/tracktion_engine/plugins/effects/tracktion_LowPass.h"
-    "~/modules/tracktion_engine/plugins/effects/tracktion_MidiModifier.cpp"
-    "~/modules/tracktion_engine/plugins/effects/tracktion_MidiModifier.h"
-    "~/modules/tracktion_engine/plugins/effects/tracktion_MidiPatchBay.cpp"
-    "~/modules/tracktion_engine/plugins/effects/tracktion_MidiPatchBay.h"
-    "~/modules/tracktion_engine/plugins/effects/tracktion_PatchBay.cpp"
-    "~/modules/tracktion_engine/plugins/effects/tracktion_PatchBay.h"
-    "~/modules/tracktion_engine/plugins/effects/tracktion_Phaser.cpp"
-    "~/modules/tracktion_engine/plugins/effects/tracktion_Phaser.h"
-    "~/modules/tracktion_engine/plugins/effects/tracktion_PitchShift.cpp"
-    "~/modules/tracktion_engine/plugins/effects/tracktion_PitchShift.h"
-    "~/modules/tracktion_engine/plugins/effects/tracktion_Reverb.cpp"
-    "~/modules/tracktion_engine/plugins/effects/tracktion_Reverb.h"
-    "~/modules/tracktion_engine/plugins/effects/tracktion_SamplerPlugin.cpp"
-    "~/modules/tracktion_engine/plugins/effects/tracktion_SamplerPlugin.h"
-    "~/modules/tracktion_engine/plugins/external/tracktion_ExternalAutomatableParameter.h"
-    "~/modules/tracktion_engine/plugins/external/tracktion_ExternalPlugin.cpp"
-    "~/modules/tracktion_engine/plugins/external/tracktion_ExternalPlugin.h"
-    "~/modules/tracktion_engine/plugins/external/tracktion_ExternalPluginBlacklist.h"
-    "~/modules/tracktion_engine/plugins/external/tracktion_VSTXML.h"
-    "~/modules/tracktion_engine/plugins/internal/tracktion_AuxReturn.cpp"
-    "~/modules/tracktion_engine/plugins/internal/tracktion_AuxReturn.h"
-    "~/modules/tracktion_engine/plugins/internal/tracktion_AuxSend.cpp"
-    "~/modules/tracktion_engine/plugins/internal/tracktion_AuxSend.h"
-    "~/modules/tracktion_engine/plugins/internal/tracktion_FreezePoint.cpp"
-    "~/modules/tracktion_engine/plugins/internal/tracktion_FreezePoint.h"
-    "~/modules/tracktion_engine/plugins/internal/tracktion_InsertPlugin.cpp"
-    "~/modules/tracktion_engine/plugins/internal/tracktion_InsertPlugin.h"
-    "~/modules/tracktion_engine/plugins/internal/tracktion_LevelMeter.cpp"
-    "~/modules/tracktion_engine/plugins/internal/tracktion_LevelMeter.h"
-    "~/modules/tracktion_engine/plugins/internal/tracktion_RackInstance.cpp"
-    "~/modules/tracktion_engine/plugins/internal/tracktion_RackInstance.h"
-    "~/modules/tracktion_engine/plugins/internal/tracktion_RackType.cpp"
-    "~/modules/tracktion_engine/plugins/internal/tracktion_RackType.h"
-    "~/modules/tracktion_engine/plugins/internal/tracktion_ReWirePlugin.cpp"
-    "~/modules/tracktion_engine/plugins/internal/tracktion_ReWirePlugin.h"
-    "~/modules/tracktion_engine/plugins/internal/tracktion_TextPlugin.cpp"
-    "~/modules/tracktion_engine/plugins/internal/tracktion_TextPlugin.h"
-    "~/modules/tracktion_engine/plugins/internal/tracktion_VCA.cpp"
-    "~/modules/tracktion_engine/plugins/internal/tracktion_VCA.h"
-    "~/modules/tracktion_engine/plugins/internal/tracktion_VolumeAndPan.cpp"
-    "~/modules/tracktion_engine/plugins/internal/tracktion_VolumeAndPan.h"
-    "~/modules/tracktion_engine/plugins/tracktion_Plugin.cpp"
-    "~/modules/tracktion_engine/plugins/tracktion_Plugin.h"
-    "~/modules/tracktion_engine/plugins/tracktion_PluginList.cpp"
-    "~/modules/tracktion_engine/plugins/tracktion_PluginList.h"
-    "~/modules/tracktion_engine/plugins/tracktion_PluginManager.cpp"
-    "~/modules/tracktion_engine/plugins/tracktion_PluginManager.h"
-    "~/modules/tracktion_engine/plugins/tracktion_PluginWindowState.cpp"
-    "~/modules/tracktion_engine/plugins/tracktion_PluginWindowState.h"
-    "~/modules/tracktion_engine/project/tracktion_Project.cpp"
-    "~/modules/tracktion_engine/project/tracktion_Project.h"
-    "~/modules/tracktion_engine/project/tracktion_ProjectItem.cpp"
-    "~/modules/tracktion_engine/project/tracktion_ProjectItem.h"
-    "~/modules/tracktion_engine/project/tracktion_ProjectItemID.cpp"
-    "~/modules/tracktion_engine/project/tracktion_ProjectItemID.h"
-    "~/modules/tracktion_engine/project/tracktion_ProjectManager.cpp"
-    "~/modules/tracktion_engine/project/tracktion_ProjectManager.h"
-    "~/modules/tracktion_engine/project/tracktion_ProjectSearchIndex.cpp"
-    "~/modules/tracktion_engine/project/tracktion_ProjectSearchIndex.h"
-    "~/modules/tracktion_engine/selection/tracktion_Clipboard.cpp"
-    "~/modules/tracktion_engine/selection/tracktion_Clipboard.h"
-    "~/modules/tracktion_engine/selection/tracktion_Selectable.h"
-    "~/modules/tracktion_engine/selection/tracktion_SelectableClass.h"
-    "~/modules/tracktion_engine/selection/tracktion_SelectionManager.cpp"
-    "~/modules/tracktion_engine/selection/tracktion_SelectionManager.h"
-    "~/modules/tracktion_engine/timestretch/tracktion_BeatDetect.h"
-    "~/modules/tracktion_engine/timestretch/tracktion_TempoDetect.h"
-    "~/modules/tracktion_engine/timestretch/tracktion_TimeStretch.cpp"
-    "~/modules/tracktion_engine/timestretch/tracktion_TimeStretch.h"
-    "~/modules/tracktion_engine/utilities/tracktion_AppFunctions.cpp"
-    "~/modules/tracktion_engine/utilities/tracktion_AppFunctions.h"
-    "~/modules/tracktion_engine/utilities/tracktion_AsyncFunctionUtils.h"
-    "~/modules/tracktion_engine/utilities/tracktion_AudioFadeCurve.h"
-    "~/modules/tracktion_engine/utilities/tracktion_AudioScratchBuffer.h"
-    "~/modules/tracktion_engine/utilities/tracktion_AudioUtilities.cpp"
-    "~/modules/tracktion_engine/utilities/tracktion_AudioUtilities.h"
-    "~/modules/tracktion_engine/utilities/tracktion_BackgroundJobs.h"
-    "~/modules/tracktion_engine/utilities/tracktion_BinaryData.cpp"
-    "~/modules/tracktion_engine/utilities/tracktion_BinaryData.h"
-    "~/modules/tracktion_engine/utilities/tracktion_ConstrainedCachedValue.cpp"
-    "~/modules/tracktion_engine/utilities/tracktion_ConstrainedCachedValue.h"
-    "~/modules/tracktion_engine/utilities/tracktion_CpuMeasurement.h"
-    "~/modules/tracktion_engine/utilities/tracktion_CrashTracer.cpp"
-    "~/modules/tracktion_engine/utilities/tracktion_CrashTracer.h"
-    "~/modules/tracktion_engine/utilities/tracktion_CurveEditor.cpp"
-    "~/modules/tracktion_engine/utilities/tracktion_CurveEditor.h"
-    "~/modules/tracktion_engine/utilities/tracktion_Ditherer.h"
-    "~/modules/tracktion_engine/utilities/tracktion_Engine.cpp"
-    "~/modules/tracktion_engine/utilities/tracktion_Engine.h"
-    "~/modules/tracktion_engine/utilities/tracktion_EngineBehaviour.h"
-    "~/modules/tracktion_engine/utilities/tracktion_Envelope.cpp"
-    "~/modules/tracktion_engine/utilities/tracktion_Envelope.h"
-    "~/modules/tracktion_engine/utilities/tracktion_FileUtilities.cpp"
-    "~/modules/tracktion_engine/utilities/tracktion_FileUtilities.h"
-    "~/modules/tracktion_engine/utilities/tracktion_Identifiers.h"
-    "~/modules/tracktion_engine/utilities/tracktion_MiscUtilities.h"
-    "~/modules/tracktion_engine/utilities/tracktion_MouseHoverDetector.h"
-    "~/modules/tracktion_engine/utilities/tracktion_Oscillators.cpp"
-    "~/modules/tracktion_engine/utilities/tracktion_Oscillators.h"
-    "~/modules/tracktion_engine/utilities/tracktion_Pitch.h"
-    "~/modules/tracktion_engine/utilities/tracktion_PluginComponent.h"
-    "~/modules/tracktion_engine/utilities/tracktion_PropertyStorage.cpp"
-    "~/modules/tracktion_engine/utilities/tracktion_PropertyStorage.h"
-    "~/modules/tracktion_engine/utilities/tracktion_SettingID.h"
-    "~/modules/tracktion_engine/utilities/tracktion_Spline.h"
-    "~/modules/tracktion_engine/utilities/tracktion_TemporaryFileManager.cpp"
-    "~/modules/tracktion_engine/utilities/tracktion_TemporaryFileManager.h"
-    "~/modules/tracktion_engine/utilities/tracktion_UIBehaviour.cpp"
-    "~/modules/tracktion_engine/utilities/tracktion_UIBehaviour.h"
-    "~/modules/tracktion_engine/utilities/tracktion_ValueTreeUtilities.h"
-    "~/modules/tracktion_engine/tracktion_engine_airwindows.cpp"
-    "~/modules/tracktion_engine/tracktion_engine_audio_files.cpp"
-    "~/modules/tracktion_engine/tracktion_engine_model_1.cpp"
-    "~/modules/tracktion_engine/tracktion_engine_model_2.cpp"
-    "~/modules/tracktion_engine/tracktion_engine_playback.cpp"
-    "~/modules/tracktion_engine/tracktion_engine_plugins.cpp"
-    "~/modules/tracktion_engine/tracktion_engine_timestretch.cpp"
-    "~/modules/tracktion_engine/tracktion_engine_utils.cpp"
-    "C:/CODE/tracktion_engine/modules/tracktion_engine/tracktion_engine.h"
+    "../../../../../../JUCE/modules/juce_osc/juce_osc.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/Acceleration/Acceleration.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/Acceleration/Acceleration.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/Acceleration/AccelerationProc.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/ADClip7/ADClip7.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/ADClip7/ADClip7.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/ADClip7/ADClip7Proc.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/ADT/ADT.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/ADT/ADT.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/ADT/ADTProc.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/Air/Air.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/Air/Air.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/Air/AirProc.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/AQuickVoiceClip/AQuickVoiceClip.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/AQuickVoiceClip/AQuickVoiceClip.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/AQuickVoiceClip/AQuickVoiceClipProc.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/AtmosphereBuss/AtmosphereBuss.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/AtmosphereBuss/AtmosphereBuss.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/AtmosphereBuss/AtmosphereBussProc.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/AtmosphereChannel/AtmosphereChannel.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/AtmosphereChannel/AtmosphereChannel.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/AtmosphereChannel/AtmosphereChannelProc.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/Aura/Aura.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/Aura/Aura.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/Aura/AuraProc.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/Average/Average.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/Average/Average.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/Average/AverageProc.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/BassKit/BassKit.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/BassKit/BassKit.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/BassKit/BassKitProc.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/Bite/Bite.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/Bite/Bite.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/Bite/BiteProc.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/BitGlitter/BitGlitter.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/BitGlitter/BitGlitter.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/BitGlitter/BitGlitterProc.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/BitShiftGain/BitShiftGain.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/BitShiftGain/BitShiftGain.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/BitShiftGain/BitShiftGainProc.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/BuildATPDF/BuildATPDF.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/BuildATPDF/BuildATPDF.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/BuildATPDF/BuildATPDFProc.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/BussColors4/BussColors4.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/BussColors4/BussColors4.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/BussColors4/BussColors4Proc.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/ButterComp/ButterComp.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/ButterComp/ButterComp.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/ButterComp/ButterCompProc.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/ButterComp2/ButterComp2.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/ButterComp2/ButterComp2.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/ButterComp2/ButterComp2Proc.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/C5RawBuss/C5RawBuss.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/C5RawBuss/C5RawBuss.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/C5RawBuss/C5RawBussProc.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/C5RawChannel/C5RawChannel.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/C5RawChannel/C5RawChannel.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/C5RawChannel/C5RawChannelProc.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/Capacitor/Capacitor.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/Capacitor/Capacitor.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/Capacitor/CapacitorProc.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/Channel4/Channel4.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/Channel4/Channel4.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/Channel4/Channel4Proc.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/Channel5/Channel5.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/Channel5/Channel5.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/Channel5/Channel5Proc.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/Channel6/Channel6.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/Channel6/Channel6.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/Channel6/Channel6Proc.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/Chorus/Chorus.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/Chorus/Chorus.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/Chorus/ChorusProc.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/ChorusEnsemble/ChorusEnsemble.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/ChorusEnsemble/ChorusEnsemble.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/ChorusEnsemble/ChorusEnsembleProc.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/ClipOnly/ClipOnly.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/ClipOnly/ClipOnly.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/ClipOnly/ClipOnlyProc.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/Console4Buss/Console4Buss.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/Console4Buss/Console4Buss.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/Console4Buss/Console4BussProc.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/Console4Channel/Console4Channel.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/Console4Channel/Console4Channel.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/Console4Channel/Console4ChannelProc.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/Console5Buss/Console5Buss.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/Console5Buss/Console5Buss.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/Console5Buss/Console5BussProc.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/Console5Channel/Console5Channel.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/Console5Channel/Console5Channel.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/Console5Channel/Console5ChannelProc.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/Console5DarkCh/Console5DarkCh.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/Console5DarkCh/Console5DarkCh.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/Console5DarkCh/Console5DarkChProc.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/CrunchyGrooveWear/CrunchyGrooveWear.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/CrunchyGrooveWear/CrunchyGrooveWear.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/CrunchyGrooveWear/CrunchyGrooveWearProc.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/CStrip/CStrip.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/CStrip/CStrip.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/CStrip/CStripProc.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/DCVoltage/DCVoltage.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/DCVoltage/DCVoltage.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/DCVoltage/DCVoltageProc.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/DeEss/DeEss.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/DeEss/DeEss.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/DeEss/DeEssProc.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/Density/Density.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/Density/Density.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/Density/DensityProc.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/DeRez/DeRez.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/DeRez/DeRez.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/DeRez/DeRezProc.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/Desk/Desk.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/Desk/Desk.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/Desk/DeskProc.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/Desk4/Desk4.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/Desk4/Desk4.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/Desk4/Desk4Proc.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/Distance/Distance.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/Distance/Distance.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/Distance/DistanceProc.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/Distance2/Distance2.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/Distance2/Distance2.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/Distance2/Distance2Proc.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/Ditherbox/Ditherbox.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/Ditherbox/Ditherbox.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/Ditherbox/DitherboxProc.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/DitherMeDiskers/DitherMeDiskers.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/DitherMeDiskers/DitherMeDiskers.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/DitherMeDiskers/DitherMeDiskersProc.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/DitherMeTimbers/DitherMeTimbers.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/DitherMeTimbers/DitherMeTimbers.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/DitherMeTimbers/DitherMeTimbersProc.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/DoublePaul/DoublePaul.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/DoublePaul/DoublePaul.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/DoublePaul/DoublePaulProc.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/Drive/Drive.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/Drive/Drive.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/Drive/DriveProc.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/DrumSlam/DrumSlam.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/DrumSlam/DrumSlam.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/DrumSlam/DrumSlamProc.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/DubCenter/DubCenter.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/DubCenter/DubCenter.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/DubCenter/DubCenterProc.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/DubSub/DubSub.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/DubSub/DubSub.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/DubSub/DubSubProc.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/DustBunny/DustBunny.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/DustBunny/DustBunny.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/DustBunny/DustBunnyProc.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/EdIsDim/EdIsDim.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/EdIsDim/EdIsDim.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/EdIsDim/EdIsDimProc.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/ElectroHat/ElectroHat.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/ElectroHat/ElectroHat.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/ElectroHat/ElectroHatProc.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/Energy/Energy.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/Energy/Energy.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/Energy/EnergyProc.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/Ensemble/Ensemble.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/Ensemble/Ensemble.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/Ensemble/EnsembleProc.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/EQ/EQ.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/EQ/EQ.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/EQ/EQProc.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/EveryTrim/EveryTrim.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/EveryTrim/EveryTrim.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/EveryTrim/EveryTrimProc.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/FathomFive/FathomFive.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/FathomFive/FathomFive.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/FathomFive/FathomFiveProc.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/Floor/Floor.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/Floor/Floor.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/Floor/FloorProc.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/Fracture/Fracture.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/Fracture/Fracture.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/Fracture/FractureProc.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/FromTape/FromTape.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/FromTape/FromTape.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/FromTape/FromTapeProc.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/Gatelope/Gatelope.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/Gatelope/Gatelope.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/Gatelope/GatelopeProc.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/Golem/Golem.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/Golem/Golem.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/Golem/GolemProc.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/GrooveWear/GrooveWear.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/GrooveWear/GrooveWear.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/GrooveWear/GrooveWearProc.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/GuitarConditioner/GuitarConditioner.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/GuitarConditioner/GuitarConditioner.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/GuitarConditioner/GuitarConditionerProc.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/HardVacuum/HardVacuum.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/HardVacuum/HardVacuum.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/HardVacuum/HardVacuumProc.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/Hermepass/Hermepass.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/Hermepass/Hermepass.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/Hermepass/HermepassProc.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/HermeTrim/HermeTrim.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/HermeTrim/HermeTrim.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/HermeTrim/HermeTrimProc.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/HighGlossDither/HighGlossDither.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/HighGlossDither/HighGlossDither.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/HighGlossDither/HighGlossDitherProc.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/HighImpact/HighImpact.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/HighImpact/HighImpact.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/HighImpact/HighImpactProc.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/Highpass/Highpass.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/Highpass/Highpass.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/Highpass/HighpassProc.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/Hombre/Hombre.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/Hombre/Hombre.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/Hombre/HombreProc.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/IronOxide5/IronOxide5.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/IronOxide5/IronOxide5.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/IronOxide5/IronOxide5Proc.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/IronOxideClassic/IronOxideClassic.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/IronOxideClassic/IronOxideClassic.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/IronOxideClassic/IronOxideClassicProc.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/Logical4/Logical4.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/Logical4/Logical4.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/Logical4/Logical4Proc.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/Loud/Loud.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/Loud/Loud.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/Loud/LoudProc.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/Lowpass/Lowpass.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/Lowpass/Lowpass.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/Lowpass/LowpassProc.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/Melt/Melt.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/Melt/Melt.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/Melt/MeltProc.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/MidSide/MidSide.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/MidSide/MidSide.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/MidSide/MidSideProc.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/NaturalizeDither/NaturalizeDither.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/NaturalizeDither/NaturalizeDither.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/NaturalizeDither/NaturalizeDitherProc.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/NCSeventeen/NCSeventeen.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/NCSeventeen/NCSeventeen.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/NCSeventeen/NCSeventeenProc.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/NodeDither/NodeDither.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/NodeDither/NodeDither.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/NodeDither/NodeDitherProc.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/Noise/Noise.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/Noise/Noise.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/Noise/NoiseProc.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/NonlinearSpace/NonlinearSpace.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/NonlinearSpace/NonlinearSpace.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/NonlinearSpace/NonlinearSpaceProc.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/NotJustAnotherCD/NotJustAnotherCD.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/NotJustAnotherCD/NotJustAnotherCD.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/NotJustAnotherCD/NotJustAnotherCDProc.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/NotJustAnotherDither/NotJustAnotherDither.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/NotJustAnotherDither/NotJustAnotherDither.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/NotJustAnotherDither/NotJustAnotherDitherProc.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/OneCornerClip/OneCornerClip.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/OneCornerClip/OneCornerClip.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/OneCornerClip/OneCornerClipProc.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/PaulDither/PaulDither.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/PaulDither/PaulDither.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/PaulDither/PaulDitherProc.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/PDBuss/PDBuss.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/PDBuss/PDBuss.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/PDBuss/PDBussProc.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/PDChannel/PDChannel.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/PDChannel/PDChannel.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/PDChannel/PDChannelProc.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/PhaseNudge/PhaseNudge.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/PhaseNudge/PhaseNudge.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/PhaseNudge/PhaseNudgeProc.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/Point/Point.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/Point/Point.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/Point/PointProc.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/Pop/Pop.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/Pop/Pop.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/Pop/PopProc.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/PowerSag/PowerSag.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/PowerSag/PowerSag.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/PowerSag/PowerSagProc.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/Pressure4/Pressure4.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/Pressure4/Pressure4.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/Pressure4/Pressure4Proc.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/PurestConsoleBuss/PurestConsoleBuss.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/PurestConsoleBuss/PurestConsoleBuss.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/PurestConsoleBuss/PurestConsoleBussProc.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/PurestConsoleChannel/PurestConsoleChannel.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/PurestConsoleChannel/PurestConsoleChannel.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/PurestConsoleChannel/PurestConsoleChannelProc.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/PurestDrive/PurestDrive.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/PurestDrive/PurestDrive.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/PurestDrive/PurestDriveProc.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/PurestEcho/PurestEcho.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/PurestEcho/PurestEcho.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/PurestEcho/PurestEchoProc.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/PurestGain/PurestGain.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/PurestGain/PurestGain.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/PurestGain/PurestGainProc.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/PurestWarm/PurestWarm.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/PurestWarm/PurestWarm.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/PurestWarm/PurestWarmProc.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/Pyewacket/Pyewacket.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/Pyewacket/Pyewacket.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/Pyewacket/PyewacketProc.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/Righteous4/Righteous4.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/Righteous4/Righteous4.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/Righteous4/Righteous4Proc.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/SideDull/SideDull.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/SideDull/SideDull.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/SideDull/SideDullProc.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/Sidepass/Sidepass.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/Sidepass/Sidepass.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/Sidepass/SidepassProc.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/SingleEndedTriode/SingleEndedTriode.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/SingleEndedTriode/SingleEndedTriode.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/SingleEndedTriode/SingleEndedTriodeProc.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/Slew/Slew.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/Slew/Slew.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/Slew/SlewProc.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/Slew2/Slew2.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/Slew2/Slew2.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/Slew2/Slew2Proc.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/SlewOnly/SlewOnly.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/SlewOnly/SlewOnly.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/SlewOnly/SlewOnlyProc.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/SpatializeDither/SpatializeDither.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/SpatializeDither/SpatializeDither.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/SpatializeDither/SpatializeDitherProc.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/Spiral/Spiral.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/Spiral/Spiral.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/Spiral/SpiralProc.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/Spiral2/Spiral2.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/Spiral2/Spiral2.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/Spiral2/Spiral2Proc.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/StarChild/StarChild.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/StarChild/StarChild.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/StarChild/StarChildProc.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/StereoFX/StereoFX.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/StereoFX/StereoFX.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/StereoFX/StereoFXProc.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/SubsOnly/SubsOnly.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/SubsOnly/SubsOnly.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/SubsOnly/SubsOnlyProc.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/Surge/Surge.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/Surge/Surge.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/Surge/SurgeProc.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/SurgeTide/SurgeTide.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/SurgeTide/SurgeTide.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/SurgeTide/SurgeTideProc.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/Swell/Swell.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/Swell/Swell.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/Swell/SwellProc.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/TapeDither/TapeDither.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/TapeDither/TapeDither.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/TapeDither/TapeDitherProc.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/TapeDust/TapeDust.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/TapeDust/TapeDust.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/TapeDust/TapeDustProc.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/Thunder/Thunder.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/Thunder/Thunder.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/Thunder/ThunderProc.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/ToneSlant/ToneSlant.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/ToneSlant/ToneSlant.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/ToneSlant/ToneSlantProc.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/ToTape5/ToTape5.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/ToTape5/ToTape5.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/ToTape5/ToTape5Proc.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/ToVinyl4/ToVinyl4.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/ToVinyl4/ToVinyl4.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/ToVinyl4/ToVinyl4Proc.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/TPDFDither/TPDFDither.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/TPDFDither/TPDFDither.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/TPDFDither/TPDFDitherProc.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/TransDesk/TransDesk.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/TransDesk/TransDesk.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/TransDesk/TransDeskProc.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/Tremolo/Tremolo.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/Tremolo/Tremolo.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/Tremolo/TremoloProc.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/TubeDesk/TubeDesk.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/TubeDesk/TubeDesk.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/TubeDesk/TubeDeskProc.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/uLawDecode/uLawDecode.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/uLawDecode/uLawDecode.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/uLawDecode/uLawDecodeProc.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/uLawEncode/uLawEncode.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/uLawEncode/uLawEncode.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/uLawEncode/uLawEncodeProc.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/UnBox/UnBox.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/UnBox/UnBox.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/UnBox/UnBoxProc.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/VariMu/VariMu.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/VariMu/VariMu.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/VariMu/VariMuProc.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/VinylDither/VinylDither.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/VinylDither/VinylDither.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/VinylDither/VinylDitherProc.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/VoiceOfTheStarship/VoiceOfTheStarship.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/VoiceOfTheStarship/VoiceOfTheStarship.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/VoiceOfTheStarship/VoiceOfTheStarshipProc.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/Wider/Wider.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/Wider/Wider.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/Wider/WiderProc.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/soundtouch/include/BPMDetect.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/soundtouch/include/FIFOSampleBuffer.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/soundtouch/include/FIFOSamplePipe.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/soundtouch/include/SoundTouch.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/soundtouch/include/soundtouch_config.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/soundtouch/include/STTypes.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/soundtouch/source/SoundTouch/AAFilter.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/soundtouch/source/SoundTouch/AAFilter.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/soundtouch/source/SoundTouch/BPMDetect.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/soundtouch/source/SoundTouch/BPMDetect.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/soundtouch/source/SoundTouch/cpu_detect.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/soundtouch/source/SoundTouch/cpu_detect_x86.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/soundtouch/source/SoundTouch/FIFOSampleBuffer.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/soundtouch/source/SoundTouch/FIFOSampleBuffer.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/soundtouch/source/SoundTouch/FIFOSamplePipe.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/soundtouch/source/SoundTouch/FIRFilter.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/soundtouch/source/SoundTouch/FIRFilter.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/soundtouch/source/SoundTouch/InterpolateCubic.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/soundtouch/source/SoundTouch/InterpolateCubic.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/soundtouch/source/SoundTouch/InterpolateLinear.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/soundtouch/source/SoundTouch/InterpolateLinear.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/soundtouch/source/SoundTouch/InterpolateShannon.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/soundtouch/source/SoundTouch/InterpolateShannon.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/soundtouch/source/SoundTouch/mmx_optimized.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/soundtouch/source/SoundTouch/PeakFinder.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/soundtouch/source/SoundTouch/PeakFinder.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/soundtouch/source/SoundTouch/RateTransposer.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/soundtouch/source/SoundTouch/RateTransposer.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/soundtouch/source/SoundTouch/SoundTouch.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/soundtouch/source/SoundTouch/SoundTouch.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/soundtouch/source/SoundTouch/sse_optimized.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/soundtouch/source/SoundTouch/STTypes.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/soundtouch/source/SoundTouch/TDStretch.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/soundtouch/source/SoundTouch/TDStretch.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/audio_files/formats/tracktion_FloatAudioFileFormat.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/audio_files/formats/tracktion_FloatAudioFileFormat.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/audio_files/formats/tracktion_LAMEManager.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/audio_files/formats/tracktion_LAMEManager.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/audio_files/formats/tracktion_RexFileFormat.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/audio_files/formats/tracktion_RexFileFormat.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/audio_files/tracktion_AudioFifo.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/audio_files/tracktion_AudioFile.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/audio_files/tracktion_AudioFile.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/audio_files/tracktion_AudioFileCache.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/audio_files/tracktion_AudioFileCache.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/audio_files/tracktion_AudioFileManager.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/audio_files/tracktion_AudioFileUtils.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/audio_files/tracktion_AudioFileUtils.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/audio_files/tracktion_AudioFileWriter.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/audio_files/tracktion_AudioFormatManager.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/audio_files/tracktion_AudioFormatManager.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/audio_files/tracktion_AudioProxyGenerator.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/audio_files/tracktion_LoopInfo.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/audio_files/tracktion_LoopInfo.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/audio_files/tracktion_RecordingThumbnailManager.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/audio_files/tracktion_SmartThumbnail.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/audio_files/tracktion_Thumbnail.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/audio_files/tracktion_Thumbnail.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/control_surfaces/types/tracktion_AlphaTrack.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/control_surfaces/types/tracktion_AlphaTrack.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/control_surfaces/types/tracktion_MackieC4.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/control_surfaces/types/tracktion_MackieC4.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/control_surfaces/types/tracktion_MackieMCU.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/control_surfaces/types/tracktion_MackieMCU.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/control_surfaces/types/tracktion_MackieXT.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/control_surfaces/types/tracktion_MackieXT.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/control_surfaces/types/tracktion_NovationAutomap.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/control_surfaces/types/tracktion_NovationAutomap.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/control_surfaces/types/tracktion_NovationRemoteSl.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/control_surfaces/types/tracktion_NovationRemoteSl.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/control_surfaces/types/tracktion_RemoteSLCompact.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/control_surfaces/types/tracktion_RemoteSLCompact.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/control_surfaces/types/tracktion_Tranzport.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/control_surfaces/types/tracktion_Tranzport.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/control_surfaces/tracktion_ControlSurface.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/control_surfaces/tracktion_ControlSurface.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/control_surfaces/tracktion_CustomControlSurface.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/control_surfaces/tracktion_CustomControlSurface.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/control_surfaces/tracktion_ExternalController.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/control_surfaces/tracktion_ExternalController.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/control_surfaces/tracktion_ExternalControllerManager.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/control_surfaces/tracktion_ExternalControllerManager.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/midi/tracktion_ActiveNoteList.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/midi/tracktion_MidiChannel.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/midi/tracktion_MidiControllerEvent.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/midi/tracktion_MidiExpression.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/midi/tracktion_MidiList.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/midi/tracktion_MidiList.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/midi/tracktion_MidiMessageArray.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/midi/tracktion_MidiNote.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/midi/tracktion_MidiProgramManager.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/midi/tracktion_MidiProgramManager.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/midi/tracktion_MidiSysexEvent.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/midi/tracktion_Musicality.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/midi/tracktion_Musicality.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/midi/tracktion_SelectedMidiEvents.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/midi/tracktion_SelectedMidiEvents.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/model/automation/modifiers/tracktion_BreakpointOscillatorModifier.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/model/automation/modifiers/tracktion_BreakpointOscillatorModifier.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/model/automation/modifiers/tracktion_EnvelopeFollowerModifier.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/model/automation/modifiers/tracktion_EnvelopeFollowerModifier.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/model/automation/modifiers/tracktion_LFOModifier.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/model/automation/modifiers/tracktion_LFOModifier.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/model/automation/modifiers/tracktion_MIDITrackerModifier.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/model/automation/modifiers/tracktion_MIDITrackerModifier.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/model/automation/modifiers/tracktion_ModifierCommon.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/model/automation/modifiers/tracktion_ModifierCommon.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/model/automation/modifiers/tracktion_ModifierInternal.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/model/automation/modifiers/tracktion_RandomModifier.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/model/automation/modifiers/tracktion_RandomModifier.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/model/automation/modifiers/tracktion_StepModifier.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/model/automation/modifiers/tracktion_StepModifier.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/model/automation/tracktion_AutomatableEditItem.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/model/automation/tracktion_AutomatableEditItem.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/model/automation/tracktion_AutomatableParameter.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/model/automation/tracktion_AutomatableParameter.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/model/automation/tracktion_AutomatableParameterTree.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/model/automation/tracktion_AutomationCurve.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/model/automation/tracktion_AutomationCurve.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/model/automation/tracktion_AutomationRecordManager.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/model/automation/tracktion_AutomationRecordManager.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/model/automation/tracktion_MacroParameter.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/model/automation/tracktion_MacroParameter.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/model/automation/tracktion_MidiLearn.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/model/automation/tracktion_MidiLearn.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/model/automation/tracktion_Modifier.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/model/automation/tracktion_Modifier.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/model/automation/tracktion_ParameterChangeHandler.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/model/automation/tracktion_ParameterChangeHandler.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/model/automation/tracktion_ParameterControlMappings.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/model/automation/tracktion_ParameterControlMappings.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/model/clips/tracktion_AudioClipBase.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/model/clips/tracktion_AudioClipBase.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/model/clips/tracktion_AudioSegmentList.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/model/clips/tracktion_AudioSegmentList.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/model/clips/tracktion_ChordClip.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/model/clips/tracktion_ChordClip.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/model/clips/tracktion_Clip.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/model/clips/tracktion_Clip.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/model/clips/tracktion_ClipEffects.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/model/clips/tracktion_ClipEffects.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/model/clips/tracktion_CollectionClip.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/model/clips/tracktion_CollectionClip.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/model/clips/tracktion_CompManager.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/model/clips/tracktion_CompManager.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/model/clips/tracktion_EditClip.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/model/clips/tracktion_EditClip.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/model/clips/tracktion_EditClipRenderJob.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/model/clips/tracktion_EditClipRenderJob.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/model/clips/tracktion_MarkerClip.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/model/clips/tracktion_MarkerClip.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/model/clips/tracktion_MidiClip.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/model/clips/tracktion_MidiClip.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/model/clips/tracktion_ReverseRenderJob.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/model/clips/tracktion_StepClip.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/model/clips/tracktion_StepClip.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/model/clips/tracktion_StepClipChannel.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/model/clips/tracktion_StepClipPattern.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/model/clips/tracktion_WarpTimeManager.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/model/clips/tracktion_WarpTimeManager.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/model/clips/tracktion_WarpTimeRenderJob.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/model/clips/tracktion_WaveAudioClip.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/model/clips/tracktion_WaveAudioClip.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/model/edit/tracktion_Edit.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/model/edit/tracktion_Edit.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/model/edit/tracktion_EditFileOperations.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/model/edit/tracktion_EditFileOperations.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/model/edit/tracktion_EditInsertPoint.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/model/edit/tracktion_EditInsertPoint.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/model/edit/tracktion_EditItem.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/model/edit/tracktion_EditItem.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/model/edit/tracktion_EditSnapshot.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/model/edit/tracktion_EditSnapshot.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/model/edit/tracktion_EditUtilities.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/model/edit/tracktion_EditUtilities.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/model/edit/tracktion_GrooveTemplate.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/model/edit/tracktion_GrooveTemplate.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/model/edit/tracktion_MarkerManager.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/model/edit/tracktion_MarkerManager.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/model/edit/tracktion_OldEditConversion.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/model/edit/tracktion_PitchSequence.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/model/edit/tracktion_PitchSequence.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/model/edit/tracktion_PitchSetting.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/model/edit/tracktion_PitchSetting.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/model/edit/tracktion_QuantisationType.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/model/edit/tracktion_QuantisationType.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/model/edit/tracktion_SourceFileReference.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/model/edit/tracktion_SourceFileReference.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/model/edit/tracktion_TempoSequence.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/model/edit/tracktion_TempoSequence.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/model/edit/tracktion_TempoSetting.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/model/edit/tracktion_TempoSetting.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/model/edit/tracktion_TimecodeDisplayFormat.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/model/edit/tracktion_TimecodeDisplayFormat.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/model/edit/tracktion_TimeSigSetting.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/model/edit/tracktion_TimeSigSetting.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/model/export/tracktion_ArchiveFile.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/model/export/tracktion_ArchiveFile.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/model/export/tracktion_Exportable.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/model/export/tracktion_Exportable.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/model/export/tracktion_ExportJob.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/model/export/tracktion_ExportJob.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/model/export/tracktion_ReferencedMaterialList.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/model/export/tracktion_Renderer.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/model/export/tracktion_Renderer.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/model/export/tracktion_RenderManager.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/model/export/tracktion_RenderManager.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/model/export/tracktion_RenderOptions.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/model/export/tracktion_RenderOptions.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/model/tracks/tracktion_AudioTrack.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/model/tracks/tracktion_AudioTrack.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/model/tracks/tracktion_AutomationTrack.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/model/tracks/tracktion_AutomationTrack.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/model/tracks/tracktion_ChordTrack.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/model/tracks/tracktion_ChordTrack.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/model/tracks/tracktion_ClipTrack.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/model/tracks/tracktion_ClipTrack.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/model/tracks/tracktion_EditTimeRange.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/model/tracks/tracktion_EditTimeRange.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/model/tracks/tracktion_FolderTrack.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/model/tracks/tracktion_FolderTrack.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/model/tracks/tracktion_MarkerTrack.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/model/tracks/tracktion_MarkerTrack.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/model/tracks/tracktion_TempoTrack.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/model/tracks/tracktion_TempoTrack.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/model/tracks/tracktion_Track.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/model/tracks/tracktion_Track.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/model/tracks/tracktion_TrackCompManager.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/model/tracks/tracktion_TrackCompManager.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/model/tracks/tracktion_TrackItem.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/model/tracks/tracktion_TrackItem.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/model/tracks/tracktion_TrackOutput.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/model/tracks/tracktion_TrackOutput.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/model/tracks/tracktion_TrackUtils.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/model/tracks/tracktion_TrackUtils.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/playback/audionodes/tracktion_AudioNode.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/playback/audionodes/tracktion_AudioNode.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/playback/audionodes/tracktion_BufferingAudioNode.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/playback/audionodes/tracktion_BufferingAudioNode.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/playback/audionodes/tracktion_ClickMutingNode.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/playback/audionodes/tracktion_ClickNode.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/playback/audionodes/tracktion_ClickNode.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/playback/audionodes/tracktion_CombiningAudioNode.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/playback/audionodes/tracktion_CombiningAudioNode.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/playback/audionodes/tracktion_FadeInOutAudioNode.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/playback/audionodes/tracktion_FadeInOutAudioNode.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/playback/audionodes/tracktion_HissingAudioNode.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/playback/audionodes/tracktion_HissingAudioNode.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/playback/audionodes/tracktion_MidiAudioNode.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/playback/audionodes/tracktion_MidiAudioNode.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/playback/audionodes/tracktion_MixerAudioNode.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/playback/audionodes/tracktion_MixerAudioNode.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/playback/audionodes/tracktion_PlayHeadAudioNode.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/playback/audionodes/tracktion_PlayHeadAudioNode.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/playback/audionodes/tracktion_SidechainAudioNode.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/playback/audionodes/tracktion_SpeedRampAudioNode.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/playback/audionodes/tracktion_TimedMutingAudioNode.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/playback/audionodes/tracktion_TrackMutingAudioNode.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/playback/audionodes/tracktion_WaveAudioNode.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/playback/audionodes/tracktion_WaveAudioNode.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/playback/devices/tracktion_InputDevice.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/playback/devices/tracktion_InputDevice.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/playback/devices/tracktion_MidiInputDevice.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/playback/devices/tracktion_MidiInputDevice.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/playback/devices/tracktion_MidiOutputDevice.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/playback/devices/tracktion_MidiOutputDevice.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/playback/devices/tracktion_OutputDevice.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/playback/devices/tracktion_OutputDevice.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/playback/devices/tracktion_PhysicalMidiInputDevice.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/playback/devices/tracktion_PhysicalMidiInputDevice.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/playback/devices/tracktion_VirtualMidiInputDevice.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/playback/devices/tracktion_VirtualMidiInputDevice.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/playback/devices/tracktion_WaveDeviceDescription.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/playback/devices/tracktion_WaveDeviceDescription.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/playback/devices/tracktion_WaveInputDevice.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/playback/devices/tracktion_WaveInputDevice.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/playback/devices/tracktion_WaveOutputDevice.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/playback/devices/tracktion_WaveOutputDevice.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/playback/tracktion_AbletonLink.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/playback/tracktion_AbletonLink.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/playback/tracktion_DeviceManager.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/playback/tracktion_DeviceManager.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/playback/tracktion_EditInputDevices.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/playback/tracktion_EditInputDevices.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/playback/tracktion_EditPlaybackContext.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/playback/tracktion_EditPlaybackContext.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/playback/tracktion_LevelMeasurer.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/playback/tracktion_LevelMeasurer.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/playback/tracktion_MidiNoteDispatcher.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/playback/tracktion_MidiNoteDispatcher.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/playback/tracktion_MPEStartTrimmer.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/playback/tracktion_PlayHead.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/playback/tracktion_ScopedSteadyLoad.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/playback/tracktion_TransportControl.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/playback/tracktion_TransportControl.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/plugins/airwindows/tracktion_AirWindows.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/plugins/airwindows/tracktion_AirWindows.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/plugins/airwindows/tracktion_AirWindowsBase.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/plugins/ARA/tracktion_ARAWrapperFunctions.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/plugins/ARA/tracktion_ARAWrapperInterfaces.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/plugins/ARA/tracktion_MelodyneFileReader.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/plugins/ARA/tracktion_MelodyneFileReader.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/plugins/ARA/tracktion_MelodyneInstanceFactory.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/plugins/effects/tracktion_Chorus.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/plugins/effects/tracktion_Chorus.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/plugins/effects/tracktion_Compressor.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/plugins/effects/tracktion_Compressor.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/plugins/effects/tracktion_Delay.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/plugins/effects/tracktion_Delay.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/plugins/effects/tracktion_Equaliser.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/plugins/effects/tracktion_Equaliser.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/plugins/effects/tracktion_FourOscPlugin.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/plugins/effects/tracktion_FourOscPlugin.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/plugins/effects/tracktion_LowPass.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/plugins/effects/tracktion_LowPass.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/plugins/effects/tracktion_MidiModifier.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/plugins/effects/tracktion_MidiModifier.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/plugins/effects/tracktion_MidiPatchBay.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/plugins/effects/tracktion_MidiPatchBay.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/plugins/effects/tracktion_PatchBay.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/plugins/effects/tracktion_PatchBay.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/plugins/effects/tracktion_Phaser.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/plugins/effects/tracktion_Phaser.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/plugins/effects/tracktion_PitchShift.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/plugins/effects/tracktion_PitchShift.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/plugins/effects/tracktion_Reverb.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/plugins/effects/tracktion_Reverb.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/plugins/effects/tracktion_SamplerPlugin.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/plugins/effects/tracktion_SamplerPlugin.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/plugins/external/tracktion_ExternalAutomatableParameter.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/plugins/external/tracktion_ExternalPlugin.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/plugins/external/tracktion_ExternalPlugin.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/plugins/external/tracktion_ExternalPluginBlacklist.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/plugins/external/tracktion_VSTXML.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/plugins/internal/tracktion_AuxReturn.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/plugins/internal/tracktion_AuxReturn.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/plugins/internal/tracktion_AuxSend.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/plugins/internal/tracktion_AuxSend.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/plugins/internal/tracktion_FreezePoint.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/plugins/internal/tracktion_FreezePoint.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/plugins/internal/tracktion_InsertPlugin.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/plugins/internal/tracktion_InsertPlugin.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/plugins/internal/tracktion_LevelMeter.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/plugins/internal/tracktion_LevelMeter.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/plugins/internal/tracktion_RackInstance.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/plugins/internal/tracktion_RackInstance.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/plugins/internal/tracktion_RackType.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/plugins/internal/tracktion_RackType.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/plugins/internal/tracktion_ReWirePlugin.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/plugins/internal/tracktion_ReWirePlugin.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/plugins/internal/tracktion_TextPlugin.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/plugins/internal/tracktion_TextPlugin.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/plugins/internal/tracktion_VCA.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/plugins/internal/tracktion_VCA.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/plugins/internal/tracktion_VolumeAndPan.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/plugins/internal/tracktion_VolumeAndPan.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/plugins/tracktion_Plugin.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/plugins/tracktion_Plugin.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/plugins/tracktion_PluginList.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/plugins/tracktion_PluginList.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/plugins/tracktion_PluginManager.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/plugins/tracktion_PluginManager.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/plugins/tracktion_PluginWindowState.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/plugins/tracktion_PluginWindowState.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/project/tracktion_Project.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/project/tracktion_Project.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/project/tracktion_ProjectItem.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/project/tracktion_ProjectItem.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/project/tracktion_ProjectItemID.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/project/tracktion_ProjectItemID.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/project/tracktion_ProjectManager.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/project/tracktion_ProjectManager.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/project/tracktion_ProjectSearchIndex.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/project/tracktion_ProjectSearchIndex.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/selection/tracktion_Clipboard.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/selection/tracktion_Clipboard.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/selection/tracktion_Selectable.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/selection/tracktion_SelectableClass.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/selection/tracktion_SelectionManager.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/selection/tracktion_SelectionManager.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/timestretch/tracktion_BeatDetect.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/timestretch/tracktion_TempoDetect.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/timestretch/tracktion_TimeStretch.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/timestretch/tracktion_TimeStretch.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/utilities/tracktion_AppFunctions.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/utilities/tracktion_AppFunctions.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/utilities/tracktion_AsyncFunctionUtils.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/utilities/tracktion_AudioFadeCurve.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/utilities/tracktion_AudioScratchBuffer.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/utilities/tracktion_AudioUtilities.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/utilities/tracktion_AudioUtilities.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/utilities/tracktion_BackgroundJobs.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/utilities/tracktion_BinaryData.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/utilities/tracktion_BinaryData.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/utilities/tracktion_ConstrainedCachedValue.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/utilities/tracktion_ConstrainedCachedValue.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/utilities/tracktion_CpuMeasurement.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/utilities/tracktion_CrashTracer.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/utilities/tracktion_CrashTracer.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/utilities/tracktion_CurveEditor.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/utilities/tracktion_CurveEditor.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/utilities/tracktion_Ditherer.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/utilities/tracktion_Engine.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/utilities/tracktion_Engine.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/utilities/tracktion_EngineBehaviour.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/utilities/tracktion_Envelope.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/utilities/tracktion_Envelope.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/utilities/tracktion_FileUtilities.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/utilities/tracktion_FileUtilities.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/utilities/tracktion_Identifiers.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/utilities/tracktion_MiscUtilities.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/utilities/tracktion_MouseHoverDetector.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/utilities/tracktion_Oscillators.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/utilities/tracktion_Oscillators.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/utilities/tracktion_Pitch.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/utilities/tracktion_PluginComponent.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/utilities/tracktion_PropertyStorage.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/utilities/tracktion_PropertyStorage.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/utilities/tracktion_SettingID.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/utilities/tracktion_Spline.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/utilities/tracktion_TemporaryFileManager.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/utilities/tracktion_TemporaryFileManager.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/utilities/tracktion_UIBehaviour.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/utilities/tracktion_UIBehaviour.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/utilities/tracktion_ValueTreeUtilities.h"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/tracktion_engine_airwindows.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/tracktion_engine_audio_files.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/tracktion_engine_model_1.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/tracktion_engine_model_2.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/tracktion_engine_playback.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/tracktion_engine_plugins.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/tracktion_engine_timestretch.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/tracktion_engine_utils.cpp"
+    "../../../../../../tracktion_engine/modules/tracktion_engine/tracktion_engine.h"
     "../../JuceLibraryCode/AppConfig.h"
     "../../JuceLibraryCode/BinaryData.cpp"
     "../../JuceLibraryCode/BinaryData.h"
@@ -2416,6 +2418,7 @@ set_source_files_properties ("../../Source/UI/ImageBinary.h" PROPERTIES HEADER_F
 set_source_files_properties ("../../Source/UI/MixerChannelComponent.h" PROPERTIES HEADER_FILE_ONLY TRUE)
 set_source_files_properties ("../../Source/UI/PlayButton.h" PROPERTIES HEADER_FILE_ONLY TRUE)
 set_source_files_properties ("../../Source/UI/ToolbarComponent.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../Source/UI/PlayHeadComponent.h" PROPERTIES HEADER_FILE_ONLY TRUE)
 set_source_files_properties ("../../Source/UI/UIEngine.h" PROPERTIES HEADER_FILE_ONLY TRUE)
 set_source_files_properties ("~/JUCE/modules/juce_audio_basics/audio_play_head/juce_AudioPlayHead.h" PROPERTIES HEADER_FILE_ONLY TRUE)
 set_source_files_properties ("~/JUCE/modules/juce_audio_basics/buffers/juce_AudioChannelSet.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
@@ -2491,7 +2494,7 @@ set_source_files_properties ("~/JUCE/modules/juce_audio_basics/utilities/juce_Sm
 set_source_files_properties ("~/JUCE/modules/juce_audio_basics/utilities/juce_SmoothedValue.h" PROPERTIES HEADER_FILE_ONLY TRUE)
 set_source_files_properties ("~/JUCE/modules/juce_audio_basics/juce_audio_basics.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
 set_source_files_properties ("~/JUCE/modules/juce_audio_basics/juce_audio_basics.mm" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("C:/CODE/JUCE/modules/juce_audio_basics/juce_audio_basics.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../JUCE/modules/juce_audio_basics/juce_audio_basics.h" PROPERTIES HEADER_FILE_ONLY TRUE)
 set_source_files_properties ("~/JUCE/modules/juce_audio_devices/audio_io/juce_AudioDeviceManager.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
 set_source_files_properties ("~/JUCE/modules/juce_audio_devices/audio_io/juce_AudioDeviceManager.h" PROPERTIES HEADER_FILE_ONLY TRUE)
 set_source_files_properties ("~/JUCE/modules/juce_audio_devices/audio_io/juce_AudioIODevice.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
@@ -2527,7 +2530,7 @@ set_source_files_properties ("~/JUCE/modules/juce_audio_devices/sources/juce_Aud
 set_source_files_properties ("~/JUCE/modules/juce_audio_devices/sources/juce_AudioTransportSource.h" PROPERTIES HEADER_FILE_ONLY TRUE)
 set_source_files_properties ("~/JUCE/modules/juce_audio_devices/juce_audio_devices.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
 set_source_files_properties ("~/JUCE/modules/juce_audio_devices/juce_audio_devices.mm" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("C:/CODE/JUCE/modules/juce_audio_devices/juce_audio_devices.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../JUCE/modules/juce_audio_devices/juce_audio_devices.h" PROPERTIES HEADER_FILE_ONLY TRUE)
 set_source_files_properties ("~/JUCE/modules/juce_audio_formats/codecs/flac/libFLAC/include/private/all.h" PROPERTIES HEADER_FILE_ONLY TRUE)
 set_source_files_properties ("~/JUCE/modules/juce_audio_formats/codecs/flac/libFLAC/include/private/bitmath.h" PROPERTIES HEADER_FILE_ONLY TRUE)
 set_source_files_properties ("~/JUCE/modules/juce_audio_formats/codecs/flac/libFLAC/include/private/bitreader.h" PROPERTIES HEADER_FILE_ONLY TRUE)
@@ -2684,7 +2687,7 @@ set_source_files_properties ("~/JUCE/modules/juce_audio_formats/sampler/juce_Sam
 set_source_files_properties ("~/JUCE/modules/juce_audio_formats/sampler/juce_Sampler.h" PROPERTIES HEADER_FILE_ONLY TRUE)
 set_source_files_properties ("~/JUCE/modules/juce_audio_formats/juce_audio_formats.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
 set_source_files_properties ("~/JUCE/modules/juce_audio_formats/juce_audio_formats.mm" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("C:/CODE/JUCE/modules/juce_audio_formats/juce_audio_formats.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../JUCE/modules/juce_audio_formats/juce_audio_formats.h" PROPERTIES HEADER_FILE_ONLY TRUE)
 set_source_files_properties ("~/JUCE/modules/juce_audio_processors/format/juce_AudioPluginFormat.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
 set_source_files_properties ("~/JUCE/modules/juce_audio_processors/format/juce_AudioPluginFormat.h" PROPERTIES HEADER_FILE_ONLY TRUE)
 set_source_files_properties ("~/JUCE/modules/juce_audio_processors/format/juce_AudioPluginFormatManager.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
@@ -2826,7 +2829,7 @@ set_source_files_properties ("~/JUCE/modules/juce_audio_processors/utilities/juc
 set_source_files_properties ("~/JUCE/modules/juce_audio_processors/utilities/juce_RangedAudioParameter.h" PROPERTIES HEADER_FILE_ONLY TRUE)
 set_source_files_properties ("~/JUCE/modules/juce_audio_processors/juce_audio_processors.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
 set_source_files_properties ("~/JUCE/modules/juce_audio_processors/juce_audio_processors.mm" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("C:/CODE/JUCE/modules/juce_audio_processors/juce_audio_processors.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../JUCE/modules/juce_audio_processors/juce_audio_processors.h" PROPERTIES HEADER_FILE_ONLY TRUE)
 set_source_files_properties ("~/JUCE/modules/juce_audio_utils/audio_cd/juce_AudioCDBurner.h" PROPERTIES HEADER_FILE_ONLY TRUE)
 set_source_files_properties ("~/JUCE/modules/juce_audio_utils/audio_cd/juce_AudioCDReader.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
 set_source_files_properties ("~/JUCE/modules/juce_audio_utils/audio_cd/juce_AudioCDReader.h" PROPERTIES HEADER_FILE_ONLY TRUE)
@@ -2860,7 +2863,7 @@ set_source_files_properties ("~/JUCE/modules/juce_audio_utils/players/juce_Sound
 set_source_files_properties ("~/JUCE/modules/juce_audio_utils/players/juce_SoundPlayer.h" PROPERTIES HEADER_FILE_ONLY TRUE)
 set_source_files_properties ("~/JUCE/modules/juce_audio_utils/juce_audio_utils.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
 set_source_files_properties ("~/JUCE/modules/juce_audio_utils/juce_audio_utils.mm" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("C:/CODE/JUCE/modules/juce_audio_utils/juce_audio_utils.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../JUCE/modules/juce_audio_utils/juce_audio_utils.h" PROPERTIES HEADER_FILE_ONLY TRUE)
 set_source_files_properties ("~/JUCE/modules/juce_core/containers/juce_AbstractFifo.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
 set_source_files_properties ("~/JUCE/modules/juce_core/containers/juce_AbstractFifo.h" PROPERTIES HEADER_FILE_ONLY TRUE)
 set_source_files_properties ("~/JUCE/modules/juce_core/containers/juce_Array.h" PROPERTIES HEADER_FILE_ONLY TRUE)
@@ -3104,7 +3107,7 @@ set_source_files_properties ("~/JUCE/modules/juce_core/zip/juce_ZipFile.cpp" PRO
 set_source_files_properties ("~/JUCE/modules/juce_core/zip/juce_ZipFile.h" PROPERTIES HEADER_FILE_ONLY TRUE)
 set_source_files_properties ("~/JUCE/modules/juce_core/juce_core.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
 set_source_files_properties ("~/JUCE/modules/juce_core/juce_core.mm" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("C:/CODE/JUCE/modules/juce_core/juce_core.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../JUCE/modules/juce_core/juce_core.h" PROPERTIES HEADER_FILE_ONLY TRUE)
 set_source_files_properties ("~/JUCE/modules/juce_data_structures/app_properties/juce_ApplicationProperties.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
 set_source_files_properties ("~/JUCE/modules/juce_data_structures/app_properties/juce_ApplicationProperties.h" PROPERTIES HEADER_FILE_ONLY TRUE)
 set_source_files_properties ("~/JUCE/modules/juce_data_structures/app_properties/juce_PropertiesFile.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
@@ -3124,7 +3127,7 @@ set_source_files_properties ("~/JUCE/modules/juce_data_structures/values/juce_Va
 set_source_files_properties ("~/JUCE/modules/juce_data_structures/values/juce_ValueWithDefault.h" PROPERTIES HEADER_FILE_ONLY TRUE)
 set_source_files_properties ("~/JUCE/modules/juce_data_structures/juce_data_structures.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
 set_source_files_properties ("~/JUCE/modules/juce_data_structures/juce_data_structures.mm" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("C:/CODE/JUCE/modules/juce_data_structures/juce_data_structures.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../JUCE/modules/juce_data_structures/juce_data_structures.h" PROPERTIES HEADER_FILE_ONLY TRUE)
 set_source_files_properties ("~/JUCE/modules/juce_dsp/containers/juce_AudioBlock.h" PROPERTIES HEADER_FILE_ONLY TRUE)
 set_source_files_properties ("~/JUCE/modules/juce_dsp/containers/juce_SIMDRegister.h" PROPERTIES HEADER_FILE_ONLY TRUE)
 set_source_files_properties ("~/JUCE/modules/juce_dsp/containers/juce_SIMDRegister_Impl.h" PROPERTIES HEADER_FILE_ONLY TRUE)
@@ -3179,7 +3182,7 @@ set_source_files_properties ("~/JUCE/modules/juce_dsp/processors/juce_StateVaria
 set_source_files_properties ("~/JUCE/modules/juce_dsp/processors/juce_WaveShaper.h" PROPERTIES HEADER_FILE_ONLY TRUE)
 set_source_files_properties ("~/JUCE/modules/juce_dsp/juce_dsp.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
 set_source_files_properties ("~/JUCE/modules/juce_dsp/juce_dsp.mm" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("C:/CODE/JUCE/modules/juce_dsp/juce_dsp.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../JUCE/modules/juce_dsp/juce_dsp.h" PROPERTIES HEADER_FILE_ONLY TRUE)
 set_source_files_properties ("~/JUCE/modules/juce_events/broadcasters/juce_ActionBroadcaster.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
 set_source_files_properties ("~/JUCE/modules/juce_events/broadcasters/juce_ActionBroadcaster.h" PROPERTIES HEADER_FILE_ONLY TRUE)
 set_source_files_properties ("~/JUCE/modules/juce_events/broadcasters/juce_ActionListener.h" PROPERTIES HEADER_FILE_ONLY TRUE)
@@ -3225,7 +3228,7 @@ set_source_files_properties ("~/JUCE/modules/juce_events/timers/juce_Timer.cpp" 
 set_source_files_properties ("~/JUCE/modules/juce_events/timers/juce_Timer.h" PROPERTIES HEADER_FILE_ONLY TRUE)
 set_source_files_properties ("~/JUCE/modules/juce_events/juce_events.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
 set_source_files_properties ("~/JUCE/modules/juce_events/juce_events.mm" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("C:/CODE/JUCE/modules/juce_events/juce_events.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../JUCE/modules/juce_events/juce_events.h" PROPERTIES HEADER_FILE_ONLY TRUE)
 set_source_files_properties ("~/JUCE/modules/juce_graphics/colour/juce_Colour.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
 set_source_files_properties ("~/JUCE/modules/juce_graphics/colour/juce_Colour.h" PROPERTIES HEADER_FILE_ONLY TRUE)
 set_source_files_properties ("~/JUCE/modules/juce_graphics/colour/juce_ColourGradient.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
@@ -3390,7 +3393,7 @@ set_source_files_properties ("~/JUCE/modules/juce_graphics/placement/juce_Rectan
 set_source_files_properties ("~/JUCE/modules/juce_graphics/placement/juce_RectanglePlacement.h" PROPERTIES HEADER_FILE_ONLY TRUE)
 set_source_files_properties ("~/JUCE/modules/juce_graphics/juce_graphics.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
 set_source_files_properties ("~/JUCE/modules/juce_graphics/juce_graphics.mm" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("C:/CODE/JUCE/modules/juce_graphics/juce_graphics.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../JUCE/modules/juce_graphics/juce_graphics.h" PROPERTIES HEADER_FILE_ONLY TRUE)
 set_source_files_properties ("~/JUCE/modules/juce_gui_basics/application/juce_Application.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
 set_source_files_properties ("~/JUCE/modules/juce_gui_basics/application/juce_Application.h" PROPERTIES HEADER_FILE_ONLY TRUE)
 set_source_files_properties ("~/JUCE/modules/juce_gui_basics/buttons/juce_ArrowButton.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
@@ -3673,7 +3676,7 @@ set_source_files_properties ("~/JUCE/modules/juce_gui_basics/windows/juce_TopLev
 set_source_files_properties ("~/JUCE/modules/juce_gui_basics/windows/juce_TopLevelWindow.h" PROPERTIES HEADER_FILE_ONLY TRUE)
 set_source_files_properties ("~/JUCE/modules/juce_gui_basics/juce_gui_basics.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
 set_source_files_properties ("~/JUCE/modules/juce_gui_basics/juce_gui_basics.mm" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("C:/CODE/JUCE/modules/juce_gui_basics/juce_gui_basics.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../JUCE/modules/juce_gui_basics/juce_gui_basics.h" PROPERTIES HEADER_FILE_ONLY TRUE)
 set_source_files_properties ("~/JUCE/modules/juce_gui_extra/code_editor/juce_CodeDocument.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
 set_source_files_properties ("~/JUCE/modules/juce_gui_extra/code_editor/juce_CodeDocument.h" PROPERTIES HEADER_FILE_ONLY TRUE)
 set_source_files_properties ("~/JUCE/modules/juce_gui_extra/code_editor/juce_CodeEditorComponent.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
@@ -3735,7 +3738,7 @@ set_source_files_properties ("~/JUCE/modules/juce_gui_extra/native/juce_win32_Sy
 set_source_files_properties ("~/JUCE/modules/juce_gui_extra/native/juce_win32_WebBrowserComponent.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
 set_source_files_properties ("~/JUCE/modules/juce_gui_extra/juce_gui_extra.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
 set_source_files_properties ("~/JUCE/modules/juce_gui_extra/juce_gui_extra.mm" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("C:/CODE/JUCE/modules/juce_gui_extra/juce_gui_extra.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../JUCE/modules/juce_gui_extra/juce_gui_extra.h" PROPERTIES HEADER_FILE_ONLY TRUE)
 set_source_files_properties ("~/JUCE/modules/juce_osc/osc/juce_OSCAddress.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
 set_source_files_properties ("~/JUCE/modules/juce_osc/osc/juce_OSCAddress.h" PROPERTIES HEADER_FILE_ONLY TRUE)
 set_source_files_properties ("~/JUCE/modules/juce_osc/osc/juce_OSCArgument.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
@@ -3753,843 +3756,843 @@ set_source_files_properties ("~/JUCE/modules/juce_osc/osc/juce_OSCTimeTag.h" PRO
 set_source_files_properties ("~/JUCE/modules/juce_osc/osc/juce_OSCTypes.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
 set_source_files_properties ("~/JUCE/modules/juce_osc/osc/juce_OSCTypes.h" PROPERTIES HEADER_FILE_ONLY TRUE)
 set_source_files_properties ("~/JUCE/modules/juce_osc/juce_osc.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("C:/CODE/JUCE/modules/juce_osc/juce_osc.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/Acceleration/Acceleration.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/Acceleration/Acceleration.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/Acceleration/AccelerationProc.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/ADClip7/ADClip7.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/ADClip7/ADClip7.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/ADClip7/ADClip7Proc.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/ADT/ADT.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/ADT/ADT.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/ADT/ADTProc.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/Air/Air.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/Air/Air.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/Air/AirProc.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/AQuickVoiceClip/AQuickVoiceClip.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/AQuickVoiceClip/AQuickVoiceClip.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/AQuickVoiceClip/AQuickVoiceClipProc.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/AtmosphereBuss/AtmosphereBuss.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/AtmosphereBuss/AtmosphereBuss.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/AtmosphereBuss/AtmosphereBussProc.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/AtmosphereChannel/AtmosphereChannel.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/AtmosphereChannel/AtmosphereChannel.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/AtmosphereChannel/AtmosphereChannelProc.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/Aura/Aura.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/Aura/Aura.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/Aura/AuraProc.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/Average/Average.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/Average/Average.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/Average/AverageProc.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/BassKit/BassKit.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/BassKit/BassKit.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/BassKit/BassKitProc.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/Bite/Bite.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/Bite/Bite.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/Bite/BiteProc.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/BitGlitter/BitGlitter.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/BitGlitter/BitGlitter.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/BitGlitter/BitGlitterProc.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/BitShiftGain/BitShiftGain.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/BitShiftGain/BitShiftGain.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/BitShiftGain/BitShiftGainProc.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/BuildATPDF/BuildATPDF.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/BuildATPDF/BuildATPDF.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/BuildATPDF/BuildATPDFProc.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/BussColors4/BussColors4.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/BussColors4/BussColors4.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/BussColors4/BussColors4Proc.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/ButterComp/ButterComp.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/ButterComp/ButterComp.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/ButterComp/ButterCompProc.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/ButterComp2/ButterComp2.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/ButterComp2/ButterComp2.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/ButterComp2/ButterComp2Proc.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/C5RawBuss/C5RawBuss.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/C5RawBuss/C5RawBuss.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/C5RawBuss/C5RawBussProc.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/C5RawChannel/C5RawChannel.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/C5RawChannel/C5RawChannel.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/C5RawChannel/C5RawChannelProc.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/Capacitor/Capacitor.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/Capacitor/Capacitor.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/Capacitor/CapacitorProc.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/Channel4/Channel4.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/Channel4/Channel4.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/Channel4/Channel4Proc.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/Channel5/Channel5.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/Channel5/Channel5.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/Channel5/Channel5Proc.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/Channel6/Channel6.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/Channel6/Channel6.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/Channel6/Channel6Proc.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/Chorus/Chorus.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/Chorus/Chorus.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/Chorus/ChorusProc.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/ChorusEnsemble/ChorusEnsemble.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/ChorusEnsemble/ChorusEnsemble.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/ChorusEnsemble/ChorusEnsembleProc.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/ClipOnly/ClipOnly.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/ClipOnly/ClipOnly.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/ClipOnly/ClipOnlyProc.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/Console4Buss/Console4Buss.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/Console4Buss/Console4Buss.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/Console4Buss/Console4BussProc.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/Console4Channel/Console4Channel.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/Console4Channel/Console4Channel.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/Console4Channel/Console4ChannelProc.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/Console5Buss/Console5Buss.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/Console5Buss/Console5Buss.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/Console5Buss/Console5BussProc.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/Console5Channel/Console5Channel.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/Console5Channel/Console5Channel.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/Console5Channel/Console5ChannelProc.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/Console5DarkCh/Console5DarkCh.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/Console5DarkCh/Console5DarkCh.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/Console5DarkCh/Console5DarkChProc.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/CrunchyGrooveWear/CrunchyGrooveWear.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/CrunchyGrooveWear/CrunchyGrooveWear.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/CrunchyGrooveWear/CrunchyGrooveWearProc.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/CStrip/CStrip.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/CStrip/CStrip.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/CStrip/CStripProc.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/DCVoltage/DCVoltage.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/DCVoltage/DCVoltage.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/DCVoltage/DCVoltageProc.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/DeEss/DeEss.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/DeEss/DeEss.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/DeEss/DeEssProc.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/Density/Density.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/Density/Density.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/Density/DensityProc.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/DeRez/DeRez.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/DeRez/DeRez.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/DeRez/DeRezProc.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/Desk/Desk.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/Desk/Desk.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/Desk/DeskProc.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/Desk4/Desk4.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/Desk4/Desk4.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/Desk4/Desk4Proc.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/Distance/Distance.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/Distance/Distance.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/Distance/DistanceProc.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/Distance2/Distance2.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/Distance2/Distance2.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/Distance2/Distance2Proc.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/Ditherbox/Ditherbox.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/Ditherbox/Ditherbox.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/Ditherbox/DitherboxProc.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/DitherMeDiskers/DitherMeDiskers.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/DitherMeDiskers/DitherMeDiskers.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/DitherMeDiskers/DitherMeDiskersProc.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/DitherMeTimbers/DitherMeTimbers.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/DitherMeTimbers/DitherMeTimbers.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/DitherMeTimbers/DitherMeTimbersProc.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/DoublePaul/DoublePaul.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/DoublePaul/DoublePaul.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/DoublePaul/DoublePaulProc.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/Drive/Drive.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/Drive/Drive.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/Drive/DriveProc.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/DrumSlam/DrumSlam.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/DrumSlam/DrumSlam.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/DrumSlam/DrumSlamProc.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/DubCenter/DubCenter.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/DubCenter/DubCenter.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/DubCenter/DubCenterProc.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/DubSub/DubSub.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/DubSub/DubSub.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/DubSub/DubSubProc.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/DustBunny/DustBunny.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/DustBunny/DustBunny.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/DustBunny/DustBunnyProc.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/EdIsDim/EdIsDim.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/EdIsDim/EdIsDim.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/EdIsDim/EdIsDimProc.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/ElectroHat/ElectroHat.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/ElectroHat/ElectroHat.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/ElectroHat/ElectroHatProc.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/Energy/Energy.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/Energy/Energy.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/Energy/EnergyProc.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/Ensemble/Ensemble.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/Ensemble/Ensemble.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/Ensemble/EnsembleProc.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/EQ/EQ.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/EQ/EQ.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/EQ/EQProc.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/EveryTrim/EveryTrim.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/EveryTrim/EveryTrim.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/EveryTrim/EveryTrimProc.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/FathomFive/FathomFive.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/FathomFive/FathomFive.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/FathomFive/FathomFiveProc.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/Floor/Floor.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/Floor/Floor.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/Floor/FloorProc.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/Fracture/Fracture.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/Fracture/Fracture.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/Fracture/FractureProc.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/FromTape/FromTape.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/FromTape/FromTape.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/FromTape/FromTapeProc.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/Gatelope/Gatelope.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/Gatelope/Gatelope.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/Gatelope/GatelopeProc.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/Golem/Golem.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/Golem/Golem.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/Golem/GolemProc.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/GrooveWear/GrooveWear.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/GrooveWear/GrooveWear.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/GrooveWear/GrooveWearProc.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/GuitarConditioner/GuitarConditioner.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/GuitarConditioner/GuitarConditioner.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/GuitarConditioner/GuitarConditionerProc.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/HardVacuum/HardVacuum.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/HardVacuum/HardVacuum.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/HardVacuum/HardVacuumProc.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/Hermepass/Hermepass.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/Hermepass/Hermepass.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/Hermepass/HermepassProc.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/HermeTrim/HermeTrim.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/HermeTrim/HermeTrim.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/HermeTrim/HermeTrimProc.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/HighGlossDither/HighGlossDither.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/HighGlossDither/HighGlossDither.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/HighGlossDither/HighGlossDitherProc.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/HighImpact/HighImpact.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/HighImpact/HighImpact.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/HighImpact/HighImpactProc.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/Highpass/Highpass.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/Highpass/Highpass.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/Highpass/HighpassProc.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/Hombre/Hombre.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/Hombre/Hombre.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/Hombre/HombreProc.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/IronOxide5/IronOxide5.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/IronOxide5/IronOxide5.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/IronOxide5/IronOxide5Proc.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/IronOxideClassic/IronOxideClassic.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/IronOxideClassic/IronOxideClassic.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/IronOxideClassic/IronOxideClassicProc.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/Logical4/Logical4.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/Logical4/Logical4.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/Logical4/Logical4Proc.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/Loud/Loud.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/Loud/Loud.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/Loud/LoudProc.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/Lowpass/Lowpass.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/Lowpass/Lowpass.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/Lowpass/LowpassProc.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/Melt/Melt.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/Melt/Melt.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/Melt/MeltProc.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/MidSide/MidSide.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/MidSide/MidSide.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/MidSide/MidSideProc.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/NaturalizeDither/NaturalizeDither.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/NaturalizeDither/NaturalizeDither.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/NaturalizeDither/NaturalizeDitherProc.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/NCSeventeen/NCSeventeen.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/NCSeventeen/NCSeventeen.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/NCSeventeen/NCSeventeenProc.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/NodeDither/NodeDither.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/NodeDither/NodeDither.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/NodeDither/NodeDitherProc.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/Noise/Noise.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/Noise/Noise.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/Noise/NoiseProc.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/NonlinearSpace/NonlinearSpace.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/NonlinearSpace/NonlinearSpace.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/NonlinearSpace/NonlinearSpaceProc.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/NotJustAnotherCD/NotJustAnotherCD.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/NotJustAnotherCD/NotJustAnotherCD.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/NotJustAnotherCD/NotJustAnotherCDProc.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/NotJustAnotherDither/NotJustAnotherDither.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/NotJustAnotherDither/NotJustAnotherDither.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/NotJustAnotherDither/NotJustAnotherDitherProc.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/OneCornerClip/OneCornerClip.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/OneCornerClip/OneCornerClip.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/OneCornerClip/OneCornerClipProc.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/PaulDither/PaulDither.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/PaulDither/PaulDither.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/PaulDither/PaulDitherProc.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/PDBuss/PDBuss.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/PDBuss/PDBuss.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/PDBuss/PDBussProc.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/PDChannel/PDChannel.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/PDChannel/PDChannel.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/PDChannel/PDChannelProc.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/PhaseNudge/PhaseNudge.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/PhaseNudge/PhaseNudge.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/PhaseNudge/PhaseNudgeProc.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/Point/Point.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/Point/Point.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/Point/PointProc.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/Pop/Pop.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/Pop/Pop.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/Pop/PopProc.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/PowerSag/PowerSag.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/PowerSag/PowerSag.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/PowerSag/PowerSagProc.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/Pressure4/Pressure4.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/Pressure4/Pressure4.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/Pressure4/Pressure4Proc.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/PurestConsoleBuss/PurestConsoleBuss.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/PurestConsoleBuss/PurestConsoleBuss.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/PurestConsoleBuss/PurestConsoleBussProc.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/PurestConsoleChannel/PurestConsoleChannel.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/PurestConsoleChannel/PurestConsoleChannel.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/PurestConsoleChannel/PurestConsoleChannelProc.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/PurestDrive/PurestDrive.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/PurestDrive/PurestDrive.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/PurestDrive/PurestDriveProc.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/PurestEcho/PurestEcho.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/PurestEcho/PurestEcho.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/PurestEcho/PurestEchoProc.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/PurestGain/PurestGain.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/PurestGain/PurestGain.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/PurestGain/PurestGainProc.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/PurestWarm/PurestWarm.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/PurestWarm/PurestWarm.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/PurestWarm/PurestWarmProc.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/Pyewacket/Pyewacket.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/Pyewacket/Pyewacket.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/Pyewacket/PyewacketProc.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/Righteous4/Righteous4.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/Righteous4/Righteous4.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/Righteous4/Righteous4Proc.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/SideDull/SideDull.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/SideDull/SideDull.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/SideDull/SideDullProc.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/Sidepass/Sidepass.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/Sidepass/Sidepass.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/Sidepass/SidepassProc.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/SingleEndedTriode/SingleEndedTriode.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/SingleEndedTriode/SingleEndedTriode.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/SingleEndedTriode/SingleEndedTriodeProc.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/Slew/Slew.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/Slew/Slew.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/Slew/SlewProc.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/Slew2/Slew2.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/Slew2/Slew2.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/Slew2/Slew2Proc.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/SlewOnly/SlewOnly.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/SlewOnly/SlewOnly.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/SlewOnly/SlewOnlyProc.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/SpatializeDither/SpatializeDither.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/SpatializeDither/SpatializeDither.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/SpatializeDither/SpatializeDitherProc.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/Spiral/Spiral.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/Spiral/Spiral.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/Spiral/SpiralProc.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/Spiral2/Spiral2.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/Spiral2/Spiral2.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/Spiral2/Spiral2Proc.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/StarChild/StarChild.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/StarChild/StarChild.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/StarChild/StarChildProc.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/StereoFX/StereoFX.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/StereoFX/StereoFX.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/StereoFX/StereoFXProc.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/SubsOnly/SubsOnly.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/SubsOnly/SubsOnly.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/SubsOnly/SubsOnlyProc.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/Surge/Surge.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/Surge/Surge.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/Surge/SurgeProc.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/SurgeTide/SurgeTide.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/SurgeTide/SurgeTide.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/SurgeTide/SurgeTideProc.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/Swell/Swell.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/Swell/Swell.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/Swell/SwellProc.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/TapeDither/TapeDither.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/TapeDither/TapeDither.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/TapeDither/TapeDitherProc.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/TapeDust/TapeDust.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/TapeDust/TapeDust.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/TapeDust/TapeDustProc.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/Thunder/Thunder.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/Thunder/Thunder.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/Thunder/ThunderProc.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/ToneSlant/ToneSlant.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/ToneSlant/ToneSlant.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/ToneSlant/ToneSlantProc.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/ToTape5/ToTape5.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/ToTape5/ToTape5.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/ToTape5/ToTape5Proc.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/ToVinyl4/ToVinyl4.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/ToVinyl4/ToVinyl4.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/ToVinyl4/ToVinyl4Proc.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/TPDFDither/TPDFDither.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/TPDFDither/TPDFDither.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/TPDFDither/TPDFDitherProc.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/TransDesk/TransDesk.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/TransDesk/TransDesk.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/TransDesk/TransDeskProc.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/Tremolo/Tremolo.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/Tremolo/Tremolo.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/Tremolo/TremoloProc.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/TubeDesk/TubeDesk.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/TubeDesk/TubeDesk.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/TubeDesk/TubeDeskProc.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/uLawDecode/uLawDecode.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/uLawDecode/uLawDecode.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/uLawDecode/uLawDecodeProc.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/uLawEncode/uLawEncode.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/uLawEncode/uLawEncode.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/uLawEncode/uLawEncodeProc.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/UnBox/UnBox.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/UnBox/UnBox.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/UnBox/UnBoxProc.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/VariMu/VariMu.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/VariMu/VariMu.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/VariMu/VariMuProc.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/VinylDither/VinylDither.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/VinylDither/VinylDither.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/VinylDither/VinylDitherProc.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/VoiceOfTheStarship/VoiceOfTheStarship.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/VoiceOfTheStarship/VoiceOfTheStarship.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/VoiceOfTheStarship/VoiceOfTheStarshipProc.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/Wider/Wider.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/Wider/Wider.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/airwindows/Wider/WiderProc.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/soundtouch/include/BPMDetect.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/soundtouch/include/FIFOSampleBuffer.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/soundtouch/include/FIFOSamplePipe.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/soundtouch/include/SoundTouch.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/soundtouch/include/soundtouch_config.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/soundtouch/include/STTypes.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/soundtouch/source/SoundTouch/AAFilter.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/soundtouch/source/SoundTouch/AAFilter.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/soundtouch/source/SoundTouch/BPMDetect.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/soundtouch/source/SoundTouch/BPMDetect.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/soundtouch/source/SoundTouch/cpu_detect.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/soundtouch/source/SoundTouch/cpu_detect_x86.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/soundtouch/source/SoundTouch/FIFOSampleBuffer.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/soundtouch/source/SoundTouch/FIFOSampleBuffer.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/soundtouch/source/SoundTouch/FIFOSamplePipe.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/soundtouch/source/SoundTouch/FIRFilter.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/soundtouch/source/SoundTouch/FIRFilter.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/soundtouch/source/SoundTouch/InterpolateCubic.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/soundtouch/source/SoundTouch/InterpolateCubic.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/soundtouch/source/SoundTouch/InterpolateLinear.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/soundtouch/source/SoundTouch/InterpolateLinear.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/soundtouch/source/SoundTouch/InterpolateShannon.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/soundtouch/source/SoundTouch/InterpolateShannon.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/soundtouch/source/SoundTouch/mmx_optimized.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/soundtouch/source/SoundTouch/PeakFinder.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/soundtouch/source/SoundTouch/PeakFinder.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/soundtouch/source/SoundTouch/RateTransposer.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/soundtouch/source/SoundTouch/RateTransposer.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/soundtouch/source/SoundTouch/SoundTouch.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/soundtouch/source/SoundTouch/SoundTouch.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/soundtouch/source/SoundTouch/sse_optimized.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/soundtouch/source/SoundTouch/STTypes.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/soundtouch/source/SoundTouch/TDStretch.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/3rd_party/soundtouch/source/SoundTouch/TDStretch.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/audio_files/formats/tracktion_FloatAudioFileFormat.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/audio_files/formats/tracktion_FloatAudioFileFormat.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/audio_files/formats/tracktion_LAMEManager.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/audio_files/formats/tracktion_LAMEManager.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/audio_files/formats/tracktion_RexFileFormat.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/audio_files/formats/tracktion_RexFileFormat.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/audio_files/tracktion_AudioFifo.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/audio_files/tracktion_AudioFile.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/audio_files/tracktion_AudioFile.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/audio_files/tracktion_AudioFileCache.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/audio_files/tracktion_AudioFileCache.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/audio_files/tracktion_AudioFileManager.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/audio_files/tracktion_AudioFileUtils.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/audio_files/tracktion_AudioFileUtils.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/audio_files/tracktion_AudioFileWriter.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/audio_files/tracktion_AudioFormatManager.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/audio_files/tracktion_AudioFormatManager.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/audio_files/tracktion_AudioProxyGenerator.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/audio_files/tracktion_LoopInfo.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/audio_files/tracktion_LoopInfo.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/audio_files/tracktion_RecordingThumbnailManager.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/audio_files/tracktion_SmartThumbnail.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/audio_files/tracktion_Thumbnail.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/audio_files/tracktion_Thumbnail.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/control_surfaces/types/tracktion_AlphaTrack.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/control_surfaces/types/tracktion_AlphaTrack.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/control_surfaces/types/tracktion_MackieC4.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/control_surfaces/types/tracktion_MackieC4.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/control_surfaces/types/tracktion_MackieMCU.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/control_surfaces/types/tracktion_MackieMCU.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/control_surfaces/types/tracktion_MackieXT.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/control_surfaces/types/tracktion_MackieXT.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/control_surfaces/types/tracktion_NovationAutomap.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/control_surfaces/types/tracktion_NovationAutomap.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/control_surfaces/types/tracktion_NovationRemoteSl.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/control_surfaces/types/tracktion_NovationRemoteSl.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/control_surfaces/types/tracktion_RemoteSLCompact.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/control_surfaces/types/tracktion_RemoteSLCompact.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/control_surfaces/types/tracktion_Tranzport.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/control_surfaces/types/tracktion_Tranzport.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/control_surfaces/tracktion_ControlSurface.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/control_surfaces/tracktion_ControlSurface.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/control_surfaces/tracktion_CustomControlSurface.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/control_surfaces/tracktion_CustomControlSurface.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/control_surfaces/tracktion_ExternalController.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/control_surfaces/tracktion_ExternalController.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/control_surfaces/tracktion_ExternalControllerManager.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/control_surfaces/tracktion_ExternalControllerManager.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/midi/tracktion_ActiveNoteList.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/midi/tracktion_MidiChannel.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/midi/tracktion_MidiControllerEvent.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/midi/tracktion_MidiExpression.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/midi/tracktion_MidiList.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/midi/tracktion_MidiList.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/midi/tracktion_MidiMessageArray.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/midi/tracktion_MidiNote.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/midi/tracktion_MidiProgramManager.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/midi/tracktion_MidiProgramManager.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/midi/tracktion_MidiSysexEvent.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/midi/tracktion_Musicality.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/midi/tracktion_Musicality.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/midi/tracktion_SelectedMidiEvents.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/midi/tracktion_SelectedMidiEvents.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/model/automation/modifiers/tracktion_BreakpointOscillatorModifier.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/model/automation/modifiers/tracktion_BreakpointOscillatorModifier.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/model/automation/modifiers/tracktion_EnvelopeFollowerModifier.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/model/automation/modifiers/tracktion_EnvelopeFollowerModifier.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/model/automation/modifiers/tracktion_LFOModifier.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/model/automation/modifiers/tracktion_LFOModifier.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/model/automation/modifiers/tracktion_MIDITrackerModifier.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/model/automation/modifiers/tracktion_MIDITrackerModifier.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/model/automation/modifiers/tracktion_ModifierCommon.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/model/automation/modifiers/tracktion_ModifierCommon.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/model/automation/modifiers/tracktion_ModifierInternal.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/model/automation/modifiers/tracktion_RandomModifier.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/model/automation/modifiers/tracktion_RandomModifier.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/model/automation/modifiers/tracktion_StepModifier.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/model/automation/modifiers/tracktion_StepModifier.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/model/automation/tracktion_AutomatableEditItem.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/model/automation/tracktion_AutomatableEditItem.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/model/automation/tracktion_AutomatableParameter.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/model/automation/tracktion_AutomatableParameter.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/model/automation/tracktion_AutomatableParameterTree.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/model/automation/tracktion_AutomationCurve.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/model/automation/tracktion_AutomationCurve.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/model/automation/tracktion_AutomationRecordManager.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/model/automation/tracktion_AutomationRecordManager.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/model/automation/tracktion_MacroParameter.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/model/automation/tracktion_MacroParameter.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/model/automation/tracktion_MidiLearn.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/model/automation/tracktion_MidiLearn.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/model/automation/tracktion_Modifier.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/model/automation/tracktion_Modifier.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/model/automation/tracktion_ParameterChangeHandler.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/model/automation/tracktion_ParameterChangeHandler.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/model/automation/tracktion_ParameterControlMappings.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/model/automation/tracktion_ParameterControlMappings.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/model/clips/tracktion_AudioClipBase.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/model/clips/tracktion_AudioClipBase.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/model/clips/tracktion_AudioSegmentList.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/model/clips/tracktion_AudioSegmentList.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/model/clips/tracktion_ChordClip.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/model/clips/tracktion_ChordClip.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/model/clips/tracktion_Clip.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/model/clips/tracktion_Clip.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/model/clips/tracktion_ClipEffects.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/model/clips/tracktion_ClipEffects.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/model/clips/tracktion_CollectionClip.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/model/clips/tracktion_CollectionClip.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/model/clips/tracktion_CompManager.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/model/clips/tracktion_CompManager.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/model/clips/tracktion_EditClip.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/model/clips/tracktion_EditClip.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/model/clips/tracktion_EditClipRenderJob.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/model/clips/tracktion_EditClipRenderJob.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/model/clips/tracktion_MarkerClip.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/model/clips/tracktion_MarkerClip.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/model/clips/tracktion_MidiClip.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/model/clips/tracktion_MidiClip.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/model/clips/tracktion_ReverseRenderJob.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/model/clips/tracktion_StepClip.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/model/clips/tracktion_StepClip.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/model/clips/tracktion_StepClipChannel.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/model/clips/tracktion_StepClipPattern.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/model/clips/tracktion_WarpTimeManager.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/model/clips/tracktion_WarpTimeManager.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/model/clips/tracktion_WarpTimeRenderJob.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/model/clips/tracktion_WaveAudioClip.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/model/clips/tracktion_WaveAudioClip.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/model/edit/tracktion_Edit.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/model/edit/tracktion_Edit.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/model/edit/tracktion_EditFileOperations.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/model/edit/tracktion_EditFileOperations.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/model/edit/tracktion_EditInsertPoint.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/model/edit/tracktion_EditInsertPoint.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/model/edit/tracktion_EditItem.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/model/edit/tracktion_EditItem.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/model/edit/tracktion_EditSnapshot.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/model/edit/tracktion_EditSnapshot.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/model/edit/tracktion_EditUtilities.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/model/edit/tracktion_EditUtilities.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/model/edit/tracktion_GrooveTemplate.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/model/edit/tracktion_GrooveTemplate.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/model/edit/tracktion_MarkerManager.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/model/edit/tracktion_MarkerManager.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/model/edit/tracktion_OldEditConversion.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/model/edit/tracktion_PitchSequence.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/model/edit/tracktion_PitchSequence.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/model/edit/tracktion_PitchSetting.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/model/edit/tracktion_PitchSetting.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/model/edit/tracktion_QuantisationType.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/model/edit/tracktion_QuantisationType.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/model/edit/tracktion_SourceFileReference.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/model/edit/tracktion_SourceFileReference.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/model/edit/tracktion_TempoSequence.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/model/edit/tracktion_TempoSequence.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/model/edit/tracktion_TempoSetting.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/model/edit/tracktion_TempoSetting.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/model/edit/tracktion_TimecodeDisplayFormat.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/model/edit/tracktion_TimecodeDisplayFormat.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/model/edit/tracktion_TimeSigSetting.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/model/edit/tracktion_TimeSigSetting.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/model/export/tracktion_ArchiveFile.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/model/export/tracktion_ArchiveFile.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/model/export/tracktion_Exportable.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/model/export/tracktion_Exportable.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/model/export/tracktion_ExportJob.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/model/export/tracktion_ExportJob.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/model/export/tracktion_ReferencedMaterialList.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/model/export/tracktion_Renderer.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/model/export/tracktion_Renderer.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/model/export/tracktion_RenderManager.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/model/export/tracktion_RenderManager.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/model/export/tracktion_RenderOptions.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/model/export/tracktion_RenderOptions.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/model/tracks/tracktion_AudioTrack.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/model/tracks/tracktion_AudioTrack.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/model/tracks/tracktion_AutomationTrack.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/model/tracks/tracktion_AutomationTrack.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/model/tracks/tracktion_ChordTrack.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/model/tracks/tracktion_ChordTrack.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/model/tracks/tracktion_ClipTrack.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/model/tracks/tracktion_ClipTrack.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/model/tracks/tracktion_EditTimeRange.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/model/tracks/tracktion_EditTimeRange.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/model/tracks/tracktion_FolderTrack.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/model/tracks/tracktion_FolderTrack.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/model/tracks/tracktion_MarkerTrack.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/model/tracks/tracktion_MarkerTrack.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/model/tracks/tracktion_TempoTrack.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/model/tracks/tracktion_TempoTrack.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/model/tracks/tracktion_Track.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/model/tracks/tracktion_Track.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/model/tracks/tracktion_TrackCompManager.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/model/tracks/tracktion_TrackCompManager.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/model/tracks/tracktion_TrackItem.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/model/tracks/tracktion_TrackItem.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/model/tracks/tracktion_TrackOutput.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/model/tracks/tracktion_TrackOutput.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/model/tracks/tracktion_TrackUtils.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/model/tracks/tracktion_TrackUtils.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/playback/audionodes/tracktion_AudioNode.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/playback/audionodes/tracktion_AudioNode.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/playback/audionodes/tracktion_BufferingAudioNode.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/playback/audionodes/tracktion_BufferingAudioNode.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/playback/audionodes/tracktion_ClickMutingNode.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/playback/audionodes/tracktion_ClickNode.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/playback/audionodes/tracktion_ClickNode.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/playback/audionodes/tracktion_CombiningAudioNode.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/playback/audionodes/tracktion_CombiningAudioNode.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/playback/audionodes/tracktion_FadeInOutAudioNode.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/playback/audionodes/tracktion_FadeInOutAudioNode.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/playback/audionodes/tracktion_HissingAudioNode.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/playback/audionodes/tracktion_HissingAudioNode.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/playback/audionodes/tracktion_MidiAudioNode.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/playback/audionodes/tracktion_MidiAudioNode.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/playback/audionodes/tracktion_MixerAudioNode.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/playback/audionodes/tracktion_MixerAudioNode.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/playback/audionodes/tracktion_PlayHeadAudioNode.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/playback/audionodes/tracktion_PlayHeadAudioNode.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/playback/audionodes/tracktion_SidechainAudioNode.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/playback/audionodes/tracktion_SpeedRampAudioNode.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/playback/audionodes/tracktion_TimedMutingAudioNode.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/playback/audionodes/tracktion_TrackMutingAudioNode.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/playback/audionodes/tracktion_WaveAudioNode.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/playback/audionodes/tracktion_WaveAudioNode.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/playback/devices/tracktion_InputDevice.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/playback/devices/tracktion_InputDevice.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/playback/devices/tracktion_MidiInputDevice.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/playback/devices/tracktion_MidiInputDevice.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/playback/devices/tracktion_MidiOutputDevice.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/playback/devices/tracktion_MidiOutputDevice.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/playback/devices/tracktion_OutputDevice.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/playback/devices/tracktion_OutputDevice.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/playback/devices/tracktion_PhysicalMidiInputDevice.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/playback/devices/tracktion_PhysicalMidiInputDevice.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/playback/devices/tracktion_VirtualMidiInputDevice.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/playback/devices/tracktion_VirtualMidiInputDevice.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/playback/devices/tracktion_WaveDeviceDescription.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/playback/devices/tracktion_WaveDeviceDescription.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/playback/devices/tracktion_WaveInputDevice.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/playback/devices/tracktion_WaveInputDevice.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/playback/devices/tracktion_WaveOutputDevice.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/playback/devices/tracktion_WaveOutputDevice.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/playback/tracktion_AbletonLink.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/playback/tracktion_AbletonLink.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/playback/tracktion_DeviceManager.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/playback/tracktion_DeviceManager.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/playback/tracktion_EditInputDevices.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/playback/tracktion_EditInputDevices.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/playback/tracktion_EditPlaybackContext.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/playback/tracktion_EditPlaybackContext.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/playback/tracktion_LevelMeasurer.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/playback/tracktion_LevelMeasurer.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/playback/tracktion_MidiNoteDispatcher.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/playback/tracktion_MidiNoteDispatcher.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/playback/tracktion_MPEStartTrimmer.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/playback/tracktion_PlayHead.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/playback/tracktion_ScopedSteadyLoad.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/playback/tracktion_TransportControl.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/playback/tracktion_TransportControl.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/plugins/airwindows/tracktion_AirWindows.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/plugins/airwindows/tracktion_AirWindows.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/plugins/airwindows/tracktion_AirWindowsBase.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/plugins/ARA/tracktion_ARAWrapperFunctions.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/plugins/ARA/tracktion_ARAWrapperInterfaces.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/plugins/ARA/tracktion_MelodyneFileReader.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/plugins/ARA/tracktion_MelodyneFileReader.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/plugins/ARA/tracktion_MelodyneInstanceFactory.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/plugins/effects/tracktion_Chorus.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/plugins/effects/tracktion_Chorus.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/plugins/effects/tracktion_Compressor.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/plugins/effects/tracktion_Compressor.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/plugins/effects/tracktion_Delay.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/plugins/effects/tracktion_Delay.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/plugins/effects/tracktion_Equaliser.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/plugins/effects/tracktion_Equaliser.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/plugins/effects/tracktion_FourOscPlugin.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/plugins/effects/tracktion_FourOscPlugin.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/plugins/effects/tracktion_LowPass.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/plugins/effects/tracktion_LowPass.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/plugins/effects/tracktion_MidiModifier.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/plugins/effects/tracktion_MidiModifier.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/plugins/effects/tracktion_MidiPatchBay.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/plugins/effects/tracktion_MidiPatchBay.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/plugins/effects/tracktion_PatchBay.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/plugins/effects/tracktion_PatchBay.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/plugins/effects/tracktion_Phaser.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/plugins/effects/tracktion_Phaser.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/plugins/effects/tracktion_PitchShift.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/plugins/effects/tracktion_PitchShift.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/plugins/effects/tracktion_Reverb.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/plugins/effects/tracktion_Reverb.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/plugins/effects/tracktion_SamplerPlugin.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/plugins/effects/tracktion_SamplerPlugin.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/plugins/external/tracktion_ExternalAutomatableParameter.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/plugins/external/tracktion_ExternalPlugin.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/plugins/external/tracktion_ExternalPlugin.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/plugins/external/tracktion_ExternalPluginBlacklist.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/plugins/external/tracktion_VSTXML.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/plugins/internal/tracktion_AuxReturn.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/plugins/internal/tracktion_AuxReturn.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/plugins/internal/tracktion_AuxSend.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/plugins/internal/tracktion_AuxSend.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/plugins/internal/tracktion_FreezePoint.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/plugins/internal/tracktion_FreezePoint.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/plugins/internal/tracktion_InsertPlugin.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/plugins/internal/tracktion_InsertPlugin.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/plugins/internal/tracktion_LevelMeter.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/plugins/internal/tracktion_LevelMeter.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/plugins/internal/tracktion_RackInstance.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/plugins/internal/tracktion_RackInstance.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/plugins/internal/tracktion_RackType.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/plugins/internal/tracktion_RackType.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/plugins/internal/tracktion_ReWirePlugin.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/plugins/internal/tracktion_ReWirePlugin.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/plugins/internal/tracktion_TextPlugin.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/plugins/internal/tracktion_TextPlugin.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/plugins/internal/tracktion_VCA.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/plugins/internal/tracktion_VCA.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/plugins/internal/tracktion_VolumeAndPan.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/plugins/internal/tracktion_VolumeAndPan.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/plugins/tracktion_Plugin.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/plugins/tracktion_Plugin.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/plugins/tracktion_PluginList.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/plugins/tracktion_PluginList.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/plugins/tracktion_PluginManager.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/plugins/tracktion_PluginManager.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/plugins/tracktion_PluginWindowState.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/plugins/tracktion_PluginWindowState.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/project/tracktion_Project.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/project/tracktion_Project.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/project/tracktion_ProjectItem.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/project/tracktion_ProjectItem.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/project/tracktion_ProjectItemID.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/project/tracktion_ProjectItemID.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/project/tracktion_ProjectManager.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/project/tracktion_ProjectManager.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/project/tracktion_ProjectSearchIndex.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/project/tracktion_ProjectSearchIndex.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/selection/tracktion_Clipboard.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/selection/tracktion_Clipboard.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/selection/tracktion_Selectable.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/selection/tracktion_SelectableClass.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/selection/tracktion_SelectionManager.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/selection/tracktion_SelectionManager.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/timestretch/tracktion_BeatDetect.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/timestretch/tracktion_TempoDetect.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/timestretch/tracktion_TimeStretch.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/timestretch/tracktion_TimeStretch.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/utilities/tracktion_AppFunctions.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/utilities/tracktion_AppFunctions.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/utilities/tracktion_AsyncFunctionUtils.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/utilities/tracktion_AudioFadeCurve.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/utilities/tracktion_AudioScratchBuffer.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/utilities/tracktion_AudioUtilities.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/utilities/tracktion_AudioUtilities.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/utilities/tracktion_BackgroundJobs.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/utilities/tracktion_BinaryData.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/utilities/tracktion_BinaryData.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/utilities/tracktion_ConstrainedCachedValue.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/utilities/tracktion_ConstrainedCachedValue.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/utilities/tracktion_CpuMeasurement.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/utilities/tracktion_CrashTracer.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/utilities/tracktion_CrashTracer.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/utilities/tracktion_CurveEditor.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/utilities/tracktion_CurveEditor.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/utilities/tracktion_Ditherer.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/utilities/tracktion_Engine.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/utilities/tracktion_Engine.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/utilities/tracktion_EngineBehaviour.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/utilities/tracktion_Envelope.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/utilities/tracktion_Envelope.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/utilities/tracktion_FileUtilities.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/utilities/tracktion_FileUtilities.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/utilities/tracktion_Identifiers.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/utilities/tracktion_MiscUtilities.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/utilities/tracktion_MouseHoverDetector.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/utilities/tracktion_Oscillators.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/utilities/tracktion_Oscillators.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/utilities/tracktion_Pitch.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/utilities/tracktion_PluginComponent.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/utilities/tracktion_PropertyStorage.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/utilities/tracktion_PropertyStorage.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/utilities/tracktion_SettingID.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/utilities/tracktion_Spline.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/utilities/tracktion_TemporaryFileManager.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/utilities/tracktion_TemporaryFileManager.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/utilities/tracktion_UIBehaviour.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/utilities/tracktion_UIBehaviour.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/utilities/tracktion_ValueTreeUtilities.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/tracktion_engine_airwindows.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/tracktion_engine_audio_files.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/tracktion_engine_model_1.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/tracktion_engine_model_2.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/tracktion_engine_playback.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/tracktion_engine_plugins.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/tracktion_engine_timestretch.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("~/modules/tracktion_engine/tracktion_engine_utils.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("C:/CODE/tracktion_engine/modules/tracktion_engine/tracktion_engine.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../JUCE/modules/juce_osc/juce_osc.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/Acceleration/Acceleration.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/Acceleration/Acceleration.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/Acceleration/AccelerationProc.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/ADClip7/ADClip7.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/ADClip7/ADClip7.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/ADClip7/ADClip7Proc.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/ADT/ADT.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/ADT/ADT.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/ADT/ADTProc.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/Air/Air.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/Air/Air.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/Air/AirProc.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/AQuickVoiceClip/AQuickVoiceClip.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/AQuickVoiceClip/AQuickVoiceClip.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/AQuickVoiceClip/AQuickVoiceClipProc.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/AtmosphereBuss/AtmosphereBuss.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/AtmosphereBuss/AtmosphereBuss.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/AtmosphereBuss/AtmosphereBussProc.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/AtmosphereChannel/AtmosphereChannel.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/AtmosphereChannel/AtmosphereChannel.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/AtmosphereChannel/AtmosphereChannelProc.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/Aura/Aura.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/Aura/Aura.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/Aura/AuraProc.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/Average/Average.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/Average/Average.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/Average/AverageProc.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/BassKit/BassKit.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/BassKit/BassKit.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/BassKit/BassKitProc.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/Bite/Bite.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/Bite/Bite.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/Bite/BiteProc.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/BitGlitter/BitGlitter.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/BitGlitter/BitGlitter.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/BitGlitter/BitGlitterProc.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/BitShiftGain/BitShiftGain.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/BitShiftGain/BitShiftGain.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/BitShiftGain/BitShiftGainProc.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/BuildATPDF/BuildATPDF.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/BuildATPDF/BuildATPDF.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/BuildATPDF/BuildATPDFProc.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/BussColors4/BussColors4.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/BussColors4/BussColors4.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/BussColors4/BussColors4Proc.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/ButterComp/ButterComp.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/ButterComp/ButterComp.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/ButterComp/ButterCompProc.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/ButterComp2/ButterComp2.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/ButterComp2/ButterComp2.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/ButterComp2/ButterComp2Proc.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/C5RawBuss/C5RawBuss.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/C5RawBuss/C5RawBuss.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/C5RawBuss/C5RawBussProc.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/C5RawChannel/C5RawChannel.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/C5RawChannel/C5RawChannel.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/C5RawChannel/C5RawChannelProc.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/Capacitor/Capacitor.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/Capacitor/Capacitor.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/Capacitor/CapacitorProc.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/Channel4/Channel4.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/Channel4/Channel4.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/Channel4/Channel4Proc.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/Channel5/Channel5.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/Channel5/Channel5.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/Channel5/Channel5Proc.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/Channel6/Channel6.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/Channel6/Channel6.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/Channel6/Channel6Proc.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/Chorus/Chorus.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/Chorus/Chorus.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/Chorus/ChorusProc.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/ChorusEnsemble/ChorusEnsemble.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/ChorusEnsemble/ChorusEnsemble.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/ChorusEnsemble/ChorusEnsembleProc.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/ClipOnly/ClipOnly.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/ClipOnly/ClipOnly.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/ClipOnly/ClipOnlyProc.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/Console4Buss/Console4Buss.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/Console4Buss/Console4Buss.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/Console4Buss/Console4BussProc.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/Console4Channel/Console4Channel.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/Console4Channel/Console4Channel.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/Console4Channel/Console4ChannelProc.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/Console5Buss/Console5Buss.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/Console5Buss/Console5Buss.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/Console5Buss/Console5BussProc.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/Console5Channel/Console5Channel.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/Console5Channel/Console5Channel.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/Console5Channel/Console5ChannelProc.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/Console5DarkCh/Console5DarkCh.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/Console5DarkCh/Console5DarkCh.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/Console5DarkCh/Console5DarkChProc.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/CrunchyGrooveWear/CrunchyGrooveWear.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/CrunchyGrooveWear/CrunchyGrooveWear.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/CrunchyGrooveWear/CrunchyGrooveWearProc.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/CStrip/CStrip.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/CStrip/CStrip.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/CStrip/CStripProc.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/DCVoltage/DCVoltage.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/DCVoltage/DCVoltage.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/DCVoltage/DCVoltageProc.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/DeEss/DeEss.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/DeEss/DeEss.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/DeEss/DeEssProc.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/Density/Density.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/Density/Density.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/Density/DensityProc.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/DeRez/DeRez.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/DeRez/DeRez.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/DeRez/DeRezProc.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/Desk/Desk.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/Desk/Desk.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/Desk/DeskProc.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/Desk4/Desk4.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/Desk4/Desk4.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/Desk4/Desk4Proc.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/Distance/Distance.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/Distance/Distance.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/Distance/DistanceProc.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/Distance2/Distance2.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/Distance2/Distance2.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/Distance2/Distance2Proc.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/Ditherbox/Ditherbox.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/Ditherbox/Ditherbox.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/Ditherbox/DitherboxProc.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/DitherMeDiskers/DitherMeDiskers.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/DitherMeDiskers/DitherMeDiskers.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/DitherMeDiskers/DitherMeDiskersProc.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/DitherMeTimbers/DitherMeTimbers.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/DitherMeTimbers/DitherMeTimbers.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/DitherMeTimbers/DitherMeTimbersProc.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/DoublePaul/DoublePaul.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/DoublePaul/DoublePaul.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/DoublePaul/DoublePaulProc.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/Drive/Drive.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/Drive/Drive.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/Drive/DriveProc.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/DrumSlam/DrumSlam.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/DrumSlam/DrumSlam.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/DrumSlam/DrumSlamProc.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/DubCenter/DubCenter.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/DubCenter/DubCenter.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/DubCenter/DubCenterProc.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/DubSub/DubSub.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/DubSub/DubSub.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/DubSub/DubSubProc.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/DustBunny/DustBunny.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/DustBunny/DustBunny.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/DustBunny/DustBunnyProc.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/EdIsDim/EdIsDim.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/EdIsDim/EdIsDim.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/EdIsDim/EdIsDimProc.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/ElectroHat/ElectroHat.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/ElectroHat/ElectroHat.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/ElectroHat/ElectroHatProc.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/Energy/Energy.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/Energy/Energy.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/Energy/EnergyProc.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/Ensemble/Ensemble.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/Ensemble/Ensemble.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/Ensemble/EnsembleProc.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/EQ/EQ.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/EQ/EQ.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/EQ/EQProc.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/EveryTrim/EveryTrim.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/EveryTrim/EveryTrim.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/EveryTrim/EveryTrimProc.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/FathomFive/FathomFive.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/FathomFive/FathomFive.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/FathomFive/FathomFiveProc.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/Floor/Floor.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/Floor/Floor.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/Floor/FloorProc.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/Fracture/Fracture.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/Fracture/Fracture.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/Fracture/FractureProc.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/FromTape/FromTape.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/FromTape/FromTape.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/FromTape/FromTapeProc.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/Gatelope/Gatelope.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/Gatelope/Gatelope.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/Gatelope/GatelopeProc.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/Golem/Golem.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/Golem/Golem.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/Golem/GolemProc.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/GrooveWear/GrooveWear.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/GrooveWear/GrooveWear.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/GrooveWear/GrooveWearProc.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/GuitarConditioner/GuitarConditioner.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/GuitarConditioner/GuitarConditioner.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/GuitarConditioner/GuitarConditionerProc.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/HardVacuum/HardVacuum.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/HardVacuum/HardVacuum.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/HardVacuum/HardVacuumProc.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/Hermepass/Hermepass.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/Hermepass/Hermepass.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/Hermepass/HermepassProc.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/HermeTrim/HermeTrim.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/HermeTrim/HermeTrim.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/HermeTrim/HermeTrimProc.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/HighGlossDither/HighGlossDither.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/HighGlossDither/HighGlossDither.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/HighGlossDither/HighGlossDitherProc.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/HighImpact/HighImpact.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/HighImpact/HighImpact.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/HighImpact/HighImpactProc.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/Highpass/Highpass.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/Highpass/Highpass.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/Highpass/HighpassProc.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/Hombre/Hombre.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/Hombre/Hombre.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/Hombre/HombreProc.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/IronOxide5/IronOxide5.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/IronOxide5/IronOxide5.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/IronOxide5/IronOxide5Proc.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/IronOxideClassic/IronOxideClassic.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/IronOxideClassic/IronOxideClassic.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/IronOxideClassic/IronOxideClassicProc.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/Logical4/Logical4.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/Logical4/Logical4.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/Logical4/Logical4Proc.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/Loud/Loud.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/Loud/Loud.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/Loud/LoudProc.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/Lowpass/Lowpass.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/Lowpass/Lowpass.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/Lowpass/LowpassProc.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/Melt/Melt.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/Melt/Melt.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/Melt/MeltProc.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/MidSide/MidSide.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/MidSide/MidSide.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/MidSide/MidSideProc.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/NaturalizeDither/NaturalizeDither.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/NaturalizeDither/NaturalizeDither.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/NaturalizeDither/NaturalizeDitherProc.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/NCSeventeen/NCSeventeen.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/NCSeventeen/NCSeventeen.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/NCSeventeen/NCSeventeenProc.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/NodeDither/NodeDither.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/NodeDither/NodeDither.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/NodeDither/NodeDitherProc.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/Noise/Noise.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/Noise/Noise.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/Noise/NoiseProc.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/NonlinearSpace/NonlinearSpace.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/NonlinearSpace/NonlinearSpace.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/NonlinearSpace/NonlinearSpaceProc.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/NotJustAnotherCD/NotJustAnotherCD.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/NotJustAnotherCD/NotJustAnotherCD.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/NotJustAnotherCD/NotJustAnotherCDProc.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/NotJustAnotherDither/NotJustAnotherDither.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/NotJustAnotherDither/NotJustAnotherDither.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/NotJustAnotherDither/NotJustAnotherDitherProc.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/OneCornerClip/OneCornerClip.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/OneCornerClip/OneCornerClip.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/OneCornerClip/OneCornerClipProc.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/PaulDither/PaulDither.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/PaulDither/PaulDither.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/PaulDither/PaulDitherProc.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/PDBuss/PDBuss.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/PDBuss/PDBuss.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/PDBuss/PDBussProc.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/PDChannel/PDChannel.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/PDChannel/PDChannel.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/PDChannel/PDChannelProc.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/PhaseNudge/PhaseNudge.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/PhaseNudge/PhaseNudge.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/PhaseNudge/PhaseNudgeProc.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/Point/Point.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/Point/Point.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/Point/PointProc.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/Pop/Pop.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/Pop/Pop.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/Pop/PopProc.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/PowerSag/PowerSag.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/PowerSag/PowerSag.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/PowerSag/PowerSagProc.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/Pressure4/Pressure4.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/Pressure4/Pressure4.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/Pressure4/Pressure4Proc.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/PurestConsoleBuss/PurestConsoleBuss.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/PurestConsoleBuss/PurestConsoleBuss.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/PurestConsoleBuss/PurestConsoleBussProc.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/PurestConsoleChannel/PurestConsoleChannel.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/PurestConsoleChannel/PurestConsoleChannel.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/PurestConsoleChannel/PurestConsoleChannelProc.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/PurestDrive/PurestDrive.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/PurestDrive/PurestDrive.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/PurestDrive/PurestDriveProc.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/PurestEcho/PurestEcho.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/PurestEcho/PurestEcho.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/PurestEcho/PurestEchoProc.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/PurestGain/PurestGain.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/PurestGain/PurestGain.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/PurestGain/PurestGainProc.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/PurestWarm/PurestWarm.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/PurestWarm/PurestWarm.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/PurestWarm/PurestWarmProc.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/Pyewacket/Pyewacket.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/Pyewacket/Pyewacket.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/Pyewacket/PyewacketProc.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/Righteous4/Righteous4.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/Righteous4/Righteous4.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/Righteous4/Righteous4Proc.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/SideDull/SideDull.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/SideDull/SideDull.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/SideDull/SideDullProc.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/Sidepass/Sidepass.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/Sidepass/Sidepass.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/Sidepass/SidepassProc.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/SingleEndedTriode/SingleEndedTriode.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/SingleEndedTriode/SingleEndedTriode.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/SingleEndedTriode/SingleEndedTriodeProc.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/Slew/Slew.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/Slew/Slew.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/Slew/SlewProc.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/Slew2/Slew2.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/Slew2/Slew2.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/Slew2/Slew2Proc.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/SlewOnly/SlewOnly.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/SlewOnly/SlewOnly.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/SlewOnly/SlewOnlyProc.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/SpatializeDither/SpatializeDither.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/SpatializeDither/SpatializeDither.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/SpatializeDither/SpatializeDitherProc.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/Spiral/Spiral.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/Spiral/Spiral.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/Spiral/SpiralProc.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/Spiral2/Spiral2.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/Spiral2/Spiral2.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/Spiral2/Spiral2Proc.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/StarChild/StarChild.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/StarChild/StarChild.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/StarChild/StarChildProc.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/StereoFX/StereoFX.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/StereoFX/StereoFX.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/StereoFX/StereoFXProc.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/SubsOnly/SubsOnly.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/SubsOnly/SubsOnly.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/SubsOnly/SubsOnlyProc.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/Surge/Surge.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/Surge/Surge.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/Surge/SurgeProc.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/SurgeTide/SurgeTide.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/SurgeTide/SurgeTide.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/SurgeTide/SurgeTideProc.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/Swell/Swell.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/Swell/Swell.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/Swell/SwellProc.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/TapeDither/TapeDither.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/TapeDither/TapeDither.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/TapeDither/TapeDitherProc.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/TapeDust/TapeDust.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/TapeDust/TapeDust.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/TapeDust/TapeDustProc.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/Thunder/Thunder.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/Thunder/Thunder.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/Thunder/ThunderProc.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/ToneSlant/ToneSlant.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/ToneSlant/ToneSlant.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/ToneSlant/ToneSlantProc.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/ToTape5/ToTape5.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/ToTape5/ToTape5.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/ToTape5/ToTape5Proc.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/ToVinyl4/ToVinyl4.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/ToVinyl4/ToVinyl4.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/ToVinyl4/ToVinyl4Proc.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/TPDFDither/TPDFDither.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/TPDFDither/TPDFDither.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/TPDFDither/TPDFDitherProc.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/TransDesk/TransDesk.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/TransDesk/TransDesk.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/TransDesk/TransDeskProc.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/Tremolo/Tremolo.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/Tremolo/Tremolo.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/Tremolo/TremoloProc.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/TubeDesk/TubeDesk.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/TubeDesk/TubeDesk.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/TubeDesk/TubeDeskProc.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/uLawDecode/uLawDecode.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/uLawDecode/uLawDecode.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/uLawDecode/uLawDecodeProc.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/uLawEncode/uLawEncode.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/uLawEncode/uLawEncode.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/uLawEncode/uLawEncodeProc.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/UnBox/UnBox.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/UnBox/UnBox.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/UnBox/UnBoxProc.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/VariMu/VariMu.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/VariMu/VariMu.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/VariMu/VariMuProc.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/VinylDither/VinylDither.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/VinylDither/VinylDither.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/VinylDither/VinylDitherProc.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/VoiceOfTheStarship/VoiceOfTheStarship.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/VoiceOfTheStarship/VoiceOfTheStarship.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/VoiceOfTheStarship/VoiceOfTheStarshipProc.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/Wider/Wider.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/Wider/Wider.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/airwindows/Wider/WiderProc.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/soundtouch/include/BPMDetect.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/soundtouch/include/FIFOSampleBuffer.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/soundtouch/include/FIFOSamplePipe.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/soundtouch/include/SoundTouch.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/soundtouch/include/soundtouch_config.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/soundtouch/include/STTypes.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/soundtouch/source/SoundTouch/AAFilter.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/soundtouch/source/SoundTouch/AAFilter.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/soundtouch/source/SoundTouch/BPMDetect.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/soundtouch/source/SoundTouch/BPMDetect.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/soundtouch/source/SoundTouch/cpu_detect.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/soundtouch/source/SoundTouch/cpu_detect_x86.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/soundtouch/source/SoundTouch/FIFOSampleBuffer.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/soundtouch/source/SoundTouch/FIFOSampleBuffer.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/soundtouch/source/SoundTouch/FIFOSamplePipe.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/soundtouch/source/SoundTouch/FIRFilter.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/soundtouch/source/SoundTouch/FIRFilter.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/soundtouch/source/SoundTouch/InterpolateCubic.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/soundtouch/source/SoundTouch/InterpolateCubic.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/soundtouch/source/SoundTouch/InterpolateLinear.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/soundtouch/source/SoundTouch/InterpolateLinear.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/soundtouch/source/SoundTouch/InterpolateShannon.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/soundtouch/source/SoundTouch/InterpolateShannon.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/soundtouch/source/SoundTouch/mmx_optimized.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/soundtouch/source/SoundTouch/PeakFinder.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/soundtouch/source/SoundTouch/PeakFinder.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/soundtouch/source/SoundTouch/RateTransposer.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/soundtouch/source/SoundTouch/RateTransposer.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/soundtouch/source/SoundTouch/SoundTouch.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/soundtouch/source/SoundTouch/SoundTouch.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/soundtouch/source/SoundTouch/sse_optimized.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/soundtouch/source/SoundTouch/STTypes.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/soundtouch/source/SoundTouch/TDStretch.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/3rd_party/soundtouch/source/SoundTouch/TDStretch.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/audio_files/formats/tracktion_FloatAudioFileFormat.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/audio_files/formats/tracktion_FloatAudioFileFormat.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/audio_files/formats/tracktion_LAMEManager.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/audio_files/formats/tracktion_LAMEManager.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/audio_files/formats/tracktion_RexFileFormat.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/audio_files/formats/tracktion_RexFileFormat.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/audio_files/tracktion_AudioFifo.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/audio_files/tracktion_AudioFile.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/audio_files/tracktion_AudioFile.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/audio_files/tracktion_AudioFileCache.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/audio_files/tracktion_AudioFileCache.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/audio_files/tracktion_AudioFileManager.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/audio_files/tracktion_AudioFileUtils.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/audio_files/tracktion_AudioFileUtils.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/audio_files/tracktion_AudioFileWriter.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/audio_files/tracktion_AudioFormatManager.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/audio_files/tracktion_AudioFormatManager.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/audio_files/tracktion_AudioProxyGenerator.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/audio_files/tracktion_LoopInfo.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/audio_files/tracktion_LoopInfo.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/audio_files/tracktion_RecordingThumbnailManager.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/audio_files/tracktion_SmartThumbnail.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/audio_files/tracktion_Thumbnail.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/audio_files/tracktion_Thumbnail.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/control_surfaces/types/tracktion_AlphaTrack.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/control_surfaces/types/tracktion_AlphaTrack.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/control_surfaces/types/tracktion_MackieC4.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/control_surfaces/types/tracktion_MackieC4.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/control_surfaces/types/tracktion_MackieMCU.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/control_surfaces/types/tracktion_MackieMCU.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/control_surfaces/types/tracktion_MackieXT.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/control_surfaces/types/tracktion_MackieXT.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/control_surfaces/types/tracktion_NovationAutomap.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/control_surfaces/types/tracktion_NovationAutomap.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/control_surfaces/types/tracktion_NovationRemoteSl.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/control_surfaces/types/tracktion_NovationRemoteSl.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/control_surfaces/types/tracktion_RemoteSLCompact.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/control_surfaces/types/tracktion_RemoteSLCompact.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/control_surfaces/types/tracktion_Tranzport.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/control_surfaces/types/tracktion_Tranzport.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/control_surfaces/tracktion_ControlSurface.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/control_surfaces/tracktion_ControlSurface.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/control_surfaces/tracktion_CustomControlSurface.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/control_surfaces/tracktion_CustomControlSurface.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/control_surfaces/tracktion_ExternalController.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/control_surfaces/tracktion_ExternalController.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/control_surfaces/tracktion_ExternalControllerManager.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/control_surfaces/tracktion_ExternalControllerManager.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/midi/tracktion_ActiveNoteList.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/midi/tracktion_MidiChannel.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/midi/tracktion_MidiControllerEvent.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/midi/tracktion_MidiExpression.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/midi/tracktion_MidiList.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/midi/tracktion_MidiList.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/midi/tracktion_MidiMessageArray.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/midi/tracktion_MidiNote.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/midi/tracktion_MidiProgramManager.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/midi/tracktion_MidiProgramManager.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/midi/tracktion_MidiSysexEvent.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/midi/tracktion_Musicality.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/midi/tracktion_Musicality.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/midi/tracktion_SelectedMidiEvents.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/midi/tracktion_SelectedMidiEvents.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/model/automation/modifiers/tracktion_BreakpointOscillatorModifier.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/model/automation/modifiers/tracktion_BreakpointOscillatorModifier.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/model/automation/modifiers/tracktion_EnvelopeFollowerModifier.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/model/automation/modifiers/tracktion_EnvelopeFollowerModifier.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/model/automation/modifiers/tracktion_LFOModifier.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/model/automation/modifiers/tracktion_LFOModifier.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/model/automation/modifiers/tracktion_MIDITrackerModifier.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/model/automation/modifiers/tracktion_MIDITrackerModifier.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/model/automation/modifiers/tracktion_ModifierCommon.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/model/automation/modifiers/tracktion_ModifierCommon.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/model/automation/modifiers/tracktion_ModifierInternal.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/model/automation/modifiers/tracktion_RandomModifier.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/model/automation/modifiers/tracktion_RandomModifier.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/model/automation/modifiers/tracktion_StepModifier.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/model/automation/modifiers/tracktion_StepModifier.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/model/automation/tracktion_AutomatableEditItem.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/model/automation/tracktion_AutomatableEditItem.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/model/automation/tracktion_AutomatableParameter.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/model/automation/tracktion_AutomatableParameter.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/model/automation/tracktion_AutomatableParameterTree.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/model/automation/tracktion_AutomationCurve.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/model/automation/tracktion_AutomationCurve.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/model/automation/tracktion_AutomationRecordManager.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/model/automation/tracktion_AutomationRecordManager.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/model/automation/tracktion_MacroParameter.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/model/automation/tracktion_MacroParameter.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/model/automation/tracktion_MidiLearn.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/model/automation/tracktion_MidiLearn.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/model/automation/tracktion_Modifier.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/model/automation/tracktion_Modifier.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/model/automation/tracktion_ParameterChangeHandler.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/model/automation/tracktion_ParameterChangeHandler.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/model/automation/tracktion_ParameterControlMappings.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/model/automation/tracktion_ParameterControlMappings.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/model/clips/tracktion_AudioClipBase.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/model/clips/tracktion_AudioClipBase.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/model/clips/tracktion_AudioSegmentList.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/model/clips/tracktion_AudioSegmentList.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/model/clips/tracktion_ChordClip.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/model/clips/tracktion_ChordClip.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/model/clips/tracktion_Clip.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/model/clips/tracktion_Clip.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/model/clips/tracktion_ClipEffects.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/model/clips/tracktion_ClipEffects.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/model/clips/tracktion_CollectionClip.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/model/clips/tracktion_CollectionClip.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/model/clips/tracktion_CompManager.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/model/clips/tracktion_CompManager.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/model/clips/tracktion_EditClip.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/model/clips/tracktion_EditClip.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/model/clips/tracktion_EditClipRenderJob.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/model/clips/tracktion_EditClipRenderJob.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/model/clips/tracktion_MarkerClip.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/model/clips/tracktion_MarkerClip.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/model/clips/tracktion_MidiClip.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/model/clips/tracktion_MidiClip.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/model/clips/tracktion_ReverseRenderJob.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/model/clips/tracktion_StepClip.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/model/clips/tracktion_StepClip.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/model/clips/tracktion_StepClipChannel.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/model/clips/tracktion_StepClipPattern.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/model/clips/tracktion_WarpTimeManager.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/model/clips/tracktion_WarpTimeManager.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/model/clips/tracktion_WarpTimeRenderJob.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/model/clips/tracktion_WaveAudioClip.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/model/clips/tracktion_WaveAudioClip.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/model/edit/tracktion_Edit.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/model/edit/tracktion_Edit.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/model/edit/tracktion_EditFileOperations.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/model/edit/tracktion_EditFileOperations.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/model/edit/tracktion_EditInsertPoint.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/model/edit/tracktion_EditInsertPoint.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/model/edit/tracktion_EditItem.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/model/edit/tracktion_EditItem.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/model/edit/tracktion_EditSnapshot.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/model/edit/tracktion_EditSnapshot.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/model/edit/tracktion_EditUtilities.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/model/edit/tracktion_EditUtilities.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/model/edit/tracktion_GrooveTemplate.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/model/edit/tracktion_GrooveTemplate.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/model/edit/tracktion_MarkerManager.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/model/edit/tracktion_MarkerManager.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/model/edit/tracktion_OldEditConversion.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/model/edit/tracktion_PitchSequence.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/model/edit/tracktion_PitchSequence.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/model/edit/tracktion_PitchSetting.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/model/edit/tracktion_PitchSetting.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/model/edit/tracktion_QuantisationType.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/model/edit/tracktion_QuantisationType.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/model/edit/tracktion_SourceFileReference.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/model/edit/tracktion_SourceFileReference.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/model/edit/tracktion_TempoSequence.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/model/edit/tracktion_TempoSequence.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/model/edit/tracktion_TempoSetting.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/model/edit/tracktion_TempoSetting.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/model/edit/tracktion_TimecodeDisplayFormat.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/model/edit/tracktion_TimecodeDisplayFormat.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/model/edit/tracktion_TimeSigSetting.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/model/edit/tracktion_TimeSigSetting.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/model/export/tracktion_ArchiveFile.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/model/export/tracktion_ArchiveFile.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/model/export/tracktion_Exportable.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/model/export/tracktion_Exportable.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/model/export/tracktion_ExportJob.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/model/export/tracktion_ExportJob.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/model/export/tracktion_ReferencedMaterialList.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/model/export/tracktion_Renderer.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/model/export/tracktion_Renderer.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/model/export/tracktion_RenderManager.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/model/export/tracktion_RenderManager.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/model/export/tracktion_RenderOptions.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/model/export/tracktion_RenderOptions.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/model/tracks/tracktion_AudioTrack.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/model/tracks/tracktion_AudioTrack.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/model/tracks/tracktion_AutomationTrack.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/model/tracks/tracktion_AutomationTrack.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/model/tracks/tracktion_ChordTrack.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/model/tracks/tracktion_ChordTrack.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/model/tracks/tracktion_ClipTrack.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/model/tracks/tracktion_ClipTrack.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/model/tracks/tracktion_EditTimeRange.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/model/tracks/tracktion_EditTimeRange.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/model/tracks/tracktion_FolderTrack.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/model/tracks/tracktion_FolderTrack.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/model/tracks/tracktion_MarkerTrack.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/model/tracks/tracktion_MarkerTrack.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/model/tracks/tracktion_TempoTrack.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/model/tracks/tracktion_TempoTrack.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/model/tracks/tracktion_Track.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/model/tracks/tracktion_Track.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/model/tracks/tracktion_TrackCompManager.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/model/tracks/tracktion_TrackCompManager.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/model/tracks/tracktion_TrackItem.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/model/tracks/tracktion_TrackItem.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/model/tracks/tracktion_TrackOutput.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/model/tracks/tracktion_TrackOutput.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/model/tracks/tracktion_TrackUtils.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/model/tracks/tracktion_TrackUtils.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/playback/audionodes/tracktion_AudioNode.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/playback/audionodes/tracktion_AudioNode.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/playback/audionodes/tracktion_BufferingAudioNode.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/playback/audionodes/tracktion_BufferingAudioNode.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/playback/audionodes/tracktion_ClickMutingNode.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/playback/audionodes/tracktion_ClickNode.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/playback/audionodes/tracktion_ClickNode.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/playback/audionodes/tracktion_CombiningAudioNode.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/playback/audionodes/tracktion_CombiningAudioNode.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/playback/audionodes/tracktion_FadeInOutAudioNode.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/playback/audionodes/tracktion_FadeInOutAudioNode.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/playback/audionodes/tracktion_HissingAudioNode.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/playback/audionodes/tracktion_HissingAudioNode.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/playback/audionodes/tracktion_MidiAudioNode.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/playback/audionodes/tracktion_MidiAudioNode.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/playback/audionodes/tracktion_MixerAudioNode.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/playback/audionodes/tracktion_MixerAudioNode.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/playback/audionodes/tracktion_PlayHeadAudioNode.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/playback/audionodes/tracktion_PlayHeadAudioNode.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/playback/audionodes/tracktion_SidechainAudioNode.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/playback/audionodes/tracktion_SpeedRampAudioNode.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/playback/audionodes/tracktion_TimedMutingAudioNode.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/playback/audionodes/tracktion_TrackMutingAudioNode.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/playback/audionodes/tracktion_WaveAudioNode.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/playback/audionodes/tracktion_WaveAudioNode.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/playback/devices/tracktion_InputDevice.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/playback/devices/tracktion_InputDevice.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/playback/devices/tracktion_MidiInputDevice.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/playback/devices/tracktion_MidiInputDevice.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/playback/devices/tracktion_MidiOutputDevice.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/playback/devices/tracktion_MidiOutputDevice.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/playback/devices/tracktion_OutputDevice.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/playback/devices/tracktion_OutputDevice.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/playback/devices/tracktion_PhysicalMidiInputDevice.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/playback/devices/tracktion_PhysicalMidiInputDevice.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/playback/devices/tracktion_VirtualMidiInputDevice.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/playback/devices/tracktion_VirtualMidiInputDevice.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/playback/devices/tracktion_WaveDeviceDescription.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/playback/devices/tracktion_WaveDeviceDescription.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/playback/devices/tracktion_WaveInputDevice.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/playback/devices/tracktion_WaveInputDevice.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/playback/devices/tracktion_WaveOutputDevice.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/playback/devices/tracktion_WaveOutputDevice.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/playback/tracktion_AbletonLink.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/playback/tracktion_AbletonLink.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/playback/tracktion_DeviceManager.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/playback/tracktion_DeviceManager.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/playback/tracktion_EditInputDevices.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/playback/tracktion_EditInputDevices.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/playback/tracktion_EditPlaybackContext.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/playback/tracktion_EditPlaybackContext.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/playback/tracktion_LevelMeasurer.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/playback/tracktion_LevelMeasurer.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/playback/tracktion_MidiNoteDispatcher.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/playback/tracktion_MidiNoteDispatcher.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/playback/tracktion_MPEStartTrimmer.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/playback/tracktion_PlayHead.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/playback/tracktion_ScopedSteadyLoad.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/playback/tracktion_TransportControl.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/playback/tracktion_TransportControl.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/plugins/airwindows/tracktion_AirWindows.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/plugins/airwindows/tracktion_AirWindows.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/plugins/airwindows/tracktion_AirWindowsBase.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/plugins/ARA/tracktion_ARAWrapperFunctions.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/plugins/ARA/tracktion_ARAWrapperInterfaces.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/plugins/ARA/tracktion_MelodyneFileReader.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/plugins/ARA/tracktion_MelodyneFileReader.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/plugins/ARA/tracktion_MelodyneInstanceFactory.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/plugins/effects/tracktion_Chorus.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/plugins/effects/tracktion_Chorus.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/plugins/effects/tracktion_Compressor.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/plugins/effects/tracktion_Compressor.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/plugins/effects/tracktion_Delay.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/plugins/effects/tracktion_Delay.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/plugins/effects/tracktion_Equaliser.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/plugins/effects/tracktion_Equaliser.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/plugins/effects/tracktion_FourOscPlugin.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/plugins/effects/tracktion_FourOscPlugin.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/plugins/effects/tracktion_LowPass.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/plugins/effects/tracktion_LowPass.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/plugins/effects/tracktion_MidiModifier.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/plugins/effects/tracktion_MidiModifier.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/plugins/effects/tracktion_MidiPatchBay.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/plugins/effects/tracktion_MidiPatchBay.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/plugins/effects/tracktion_PatchBay.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/plugins/effects/tracktion_PatchBay.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/plugins/effects/tracktion_Phaser.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/plugins/effects/tracktion_Phaser.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/plugins/effects/tracktion_PitchShift.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/plugins/effects/tracktion_PitchShift.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/plugins/effects/tracktion_Reverb.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/plugins/effects/tracktion_Reverb.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/plugins/effects/tracktion_SamplerPlugin.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/plugins/effects/tracktion_SamplerPlugin.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/plugins/external/tracktion_ExternalAutomatableParameter.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/plugins/external/tracktion_ExternalPlugin.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/plugins/external/tracktion_ExternalPlugin.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/plugins/external/tracktion_ExternalPluginBlacklist.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/plugins/external/tracktion_VSTXML.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/plugins/internal/tracktion_AuxReturn.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/plugins/internal/tracktion_AuxReturn.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/plugins/internal/tracktion_AuxSend.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/plugins/internal/tracktion_AuxSend.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/plugins/internal/tracktion_FreezePoint.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/plugins/internal/tracktion_FreezePoint.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/plugins/internal/tracktion_InsertPlugin.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/plugins/internal/tracktion_InsertPlugin.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/plugins/internal/tracktion_LevelMeter.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/plugins/internal/tracktion_LevelMeter.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/plugins/internal/tracktion_RackInstance.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/plugins/internal/tracktion_RackInstance.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/plugins/internal/tracktion_RackType.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/plugins/internal/tracktion_RackType.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/plugins/internal/tracktion_ReWirePlugin.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/plugins/internal/tracktion_ReWirePlugin.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/plugins/internal/tracktion_TextPlugin.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/plugins/internal/tracktion_TextPlugin.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/plugins/internal/tracktion_VCA.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/plugins/internal/tracktion_VCA.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/plugins/internal/tracktion_VolumeAndPan.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/plugins/internal/tracktion_VolumeAndPan.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/plugins/tracktion_Plugin.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/plugins/tracktion_Plugin.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/plugins/tracktion_PluginList.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/plugins/tracktion_PluginList.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/plugins/tracktion_PluginManager.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/plugins/tracktion_PluginManager.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/plugins/tracktion_PluginWindowState.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/plugins/tracktion_PluginWindowState.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/project/tracktion_Project.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/project/tracktion_Project.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/project/tracktion_ProjectItem.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/project/tracktion_ProjectItem.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/project/tracktion_ProjectItemID.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/project/tracktion_ProjectItemID.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/project/tracktion_ProjectManager.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/project/tracktion_ProjectManager.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/project/tracktion_ProjectSearchIndex.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/project/tracktion_ProjectSearchIndex.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/selection/tracktion_Clipboard.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/selection/tracktion_Clipboard.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/selection/tracktion_Selectable.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/selection/tracktion_SelectableClass.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/selection/tracktion_SelectionManager.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/selection/tracktion_SelectionManager.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/timestretch/tracktion_BeatDetect.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/timestretch/tracktion_TempoDetect.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/timestretch/tracktion_TimeStretch.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/timestretch/tracktion_TimeStretch.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/utilities/tracktion_AppFunctions.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/utilities/tracktion_AppFunctions.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/utilities/tracktion_AsyncFunctionUtils.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/utilities/tracktion_AudioFadeCurve.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/utilities/tracktion_AudioScratchBuffer.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/utilities/tracktion_AudioUtilities.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/utilities/tracktion_AudioUtilities.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/utilities/tracktion_BackgroundJobs.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/utilities/tracktion_BinaryData.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/utilities/tracktion_BinaryData.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/utilities/tracktion_ConstrainedCachedValue.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/utilities/tracktion_ConstrainedCachedValue.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/utilities/tracktion_CpuMeasurement.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/utilities/tracktion_CrashTracer.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/utilities/tracktion_CrashTracer.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/utilities/tracktion_CurveEditor.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/utilities/tracktion_CurveEditor.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/utilities/tracktion_Ditherer.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/utilities/tracktion_Engine.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/utilities/tracktion_Engine.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/utilities/tracktion_EngineBehaviour.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/utilities/tracktion_Envelope.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/utilities/tracktion_Envelope.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/utilities/tracktion_FileUtilities.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/utilities/tracktion_FileUtilities.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/utilities/tracktion_Identifiers.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/utilities/tracktion_MiscUtilities.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/utilities/tracktion_MouseHoverDetector.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/utilities/tracktion_Oscillators.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/utilities/tracktion_Oscillators.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/utilities/tracktion_Pitch.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/utilities/tracktion_PluginComponent.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/utilities/tracktion_PropertyStorage.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/utilities/tracktion_PropertyStorage.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/utilities/tracktion_SettingID.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/utilities/tracktion_Spline.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/utilities/tracktion_TemporaryFileManager.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/utilities/tracktion_TemporaryFileManager.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/utilities/tracktion_UIBehaviour.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/utilities/tracktion_UIBehaviour.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/utilities/tracktion_ValueTreeUtilities.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/tracktion_engine_airwindows.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/tracktion_engine_audio_files.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/tracktion_engine_model_1.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/tracktion_engine_model_2.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/tracktion_engine_playback.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/tracktion_engine_plugins.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/tracktion_engine_timestretch.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/tracktion_engine_utils.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../../../../tracktion_engine/modules/tracktion_engine/tracktion_engine.h" PROPERTIES HEADER_FILE_ONLY TRUE)
 set_source_files_properties ("../../JuceLibraryCode/AppConfig.h" PROPERTIES HEADER_FILE_ONLY TRUE)
 set_source_files_properties ("../../JuceLibraryCode/BinaryData.h" PROPERTIES HEADER_FILE_ONLY TRUE)
 set_source_files_properties ("../../JuceLibraryCode/JuceHeader.h" PROPERTIES HEADER_FILE_ONLY TRUE)
@@ -4605,7 +4608,7 @@ execute_process (COMMAND uname -m OUTPUT_VARIABLE JUCE_ARCH_LABEL OUTPUT_STRIP_T
 target_include_directories (APP PRIVATE
     "../../JuceLibraryCode"
     "$ENV{HOME}/JUCE/modules"
-    "$ENV{HOME}/modules"
+    "../../../../../../tracktion_engine/modules"
     "../../SDKs/JUCE/modules"
     "../../SDKs/tracktion_engine"
     "../../Source"
@@ -4683,7 +4686,7 @@ execute_process (COMMAND uname -m OUTPUT_VARIABLE JUCE_ARCH_LABEL OUTPUT_STRIP_T
 target_include_directories (APP PRIVATE
     "../../JuceLibraryCode"
     "$ENV{HOME}/JUCE/modules"
-    "$ENV{HOME}/modules"
+    "../../../../../../tracktion_engine/modules"
     "../../SDKs/JUCE/modules"
     "../../SDKs/tracktion_engine"
     "../../Source"

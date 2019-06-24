@@ -18,7 +18,16 @@ AudioThumbnailComponent::~AudioThumbnailComponent()
 
 void AudioThumbnailComponent::paint(Graphics& g)
 {
-    Rectangle<int> thumbnailBounds(200*clip.getMaximumLength(), 70);
+	Rectangle<int> thumbnailBounds(200 *1, 70);
+	if (!selected)
+	{
+		thumbnailBounds.setSize(200 * clip.getMaximumLength(), 70);
+	}
+	else
+	{
+		thumbnailBounds.~Rectangle();
+	}
+    
 
     if (thumbnail.getNumChannels() == 0)
         paintIfNoFileLoaded(g, thumbnailBounds);
@@ -27,7 +36,7 @@ void AudioThumbnailComponent::paint(Graphics& g)
 
 	if (selected)
 	{
-		g.setColour(Colours::red);
+		g.setColour(Colours::purple);
 		g.drawRect(thumbnailBounds, 1);
 	}
 }
@@ -68,10 +77,9 @@ void AudioThumbnailComponent::paintIfFileLoaded(Graphics& g, const Rectangle<int
 void AudioThumbnailComponent::mouseDown(const MouseEvent& /*event*/)
 {
 	selected = !selected;
-
-	
-	
 	repaint();
+	clip.removeFromParentTrack();
+	
 }
 
 void AudioThumbnailComponent::initSource()

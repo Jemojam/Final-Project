@@ -272,7 +272,9 @@ void ToolbarComponent::buttonClicked(Button* buttonThatWasClicked)
 	}
 	else if (buttonThatWasClicked == loopButton.get())
 	{
-
+		//just for checking..(it dosent loop!)
+		engine.getTransport().setCurrentPosition(0);
+		
 	}
     else if (buttonThatWasClicked == audioSettingsButton.get())
     {
@@ -285,7 +287,12 @@ void ToolbarComponent::buttonClicked(Button* buttonThatWasClicked)
 	}
 	else if (buttonThatWasClicked == metronomeButton.get())
 	{
-		engine.activeMetro();
+		//engine.activeMetro();
+		auto playhead = engine.getTransport().getCurrentPlayhead();
+		std::ostringstream strs;
+		strs << playhead->getPosition();
+		std::string str = strs.str();
+		bpmText->setText(str);
 	}
 
 	/*

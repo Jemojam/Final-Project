@@ -37,23 +37,21 @@ ChannelComponent::ChannelComponent(AudioEngine& inEngine, AudioTrack& inTrack)
     volumeSlider.reset(new Slider("volume slider"));
     addAndMakeVisible(volumeSlider.get());
     volumeSlider->setRange(-30, 6, 0);
-    volumeSlider->setSliderStyle(Slider::SliderStyle::LinearVertical);
+    volumeSlider->setSliderStyle(Slider::SliderStyle::LinearHorizontal);
     volumeSlider->setTextBoxStyle(Slider::NoTextBox, false, 0, 0);
     volumeSlider->setColour(Slider::thumbColourId, Colours::cadetblue);
     volumeSlider->addListener(this);
 
-    volumeSlider->setBounds(175, 0, 25, 75);
+    volumeSlider->setBounds(110, 25, 75, 20);
 
 	panSlider.reset(new Slider("pan slider"));
 	addAndMakeVisible(panSlider.get());
 	panSlider->setRange(-100, 100, 0);
 	panSlider->setSliderStyle(Slider::SliderStyle::LinearHorizontal);
-
 	panSlider->setTextBoxStyle(Slider::NoTextBox, true, 0, 0);
 	panSlider->setColour(Slider::thumbColourId, Colours::cadetblue);
 	panSlider->addListener(this);
-
-	panSlider->setBounds(110, 0, 75, 25);
+	panSlider->setBounds(110, 0, 75, 20);
 
     muteButton.reset(new ImageButton("muteBotton"));
     addAndMakeVisible(muteButton.get());
@@ -179,7 +177,6 @@ void ChannelComponent::buttonClicked(Button* buttonThatWasClicked)
 	else if (buttonThatWasClicked == muteButton.get())
 	{
 		engine.muteChannel(track);
-
 	}
 
 	else if (buttonThatWasClicked == soloButton.get())
@@ -205,7 +202,9 @@ void ChannelComponent::clickAddFileButton()
         auto file = chooser.getResult();
 
         engine.addNewClipFromFile(file, track);
+		nameText.get()->setText(file.getFileName());
     }
+	
 }
 
 void ChannelComponent::clickSelectButton() const

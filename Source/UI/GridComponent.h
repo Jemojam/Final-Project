@@ -1,8 +1,9 @@
 #pragma once
 
 #include "../JuceLibraryCode/JuceHeader.h"
-#include "AudioThumbnailComponent.h"
-#include "AudioThumbnailComponent.h"
+#include "ChannelWindow.h"
+
+
 class GridComponent  : public Component
 {
 public:
@@ -17,8 +18,16 @@ public:
 
 private:
 
+	
 	Viewport gridview;
+	
 
+
+
+
+
+
+	//ChannelWindow channelWindow;
 	/*
 	DragAndDropContainer dragAndDropContainer; //<=================== unique_ptr?
 	std::unique_ptr<DragAndDropTarget> dragAndDropTarget;
